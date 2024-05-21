@@ -11,4 +11,8 @@ export class LoginService {
   postLogin(email: string, password: string){
     return this.http.post(`${this.apiUrl}/login`, {email, password});
   }
+
+  postRegister(name:string,email:string,password: string,repeatPassword:string){
+    return this.http.post(`${this.apiUrl}/register`, {name,email, password,repeatPassword});
+  }
 }

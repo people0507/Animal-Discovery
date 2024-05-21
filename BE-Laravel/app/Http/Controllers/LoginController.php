@@ -11,14 +11,21 @@ class LoginController extends Controller
 {
 
     function register(Request $request){
-        $value = "123456";
-        $user = new User();
-        $user->name = "Cường";
-        $user->email = "cuong2003@gmail.com";
-        $user->password = Hash::make($value);
-        $user->gender = 0;
-        $user->role_id = 0;
-        $user->save();
+        MessageContent::loadMessages();
+        $data = $request->all();
+        if($data['password'] == $data['repeatPassword']){
+            $user = new User();
+            $user->name = $data['name'];
+            $user->email = $data['email'];
+            $user->password = Hash::make($data['password']);
+            $user->role_id = 1;
+            $user->save();
+            return response()->json(
+                ['message' => MessageContent::getMessage('register_success')],200);
+        }else{
+            return response()->json(
+                ['message' => MessageContent::getMessage('repeat_password')],401);
+        }
     }
     function login(Request $request){
         MessageContent::loadMessages();
