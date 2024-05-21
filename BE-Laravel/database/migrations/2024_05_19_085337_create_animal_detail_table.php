@@ -34,7 +34,7 @@ return new class extends Migration
             $table->unsignedBigInteger('animal_category_id');
             $table->foreign('animal_category_id')->references('id')->on('animal_category')->onDelete('cascade');
             $table->unsignedBigInteger('created_by');
-            $table->foreign('created_by')->references('id')->on('user')->onDelete('cascade');
+            $table->foreign('created_by')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }
