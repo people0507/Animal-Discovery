@@ -13,7 +13,7 @@ export class HeaderComponent {
 
   ngOnInit(): void {
     this.router.events.subscribe(event => {
-      this.isLoginPage = this.router.url === '/login';
+      this.isLoginPage = this.router.url === '/login' || this.router.url === '/register';
     });
   }
 }
