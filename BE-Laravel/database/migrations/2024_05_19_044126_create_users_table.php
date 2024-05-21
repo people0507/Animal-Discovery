@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->string('password');
-            $table->boolean('gender'); 
+            $table->boolean('gender')->nullable(); 
             $table->date('birthdate')->nullable();
             $table->string('avatar')->nullable();
             $table->unsignedBigInteger('role_id');
