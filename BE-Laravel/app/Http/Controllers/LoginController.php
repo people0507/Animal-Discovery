@@ -32,12 +32,14 @@ class LoginController extends Controller
         $credentials = $request->only('email', 'password');
         if (Auth::attempt($credentials)) {
             $user = Auth::user();
+            $token = auth()->user()->createToken('LaravelAuthApp')->plainTextToken;
             return response()->json(
                 ['name' => $user->name,
                 'email' => $user->email,
                 'gender' => $user->gender,
                 'role' => $user->role,
-                'message' => MessageContent::getMessage('login_success')
+                'message' => MessageContent::getMessage('login_success'),
+                'token' => $token,
                 ],200);
         }else{
             return response()->json(
