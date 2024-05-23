@@ -16,6 +16,7 @@ import { RegisterComponent } from './components/register/register.component';
 
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 
 
@@ -30,7 +31,8 @@ import { FormsModule } from '@angular/forms';
     ServicesComponent,
     ContractComponent,
     Page404Component,
-    RegisterComponent
+    RegisterComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
