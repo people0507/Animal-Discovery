@@ -1,4 +1,7 @@
+import { HttpResponse } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { LoginService } from 'src/app/app-services/login.service';
 
 
@@ -8,19 +11,21 @@ import { LoginService } from 'src/app/app-services/login.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  constructor(private loginService:LoginService){}
+  constructor(private loginService:LoginService,private router: Router){}
 
   loginForm = {
     email:'',
     password:'',
   }
   login(): void{
-    this.loginService.postLogin(this.loginForm.email,this.loginForm.password).subscribe((data) =>{
-      if(data){
-        console.log(data);
+    this.loginService.postLogin(this.loginForm.email,this.loginForm.password).subscribe((response: HttpResponse<any>)=>{
+      if(response.status === 200){
+        this.router.navigate(['/'])
+      }else{
+        this.router.navigate(['/login']);
       }
     },error=>{
-      console.log(error);
+      this.router.navigate(['/login']);
     });
   }
 }
