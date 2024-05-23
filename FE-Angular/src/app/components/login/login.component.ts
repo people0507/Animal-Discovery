@@ -20,7 +20,12 @@ export class LoginComponent {
   login(): void{
     this.loginService.postLogin(this.loginForm.email,this.loginForm.password).subscribe((response: HttpResponse<any>)=>{
       if(response.status === 200){
-        this.router.navigate(['/'])
+        if(response.body.role.id == 1){
+          localStorage.setItem('accessToken', response.body.token);
+          this.router.navigate(['/dashboard']);
+        }else{
+          this.router.navigate(['/']);
+        }
       }else{
         this.router.navigate(['/login']);
       }
