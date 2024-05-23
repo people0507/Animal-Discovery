@@ -13,7 +13,8 @@ export class FooterComponent {
 
   ngOnInit(): void {
     this.router.events.subscribe(event => {
-      this.isLoginPage = this.router.url === '/login' || this.router.url === '/register';
+      this.isLoginPage = this.router.url === '/login' || this.router.url === '/register'
+      || this.router.url === '/dashboard';
     });
   }
 }
