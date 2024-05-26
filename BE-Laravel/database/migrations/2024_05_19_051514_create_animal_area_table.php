@@ -16,7 +16,6 @@ return new class extends Migration
         Schema::create('animal_area', function (Blueprint $table) {
             $table->id();
             $table->string('area_name');
-            $table->text('area_description')->nullable();
             $table->timestamps();
         });
     }
