@@ -18,6 +18,13 @@ return new class extends Migration
             $table->string('animal_name')->nullable();
             $table->string('animal_scientific_name')->nullable();
             $table->text('animal_description')->nullable();
+            $table->text('appearance_description')->nullable();
+            $table->text('geography_description')->nullable();
+            $table->text('habit_lifestyle_description')->nullable();
+            $table->text('diet_nutrition_description')->nullable();
+            $table->text('mating_habit_description')->nullable();
+            $table->text('population_description')->nullable();
+            $table->text('fun_fact')->nullable();
             $table->string('animal_length')->nullable();
             $table->string('animal_height')->nullable();
             $table->string('animal_weight')->nullable();
@@ -33,6 +40,8 @@ return new class extends Migration
             $table->foreign('diet_type_id')->references('id')->on('diet_type')->onDelete('cascade');
             $table->unsignedBigInteger('animal_category_id');
             $table->foreign('animal_category_id')->references('id')->on('animal_category')->onDelete('cascade');
+            $table->unsignedBigInteger('population_trending_id');
+            $table->foreign('population_trending_id')->references('id')->on('animal_population_trending')->onDelete('cascade');
             $table->unsignedBigInteger('created_by');
             $table->foreign('created_by')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
