@@ -13,10 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('animal_area', function (Blueprint $table) {
+        Schema::create('animal_ocean', function (Blueprint $table) {
             $table->id();
-            $table->string('area_name');
-            $table->text('area_description')->nullable();
+            $table->string('ocean_name');
+            $table->text('ocean_description')->nullable();
             $table->timestamps();
         });
     }
@@ -28,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('animal_area');
+        Schema::dropIfExists('ocean');
     }
 };
