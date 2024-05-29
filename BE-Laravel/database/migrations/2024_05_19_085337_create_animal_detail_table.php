@@ -28,7 +28,7 @@ return new class extends Migration
             $table->string('animal_length')->nullable();
             $table->string('animal_height')->nullable();
             $table->string('animal_weight')->nullable();
-            $table->integer('population_size')->nullable();
+            $table->string('population_size')->nullable();
             $table->string('avg_lifespan')->nullable();
             $table->string('animal_sound')->nullable();
             $table->string('animal_video')->nullable();
