@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\AnimalDetailController;
 use App\Http\Controllers\LoginController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -26,3 +27,7 @@ Route::post('/register', [LoginController::class, 'register']);
 
 
 Route::post('/create', [AdminController::class, 'create']);
+
+Route::prefix('animal_detail')->group(function () {
+Route::post('/create_animal_detail', [AnimalDetailController::class, 'createAnimalDetail']);
+});
