@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AnimalDetailController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\PostController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -30,4 +31,15 @@ Route::post('/create', [AdminController::class, 'create']);
 
 Route::prefix('animal_detail')->group(function () {
 Route::post('/create_animal_detail', [AnimalDetailController::class, 'createAnimalDetail']);
+});
+
+Route::prefix('animal_post')->group(function () {
+    Route::post('/create_animal_post', [PostController::class, 'createPost']);
+    Route::post('/edit_animal_post', [PostController::class, 'editPost']);
+    Route::post('/delete_animal_post', [PostController::class, 'deletePost']);
+    Route::post('/create_animal_comment', [PostController::class, 'createComment']);
+    Route::post('/edit_animal_comment', [PostController::class, 'editComment']);
+    Route::post('/delete_animal_comment', [PostController::class, 'deleteComment']);
+    Route::post('/animal_like', [PostController::class, 'like']);
+    Route::post('/animal_dislike', [PostController::class, 'dislike']);
 });
