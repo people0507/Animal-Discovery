@@ -1,0 +1,132 @@
+<div class="page-wrapper">
+  <div class="page-breadcrumb">
+      <div class="row">
+          <div class="col-7 align-self-center">
+              <h3 class="page-title text-truncate text-dark font-weight-medium mb-1">Good Morning Admin!</h3>
+              <div class="d-flex align-items-center">
+                  <nav aria-label="breadcrumb">
+                      <ol class="breadcrumb m-0 p-0">
+                          <li class="breadcrumb-item"><a href="index.html">Animal Management</a>
+                          </li>
+                      </ol>
+                  </nav>
+              </div>
+          </div>
+      </div>
+  </div>
+  <div class="container-fluid">
+      <div class="row">
+          <div class="col-12">
+              <div class="card">
+                  <div class="card-body">
+                      <h4 class="card-title">Animal Edit</h4>
+                          <form action="#" method="POST" enctype="multipart/form-data">
+                          <div class="form-body">
+                              <div class="row">
+                                  <div class="col-md-4">
+                                      <div class="form-group">
+                                          <label>Name Animal</label>
+                                          <input type="text" class="form-control" [(ngModel)]="editedAnimal.animalName" name="animalName" placeholder="Animal Name">
+                                      </div>
+                                  </div>
+                                  <div class="col-md-4">
+                                    <div class="form-group">
+                                      <label>Name Scientific</label>
+                                      <input type="text" class="form-control" [(ngModel)]="editedAnimal.scientificName" name="scientificName" placeholder="Name Scientific">
+                                    </div>
+                                  </div>
+                                  <div class="col-md-4">
+                                    <div class="form-group">
+                                      <label>Length</label>
+                                      <input type="text" class="form-control" [(ngModel)]="editedAnimal.length" name="length" placeholder="Length">
+                                    </div>
+                                  </div>
+                                  <div class="col-md-4">
+                                    <div class="form-group">
+                                      <label>Height</label>
+                                      <input type="text" class="form-control" [(ngModel)]="editedAnimal.height" name="height" placeholder="Height">
+                                    </div>
+                                  </div>
+                                  <div class="col-md-4">
+                                    <div class="form-group">
+                                      <label>Weight</label>
+                                      <input type="text" class="form-control" [(ngModel)]="editedAnimal.weight" name="weight" placeholder="Weight">
+                                    </div>
+                                  </div>
+                                  <div class="col-md-4">
+                                    <div class="form-group">
+                                      <label>Size</label>
+                                      <input type="text" class="form-control" [(ngModel)]="editedAnimal.size" name="size" placeholder="Size">
+                                    </div>
+                                  </div>
+                                  <div class="col-md-4">
+                                    <div class="form-group">
+                                      <label>Average Lifespan</label>
+                                      <input type="text" class="form-control" [(ngModel)]="editedAnimal.lifespan" name="lifespan" placeholder="Average Lifespan">
+                                    </div>
+                                  </div>
+                                  <div class="col-md-4">
+                                    <div class="form-group">
+                                      <label>Sound</label>
+                                      <input type="text" class="form-control" [(ngModel)]="editedAnimal.sound" name="sound" placeholder="Sound">
+                                    </div>
+                                  </div>
+                                  <div class="col-md-4">
+                                    <div class="form-group">
+                                      <label>Video</label>
+                                      <input type="url" class="form-control" [(ngModel)]="editedAnimal.video" name="video" placeholder="Video URL">
+                                    </div>
+                                  </div>
+                                  <div class="col-md-4">
+                                    <div class="form-group">
+                                      <label>Conservation Status</label>
+                                      <input type="text" class="form-control" [(ngModel)]="editedAnimal.conservationStatus" name="conservationStatus" placeholder="Conservation Status">
+                                    </div>
+                                  </div>
+                                  <div class="col-md-4">
+                                    <div class="form-group">
+                                      <label>Active</label>
+                                      <input type="text" class="form-control" [(ngModel)]="editedAnimal.activity" name="activity" placeholder="Active">
+                                    </div>
+                                  </div>
+                                  <div class="col-md-4">
+                                    <div class="form-group">
+                                      <label>Diet</label>
+                                      <input type="text" class="form-control" [(ngModel)]="editedAnimal.diet" name="diet" placeholder="Diet">
+                                    </div>
+                                  </div>
+                                  <div class="col-md-4">
+                                    <div class="form-group">
+                                      <label>Category</label>
+                                      <input type="text" class="form-control" [(ngModel)]="editedAnimal.category" name="category" placeholder="Category">
+                                    </div>
+                                  </div>
+                                  <div class="col-md-12">
+                                    <div class="form-group">
+                                      <label>Description</label>
+                                      <textarea class="form-control" [(ngModel)]="editedAnimal.description" name="description" placeholder="Description"></textarea>
+                                    </div>
+                                  </div>
+                                  <div class="col-md-12">
+                                      <div class="form-group">
+                                          <label>Image</label>
+                                          <div class="dropzone" id="myDropzone" style="border: 1px solid #e9ecef;">
+                                              <div class="dz-message">
+                                                  <span>Click or drop files here to upload</span>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                              <div class="form-actions text-right">
+                                  <button type="submit" class="btn btn-info">Submit</button>
+                                  <button type="reset" class="btn btn-dark">Reset</button>
+                              </div>
+                          </div>
+                      </form>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>

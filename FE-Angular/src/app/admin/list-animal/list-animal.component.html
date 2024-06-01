@@ -1,0 +1,104 @@
+<div class="card">
+  <div class="card-header">
+    <h3 class="card-title">Projects</h3>
+
+    <div class="card-tools">
+      <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
+        <i class="fas fa-minus"></i></button>
+      <button type="button" class="btn btn-tool" data-card-widget="remove" data-toggle="tooltip" title="Remove">
+        <i class="fas fa-times"></i></button>
+    </div>
+  </div>
+  <div class="card-body p-0">
+    <table class="table table-striped projects table-bordered display no-wrap">
+      <thead>
+        <tr>
+          <th width="5%">STT</th>
+          <th width="12%">Name Animal</th>
+          <th width="12%">Name Scientific</th>
+          <th width="30%">Description</th>
+          <th width="10%">Image</th>
+          <th width="10%">Category</th>
+          <th width="15%">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let animal of animals; let i = index">
+          <td>{{ i + 1 }}</td>
+          <td>{{ animal.name }}</td>
+          <td>{{ animal.scientificName }}</td>
+          <td class="project_progress">{{ animal.description }}</td>
+          <td>
+            <img [src]="animal.imageSrc" width="100px" alt="{{ animal.name }}">
+          </td>
+          <td>{{ animal.category }}</td>
+          <td class="project-actions">
+            <button class="btn btn-primary btn-sm" (click)="viewAnimal($event, animal)">
+              <i class="fas fa-folder"></i> View
+            </button>
+            <button class="btn btn-info btn-sm" (click)="editAnimal($event, animal)">
+              <i class="fas fa-pencil-alt"></i> Edit
+            </button>
+            <button class="btn btn-danger btn-sm" (click)="confirmDelete($event, animal)">
+              <i class="fas fa-trash"></i> Delete
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="animalModal" tabindex="-1" role="dialog" aria-labelledby="animalModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-right" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title" id="animalModalLabel">
+          <b>Animal Details</b>
+        </h3>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="closeModal()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p><strong>Name:</strong> {{ selectedAnimal?.name }}</p>
+        <p><strong>Scientific Name:</strong> {{ selectedAnimal?.scientificName }}</p>
+        <p><strong>Description:</strong> {{ selectedAnimal?.description }}</p>
+        <p><strong>Image:</strong> <img [src]="selectedAnimal?.imageSrc" alt="" width="100"></p>
+        <p><strong>Length:</strong> {{ selectedAnimal?.length }}</p>
+        <p><strong>Height:</strong> {{ selectedAnimal?.height }}</p>
+        <p><strong>Weight:</strong> {{ selectedAnimal?.weight }}</p>
+        <p><strong>Size:</strong> {{ selectedAnimal?.size }}</p>
+        <p><strong>Average Lifespan:</strong> {{ selectedAnimal?.lifespan }}</p>
+        <p><strong>Sound:</strong> {{ selectedAnimal?.sound }}</p>
+        <p><strong>Video:</strong> {{ selectedAnimal?.video }}</p>
+        <p><strong>Conservation Status:</strong> {{ selectedAnimal?.conservationStatus }}</p>
+        <p><strong>Activity Time:</strong> {{ selectedAnimal?.activity }}</p>
+        <p><strong>Diet:</strong> {{ selectedAnimal?.diet }}</p>
+        <p><strong>Category:</strong> {{ selectedAnimal?.category }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Delete Confirmation Modal -->
+<div class="modal fade" id="deleteConfirmationModal" tabindex="-1" role="dialog" aria-labelledby="deleteConfirmationModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="deleteConfirmationModalLabel">Xác nhận xóa</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="closeDeleteModal()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Bạn có chắc chắn muốn xóa mục này không?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="closeDeleteModal()">Hủy</button>
+        <button type="button" class="btn btn-danger" (click)="deleteAnimal()">Xóa</button>
+      </div>
+    </div>
+  </div>
+</div>
