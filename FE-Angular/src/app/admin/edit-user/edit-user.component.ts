@@ -8,6 +8,8 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class EditUserComponent {
   editedUser: any;
+  selectedFile: File | null = null;
+
   users = [
     {
       id: 1,
@@ -52,5 +54,9 @@ export class EditUserComponent {
       this.users[index] = { ...this.editedUser };
     }
     this.editedUser = null;
+  }
+
+  onFileSelected(event: any): void {
+    this.selectedFile = event.target.files[0] as File;
   }
 }
