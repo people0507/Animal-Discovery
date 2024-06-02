@@ -1,62 +1,84 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { UserService } from 'src/app/app-services/user.service';
 
 @Component({
   selector: 'app-edit-user',
   templateUrl: './edit-user.component.html',
   styleUrls: ['./edit-user.component.css']
 })
-export class EditUserComponent {
-  editedUser: any;
+export class EditUserComponent implements OnInit {
+  // editedUser: any;
   selectedFile: File | null = null;
-
-  users = [
+  userId:any;
+  allRole:any;
+  url:any;
+  allGender:any = 
+  [
     {
-      id: 1,
-      name: 'John Doe',
-      email: 'john@example.com',
-      gender: 'Male',
-      avatar: 'https://via.placeholder.com/150',
-      birthday: '1990-01-01',
-      role: 'Admin',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ut sapien sed metus tristique rhoncus.'
+      id:1,
+      genderName: 'Nam',
     },
     {
-      id: 2,
-      name: 'Jane Smith',
-      email: 'jane@example.com',
-      gender: 'Female',
-      avatar: 'https://via.placeholder.com/150',
-      birthday: '1995-05-05',
-      role: 'User',
-      description: 'Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque.'
-    },
-    // Add more users as needed
-  ];
+      id:2,
+      genderName: 'Nữ',
+    }
+  ]
 
-  constructor(private route: ActivatedRoute) {}
+  users:any = {
+      id: '',
+      name: '',
+      email: '',
+      gender: '',
+      avatar: '',
+      birthday: '',
+      role: '',
+  }
+
+  constructor(private route: ActivatedRoute,private userService:UserService) {}
 
   ngOnInit(): void {
-    const id = this.route.snapshot.paramMap.get('id');
-    if (id !== null) {
-      const userId = +id; // Đổi tên biến thành userId
-      this.editUser(userId);
+    this.userService.getAllRole().subscribe(data => {
+      this.allRole = data.role;
+      console.log(this.allRole);
+    });
+
+    this.userId = this.route.snapshot.paramMap.get('id');
+    if (this.userId  !== null) {
+      this.userService.getUser(this.userId).subscribe(data => {
+        this.users = data.user;
+        this.url =data.url;
+        console.log(this.users);
+      });
+      // this.editUser(this.userId);
     }
   }
 
-  editUser(id: number): void {
-    this.editedUser = this.users.find(user => user.id === id); // Sử dụng this.users thay vì users
+  isRoleSelected(roleId: number): boolean {
+    return this.users.role === roleId;
   }
 
-  saveUser(): void {
-    const index = this.users.findIndex(user => user.id === this.editedUser.id);
-    if (index !== -1) {
-      this.users[index] = { ...this.editedUser };
-    }
-    this.editedUser = null;
+  isSelectedGender(genderId: number): boolean {
+    return this.users.gender === genderId;
+  }
+
+  getSrcImage(src:any){
+    var srcImg = this.url+'/avatars/'+src;
+    return srcImg;
+  }
+
+  // editUser(id: number): void {
+  //   this.editedUser = this.users.find(user => user.id === id); // Sử dụng this.users thay vì users
+  // }
+
+  updateUser(): void {
+    this.userService.updateUser( this.userId,this.users).subscribe(data => {
+      console.log(data);
+    });
   }
 
   onFileSelected(event: any): void {
-    this.selectedFile = event.target.files[0] as File;
+    this.users.file= event.target.files[0] as File;
+    console.log(this.users);
   }
 }
