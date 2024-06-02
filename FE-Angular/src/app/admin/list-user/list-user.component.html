@@ -28,12 +28,26 @@
           <td>{{ i + 1 }}</td>
           <td>{{ user.name }}</td>
           <td>{{ user.email }}</td>
-          <td class="project_progress">{{ user.gender }}</td>
-          <td>
-            <img [src]="user.avatar" width="100px" alt="{{ user.name }}">
+          <td class="project_progress">
+            <ng-container *ngIf="user.role_id === 1">
+              Nam
+          </ng-container>
+          <ng-container *ngIf="user.role_id == 2">
+             Nữ
+          </ng-container>
           </td>
-          <td>{{ user.birthday }}</td>
-          <td>{{ user.role }}</td>
+          <td>
+            <img [src]="getSrcImage(user.avatar)" width="100px" >
+          </td>
+          <td>{{ user.birthdate }}</td>
+          <td>
+            <ng-container *ngIf="user.role_id === 1">
+              Admin
+          </ng-container>
+          <ng-container *ngIf="user.role_id == 2">
+             User
+          </ng-container>
+          </td>
           <td class="project-actions">
             <button class="btn btn-info btn-sm" (click)="editUser($event, user)">
               <i class="fas fa-pencil-alt"></i> Edit
