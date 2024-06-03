@@ -30,7 +30,7 @@ Route::post('/register', [LoginController::class, 'register']);
 Route::post('/create', [AdminController::class, 'create']);
 
 Route::prefix('animal_detail')->group(function () {
-Route::post('/create_animal_detail', [AnimalDetailController::class, 'createAnimalDetail']);
+    Route::get('/get_animal_detail/{id}', [AnimalDetailController::class, 'getAnimalDetail']);
 });
 
 Route::prefix('animal_post')->group(function () {
@@ -48,8 +48,10 @@ Route::prefix('admin')->group(function () {
     Route::get('/list_user', [AdminController::class, 'listUser']);
     Route::get('/get_user/{id}', [AdminController::class, 'getUser']);
     Route::post('/update_user/{id}', [AdminController::class, 'updateUser']);
+    Route::delete('/delete_user/{id}', [AdminController::class, 'deleteUser']);
     Route::get('/all_role', [AdminController::class, 'listRole']);
-
-
-
+    Route::get('/list_animal', [AdminController::class, 'listAnimal']);
+    Route::post('/create_animal_detail', [AdminController::class, 'createAnimalDetail']);
+    Route::post('/edit_animal_detail', [AdminController::class, 'editAnimalDetail']);
+    Route::delete('/delete_detail_animal/{id}', [AdminController::class, 'deleteAnimalDetail']);
 });
