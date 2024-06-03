@@ -8,12 +8,14 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { AsidebarComponent } from './asidebar/asidebar.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EditAnimalComponent } from './edit-animal/edit-animal.component';
 import { CreateAnimalComponent } from './create-animal/create-animal.component';
 import { ListUserComponent } from './list-user/list-user.component';
 import { EditUserComponent } from './edit-user/edit-user.component';
 import { HttpClientModule } from '@angular/common/http';
+import { NgxDropzoneModule } from 'ngx-dropzone';
+
 
 @NgModule({
   declarations: [
@@ -26,13 +28,15 @@ import { HttpClientModule } from '@angular/common/http';
     EditAnimalComponent,
     CreateAnimalComponent,
     ListUserComponent,
-    EditUserComponent
+    EditUserComponent,
   ],
   imports: [
     CommonModule,
     AdminRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxDropzoneModule,
+    ReactiveFormsModule
   ]
 })
 export class AdminModule { }
