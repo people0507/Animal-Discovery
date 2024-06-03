@@ -43,3 +43,13 @@ Route::prefix('animal_post')->group(function () {
     Route::post('/animal_like', [PostController::class, 'like']);
     Route::post('/animal_dislike', [PostController::class, 'dislike']);
 });
+
+Route::prefix('admin')->group(function () {
+    Route::get('/list_user', [AdminController::class, 'listUser']);
+    Route::get('/get_user/{id}', [AdminController::class, 'getUser']);
+    Route::post('/update_user/{id}', [AdminController::class, 'updateUser']);
+    Route::get('/all_role', [AdminController::class, 'listRole']);
+
+
+
+});

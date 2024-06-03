@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { UserService } from 'src/app/app-services/user.service';
 
 @Component({
   selector: 'app-list-user',
@@ -7,32 +8,34 @@ import { Router } from '@angular/router';
   styleUrls: ['./list-user.component.css']
 })
 export class ListUserComponent {
-  users = [
-    {
-      id: 1,
-      name: 'John Doe',
-      email: 'john@example.com',
-      gender: 'Male',
-      avatar: 'https://via.placeholder.com/150',
-      birthday: '1990-01-01',
-      role: 'Admin',
-    },
-    {
-      id: 2,
-      name: 'Jane Smith',
-      email: 'jane@example.com',
-      gender: 'Female',
-      avatar: 'https://via.placeholder.com/150',
-      birthday: '1995-05-05',
-      role: 'User',
-    },
-    // Add more users as needed
-  ];
+  url:any;
+  users:any={
+      id: '',
+      name: '',
+      email: '',
+      gender: '',
+      avatar: '',
+      birthday: '',
+      role: '',
+  };
 
-  constructor(private router: Router) { }
+  constructor(private router: Router,private userService:UserService) { }
 
+  ngOnInit(): void {
+    this.userService.getUserList().subscribe(data => {
+      this.users = data.user;
+      this.url =data.url;
+      console.log(data);
+    });
+  }
   editUser(event: Event, user: any) {
     console.log(user.id);
     this.router.navigate(['admin/edit-user/', user.id]);
+  }
+
+  getSrcImage(src:any){
+    var srcImg = this.url+'/avatars/'+src;
+    console.log(srcImg);
+    return srcImg;
   }
 }

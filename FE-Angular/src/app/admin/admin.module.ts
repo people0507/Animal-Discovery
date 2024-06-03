@@ -13,6 +13,7 @@ import { EditAnimalComponent } from './edit-animal/edit-animal.component';
 import { CreateAnimalComponent } from './create-animal/create-animal.component';
 import { ListUserComponent } from './list-user/list-user.component';
 import { EditUserComponent } from './edit-user/edit-user.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { EditUserComponent } from './edit-user/edit-user.component';
   imports: [
     CommonModule,
     AdminRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ]
 })
 export class AdminModule { }
