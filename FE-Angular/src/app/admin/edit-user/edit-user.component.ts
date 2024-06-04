@@ -42,7 +42,6 @@ export class EditUserComponent implements OnInit {
   ngOnInit(): void {
     this.userService.getAllRole().subscribe(data => {
       this.allRole = data.role;
-      console.log(this.allRole);
     });
 
     this.userId = this.route.snapshot.paramMap.get('id');
@@ -62,6 +61,7 @@ export class EditUserComponent implements OnInit {
       birthdate: new FormControl(this.user.birthdate),
       role: new FormControl(this.user.role_id)
     });
+    console.log(this.form);
   }
 
   isRoleSelected(roleId: number) {
@@ -79,7 +79,6 @@ export class EditUserComponent implements OnInit {
 
 
   updateUser(): void {
-    console.log(this.user);
     const formData: FormData = new FormData();
 
     formData.append('name', this.form.get('name')?.value);
@@ -96,7 +95,7 @@ export class EditUserComponent implements OnInit {
     });
 
     this.userService.updateUser(this.user.id, formData).subscribe(data => {
-      console.log('User updated:', data);
+      console.log(data);
     });
   }
 

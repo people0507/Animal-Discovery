@@ -118,12 +118,27 @@ class AdminController extends Controller
     }
     
     public function updateUser($id,Request $request){
+        MessageContent::loadMessages();
         $data = $request->all();
-        $user = User::find($id)->first();
+        return response()->json($data);
+
+        if(isset($data['avatar'])){
+            $uniqueFileName = Str::uuid()->toString() . '.' . $data['avatar']->extension();
+            $data['avatar']->move(public_path('avatars'), $uniqueFileName);
+        }
+        $user = User::where('id',$id)->first();
         $user->gender = $data['gender'];
-        $user->birthdate = $data['birthday'];
+        $user->role_id = $data['role'];
+        $user->birthdate = $data['birthdate'];
+        if(isset($uniqueFileName) && $uniqueFileName != ''){
+        $user->avatar = $uniqueFileName;
+        }
         $user->save();
-        response()->json($data);
+        if ($user->save()) {
+            return response()->json(['message' => MessageContent::getMessage('create_success')],200);
+        } else {
+            return response()->json(['message' => MessageContent::getMessage('create_failed')],401);
+        }
     }
 
     public function deleteUser($id){
