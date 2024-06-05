@@ -120,7 +120,6 @@ class AdminController extends Controller
     public function updateUser($id,Request $request){
         MessageContent::loadMessages();
         $data = $request->all();
-        return response()->json($data);
 
         if(isset($data['avatar'])){
             $uniqueFileName = Str::uuid()->toString() . '.' . $data['avatar']->extension();
