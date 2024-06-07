@@ -50,12 +50,12 @@
                             </a>
                             <ul aria-expanded="false" class="collapse first-level base-level-line">
                                 <li class="sidebar-item">
-                                    <a href="{{ route('admin.list-user')}}" class="sidebar-link">
+                                    <a href="{{ route('list_user')}}" class="sidebar-link">
                                         <span class="hide-menu"> All Users </span>
                                     </a>
                                 </li>
                                 <li class="sidebar-item">
-                                    <a href="{{ route('admin.add-user')}}" class="sidebar-link">
+                                    <a href="{{ route('view_create_user')}}" class="sidebar-link">
                                         <span class="hide-menu"> Add User </span>
                                     </a>
                                 </li>

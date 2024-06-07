@@ -9,9 +9,14 @@ use App\Models\User;
 use App\Models\Role;
 use App\Models\AnimalImage;
 use Str;
+use Hash;
 
 class AdminController extends Controller
 {
+    public function viewCreateUser(){
+        return view('admin.users.add-user');
+    }
+
     public function listAnimal(){
         $animalDetail = AnimalDetail::all();
         if($animalDetail){
@@ -92,16 +97,8 @@ class AdminController extends Controller
     }
 
     public function listUser(){
-        $user = User::all();
-        $url = url('/');
-        if($user){
-            return response()->json(
-                ['user' => $user,
-                'url' => $url
-            ],200);
-        }else{
-            return response()->json(401);
-        }
+        $users = User::all();
+        return view('admin.users.list-user',compact('users'));
     }
 
     public function getUser($id){
@@ -114,6 +111,31 @@ class AdminController extends Controller
             ],200);
         }else{
             return response()->json(401);
+        }
+    }
+
+    public function createUser(Request $request){
+        MessageContent::loadMessages();
+        $data = $request->all();
+
+        if(isset($data['avatar'])){
+            $uniqueFileName = Str::uuid()->toString() . '.' . $data['avatar']->extension();
+            $data['avatar']->move(public_path('avatars'), $uniqueFileName);
+        }
+        $user = new User();
+        $user->name = $data['username'];
+        $user->email = $data['email'];
+        $user->password = Hash::make($data['password']);
+        $user->gender = $data['gender'];
+        $user->role_id = $data['role_id'];
+        $user->birthdate = $data['birthdate'];
+        if(isset($uniqueFileName) && $uniqueFileName != ''){
+        $user->avatar = $uniqueFileName;
+        }
+        if ($user->save()) {
+            return redirect()->route('list_user');
+        } else {
+            return back();
         }
     }
     
@@ -132,24 +154,17 @@ class AdminController extends Controller
         if(isset($uniqueFileName) && $uniqueFileName != ''){
         $user->avatar = $uniqueFileName;
         }
-        $user->save();
         if ($user->save()) {
-            return response()->json(['message' => MessageContent::getMessage('create_success')],200);
+            return redirect()->route('list_user');
         } else {
-            return response()->json(['message' => MessageContent::getMessage('create_failed')],401);
+            return back();
         }
     }
 
     public function deleteUser($id){
         MessageContent::loadMessages();
         $user = User::find($id)->first();
-        if($user){
-            if ($user->delete()) {
-                return response()->json(['message' => MessageContent::getMessage('delete_success')],200);
-            } else {
-                return response()->json(['message' => MessageContent::getMessage('delete_failed')],401);
-            }
-        }
+        $user->delete();
     }
 
     public function listRole(){

@@ -4,7 +4,7 @@
     <div class="page-breadcrumb">
         <div class="row">
             <div class="col-7 align-self-center">
-                <h3 class="page-title text-truncate text-dark font-weight-medium mb-1">Good Morning Admin!</h3>
+                <h3 class="page-title text-truncate text-dark font-weight-medium mb-1">{{ Auth::user()->name }}</h3>
                 <div class="d-flex align-items-center">
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb m-0 p-0">
@@ -34,24 +34,48 @@
                                                 <th>Birthday</th>
                                                 <th>Avatar</th>
                                                 <th>Role</th>
+                                                <th>Created At</th>
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
                                         <tbody>
+                                            @foreach ($users as $user)
                                             <tr>
                                                 <td>1</td>
+                                                <td>{{$user->name}}</td>
+                                                <td>{{$user->email}}</td>
+                                                @if($user->gender == 1)
+                                                <td>Nam</td>
+                                                @elseif($user->gender == 2)
+                                                <td>Nữ</td>
+                                                @else
+                                                <td></td>
+                                                @endif
+                                                <td>{{$user->birthdate}}</td>
+                                                @if($user->avatar != null)
+                                                <td><img src="http://localhost:8000/avatars/{{$user->avatar}}" width="100"></td>
+                                                @else
+                                                <td><img src="https://i.pinimg.com/originals/6a/44/f0/6a44f0e35b10e6ed063eeebf7ed844f9.jpg" width="100"></td>
+                                                @endif
+                                                @if($user->role_id == 1)
                                                 <td>Admin</td>
-                                                <td>admin@gmail.com</td>
-                                                <td>Male</td>
-                                                <td>29-11-2003</td>
-                                                <td><img src="https://i.pinimg.com/originals/6a/44/f0/6a44f0e35b10e6ed063eeebf7ed844f9.jpg"Cat" width="100"></td>
-                                                <td>Manager</td>
+                                                @else
+                                                <td>User</td>
+                                                @endif
+                                                <td>{{$user->created_at}}</td>
                                                 <td>
-                                                    <a href="#" class="icon-action" onclick="showDeleteConfirmationModal();" style="color: red;"><i class="icon-close"></i></a>
+                                                <form action="{{ route('delete_user', ['id' => $user->id]) }}" method="POST">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button class="icon-action" type="submit" style="color: red;">
+                                                    <i class="icon-close"></i>
+                                                </button>
+                                                </form>
                                                     /
                                                     <a href="user-detail.html" class="icon-action" onclick="event.stopPropagation();"><i class="icon-settings"></i></a>
                                                 </td>
                                             </tr>
+                                            @endforeach
                                         </tbody>
                                     </table>
                                 </div>
