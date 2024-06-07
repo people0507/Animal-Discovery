@@ -41,7 +41,7 @@
           </td>
           <td>{{ user.birthdate }}</td>
           <td>
-            <ng-container *ngIf="user.role_id === 1">
+            <ng-container *ngIf="user.role_id == 1">
               Admin
           </ng-container>
           <ng-container *ngIf="user.role_id == 2">

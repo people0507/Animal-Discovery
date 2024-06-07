@@ -34,7 +34,7 @@ export class EditUserComponent implements OnInit {
       gender: '',
       avatar: '',
       birthday: '',
-      role: '',
+      role_id: '',
   }
 
   constructor(private route: ActivatedRoute,private userService:UserService) {}
@@ -42,6 +42,7 @@ export class EditUserComponent implements OnInit {
   ngOnInit(): void {
     this.userService.getAllRole().subscribe(data => {
       this.allRole = data.role;
+      console.log(this.allRole);
     });
 
     this.userId = this.route.snapshot.paramMap.get('id');
@@ -59,7 +60,7 @@ export class EditUserComponent implements OnInit {
       gender: new FormControl(this.user.gender),
       avatar: new FormControl(null),
       birthdate: new FormControl(this.user.birthdate),
-      role: new FormControl(this.user.role_id)
+      role_id: new FormControl(this.user.role_id)
     });
     console.log(this.form);
   }
@@ -88,7 +89,7 @@ export class EditUserComponent implements OnInit {
       formData.append('avatar', this.selectedFile, this.selectedFile.name);
     }
     formData.append('birthdate', this.form.get('birthdate')?.value);
-    formData.append('role', this.form.get('role')?.value);
+    formData.append('role_id', this.form.get('role_id')?.value);
 
     formData.forEach((value, key) => {
       console.log(key, value);
