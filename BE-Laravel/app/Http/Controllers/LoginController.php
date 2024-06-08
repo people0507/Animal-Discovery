@@ -9,42 +9,46 @@ use Hash;
 use App\Http\MessageContent;
 class LoginController extends Controller
 {
+    public function viewLogin(){
+        return view('authen.login');
+    }
+    
+    public function viewRegister(){
+        return view('authen.register');
+    }
 
     function register(Request $request){
         MessageContent::loadMessages();
         $data = $request->all();
-        if($data['password'] == $data['repeatPassword']){
+        if($data['password'] == $data['password_confirmation']){
             $user = new User();
-            $user->name = $data['name'];
+            $user->name = $data['username'];
             $user->email = $data['email'];
             $user->password = Hash::make($data['password']);
-            $user->role_id = 1;
+            $user->role_id = User::USER;
             $user->save();
-            return response()->json(
-                ['message' => MessageContent::getMessage('register_success')],200);
+            $message = MessageContent::getMessage('login_success');
+            return view('authen.login',compact('message'));
         }else{
-            return response()->json(
-                ['message' => MessageContent::getMessage('repeat_password')],401);
+            $message = MessageContent::getMessage('login_failed');
+            return view('authen.register');
         }
     }
     function login(Request $request){
         MessageContent::loadMessages();
         $credentials = $request->only('email', 'password');
         if (Auth::attempt($credentials)) {
-            $user = Auth::user();
-            $token = auth()->user()->createToken('LaravelAuthApp')->plainTextToken;
-            return response()->json(
-                ['name' => $user->name,
-                'email' => $user->email,
-                'gender' => $user->gender,
-                'role' => $user->role,
-                'message' => MessageContent::getMessage('login_success'),
-                'token' => $token,
-                ],200);
+            $user = auth()->user();
+            if($user->role_id == User::ADMIN){
+                $message = MessageContent::getMessage('login_success');
+                return view('admin.home',compact('user', 'message'));
+            }else{
+                $message = MessageContent::getMessage('login_success');
+                return view('user.home',compact('user', 'message'));
+            }
         }else{
-            return response()->json(
-            ['message' => MessageContent::getMessage('login_failed')
-            ],401);
+            $message = MessageContent::getMessage('login_failed');
+            return view('authen.login');
         }
     }
 }

@@ -30,7 +30,8 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <form>
+                                        <form action="{{route('login')}}" method="POST">
+                                        @csrf
                                             <div class="row gy-3 overflow-hidden">
                                                 <div class="col-12">
                                                     <div class="form-floating mb-3">
@@ -68,7 +69,7 @@
                                             <div class="col-12">
                                                 <div
                                                     class="d-flex gap-2 gap-md-4 flex-column flex-md-row justify-content-md-center mt-5">
-                                                    <a class="link-secondary text-decoration-none">Create new
+                                                    <a href="{{route('view_register')}}" class="link-secondary text-decoration-none">Create new
                                                         account</a>
                                                 </div>
                                             </div>
