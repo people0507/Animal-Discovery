@@ -32,6 +32,12 @@ Route::get('/about', function () {
 Route::get('/contract', function () {
     return view('user.contract');
 })->name('user.contract');
+Route::get('/categories-list', function () {
+    return view('user.categories-animal');
+})->name('user.cate-list');
+Route::get('/animal-detail', function () {
+    return view('user.animal-detail');
+})->name('user.animal-detail');
 
 
 
