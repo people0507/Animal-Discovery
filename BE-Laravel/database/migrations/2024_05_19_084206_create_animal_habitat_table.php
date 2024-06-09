@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('animal_habitat', function (Blueprint $table) {
             $table->id();
             $table->string('habitat_name');
+            $table->string('habitat_image')->nullable();
             $table->text('habitat_description')->nullable();
             $table->timestamps();
         });

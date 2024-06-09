@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('animal_ocean', function (Blueprint $table) {
             $table->id();
             $table->string('ocean_name');
+            $table->string('ocean_image')->nullable();
             $table->text('ocean_description')->nullable();
             $table->timestamps();
         });
