@@ -29,7 +29,6 @@
     @php
         $breadcrumbs = [
             ['name' => 'Home', 'url' => route('user.home')],
-            ['name' => 'Categories List', 'url' => route('user.cate-list')],
         ];
     @endphp
 
@@ -48,33 +47,28 @@
                 </p>
             </div>
             <div class="list-animal-item">
-
+                @foreach ($data as $item )
+                
                 <div class="item-animal">
                     <div class="row">
                         <div class="col-6">
                             <h3 class="title-item-animal">
-                                RED FOX
+                                {{$item->animal_name}}
                             </h3>
                             <div class="line"></div>
-                            <p class="desc-item-animal">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam
-                                illo
-                                vero quis expedita
-                                deserunt explicabo beatae minus eligendi excepturi sint suscipit, tempora eveniet? Minus
-                                numquam
-                                officia officiis saepe id labore magni fugit? Facere, necessitatibus similique quia,
-                                voluptates,
-                                maiores aliquid eveniet assumenda architecto exercitationem reprehenderit quo corrupti neque
-                                perferendis est laudantium.</p>
-                            <a class="detai-animal" href="{{ route('user.animal-detail') }}">Discover more <i
+                            <p class="desc-item-animal">{{$item->animal_description}}</p>
+                            <a class="detai-animal" href="{{ route('user.animal-detail',['id' => $item->id]) }}">Discover more <i
                                     class="fa-solid fa-arrow-right"></i></a>
                         </div>
                         <div class="col-6">
-                            <img src="{{ asset('images/monkey-1.jpg') }}" width="100%" alt=""
+                            <img src="http://localhost:8000/animal_images/{{$item->images->image_name}}" width="100%" alt=""
                                 class="item-animal-img">
                         </div>
                     </div>
                 </div>
-                <div class="item-animal">
+                @endforeach
+
+                <!-- <div class="item-animal">
                     <div class="row">
                         <div class="col-6">
                             <h3 class="title-item-animal">
@@ -121,7 +115,7 @@
                                 class="item-animal-img">
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>

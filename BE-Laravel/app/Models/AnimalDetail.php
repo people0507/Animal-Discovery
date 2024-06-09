@@ -44,4 +44,9 @@ class AnimalDetail extends Model
     {
         return $this->belongsToMany(Topic::class,'animal_between_topic','animal_detail_id', 'topic_id');
     }
+
+    public function images()
+    {
+        return $this->hasOne(AnimalImage::class,'detail_id');
+    }
 }

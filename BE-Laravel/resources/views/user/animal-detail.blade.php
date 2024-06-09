@@ -73,8 +73,6 @@
     @php
         $breadcrumbs = [
             ['name' => 'Home', 'url' => route('user.home')],
-            ['name' => 'Categories List', 'url' => route('user.cate-list')],
-            ['name' => 'Animal Detail', 'url' => route('user.animal-detail')],
         ];
     @endphp
 
@@ -85,14 +83,14 @@
             <div class="main-animal">
                 <div class="row">
                     <div class="col-8">
-                        <img src="https://s3.animalia.bio/animals/photos/full/1.25x1/shutterstock-88365403jpg.webp"
+                        <img src="http://localhost:8000/animal_images/{{$data->images->image_name}}"
                             width="100%" alt="" class="animal-detail-img">
                     </div>
                     <div class="col-lg-4">
                         <div class="s-char-content">
                             <div class="s-char-heading">
                                 <h1 class="a-h1">
-                                    Northern Cardinal
+                                    {{$data->animal_name}}
                                 </h1>
                                 <p class="s-char-heading__name">
                                     Redbird, Common cardinal, cardinal
@@ -250,7 +248,7 @@
                                             </div>
                                         </div>
                                         <div class="col-8 s-char-kinds__name unactive">
-                                            Cardinalis cardinalis
+                                            {{$data->animal_scientific_name}}
                                         </div>
                                     </div>
                                 </div>
@@ -261,14 +259,14 @@
                                 <div class="row">
                                     <div class="col-6">
                                         <div class="s-char-char__name">Life Span</div>
-                                        <div class="s-char-char__num">15 years</div>
+                                        <div class="s-char-char__num">{{$data->avg_lifespan}}</div>
                                     </div>
                                     <div class="col-6">
                                         <div class="s-char-char__name">Weight</div>
                                         <div class="s-char-char__num">
                                             <div class="characteristic-container">
                                                 <div class="characteristic-value weight_1">33.6-65</div>
-                                                <div class="characteristic-value weight_2">1.2-2.3</div>
+                                                <div class="characteristic-value weight_2">{{$data->animal_height}}</div>
                                             </div>
                                             <div class="units-block">
                                                 <div class="row">
