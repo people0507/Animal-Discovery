@@ -26,6 +26,7 @@ use Illuminate\Http\Request;
 // Route::get('/', function () {
 //     return view('user.home');
 // })->name('user.home');
+Route::get('/', [AnimalDetailController::class, 'viewAnimalPage'])->name('user.home');
 Route::get('/about', function () {
     return view('user.about');
 })->name('user.about');
