@@ -49,4 +49,14 @@ class AnimalDetail extends Model
     {
         return $this->hasOne(AnimalImage::class,'detail_id');
     }
+
+    public function status()
+    {
+        return $this->belongsTo(ConservationStatus::class,'conservation_status_id');
+    }
+
+    public function trend()
+    {
+        return $this->belongsTo(PopulationTrending::class,'population_trending_id');
+    }
 }

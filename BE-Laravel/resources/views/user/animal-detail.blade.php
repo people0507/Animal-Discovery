@@ -793,20 +793,7 @@
             </div>
             <div class="s-char-text">
                 <p></p>
-                <p>The <b>Red fox</b> (<i>Vulpes vulpes</i>) is the largest of the true foxes and one of the most widely
-                    distributed members of the order <a href="/carnivora">Carnivora</a>, being present across the
-                    entire
-                    Northern Hemisphere. Its range has increased alongside human expansion, having been introduced to
-                    Australia, where it is considered harmful to native mammals and bird populations. Apart from its
-                    large
-                    size, the Red fox is distinguished from other fox species by its ability to adapt quickly to new
-                    environments. Despite its name, the species often produces individuals with other colorings,
-                    including
-                    leucistic and melanistic individuals. Forty-five subspecies are currently recognized, which are
-                    divided
-                    into two categories: the large northern foxes and the small, basal southern grey desert foxes of
-                    Asia
-                    and North Africa.</p>
+                {{ $data->animal_description }}
                 <p></p>
             </div>
             <div class="s-char-status">
@@ -920,14 +907,7 @@
                         <h2 class="a-h2">
                             Appearance
                         </h2>
-                        <p>Male Red foxes are slightly bigger than females. The fur color of these animals ranges from
-                            pale
-                            yellowish red to a deep reddish brown for the upper parts and white or ashy on the
-                            underside.
-                            Their legs are usually black on the lower parts and the tails often are tipped with black or
-                            white and have tail glands. The eyes of Red foxes are yellow in adulthood and their noses
-                            are
-                            black or dark brown. </p>
+                        <p>{{ $data->appearance_description }}</p>
                     </div>
                 </div>
             </section>
@@ -1201,16 +1181,10 @@
                                                 </div>
                                             </div>
                                             <div class="col-sm-9">
+                                                @foreach ($data->areas as $item)
                                                 <a href="https://animalia.bio/asia-animals"
-                                                    class="s-distr-geography__link ">Asia, </a>
-                                                <a href="https://animalia.bio/europe-animals"
-                                                    class="s-distr-geography__link ">Europe, </a>
-                                                <a href="https://animalia.bio/africa-animals"
-                                                    class="s-distr-geography__link ">Africa, </a>
-                                                <a href="https://animalia.bio/north-america-animals"
-                                                    class="s-distr-geography__link ">North America, </a>
-                                                <a href="https://animalia.bio/oceania-animals"
-                                                    class="s-distr-geography__link ">Oceania </a>
+                                                    class="s-distr-geography__link ">{{$item->area_name}},</a>
+                                                @endforeach
                                             </div>
                                         </div>
                                         <div class="row align-items-center">
@@ -1221,191 +1195,16 @@
                                                 </div>
                                             </div>
                                             <div class="col-sm-9">
+                                                @foreach ($data->nations as $item)
                                                 <a href="https://animalia.bio/albania-animals"
-                                                    class="s-distr-geography__link ">Albania, </a>
-                                                <a href="https://animalia.bio/algeria-animals"
-                                                    class="s-distr-geography__link ">Algeria, </a>
-                                                <a href="https://animalia.bio/andorra-animals"
-                                                    class="s-distr-geography__link ">Andorra, </a>
-                                                <a href="https://animalia.bio/armenia-animals"
-                                                    class="s-distr-geography__link ">Armenia, </a>
-                                                <a href="https://animalia.bio/austria-animals"
-                                                    class="s-distr-geography__link ">Austria, </a>
-                                                <a href="https://animalia.bio/azerbaijan-animals"
-                                                    class="s-distr-geography__link ">Azerbaijan, </a>
-                                                <a href="https://animalia.bio/bangladesh-animals"
-                                                    class="s-distr-geography__link ">Bangladesh, </a>
-                                                <a href="https://animalia.bio/belgium-animals"
-                                                    class="s-distr-geography__link ">Belgium, </a>
-                                                <a href="https://animalia.bio/bhutan-animals"
-                                                    class="s-distr-geography__link ">Bhutan, </a>
-                                                <a href="https://animalia.bio/bosnia-and-herzegovina-animals"
-                                                    class="s-distr-geography__link ">Bosnia and Herzegovina, </a>
-                                                <a href="/" class="show-more read-more-show">
-
-                                                    Show More
-                                                </a>
-                                                <span class="read-more-content hide">
-                                                    <a href="https://animalia.bio/bulgaria-animals"
-                                                        class="s-distr-geography__link ">Bulgaria, </a>
-                                                    <a href="https://animalia.bio/canada-animals"
-                                                        class="s-distr-geography__link ">Canada, </a>
-                                                    <a href="https://animalia.bio/croatia-animals"
-                                                        class="s-distr-geography__link ">Croatia, </a>
-                                                    <a href="https://animalia.bio/cyprus-animals"
-                                                        class="s-distr-geography__link ">Cyprus, </a>
-                                                    <a href="https://animalia.bio/czech-republic-animals"
-                                                        class="s-distr-geography__link ">Czech Republic, </a>
-                                                    <a href="https://animalia.bio/denmark-animals"
-                                                        class="s-distr-geography__link ">Denmark, </a>
-                                                    <a href="https://animalia.bio/egypt-animals"
-                                                        class="s-distr-geography__link ">Egypt, </a>
-                                                    <a href="https://animalia.bio/estonia-animals"
-                                                        class="s-distr-geography__link ">Estonia, </a>
-                                                    <a href="https://animalia.bio/faroe-islands-animals"
-                                                        class="s-distr-geography__link ">Faroe Islands, </a>
-                                                    <a href="https://animalia.bio/finland-animals"
-                                                        class="s-distr-geography__link ">Finland, </a>
-                                                    <a href="https://animalia.bio/france-animals"
-                                                        class="s-distr-geography__link ">France, </a>
-                                                    <a href="https://animalia.bio/georgia-animals"
-                                                        class="s-distr-geography__link ">Georgia, </a>
-                                                    <a href="https://animalia.bio/germany-animals"
-                                                        class="s-distr-geography__link ">Germany, </a>
-                                                    <a href="https://animalia.bio/greece-animals"
-                                                        class="s-distr-geography__link ">Greece, </a>
-                                                    <a href="https://animalia.bio/vatican-animals"
-                                                        class="s-distr-geography__link ">Vatican, </a>
-                                                    <a href="https://animalia.bio/hungary-animals"
-                                                        class="s-distr-geography__link ">Hungary, </a>
-                                                    <a href="https://animalia.bio/iceland-animals"
-                                                        class="s-distr-geography__link ">Iceland, </a>
-                                                    <a href="https://animalia.bio/india-animals"
-                                                        class="s-distr-geography__link ">India, </a>
-                                                    <a href="https://animalia.bio/iran-animals"
-                                                        class="s-distr-geography__link ">Iran, </a>
-                                                    <a href="https://animalia.bio/iraq-animals"
-                                                        class="s-distr-geography__link ">Iraq, </a>
-                                                    <a href="https://animalia.bio/ireland-animals"
-                                                        class="s-distr-geography__link ">Ireland, </a>
-                                                    <a href="https://animalia.bio/israel-animals"
-                                                        class="s-distr-geography__link ">Israel, </a>
-                                                    <a href="https://animalia.bio/italy-animals"
-                                                        class="s-distr-geography__link ">Italy, </a>
-                                                    <a href="https://animalia.bio/japan-animals"
-                                                        class="s-distr-geography__link ">Japan, </a>
-                                                    <a href="https://animalia.bio/jordan-animals"
-                                                        class="s-distr-geography__link ">Jordan, </a>
-                                                    <a href="https://animalia.bio/kazakhstan-animals"
-                                                        class="s-distr-geography__link ">Kazakhstan, </a>
-                                                    <a href="https://animalia.bio/north-korea-animals"
-                                                        class="s-distr-geography__link ">North Korea, </a>
-                                                    <a href="https://animalia.bio/kuwait-animals"
-                                                        class="s-distr-geography__link ">Kuwait, </a>
-                                                    <a href="https://animalia.bio/kyrgyzstan-animals"
-                                                        class="s-distr-geography__link ">Kyrgyzstan, </a>
-                                                    <a href="https://animalia.bio/latvia-animals"
-                                                        class="s-distr-geography__link ">Latvia, </a>
-                                                    <a href="https://animalia.bio/lebanon-animals"
-                                                        class="s-distr-geography__link ">Lebanon, </a>
-                                                    <a href="https://animalia.bio/libya-animals"
-                                                        class="s-distr-geography__link ">Libya, </a>
-                                                    <a href="https://animalia.bio/liechtenstein-animals"
-                                                        class="s-distr-geography__link ">Liechtenstein, </a>
-                                                    <a href="https://animalia.bio/lithuania-animals"
-                                                        class="s-distr-geography__link ">Lithuania, </a>
-                                                    <a href="https://animalia.bio/luxembourg-animals"
-                                                        class="s-distr-geography__link ">Luxembourg, </a>
-                                                    <a href="https://animalia.bio/macedonia-animals"
-                                                        class="s-distr-geography__link ">Macedonia, </a>
-                                                    <a href="https://animalia.bio/malta-animals"
-                                                        class="s-distr-geography__link ">Malta, </a>
-                                                    <a href="https://animalia.bio/monaco-animals"
-                                                        class="s-distr-geography__link ">Monaco, </a>
-                                                    <a href="https://animalia.bio/mongolia-animals"
-                                                        class="s-distr-geography__link ">Mongolia, </a>
-                                                    <a href="https://animalia.bio/montenegro-animals"
-                                                        class="s-distr-geography__link ">Montenegro, </a>
-                                                    <a href="https://animalia.bio/morocco-animals"
-                                                        class="s-distr-geography__link ">Morocco, </a>
-                                                    <a href="https://animalia.bio/myanmar-animals"
-                                                        class="s-distr-geography__link ">Myanmar, </a>
-                                                    <a href="https://animalia.bio/nepal-animals"
-                                                        class="s-distr-geography__link ">Nepal, </a>
-                                                    <a href="https://animalia.bio/netherlands-animals"
-                                                        class="s-distr-geography__link ">Netherlands, </a>
-                                                    <a href="https://animalia.bio/norway-animals"
-                                                        class="s-distr-geography__link ">Norway, </a>
-                                                    <a href="https://animalia.bio/oman-animals"
-                                                        class="s-distr-geography__link ">Oman, </a>
-                                                    <a href="https://animalia.bio/pakistan-animals"
-                                                        class="s-distr-geography__link ">Pakistan, </a>
-                                                    <a href="https://animalia.bio/poland-animals"
-                                                        class="s-distr-geography__link ">Poland, </a>
-                                                    <a href="https://animalia.bio/portugal-animals"
-                                                        class="s-distr-geography__link ">Portugal, </a>
-                                                    <a href="https://animalia.bio/qatar-animals"
-                                                        class="s-distr-geography__link ">Qatar, </a>
-                                                    <a href="https://animalia.bio/romania-animals"
-                                                        class="s-distr-geography__link ">Romania, </a>
-                                                    <a href="https://animalia.bio/russia-animals"
-                                                        class="s-distr-geography__link ">Russia, </a>
-                                                    <a href="https://animalia.bio/san-marino-animals"
-                                                        class="s-distr-geography__link ">San Marino, </a>
-                                                    <a href="https://animalia.bio/saudi-arabia-animals"
-                                                        class="s-distr-geography__link ">Saudi Arabia, </a>
-                                                    <a href="https://animalia.bio/serbia-animals"
-                                                        class="s-distr-geography__link ">Serbia, </a>
-                                                    <a href="https://animalia.bio/slovakia-animals"
-                                                        class="s-distr-geography__link ">Slovakia, </a>
-                                                    <a href="https://animalia.bio/slovenia-animals"
-                                                        class="s-distr-geography__link ">Slovenia, </a>
-                                                    <a href="https://animalia.bio/spain-animals"
-                                                        class="s-distr-geography__link ">Spain, </a>
-                                                    <a href="https://animalia.bio/sudan-animals"
-                                                        class="s-distr-geography__link ">Sudan, </a>
-                                                    <a href="https://animalia.bio/sweden-animals"
-                                                        class="s-distr-geography__link ">Sweden, </a>
-                                                    <a href="https://animalia.bio/switzerland-animals"
-                                                        class="s-distr-geography__link ">Switzerland, </a>
-                                                    <a href="https://animalia.bio/syria-animals"
-                                                        class="s-distr-geography__link ">Syria, </a>
-                                                    <a href="https://animalia.bio/tajikistan-animals"
-                                                        class="s-distr-geography__link ">Tajikistan, </a>
-                                                    <a href="https://animalia.bio/tunisia-animals"
-                                                        class="s-distr-geography__link ">Tunisia, </a>
-                                                    <a href="https://animalia.bio/turkey-animals"
-                                                        class="s-distr-geography__link ">Turkey, </a>
-                                                    <a href="https://animalia.bio/turkmenistan-animals"
-                                                        class="s-distr-geography__link ">Turkmenistan, </a>
-                                                    <a href="https://animalia.bio/united-arab-emirates-animals"
-                                                        class="s-distr-geography__link ">United Arab Emirates, </a>
-                                                    <a href="https://animalia.bio/united-kingdom-animals"
-                                                        class="s-distr-geography__link ">United Kingdom, </a>
-                                                    <a href="https://animalia.bio/united-states-animals"
-                                                        class="s-distr-geography__link ">United States, </a>
-                                                    <a href="https://animalia.bio/uzbekistan-animals"
-                                                        class="s-distr-geography__link ">Uzbekistan, </a>
-                                                    <a href="https://animalia.bio/yemen-animals"
-                                                        class="s-distr-geography__link ">Yemen, </a>
-                                                    <a href="https://animalia.bio/south-korea-animals"
-                                                        class="s-distr-geography__link ">South Korea, </a>
-                                                    <a href="https://animalia.bio/afghanistan-animals"
-                                                        class="s-distr-geography__link ">Afghanistan </a>
-                                                    <a class="show-more read-more-hide" href="#">
-
-                                                        Show Less
-                                                    </a>
+                                                    class="s-distr-geography__link ">{{$item->nation_name}},</a>
+                                            
+                                                @endforeach
                                                 </span>
                                             </div>
                                         </div>
                                     </div>
-                                    <p>Red foxes are distributed across the Northern Hemisphere but do not live in Iceland,
-                                        some parts of Siberia, the Arctic islands, or extreme deserts. They live in many
-                                        different habitats around the world including forests, grasslands, deserts, and
-                                        mountains, having the greatest geographic range of all members of the Carnivora
-                                        family. They can adapt well to human habitats such as farms and suburban areas, even
-                                        quite large communities. </p>
+                                    <p>{{$data->geography_description}}</p>
                                 </div>
                             </div>
                             <div class="col-lg-4">
@@ -1528,7 +1327,7 @@
                     <div class="row">
                         <div class="col-lg-6">
                             <div class="s-habbit-img open-gallery" data-id="11849">
-                                <img src="https://s3.animalia.bio/animals/photos/medium/original/red-fox-2016-05-19-11.webp"
+                                <img src="http://localhost:8000/animal_images/{{$habitImage->image_name}}"
                                     alt="Red Fox 2016-05-19 (11)">
                             </div>
                             <div class="optimanetwork">
@@ -1542,91 +1341,7 @@
 
                                     Habits and Lifestyle
                                 </h2>
-                                <p>Red foxes live in family groups sharing a joint territory. Adults have a home range that
-                                    varies in size according to the quality of the environment. In rich areas they may
-                                    measure 5 to 12 square kilometers, being larger in poorer areas, from 20 to 50 square
-                                    kilometers. Occupants of a range are an adult male and one or two females with their
-                                    young. Families and individuals live in dens made of earth and often have emergency
-                                    burrows within the home range. Often the same den is used over several generations. Red
-                                    foxes may leave their families once they reach adulthood if the chances of winning a
-                                    territory of their own are high. If not, they will stay with their parents. Red foxes
-                                    prefer to hunt in the early morning hours before sunrise and late evening. Although they
-                                    typically forage alone, they may aggregate in resource-rich environments. When hunting
-                                    mouse-like prey, they first pinpoint their prey's location by sound, then leap, sailing
-                                    high above their quarry, steering in mid-air with their tails, before landing on a
-                                    target up to 5 meters (16 ft) away. Red foxes have a wide vocal range and produce
-                                    different sounds. There are 12 different sounds produced by adults and 8 by kits. The
-                                    majority of sounds can be divided into "contact" and "interaction" calls. Another call
-                                    is a long, drawn-out, monosyllabic "waaaaah" sound commonly heard during the breeding
-                                    season. When danger is detected, Red foxes emit a monosyllabic bark. Kits make warbling
-                                    whimpers when nursing, these calls being especially loud when they are dissatisfied.</p>
-                            </div>
-                            <div class="s-habbit-group">
-                                <div class="row align-items-center">
-                                    <div class="col-sm-3">
-                                        <div class="s-habbit-group__slug">
-
-                                            Group name
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-9">
-                                        <a href="#" class="s-habbit-group__black"
-                                            style="cursor: text; pointer-events: none;">leash, skulk, earth, lead, troop
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="s-habbit-group">
-                                <div class="row align-items-center">
-                                    <div class="col-sm-3">
-                                        <div class="s-habbit-group__slug">
-
-                                            Lifestyle
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-9">
-                                        <a href="https://animalia.bio/terrestrial" title="Terrestrial"
-                                            class="">Terrestrial, </a>
-                                        <a href="https://animalia.bio/altricial-animals" title="Altricial"
-                                            class="">Altricial, </a>
-                                        <a href="https://animalia.bio/territorial" title="Territorial"
-                                            class="">Territorial, </a>
-                                        <a href="https://animalia.bio/viviparous" title="Viviparous"
-                                            class="">Viviparous, </a>
-                                        <a href="https://animalia.bio/burrow" title="Burrowing" class="">Burrowing,
-                                        </a>
-                                        <a href="https://animalia.bio/predator" title="Predator" class="">Predator
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="s-habbit-group">
-                                <div class="row align-items-center">
-                                    <div class="col-sm-3">
-                                        <div class="s-habbit-group__slug">
-
-                                            Seasonal behavior
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-9">
-                                        <a href="https://animalia.bio/not-a-migrant" title="Not a migrant"
-                                            class="">Not a migrant </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="s-habbit-group">
-                                <div class="row align-items-center">
-                                    <div class="col-sm-3">
-                                        <div class="s-habbit-group__slug">
-
-                                            Predators
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-9">
-                                        <a href="https://animalia.bio/arctic-wolf" title="Arctic Wolf"
-                                            class="s-habbit-group__black">Arctic Wolf</a>
-                                    </div>
-                                </div>
+                                <p>{{$data->habit_lifestyle_description}}</p>
                             </div>
                         </div>
                     </div>
@@ -1654,7 +1369,7 @@
                                         </div>
                                         <div class="col-6">
                                             <div class="s-mating-char">
-                                                <a href="https://animalia.bio/index.php/polygyny" class="">Polygyny
+                                                <a href="https://animalia.bio/index.php/polygyny" class="">{{$data->mating_behavior}}
                                                 </a>
                                             </div>
                                         </div>
@@ -1670,7 +1385,7 @@
                                         </div>
                                         <div class="col-6">
                                             <div class="s-mating-char">
-                                                <div class="s-mating-char__text">late spring-early summer</div>
+                                                <div class="s-mating-char__text">{{$data->reproduction_season}}</div>
                                             </div>
                                         </div>
                                     </div>
@@ -1685,7 +1400,7 @@
                                         </div>
                                         <div class="col-6">
                                             <div class="s-mating-char">
-                                                <div class="s-mating-char__text">10-11 months</div>
+                                                <div class="s-mating-char__text">{{$data->pregnancy_duration}}</div>
                                             </div>
                                         </div>
                                     </div>
@@ -1700,7 +1415,7 @@
                                         </div>
                                         <div class="col-6">
                                             <div class="s-mating-char">
-                                                <div class="s-mating-char__text">1 calf</div>
+                                                <div class="s-mating-char__text">{{$data->baby_carrying}}</div>
                                             </div>
                                         </div>
                                     </div>
@@ -1715,52 +1430,7 @@
                                         </div>
                                         <div class="col-6">
                                             <div class="s-mating-char">
-                                                <div class="s-mating-char__text">6-15 months </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row align-items-end">
-                                        <div class="col-6">
-                                            <div class="s-mating-slug">
-                                                <div class="s-mating-slug__text text-uppercase">
-
-                                                    FEMALE NAME
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-6">
-                                            <div class="s-mating-char">
-                                                <div class="s-mating-char__text">cow</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row align-items-end">
-                                        <div class="col-6">
-                                            <div class="s-mating-slug">
-                                                <div class="s-mating-slug__text text-uppercase">
-
-                                                    MALE NAME
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-6">
-                                            <div class="s-mating-char">
-                                                <div class="s-mating-char__text">bull</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row align-items-end">
-                                        <div class="col-6">
-                                            <div class="s-mating-slug">
-                                                <div class="s-mating-slug__text text-uppercase">
-
-                                                    BABY NAME
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-6">
-                                            <div class="s-mating-char">
-                                                <div class="s-mating-char__text">calf</div>
+                                                <div class="s-mating-char__text">{{$data->independent_age}}</div>
                                             </div>
                                         </div>
                                     </div>
@@ -1768,15 +1438,7 @@
                             </div>
                             <div class="col-lg-6">
                                 <div class="s-mating-text">
-                                    <p>Finless porpoises are polygynous, which means that one male mates with multiple
-                                        females. They breed in late spring and early summer. The young are born in spring,
-                                        summer, or winter, depending on the geographic locality, after a gestation period of
-                                        10 to 11 months. Newborn finless porpoises are reported to be 72 to 84 cm (28 to 33
-                                        in) in length. It has been claimed that young calves cling to the denticulated area
-                                        of skin on their mother's back and are carried by her as she swims, but there is no
-                                        clear evidence of this happening. Calves are weaned when they are 6-15 months old.
-                                        Young males become reproductively mature at 4 to 6 years of age, and females at 6 to
-                                        9 years. </p>
+                                    <p>{{$data->mating_habit_description}}</p>
                                 </div>
                             </div>
                         </div>
@@ -1795,7 +1457,7 @@
                         <div class="row">
                             <div class="col-lg-6">
                                 <div class="s-population-img open-gallery" data-id="53626">
-                                    <img src="https://s3.animalia.bio/animals/photos/medium/original/qozmQDF3Sp52jOVfzUgW.webp"
+                                    <img src="http://localhost:8000/animal_images/{{$populationImage->image_name}}"
                                         alt="Red Fox photo">
                                 </div>
                                 <div class="s-population-link">
@@ -1807,7 +1469,7 @@
                                             </div>
                                         </div>
                                         <div class="col-sm-7 col-md-8">
-                                            <a href="https://animalia.bio/stable" class="s-population__link">Stable</a>
+                                            <a href="https://animalia.bio/stable" class="s-population__link">{{$data->trend->population_trending_name}}</a>
                                         </div>
                                     </div>
                                 </div>
@@ -1821,7 +1483,7 @@
                                         </div>
                                         <div class="col-sm-7 col-md-8">
                                             <a href="https://animalia.bio/least-concern-lc"
-                                                class="s-population__link">Least concern (LC)</a>
+                                                class="s-population__link">{{$data->status->status_name}}</a>
                                         </div>
                                     </div>
                                 </div>
@@ -1859,23 +1521,18 @@
 
                                         Population threats
                                     </h3>
-                                    <p>Globally, there appear to be no major threats to Red foxes at present. Locally, these
-                                        animals may suffer from habitat degradation, loss, and fragmentation, and
-                                        overhunting.
+                                    <p>{{$data->population_threat}}
                                     </p>
                                     <h3 class="a-h3">
 
                                         Population number
                                     </h3>
-                                    <p>The IUCN Red List and other sources don’t provide the number of the Red fox total
-                                        population size. Currently, this species is classified as Least Concern (LC) on the
-                                        IUCN Red List, and its numbers today are stable.</p>
+                                    <p>{{$data->population_number}}</p>
                                     <h3 class="a-h3">
 
                                         Ecological niche
                                     </h3>
-                                    <p>Red foxes help control the populations of their prey, such as rabbits and rodents.
-                                        They may also disperse seeds due to eating fruit.</p>
+                                    <p>{{$data->ecological_niche}}</p>
                                 </div>
                             </div>
                         </div>
