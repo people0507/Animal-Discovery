@@ -438,6 +438,171 @@
             color: #333;
             font-weight: 500;
         }
+
+        .s-related .a-h2 {
+            text-align: center;
+        }
+
+        .s-fascinating .a-h2 {
+            text-align: center;
+        }
+
+        .a-h2 {
+            text-align: center;
+        }
+
+        .slide-container {
+            max-width: 1120px;
+            width: 100%;
+            padding: 40px 0;
+        }
+
+        .slide-content {
+            margin: 0 40px;
+            overflow: hidden;
+            border-radius: 25px;
+        }
+
+        .card {
+            border-radius: 25px;
+            background-color: #FFF;
+        }
+
+        .image-content,
+        .card-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 10px 14px;
+        }
+
+        .image-content {
+            position: relative;
+            row-gap: 5px;
+            padding: 25px 0;
+        }
+
+        .overlay {
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 100%;
+            background-color: #2EB872;
+            border-radius: 25px 25px 0 25px;
+        }
+
+        .overlay::before,
+        .overlay::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            bottom: -40px;
+            height: 40px;
+            width: 40px;
+            /* background-color: #2EB872; */
+        }
+
+        .overlay::after {
+            border-radius: 0 25px 0 0;
+            background-color: #FFF;
+        }
+
+        .card-image {
+            position: relative;
+            height: 250px;
+            width: 300px;
+            /* border-radius: 50%; */
+            background: #FFF;
+            padding: 3px;
+        }
+
+        .card-image .card-img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            /* border-radius: 50%; */
+            border: 4px solid #2EB872;
+        }
+
+        .name {
+            font-size: 18px;
+            font-weight: 500;
+            color: #333;
+        }
+
+        .description {
+            font-size: 14px;
+            color: #707070;
+            text-align: center;
+        }
+
+        .button {
+            border: none;
+            font-size: 16px;
+            color: #FFF;
+            padding: 8px 16px;
+            background-color: #2EB872;
+            border-radius: 6px;
+            margin: 14px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .button:hover {
+            background: #2EB872;
+        }
+
+        .swiper-navBtn {
+            color: red;
+            /* color: #2EB872; */
+            transition: color 0.3s ease;
+        }
+
+        .swiper-navBtn:hover {
+            color: #2EB872;
+        }
+
+        .swiper-navBtn::before,
+        .swiper-navBtn::after {
+            font-size: 35px;
+        }
+
+        .swiper-button-next {
+            right: 0;
+        }
+
+        .swiper-button-prev {
+            left: 0;
+        }
+
+        .swiper-pagination-bullet {
+            background-color: #2EB872;
+            opacity: 1;
+        }
+
+        .swiper-pagination-bullet-active {
+            background-color: #2EB872;
+        }
+
+        @media screen and (max-width: 768px) {
+            .slide-content {
+                margin: 0 10px;
+            }
+
+            .swiper-navBtn {
+                display: none;
+            }
+        }
+
+        .slide-show-more {
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            background-color: #b8ffcd32;
+        }
     </style>
     @php
         $breadcrumbs = [['name' => 'Home', 'url' => route('user.home')]];
@@ -1675,8 +1840,8 @@
                                         class="s-population-view__item ">en</a>
                                     <a href="https://animalia.bio/critically-endangered-cr"
                                         title="Critically endangered (CR)" class="s-population-view__item ">cr</a>
-                                    <a href="https://animalia.bio/extinct-in-the-wild-ew"
-                                        title="Extinct in the wild (EW)" class="s-population-view__item ">ew</a>
+                                    <a href="https://animalia.bio/extinct-in-the-wild-ew" title="Extinct in the wild (EW)"
+                                        class="s-population-view__item ">ew</a>
                                     <a href="https://animalia.bio/extinct-ex" title="Extinct (EX)"
                                         class="s-population-view__item ">ex</a>
                                 </div>
@@ -1772,7 +1937,135 @@
                     </div>
                 </div>
             </section>
+            <section class="slide-show-more">
+                <div class="slide-container swiper">
+                    <div class="slide-content">
+                        <h2 class="a-h2">
+                            More Fascinating Animals to Learn About
+                        </h2>
+                        <div class="card-wrapper swiper-wrapper">
+                            <div class="card swiper-slide">
+                                <div class="image-content">
+                                    <span class="overlay"></span>
+                                    <div class="card-image">
+                                        <img src="https://cdn.firstcry.com/education/2022/11/26141737/Animal-Name-Starting-With-L-For-Kids.jpg"
+                                            alt="" class="card-img">
+                                    </div>
+                                </div>
+                                <div class="card-content">
+                                    <h2 class="name">Lion</h2>
+                                    <p class="description">The lorem text the section that contains header with having open
+                                        functionality. Lorem dolor sit amet consectetur adipisicing elit.</p>
+                                    <a href="#" class="button">View More</a>
+                                </div>
+                            </div>
+                            <div class="card swiper-slide">
+                                <div class="image-content">
+                                    <span class="overlay"></span>
+                                    <div class="card-image">
+                                        <img src="https://cdn.firstcry.com/education/2022/11/26141737/Animal-Name-Starting-With-L-For-Kids.jpg"
+                                            alt="" class="card-img">
+                                    </div>
+                                </div>
+                                <div class="card-content">
+                                    <h2 class="name">Lion</h2>
+                                    <p class="description">The lorem text the section that contains header with having
+                                        open
+                                        functionality. Lorem dolor sit amet consectetur adipisicing elit.</p>
+                                    <a href="#" class="button">View More</a>
+                                </div>
+                            </div>
+                            <div class="card swiper-slide">
+                                <div class="image-content">
+                                    <span class="overlay"></span>
+                                    <div class="card-image">
+                                        <img src="https://cdn.firstcry.com/education/2022/11/26141737/Animal-Name-Starting-With-L-For-Kids.jpg"
+                                            alt="" class="card-img">
+                                    </div>
+                                </div>
+                                <div class="card-content">
+                                    <h2 class="name">Lion</h2>
+                                    <p class="description">The lorem text the section that contains header with having
+                                        open
+                                        functionality. Lorem dolor sit amet consectetur adipisicing elit.</p>
+                                    <a href="#" class="button">View More</a>
+                                </div>
+                            </div>
+                            <div class="card swiper-slide">
+                                <div class="image-content">
+                                    <span class="overlay"></span>
+                                    <div class="card-image">
+                                        <img src="https://cdn.firstcry.com/education/2022/11/26141737/Animal-Name-Starting-With-L-For-Kids.jpg"
+                                            alt="" class="card-img">
+                                    </div>
+                                </div>
+                                <div class="card-content">
+                                    <h2 class="name">Lion</h2>
+                                    <p class="description">The lorem text the section that contains header with having
+                                        open
+                                        functionality. Lorem dolor sit amet consectetur adipisicing elit.</p>
+                                    <a href="#" class="button">View More</a>
+                                </div>
+                            </div>
+                            <div class="card swiper-slide">
+                                <div class="image-content">
+                                    <span class="overlay"></span>
+                                    <div class="card-image">
+                                        <img src="https://cdn.firstcry.com/education/2022/11/26141737/Animal-Name-Starting-With-L-For-Kids.jpg"
+                                            alt="" class="card-img">
+                                    </div>
+                                </div>
+                                <div class="card-content">
+                                    <h2 class="name">Lion</h2>
+                                    <p class="description">The lorem text the section that contains header with having
+                                        open
+                                        functionality. Lorem dolor sit amet consectetur adipisicing elit.</p>
+                                    <a href="#" class="button">View More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-button-next swiper-navBtn"></div>
+                    <div class="swiper-button-prev swiper-navBtn"></div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </section>
         </div>
     </div>
     <!-- About End -->
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+
+    <!-- Swiper's JavaScript -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+        var swiper = new Swiper(".slide-content", {
+            slidesPerView: 3,
+            spaceBetween: 25,
+            loop: true,
+            centerSlide: 'true',
+            fade: 'true',
+            grabCursor: 'true',
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+                dynamicBullets: true,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            breakpoints: {
+                0: {
+                    slidesPerView: 1,
+                },
+                520: {
+                    slidesPerView: 2,
+                },
+                950: {
+                    slidesPerView: 3,
+                },
+            },
+        });
+    </script>
 @endsection
