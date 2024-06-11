@@ -459,16 +459,12 @@
                                 <h1 class="a-h1">
                                     {{ $data->animal_name }}
                                 </h1>
-                                <p class="s-char-heading__name">
-                                    Redbird, Common cardinal, cardinal
-                                </p>
                                 <div class="animal-language-switcher">
                                     <div class="animal-header-language-switcher" id="animal-language-switcher">
                                         <div class="animal-header-language-switcher-content">
                                             <div class="lang-icon">
                                                 <img src="/img/lang-switcher-blue.svg" alt="">
                                             </div>
-                                            13 languages
                                             <div class="lang-caret">
                                                 <img src="/img/lang-switcher-caret-blue.svg" alt="">
                                             </div>
@@ -531,81 +527,6 @@
                                 </div>
                             </div>
                             <div class="s-char-kinds">
-                                <div class="s-char-kinds__item">
-                                    <div class="row align-items-center">
-                                        <div class="col-4">
-                                            <div class="s-char-kinds__attr">
-                                                Kingdom
-                                            </div>
-                                        </div>
-                                        <div class="col-8">
-                                            <a href="https://animalia.bio/animalia" class="s-char-kinds__name">Animalia</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="s-char-kinds__item">
-                                    <div class="row align-items-center">
-                                        <div class="col-4">
-                                            <div class="s-char-kinds__attr">
-                                                Phylum
-                                            </div>
-                                        </div>
-                                        <div class="col-8">
-                                            <a href="https://animalia.bio/chordata" class="s-char-kinds__name">Chordata</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="s-char-kinds__item">
-                                    <div class="row align-items-center">
-                                        <div class="col-4">
-                                            <div class="s-char-kinds__attr">
-                                                Class
-                                            </div>
-                                        </div>
-                                        <div class="col-8">
-                                            <a href="https://animalia.bio/aves" class="s-char-kinds__name">Aves</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="s-char-kinds__item">
-                                    <div class="row align-items-center">
-                                        <div class="col-4">
-                                            <div class="s-char-kinds__attr">
-                                                Order
-                                            </div>
-                                        </div>
-                                        <div class="col-8">
-                                            <a href="https://animalia.bio/passeriformes"
-                                                class="s-char-kinds__name">Passeriformes</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="s-char-kinds__item">
-                                    <div class="row align-items-center">
-                                        <div class="col-4">
-                                            <div class="s-char-kinds__attr">
-                                                Family
-                                            </div>
-                                        </div>
-                                        <div class="col-8">
-                                            <a href="https://animalia.bio/cardinalidae"
-                                                class="s-char-kinds__name">Cardinalidae</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="s-char-kinds__item">
-                                    <div class="row align-items-center">
-                                        <div class="col-4">
-                                            <div class="s-char-kinds__attr">
-                                                Genus
-                                            </div>
-                                        </div>
-                                        <div class="col-8">
-                                            <a href="https://animalia.bio/cardinalis"
-                                                class="s-char-kinds__name">Cardinalis</a>
-                                        </div>
-                                    </div>
-                                </div>
                                 <div class="s-char-kinds__item">
                                     <div class="row align-items-center">
                                         <div class="col-4">
@@ -1131,30 +1052,6 @@
                                             <div class="col-sm-3">
                                                 <div class="s-distr-geography__slug">
 
-                                                    Subcontinents
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-9">
-                                                <a href="https://animalia.bio/south-asia-subcontinent"
-                                                    class="s-distr-geography__link ">South Asia, </a>
-                                                <a href="https://animalia.bio/north-africa-subcontinent"
-                                                    class="s-distr-geography__link ">North Africa, </a>
-                                                <a href="https://animalia.bio/western-asia-subcontinent"
-                                                    class="s-distr-geography__link ">Western Asia, </a>
-                                                <a href="https://animalia.bio/southeast-asia-subcontinent"
-                                                    class="s-distr-geography__link ">Southeast Asia, </a>
-                                                <a href="https://animalia.bio/east-asia-subcontinent"
-                                                    class="s-distr-geography__link ">East Asia, </a>
-                                                <a href="https://animalia.bio/central-asia-subcontinent"
-                                                    class="s-distr-geography__link ">Central Asia, </a>
-                                                <a href="https://animalia.bio/sub-saharan-africa-subcontinent"
-                                                    class="s-distr-geography__link ">Sub-Saharan Africa </a>
-                                            </div>
-                                        </div>
-                                        <div class="row align-items-center">
-                                            <div class="col-sm-3">
-                                                <div class="s-distr-geography__slug">
-
                                                     Countries
                                                 </div>
                                             </div>
@@ -1337,69 +1234,6 @@
                                                 </span>
                                             </div>
                                         </div>
-                                        <div class="row align-items-center">
-                                            <div class="col-sm-3">
-                                                <div class="s-distr-geography__slug">
-
-                                                    Introduced Countries
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-9">
-                                                <a href="https://animalia.bio/australia-animals"
-                                                    class="s-distr-geography__link ">Australia, </a>
-                                                <a href="https://animalia.bio/new-zealand-animals"
-                                                    class="s-distr-geography__link ">New Zealand </a>
-                                            </div>
-                                        </div>
-                                        <div class="row align-items-center">
-                                            <div class="col-sm-3">
-                                                <div class="s-distr-geography__slug">
-
-                                                    Biogeographical realms
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-9">
-                                                <a href="https://animalia.bio/australasian"
-                                                    class="s-distr-geography__link ">Australasian, </a>
-                                                <a href="https://animalia.bio/nearctic"
-                                                    class="s-distr-geography__link ">Nearctic, </a>
-                                                <a href="https://animalia.bio/neotropical"
-                                                    class="s-distr-geography__link ">Neotropical, </a>
-                                                <a href="https://animalia.bio/palearctic"
-                                                    class="s-distr-geography__link ">Palearctic, </a>
-                                                <a href="https://animalia.bio/indomalayan"
-                                                    class="s-distr-geography__link ">Indomalayan, </a>
-                                                <a href="https://animalia.bio/afrotropical"
-                                                    class="s-distr-geography__link ">Afrotropical </a>
-                                            </div>
-                                        </div>
-                                        <div class="row align-items-center">
-                                            <div class="col-sm-3">
-                                                <div class="s-distr-geography__slug">
-
-                                                    WWF Biomes
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-9">
-                                                <a href="https://animalia.bio/desert-and-xeric-shrublands"
-                                                    class="s-distr-geography__link ">Desert and Xeric Shrublands, </a>
-                                                <a href="https://animalia.bio/mediterranean-forests"
-                                                    class="s-distr-geography__link ">Mediterranean forests, woodlands, and
-                                                    scrub, </a>
-                                                <a href="https://animalia.bio/montane-grasslands-and-shrublands"
-                                                    class="s-distr-geography__link ">Montane grasslands and shrublands,
-                                                </a>
-                                                <a href="https://animalia.bio/taiga"
-                                                    class="s-distr-geography__link ">Taiga, </a>
-                                                <a href="https://animalia.bio/temperate-broadleaf-and-mixed-forest"
-                                                    class="s-distr-geography__link ">Temperate broadleaf and mixed forest,
-                                                </a>
-                                                <a href="https://animalia.bio/temperate-grasslands"
-                                                    class="s-distr-geography__link ">Temperate grasslands, </a>
-                                                <a href="https://animalia.bio/tundra"
-                                                    class="s-distr-geography__link ">Tundra </a>
-                                            </div>
-                                        </div>
                                     </div>
                                     <p>Red foxes are distributed across the Northern Hemisphere but do not live in Iceland,
                                         some parts of Siberia, the Arctic islands, or extreme deserts. They live in many
@@ -1519,29 +1353,6 @@
                                     style="background-color: #FF5722; background-image: url(https://s3.animalia.bio/catalog/covers/small/2x1/37579557402-dbe97ed42e-ojpg.webp);"><span>Tropical</span>
                                 </a>
                             </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="zoom-map zoomIn">
-                    <div class="image" style="display: block;"><a
-                            href="https://s3.animalia.bio/animals/maps/original/KoZMZpn7n28GdMJxcyO7.webp"><img
-                                src="https://s3.animalia.bio/animals/maps/original/KoZMZpn7n28GdMJxcyO7.webp"
-                                alt="Red Fox habitat map"></a></div>
-                    <div class="btn-close-zoom-map"><i class="fa fa-compress" aria-hidden="true"></i></div>
-                    <div class="caption">
-                        <div class="title">
-
-                            <span class="name">Red Fox</span>
-                        </div>
-                        <div class="meta">
-                            <div class="image-action-container">
-
-
-                            </div>
-                            <div class="author"><a class="author-link" target="_blank" rel="nofollow"
-                                    href="">Zoologist <i class="fa fa-external-link" aria-hidden="true"></i></a>
-                            </div>
-                            <div class="license">Attribution-ShareAlike License</div>
                         </div>
                     </div>
                 </div>
