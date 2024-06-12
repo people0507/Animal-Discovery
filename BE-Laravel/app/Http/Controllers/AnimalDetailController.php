@@ -21,7 +21,13 @@ class AnimalDetailController extends Controller
     {
         $data = AnimalDetail::find($id);
         $data->images;
-        return view('user.animal-detail', compact('data'));
+        $data->areas;
+        $data->nations;
+        $data->trend;
+        $data->status;
+        $habitImage = AnimalImage::where('detail_id',$data->id)->inRandomOrder()->first();
+        $populationImage = AnimalImage::where('detail_id',$data->id)->inRandomOrder()->first();
+        return view('user.animal-detail', compact('data', 'habitImage','populationImage'));
     }
 
     public function getAnimalDetailAreas($id)

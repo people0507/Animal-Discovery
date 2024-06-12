@@ -37,42 +37,47 @@ class DatabaseSeeder extends Seeder
         DB::table('animal_habitat')->insert([
             [
                 'habitat_name' => 'Rừng mưa nhiệt đới',
+                'habitat_image' => 'tropical_forest.jpg',
                 'habitat_description' => 'Rừng mưa nhiệt đới nằm ở các khu vực gần xích đạo, có khí hậu ẩm ướt với lượng mưa lớn (trung bình từ 1750 đến 2000 mm mỗi năm). Nhiệt độ ổn định quanh năm, thường dao động từ 20°C đến 30°C.Rừng mưa nhiệt đới là một trong những hệ sinh thái đa dạng nhất trên thế giới, chứa đựng hàng ngàn loài cây cối và động vật. Cây cối thường xanh quanh năm, với tầng cây cao che phủ tầng thấp hơn.'
             ],
             [
                 'habitat_name' => 'Rừng ôn đới',
+                'habitat_image' => 'temperate_forest.jpg',
                 'habitat_description' => 'Rừng ôn đới có bốn mùa rõ rệt với mùa đông lạnh và mùa hè ấm áp. Lượng mưa trung bình, thường từ 750 đến 1500 mm mỗi năm.Rừng ôn đới bao gồm nhiều loại cây lá rộng rụng lá vào mùa đông và cây lá kim. Đây là nơi cư trú của nhiều loài động thực vật phong phú.'
             ],
             [
                 'habitat_name' => 'Thảo nguyên',
+                'habitat_image' => 'grassland.jpg',
                 'habitat_description' => 'Thảo nguyên là khu vực có khí hậu khô hạn và nóng, với một mùa mưa ngắn. Lượng mưa thay đổi từ 500 đến 1500 mm mỗi năm.Thảo nguyên là môi trường mở, chủ yếu là cỏ và một số cây gỗ rải rác. Đây là nơi sinh sống của nhiều loài động vật lớn.'
             ],
             [
                 'habitat_name' => 'Sa mạc',
+                'habitat_image' => 'desert.jpg',
                 'habitat_description' => 'Sa mạc có khí hậu cực kỳ khô hạn với lượng mưa dưới 250 mm mỗi năm. Nhiệt độ biến đổi lớn giữa ngày và đêm, có thể rất nóng vào ban ngày và lạnh vào ban đêm.Sa mạc thường có thảm thực vật thưa thớt, với các loài cây và động vật thích nghi tốt với điều kiện khô hạn.'
             ],
             [
-                'habitat_name' => 'Đồng cỏ',
-                'habitat_description' => 'Đồng cỏ có lượng mưa trung bình, thường từ 500 đến 900 mm mỗi năm, với mùa khô và mùa mưa phân biệt.Khu vực này chủ yếu được phủ bởi cỏ và thảo mộc, có ít cây lớn. Đồng cỏ là nơi sinh sống của nhiều loài động vật ăn cỏ và động vật săn mồi.'
-            ],
-            [
                 'habitat_name' => 'Rừng taiga ',
+                'habitat_image' => 'taiga_forest.jpg',
                 'habitat_description' => 'Rừng taiga có khí hậu lạnh giá với mùa đông kéo dài và mùa hè ngắn. Lượng mưa thấp, chủ yếu dưới dạng tuyết.Rừng taiga chủ yếu bao gồm các loài cây lá kim như thông, vân sam và tuyết tùng.'
             ],
             [
                 'habitat_name' => 'Vùng Bắc Cực',
+                'habitat_image' => 'north_pole.jpg',
                 'habitat_description' => 'Vùng Bắc Cực có khí hậu cực kỳ lạnh giá với băng tuyết quanh năm. Nhiệt độ thường dưới 0°C, có thời gian ánh sáng ban ngày rất ngắn vào mùa đông và rất dài vào mùa hè.Khu vực này bao gồm các bãi băng, tuyết và thảm thực vật tundra.'
             ],
             [
                 'habitat_name' => 'Vùng biển',
+                'habitat_image' => 'sea.jpg',
                 'habitat_description' => 'Vùng biển bao gồm các biển và đại dương, từ vùng nước nông đến vùng nước sâu. Nhiệt độ và điều kiện môi trường rất đa dạng.Hệ sinh thái biển rất phong phú và đa dạng, từ các rạn san hô đầy màu sắc đến các vực sâu tối tăm.'
             ],
             [
                 'habitat_name' => 'Vùng nước ngọt',
+                'habitat_image' => 'freshwater.jpg',
                 'habitat_description' => 'Khu vực này bao gồm các sông, hồ, suối, và đầm lầy. Nước ngọt có nồng độ muối thấp hơn nhiều so với nước biển. Các hệ sinh thái nước ngọt rất đa dạng, cung cấp môi trường sống cho nhiều loài động thực vật.'
             ],
             [
-                'habitat_name' => 'Đầm lầy và đất ngập nước ',
+                'habitat_name' => 'Đầm lầy',
+                'habitat_image' => 'swamp.jpg',
                 'habitat_description' => 'Đây là khu vực đất thấp bị ngập nước thường xuyên hoặc theo mùa, bao gồm đầm lầy, bãi lầy, và các vùng đất ngập nước khác.Đầm lầy và đất ngập nước là những hệ sinh thái rất năng động và giàu dinh dưỡng, hỗ trợ nhiều loài động thực vật.'
             ],
         ]);
@@ -235,24 +240,29 @@ class DatabaseSeeder extends Seeder
         DB::table('animal_ocean')->insert([
             [
                 'ocean_name' => 'Thái Bình Dương',
+                'ocean_image' => 'pacific.jpg',
                 'ocean_description' => 'Thái Bình Dương là vùng lớn nhất và sâu nhất trong năm vùng đại dương của Trái đất. Nó kéo dài từ Bắc Băng Dương ở phía bắc đến Nam Đại Dương ở phía nam và được bao bọc bởi các lục địa châu Á và châu Úc ở phía tây và châu Mỹ ở phía đông.',
             ],
             [
                 'ocean_name' => 'Ấn Độ Dương',
+                'ocean_image' => 'indian_ocean.jpg',
                 'ocean_description' => 'Ấn Độ Dương là khu vực lớn thứ ba trong số năm khu vực đại dương trên thế giới, bao phủ 70.560.000 km2 hay 19,8% lượng nước trên bề mặt Trái đất. Nó giáp với châu Á ở phía bắc, châu Phi ở phía tây và Australia ở phía đông. Về phía nam, nó được bao bọc bởi Nam Đại Dương hoặc Nam Cực, tùy thuộc vào định nghĩa được sử dụng. Dọc theo lõi của nó, Ấn Độ Dương có một số biển khu vực hoặc cận biên lớn như Biển Ả Rập, Biển Laccadive, Biển Somali, Vịnh Bengal và Biển Andaman.
 
                 Trong số 36 điểm nóng đa dạng sinh học của Trái đất, 9 điểm nằm ở rìa Ấn Độ Dương.',
             ],
             [
                 'ocean_name' => 'Đại Tây Dương',
+                'ocean_image' => 'atlantic.jpg',
                 'ocean_description' => 'Đại Tây Dương là đại dương lớn thứ hai trong số năm đại dương trên thế giới, với diện tích khoảng 106.460.000 km 2 , Nó chiếm khoảng 20% ​​bề mặt Trái đất và khoảng 29% diện tích mặt nước.',
             ],
             [
                 'ocean_name' => 'Bắc Băng Dương',
+                'ocean_image' => 'arctic_ocean.jpg',
                 'ocean_description' => 'Bắc Băng Dương là biển nhỏ nhất và nông nhất trong 5 đại dương lớn trên thế giới. Nó trải rộng trên diện tích khoảng 14.060.000 km2 và được coi là nơi lạnh nhất trong tất cả các đại dương. Nó cũng được coi là phần cực bắc của Đại dương Thế giới bao trùm. Do tính chất mùa vụ rõ rệt từ 2–6 tháng có nắng nửa đêm và đêm vùng cực ở Bắc Băng Dương, nên việc sản xuất chính các sinh vật quang hợp như tảo băng và thực vật phù du bị giới hạn trong các tháng mùa xuân và mùa hè, những người tiêu dùng quan trọng của các sinh vật sản xuất sơ cấp ở miền Trung Bắc Băng Dương và các vùng biển lân cận bao gồm động vật phù du, đặc biệt là động vật giáp xác và động vật chân chèo, cũng như quần thể động vật liên quan đến băng. Những sinh vật tiêu thụ sơ cấp này tạo thành mối liên kết quan trọng giữa sinh vật sản xuất sơ cấp và bậc dinh dưỡng cao hơn. Thành phần của các bậc dinh dưỡng cao hơn ở Bắc Băng Dương thay đổi tùy theo khu vực và lớp băng biển bao phủ. Người tiêu dùng thứ cấp ở Biển Barents, một vùng biển Bắc Cực chịu ảnh hưởng của Đại Tây Dương, chủ yếu là các loài cận Bắc Cực bao gồm cá trích, cá tuyết non và cá capelin. Ở những vùng được bao phủ bởi băng ở trung tâm Bắc Băng Dương, cá tuyết vùng cực là loài săn mồi chủ yếu của người tiêu dùng chính. Những kẻ săn mồi đỉnh cao ở Bắc Băng Dương—các loài động vật có vú ở biển như hải cẩu, cá voi và gấu Bắc Cực—săn cá. Các loài sinh vật biển có nguy cơ tuyệt chủng ở Bắc Băng Dương bao gồm hải mã và cá voi. Khu vực này có hệ sinh thái mong manh và đặc biệt dễ bị ảnh hưởng bởi biến đổi khí hậu vì nó ấm lên nhanh hơn phần còn lại của thế giới. Sứa bờm sư tử có rất nhiều ở vùng biển Bắc Cực và sứa sọc là loài sứa duy nhất sống ở đại dương.',
             ],
             [
                 'ocean_name' => 'Nam Đại Dương',
+                'ocean_image' => 'southern_ocean.jpg',
                 'ocean_description' => 'Nam Đại Dương bao gồm vùng nước cực nam của Đại dương Thế giới, thường được coi là ở phía nam vĩ độ 60° Nam và bao quanh Nam Cực. Trong 30 năm qua, Nam Đại Dương phải chịu sự biến đổi khí hậu nhanh chóng, dẫn đến những thay đổi trong hệ sinh thái biển. Nhiều loại động vật biển tồn tại và phụ thuộc trực tiếp hoặc gián tiếp vào thực vật phù du ở Nam Đại Dương. Sinh vật biển ở Nam Cực bao gồm chim cánh cụt, cá voi xanh, cá kình, mực khổng lồ và hải cẩu lông thú. Chim cánh cụt hoàng đế là loài chim cánh cụt duy nhất sinh sản vào mùa đông ở Nam Cực, trong khi chim cánh cụt Adélie sinh sản ở xa hơn về phía nam so với bất kỳ loài chim cánh cụt nào khác. Chim cánh cụt rockhopper có bộ lông đặc biệt xung quanh mắt, tạo nên vẻ ngoài của lông mi phức tạp. Chim cánh cụt vua, chim cánh cụt chinstrap và chim cánh cụt gentoo cũng sinh sản ở Nam Cực. Hải cẩu lông Nam Cực bị săn bắt rất nhiều vào thế kỷ 18 và 19 để lấy da bởi những người săn hải cẩu từ Hoa Kỳ và Vương quốc Anh. Hải cẩu Weddell, một hải cẩu thực sự, được đặt theo tên của Ngài James Weddell, chỉ huy đoàn thám hiểm hải cẩu của Anh ở Biển Weddell. Nhuyễn thể ở Nam Cực, tụ tập thành đàn lớn, là loài chủ chốt của hệ sinh thái Nam Đại Dương và là sinh vật thực phẩm quan trọng đối với cá voi, hải cẩu, hải cẩu báo, hải cẩu lông, mực, cá băng, chim cánh cụt, chim hải âu và nhiều loài chim khác. Các cộng đồng sinh vật đáy dưới đáy biển rất đa dạng và dày đặc, với số lượng lên tới 155.000 loài động vật được tìm thấy trên 1 mét vuông. Vì môi trường đáy biển xung quanh Nam Cực rất giống nhau nên có thể tìm thấy hàng trăm loài trên khắp đất liền, đó là một phân phối rộng rãi duy nhất cho một cộng đồng lớn như vậy. Chủ nghĩa khổng lồ dưới biển sâu là phổ biến ở những loài động vật này. Hơn 235 sinh vật biển sống ở cả hai vùng cực, vượt qua khoảng cách 12.000 km. Các loài động vật lớn như một số loài giáp xác và chim thực hiện chuyến đi khứ hồi hàng năm. Điều đáng ngạc nhiên hơn là những dạng sống nhỏ như giun bùn, hải sâm và ốc bơi tự do được tìm thấy ở cả hai đại dương. Các yếu tố khác nhau có thể hỗ trợ cho sự phân bố của chúng - nhiệt độ khá đồng đều của đại dương sâu ở hai cực và xích đạo, chênh lệch không quá 5°C, và các hệ thống dòng chảy chính hoặc băng tải biển vận chuyển trứng và giai đoạn ấu trùng. Tuy nhiên, trong số các loài động vật biển nhỏ hơn thường được cho là giống nhau ở Nam Cực và Bắc Cực, các nghiên cứu chi tiết hơn về từng quần thể thường - nhưng không phải lúc nào cũng - tiết lộ những khác biệt, cho thấy chúng là những loài bí ẩn có quan hệ gần gũi hơn là một loài lưỡng cực duy nhất.',
             ],
         ]);
@@ -522,14 +532,14 @@ class DatabaseSeeder extends Seeder
                     'habit_lifestyle_description' => 'Sư tử có thể hoạt động bất cứ lúc nào trong ngày nhưng hoạt động của chúng thường đạt đỉnh điểm sau hoàng hôn sau khoảng thời gian giao lưu và chải chuốt. Hầu hết hoạt động săn bắn thường diễn ra vào lúc hoàng hôn. Ngoài ra, sư tử châu Phi dành phần lớn thời gian để nghỉ ngơi. Chúng nghỉ ngơi để tiết kiệm năng lượng khi không có con mồi hoặc để trốn cái nóng giữa trưa. Sư tử châu Phi là loài động vật có tính xã hội cao, tập hợp thành nhóm hoặc đàn, bao gồm tối đa 3 con sư tử đực và nhiều con sư tử cái cùng con non. Niềm tự hào được bảo vệ bởi những con đực, những người tuần tra và đánh dấu lãnh thổ. Tuy nhiên, có sự cạnh tranh gay gắt giữa các con đực để giành lãnh thổ và vị trí trong đàn. Trong một trường hợp, nếu một con đực khác vượt qua con đực đầu đàn, nó thường giết chết tất cả đàn con do con đực trước đó lai tạo. Trong khi đó, con đực không có xu hướng săn mồi do tốc độ chậm và ngoại hình bắt mắt. Thay vào đó, việc săn bắn được giao cho những con cái của niềm tự hào, chúng đi săn theo nhóm, hợp tác với nhau trong các chuyến đi săn của chúng. Con cái là những thợ săn xuất sắc: chúng nhanh nhẹn và linh hoạt hơn con đực, có thể săn lùng những con vật to lớn và nhanh hơn chúng rất nhiều. Sư tử có một kho giọng hát lớn. Hầu hết chúng là các biến thể của tiếng gầm gừ, gầm gừ, kêu meo meo và gầm rú. Các âm thanh khác được tạo ra bao gồm tiếng gừ gừ, thở hổn hển, chảy máu và vo ve. Tiếng gầm được sử dụng để quảng cáo sự hiện diện của họ. Sư tử thường gầm lên vào ban đêm, âm thanh có thể nghe thấy từ khoảng cách 8 km (5 mi).',
                     'diet_nutrition_description' => 'Sư tử là loài ăn thịt nói chung. Chúng chủ yếu săn ngựa vằn, linh dương, linh dương, hươu, trâu, hươu cao cổ non, lợn lòi, linh dương đầu bò, voi non và ít thường xuyên hơn - thỏ rừng và chim. Sư tử cũng có thể ăn xác thối khi có cơ hội; họ nhặt rác những động vật chết vì nguyên nhân tự nhiên như bệnh tật hoặc những con bị giết bởi những kẻ săn mồi khác như linh cẩu.',
                     'mating_habit_description' => 'Sư tử có hệ thống giao phối đa thê, nghĩa là sư tử đực có thể giao phối với một số sư tử cái. Chúng sinh sản quanh năm với thời kỳ cao điểm nhất là vào mùa mưa. Thời gian mang thai kéo dài từ 110 đến 119 ngày, sinh trung bình 3-6 con. Con cái sinh con trong một vườn ươm ẩn, đơn độc. Khi được 4 - 6 tuần tuổi, đàn con tham gia đàn con. Thông thường, tất cả các con cái của niềm tự hào đều nuôi dưỡng và chăm sóc con non; Khi một con cái mẹ rời đàn để đi săn, một con cái đang cho con bú khác sẽ nuôi con của mình. Việc cai sữa xảy ra khi được 6-7 tháng tuổi, mặc dù đàn con thường ở gần mẹ trong hai năm đầu đời. Con đực trưởng thành về mặt sinh sản khi được 5 tuổi trong khi con cái trưởng thành sớm hơn, ở độ tuổi 2,5-3.',
-                    'population_description' => 'Mối đe dọa dân số
-Sư tử từ lâu đã bị săn lùng vì sợ hãi và vì chiến lợi phẩm. Tuy nhiên, săn bắn vẫn là một trong những yếu tố chính, đe dọa quần thể loài động vật này trên khắp châu Phi. Hiện tại, chúng bị mất phạm vi phân bố do sự phát triển của con người và sự thay đổi môi trường sống của chúng thành đất nông nghiệp. Trong khi đó, những người sống gần các khu định cư của con người phải đối mặt với các bệnh lây lan do chó nhà lây lan.
-
-Số dân số
-Theo Sách đỏ IUCN, tổng số lượng sư tử là 23.000-39.000 cá thể trưởng thành. Hiện nay, loài này được xếp vào loại sắp nguy cấp (VU) trong Sách đỏ IUCN và số lượng của loài này ngày nay đang giảm dần.
-
-Hốc sinh thái
-Sư tử là một mắt xích không thể thay thế trong hệ sinh thái trong phạm vi của chúng. Ăn các động vật ăn cỏ như ngựa vằn hoặc trâu, chúng kiểm soát số lượng quần thể của những loài này. Nếu không, những động vật ăn cỏ này có thể cạnh tranh với các loài động vật khác trong phạm vi của chúng, dẫn đến sự tuyệt chủng hoàn toàn của những loài này và do đó phá hủy sự đa dạng sinh học của hệ sinh thái.',
+                    'mating_behavior' => 'Đa thê',
+                    'reproduction_season' => 'Quanh năm, cao điểm vào mùa mưa',
+                    'pregnancy_duration' => '110-119 ngày',
+                    'baby_carrying' => '3-6 con',
+                    'independent_age' => '2 năm',
+                    'population_threat' => 'Sư tử từ lâu đã bị săn lùng vì sợ hãi và làm chiến lợi phẩm. Tuy nhiên, săn bắn vẫn là một trong những yếu tố chính, đe dọa quần thể động vật này trên khắp châu Phi. Hiện tại, chúng bị mất phạm vi do các khu định cư của con người ngày càng tăng và thay đổi môi trường sống của chúng thành đất nông nghiệp. Trong khi đó, những người, sống gần các khu định cư của con người, tiếp xúc với các bệnh, lây lan bởi chó nhà.',
+                    'population_number' => 'Theo Sách đỏ IUCN, tổng quy mô quần thể của sư tử là 23.000-39.000 cá thể trưởng thành. Hiện tại, loài này được phân loại là Dễ bị tổn thương (VU) trong Sách đỏ IUCN và số lượng của nó ngày nay đang giảm.',
+                    'ecological_niche' => 'Sư tử là một mắt xích không thể thay thế trong hệ sinh thái phạm vi của chúng. Ăn các động vật ăn cỏ như ngựa vằn hoặc trâu, chúng kiểm soát số lượng quần thể của các loài này. Nếu không, những động vật ăn cỏ này có thể cạnh tranh với các động vật khác trong phạm vi của chúng, dẫn đến sự tuyệt chủng hoàn toàn của các loài này và do đó phá hủy đa dạng sinh học của hệ sinh thái.',
                     'fun_fact' => 'Khi nghỉ ngơi, sư tử thể hiện hành vi thân thiện và hòa đồng cao, dành thời gian cho nhau và củng cố mối liên kết xã hội giữa các thành viên trong đàn: chúng chơi đùa cùng nhau, cọ xát vào đầu nhau cũng như ngủ theo nhóm.
                 Không có lông, sư tử và hổ trông giống nhau. Chúng cực kỳ khó phân biệt vì cấu trúc cơ thể gần như giống hệt nhau. Ngoài ra, sư tử châu Phi còn là họ hàng của báo hoa mai và báo đốm.
                 Sư tử đực là loài mèo duy nhất có bờm đặc trưng, ​​mang lại cho con vật vẻ ngoài oai vệ, xứng đáng được mệnh danh là “Vua của các loài thú”.
@@ -538,9 +548,11 @@ Sư tử là một mắt xích không thể thay thế trong hệ sinh thái tro
                 Trong niềm tự hào, con cái chịu trách nhiệm săn bắn, trong khi con đực có nhiệm vụ bảo vệ lãnh thổ. Tuy nhiên, bất chấp sự phân bổ trách nhiệm này, nam giới luôn ăn trước.
                 Bờm của sư tử đực dần dần sẫm màu trong suốt cuộc đời của con vật, là dấu hiệu tốt cho biết tuổi của sư tử.
                 Khi bước đi, gót chân của sư tử không chạm đất do cấu tạo của chân.',
+                    'top_speed' => '56',
                     'animal_length' => '140-250',
                     'animal_height' => '140-250',
                     'animal_weight' => '120-249',
+                    'animal_swing' => '',
                     'population_size' => '23-39',
                     'avg_lifespan' => '12-25',
                     'animal_sound' => '',
@@ -561,23 +573,25 @@ Sư tử là một mắt xích không thể thay thế trong hệ sinh thái tro
                     'habit_lifestyle_description' => 'Không giống như các loài săn mồi lớn khác ở châu Phi như sư tử hay linh cẩu, báo săn hoạt động tích cực nhất vào ban ngày; bằng cách này, họ tránh được sự cạnh tranh thức ăn với những động vật này. Báo gêpa sống thành ba nhóm xã hội chính: con cái và đàn con của chúng, "liên minh" đực và những con đực đơn độc. Con cái sống cuộc sống du mục tìm kiếm con mồi trong phạm vi sống rộng lớn, trong khi con đực ít vận động hơn và thay vào đó thiết lập các vùng lãnh thổ nhỏ hơn nhiều ở những khu vực có nhiều con mồi và khả năng tiếp cận với con cái. Phạm vi sinh sống của báo gêpa có thể bao phủ một lãnh thổ rộng lớn, đôi khi chồng chéo với phạm vi lãnh thổ của một con báo khác hoặc một con sư tử. Săn bắn là hoạt động chính của báo săn suốt cả ngày, đỉnh điểm là vào lúc bình minh và hoàng hôn. Các nhóm nghỉ ngơi trên bãi cỏ sau khi hoàng hôn. Báo gêpa thường kiểm tra vùng lân cận của chúng tại các điểm quan sát như độ cao để kiểm tra con mồi hoặc động vật ăn thịt lớn hơn; ngay cả khi đang nghỉ ngơi, họ cũng thay nhau canh gác. Khi săn báo gêpa sử dụng thị giác thay vì khứu giác; chúng canh chừng con mồi từ những nơi nghỉ ngơi hoặc những cành cây thấp. Chúng sẽ rình rập con mồi, cố gắng không bị phát hiện trong chỗ ẩn nấp và tiếp cận càng gần càng tốt, thường trong phạm vi 60 đến 70 m (200 đến 230 ft) tính từ con mồi. Chúng cũng có thể nằm ẩn nấp trong chỗ nấp và chờ đợi con mồi đến gần. Ở những khu vực có độ che phủ tối thiểu, báo gêpa sẽ tiếp cận con mồi trong vòng 200 m (660 ft) và bắt đầu cuộc rượt đuổi. Những con mèo đốm này rất kêu và có nhiều tiếng kêu và âm thanh như tiếng hót líu lo (hoặc "tiếng sủa"), tiếng churrs (hoặc tiếng churtling), tiếng gừ gừ, kêu be be, ho, gầm gừ, rít, meo meo và rên rỉ (hoặc ngáp). ). Các cách phát âm khác bao gồm tiếng ồn ríu rít, âm thanh "nyam nyam" "ihn ihn" để tập hợp đàn con và "prr prr" để hướng dẫn chúng trong một cuộc hành trình. Một tiếng kêu báo động nhỏ được sử dụng để cảnh báo đàn con đứng yên.',
                     'diet_nutrition_description' => 'Báo là động vật ăn thịt. Chúng ăn chủ yếu là linh dương trong khi các loài động vật móng guốc cỡ nhỏ và vừa như linh dương Impala là nguồn thức ăn bổ sung tốt cho chế độ ăn thông thường của chúng. Khi thiếu thức ăn phù hợp, chúng cũng có thể tiêu thụ các loài nhỏ như thỏ rừng hoặc chim.',
                     'mating_habit_description' => 'Báo gêpa có hệ thống giao phối đa thê, trong đó một con đực giao phối với nhiều con cái. Ngoài ra, báo gêpa đực chỉ kết hợp với báo cái để giao phối và không cung cấp sự chăm sóc của cha mẹ. Những con vật này sinh sản quanh năm. Thời gian mang thai kéo dài khoảng ba tháng, sau đó 2-5 con được sinh ra. Trẻ sơ sinh bị mù, hoàn toàn dễ bị tổn thương. Trong vài tháng tiếp theo, đàn con được bú sữa mẹ cho đến khi chúng bắt đầu ăn thịt. Chẳng mấy chốc, những đứa trẻ bắt đầu đi cùng mẹ trong cuộc đi săn để xem và học các kỹ năng săn bắn. Ngoài ra, chúng còn học các kỹ thuật săn mồi khi chơi với anh chị em của mình. Đàn con sống với mẹ cho đến khi chúng có thể tự đi săn mồi. Sau đó, từ 18 tháng đến 2 tuổi, chúng rời đi để tìm lãnh thổ riêng. Báo gêpa cái đạt đến tuổi trưởng thành sinh sản khi được 21-22 tháng tuổi.',
-                    'population_description' => 'Mối đe dọa dân số
-Các mối đe dọa lớn đối với quần thể báo gêpa bao gồm bệnh tật, mất môi trường sống, săn bắn và bị đàn áp trực tiếp. Những con vật này bị nông dân bức hại vì là kẻ săn mồi và săn bắt gia súc. Sự phát triển du lịch tại các khu vực sinh sống của chúng có thể trở thành một mối đe dọa nghiêm trọng khác: các phương tiện du lịch có thể xua đuổi báo săn khỏi con mồi của chúng và tách đàn con khỏi mẹ của chúng. Báo săn được biết đến là loài có biến thể di truyền cực thấp, điều này khiến cho sự sinh tồn của loài này càng khó khăn hơn.
-
-Số dân số
-Quần thể báo săn trên toàn cầu hiện đang giảm và trong Danh sách đỏ của IUCN, loài này được phân loại là dễ bị tổn thương (VU). Quần thể báo gêpa ở châu Phi có khoảng 6.674 cá thể trưởng thành. Ngoài ra, khoảng 60-100 con báo sống trong các quần thể nhỏ biệt lập ở Iran.
-
-Hốc sinh thái
-Do là loài săn mồi, báo săn kiểm soát quần thể loài con mồi mà chúng ăn. Nếu không, quần thể của những loài động vật này có thể trở nên lớn đến mức chúng sẽ phá vỡ toàn bộ mạng lưới thức ăn, ăn hết thực vật trong khu vực và hủy hoại đất. Mặt khác, báo săn săn những con vật yếu hoặc ốm yếu, do đó không để gen yếu hơn truyền sang thế hệ sau và duy trì sức khỏe cho loài săn mồi.',
+                    'mating_behavior' => 'Đa thê',
+                    'reproduction_season' => 'Quanh năm',
+                    'pregnancy_duration' => '90 ngày',
+                    'baby_carrying' => '2-5 con',
+                    'independent_age' => '1,5-2 năm',
+                    'population_threat' => 'Các mối đe dọa chính đối với quần thể báo bao gồm bệnh tật, mất môi trường sống, săn bắn và đàn áp trực tiếp. Những con vật này bị nông dân bức hại do là động vật ăn thịt và săn bắn gia súc. Sự phát triển của du lịch trong các khu vực môi trường sống của chúng có thể trở thành một mối đe dọa nghiêm trọng khác: các phương tiện du lịch có thể xua đuổi những con báo ra khỏi con mồi và tách đàn con ra khỏi mẹ của chúng. Những con báo được biết là có biến thể di truyền cực kỳ thấp, khiến sự sống sót của loài này thậm chí còn khó khăn hơn.',
+                    'population_number' => 'Dân số báo đốm toàn cầu hiện đang giảm và trong Sách đỏ IUCN, loài này được phân loại là Dễ bị tổn thương (VU). Dân số báo đốm ở châu Phi là khoảng 6.674 cá thể trưởng thành. Ngoài ra, khoảng 60 - 100 con báo sống trong các quần thể nhỏ bị cô lập ở Iran.',
+                    'ecological_niche' => 'Do là động vật ăn thịt, báo đốm kiểm soát quần thể các loài con mồi mà chúng ăn. Nếu không, quần thể của những con vật này có thể trở nên quá lớn, đến nỗi chúng sẽ phá vỡ toàn bộ mạng lưới thức ăn, ăn tất cả các thảm thực vật trong khu vực và hủy hoại đất. Mặt khác, báo đốm săn mồi trên động vật yếu hoặc ốm, do đó không cho phép các gen yếu hơn truyền sang các thế hệ tiếp theo và duy trì sức khỏe của các loài con mồi.',
                     'fun_fact' => 'Những con mèo này không thể gầm gừ, nhưng chúng có thể kêu gừ gừ như mèo nhà khi hít vào và thở ra.
 Cheetah là một từ tiếng Ấn Độ, có nghĩa là "đốm".
 Trong số các loài động vật trên cạn, báo săn là loài nhanh nhất. Con vật chỉ mất 3 giây để tăng tốc từ 0 lên 100 km/h!
 Đuôi báo săn có tác dụng giống như bánh lái của thuyền, giúp con vật đánh lái khi chạy.
 Báo gêpa sử dụng nét mặt để thể hiện tâm trạng của mình.
 Đây là loài mèo lớn duy nhất có khả năng lộn nhào trên không khi chạy nước rút.',
+                    'top_speed' => '56',
                     'animal_length' => '112-150',
                     'animal_height' => '70-90',
                     'animal_weight' => '21-72',
+                    'animal_swing' => '',
                     'population_size' => '6.674',
                     'avg_lifespan' => '10-20',
                     'animal_sound' => 'sssss',
@@ -598,19 +612,24 @@ Báo gêpa sử dụng nét mặt để thể hiện tâm trạng của mình.
                     'habit_lifestyle_description' => 'Cá sấu sông Nile là loài động vật sống đơn độc. Tuy nhiên, đôi khi người ta có thể thấy chúng kiếm ăn theo nhóm nhỏ, bao gồm nhiều cá thể. Họ thường sử dụng một kỹ thuật đặc biệt, bao vây một vùng nước để tập trung cá vào đó. Sau đó, hệ thống phân cấp thống trị quyết định các thành viên trong nhóm sẽ kiếm ăn theo thứ tự nào. Những loài bò sát này chủ yếu sống về đêm. Ban ngày, cá sấu thường tắm nắng hoặc ngâm mình trong nước nếu cần. Cá sấu đực có tính lãnh thổ cao; họ tuần tra và bảo vệ lãnh thổ của mình, thường bao gồm một phần bờ biển, kéo dài khoảng 50 mét xuống nước. Cá sấu sông Nile thường lặn trong vài phút trước khi nổi lên mặt nước; tuy nhiên, khi bị đe dọa, chúng có thể chìm dưới nước tới 30 phút. Hơn nữa, khi hoàn toàn không hoạt động, loài bò sát này có khả năng nín thở tới 2 giờ. Chúng là loài chạy cực kỳ nhanh và nhìn chung, những con cá sấu này có phản xạ rất nhanh, nhưng thật không may, chúng nhanh chóng mệt mỏi.',
                     'diet_nutrition_description' => 'Cá sấu sông Nile là loài ăn thịt và ăn xác thối. Chúng ăn nhiều loại động vật, bao gồm côn trùng, động vật lưỡng cư, cá và động vật có vú trên cạn như hươu cao cổ hoặc trâu Cape. Cá sấu mới nở thường bắt đầu bằng côn trùng, cuối cùng chuyển sang con mồi lớn hơn. Cá sấu sông Nile cũng nhặt rác hoặc ăn trộm thịt của những kẻ săn mồi khác, chẳng hạn như sư tử và báo, và các nhóm cá sấu sông Nile có thể di chuyển hàng trăm mét từ đường thủy để ăn xác. Chúng cũng sẽ dễ dàng ăn những con hà mã đã chết.',
                     'mating_habit_description' => 'Cá sấu sông Nile có hệ thống giao phối đa thê, trong đó một con đực giao phối với một số con cái. Cá sấu đực thường thu hút những con cái dễ tiếp thu bằng cách tạo ra nhiều loại tiếng động khác nhau bằng cách gầm lên, đập mõm xuống nước hoặc thổi nước ra khỏi mũi. Trong khi đó, những con đực lớn hơn thường thành công hơn trong việc tìm kiếm bạn tình. Mùa làm tổ của loài này xảy ra vào tháng 11-12. Trong thời kỳ này, cá sấu cái đào tổ, đó là một cái hố ở bờ sông hoặc lòng sông đầy cát. Sau đó, đẻ 25-80 trứng và ấp trong 80 - 90 ngày. Khi thời gian nở đến gần, con cái mở tổ, mang con xuống nước. Sau một thời gian, những con non tham gia vào một trại trẻ con do con cái chăm sóc. Những con non có thể ở trong chuồng này trong 2 năm đầu đời. Cá sấu sông Nile trưởng thành về mặt sinh sản khi được 12-16 tuổi.',
-                    'population_description' => 'Mối đe dọa dân số
-Các mối đe dọa chính đối với loài này liên quan đến con người. Vì vậy, loài bò sát này thu hút các thợ săn vì làn da của nó, được sử dụng để sản xuất da chất lượng cao. Mặt khác, là loài săn mồi to lớn và nguy hiểm, cá sấu sông Nile phải đối mặt với sự hung hãn từ con người, những kẻ phá hủy tổ của chúng và thường xuyên giết chết cá sấu. Cố gắng gỡ cá đánh bắt ra khỏi lưới đánh cá, những con vật này thỉnh thoảng làm hỏng lưới, dẫn đến xung đột giữa cá sấu và ngư dân. Tại Công viên đất ngập nước Greater St Lucia ở Nam Phi, các loài động vật đang bị đe dọa bởi sự xâm lấn của các loài thực vật kỳ lạ che bóng và thay thế nơi làm tổ của chúng, làm mát trứng của chúng, điều này có khả năng mang lại một quần thể toàn con cái.
-
-Số dân số
-Được phân loại là loài ít quan tâm nhất (LC) trong Danh sách đỏ IUCN, loài bò sát này hiện không có nguy cơ tuyệt chủng. Tổng số lượng ước tính của cá sấu sông Nile dao động từ 250.000 đến 500.000 cá thể.',
+                    'mating_behavior' => 'Đa thê',
+                    'reproduction_season' => 'Tháng 11 - Tháng 12',
+                    'pregnancy_duration' => '80 - 90 ngày',
+                    'baby_carrying' => '80 trứng',
+                    'independent_age' => '2 năm',
+                    'population_threat' => 'Các mối đe dọa chính đối với loài này có liên quan đến con người. Do đó, loài bò sát này thu hút thợ săn vì làn da của nó, được sử dụng trong sản xuất da chất lượng cao. Mặt khác, là loài săn mồi to lớn và nguy hiểm, cá sấu sông Nile phải đối mặt với sự hung dữ từ con người, chúng phá hủy tổ của chúng và thường xuyên giết chết cá sấu. Cố gắng loại bỏ cá đánh bắt khỏi lưới đánh cá, những con vật này đôi khi làm hỏng lưới, dẫn đến xung đột giữa cá sấu và ngư dân. Trong Công viên đất ngập nước Greater St Lucia ở Nam Phi, các loài động vật đang bị đe dọa bởi sự xâm lược của các loài thực vật kỳ lạ che bóng và thay thế vị trí làm tổ của chúng, làm mát trứng của chúng, có khả năng mang lại một quần thể toàn nữ.',
+                    'population_number' => 'Được phân loại là Ít quan tâm nhất (LC) trong Sách đỏ IUCN, loài bò sát này hiện không có nguy cơ tuyệt chủng. Dân số ước tính tổng thể của cá sấu sông Nile dao động từ 250.000 đến 500.000 cá thể.',
+                    'ecological_niche' => '',
                     'fun_fact' => 'Giới tính của con sau này phụ thuộc rất nhiều vào nhiệt độ ấp: khi nhiệt độ dưới 31 độ C, con nở nhiều khả năng là con cái, còn nhiệt độ trên 31-34 độ C thường sinh con đực. Khi đến thời điểm nở, chim non phát ra tiếng kêu “nhìn trộm”; con cái nghe thấy tiếng gọi và đào trứng, giúp con non ra ngoài.
 Cá sấu sông Nile cùng với trứng của chúng đã được tìm thấy trong các ngôi mộ ở Ai Cập.
 Quá trình trao đổi chất ngoại nhiệt của những con cá sấu này rất có lợi cho chúng. Một cá thể lớn, nặng hơn 900 kg (2000 lb.), có thể di chuyển trong thời gian dài mà không cần ăn.
 Khi con non bị đe dọa, chim mẹ sẽ bế chúng lên, đưa chúng vào túi cổ họng của mình, nơi chúng tìm thấy sự bảo vệ.
 Thông thường, cả bố và mẹ đều giúp con non ra khỏi trứng; chúng cuộn trứng giữa lưỡi và vòm miệng, đập vỡ vỏ trứng để con cái trốn thoát dễ dàng hơn.',
+                    'top_speed' => '35',
                     'animal_length' => '3.5-6',
                     'animal_height' => '70-90',
                     'animal_weight' => '225-500',
+                    'animal_swing' => '',
                     'population_size' => '250-500',
                     'avg_lifespan' => '50-80',
                     'animal_sound' => 'sssss',
@@ -631,14 +650,14 @@ Thông thường, cả bố và mẹ đều giúp con non ra khỏi trứng; ch�
                     'habit_lifestyle_description' => 'Đại bàng hói thường sống đơn độc, tụ tập thành đàn trong mùa làm tổ. Chúng cũng tụ tập thành những ổ lớn lên tới 400 con và các nhóm cũng có thể tụ tập ở những khu vực có đủ số lượng con mồi. Đại bàng hói tương đối ít hoạt động khi có gió mạnh và vào mùa đông. Khi mùa sinh sản đến, chúng kêu lên và đuổi theo đồng loại để bảo vệ lãnh thổ. Đại bàng hói săn mồi ban ngày một mình hoặc theo đàn bay dọc theo suối, lội nước, bắt cá và ăn ngay tại chỗ. Những con chim giao tiếp với nhau bằng cách sử dụng ngắt âm yếu, tiếng huýt sáo, kleek kik ik ik ik, nhịp điệu hơi giống với tiếng kêu của mòng biển. Tiếng kêu của chim non có xu hướng gay gắt và chói tai hơn chim trưởng thành',
                     'diet_nutrition_description' => 'Đại bàng hói là loài ăn thịt (ăn cá) và ăn chủ yếu là cá. Chế độ ăn của chúng cũng bao gồm các loài chim nhỏ, thỏ, bò sát, cua và động vật lưỡng cư. Ngoài ra, chúng còn có thể ăn trứng của các loài chim khác.',
                     'mating_habit_description' => 'Đại bàng hói là loài chung thủy một vợ một chồng, giao phối một lần trong đời hoặc sống cùng nhau cho đến khi một trong hai bạn tình chết. Những màn tán tỉnh do đại bàng hói biểu diễn rất ấn tượng và ngoạn mục. Họ cũng biểu diễn các màn chiến đấu, trong đó những con chim lao vào nhau. Cặp đôi tiến hành làm tổ và sau đó 1-3 tháng sẽ đẻ trứng. Mùa đẻ trứng là cuối đông đầu xuân, con cái thường đẻ 2 quả trứng. Cả con đực và con cái đều tham gia ấp trứng trong 34-36 ngày. Sau khi gà con nở, một trong hai bố mẹ thường xuyên ở bên chúng trong khoảng 2 tuần. Sau đó, khi được 10-12 tuần tuổi, gà con bắt đầu bay nhưng bố mẹ vẫn tiếp tục cho ăn và bảo vệ chúng thêm 2-3 tháng nữa. Đại bàng trưởng thành về mặt sinh sản và bắt đầu sinh sản khi chúng được 4 đến 5 tuổi.',
-                    'population_description' => 'Mối đe dọa dân số
-Mặc dù thực tế là việc phục hồi dân số đã được tiến hành nhưng các mối đe dọa vẫn hiện hữu. Một trong những mối đe dọa là mất môi trường sống do sự chiếm đóng của các khu vực ven biển và sự thoát nước của vùng đất ngập nước của con người. Mặt khác, bắn súng trái phép, xáo trộn con người, ô nhiễm, va chạm với đường dây điện và phương tiện hàng không là một trong những mối đe dọa đáng chú ý đối với quần thể loài này. Và cuối cùng, các chất ô nhiễm tiềm ẩn nguy cơ ngộ độc nghiêm trọng: Ví dụ, DDT có thể làm mỏng vỏ trứng và suy giảm khả năng sinh sản.
-
-Số dân số
-Theo nguồn tài liệu All About Birds, tổng quy mô quần thể sinh sản của đại bàng hói là 250.000 cá thể. Hiện nay, loài này được phân loại là loài ít quan tâm (LC) trong Sách đỏ IUCN và số lượng của nó ngày nay đang tăng lên.
-
-Hốc sinh thái
-Do là loài săn mồi hàng đầu nên đại bàng đầu trắng đóng vai trò quan trọng trong hệ sinh thái. Sự suy giảm dân số và sự phục hồi sau đó đã có tác động rất lớn đến các sinh vật trong môi trường sống của chúng. Ví dụ, nó đã gây ra sự suy giảm dân số của Murres trong khu vực.',
+                    'mating_behavior' => 'Đơn phối ngẫu',
+                    'reproduction_season' => 'Cuối mùa đông-đầu mùa xuân',
+                    'pregnancy_duration' => '34 -36 ngày',
+                    'baby_carrying' => '2 trứng',
+                    'independent_age' => '120 - 170 ngày',
+                    'population_threat' => 'Mặc dù thực tế là sự phục hồi của dân số đã được tiến hành, các mối đe dọa vẫn còn hiện diện. Một trong những mối đe dọa là mất môi trường sống vì sự chiếm đóng của các khu vực ven biển và sự thoát nước của vùng đất ngập nước của con người. Mặt khác, bắn súng bất hợp pháp, gây rối của con người, ô nhiễm, va chạm với đường dây điện và phương tiện hàng không là một trong những mối đe dọa đáng chú ý đối với quần thể loài này. Và cuối cùng, các chất ô nhiễm chứa một mối đe dọa ngộ độc nghiêm trọng: DDT, ví dụ, có thể gây mỏng vỏ trứng và suy sinh sản.',
+                    'population_number' => 'Theo tài nguyên All About Birds, tổng quy mô quần thể sinh sản của đại bàng hói là 250.000 cá thể. Hiện tại, loài này được phân loại là Ít quan tâm nhất (LC) trong Sách đỏ IUCN và số lượng của nó ngày nay đang tăng lên.',
+                    'ecological_niche' => 'Do là loài săn mồi hàng đầu, đại bàng hói đóng vai trò quan trọng trong hệ sinh thái. Sự suy giảm dân số của chúng và sau khi phục hồi đã có tác động rất lớn đến các sinh vật trong môi trường sống của chúng. Ví dụ, nó đã gây ra sự suy giảm dân số của murres trong khu vực.',
                     'fun_fact' => 'Một con đại bàng hói có khoảng 7.000 chiếc lông. Khi mất một chiếc lông ở cánh này, nó cũng sẽ mất một chiếc lông tương ứng ở cánh kia để giữ thăng bằng.
 Do tốc độ cao và móng vuốt sắc nhọn, đại bàng hói có thể cướp đi sự săn mồi của các loài chim khác và đôi khi là cả con người.
 Mặc dù có tên như vậy nhưng đại bàng hói không thực sự hói! Trong tiếng Latin, tên của loài này có nghĩa là đại bàng biển đầu trắng do đại bàng trưởng thành có bộ lông màu trắng trên đầu.
@@ -649,9 +668,11 @@ Thính giác của chúng tốt như con người trong khi tầm nhìn xa tốt
 Kể từ năm 1782, đại bàng đầu trắng đã trở thành loài chim quốc gia của Hoa Kỳ.
 Đại bàng hói chỉ được tìm thấy ở Bắc Mỹ, là một trong 7 loài đại bàng biển.
 Đại bàng hói có thể băng qua mặt nước mà không cần bơi hoặc bay qua: nó ngồi trên mặt nước và tự chèo qua bằng đôi cánh.',
+                    'top_speed' => '120',
                     'animal_length' => '70-102',
                     'animal_height' => '70-90',
                     'animal_weight' => '3-6.3',
+                    'animal_swing' => '1.8-2.3',
                     'population_size' => '250.000',
                     'avg_lifespan' => '28-36',
                     'animal_sound' => 'sssss',
@@ -719,6 +740,40 @@ Kể từ năm 1782, đại bàng đầu trắng đã trở thành loài chim qu
                     'animal_detail_id' => '4',
                     'animal_area_id' => '6'
                 ],
+            ]
+        );
+        DB::table('animal_between_nation')->insert(
+            [
+                ['animal_detail_id' => '1', 'animal_nation_id' => '22'],
+                ['animal_detail_id' => '3', 'animal_nation_id' => '13'],
+                ['animal_detail_id' => '4', 'animal_nation_id' => '37'],
+                ['animal_detail_id' => '2', 'animal_nation_id' => '49'],
+                ['animal_detail_id' => '1', 'animal_nation_id' => '5'],
+                ['animal_detail_id' => '3', 'animal_nation_id' => '10'],
+                ['animal_detail_id' => '2', 'animal_nation_id' => '25'],
+                ['animal_detail_id' => '4', 'animal_nation_id' => '47'],
+                ['animal_detail_id' => '3', 'animal_nation_id' => '9'],
+                ['animal_detail_id' => '1', 'animal_nation_id' => '15'],
+                ['animal_detail_id' => '2', 'animal_nation_id' => '34'],
+                ['animal_detail_id' => '4', 'animal_nation_id' => '2'],
+                ['animal_detail_id' => '3', 'animal_nation_id' => '19'],
+                ['animal_detail_id' => '1', 'animal_nation_id' => '27'],
+                ['animal_detail_id' => '4', 'animal_nation_id' => '40'],
+                ['animal_detail_id' => '2', 'animal_nation_id' => '8'],
+                ['animal_detail_id' => '1', 'animal_nation_id' => '21'],
+                ['animal_detail_id' => '3', 'animal_nation_id' => '30'],
+                ['animal_detail_id' => '2', 'animal_nation_id' => '12'],
+                ['animal_detail_id' => '4', 'animal_nation_id' => '18'],
+                ['animal_detail_id' => '1', 'animal_nation_id' => '42'],
+                ['animal_detail_id' => '3', 'animal_nation_id' => '11'],
+                ['animal_detail_id' => '2', 'animal_nation_id' => '24'],
+                ['animal_detail_id' => '4', 'animal_nation_id' => '33'],
+                ['animal_detail_id' => '1', 'animal_nation_id' => '45'],
+                ['animal_detail_id' => '3', 'animal_nation_id' => '6'],
+                ['animal_detail_id' => '2', 'animal_nation_id' => '20'],
+                ['animal_detail_id' => '4', 'animal_nation_id' => '26'],
+                ['animal_detail_id' => '1', 'animal_nation_id' => '29'],
+                ['animal_detail_id' => '3', 'animal_nation_id' => '50']
             ]
         );
     }
