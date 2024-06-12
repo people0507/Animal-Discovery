@@ -27,6 +27,12 @@ use Illuminate\Http\Request;
 //     return view('user.home');
 // })->name('user.home');
 Route::get('/', [AnimalDetailController::class, 'viewAnimalPage'])->name('user.home');
+
+// fillter list animal
+Route::get('/fillter-list-animal', function () {
+    return view('user.fillter-list-animal');
+})->name('user.fillter-list-animal');
+
 Route::get('/about', function () {
     return view('user.about');
 })->name('user.about');
