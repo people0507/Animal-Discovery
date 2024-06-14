@@ -70,6 +70,7 @@ header .slogan {
 }
 
 .a-search input {
+    z-index: 1;
     height: 34px;
     padding: 6px 12px;
     font-family: Open Sans, sans-serif;
