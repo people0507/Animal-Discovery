@@ -13,11 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('animal_between_habitat', function (Blueprint $table) {
+        Schema::create('animal_between_biome', function (Blueprint $table) {
             $table->unsignedBigInteger('animal_detail_id');
             $table->foreign('animal_detail_id')->references('id')->on('animal_detail')->onDelete('cascade');
-            $table->unsignedBigInteger('animal_habitat_id');
-            $table->foreign('animal_habitat_id')->references('id')->on('animal_habitat')->onDelete('cascade');
+            $table->unsignedBigInteger('biome_id');
+            $table->foreign('biome_id')->references('id')->on('biome')->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -29,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('animal_between_habitat');
+        Schema::dropIfExists('animal_between_biome');
     }
 };

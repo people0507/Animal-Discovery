@@ -34,54 +34,246 @@ class DatabaseSeeder extends Seeder
                 'role_id' => 2,
             ],
         ]);
-        DB::table('animal_habitat')->insert([
+        DB::table('climate_zone')->insert([
             [
-                'habitat_name' => 'Rừng mưa nhiệt đới',
-                'habitat_image' => 'tropical_forest.jpg',
-                'habitat_description' => 'Rừng mưa nhiệt đới nằm ở các khu vực gần xích đạo, có khí hậu ẩm ướt với lượng mưa lớn (trung bình từ 1750 đến 2000 mm mỗi năm). Nhiệt độ ổn định quanh năm, thường dao động từ 20°C đến 30°C.Rừng mưa nhiệt đới là một trong những hệ sinh thái đa dạng nhất trên thế giới, chứa đựng hàng ngàn loài cây cối và động vật. Cây cối thường xanh quanh năm, với tầng cây cao che phủ tầng thấp hơn.'
+                'climate_name' => 'Vùng nhiệt đới',
+                'climate_image' => 'tropical_region.jpg',
+                'climate_description' => 'Vùng đất nằm gần xích đạo, có khí hậu ấm áp quanh năm với nhiệt độ trung bình cao và lượng mưa nhiều.'
             ],
             [
-                'habitat_name' => 'Rừng ôn đới',
-                'habitat_image' => 'temperate_forest.jpg',
-                'habitat_description' => 'Rừng ôn đới có bốn mùa rõ rệt với mùa đông lạnh và mùa hè ấm áp. Lượng mưa trung bình, thường từ 750 đến 1500 mm mỗi năm.Rừng ôn đới bao gồm nhiều loại cây lá rộng rụng lá vào mùa đông và cây lá kim. Đây là nơi cư trú của nhiều loài động thực vật phong phú.'
+                'climate_name' => 'Vùng khô cằn',
+                'climate_image' => 'arid_region.jpg',
+                'climate_description' => 'Vùng đất có lượng mưa ít và hơi ẩm thấp, thường có đất cằn cỗi và thích hợp cho các cây cối chịu hạn.'
             ],
             [
-                'habitat_name' => 'Thảo nguyên',
-                'habitat_image' => 'grassland.jpg',
-                'habitat_description' => 'Thảo nguyên là khu vực có khí hậu khô hạn và nóng, với một mùa mưa ngắn. Lượng mưa thay đổi từ 500 đến 1500 mm mỗi năm.Thảo nguyên là môi trường mở, chủ yếu là cỏ và một số cây gỗ rải rác. Đây là nơi sinh sống của nhiều loài động vật lớn.'
+                'climate_name' => 'Vùng ôn đới',
+                'climate_image' => 'temperate_region.jpg',
+                'climate_description' => 'Vùng đất có bốn mùa rõ rệt, mùa hè ấm áp và mùa đông lạnh, thích hợp cho nhiều loài cây cối phát triển.'
             ],
             [
-                'habitat_name' => 'Sa mạc',
-                'habitat_image' => 'desert.jpg',
-                'habitat_description' => 'Sa mạc có khí hậu cực kỳ khô hạn với lượng mưa dưới 250 mm mỗi năm. Nhiệt độ biến đổi lớn giữa ngày và đêm, có thể rất nóng vào ban ngày và lạnh vào ban đêm.Sa mạc thường có thảm thực vật thưa thớt, với các loài cây và động vật thích nghi tốt với điều kiện khô hạn.'
-            ],
-            [
-                'habitat_name' => 'Rừng taiga ',
-                'habitat_image' => 'taiga_forest.jpg',
-                'habitat_description' => 'Rừng taiga có khí hậu lạnh giá với mùa đông kéo dài và mùa hè ngắn. Lượng mưa thấp, chủ yếu dưới dạng tuyết.Rừng taiga chủ yếu bao gồm các loài cây lá kim như thông, vân sam và tuyết tùng.'
-            ],
-            [
-                'habitat_name' => 'Vùng Bắc Cực',
-                'habitat_image' => 'north_pole.jpg',
-                'habitat_description' => 'Vùng Bắc Cực có khí hậu cực kỳ lạnh giá với băng tuyết quanh năm. Nhiệt độ thường dưới 0°C, có thời gian ánh sáng ban ngày rất ngắn vào mùa đông và rất dài vào mùa hè.Khu vực này bao gồm các bãi băng, tuyết và thảm thực vật tundra.'
-            ],
-            [
-                'habitat_name' => 'Vùng biển',
-                'habitat_image' => 'sea.jpg',
-                'habitat_description' => 'Vùng biển bao gồm các biển và đại dương, từ vùng nước nông đến vùng nước sâu. Nhiệt độ và điều kiện môi trường rất đa dạng.Hệ sinh thái biển rất phong phú và đa dạng, từ các rạn san hô đầy màu sắc đến các vực sâu tối tăm.'
-            ],
-            [
-                'habitat_name' => 'Vùng nước ngọt',
-                'habitat_image' => 'freshwater.jpg',
-                'habitat_description' => 'Khu vực này bao gồm các sông, hồ, suối, và đầm lầy. Nước ngọt có nồng độ muối thấp hơn nhiều so với nước biển. Các hệ sinh thái nước ngọt rất đa dạng, cung cấp môi trường sống cho nhiều loài động thực vật.'
-            ],
-            [
-                'habitat_name' => 'Đầm lầy',
-                'habitat_image' => 'swamp.jpg',
-                'habitat_description' => 'Đây là khu vực đất thấp bị ngập nước thường xuyên hoặc theo mùa, bao gồm đầm lầy, bãi lầy, và các vùng đất ngập nước khác.Đầm lầy và đất ngập nước là những hệ sinh thái rất năng động và giàu dinh dưỡng, hỗ trợ nhiều loài động thực vật.'
-            ],
+                'climate_name' => 'Vùng lạnh',
+                'climate_image' => 'cold_region.jpg',
+                'climate_description' => 'Vùng đất có nhiệt độ thấp, có thể có tuyết phủ mặt đất lâu dài trong mùa đông và thích hợp cho loài cây cối chịu lạnh.'
+            ],[
+                'climate_name' => 'Vùng cực',
+                'climate_image' => 'polar_region.jpg',
+                'climate_description' => 'Vùng đất nằm gần các cực trái đất, có nhiệt độ rất thấp và thường có băng tuyết phủ mặt đất suốt năm.'
+            ]
         ]);
-        DB::table('animal_color')->insert([
+
+        DB::table('biome')->insert([
+            [
+                'biome_name' => 'Hồ',
+                'biome_image' => 'lake.jpg',
+                'biome_description' => 'Một môi trường nước ngọt tĩnh lặng, thường có độ sâu khác nhau và thường được bao quanh bởi cạn đá hoặc đất.'
+            ],
+            [
+                'biome_name' => 'Rạn san hô',
+                'biome_image' => 'coral_reef.jpg',
+                'biome_description' => 'Một cấu trúc đá vôi được hình thành bởi san hô và các sinh vật biển khác, thường nằm dưới mặt nước biển trong khu vực nhiệt đới.'
+            ],
+            [
+                'biome_name' => 'Sông',
+                'biome_image' => 'river.jpg',
+                'biome_description' => 'Dòng nước lớn chảy qua các vùng đất, cung cấp nguồn tài nguyên nước quan trọng và môi trường sống cho nhiều loài sinh vật.'
+            ],
+            [
+                'biome_name' => 'Vùng bãi triều',
+                'biome_image' => 'estuary.jpg',
+                'biome_description' => 'Vùng nước mặn và nước ngọt gặp nhau, thường nằm ở nơi sông đổ ra biển, là nơi sinh sản và nuôi dưỡng của nhiều loài động thực vật.'
+            ],
+            [
+                'biome_name' => 'Cửa sông',
+                'biome_image' => 'river_mouth.jpg',
+                'biome_description' => 'Điểm kết thúc của sông, nơi nước ngọt từ sông hòa vào nước biển mặn.'
+            ],
+            [
+                'biome_name' => 'Vùng biển khơi',
+                'biome_image' => 'open_ocean.jpg',
+                'biome_description' => 'Phần của đại dương mà không phải là gần bờ, thường có độ sâu lớn và không có sự pha trộn lớn với môi trường nước ngọt.'
+            ],
+            [
+                'biome_name' => 'Vùng vực thẳm',
+                'biome_image' => 'deep_sea.jpg',
+                'biome_description' => 'Vùng nước sâu khác nhau của đại dương, nơi có áp suất cao và ánh sáng mặt trời không thể xuyên qua.'
+            ],
+            [
+                'biome_name' => 'Khu vực đô thị',
+                'biome_image' => 'urban_wildlife.jpg',
+                'biome_description' => 'Các loài động vật sống hoặc tìm kiếm thức ăn trong các khu đô thị và thành phố.'
+            ],
+            [
+                'biome_name' => 'Núi',
+                'biome_image' => 'mountain.jpg',
+                'biome_description' => 'Vùng đất cao, thường có đỉnh non, đá và tuyết, có sự sống đa dạng và điều kiện khí hậu khác nhau.'
+            ],
+            [
+                'biome_name' => 'Rừng',
+                'biome_image' => 'forest.jpg',
+                'biome_description' => 'Khu rừng rậm với cây cối phát triển mật độ cao, bao gồm cả rừng nhiệt đới và rừng ôn đới.'
+            ],
+            [
+                'biome_name' => 'Đầm lầy',
+                'biome_image' => 'swamp.jpg',
+                'biome_description' => 'Một môi trường nước ngọt hoặc nước lợ, thường có cây bụi và cây cối phát triển nhiều.'
+            ],
+            [
+                'biome_name' => 'Khu vực đá',
+                'biome_image' => 'rocky_area.jpg',
+                'biome_description' => 'Vùng đất không có đất mà thay vào đó là các khối đá, thường nằm trên núi hay vùng biển.'
+            ],
+            [
+                'biome_name' => 'Vùng biển gần bờ',
+                'biome_image' => 'coastal_waters.jpg',
+                'biome_description' => 'Vùng nước nông ven biển, thường có sự hiện diện của rạn san hô và nhiều loài sinh vật biển khác.'
+            ],
+            [
+                'biome_name' => 'Quần xã sinh vật nhân tạo',
+                'biome_image' => 'urban_landscape.jpg',
+                'biome_description' => 'Môi trường do con người tạo ra, bao gồm các thành phố, đô thị và vùng quê được canh tác.'
+            ],
+            [
+                'biome_name' => 'Khu vực nông nghiệp',
+                'biome_image' => 'farmland.jpg',
+                'biome_description' => 'Khu vực được canh tác để trồng cây và chăn nuôi động vật, thường bao gồm cánh đồng và trang trại.'
+            ],
+            [
+                'biome_name' => 'Đồng cỏ',
+                'biome_image' => 'meadow.jpg',
+                'biome_description' => 'Vùng đất mở với cỏ mọc dày đặc, thường là nơi chăn nuôi gia súc hoặc để làm thảm xanh.'
+            ],
+            [
+                'biome_name' => 'Ngoại ô',
+                'biome_image' => 'suburb.jpg',
+                'biome_description' => 'Vùng ngoại ô của thành phố hoặc khu dân cư, thường có sự kết hợp giữa cảnh quan tự nhiên và môi trường sống con người.'
+            ],
+            [
+                'biome_name' => 'Xavan',
+                'biome_image' => 'savanna.jpg',
+                'biome_description' => 'Vùng đồng cỏ rộng mở ở khu vực nhiệt đới và cận nhiệt đới, thường có cây cây cối thưa thớt.'
+            ],
+            [
+                'biome_name' => 'Biển',
+                'biome_image' => 'sea.jpg',
+                'biome_description' => 'Phần nước mặn của đại dương, có khối lượng nước lớn và có sự sống đa dạng.'
+            ],
+            [
+                'biome_name' => 'Rừng cây lá kim',
+                'biome_image' => 'coniferous_forest.jpg',
+                'biome_description' => 'Khu rừng với cây lá kim phát triển nhiều, thường sống ở vùng ôn đới và cận ôn đới.'
+            ],
+            [
+                'biome_name' => 'Bờ sông',
+                'biome_image' => 'river_bank.jpg',
+                'biome_description' => 'Đất ven sông, thường là môi trường sống cho nhiều loài cây cối và động vật dọc theo sông.'
+            ],
+            [
+                'biome_name' => 'Khu vực cây bụi',
+                'biome_image' => 'shrubland.jpg',
+                'biome_description' => 'Khu vực có cây bụi và cây cối thấp mọc rải rác, thường sống ở vùng khô hoặc nhiệt đới.'
+            ],
+            [
+                'biome_name' => 'Đầm lầy nước ngọt',
+                'biome_image' => 'freshwater_marsh.jpg',
+                'biome_description' => 'Khu vực lầy lội nước ngọt, thường có cây bụi và cây cối phát triển nhiều.'
+            ],
+            [
+                'biome_name' => 'Rừng nhiệt đới',
+                'biome_image' => 'tropical_forest.jpg',
+                'biome_description' => 'Rừng rậm ở khu vực nhiệt đới, với độ ẩm cao và nhiều loài cây cối và động vật.'
+            ],
+            [
+                'biome_name' => 'Ven biển',
+                'biome_image' => 'coast.jpg',
+                'biome_description' => 'Khu vực bờ biển, thường có bãi cát, rạn san hô và nhiều sinh vật biển khác.'
+            ],
+            [
+                'biome_name' => 'Rạn',
+                'biome_image' => 'reef.jpg',
+                'biome_description' => 'Cấu trúc đá vôi được hình thành dưới nước biển bởi san hô và sinh vật biển khác.'
+            ],
+            [
+                'biome_name' => 'Nước ngọt',
+                'biome_image' => 'freshwater.jpg',
+                'biome_description' => 'Môi trường nước ngọt, bao gồm sông, hồ, và ao, có sự sống đa dạng của động vật và thực vật nước.'
+            ],
+            [
+                'biome_name' => 'Nước lợ',
+                'biome_image' => 'brackish_water.jpg',
+                'biome_description' => 'Môi trường nước vừa ngọt vừa mặn, thường là kết quả của sự kết hợp giữa nước ngọt và nước biển.'
+            ],
+            [
+                'biome_name' => 'Hang động',
+                'biome_image' => 'cave.jpg',
+                'biome_description' => 'Cấu trúc tự nhiên nằm dưới mặt đất, thường có điều kiện môi trường và ánh sáng rất đặc biệt.'
+            ],
+            [
+                'biome_name' => 'Đầm lầy',
+                'biome_image' => 'salt_marsh.jpg',
+                'biome_description' => 'Khu vực lầy lội nước mặn, thường có cây bụi và cây cối phát triển nhiều, gần bờ biển.'
+            ],
+            [
+                'biome_name' => 'Cồn cát',
+                'biome_image' => 'sand_dunes.jpg',
+                'biome_description' => 'Địa hình dạng đồi cát, thường di chuyển do gió, có các cây cối và động vật thích nghi với điều kiện khô.'
+            ],
+            [
+                'biome_name' => 'Băng trôi',
+                'biome_image' => 'iceberg.jpg',
+                'biome_description' => 'Mảnh băng lớn nổi trên mặt biển, thường được hình thành từ nước lạnh ở các vùng cực.'
+            ],
+            [
+                'biome_name' => 'Hồ tạm thời',
+                'biome_image' => 'temporary_pond.jpg',
+                'biome_description' => 'Hồ nước tạm thời, thường được hình thành trong mùa mưa hoặc do hoạt động của con người.'
+            ],
+            [
+                'biome_name' => 'Đáy biển',
+                'biome_image' => 'seabed.jpg',
+                'biome_description' => 'Phần đáy của đại dương, thường là nơi sống của nhiều loài sinh vật biển và có đặc tính đặc biệt.'
+            ],
+            [
+                'biome_name' => 'Rừng mưa nhiệt đới',
+                'biome_image' => 'tropical_rainforest.jpg',
+                'biome_description' => 'Rừng rậm nhiệt đới nằm gần xích đạo, có khí hậu ẩm ướt với lượng mưa lớn, là nơi sinh sống của nhiều loài cây và động vật đa dạng.'
+            ],
+            [
+                'biome_name' => 'Rừng mây',
+                'biome_image' => 'cloud_forest.jpg',
+                'biome_description' => 'Khu rừng ẩm ướt, thường ở các vùng cao núi, có sương mù dày đặc và cây cối phát triển đa dạng.'
+            ],
+            [
+                'biome_name' => 'Bán sa mạc',
+                'biome_image' => 'semi_desert.jpg',
+                'biome_description' => 'Vùng đất khô cằn, không hoàn toàn là sa mạc nhưng có ít mưa và cây cối thưa thớt.'
+            ],
+            [
+                'biome_name' => 'Thảo nguyên',
+                'biome_image' => 'steppe.jpg',
+                'biome_description' => 'Vùng đất rộng mở với cỏ xanh mọc dày đặc, thường sống ở vùng khô và có ít cây cối.'
+            ],
+            [
+                'biome_name' => 'Rừng thảo nguyên',
+                'biome_image' => 'grassland_forest.jpg',
+                'biome_description' => 'Khu rừng nằm trong vùng đồng cỏ mở, có cây cối cao và cây bụi phát triển.'
+            ],
+            [
+                'biome_name' => 'Thảm cỏ biển',
+                'biome_image' => 'seagrass_bed.jpg',
+                'biome_description' => 'Khu vực dưới nước có rong biển mọc dày đặc, là nơi sống của nhiều loài sinh vật biển.'
+            ],
+            [
+                'biome_name' => 'Rừng tảo bẹ',
+                'biome_image' => 'kelp_forest.jpg',
+                'biome_description' => 'Khu rừng dưới nước có tảo bẹ phát triển nhiều, là môi trường sống của nhiều loài sinh vật biển.'
+            ],
+            [
+                'biome_name' => 'Băng biển',
+                'biome_image' => 'sea_ice.jpg',
+                'biome_description' => 'Mảnh băng nổi trên mặt biển, thường được hình thành từ nước lạnh ở các vùng cực.'
+            ]
+        ]);
+        DB::table('color')->insert([
             [
                 'color_name' => 'Xanh lục',
             ],
@@ -131,7 +323,7 @@ class DatabaseSeeder extends Seeder
                 'activity_description' => 'Động vật thích nghi với ánh sáng yếu của hoàng hôn và bình minh, thời gian mà nhiệt độ không quá cao và có ít kẻ thù hoạt động.Hoạt động vào những thời điểm này giúp chúng tận dụng thời gian mà cả động vật ban ngày và ban đêm ít hoạt động.'
             ],
         ]);
-        DB::table('animal_category')->insert([
+        DB::table('category')->insert([
             [
                 'category_name' => 'Cá',
             ],
@@ -205,7 +397,7 @@ class DatabaseSeeder extends Seeder
                 'status_description' => 'Dữ liệu về tình trạng bảo tồn của loài không đủ để đưa ra đánh giá chính xác.',
             ],
         ]);
-        DB::table('animal_area')->insert([
+        DB::table('area')->insert([
             [
                 'area_name' => 'Châu Âu',
                 'area_image' => 'europe.png',
@@ -237,7 +429,7 @@ class DatabaseSeeder extends Seeder
                 'area_description' => 'Châu Đại Dương là một khu vực địa lý bao gồm Australasia, Melanesia, Micronesia và Polynesia. Trải dài khắp Đông và Tây bán cầu, Châu Đại Dương ước tính có diện tích đất liền là 8.525.989 km2 và dân số hơn 41 triệu người. Khi so sánh với các lục địa, khu vực Châu Đại Dương có diện tích đất liền nhỏ nhất và dân số nhỏ thứ hai sau Nam Cực. Chim bói cá Thái Bình Dương được đặt tên thích hợp được tìm thấy ở Quần đảo Thái Bình Dương, cũng như chào mào đỏ, sáo Polynesia, goshawk nâu, nhạn Thái Bình Dương và Cardinal myzomela, cùng nhiều loài khác. Các loài chim sinh sản trên Pitcairn bao gồm chim nhạn cổ tích, chim nhiệt đới thông thường và chim nhiệt đới đuôi đỏ. Chích sậy Pitcairn, loài đặc hữu của đảo Pitcairn, đã được thêm vào danh sách các loài có nguy cơ tuyệt chủng vào năm 2008. Loài quạ Hawaii có nguồn gốc từ Hawaii, loài này đã tuyệt chủng trong tự nhiên từ năm 2002. Rắn cây nâu có nguồn gốc ở các bờ biển phía bắc và phía đông của Australia, Papua New Guinea, Guam và Quần đảo Solomon. Có nguồn gốc từ Úc, New Guinea và các đảo lân cận là các loài chim thiên đường, chim ăn mật, chim dây Úc, chim cổ đỏ Úc, chim bói cá, chim đồ tể và chim bower. Một đặc điểm độc đáo của hệ động vật Úc là sự khan hiếm tương đối của các loài động vật có vú có nhau thai bản địa và sự thống trị của các loài thú có túi - một nhóm động vật có vú nuôi con non trong túi, bao gồm các loài chân dài, thú có túi và dasyuromorphs. Các loài chim sẻ của Úc, còn được gọi là chim biết hót hoặc chim đậu, bao gồm chim hồng tước, nhóm chim ác là, chim mỏ gai, chim quạ, chim pardalote, chim lyre. Các loài chim chiếm ưu thế ở nước này bao gồm chim ác là Úc, quạ Úc, chim cu gáy, bồ câu mào và chim kookaburra cười. Gấu túi, emu, thú mỏ vịt và kangaroo là động vật quốc gia của Úc và quỷ Tasmania cũng là một trong những loài động vật nổi tiếng ở nước này. Goanna là loài thằn lằn săn mồi có nguồn gốc từ lục địa Australia. Các loài chim ở New Zealand đã tiến hóa thành một khu hệ chim bao gồm một số lượng lớn các loài đặc hữu. Là một quần đảo, New Zealand đã tích lũy được sự đa dạng về loài chim và khi Thuyền trưởng James Cook đến vào những năm 1770, ông nhận thấy rằng tiếng hót của loài chim nghe rất chói tai. Sự kết hợp bao gồm các loài có đặc điểm sinh học khác thường như kākāpō, loài vẹt sinh sản về đêm, không biết bay duy nhất trên thế giới, nhưng cũng có nhiều loài tương tự với các khu vực đất liền lân cận. Một số loài chim nổi tiếng và đặc biệt hơn ở New Zealand là kiwi, kea, takahē, kākāpō, mohua, tūī và chim chuông. Tuatara là loài bò sát đặc hữu của New Zealand.',
             ]
         ]);
-        DB::table('animal_ocean')->insert([
+        DB::table('ocean')->insert([
             [
                 'ocean_name' => 'Thái Bình Dương',
                 'ocean_image' => 'pacific.jpg',
@@ -266,7 +458,7 @@ class DatabaseSeeder extends Seeder
                 'ocean_description' => 'Nam Đại Dương bao gồm vùng nước cực nam của Đại dương Thế giới, thường được coi là ở phía nam vĩ độ 60° Nam và bao quanh Nam Cực. Trong 30 năm qua, Nam Đại Dương phải chịu sự biến đổi khí hậu nhanh chóng, dẫn đến những thay đổi trong hệ sinh thái biển. Nhiều loại động vật biển tồn tại và phụ thuộc trực tiếp hoặc gián tiếp vào thực vật phù du ở Nam Đại Dương. Sinh vật biển ở Nam Cực bao gồm chim cánh cụt, cá voi xanh, cá kình, mực khổng lồ và hải cẩu lông thú. Chim cánh cụt hoàng đế là loài chim cánh cụt duy nhất sinh sản vào mùa đông ở Nam Cực, trong khi chim cánh cụt Adélie sinh sản ở xa hơn về phía nam so với bất kỳ loài chim cánh cụt nào khác. Chim cánh cụt rockhopper có bộ lông đặc biệt xung quanh mắt, tạo nên vẻ ngoài của lông mi phức tạp. Chim cánh cụt vua, chim cánh cụt chinstrap và chim cánh cụt gentoo cũng sinh sản ở Nam Cực. Hải cẩu lông Nam Cực bị săn bắt rất nhiều vào thế kỷ 18 và 19 để lấy da bởi những người săn hải cẩu từ Hoa Kỳ và Vương quốc Anh. Hải cẩu Weddell, một hải cẩu thực sự, được đặt theo tên của Ngài James Weddell, chỉ huy đoàn thám hiểm hải cẩu của Anh ở Biển Weddell. Nhuyễn thể ở Nam Cực, tụ tập thành đàn lớn, là loài chủ chốt của hệ sinh thái Nam Đại Dương và là sinh vật thực phẩm quan trọng đối với cá voi, hải cẩu, hải cẩu báo, hải cẩu lông, mực, cá băng, chim cánh cụt, chim hải âu và nhiều loài chim khác. Các cộng đồng sinh vật đáy dưới đáy biển rất đa dạng và dày đặc, với số lượng lên tới 155.000 loài động vật được tìm thấy trên 1 mét vuông. Vì môi trường đáy biển xung quanh Nam Cực rất giống nhau nên có thể tìm thấy hàng trăm loài trên khắp đất liền, đó là một phân phối rộng rãi duy nhất cho một cộng đồng lớn như vậy. Chủ nghĩa khổng lồ dưới biển sâu là phổ biến ở những loài động vật này. Hơn 235 sinh vật biển sống ở cả hai vùng cực, vượt qua khoảng cách 12.000 km. Các loài động vật lớn như một số loài giáp xác và chim thực hiện chuyến đi khứ hồi hàng năm. Điều đáng ngạc nhiên hơn là những dạng sống nhỏ như giun bùn, hải sâm và ốc bơi tự do được tìm thấy ở cả hai đại dương. Các yếu tố khác nhau có thể hỗ trợ cho sự phân bố của chúng - nhiệt độ khá đồng đều của đại dương sâu ở hai cực và xích đạo, chênh lệch không quá 5°C, và các hệ thống dòng chảy chính hoặc băng tải biển vận chuyển trứng và giai đoạn ấu trùng. Tuy nhiên, trong số các loài động vật biển nhỏ hơn thường được cho là giống nhau ở Nam Cực và Bắc Cực, các nghiên cứu chi tiết hơn về từng quần thể thường - nhưng không phải lúc nào cũng - tiết lộ những khác biệt, cho thấy chúng là những loài bí ẩn có quan hệ gần gũi hơn là một loài lưỡng cực duy nhất.',
             ],
         ]);
-        DB::table('animal_population_trending')->insert(
+        DB::table('population_trending')->insert(
             [
                 ['population_trending_name' => 'Tăng'],
                 ['population_trending_name' => 'Giảm'],
@@ -274,7 +466,7 @@ class DatabaseSeeder extends Seeder
                 ['population_trending_name' => 'Chưa biết'],
             ]
         );
-        DB::table('animal_category')->insert(
+        DB::table('category')->insert(
             [
                 ['category_name' => 'Họ Hươu'],
                 ['category_name' => 'Họ Hổ'],
@@ -324,7 +516,7 @@ class DatabaseSeeder extends Seeder
                 ['category_name' => 'Họ Chim cánh cụt']
             ]
         );
-        DB::table('animal_nation')->insert(
+        DB::table('nation')->insert(
             [
                 ['nation_name' => 'Afghanistan'],
                 ['nation_name' => 'Albania'],
@@ -560,7 +752,7 @@ class DatabaseSeeder extends Seeder
                     'conservation_status_id' => '3',
                     'activity_time_id' => '3',
                     'diet_type_id' => '2',
-                    'animal_category_id' => '4',
+                    'category_id' => '4',
                     'population_trending_id' => '2',
                     'created_by' => '1'
                 ],
@@ -599,7 +791,7 @@ Báo gêpa sử dụng nét mặt để thể hiện tâm trạng của mình.
                     'conservation_status_id' => '3',
                     'activity_time_id' => '3',
                     'diet_type_id' => '2',
-                    'animal_category_id' => '11',
+                    'category_id' => '11',
                     'population_trending_id' => '2',
                     'created_by' => '1'
                 ],
@@ -637,7 +829,7 @@ Thông thường, cả bố và mẹ đều giúp con non ra khỏi trứng; ch�
                     'conservation_status_id' => '1',
                     'activity_time_id' => '2',
                     'diet_type_id' => '2',
-                    'animal_category_id' => '1',
+                    'category_id' => '1',
                     'population_trending_id' => '3',
                     'created_by' => '1'
                 ],
@@ -680,13 +872,13 @@ Kể từ năm 1782, đại bàng đầu trắng đã trở thành loài chim qu
                     'conservation_status_id' => '1',
                     'activity_time_id' => '2',
                     'diet_type_id' => '2',
-                    'animal_category_id' => '4',
+                    'category_id' => '4',
                     'population_trending_id' => '1',
                     'created_by' => '1'
                 ],
             ]
         );
-        DB::table('animal_image')->insert(
+        DB::table('image')->insert(
             [
                 [
                     'image_name' => 'lion.jpg',
@@ -710,70 +902,70 @@ Kể từ năm 1782, đại bàng đầu trắng đã trở thành loài chim qu
             [
                 [
                     'animal_detail_id' => '1',
-                    'animal_area_id' => '1'
+                    'area_id' => '1'
                 ],
                 [
                     'animal_detail_id' => '1',
-                    'animal_area_id' => '2'
+                    'area_id' => '2'
                 ],
                 [
                     'animal_detail_id' => '1',
-                    'animal_area_id' => '3'
+                    'area_id' => '3'
                 ],
                 [
                     'animal_detail_id' => '2',
-                    'animal_area_id' => '2'
+                    'area_id' => '2'
                 ],
                 [
                     'animal_detail_id' => '2',
-                    'animal_area_id' => '4'
+                    'area_id' => '4'
                 ],
                 [
                     'animal_detail_id' => '3',
-                    'animal_area_id' => '4'
+                    'area_id' => '4'
                 ],
                 [
                     'animal_detail_id' => '4',
-                    'animal_area_id' => '5'
+                    'area_id' => '5'
                 ],
                 [
                     'animal_detail_id' => '4',
-                    'animal_area_id' => '6'
+                    'area_id' => '6'
                 ],
             ]
         );
         DB::table('animal_between_nation')->insert(
             [
-                ['animal_detail_id' => '1', 'animal_nation_id' => '22'],
-                ['animal_detail_id' => '3', 'animal_nation_id' => '13'],
-                ['animal_detail_id' => '4', 'animal_nation_id' => '37'],
-                ['animal_detail_id' => '2', 'animal_nation_id' => '49'],
-                ['animal_detail_id' => '1', 'animal_nation_id' => '5'],
-                ['animal_detail_id' => '3', 'animal_nation_id' => '10'],
-                ['animal_detail_id' => '2', 'animal_nation_id' => '25'],
-                ['animal_detail_id' => '4', 'animal_nation_id' => '47'],
-                ['animal_detail_id' => '3', 'animal_nation_id' => '9'],
-                ['animal_detail_id' => '1', 'animal_nation_id' => '15'],
-                ['animal_detail_id' => '2', 'animal_nation_id' => '34'],
-                ['animal_detail_id' => '4', 'animal_nation_id' => '2'],
-                ['animal_detail_id' => '3', 'animal_nation_id' => '19'],
-                ['animal_detail_id' => '1', 'animal_nation_id' => '27'],
-                ['animal_detail_id' => '4', 'animal_nation_id' => '40'],
-                ['animal_detail_id' => '2', 'animal_nation_id' => '8'],
-                ['animal_detail_id' => '1', 'animal_nation_id' => '21'],
-                ['animal_detail_id' => '3', 'animal_nation_id' => '30'],
-                ['animal_detail_id' => '2', 'animal_nation_id' => '12'],
-                ['animal_detail_id' => '4', 'animal_nation_id' => '18'],
-                ['animal_detail_id' => '1', 'animal_nation_id' => '42'],
-                ['animal_detail_id' => '3', 'animal_nation_id' => '11'],
-                ['animal_detail_id' => '2', 'animal_nation_id' => '24'],
-                ['animal_detail_id' => '4', 'animal_nation_id' => '33'],
-                ['animal_detail_id' => '1', 'animal_nation_id' => '45'],
-                ['animal_detail_id' => '3', 'animal_nation_id' => '6'],
-                ['animal_detail_id' => '2', 'animal_nation_id' => '20'],
-                ['animal_detail_id' => '4', 'animal_nation_id' => '26'],
-                ['animal_detail_id' => '1', 'animal_nation_id' => '29'],
-                ['animal_detail_id' => '3', 'animal_nation_id' => '50']
+                ['animal_detail_id' => '1', 'nation_id' => '22'],
+                ['animal_detail_id' => '3', 'nation_id' => '13'],
+                ['animal_detail_id' => '4', 'nation_id' => '37'],
+                ['animal_detail_id' => '2', 'nation_id' => '49'],
+                ['animal_detail_id' => '1', 'nation_id' => '5'],
+                ['animal_detail_id' => '3', 'nation_id' => '10'],
+                ['animal_detail_id' => '2', 'nation_id' => '25'],
+                ['animal_detail_id' => '4', 'nation_id' => '47'],
+                ['animal_detail_id' => '3', 'nation_id' => '9'],
+                ['animal_detail_id' => '1', 'nation_id' => '15'],
+                ['animal_detail_id' => '2', 'nation_id' => '34'],
+                ['animal_detail_id' => '4', 'nation_id' => '2'],
+                ['animal_detail_id' => '3', 'nation_id' => '19'],
+                ['animal_detail_id' => '1', 'nation_id' => '27'],
+                ['animal_detail_id' => '4', 'nation_id' => '40'],
+                ['animal_detail_id' => '2', 'nation_id' => '8'],
+                ['animal_detail_id' => '1', 'nation_id' => '21'],
+                ['animal_detail_id' => '3', 'nation_id' => '30'],
+                ['animal_detail_id' => '2', 'nation_id' => '12'],
+                ['animal_detail_id' => '4', 'nation_id' => '18'],
+                ['animal_detail_id' => '1', 'nation_id' => '42'],
+                ['animal_detail_id' => '3', 'nation_id' => '11'],
+                ['animal_detail_id' => '2', 'nation_id' => '24'],
+                ['animal_detail_id' => '4', 'nation_id' => '33'],
+                ['animal_detail_id' => '1', 'nation_id' => '45'],
+                ['animal_detail_id' => '3', 'nation_id' => '6'],
+                ['animal_detail_id' => '2', 'nation_id' => '20'],
+                ['animal_detail_id' => '4', 'nation_id' => '26'],
+                ['animal_detail_id' => '1', 'nation_id' => '29'],
+                ['animal_detail_id' => '3', 'nation_id' => '50']
             ]
         );
     }

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\AnimalImage;
+use App\Models\Image;
 use Illuminate\Http\Request;
 use App\Models\AnimalDetail;
 use Str;
@@ -25,15 +25,15 @@ class AnimalDetailController extends Controller
         $data->nations;
         $data->trend;
         $data->status;
-        $habitImage = AnimalImage::where('detail_id',$data->id)->inRandomOrder()->first();
-        $populationImage = AnimalImage::where('detail_id',$data->id)->inRandomOrder()->first();
+        $habitImage = Image::where('detail_id',$data->id)->inRandomOrder()->first();
+        $populationImage = Image::where('detail_id',$data->id)->inRandomOrder()->first();
         return view('user.animal-detail', compact('data', 'habitImage','populationImage'));
     }
 
     public function getAnimalDetailAreas($id)
     {
         $data = AnimalDetail::whereHas('areas', function ($query) use ($id) {
-            $query->where('animal_area_id', $id);
+            $query->where('area_id', $id);
         })->with(['images' => function ($query) {;
         }])->get();
         return view('user.categories-animal', compact('data'));
@@ -45,7 +45,7 @@ class AnimalDetailController extends Controller
         $areas = $animalDetail->areas;
         $nations = $animalDetail->nations;
         $colors = $animalDetail->colors;
-        $habitats = $animalDetail->habitats;
+        $biomes = $animalDetail->biomes;
         $topics = $animalDetail->topics;
         $oceans = $animalDetail->oceans;
     }

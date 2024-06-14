@@ -13,11 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('animal_habitat', function (Blueprint $table) {
+        Schema::create('population_trending', function (Blueprint $table) {
             $table->id();
-            $table->string('habitat_name');
-            $table->string('habitat_image')->nullable();
-            $table->text('habitat_description')->nullable();
+            $table->string('population_trending_name');
             $table->timestamps();
         });
     }
@@ -29,6 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('animal_habitat');
+        Schema::dropIfExists('population_trending');
     }
 };

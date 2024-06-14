@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Area extends Model
 {
     use HasFactory;
-    protected $table ='animal_area';
+    protected $table ='area';
 
     public function animalDetail()
     {

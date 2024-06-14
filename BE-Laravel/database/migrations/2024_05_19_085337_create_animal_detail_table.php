@@ -47,10 +47,10 @@ return new class extends Migration
             $table->foreign('activity_time_id')->references('id')->on('activity_time')->onDelete('cascade');
             $table->unsignedBigInteger('diet_type_id');
             $table->foreign('diet_type_id')->references('id')->on('diet_type')->onDelete('cascade');
-            $table->unsignedBigInteger('animal_category_id');
-            $table->foreign('animal_category_id')->references('id')->on('animal_category')->onDelete('cascade');
+            $table->unsignedBigInteger('category_id');
+            $table->foreign('category_id')->references('id')->on('category')->onDelete('cascade');
             $table->unsignedBigInteger('population_trending_id');
-            $table->foreign('population_trending_id')->references('id')->on('animal_population_trending')->onDelete('cascade');
+            $table->foreign('population_trending_id')->references('id')->on('population_trending')->onDelete('cascade');
             $table->unsignedBigInteger('created_by');
             $table->foreign('created_by')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();

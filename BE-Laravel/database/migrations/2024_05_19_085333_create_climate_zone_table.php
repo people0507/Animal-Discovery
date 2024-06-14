@@ -13,9 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('animal_population_trending', function (Blueprint $table) {
+        Schema::create('climate_zone', function (Blueprint $table) {
             $table->id();
-            $table->string('population_trending_name');
+            $table->string('climate_name');
+            $table->string('climate_image')->nullable();
+            $table->text('climate_description')->nullable();
             $table->timestamps();
         });
     }
@@ -27,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('animal_population_trending');
+        Schema::dropIfExists('climate_zone');
     }
 };

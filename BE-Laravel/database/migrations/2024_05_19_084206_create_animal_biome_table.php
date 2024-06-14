@@ -13,9 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('color', function (Blueprint $table) {
+        Schema::create('biome', function (Blueprint $table) {
             $table->id();
-            $table->string('color_name');
+            $table->string('biome_name');
+            $table->string('biome_image')->nullable();
+            $table->text('biome_description')->nullable();
             $table->timestamps();
         });
     }
@@ -27,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('color');
+        Schema::dropIfExists('biome');
     }
 };
