@@ -8,10 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Nation extends Model
 {
     use HasFactory;
-    protected $table ='animal_nation';
+    protected $table ='nation';
 
     public function animalDetail()
     {
-        return $this->belongsToMany(AnimalDetail::class,'animal_between_nation','animal_detail_id', 'animal_nation_id');
+        return $this->belongsToMany(AnimalDetail::class,'animal_between_nation','animal_detail_id', 'nation_id');
     }
 }

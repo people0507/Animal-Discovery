@@ -13,11 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('animal_between_ocean', function (Blueprint $table) {
+        Schema::create('animal_between_climate', function (Blueprint $table) {
             $table->unsignedBigInteger('animal_detail_id');
             $table->foreign('animal_detail_id')->references('id')->on('animal_detail')->onDelete('cascade');
-            $table->unsignedBigInteger('ocean_id');
-            $table->foreign('ocean_id')->references('id')->on('ocean')->onDelete('cascade');
+            $table->unsignedBigInteger('climate_id');
+            $table->foreign('climate_id')->references('id')->on('climate_zone')->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -29,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('animal_between_ocean');
+        Schema::dropIfExists('animal_between_climate');
     }
 };

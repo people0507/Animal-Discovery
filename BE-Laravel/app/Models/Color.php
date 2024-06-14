@@ -9,10 +9,10 @@ class Color extends Model
 {
     use HasFactory;
 
-    protected $table ='animal_color';
+    protected $table ='color';
 
     public function animalDetail()
     {
-        return $this->belongsToMany(AnimalDetail::class,'animal_between_nation','animal_detail_id', 'animal_color_id');
+        return $this->belongsToMany(AnimalDetail::class,'animal_between_nation','animal_detail_id', 'color_id');
     }
 }

@@ -9,10 +9,10 @@ class Ocean extends Model
 {
     use HasFactory;
 
-    protected $table ='animal_ocean';
+    protected $table ='ocean';
 
     public function animalDetail()
     {
-        return $this->belongsToMany(AnimalDetail::class,'animal_between_ocean','animal_detail_id', 'animal_ocean_id');
+        return $this->belongsToMany(AnimalDetail::class,'animal_between_ocean','animal_detail_id', 'ocean_id');
     }
 }
