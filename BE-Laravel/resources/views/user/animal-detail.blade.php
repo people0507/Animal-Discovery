@@ -627,70 +627,13 @@
                         </h3>
                         <div class="s-distr-block">
                             <div class="row">
-                                <div class="col-lg-3 col-md-6 s-distr-margin">
-                                    <a href="https://animalia.bio/agricultural" class="s-distr-zone-item "
-                                        style="background-color: #00c853; background-image: url(https://s3.animalia.bio/catalog/covers/small/2x1/6191876643-543648ff1c-hjpg.webp); background-size: cover"><span>Agricultural</span>
-                                    </a>
-                                </div>
-                                <div class="col-lg-3 col-md-6 s-distr-margin">
-                                    <a href="https://animalia.bio/anthropogenic-biome" class="s-distr-zone-item "
-                                        style="background-color: #00c853; background-image: url(https://s3.animalia.bio/catalog/covers/small/2x1/6inU3SB0PtrtxTSmCX2O.webp); background-size: cover"><span>Anthropogenic
-                                            biome</span>
-                                    </a>
-                                </div>
-                                <div class="col-lg-3 col-md-6 s-distr-margin">
-                                    <a href="https://animalia.bio/chaparral" class="s-distr-zone-item "
-                                        style="background-color: #00c853; background-image: url(https://s3.animalia.bio/catalog/covers/small/2x1/13338726334-edbe8c745f-kjpg.webp); background-size: cover"><span>Chaparral</span>
-                                    </a>
-                                </div>
-                                <div class="col-lg-3 col-md-6 s-distr-margin">
-                                    <a href="https://animalia.bio/forest" class="s-distr-zone-item "
-                                        style="background-color: #00c853; background-image: url(https://s3.animalia.bio/catalog/covers/small/2x1/3475869897-070a647ba7-4kjpg.webp); background-size: cover"><span>Forest</span>
-                                    </a>
-                                </div>
-                                <div class="col-lg-3 col-md-6 s-distr-margin">
-                                    <a href="https://animalia.bio/mountains" class="s-distr-zone-item "
-                                        style="background-color: #00c853; background-image: url(https://s3.animalia.bio/catalog/covers/small/2x1/1871px-2909-vallon-moy-resjpg.webp); background-size: cover"><span>Mountains</span>
-                                    </a>
-                                </div>
-                                <div class="col-lg-3 col-md-6 s-distr-margin">
-                                    <a href="https://animalia.bio/grassland" class="s-distr-zone-item "
-                                        style="background-color: #00c853; background-image: url(https://s3.animalia.bio/catalog/covers/small/2x1/6023184021-397dc8673e-kjpg.webp); background-size: cover"><span>Grassland</span>
-                                    </a>
-                                </div>
-                                <div class="col-lg-3 col-md-6 s-distr-margin">
-                                    <a href="https://animalia.bio/shrubland" class="s-distr-zone-item "
-                                        style="background-color: #00c853; background-image: url(https://s3.animalia.bio/catalog/covers/small/2x1/erXO1gBryMOOcsZnar7q.webp); background-size: cover"><span>Shrubland</span>
-                                    </a>
-                                </div>
-                                <div class="col-lg-3 col-md-6 s-distr-margin">
-                                    <a href="https://animalia.bio/suburban" class="s-distr-zone-item "
-                                        style="background-color: #00c853; background-image: url(https://s3.animalia.bio/catalog/covers/small/2x1/6455772155-87ec902e88-kjpg.webp); background-size: cover"><span>Suburban</span>
-                                    </a>
-                                </div>
-                                <div class="col-lg-3 col-md-6 s-distr-margin">
-                                    <a href="https://animalia.bio/wetlands" class="s-distr-zone-item "
-                                        style="background-color: #00c853; background-image: url(https://s3.animalia.bio/catalog/covers/small/2x1/6089087194-9da86f75ab-ojpg.webp); background-size: cover"><span>Wetlands
-                                        </span>
-                                    </a>
-                                </div>
-                                <div class="col-lg-3 col-md-6 s-distr-margin">
-                                    <a href="https://animalia.bio/rocky-areas" class="s-distr-zone-item "
-                                        style="background-color: #00c853; background-image: url(https://s3.animalia.bio/catalog/covers/small/2x1/9271464143-7cc67614ca-kjpg.webp); background-size: cover"><span>Rocky
-                                            areas </span>
-                                    </a>
-                                </div>
-                                <div class="col-lg-3 col-md-6 s-distr-margin">
-                                    <a href="https://animalia.bio/woodland" class="s-distr-zone-item "
-                                        style="background-color: #00c853; background-image: url(https://s3.animalia.bio/catalog/covers/small/2x1/49521906851-044f5da7a2-kjpg.webp); background-size: cover"><span>Woodland</span>
-                                    </a>
-                                </div>
+                                @foreach ($data->biomes as $item)
                                 <div class="col-lg-3 col-md-6 s-distr-margin">
                                     <a href="https://animalia.bio/urban-wildlife" class="s-distr-zone-item "
-                                        style="background-color: #00c853; background-image: url(https://s3.animalia.bio/catalog/covers/small/2x1/z7NT9zVZbzm9HH0EkzEc.webp); background-size: cover"><span>Urban
-                                            wildlife</span>
+                                    style="background-color: #00c853; background-image: url(http://localhost:8000/biomes/small/{{$item->biome_image}}); background-size: cover"><span>{{$item->biome_name}}</span>
                                     </a>
                                 </div>
+                                @endforeach
                             </div>
                         </div>
                     </div>
@@ -700,21 +643,13 @@
                             Climate zones
                         </h3>
                         <div class="row">
+                            @foreach ($data->climates as $item)
                             <div class="col-lg-3 col-md-6 s-distr-margin">
                                 <a href="https://animalia.bio/temperate" class="s-distr-climate__link "
-                                    style="background-color: #4CAF50; background-image: url(https://s3.animalia.bio/catalog/covers/small/2x1/11148243034-4e1fbac74c-ojpg.webp);"><span>Temperate</span>
+                                    style="background-color: #4CAF50; background-image: url(http://localhost:8000/climates/small/{{$item->climate_image}});"><span>{{$item->climate_name}}</span>
                                 </a>
                             </div>
-                            <div class="col-lg-3 col-md-6 s-distr-margin">
-                                <a href="https://animalia.bio/cold" class="s-distr-climate__link "
-                                    style="background-color: #2196F3; background-image: url(https://s3.animalia.bio/catalog/covers/small/2x1/39200848735-6d27c61bb4-ojpg.webp);"><span>Cold</span>
-                                </a>
-                            </div>
-                            <div class="col-lg-3 col-md-6 s-distr-margin">
-                                <a href="https://animalia.bio/tropical" class="s-distr-climate__link "
-                                    style="background-color: #FF5722; background-image: url(https://s3.animalia.bio/catalog/covers/small/2x1/37579557402-dbe97ed42e-ojpg.webp);"><span>Tropical</span>
-                                </a>
-                            </div>
+                            @endforeach
                         </div>
                     </div>
                 </div>

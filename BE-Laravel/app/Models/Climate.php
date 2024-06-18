@@ -5,14 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Biome extends Model
+class Climate extends Model
 {
     use HasFactory;
 
-    protected $table ='biome';
+    protected $table ='climate_zone';
 
     public function animalDetail()
     {
-        return $this->belongsToMany(AnimalDetail::class,'animal_between_biome','animal_detail_id', 'biome_id');
+        return $this->belongsToMany(AnimalDetail::class,'animal_between_climate','animal_detail_id', 'climate_id');
     }
 }

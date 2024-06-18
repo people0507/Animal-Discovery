@@ -25,6 +25,8 @@ class AnimalDetailController extends Controller
         $data->nations;
         $data->trend;
         $data->status;
+        $data->biomes;
+        $data->climates;
         $habitImage = Image::where('detail_id',$data->id)->inRandomOrder()->first();
         $populationImage = Image::where('detail_id',$data->id)->inRandomOrder()->first();
         return view('user.animal-detail', compact('data', 'habitImage','populationImage'));
