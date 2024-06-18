@@ -2,12 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Biome;
+use App\Models\Climate;
 use App\Models\Image;
 use Illuminate\Http\Request;
 use App\Models\AnimalDetail;
 use Str;
 use App\Models\Area;
 use App\Http\MessageContent;
+use App\Models\ConservationStatus;
 
 class AnimalDetailController extends Controller
 {
@@ -29,7 +32,8 @@ class AnimalDetailController extends Controller
         $data->climates;
         $habitImage = Image::where('detail_id',$data->id)->inRandomOrder()->first();
         $populationImage = Image::where('detail_id',$data->id)->inRandomOrder()->first();
-        return view('user.animal-detail', compact('data', 'habitImage','populationImage'));
+        $conservationStatus = ConservationStatus::all();
+        return view('user.animal-detail', compact('data', 'habitImage','populationImage','conservationStatus'));
     }
 
     public function getAnimalDetailAreas($id)
@@ -41,14 +45,24 @@ class AnimalDetailController extends Controller
         return view('user.categories-animal', compact('data'));
     }
 
-    public function getAnimalDetail($id)
-    {
-        $animalDetail = AnimalDetail::where('id', $id)->first();;
-        $areas = $animalDetail->areas;
-        $nations = $animalDetail->nations;
-        $colors = $animalDetail->colors;
-        $biomes = $animalDetail->biomes;
-        $topics = $animalDetail->topics;
-        $oceans = $animalDetail->oceans;
+    public function climateZone($id){
+        $data = AnimalDetail::whereHas('climates', function ($query) use ($id) {
+            $query->where('climate_id', $id);
+        })->with(['images' => function ($query) {;
+        }])->get();
+        $count = $data->count();
+        $data1 = Climate::where('id',$id)->first();
+        return view('user.filter-list-animal', compact('data','data1','count'));
     }
+
+    public function biome($id){
+        $data = AnimalDetail::whereHas('biomes', function ($query) use ($id) {
+            $query->where('biome_id', $id);
+        })->with(['images' => function ($query) {;
+        }])->get();
+        $count = $data->count();
+        $data1 = Biome::where('id',$id)->first();
+        return view('user.filter-list-animal', compact('data','data1','count'));
+    }
+
 }

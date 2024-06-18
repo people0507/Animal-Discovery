@@ -94,7 +94,7 @@
                                     <div class="row align-items-center">
                                         <div class="col-4">
                                             <div class="s-char-kinds__attr text-uppercase">
-                                                SPECIES
+                                                TÊN KHOA HỌC
 
                                             </div>
                                         </div>
@@ -109,11 +109,11 @@
                             <div class="s-char-char__block">
                                 <div class="row">
                                     <div class="col-6">
-                                        <div class="s-char-char__name">Life Span</div>
+                                        <div class="s-char-char__name">Tuổi Thọ</div>
                                         <div class="s-char-char__num">{{ $data->avg_lifespan }}</div>
                                     </div>
                                     <div class="col-6">
-                                        <div class="s-char-char__name">Weight</div>
+                                        <div class="s-char-char__name">Cân Nặng</div>
                                         <div class="s-char-char__num">
                                             <div class="characteristic-container">
                                                 <div class="characteristic-value weight_1">33.6-65</div>
@@ -140,7 +140,7 @@
                             <div class="s-char-char__block">
                                 <div class="row">
                                     <div class="col-6">
-                                        <div class="s-char-char__name">Length</div>
+                                        <div class="s-char-char__name">Chiều Dài</div>
                                         <div class="s-char-char__num">
                                             <div class="characteristic-container">
                                                 <div class="characteristic-value lengths_1">21-23.5</div>
@@ -161,8 +161,9 @@
                                             </div>
                                         </div>
                                     </div>
+                                    @if(isset($data->animal_swing) && $data->animal_swing != '')
                                     <div class="col-6">
-                                        <div class="s-char-char__name">Wingspan</div>
+                                        <div class="s-char-char__name">Sải Cánh</div>
                                         <div class="s-char-char__num">
                                             <div class="characteristic-container">
                                                 <div class="characteristic-value wingspan_1">25-31</div>
@@ -183,6 +184,42 @@
                                             </div>
                                         </div>
                                     </div>
+                                    @endif
+                                </div>
+                            </div>
+                            <div class="s-char-char__block">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div class="s-char-char__name">Dân Số</div>
+                                        <div class="s-char-char__num">
+                                            <div class="characteristic-container">
+                                                <div class="characteristic-value">{{$data->population_size}}</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    @if(isset($data->top_speed) && $data->top_speed != '' || isset($data->top_speed) && $data->top_speed != '')
+                                    <div class="col-6">
+                                        <div class="s-char-char__name">Tốc Độ Tối Đa</div>
+                                        <div class="s-char-char__num">
+                                            <div class="characteristic-container">
+                                                <div class="characteristic-value">{{$data->top_speed}}</div>
+                                            </div>
+                                            <div class="units-block">
+                                                <div class="row">
+                                                    <div class="col-3">
+                                                        <span action="weight_1" class="toggle-units active-unit">KM/H</span>
+                                                    </div>
+                                                    <div class="col-1 text-center">
+                                                        |
+                                                    </div>
+                                                    <div class="col-3">
+                                                        <span class="toggle-units_last" action="weight_2">MPH</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    @endif
                                 </div>
                             </div>
                         </div>
@@ -303,7 +340,7 @@
                 <div class="container">
                     <div class="s-appearance-block">
                         <h2 class="a-h2">
-                            Appearance
+                            Ngoại Hình
                         </h2>
                         <p>{{ $data->appearance_description }}</p>
                     </div>
@@ -564,18 +601,18 @@
                                 <div class="s-distr-content">
                                     <h2 class="a-h2">
 
-                                        Distribution
+                                        Phân bổ
                                     </h2>
                                     <h3 class="a-h3">
 
-                                        Geography
+                                        Địa lý
                                     </h3>
                                     <div class="s-distr-block s-distr-block--row">
                                         <div class="row align-items-center">
                                             <div class="col-sm-3">
                                                 <div class="s-distr-geography__slug">
 
-                                                    Continents
+                                                    Lục Địa
                                                 </div>
                                             </div>
                                             <div class="col-sm-9">
@@ -589,7 +626,7 @@
                                             <div class="col-sm-3">
                                                 <div class="s-distr-geography__slug">
 
-                                                    Countries
+                                                    Quốc Gia
                                                 </div>
                                             </div>
                                             <div class="col-sm-9">
@@ -623,13 +660,13 @@
                     <div class="s-distr-zone">
                         <h3 class="a-h3">
 
-                            Biome
+                            Quần Thể Sinh Vật
                         </h3>
                         <div class="s-distr-block">
                             <div class="row">
                                 @foreach ($data->biomes as $item)
                                 <div class="col-lg-3 col-md-6 s-distr-margin">
-                                    <a href="https://animalia.bio/urban-wildlife" class="s-distr-zone-item "
+                                    <a href="{{route('biome',['id' => $item->id])}}" class="s-distr-zone-item "
                                     style="background-color: #00c853; background-image: url(http://localhost:8000/biomes/small/{{$item->biome_image}}); background-size: cover"><span>{{$item->biome_name}}</span>
                                     </a>
                                 </div>
@@ -640,12 +677,12 @@
                     <div class="s-distr-climate">
                         <h3 class="a-h3">
 
-                            Climate zones
+                            Vùng Khí Hậu
                         </h3>
                         <div class="row">
                             @foreach ($data->climates as $item)
                             <div class="col-lg-3 col-md-6 s-distr-margin">
-                                <a href="https://animalia.bio/temperate" class="s-distr-climate__link "
+                                <a href="{{route('climate-zone',['id' => $item->id])}}" class="s-distr-climate__link "
                                     style="background-color: #4CAF50; background-image: url(http://localhost:8000/climates/small/{{$item->climate_image}});"><span>{{$item->climate_name}}</span>
                                 </a>
                             </div>
@@ -671,8 +708,7 @@
                         <div class="col-lg-6">
                             <div class="s-habbit-content">
                                 <h2 class="a-h2">
-
-                                    Habits and Lifestyle
+                                Tập Tính và Lối Sống
                                 </h2>
                                 <p>{{$data->habit_lifestyle_description}}</p>
                             </div>
@@ -701,7 +737,7 @@
                     <div class="s-mating-block">
                         <h2 class="a-h2">
 
-                            Mating Habits
+                            Tập Tính Sinh Sản
                         </h2>
                         <div class="row">
                             <div class="col-lg-6">
@@ -711,7 +747,7 @@
                                             <div class="s-mating-slug">
                                                 <div class="s-mating-slug__text text-uppercase">
 
-                                                    MATING BEHAVIOR
+                                                    Hành vi giao hợp
                                                 </div>
                                             </div>
                                         </div>
@@ -727,7 +763,7 @@
                                             <div class="s-mating-slug">
                                                 <div class="s-mating-slug__text text-uppercase">
 
-                                                    REPRODUCTION SEASON
+                                                    Mùa sinh sản
                                                 </div>
                                             </div>
                                         </div>
@@ -742,7 +778,7 @@
                                             <div class="s-mating-slug">
                                                 <div class="s-mating-slug__text text-uppercase">
 
-                                                    PREGNANCY DURATION
+                                                THỜI GIAN MANG THAI(ấp trứng)
                                                 </div>
                                             </div>
                                         </div>
@@ -757,7 +793,7 @@
                                             <div class="s-mating-slug">
                                                 <div class="s-mating-slug__text text-uppercase">
 
-                                                    BABY CARRYING
+                                                    Số lượng con(hoặc trứng)
                                                 </div>
                                             </div>
                                         </div>
@@ -772,7 +808,7 @@
                                             <div class="s-mating-slug">
                                                 <div class="s-mating-slug__text text-uppercase">
 
-                                                    INDEPENDENT AGE
+                                                    Tuổi Tự Độc Lập
                                                 </div>
                                             </div>
                                         </div>
@@ -813,7 +849,7 @@
                                         <div class="col-sm-5 col-md-4">
                                             <div class="s-population-slug">
 
-                                                Population Trend
+                                                Xu hướng quần thể
                                             </div>
                                         </div>
                                         <div class="col-sm-7 col-md-8">
@@ -826,7 +862,7 @@
                                         <div class="col-sm-5 col-md-4">
                                             <div class="s-population-slug text-uppercase">
 
-                                                POPULATION STATUS
+                                                Tình Trạng Quần Thể
                                             </div>
                                         </div>
                                         <div class="col-sm-7 col-md-8">
@@ -836,24 +872,13 @@
                                     </div>
                                 </div>
                                 <div class="s-population-view">
-                                    <a href="https://animalia.bio/not-evaluated-ne" title="Not evaluated (NE)"
-                                        class="s-population-view__item ">ne</a>
-                                    <a href="https://animalia.bio/data-deficient-dd" title="Data deficient (DD)"
-                                        class="s-population-view__item ">dd</a>
-                                    <a href="https://animalia.bio/least-concern-lc" title="Least concern (LC)"
-                                        class="s-population-view__item  active ">lc</a>
-                                    <a href="https://animalia.bio/near-threatened-nt" title="Near Threatened (NT)"
-                                        class="s-population-view__item ">nt</a>
-                                    <a href="https://animalia.bio/vulnerable-vu" title="Vulnerable (VU)"
-                                        class="s-population-view__item ">vu</a>
-                                    <a href="https://animalia.bio/endangered-en" title="Endangered (EN)"
-                                        class="s-population-view__item ">en</a>
-                                    <a href="https://animalia.bio/critically-endangered-cr"
-                                        title="Critically endangered (CR)" class="s-population-view__item ">cr</a>
-                                    <a href="https://animalia.bio/extinct-in-the-wild-ew" title="Extinct in the wild (EW)"
-                                        class="s-population-view__item ">ew</a>
-                                    <a href="https://animalia.bio/extinct-ex" title="Extinct (EX)"
-                                        class="s-population-view__item ">ex</a>
+                                    @foreach ($conservationStatus as $item)
+                                    <a href="#" @if ($item->id == $data->conservation_status_id)
+                                    class="s-population-view__item active-hoover-circle"
+                                    @else
+                                    class="s-population-view__item"
+                                    @endif>{{$item->status_name}}</a>
+                                    @endforeach
                                 </div>
                                 <div class="mt-50">
                                     <div id="adngin-population-0"></div>
@@ -863,24 +888,26 @@
                                 <div class="s-population-content">
                                     <h2 class="a-h2">
 
-                                        Population
+                                        Quần Thể
                                     </h2>
                                     <h3 class="a-h3">
 
-                                        Population threats
+                                    Các mối đe dọa đối với quần thể
                                     </h3>
                                     <p>{{$data->population_threat}}
                                     </p>
                                     <h3 class="a-h3">
 
-                                        Population number
+                                        Số lượng quần thể
                                     </h3>
                                     <p>{{$data->population_number}}</p>
+                                    @if ($data->ecological_niche != '')
                                     <h3 class="a-h3">
 
-                                        Ecological niche
+                                        Vai trò sinh thái
                                     </h3>
                                     <p>{{$data->ecological_niche}}</p>
+                                    @endif
                                 </div>
                             </div>
                         </div>
