@@ -357,6 +357,11 @@
      display: inline-block;
  }
 
+ .active-hoover-circle{
+    background-color: #00c853;
+    color:white;
+ }
+
  .s-mating-slug__text {
      font-size: 16px;
      color: #777;

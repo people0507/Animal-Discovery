@@ -2,7 +2,14 @@
 @section('title', 'Categories Animal')
 @section('content_user')
     <link rel="stylesheet" href="{{ asset('users/css/fillter-list-animal.css') }}">
-    <div class="slide-head">
+    <div 
+    @if (isset($data1->climate_image) && $data1->climate_image != '')
+        style = "background-image: url(http://localhost:8000/climates/full/{{$data1->climate_image}});"
+    @elseif(isset($data1->biome_image) && $data1->biome_image != '')
+        style = "background-image: url(http://localhost:8000/biomes/full/{{$data1->biome_image}});"
+    @else
+        class="slide-head"
+    @endif >
         <header xmlns="http://www.w3.org/1999/html" class="main-head">
             <div class="container clearfix">
                 <a href="https://animalia.bio/index.php" class="logo">Animalia <span>All you want to know about
@@ -56,19 +63,15 @@
                         ACTIVE DAY PERIOD
                     </div>
                     <div class="h1-title">
-                        DIURNAL ANIMALS
+                        {{$data1->climate_name}}
                     </div>
                     <div class="quantity-h3">
-                        2661 SPECIES
+                        {{$count}} LOÀI
                     </div>
                 </div>
                 <div class="col-6">
                     <div class="box-text">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Est molestias sequi corrupti doloribus
-                        saepe at quisquam minus maiores quibusdam voluptate. Suscipit, totam esse asperiores error, corrupti
-                        quisquam quidem repudiandae voluptate facilis modi mollitia, libero enim nihil amet veniam saepe id.
-                        Eos dolores magni, impedit laborum maxime delectus sunt facilis quod repellendus dolor, quae
-                        assumenda deserunt expedita placeat at vero est cupiditate earum animi explicabo optio alias
+                    {{$data1->climate_description}}
                     </div>
                 </div>
             </div>
@@ -80,126 +83,25 @@
         <div class="row g-5">
             <!-- Blog list Start -->
             <div class="col-lg-8">
+                @foreach ($data as $item)   
                 <div class="blog-item mb-5">
                     <div class="row g-0 bg-light overflow-hidden">
                         <div class="col-12 col-sm-5 h-100">
-                            <img class="img-fluid h-100" src="{{ asset('users/img_fillter-list-animal/blog-1.jpg') }}"
+                            <img class="img-fluid h-100" src="http://localhost:8000/animal_images/{{$item->images->image_name}}"
                                 style="object-fit: cover;">
                         </div>
                         <div class="col-12 col-sm-7 h-100 d-flex flex-column justify-content-center">
                             <div class="p-4">
-                                <div class="d-flex mb-3">
-                                    <small class="me-3"><i class="bi bi-bookmarks me-2"></i>Web Design</small>
-                                    <small><i class="bi bi-calendar-date me-2"></i>01 Jan, 2045</small>
-                                </div>
-                                <h5 class="text-uppercase mb-3">Dolor sit magna rebum clita rebum dolor</h5>
-                                <p>Ipsum sed lorem amet dolor amet duo ipsum amet et dolore est stet tempor eos dolor</p>
-                                <a class="text-primary text-uppercase" href="">Read More<i
+                                <h5 class="text-uppercase mb-3">{{$item->animal_name}}</h5>
+                                <p>{{$item->animal_description}}</p>
+                                <a class="text-primary text-uppercase" href="{{route('user.animal-detail',['id' => $item->id])}}">Read More<i
                                         class="bi bi-chevron-right"></i></a>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="blog-item mb-5">
-                    <div class="row g-0 bg-light overflow-hidden">
-                        <div class="col-12 col-sm-5 h-100">
-                            <img class="img-fluid h-100" src="{{ asset('users/img_fillter-list-animal/blog-2.jpg') }}"
-                                style="object-fit: cover;">
-                        </div>
-                        <div class="col-12 col-sm-7 h-100 d-flex flex-column justify-content-center">
-                            <div class="p-4">
-                                <div class="d-flex mb-3">
-                                    <small class="me-3"><i class="bi bi-bookmarks me-2"></i>Web Design</small>
-                                    <small><i class="bi bi-calendar-date me-2"></i>01 Jan, 2045</small>
-                                </div>
-                                <h5 class="text-uppercase mb-3">Dolor sit magna rebum clita rebum dolor</h5>
-                                <p>Ipsum sed lorem amet dolor amet duo ipsum amet et dolore est stet tempor eos dolor</p>
-                                <a class="text-primary text-uppercase" href="">Read More<i
-                                        class="bi bi-chevron-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="blog-item mb-5">
-                    <div class="row g-0 bg-light overflow-hidden">
-                        <div class="col-12 col-sm-5 h-100">
-                            <img class="img-fluid h-100" src="{{ asset('users/img_fillter-list-animal/blog-1.jpg') }}"
-                                style="object-fit: cover;">
-                        </div>
-                        <div class="col-12 col-sm-7 h-100 d-flex flex-column justify-content-center">
-                            <div class="p-4">
-                                <div class="d-flex mb-3">
-                                    <small class="me-3"><i class="bi bi-bookmarks me-2"></i>Web Design</small>
-                                    <small><i class="bi bi-calendar-date me-2"></i>01 Jan, 2045</small>
-                                </div>
-                                <h5 class="text-uppercase mb-3">Dolor sit magna rebum clita rebum dolor</h5>
-                                <p>Ipsum sed lorem amet dolor amet duo ipsum amet et dolore est stet tempor eos dolor</p>
-                                <a class="text-primary text-uppercase" href="">Read More<i
-                                        class="bi bi-chevron-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="blog-item mb-5">
-                    <div class="row g-0 bg-light overflow-hidden">
-                        <div class="col-12 col-sm-5 h-100">
-                            <img class="img-fluid h-100" src="{{ asset('users/img_fillter-list-animal/blog-2.jpg') }}"
-                                style="object-fit: cover;">
-                        </div>
-                        <div class="col-12 col-sm-7 h-100 d-flex flex-column justify-content-center">
-                            <div class="p-4">
-                                <div class="d-flex mb-3">
-                                    <small class="me-3"><i class="bi bi-bookmarks me-2"></i>Web Design</small>
-                                    <small><i class="bi bi-calendar-date me-2"></i>01 Jan, 2045</small>
-                                </div>
-                                <h5 class="text-uppercase mb-3">Dolor sit magna rebum clita rebum dolor</h5>
-                                <p>Ipsum sed lorem amet dolor amet duo ipsum amet et dolore est stet tempor eos dolor</p>
-                                <a class="text-primary text-uppercase" href="">Read More<i
-                                        class="bi bi-chevron-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="blog-item mb-5">
-                    <div class="row g-0 bg-light overflow-hidden">
-                        <div class="col-12 col-sm-5 h-100">
-                            <img class="img-fluid h-100" src="{{ asset('users/img/blog-1.jpg') }}"
-                                style="object-fit: cover;">
-                        </div>
-                        <div class="col-12 col-sm-7 h-100 d-flex flex-column justify-content-center">
-                            <div class="p-4">
-                                <div class="d-flex mb-3">
-                                    <small class="me-3"><i class="bi bi-bookmarks me-2"></i>Web Design</small>
-                                    <small><i class="bi bi-calendar-date me-2"></i>01 Jan, 2045</small>
-                                </div>
-                                <h5 class="text-uppercase mb-3">Dolor sit magna rebum clita rebum dolor</h5>
-                                <p>Ipsum sed lorem amet dolor amet duo ipsum amet et dolore est stet tempor eos dolor</p>
-                                <a class="text-primary text-uppercase" href="">Read More<i
-                                        class="bi bi-chevron-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="blog-item mb-5">
-                    <div class="row g-0 bg-light overflow-hidden">
-                        <div class="col-12 col-sm-5 h-100">
-                            <img class="img-fluid h-100" src="{{ asset('users/img/blog-2.jpg') }}"
-                                style="object-fit: cover;">
-                        </div>
-                        <div class="col-12 col-sm-7 h-100 d-flex flex-column justify-content-center">
-                            <div class="p-4">
-                                <div class="d-flex mb-3">
-                                    <small class="me-3"><i class="bi bi-bookmarks me-2"></i>Web Design</small>
-                                    <small><i class="bi bi-calendar-date me-2"></i>01 Jan, 2045</small>
-                                </div>
-                                <h5 class="text-uppercase mb-3">Dolor sit magna rebum clita rebum dolor</h5>
-                                <p>Ipsum sed lorem amet dolor amet duo ipsum amet et dolore est stet tempor eos dolor</p>
-                                <a class="text-primary text-uppercase" href="">Read More<i
-                                        class="bi bi-chevron-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
+
                 <div class="col-12">
                     <nav aria-label="Page navigation">
                         <ul class="pagination pagination-lg m-0">

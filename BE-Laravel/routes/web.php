@@ -87,6 +87,8 @@ Route::prefix('animal_detail')->group(function () {
     Route::get('/get_animal_detail_infor/{id}', [AnimalDetailController::class, 'getAnimalDetailInfor'])->name('user.animal-detail');
     Route::get('/get_animal_detail_areas/{id}', [AnimalDetailController::class, 'getAnimalDetailAreas'])->name('user.cate-list');
     Route::get('/get_animal_detail/{id}', [AnimalDetailController::class, 'getAnimalDetail']);
+    Route::get('/fillter-climate/{id}', [AnimalDetailController::class, 'climateZone'])->name('climate-zone');
+    Route::get('/fillter-biome/{id}', [AnimalDetailController::class, 'biome'])->name('biome');
 });
 
 Route::prefix('animal_post')->group(function () {
