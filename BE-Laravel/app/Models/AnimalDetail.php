@@ -35,6 +35,11 @@ class AnimalDetail extends Model
         return $this->belongsToMany(Biome::class,'animal_between_biome','animal_detail_id', 'biome_id');
     }
 
+    public function climates()
+    {
+        return $this->belongsToMany(Climate::class,'animal_between_climate','animal_detail_id', 'climate_id');
+    }
+
     public function oceans()
     {
         return $this->belongsToMany(Ocean::class,'animal_between_ocean','animal_detail_id', 'ocean_id');

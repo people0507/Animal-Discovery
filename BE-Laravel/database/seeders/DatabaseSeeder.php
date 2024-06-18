@@ -79,18 +79,13 @@ class DatabaseSeeder extends Seeder
             ],
             [
                 'biome_name' => 'Vùng bãi triều',
-                'biome_image' => 'estuary.jpg',
-                'biome_description' => 'Vùng nước mặn và nước ngọt gặp nhau, thường nằm ở nơi sông đổ ra biển, là nơi sinh sản và nuôi dưỡng của nhiều loài động thực vật.'
+                'biome_image' => 'intertidal.jpg',
+                'biome_description' => 'Vùng bãi triều là khu vực trên bờ biển mà nước biển lên xuống theo chu kỳ triều nổi và triều xuống.'
             ],
             [
                 'biome_name' => 'Cửa sông',
                 'biome_image' => 'river_mouth.jpg',
                 'biome_description' => 'Điểm kết thúc của sông, nơi nước ngọt từ sông hòa vào nước biển mặn.'
-            ],
-            [
-                'biome_name' => 'Vùng biển khơi',
-                'biome_image' => 'open_ocean.jpg',
-                'biome_description' => 'Phần của đại dương mà không phải là gần bờ, thường có độ sâu lớn và không có sự pha trộn lớn với môi trường nước ngọt.'
             ],
             [
                 'biome_name' => 'Vùng vực thẳm',
@@ -123,11 +118,6 @@ class DatabaseSeeder extends Seeder
                 'biome_description' => 'Vùng đất không có đất mà thay vào đó là các khối đá, thường nằm trên núi hay vùng biển.'
             ],
             [
-                'biome_name' => 'Vùng biển gần bờ',
-                'biome_image' => 'coastal_waters.jpg',
-                'biome_description' => 'Vùng nước nông ven biển, thường có sự hiện diện của rạn san hô và nhiều loài sinh vật biển khác.'
-            ],
-            [
                 'biome_name' => 'Quần xã sinh vật nhân tạo',
                 'biome_image' => 'urban_landscape.jpg',
                 'biome_description' => 'Môi trường do con người tạo ra, bao gồm các thành phố, đô thị và vùng quê được canh tác.'
@@ -136,11 +126,6 @@ class DatabaseSeeder extends Seeder
                 'biome_name' => 'Khu vực nông nghiệp',
                 'biome_image' => 'farmland.jpg',
                 'biome_description' => 'Khu vực được canh tác để trồng cây và chăn nuôi động vật, thường bao gồm cánh đồng và trang trại.'
-            ],
-            [
-                'biome_name' => 'Đồng cỏ',
-                'biome_image' => 'meadow.jpg',
-                'biome_description' => 'Vùng đất mở với cỏ mọc dày đặc, thường là nơi chăn nuôi gia súc hoặc để làm thảm xanh.'
             ],
             [
                 'biome_name' => 'Ngoại ô',
@@ -158,11 +143,6 @@ class DatabaseSeeder extends Seeder
                 'biome_description' => 'Phần nước mặn của đại dương, có khối lượng nước lớn và có sự sống đa dạng.'
             ],
             [
-                'biome_name' => 'Rừng cây lá kim',
-                'biome_image' => 'coniferous_forest.jpg',
-                'biome_description' => 'Khu rừng với cây lá kim phát triển nhiều, thường sống ở vùng ôn đới và cận ôn đới.'
-            ],
-            [
                 'biome_name' => 'Bờ sông',
                 'biome_image' => 'river_bank.jpg',
                 'biome_description' => 'Đất ven sông, thường là môi trường sống cho nhiều loài cây cối và động vật dọc theo sông.'
@@ -173,11 +153,6 @@ class DatabaseSeeder extends Seeder
                 'biome_description' => 'Khu vực có cây bụi và cây cối thấp mọc rải rác, thường sống ở vùng khô hoặc nhiệt đới.'
             ],
             [
-                'biome_name' => 'Đầm lầy nước ngọt',
-                'biome_image' => 'freshwater_marsh.jpg',
-                'biome_description' => 'Khu vực lầy lội nước ngọt, thường có cây bụi và cây cối phát triển nhiều.'
-            ],
-            [
                 'biome_name' => 'Rừng nhiệt đới',
                 'biome_image' => 'tropical_forest.jpg',
                 'biome_description' => 'Rừng rậm ở khu vực nhiệt đới, với độ ẩm cao và nhiều loài cây cối và động vật.'
@@ -186,11 +161,6 @@ class DatabaseSeeder extends Seeder
                 'biome_name' => 'Ven biển',
                 'biome_image' => 'coast.jpg',
                 'biome_description' => 'Khu vực bờ biển, thường có bãi cát, rạn san hô và nhiều sinh vật biển khác.'
-            ],
-            [
-                'biome_name' => 'Rạn',
-                'biome_image' => 'reef.jpg',
-                'biome_description' => 'Cấu trúc đá vôi được hình thành dưới nước biển bởi san hô và sinh vật biển khác.'
             ],
             [
                 'biome_name' => 'Nước ngọt',
@@ -208,39 +178,9 @@ class DatabaseSeeder extends Seeder
                 'biome_description' => 'Cấu trúc tự nhiên nằm dưới mặt đất, thường có điều kiện môi trường và ánh sáng rất đặc biệt.'
             ],
             [
-                'biome_name' => 'Đầm lầy',
-                'biome_image' => 'salt_marsh.jpg',
-                'biome_description' => 'Khu vực lầy lội nước mặn, thường có cây bụi và cây cối phát triển nhiều, gần bờ biển.'
-            ],
-            [
                 'biome_name' => 'Cồn cát',
                 'biome_image' => 'sand_dunes.jpg',
                 'biome_description' => 'Địa hình dạng đồi cát, thường di chuyển do gió, có các cây cối và động vật thích nghi với điều kiện khô.'
-            ],
-            [
-                'biome_name' => 'Băng trôi',
-                'biome_image' => 'iceberg.jpg',
-                'biome_description' => 'Mảnh băng lớn nổi trên mặt biển, thường được hình thành từ nước lạnh ở các vùng cực.'
-            ],
-            [
-                'biome_name' => 'Hồ tạm thời',
-                'biome_image' => 'temporary_pond.jpg',
-                'biome_description' => 'Hồ nước tạm thời, thường được hình thành trong mùa mưa hoặc do hoạt động của con người.'
-            ],
-            [
-                'biome_name' => 'Đáy biển',
-                'biome_image' => 'seabed.jpg',
-                'biome_description' => 'Phần đáy của đại dương, thường là nơi sống của nhiều loài sinh vật biển và có đặc tính đặc biệt.'
-            ],
-            [
-                'biome_name' => 'Rừng mưa nhiệt đới',
-                'biome_image' => 'tropical_rainforest.jpg',
-                'biome_description' => 'Rừng rậm nhiệt đới nằm gần xích đạo, có khí hậu ẩm ướt với lượng mưa lớn, là nơi sinh sống của nhiều loài cây và động vật đa dạng.'
-            ],
-            [
-                'biome_name' => 'Rừng mây',
-                'biome_image' => 'cloud_forest.jpg',
-                'biome_description' => 'Khu rừng ẩm ướt, thường ở các vùng cao núi, có sương mù dày đặc và cây cối phát triển đa dạng.'
             ],
             [
                 'biome_name' => 'Bán sa mạc',
@@ -249,28 +189,13 @@ class DatabaseSeeder extends Seeder
             ],
             [
                 'biome_name' => 'Thảo nguyên',
-                'biome_image' => 'steppe.jpg',
+                'biome_image' => 'grassland.jpg',
                 'biome_description' => 'Vùng đất rộng mở với cỏ xanh mọc dày đặc, thường sống ở vùng khô và có ít cây cối.'
             ],
             [
-                'biome_name' => 'Rừng thảo nguyên',
-                'biome_image' => 'grassland_forest.jpg',
-                'biome_description' => 'Khu rừng nằm trong vùng đồng cỏ mở, có cây cối cao và cây bụi phát triển.'
-            ],
-            [
-                'biome_name' => 'Thảm cỏ biển',
-                'biome_image' => 'seagrass_bed.jpg',
-                'biome_description' => 'Khu vực dưới nước có rong biển mọc dày đặc, là nơi sống của nhiều loài sinh vật biển.'
-            ],
-            [
-                'biome_name' => 'Rừng tảo bẹ',
-                'biome_image' => 'kelp_forest.jpg',
-                'biome_description' => 'Khu rừng dưới nước có tảo bẹ phát triển nhiều, là môi trường sống của nhiều loài sinh vật biển.'
-            ],
-            [
-                'biome_name' => 'Băng biển',
-                'biome_image' => 'sea_ice.jpg',
-                'biome_description' => 'Mảnh băng nổi trên mặt biển, thường được hình thành từ nước lạnh ở các vùng cực.'
+                'biome_name' => 'Mỏm Băng',
+                'biome_image' => 'icecap.jpg',
+                'biome_description' => 'Mảnh băng nổi trên mặt biển, thường được hình thành từ nước lạnh ở các vùng cực , một khu vực băng lớn phủ trên đỉnh các ngọn núi hoặc trên các cao nguyên, nằm ở các vùng cực của Trái Đất.'
             ]
         ]);
         DB::table('color')->insert([
@@ -966,6 +891,59 @@ Kể từ năm 1782, đại bàng đầu trắng đã trở thành loài chim qu
                 ['animal_detail_id' => '4', 'nation_id' => '26'],
                 ['animal_detail_id' => '1', 'nation_id' => '29'],
                 ['animal_detail_id' => '3', 'nation_id' => '50']
+            ]
+        );
+        DB::table('animal_between_biome')->insert(
+            [
+                ['animal_detail_id' => '1', 'biome_id' => '3'],
+                ['animal_detail_id' => '2', 'biome_id' => '5'],
+                ['animal_detail_id' => '3', 'biome_id' => '14'],
+                ['animal_detail_id' => '3', 'biome_id' => '5'],
+                ['animal_detail_id' => '4', 'biome_id' => '1'],
+                ['animal_detail_id' => '4', 'biome_id' => '27'],
+                ['animal_detail_id' => '3', 'biome_id' => '11'],
+                ['animal_detail_id' => '3', 'biome_id' => '17'],
+                ['animal_detail_id' => '1', 'biome_id' => '22'],
+                ['animal_detail_id' => '4', 'biome_id' => '11'],
+                ['animal_detail_id' => '4', 'biome_id' => '21'],
+                ['animal_detail_id' => '1', 'biome_id' => '21'],
+                ['animal_detail_id' => '3', 'biome_id' => '2'],
+                ['animal_detail_id' => '3', 'biome_id' => '22'],
+                ['animal_detail_id' => '1', 'biome_id' => '2'],
+                ['animal_detail_id' => '1', 'biome_id' => '18'],
+                ['animal_detail_id' => '4', 'biome_id' => '26'],
+                ['animal_detail_id' => '2', 'biome_id' => '3'],
+                ['animal_detail_id' => '4', 'biome_id' => '11'],
+                ['animal_detail_id' => '4', 'biome_id' => '21'],
+                ['animal_detail_id' => '3', 'biome_id' => '8'],
+                ['animal_detail_id' => '2', 'biome_id' => '1'],
+                ['animal_detail_id' => '2', 'biome_id' => '4'],
+                ['animal_detail_id' => '3', 'biome_id' => '2'],
+                ['animal_detail_id' => '3', 'biome_id' => '1'],
+                ['animal_detail_id' => '2', 'biome_id' => '4'],
+                ['animal_detail_id' => '1', 'biome_id' => '7'],
+                ['animal_detail_id' => '2', 'biome_id' => '21'],
+                ['animal_detail_id' => '4', 'biome_id' => '14'],
+                ['animal_detail_id' => '1', 'biome_id' => '5']
+            ]
+        );
+        DB::table('animal_between_climate')->insert(
+            [
+                ['animal_detail_id' => '1', 'climate_id' => '3'],
+                ['animal_detail_id' => '2', 'climate_id' => '5'],
+                ['animal_detail_id' => '3', 'climate_id' => '2'],
+                ['animal_detail_id' => '4', 'climate_id' => '4'],
+                ['animal_detail_id' => '1', 'climate_id' => '1'],
+                ['animal_detail_id' => '2', 'climate_id' => '3'],
+                ['animal_detail_id' => '3', 'climate_id' => '5'],
+                ['animal_detail_id' => '4', 'climate_id' => '2'],
+                ['animal_detail_id' => '1', 'climate_id' => '4'],
+                ['animal_detail_id' => '2', 'climate_id' => '1'],
+                ['animal_detail_id' => '3', 'climate_id' => '4'],
+                ['animal_detail_id' => '4', 'climate_id' => '5'],
+                ['animal_detail_id' => '1', 'climate_id' => '2'],
+                ['animal_detail_id' => '2', 'climate_id' => '4'],
+                ['animal_detail_id' => '3', 'climate_id' => '3']
             ]
         );
     }
