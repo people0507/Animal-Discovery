@@ -60,6 +60,11 @@ class AnimalDetail extends Model
         return $this->belongsTo(ConservationStatus::class,'conservation_status_id');
     }
 
+    public function diet()
+    {
+        return $this->belongsTo(DietType::class,'diet_type_id');
+    }
+
     public function trend()
     {
         return $this->belongsTo(PopulationTrending::class,'population_trending_id');

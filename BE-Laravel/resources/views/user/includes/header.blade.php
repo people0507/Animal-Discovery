@@ -47,7 +47,7 @@
             <a href="{{ route('user.about') }}"
                 class="nav-item nav-link {{ Request::is('about') ? 'active' : '' }}">About</a>
             <a href="service.html" class="nav-item nav-link">Services</a>
-            <div class="nav-item dropdown">
+            <div class="nav-item dropdown" style="z-index: 99999;">
                 <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                 <div class="dropdown-menu rounded-0 rounded-bottom m-0">
                     <a href="animal.html" class="dropdown-item">Our Animals</a>
