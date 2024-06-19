@@ -28,10 +28,6 @@ use Illuminate\Http\Request;
 // })->name('user.home');
 Route::get('/', [AnimalDetailController::class, 'viewAnimalPage'])->name('user.home');
 
-// fillter list animal
-Route::get('/fillter-list-animal', function () {
-    return view('user.fillter-list-animal');
-})->name('user.fillter-list-animal');
 
 Route::get('/about', function () {
     return view('user.about');
@@ -39,6 +35,23 @@ Route::get('/about', function () {
 Route::get('/contract', function () {
     return view('user.contract');
 })->name('user.contract');
+
+// fillter list animal
+Route::get('/fillter-list-animal', function () {
+    return view('user.fillter-list-animal');
+})->name('user.fillter-list-animal');
+
+// list blog
+Route::get('/list-blog', function () {
+    return view('user.list-blog');
+})->name('user.list-blog');
+
+// blog detail
+Route::get('/blog-detail', function () {
+    return view('user.blog-detail');
+})->name('user.blog-detail');
+
+
 // Route::get('/categories-list', function () {
 //     return view('user.categories-animal');
 // })->name('user.cate-list');
