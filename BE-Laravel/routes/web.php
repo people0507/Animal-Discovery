@@ -38,13 +38,21 @@ Route::get('/contract', function () {
 
 // fillter list animal
 Route::get('/fillter-list-animal', function () {
-    return view('user.fillter-list-animal');
+    return view('user.filter-list-animal');
 })->name('user.fillter-list-animal');
 
+// Có 3 list blog tham khảo thử
 // list blog
 Route::get('/list-blog', function () {
     return view('user.list-blog');
 })->name('user.list-blog');
+// list blog
+Route::get('/list-blog-2', function () {
+    return view('user.list-blog-2');
+})->name('user.list-blog-2');
+Route::get('/list-blog-3', function () {
+    return view('user.list-blog-3');
+})->name('user.list-blog-3');
 
 // blog detail
 Route::get('/blog-detail', function () {

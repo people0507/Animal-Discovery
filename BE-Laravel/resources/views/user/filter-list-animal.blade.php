@@ -1,17 +1,15 @@
 @extends('user.main')
 @section('title', 'Categories Animal')
 @section('content_user')
-    <link rel="stylesheet" href="{{ asset('users/css/fillter-list-animal.css') }}">
-    <div 
-    @if (isset($data1->climate_image) && $data1->climate_image != '')
-        style = "background-image: url(http://localhost:8000/climates/full/{{$data1->climate_image}});"
+    <link rel="stylesheet" href="{{ asset('users/css/fillter-list-animal.css') }}" style="padding: 50px 0">
+    <div
+        @if (isset($data1->climate_image) && $data1->climate_image != '') style = "background-image: url(http://localhost:8000/climates/full/{{ $data1->climate_image }});"
     @elseif(isset($data1->biome_image) && $data1->biome_image != '')
-        style = "background-image: url(http://localhost:8000/biomes/full/{{$data1->biome_image}});"
+        style = "background-image: url(http://localhost:8000/biomes/full/{{ $data1->biome_image }});  padding: 50px 0"
     @else
-        class="slide-head"
-    @endif >
+        class="slide-head" @endif>
         <header xmlns="http://www.w3.org/1999/html" class="main-head">
-            <div class="container clearfix">
+            <div class="container-nav clearfix">
                 <a href="https://animalia.bio/index.php" class="logo">Animalia <span>All you want to know about
                         animals</span>
                 </a>
@@ -63,15 +61,15 @@
                         ACTIVE DAY PERIOD
                     </div>
                     <div class="h1-title">
-                        {{$data1->climate_name}}
+                        {{ $data1->climate_name }}
                     </div>
                     <div class="quantity-h3">
-                        {{$count}} LOÀI
+                        {{ $count }} LOÀI
                     </div>
                 </div>
                 <div class="col-6">
                     <div class="box-text">
-                    {{$data1->climate_description}}
+                        {{ $data1->climate_description }}
                     </div>
                 </div>
             </div>
@@ -83,23 +81,26 @@
         <div class="row g-5">
             <!-- Blog list Start -->
             <div class="col-lg-8">
-                @foreach ($data as $item)   
-                <div class="blog-item mb-5">
-                    <div class="row g-0 bg-light overflow-hidden">
-                        <div class="col-12 col-sm-5 h-100">
-                            <img class="img-fluid h-100" src="http://localhost:8000/animal_images/{{$item->images->image_name}}"
-                                style="object-fit: cover;">
-                        </div>
-                        <div class="col-12 col-sm-7 h-100 d-flex flex-column justify-content-center">
-                            <div class="p-4">
-                                <h5 class="text-uppercase mb-3">{{$item->animal_name}}</h5>
-                                <p>{{$item->animal_description}}</p>
-                                <a class="text-primary text-uppercase" href="{{route('user.animal-detail',['id' => $item->id])}}">Read More<i
-                                        class="bi bi-chevron-right"></i></a>
+                @foreach ($data as $item)
+                    <div class="blog-item mb-5">
+                        <div class="row g-0 bg-light overflow-hidden">
+                            <div class="col-12 col-sm-5 h-100">
+                                <img class="img-fluid h-100"
+                                    src="http://localhost:8000/animal_images/{{ $item->images->image_name }}"
+                                    style="object-fit: cover; >
+                            </div>
+                            <div class="col-12
+                                    col-sm-7 h-100 d-flex flex-column justify-content-center">
+                                <div class="p-4">
+                                    <h5 class="text-uppercase mb-3">{{ $item->animal_name }}</h5>
+                                    <p>{{ $item->animal_description }}</p>
+                                    <a class="text-primary text-uppercase"
+                                        href="{{ route('user.animal-detail', ['id' => $item->id]) }}">Read More<i
+                                            class="bi bi-chevron-right"></i></a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
                 @endforeach
 
                 <div class="col-12">
@@ -146,7 +147,8 @@
                         <a class="h5 bg-light py-2 px-3 mb-2" href="#"><i class="bi bi-arrow-right me-2"></i>Web
                             Development</a>
                         <a class="h5 bg-light py-2 px-3 mb-2" href="#"><i
-                                class="bi bi-arrow-right me-2"></i>Keyword Research</a>
+                                class="bi bi-arrow-right me-2"></i>Keyword
+                            Research</a>
                         <a class="h5 bg-light py-2 px-3 mb-2" href="#"><i class="bi bi-arrow-right me-2"></i>Email
                             Marketing</a>
                     </div>
