@@ -830,8 +830,27 @@
                 </div>
             </section>
             <section class="s-ad-banner-horizontal">
-                <div class="container" style="text-align: center;">
-                    <div class="list-ads-block"></div>
+                <div class="container" style="text-align: left;">
+                    <div class="list-ads-block">
+                    <div class="row">
+                        <h2 class="a-h2 col-sm-6 col-md-8" >
+                        Chế độ ăn và dinh dưỡng
+                        </h2>
+                        <br>
+                        <br>
+                        <p class="col-sm-6 col-md-8">{{$data->diet_nutrition_description}}</p>
+                        <div class="col-sm-6 col-md-8">
+                            <div class="row align-items-end">
+                                <div class="col col-lg-2 s-population-slug">
+                                    Diet
+                                </div>
+                                <div class="col">
+                                    <a class="s-population__link" href="#">{{$data->diet->diet_name}}</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
                 </div>
             </section>
             <section class="s-population">
