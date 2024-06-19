@@ -8,6 +8,14 @@ header {
     z-index: 10;
 }
 
+
+.container-nav {
+    width: 96%;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+}
 .page-catalog .logo,
 .page-catalog .logo span {
     color: #fff !important;
