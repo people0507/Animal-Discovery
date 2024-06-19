@@ -43,13 +43,13 @@ Route::get('/fillter-list-animal', function () {
 
 // Có 3 list blog tham khảo thử
 // list blog
-Route::get('/list-blog', function () {
-    return view('user.list-blog');
-})->name('user.list-blog');
+// Route::get('/list-blog', function () {
+//     return view('user.list-blog');
+// })->name('user.list-blog');
 // list blog
-Route::get('/list-blog-2', function () {
+Route::get('/list-blog', function () {
     return view('user.list-blog-2');
-})->name('user.list-blog-2');
+})->name('user.list-blog');
 Route::get('/list-blog-3', function () {
     return view('user.list-blog-3');
 })->name('user.list-blog-3');
