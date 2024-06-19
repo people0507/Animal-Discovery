@@ -30,6 +30,7 @@ class AnimalDetailController extends Controller
         $data->status;
         $data->biomes;
         $data->climates;
+        $data->diet;
         $habitImage = Image::where('detail_id',$data->id)->inRandomOrder()->first();
         $populationImage = Image::where('detail_id',$data->id)->inRandomOrder()->first();
         $conservationStatus = ConservationStatus::all();
@@ -42,7 +43,8 @@ class AnimalDetailController extends Controller
             $query->where('area_id', $id);
         })->with(['images' => function ($query) {;
         }])->get();
-        return view('user.categories-animal', compact('data'));
+        $data1 = Area::where('id',$id)->first();
+        return view('user.categories-animal', compact('data','data1'));
     }
 
     public function climateZone($id){

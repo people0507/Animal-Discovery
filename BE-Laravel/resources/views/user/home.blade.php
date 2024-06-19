@@ -266,8 +266,7 @@
 
     <div class="container-xxl py-5">
         <h1 class="display-5 mb-0">
-            List Categories <span class="text-primary">Animal</span> Awsome
-            Animals
+            Nhiều Châu Lục Với Các <span class="text-primary">Loài Vật</span> Tuyệt Vời
         </h1>
         <div class="wrapper_cate">
             <div class="container_cate">

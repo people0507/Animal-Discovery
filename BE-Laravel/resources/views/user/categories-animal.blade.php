@@ -25,6 +25,16 @@
         .detai-animal {
             font-weight: 700;
         }
+
+        .multiline-ellipsis {
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 4; /* Số lượng dòng hiển thị */
+            overflow: hidden;
+            text-overflow: ellipsis;
+            height: 6em; /* 3 dòng x 1.5em mỗi dòng (tùy thuộc vào line-height) */
+            line-height: 1.5em; /* Điều chỉnh khoảng cách dòng */
+        }
     </style>
     @php
         $breadcrumbs = [
@@ -38,12 +48,10 @@
         <div class="container">
             <div class="cate-top">
                 <h1 class="title-cate-animal">
-                    Fluffy Animals
+                    {{$data1->area_name}}
                 </h1>
-                <p class="desc-cate-animal">
-                    In this collection, let's take a look at animals that have soft fluffy coats and find out some
-                    interesting
-                    facts about them.
+                <p class="desc-cate-animal multiline-ellipsis">
+                {{$data1->area_description}}
                 </p>
             </div>
             <div class="list-animal-item">
