@@ -1,16 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600&display=swap");
 
 :root {
-    --Moderate-blue: hsl(238, 40%, 52%);
-    --Soft-Red: hsl(358, 79%, 66%);
-    --Light-grayish-blue: hsl(239, 57%, 85%);
-    --Pale-red: hsl(357, 100%, 86%);
-
-    --Dark-blue: hsl(212, 24%, 26%);
-    --Grayish-Blue: hsl(211, 10%, 45%);
-    --Light-gray: hsl(223, 19%, 93%);
-    --Very-light-gray: hsl(228, 33%, 97%);
-    --White: hsl(0, 0%, 100%);
+    /* --White: hsl(0, 0%, 100%); */
 }
 
 .comment {
@@ -28,8 +19,8 @@ p {
 .comment-compo {
     height: 100%;
     width: 100%;
-    padding-top: 3rem;
-    background-color: var(--Very-light-gray);
+    padding: 0 50px;
+    background-color: hsl(228, 33%, 97%);
 }
 
 a {
@@ -47,8 +38,8 @@ button:hover {
 }
 
 .bu-primary {
-    background-color: var(--Moderate-blue);
-    color: var(--White);
+    background-color: hsl(238, 40%, 52%);
+    color: #fff;
     border: none;
     padding: .75rem 1.5rem;
     border-radius: 4px;
@@ -58,10 +49,10 @@ button:hover {
     padding: 0 1rem;
 }
 
-.container {
+.container-comment {
     border-radius: 8px;
     padding: 1.5rem;
-    background-color: var(--White);
+    background-color: #fff;
 }
 
 .comments-wrp {
@@ -75,22 +66,26 @@ button:hover {
     margin-top: 1rem;
 }
 
+.full-width-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .comment {
     margin-bottom: 1rem;
     display: grid;
     grid-template-areas:
         "score user controls"
         "score comment comment"
-        "score comment comment"
-    ;
+        "score comment comment";
     grid-template-columns: auto 1fr auto;
     gap: 1.5rem;
     row-gap: 1rem;
-    color: var(--Grayish-Blue);
+    color: hsl(211, 10%, 45%);
 }
-
 .c-score {
-    color: var(--Moderate-blue);
+    color: hsl(238, 40%, 52%);
     font-weight: 500;
     grid-area: score;
     display: flex;
@@ -101,7 +96,7 @@ button:hover {
     padding-top: .5rem;
     width: 1rem;
     box-sizing: content-box;
-    background-color: var(--Very-light-gray);
+    background-color: hsl(228, 33%, 97%);
     border-radius: 8px;
     align-self: flex-start;
 }
@@ -126,7 +121,7 @@ button:hover {
 }
 
 .usr-name {
-    color: var(--Dark-blue);
+    color: hsl(212, 24%, 26%);
     font-weight: 700;
 }
 
@@ -138,7 +133,7 @@ button:hover {
 .c-controls {
     display: flex;
     gap: 1rem;
-    color: var(--Moderate-blue);
+    color: hsl(238, 40%, 52%);
     grid-area: controls;
     align-self: center;
     justify-self: flex-end;
@@ -150,7 +145,7 @@ button:hover {
 
 .edit,
 .reply {
-    color: var(--Moderate-blue);
+    color: hsl(238, 40%, 52%);
 }
 
 .edit {
@@ -170,11 +165,11 @@ button:hover {
     display: flex;
     margin-left: 2.5rem;
     padding-left: 2.4rem;
-    border-left: 1px solid var(--Light-grayish-blue);
+    border-left: 1px solid hsl(239, 57%, 85%);
 }
 
 .reply-to {
-    color: var(--Moderate-blue);
+    color: hsl(238, 40%, 52%);
     font-weight: 500;
 }
 
@@ -203,7 +198,7 @@ button:hover {
     grid-area: input;
     padding: 1rem;
     width: 100%;
-    border: 1px solid var(--Light-gray);
+    border: 1px solid hsl(223, 19%, 93%);
     border-radius: 4px;
     resize: none;
 }
@@ -211,8 +206,8 @@ button:hover {
 .this-user .usr-name::after {
     font-weight: 400;
     content: "you";
-    color: var(--White);
-    background-color: var(--Moderate-blue);
+    color: #fff;
+    background-color: hsl(238, 40%, 52%);
     padding: 0 .4rem;
     padding-bottom: .2rem;
     font-size: .8rem;
@@ -306,11 +301,11 @@ button:hover {
 
 .modal h3 {
     grid-area: heading;
-    color: var(--Dark-blue);
+    color: hsl(212, 24%, 26%);
 }
 
 .modal button {
-    color: var(--White);
+    color: #fff;
     padding: .75rem;
     border-radius: 8px;
     border: none;
@@ -319,7 +314,7 @@ button:hover {
 
 .modal p {
     grid-area: body;
-    color: var(--Grayish-Blue);
+    color: hsl(211, 10%, 45%);
     line-height: 1.5;
 }
 
@@ -329,6 +324,98 @@ button:hover {
 }
 
 .modal .no {
-    background-color: var(--Grayish-Blue);
+    background-color: hsl(211, 10%, 45%);
     grid-area: no;
+}
+
+.blog-container .s-char-block {
+    margin-top: 20px;
+}
+*,
+::after,
+::before {
+    box-sizing: border-box;
+}
+
+.pl-3,
+.px-3 {
+    padding-left: 1rem !important;
+}
+
+.mr-2,
+.mx-2 {
+    margin-right: .5rem !important;
+}
+
+.mb-4,
+.my-4 {
+    margin-bottom: 1.5rem !important;
+}
+
+.media-body {
+    flex: 1;
+}
+
+.mr-3,
+.mx-3 {
+    margin-right: 1rem !important;
+}
+
+.media {
+    display: flex;
+    align-items: flex-start;
+}
+
+.mr-4,
+.mx-4 {
+    margin-right: 1.5rem !important;
+}
+
+.mb-3,
+.my-3 {
+    margin-bottom: 1rem !important;
+}
+
+img {
+    vertical-align: middle;
+    border-style: none;
+}
+
+.w-50 {
+    width: 50% !important;
+}
+
+.img-avatar {
+    /* width: 100px;
+                                                                                                                        height: 100px; */
+}
+
+.float-left {
+    float: left !important;
+}
+
+.mb-3,
+.my-3 {
+    margin-bottom: 1rem !important;
+}
+
+.mb-4,
+.my-4 {
+    margin-bottom: 1.5rem !important;
+}
+
+.float-right {
+    float: right !important;
+}
+
+.mb-4,
+.my-4 {
+    margin-bottom: 1.5rem !important;
+}
+.article-container {
+    font-size: 20px;
+    color: #222;
+    font-family: Rubik, sans-serif;
+    line-height: 1.5;
+    margin-top: 20px;
 }

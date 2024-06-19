@@ -61,6 +61,71 @@
             transition: all .3s ease;
         }
 
+
+        .row_climate {
+            padding: 0.75vw;
+
+            display: grid;
+            grid-template-columns: repeat(64, 1fr);
+            grid-template-rows: 55vh 30vh;
+            grid-row-gap: 0.75vw;
+        }
+
+        .box_climate a {
+            display: block;
+            width: 100%;
+            height: 100%;
+
+            position: absolute;
+            top: 0;
+            left: 0;
+
+            &:hover img {
+                opacity: 0.75;
+            }
+        }
+
+        .box__inner {
+            background-color: #005696;
+            width: 100%;
+            height: 100%;
+            position: relative;
+
+            img {
+                width: 100%;
+                height: 100%;
+
+                object-position: 50% 50%;
+                object-fit: cover;
+
+                transition: opacity .2s ease-out;
+            }
+        }
+
+        .box--left {
+            clip-path: polygon(0 0, 98% 0, 83% 100%, 0 100%);
+            grid-row: 1;
+            grid-column: 1 / span 35;
+        }
+
+        .box--right {
+            clip-path: polygon(17% 0, 100% 0, 100% 100%, 2% 100%);
+            grid-row: 1;
+            grid-column: span 35 / -1;
+        }
+
+        .box--small {
+            grid-row: 2;
+
+            &.box--left {
+                clip-path: polygon(0 0, 83% 0, 98% 100%, 0 100%);
+            }
+
+            &.box--right {
+                clip-path: polygon(2% 0, 100% 0, 100% 100%, 17% 100%);
+            }
+        }
+
         .description p {
             color: #d8d8dc;
             padding-top: 5px;
@@ -84,35 +149,127 @@
             transform: translateY(0) !important;
         }
 
-        @foreach ($areas as $key => $area)
-        .card_cate[for="c{{$key + 1}}"] {
-            background-image: url("http://localhost:8000/areas/{{$area->area_image}}");
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
+        .bigTitle {
+            font-family: 'Lobster', cursive;
+            font-size: xx-large;
+            text-align: center;
+            margin: 130px 0;
         }
+
+        .bigTitle .des {
+            font-size: large;
+            max-width: 500px;
+            margin: 10px auto;
+            color: #ffffff4D;
+        }
+
+        .transport ul {
+            padding: 0;
+            list-style: none;
+            display: grid;
+            grid-template-columns: auto auto auto auto auto auto;
+            column-gap: 20px;
+        }
+
+        .transport li {
+            text-align: center;
+            color: #ffffff4D;
+        }
+
+        .transport li i {
+            display: block;
+            margin-bottom: 20px;
+            font-size: xxx-large;
+            color: #fff;
+        }
+
+        .zoom {
+            transform: scale(1);
+            transition: 0.5s;
+        }
+
+        .zoom:hover {
+            transform: scale(1.2);
+            filter: brightness(0.5);
+        }
+
+        .checkin {
+            display: grid;
+            grid-template-columns: 24.25% 24.25% 24.25% 24.25%;
+            column-gap: 1%;
+            grid-template-rows: 300px 300px;
+            row-gap: 10px;
+        }
+
+        .checkin .item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 20px;
+        }
+
+        .checkin img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .checkin .item .content {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            color: #fff
+        }
+
+        .checkin .item .content .title {
+            font-size: 24px;
+            font-weight: 700;
+            color: #FFF;
+        }
+
+        .checkin .item .content .des {
+            opacity: 0.7;
+        }
+
+        .checkin .item:nth-child(1) {
+            grid-column-start: 1;
+            grid-column-end: 3;
+        }
+
+        .checkin .item:nth-child(2) {
+            grid-column-start: 3;
+            grid-row-start: 1;
+            grid-row-end: 3;
+        }
+
+        @foreach ($areas as $key => $area)
+            .card_cate[for="c{{ $key + 1 }}"] {
+                background-image: url("http://localhost:8000/areas/{{ $area->area_image }}");
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+            }
         @endforeach
 
         /* .card_cate[for="c2"] {
-            background-image: url("{{ asset('images/animal-lg-1.jpg') }}");
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-        }
+                                                    background-image: url("{{ asset('images/animal-lg-1.jpg') }}");
+                                                    background-size: cover;
+                                                    background-position: center;
+                                                    background-repeat: no-repeat;
+                                                }
 
-        .card_cate[for="c3"] {
-            background-image: url("{{ asset('images/animal-lg-1.jpg') }}");
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-        }
+                                                .card_cate[for="c3"] {
+                                                    background-image: url("{{ asset('images/animal-lg-1.jpg') }}");
+                                                    background-size: cover;
+                                                    background-position: center;
+                                                    background-repeat: no-repeat;
+                                                }
 
-        .card_cate[for="c4"] {
-            background-image: url("{{ asset('images/animal-lg-1.jpg') }}");
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-        } */
+                                                .card_cate[for="c4"] {
+                                                    background-image: url("{{ asset('images/animal-lg-1.jpg') }}");
+                                                    background-size: cover;
+                                                    background-position: center;
+                                                    background-repeat: no-repeat;
+                                                } */
     </style>
     <!-- About Start -->
     <div class="container-xxl py-5">
@@ -271,17 +428,19 @@
         <div class="wrapper_cate">
             <div class="container_cate">
                 @foreach ($areas as $key => $area)
-                <input type="radio" name="slide" id="c{{$key + 1}}" checked>
-                <label for="c{{$key + 1}}" class="card_cate">
-                    <div class="row">
-                        <div class="icon">{{$key + 1}}</div>
-                        <div class="description">
-                            <h4><a href="{{ route('user.cate-list',['id' => $area->id]) }}">{{$area->area_name}}</a></h4>
-                            <p>Winter has so much to offer -
-                                creative activities</p>
+                    <input type="radio" name="slide" id="c{{ $key + 1 }}" checked>
+                    <label for="c{{ $key + 1 }}" class="card_cate">
+                        <div class="row">
+                            <div class="icon">{{ $key + 1 }}</div>
+                            <div class="description">
+                                <h4><a
+                                        href="{{ route('user.cate-list', ['id' => $area->id]) }}">{{ $area->area_name }}</a>
+                                </h4>
+                                <p>Winter has so much to offer -
+                                    creative activities</p>
+                            </div>
                         </div>
-                    </div>
-                </label>              
+                    </label>
                 @endforeach
             </div>
         </div>
@@ -391,6 +550,133 @@
         </div>
     </div>
     <!-- Animal End -->
+
+    {{-- Climate --}}
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="row g-5 mb-5 align-items-end wow fadeInUp" data-wow-delay="0.1s">
+                <div class="col-lg-6">
+                    <p><span class="text-primary me-2">#</span>Climate</p>
+                    <h1 class="display-5 mb-0">
+                        Let`s See Our <span class="text-primary">Choose</span> time saving to know how animals survive
+                    </h1>
+                </div>
+            </div>
+            <div class="row_climate">
+                <div class="box_climate box--left">
+                    <div class="box__inner">
+                        <a href="#">
+                            <img src="https://res.klook.com/images/fl_lossy.progressive,q_65/c_fill,w_3000,h_2000,f_auto/w_80,x_15,y_15,g_south_west,l_Klook_water_br_trans_yhcmh3/activities/v6bwf3e8qhdfhrgq7lv3/V%C3%A9V%C3%A0oC%E1%BB%95ngIMGWorldsofAdventure,Dubai-KlookVi%E1%BB%87tNam.jpg"
+                                alt="">
+                        </a>
+                    </div>
+                </div>
+
+                <div class="box_climate box--right">
+                    <div class="box__inner">
+                        <a href="#">
+                            <img src="https://res.klook.com/images/fl_lossy.progressive,q_65/c_fill,w_3000,h_2000,f_auto/w_80,x_15,y_15,g_south_west,l_Klook_water_br_trans_yhcmh3/activities/v6bwf3e8qhdfhrgq7lv3/V%C3%A9V%C3%A0oC%E1%BB%95ngIMGWorldsofAdventure,Dubai-KlookVi%E1%BB%87tNam.jpg"
+                                alt="">
+                        </a>
+                    </div>
+                </div>
+
+                <div class="box_climate box--left box--small">
+                    <div class="box__inner">
+                        <a href="#">
+                            <img src="https://res.klook.com/images/fl_lossy.progressive,q_65/c_fill,w_3000,h_2000,f_auto/w_80,x_15,y_15,g_south_west,l_Klook_water_br_trans_yhcmh3/activities/v6bwf3e8qhdfhrgq7lv3/V%C3%A9V%C3%A0oC%E1%BB%95ngIMGWorldsofAdventure,Dubai-KlookVi%E1%BB%87tNam.jpg"
+                                alt="">
+                        </a>
+                    </div>
+                </div>
+
+                <div class="box_climate box--right box--small">
+                    <div class="box__inner">
+                        <a href="#">
+                            <img src="https://res.klook.com/images/fl_lossy.progressive,q_65/c_fill,w_3000,h_2000,f_auto/w_80,x_15,y_15,g_south_west,l_Klook_water_br_trans_yhcmh3/activities/v6bwf3e8qhdfhrgq7lv3/V%C3%A9V%C3%A0oC%E1%BB%95ngIMGWorldsofAdventure,Dubai-KlookVi%E1%BB%87tNam.jpg"
+                                alt="">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {{-- Color --}}
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="row g-5 mb-5 align-items-end wow fadeInUp" data-wow-delay="0.1s">
+                <div class="col-lg-6">
+                    <p><span class="text-primary me-2">#</span>Color</p>
+                    <h1 class="display-5 mb-0">
+                        Let`s See Our <span class="text-primary">Choose</span> color for Animal
+                    </h1>
+                </div>
+            </div>
+
+            <div class="checkin">
+                <div class="item">
+                    <img src="https://www.rspcansw.org.au/wp-content/uploads/2020/03/disneyblog6.jpg" class="zoom">
+                    <div class="content">
+                        <a href="#" class="title">Name Checkin</a>
+                        <div class="des">
+                            Lorem ipsum dolor sit amet consectetur adipisicing.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <img src="https://www.rspcansw.org.au/wp-content/uploads/2020/03/disneyblog6.jpg" class="zoom">
+                    <div class="content">
+                        <a href="#" class="title">Name Checkin</a>
+                        <div class="des">
+                            Lorem ipsum dolor sit amet consectetur adipisicing.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <img src="https://www.rspcansw.org.au/wp-content/uploads/2020/03/disneyblog6.jpg" class="zoom">
+                    <div class="content">
+                        <a href="#" class="title">Name Checkin</a>
+                        <div class="des">
+                            Lorem ipsum dolor sit amet consectetur adipisicing.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <img src="https://www.rspcansw.org.au/wp-content/uploads/2020/03/disneyblog6.jpg" class="zoom">
+                    <div class="content">
+                        <a href="#" class="title">Name Checkin</a>
+                        <div class="des">
+                            Lorem ipsum dolor sit amet consectetur adipisicing.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <img src="https://www.rspcansw.org.au/wp-content/uploads/2020/03/disneyblog6.jpg" class="zoom">
+                    <div class="content">
+                        <a href="#" class="title">Name Checkin</a>
+                        <div class="des">
+                            Lorem ipsum dolor sit amet consectetur adipisicing.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <img src="https://www.rspcansw.org.au/wp-content/uploads/2020/03/disneyblog6.jpg" class="zoom">
+                    <div class="content">
+                        <a href="#" class="title">Name Checkin</a>
+                        <div class="des">
+                            Lorem ipsum dolor sit amet consectetur adipisicing.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Visiting Hours Start -->
     <div class="container-xxl bg-primary visiting-hours my-5 py-5 wow fadeInUp" data-wow-delay="0.1s">
