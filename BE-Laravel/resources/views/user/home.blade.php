@@ -305,26 +305,6 @@
             }
         @endforeach
 
-        .card_cate[for="c2"] {
-            background-image: url("{{ asset('images/animal-lg-1.jpg') }}");
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-        }
-
-        .card_cate[for="c3"] {
-            background-image: url("{{ asset('images/animal-lg-1.jpg') }}");
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-        }
-
-        .card_cate[for="c4"] {
-            background-image: url("{{ asset('images/animal-lg-1.jpg') }}");
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-        }
     </style>
     <!-- About Start -->
     <div class="container-xxl py-5">
