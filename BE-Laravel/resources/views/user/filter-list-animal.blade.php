@@ -87,13 +87,18 @@
                             <div class="col-12 col-sm-5 h-100">
                                 <img class="img-fluid h-100"
                                     src="http://localhost:8000/animal_images/{{ $item->images->image_name }}"
-                                    style="object-fit: cover; >
+                                    style="object-fit: cover;">
                             </div>
-                            <div class="col-12
+                            <div
+                                class="col-12
                                     col-sm-7 h-100 d-flex flex-column justify-content-center">
                                 <div class="p-4">
+                                    <div class="d-flex mb-3">
+                                        <small class="me-3"><i class="bi bi-bookmarks me-2"></i>Web Design</small>
+                                        <small><i class="bi bi-calendar-date me-2"></i>01 Jan, 2024</small>
+                                    </div>
                                     <h5 class="text-uppercase mb-3">{{ $item->animal_name }}</h5>
-                                    <p>{{ $item->animal_description }}</p>
+                                    <p class="truncate-text">{{ $item->animal_description }}</p>
                                     <a class="text-primary text-uppercase"
                                         href="{{ route('user.animal-detail', ['id' => $item->id]) }}">Read More<i
                                             class="bi bi-chevron-right"></i></a>
@@ -237,5 +242,5 @@
         </div>
     </div>
     <!-- Blog End -->
-
+    <script></script>
 @endsection
