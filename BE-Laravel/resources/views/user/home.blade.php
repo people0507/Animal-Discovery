@@ -656,10 +656,9 @@
                 <div class="new-main-container main-collections">
                     <div class="row g-5 mb-5 align-items-end wow fadeInUp" data-wow-delay="0.1s">
                         <div class="col-lg-6">
-                            <p><span class="text-primary me-2">#</span>Color Animals</p>
+                            <p><span class="text-primary me-2">#</span>Sắc Màu Động Vật </p>
                             <h1 class="display-5 mb-0">
-                                Let`s See Our <span class="text-primary">Zoofari</span> Awsome
-                                Animals Color
+                                Ngắm Nhìn Các Loài Vật Với <span class="text-primary">Màu Sắc</span> Đa Dạng
                             </h1>
                         </div>
                         <div class="col-lg-6 text-lg-end">
@@ -668,44 +667,44 @@
                     </div>
                     <div class="photo-grid">
                         <div class="card card-tall card-wide"
-                            style="background-image:url('https://images.unsplash.com/photo-1558981359-219d6364c9c8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80')">
-                            1
+                            style="background-image:url('http://localhost:8000/colors/{{$green->color_image}}')">
+                            <a href="{{route('color',['id' => $green->id])}}">{{$green->color_name}}</a>
                         </div>
                         <div class="card card-tall"
-                            style="background-image:url('https://images.unsplash.com/photo-1583585635793-0e1894c169bd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=913&q=80')">
-                            2
+                            style="background-image:url('http://localhost:8000/colors/{{$blue->color_image}}')">
+                            <a href="{{route('color',['id' => $blue->id])}}">{{$blue->color_name}}</a>
                         </div>
                         <div class="card"
-                            style="background-image:url('https://images.unsplash.com/photo-1583531172005-814191b8b6c0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=975&q=80')">
-                            3
+                            style="background-image:url('http://localhost:8000/colors/{{$red->color_image}}')">
+                            <a href="{{route('color',['id' => $red->id])}}">{{$red->color_name}}</a>
                         </div>
                         <div class="card"
-                            style="background-image:url('https://images.unsplash.com/photo-1583426573939-97d09302d76a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=968&q=80')">
-                            4
+                            style="background-image:url('http://localhost:8000/colors/{{$yellow->color_image}}')">
+                            <a href="{{route('color',['id' => $yellow->id])}}">{{$yellow->color_name}}</a>
                         </div>
                         <div class="card"
-                            style="background-image:url('https://images.unsplash.com/photo-1583532452513-a02186582ccd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80')">
-                            5
+                            style="background-image:url('http://localhost:8000/colors/{{$orange->color_image}}')">
+                            <a href="{{route('color',['id' => $orange->id])}}">{{$orange->color_name}}</a>
                         </div>
                         <div class="card"
-                            style="background-image:url('https://images.unsplash.com/photo-1583445013765-46c20c4a6772?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80')">
-                            6
+                            style="background-image:url('http://localhost:8000/colors/{{$brown->color_image}}')">
+                            <a href="{{route('color',['id' => $brown->id])}}">{{$brown->color_name}}</a>
                         </div>
                         <div class="card card-wide"
-                            style="background-image:url('https://images.unsplash.com/photo-1583562835057-a62d1beffbf3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=949&q=80')">
-                            7
+                            style="background-image:url('http://localhost:8000/colors/{{$white->color_image}}')">
+                            <a href="{{route('color',['id' => $white->id])}}">{{$white->color_name}}</a>
                         </div>
                         <div class="card"
-                            style="background-image:url('https://images.unsplash.com/photo-1583483425010-c566431a7710?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1951&q=80')">
-                            8
+                            style="background-image:url('http://localhost:8000/colors/{{$black->color_image}}')">
+                            <a href="{{route('color',['id' => $black->id])}}">{{$black->color_name}}</a>
                         </div>
                         <div class="card"
-                            style="background-image:url('https://images.unsplash.com/photo-1583500557349-fb5238f8d946?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1949&q=80')">
-                            9
+                            style="background-image:url('http://localhost:8000/colors/{{$gray->color_image}}')">
+                            <a href="{{route('color',['id' => $gray->id])}}">{{$gray->color_name}}</a>
                         </div>
                         <div class="card"
-                            style="background-image:url('https://images.unsplash.com/photo-1583500557349-fb5238f8d946?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1949&q=80')">
-                            10
+                            style="background-image:url('http://localhost:8000/colors/{{$purple->color_image}}')">
+                            <a href="{{route('color',['id' => $purple->id])}}">{{$purple->color_name}}</a>
                         </div>
                     </div>
                 </div>
@@ -717,10 +716,9 @@
                 <div class="container">
                     <div class="row g-5 mb-5 align-items-end wow fadeInUp" data-wow-delay="0.1s">
                         <div class="col-lg-6">
-                            <p><span class="text-primary me-2">#</span>Climate</p>
+                            <p><span class="text-primary me-2">#</span>Đại Dương</p>
                             <h1 class="display-5 mb-0">
-                                Let`s See Our <span class="text-primary">Choose</span> time saving to know how animals
-                                survive
+                                Tìm Kiếm Các <span class="text-primary">Loài Vật</span> Ở Các Đại Dương Rộng Lớn Sâu Thẳm
                             </h1>
                         </div>
                     </div>
@@ -769,56 +767,64 @@
                 <div class="container">
                     <div class="row g-5 mb-5 align-items-end wow fadeInUp" data-wow-delay="0.1s">
                         <div class="col-lg-6">
-                            <p><span class="text-primary me-2">#</span>Color</p>
+                            <p><span class="text-primary me-2">#</span>Vùng Khí Hậu</p>
                             <h1 class="display-5 mb-0">
-                                Let`s See Our <span class="text-primary">Choose</span> color for Animal
+                                Các Loài Động Vật Với <span class="text-primary">Vùng Khí Hậu</span> Khác Nhau
                             </h1>
                         </div>
                     </div>
 
                     <div class="checkin">
                         <div class="item">
-                            <img src="https://www.rspcansw.org.au/wp-content/uploads/2020/03/disneyblog6.jpg"
+                            <img src="http://localhost:8000/climates/full/{{$tropical->climate_image}}"title="{{$tropical->climate_name}}"
                                 class="zoom">
                             <div class="content">
-                                <a href="#" class="title">Name Checkin</a>
+                                <a href="{{route('climate',['id' => $tropical->id])}}" class="title">{{$tropical->climate_name}}</a>
                                 <div class="des">
-                                    Lorem ipsum dolor sit amet consectetur adipisicing. Lorem, ipsum.
+                                {{$tropical->climate_description}}
                                 </div>
                             </div>
                         </div>
 
                         <div class="item">
-                            <img src="https://www.rspcansw.org.au/wp-content/uploads/2020/03/disneyblog6.jpg"
+                            <img src="http://localhost:8000/climates/full/{{$arid->climate_image}}" title="{{$arid->climate_name}}"
                                 class="zoom">
                             <div class="content">
-                                <a href="#" class="title">Name Checkin</a>
+                                <a href="{{route('climate',['id' => $arid->id])}}" class="title">{{$arid->climate_name}}</a>
                                 <div class="des">
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. In, optio ipsam. Temporibus
-                                    modi cumque
-                                    amet!
+                                {{$arid->climate_description}}
                                 </div>
                             </div>
                         </div>
 
                         <div class="item">
-                            <img src="https://www.rspcansw.org.au/wp-content/uploads/2020/03/disneyblog6.jpg"
+                            <img src="http://localhost:8000/climates/full/{{$temperate->climate_image}}" title="{{$temperate->climate_name}}"
                                 class="zoom">
                             <div class="content">
-                                <a href="#" class="title">Name Checkin</a>
+                                <a href="{{route('climate',['id' => $temperate->id])}}" class="title">{{$temperate->climate_name}}</a>
                                 <div class="des">
-                                    Lorem ipsum dolor sit amet consectetur adipisicing.
+                                {{$temperate->climate_description}}
                                 </div>
                             </div>
                         </div>
 
                         <div class="item">
-                            <img src="https://www.rspcansw.org.au/wp-content/uploads/2020/03/disneyblog6.jpg"
+                            <img src="http://localhost:8000/climates/full/{{$cold->climate_image}}" title="{{$cold->climate_name}}"
                                 class="zoom">
                             <div class="content">
-                                <a href="#" class="title">Name Checkin</a>
+                                <a href="{{route('climate',['id' => $cold->id])}}" class="title">{{$cold->climate_name}}</a>
                                 <div class="des">
-                                    Lorem ipsum dolor sit amet consectetur adipisicing.
+                                {{$cold->climate_description}}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <img src="http://localhost:8000/climates/full/{{$polar->climate_image}}" title="{{$polar->climate_name}}"
+                                class="zoom">
+                            <div class="content">
+                                <a href="{{route('climate',['id' => $polar->id])}}" class="title">{{$polar->climate_name}}</a>
+                                <div class="des">
+                                {{$polar->climate_description}}
                                 </div>
                             </div>
                         </div>

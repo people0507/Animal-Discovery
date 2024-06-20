@@ -11,6 +11,17 @@ class Color extends Model
 
     protected $table ='color';
 
+    const GREEN = 1;
+    const BLUE = 2;
+    const RED = 3;
+    const YELLOW = 4;
+    const ORANGE = 5;
+    const BROWN = 6;
+    const WHITE = 7;
+    const BLACK = 8;
+    const GRAY = 9;
+    const PURPLE = 10;
+
     public function animalDetail()
     {
         return $this->belongsToMany(AnimalDetail::class,'animal_between_nation','animal_detail_id', 'color_id');
