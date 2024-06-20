@@ -41,7 +41,7 @@
             background: #2EB872;
             color: white;
             border-radius: 50%;
-            width: 50px;
+            width: 70px;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -53,7 +53,7 @@
             justify-content: center;
             flex-direction: column;
             overflow: hidden;
-            height: 80px;
+            height: 100px;
             width: 520px;
             opacity: 0;
             transform: translateY(30px);
@@ -128,7 +128,7 @@
 
         .description p {
             color: #d8d8dc;
-            padding-top: 5px;
+            padding-top: 9px;
         }
 
         .description h4 a {
@@ -241,6 +241,61 @@
             grid-row-end: 3;
         }
 
+        .main-collection-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 20px;
+        }
+
+        .collection-group-block {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .center-column {
+            justify-content: center;
+        }
+
+        .collection-animal-container {
+            position: relative;
+            text-align: center;
+        }
+
+        .collection-animal-container .hover-overlay {
+            border-radius: 28px;
+            height: 100%;
+        }
+
+        .collection-animal-img {
+            border-radius: 20px;
+            width: 100%;
+            height: auto;
+        }
+
+        .hover-overlay,
+        .bg-gradient {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .collection-title-block {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            color: white;
+        }
+
+        .see-all-collection-link-block {
+            grid-column: span 3;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+
         @foreach ($areas as $key => $area)
             .card_cate[for="c{{ $key + 1 }}"] {
                 background-image: url("http://localhost:8000/areas/{{ $area->area_image }}");
@@ -250,26 +305,26 @@
             }
         @endforeach
 
-        /* .card_cate[for="c2"] {
-                                                    background-image: url("{{ asset('images/animal-lg-1.jpg') }}");
-                                                    background-size: cover;
-                                                    background-position: center;
-                                                    background-repeat: no-repeat;
-                                                }
+        .card_cate[for="c2"] {
+            background-image: url("{{ asset('images/animal-lg-1.jpg') }}");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
 
-                                                .card_cate[for="c3"] {
-                                                    background-image: url("{{ asset('images/animal-lg-1.jpg') }}");
-                                                    background-size: cover;
-                                                    background-position: center;
-                                                    background-repeat: no-repeat;
-                                                }
+        .card_cate[for="c3"] {
+            background-image: url("{{ asset('images/animal-lg-1.jpg') }}");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
 
-                                                .card_cate[for="c4"] {
-                                                    background-image: url("{{ asset('images/animal-lg-1.jpg') }}");
-                                                    background-size: cover;
-                                                    background-position: center;
-                                                    background-repeat: no-repeat;
-                                                } */
+        .card_cate[for="c4"] {
+            background-image: url("{{ asset('images/animal-lg-1.jpg') }}");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
     </style>
     <!-- About Start -->
     <div class="container-xxl py-5">
@@ -433,10 +488,10 @@
                         <div class="row">
                             <div class="icon">{{ $key + 1 }}</div>
                             <div class="description">
-                                <h4><a
+                                <h2 style="font-weight: 700"><a
                                         href="{{ route('user.cate-list', ['id' => $area->id]) }}">{{ $area->area_name }}</a>
-                                </h4>
-                                <p>Winter has so much to offer -
+                                </h2>
+                                <p style="color: #000000; font-weight:600">Winter has so much to offer -
                                     creative activities</p>
                             </div>
                         </div>
@@ -550,6 +605,135 @@
         </div>
     </div>
     <!-- Animal End -->
+
+    <!-- Animal Color -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="overflow-block">
+                <div class="new-main-container main-collections">
+                    <div class="row g-5 mb-5 align-items-end wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="col-lg-6">
+                            <p><span class="text-primary me-2">#</span>Color Animals</p>
+                            <h1 class="display-5 mb-0">
+                                Let`s See Our <span class="text-primary">Zoofari</span> Awsome
+                                Animals Color
+                            </h1>
+                        </div>
+                        <div class="col-lg-6 text-lg-end">
+                            <a class="btn btn-primary py-3 px-5" href="">Explore More Animals</a>
+                        </div>
+                    </div>
+                    <div class="main-collection-container mobile-hidden">
+                        <div class="collection-group-block">
+                            <div class="collection-animal-container">
+                                <a href="https://animalia.bio/collections/red-animals">
+                                    <img class="collection-animal-img b-lazy b-loaded"
+                                        src="https://s3.animalia.bio/animals/photos/full/2x1/shutterstock-88365403jpg.webp"
+                                        alt="Red Animals">
+                                    <div class="hover-overlay">
+                                    </div>
+                                    <div class="bg-gradient">
+                                    </div>
+                                    <div class="collection-title-block">
+                                        <span>
+                                            Red Animals
+                                        </span>
+                                        <span class="count-collection-animals">
+                                            8 Species
+                                        </span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="collection-animal-container bottom-collection-container">
+                                <a href="https://animalia.bio/collections/blue-animals">
+                                    <img class="collection-animal-img b-lazy b-loaded"
+                                        src="https://s3.animalia.bio/animals/photos/small/1x1/shutterstock-2012632493jpg.webp"
+                                        alt="Blue Animals">
+                                    <div class="hover-overlay">
+                                    </div>
+                                    <div class="bg-gradient">
+                                    </div>
+                                    <div class="collection-title-block">
+                                        <span>
+                                            Blue Animals
+                                        </span>
+                                        <span class="count-collection-animals">
+                                            14 Species
+                                        </span>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="collection-group-block">
+                            {{-- <div class="collection-group-block center-collection-group-block"> --}}
+                            <div class="collection-animal-container">
+                                <a href="https://animalia.bio/collections/gliding-animals">
+                                    <img class="collection-animal-img b-lazy b-loaded"
+                                        src="https://s3.animalia.bio/animals/photos/small/1x1/sugar-glider-petaurus-breviceps-29363699442jpg.webp"
+                                        alt="Gliding Animals">
+                                    <div class="hover-overlay">
+                                    </div>
+                                    <div class="bg-gradient">
+                                    </div>
+                                    <div class="collection-title-block">
+                                        <span>
+                                            Gliding Animals
+                                        </span>
+                                        <span class="count-collection-animals">
+                                            10 Species
+                                        </span>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="collection-group-block">
+                            <div class="collection-animal-container">
+                                <a href="https://animalia.bio/collections/green-animals">
+                                    <img class="collection-animal-img b-lazy b-loaded"
+                                        src="https://s3.animalia.bio/animals/photos/small/1x1/drenched.webp"
+                                        alt="Green Animals">
+                                    <div class="hover-overlay">
+                                    </div>
+                                    <div class="bg-gradient">
+                                    </div>
+                                    <div class="collection-title-block">
+                                        <span>
+                                            Green Animals
+                                        </span>
+                                        <span class="count-collection-animals">
+                                            17 Species
+                                        </span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="collection-animal-container bottom-collection-container">
+                                <a href="https://animalia.bio/collections/fluffy-animals">
+                                    <img class="collection-animal-img b-lazy b-loaded"
+                                        src="https://s3.animalia.bio/animals/photos/full/2x1/dscf-227101995jpeg.webp"
+                                        alt="Fluffy Animals">
+                                    <div class="hover-overlay">
+                                    </div>
+                                    <div class="bg-gradient">
+                                    </div>
+                                    <div class="collection-title-block">
+                                        <span>
+                                            Fluffy Animals
+                                        </span>
+                                        <span class="count-collection-animals">
+                                            15 Species
+                                        </span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="yellow-circle-collection">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
     {{-- Climate --}}
     <div class="container-xxl py-5">
