@@ -103,12 +103,12 @@ Route::get('/view_login', [LoginController::class, 'viewLogin'])->name('view_log
 Route::get('/view_register', [LoginController::class, 'viewRegister'])->name('view_register');
 Route::post('/login', [LoginController::class, 'login'])->name('login');
 Route::post('/register', [LoginController::class, 'register'])->name('register');
-
-
 Route::post('/create', [AdminController::class, 'create']);
 
 Route::prefix('animal_detail')->group(function () {
     Route::get('/view_animal_page', [AnimalDetailController::class, 'viewAnimalPage'])->name('user.home');
+    Route::get('/color/{id}', [AnimalDetailController::class, 'color'])->name('color');
+    Route::get('/climate/{id}', [AnimalDetailController::class, 'climateZone'])->name('climate');
     Route::get('/get_animal_detail_infor/{id}', [AnimalDetailController::class, 'getAnimalDetailInfor'])->name('user.animal-detail');
     Route::get('/get_animal_detail_areas/{id}', [AnimalDetailController::class, 'getAnimalDetailAreas'])->name('user.cate-list');
     Route::get('/get_animal_detail/{id}', [AnimalDetailController::class, 'getAnimalDetail']);

@@ -11,15 +11,44 @@ use Str;
 use App\Models\Area;
 use App\Http\MessageContent;
 use App\Models\ConservationStatus;
-
+use App\Models\Color;
+use App\Models\Ocean;
 class AnimalDetailController extends Controller
 {
     public function viewAnimalPage()
     {
         $areas = Area::all();
-        return view('user.home', compact('areas'));
+        $tropical = Climate::where('id',Climate::TROPICAL)->first();
+        $arid = Climate::where('id',Climate::ARID)->first();
+        $temperate = Climate::where('id',Climate::TEMPERATE)->first();
+        $cold = Climate::where('id',Climate::COLD)->first();
+        $polar = Climate::where('id',Climate::POLAR)->first();
+        $green = Color::where('id',Color::GREEN)->first();
+        $blue = Color::where('id',Color::BLUE)->first();
+        $red = Color::where('id',Color::RED)->first();
+        $yellow = Color::where('id',Color::YELLOW)->first();
+        $orange = Color::where('id',Color::ORANGE)->first();
+        $brown = Color::where('id',Color::BROWN)->first();
+        $white = Color::where('id',Color::WHITE)->first();
+        $black = Color::where('id',Color::BLACK)->first();
+        $gray = Color::where('id',Color::GRAY)->first();
+        $purple = Color::where('id',Color::PURPLE)->first();
+        $pacific = OCEAN::where('id',Ocean::PACIFIC)->first();
+        $indian = OCEAN::where('id',Ocean::INDIAN)->first();
+        $atlantic = OCEAN::where('id',Ocean::ATLANTIC)->first();
+        $arctic = OCEAN::where('id',Ocean::ARCTIC)->first();
+        return view('user.home', compact('areas','tropical','arid','temperate','cold','polar','green','blue','red','yellow','orange','brown','white','black','gray','purple','pacific','indian','atlantic','arctic'));
     }
 
+    public function color($id)
+    {
+        $data = AnimalDetail::whereHas('colors', function ($query) use ($id) {
+            $query->where('color_id', $id);
+        })->with(['images' => function ($query) {;
+        }])->get();
+        $data1 = Color::where('id',$id)->first();
+        return view('user.categories-animal', compact('data','data1'));
+    }
     public function getAnimalDetailInfor($id)
     {
         $data = AnimalDetail::find($id);
