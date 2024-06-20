@@ -20,7 +20,25 @@ header {
 .page-catalog .logo span {
     color: #fff !important;
 }
+.truncate-text {
+    position: relative;
+    max-height: 6em;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+    line-height: 1.5em;
+    height: calc(1.5em * 4);
+}
 
+.truncate-text::after {
+    content: '...';
+    /* position: absolute; */
+    bottom: 0;
+    right: 0;
+    background: white;
+    padding-left: 5px;
+}
 header .main-nav {
     width: 60%;
     margin: 0 20%;

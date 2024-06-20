@@ -59,6 +59,10 @@ Route::get('/blog-detail', function () {
     return view('user.blog-detail');
 })->name('user.blog-detail');
 
+// social
+Route::get('/social', function () {
+    return view('user.social');
+})->name('user.social');
 
 // Route::get('/categories-list', function () {
 //     return view('user.categories-animal');

@@ -25,7 +25,7 @@
                             src="https://s3.animalia.bio/blog/original/XLgtJu4aCxtlnqFSPUBk4dv49VNjpL0fIhLLVc8W.webp"
                             alt="" width="100%"></strong></p>
             </div>
-            <div class="col-12 py-4 ">
+            {{-- <div class="col-12 py-4 ">
                 <h3 class="mb-4 font-weight-bold">4 Comments</h3>
                 <div class="d-flex justify-content-center align-items-center">
                     <div class="comment">
@@ -103,7 +103,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> --}}
         </div>
     </div>
     <!-- Blog Detail End -->
