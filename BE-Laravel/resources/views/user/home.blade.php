@@ -195,10 +195,17 @@
 
         .checkin {
             display: grid;
-            grid-template-columns: 24.25% 24.25% 24.25% 24.25%;
+            grid-template-columns: 32.333% 32.333% 32.333%;
             column-gap: 1%;
             grid-template-rows: 300px 300px;
             row-gap: 10px;
+        }
+
+        .checkin .des {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            width: 100%;
         }
 
         .checkin .item {
@@ -217,7 +224,9 @@
             position: absolute;
             bottom: 10px;
             left: 10px;
-            color: #fff
+            right: 10px;
+            color: #fff;
+            width: calc(100% - 20px);
         }
 
         .checkin .item .content .title {
@@ -242,35 +251,28 @@
         }
 
         .main-collection-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            gap: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            /* Khoảng cách giữa các mục */
         }
 
         .collection-group-block {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        .center-column {
-            justify-content: center;
+            flex: 1 1 30%;
+            /* Đảm bảo các mục có chiều rộng khoảng 30% và có thể co dãn */
+            box-sizing: border-box;
         }
 
         .collection-animal-container {
             position: relative;
-            text-align: center;
+            overflow: hidden;
+            border-radius: 10px;
         }
 
-        .collection-animal-container .hover-overlay {
-            border-radius: 28px;
-            height: 100%;
-        }
-
-        .collection-animal-img {
-            border-radius: 20px;
+        .collection-animal-container img {
             width: 100%;
             height: auto;
+            display: block;
         }
 
         .hover-overlay,
@@ -287,6 +289,65 @@
             bottom: 10px;
             left: 10px;
             color: white;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        /* .main-collection-container {
+                                                        display: grid;
+                                                        grid-template-columns: 1fr 1fr 1fr;
+                                                        gap: 20px;
+                                                    }
+
+                                                    .collection-group-block {
+                                                        display: flex;
+                                                        flex-direction: column;
+                                                        gap: 20px;
+                                                    }
+
+                                                    .center-column {
+                                                        justify-content: center;
+                                                    }
+
+                                                    .collection-animal-container {
+                                                        position: relative;
+                                                        text-align: center;
+                                                    }
+
+                                                    .collection-animal-container .hover-overlay {
+                                                        border-radius: 28px;
+                                                        height: 100%;
+                                                    }
+
+                                                    .collection-animal-img {
+                                                        border-radius: 20px;
+                                                        width: 100%;
+                                                        height: auto;
+                                                    }
+
+                                                    .hover-overlay,
+                                                    .bg-gradient {
+                                                        position: absolute;
+                                                        top: 0;
+                                                        left: 0;
+                                                        width: 100%;
+                                                        height: 100%;
+                                                    } */
+
+        .card_cate .description p {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            width: 100%;
+            margin: 0;
+        }
+
+        .collection-title-block {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            color: white;
         }
 
         .see-all-collection-link-block {
@@ -294,18 +355,19 @@
             text-align: center;
             margin-top: 20px;
         }
-
-
-        @foreach ($areas as $key => $area)
+    </style>
+    <link rel="stylesheet" href="{{ asset('users/css/base.css') }}">
+    <link rel="stylesheet" href="{{ asset('users/css/photo-grid.css') }}">
+    @foreach ($areas as $key => $area)
+        <style>
             .card_cate[for="c{{ $key + 1 }}"] {
                 background-image: url("http://localhost:8000/areas/{{ $area->area_image }}");
                 background-size: cover;
                 background-position: center;
                 background-repeat: no-repeat;
             }
-        @endforeach
-
-    </style>
+        </style>
+    @endforeach
     <!-- About Start -->
     <div class="container-xxl py-5">
         <div class="container">
@@ -472,7 +534,8 @@
                                         href="{{ route('user.cate-list', ['id' => $area->id]) }}">{{ $area->area_name }}</a>
                                 </h2>
                                 <p style="color: #000000; font-weight:600">Winter has so much to offer -
-                                    creative activities</p>
+                                    creative activities Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos
+                                    numquam reiciendis, provident ea est corporis.</p>
                             </div>
                         </div>
                     </label>
@@ -603,439 +666,361 @@
                             <a class="btn btn-primary py-3 px-5" href="">Explore More Animals</a>
                         </div>
                     </div>
-                    <div class="main-collection-container mobile-hidden">
-                        <div class="collection-group-block">
-                            <div class="collection-animal-container">
-                                <a href="https://animalia.bio/collections/red-animals">
-                                    <img class="collection-animal-img b-lazy b-loaded"
-                                        src="https://s3.animalia.bio/animals/photos/full/2x1/shutterstock-88365403jpg.webp"
-                                        alt="Red Animals">
-                                    <div class="hover-overlay">
-                                    </div>
-                                    <div class="bg-gradient">
-                                    </div>
-                                    <div class="collection-title-block">
-                                        <span>
-                                            Red Animals
-                                        </span>
-                                        <span class="count-collection-animals">
-                                            8 Species
-                                        </span>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="collection-animal-container bottom-collection-container">
-                                <a href="https://animalia.bio/collections/blue-animals">
-                                    <img class="collection-animal-img b-lazy b-loaded"
-                                        src="https://s3.animalia.bio/animals/photos/small/1x1/shutterstock-2012632493jpg.webp"
-                                        alt="Blue Animals">
-                                    <div class="hover-overlay">
-                                    </div>
-                                    <div class="bg-gradient">
-                                    </div>
-                                    <div class="collection-title-block">
-                                        <span>
-                                            Blue Animals
-                                        </span>
-                                        <span class="count-collection-animals">
-                                            14 Species
-                                        </span>
-                                    </div>
+                    <div class="photo-grid">
+                        <div class="card card-tall card-wide"
+                            style="background-image:url('https://images.unsplash.com/photo-1558981359-219d6364c9c8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80')">
+                            1
+                        </div>
+                        <div class="card card-tall"
+                            style="background-image:url('https://images.unsplash.com/photo-1583585635793-0e1894c169bd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=913&q=80')">
+                            2
+                        </div>
+                        <div class="card"
+                            style="background-image:url('https://images.unsplash.com/photo-1583531172005-814191b8b6c0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=975&q=80')">
+                            3
+                        </div>
+                        <div class="card"
+                            style="background-image:url('https://images.unsplash.com/photo-1583426573939-97d09302d76a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=968&q=80')">
+                            4
+                        </div>
+                        <div class="card"
+                            style="background-image:url('https://images.unsplash.com/photo-1583532452513-a02186582ccd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80')">
+                            5
+                        </div>
+                        <div class="card"
+                            style="background-image:url('https://images.unsplash.com/photo-1583445013765-46c20c4a6772?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80')">
+                            6
+                        </div>
+                        <div class="card card-wide"
+                            style="background-image:url('https://images.unsplash.com/photo-1583562835057-a62d1beffbf3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=949&q=80')">
+                            7
+                        </div>
+                        <div class="card"
+                            style="background-image:url('https://images.unsplash.com/photo-1583483425010-c566431a7710?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1951&q=80')">
+                            8
+                        </div>
+                        <div class="card"
+                            style="background-image:url('https://images.unsplash.com/photo-1583500557349-fb5238f8d946?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1949&q=80')">
+                            9
+                        </div>
+                        <div class="card"
+                            style="background-image:url('https://images.unsplash.com/photo-1583500557349-fb5238f8d946?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1949&q=80')">
+                            10
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            {{-- Climate --}}
+            <div class="container-xxl py-5">
+                <div class="container">
+                    <div class="row g-5 mb-5 align-items-end wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="col-lg-6">
+                            <p><span class="text-primary me-2">#</span>Climate</p>
+                            <h1 class="display-5 mb-0">
+                                Let`s See Our <span class="text-primary">Choose</span> time saving to know how animals
+                                survive
+                            </h1>
+                        </div>
+                    </div>
+                    <div class="row_climate">
+                        <div class="box_climate box--left">
+                            <div class="box__inner">
+                                <a href="#">
+                                    <img src="https://res.klook.com/images/fl_lossy.progressive,q_65/c_fill,w_3000,h_2000,f_auto/w_80,x_15,y_15,g_south_west,l_Klook_water_br_trans_yhcmh3/activities/v6bwf3e8qhdfhrgq7lv3/V%C3%A9V%C3%A0oC%E1%BB%95ngIMGWorldsofAdventure,Dubai-KlookVi%E1%BB%87tNam.jpg"
+                                        alt="">
                                 </a>
                             </div>
                         </div>
-                        <div class="collection-group-block">
-                            {{-- <div class="collection-group-block center-collection-group-block"> --}}
-                            <div class="collection-animal-container">
-                                <a href="https://animalia.bio/collections/gliding-animals">
-                                    <img class="collection-animal-img b-lazy b-loaded"
-                                        src="https://s3.animalia.bio/animals/photos/small/1x1/sugar-glider-petaurus-breviceps-29363699442jpg.webp"
-                                        alt="Gliding Animals">
-                                    <div class="hover-overlay">
-                                    </div>
-                                    <div class="bg-gradient">
-                                    </div>
-                                    <div class="collection-title-block">
-                                        <span>
-                                            Gliding Animals
-                                        </span>
-                                        <span class="count-collection-animals">
-                                            10 Species
-                                        </span>
-                                    </div>
+
+                        <div class="box_climate box--right">
+                            <div class="box__inner">
+                                <a href="#">
+                                    <img src="https://res.klook.com/images/fl_lossy.progressive,q_65/c_fill,w_3000,h_2000,f_auto/w_80,x_15,y_15,g_south_west,l_Klook_water_br_trans_yhcmh3/activities/v6bwf3e8qhdfhrgq7lv3/V%C3%A9V%C3%A0oC%E1%BB%95ngIMGWorldsofAdventure,Dubai-KlookVi%E1%BB%87tNam.jpg"
+                                        alt="">
                                 </a>
                             </div>
                         </div>
-                        <div class="collection-group-block">
-                            <div class="collection-animal-container">
-                                <a href="https://animalia.bio/collections/green-animals">
-                                    <img class="collection-animal-img b-lazy b-loaded"
-                                        src="https://s3.animalia.bio/animals/photos/small/1x1/drenched.webp"
-                                        alt="Green Animals">
-                                    <div class="hover-overlay">
-                                    </div>
-                                    <div class="bg-gradient">
-                                    </div>
-                                    <div class="collection-title-block">
-                                        <span>
-                                            Green Animals
-                                        </span>
-                                        <span class="count-collection-animals">
-                                            17 Species
-                                        </span>
-                                    </div>
+
+                        <div class="box_climate box--left box--small">
+                            <div class="box__inner">
+                                <a href="#">
+                                    <img src="https://res.klook.com/images/fl_lossy.progressive,q_65/c_fill,w_3000,h_2000,f_auto/w_80,x_15,y_15,g_south_west,l_Klook_water_br_trans_yhcmh3/activities/v6bwf3e8qhdfhrgq7lv3/V%C3%A9V%C3%A0oC%E1%BB%95ngIMGWorldsofAdventure,Dubai-KlookVi%E1%BB%87tNam.jpg"
+                                        alt="">
                                 </a>
                             </div>
-                            <div class="collection-animal-container bottom-collection-container">
-                                <a href="https://animalia.bio/collections/fluffy-animals">
-                                    <img class="collection-animal-img b-lazy b-loaded"
-                                        src="https://s3.animalia.bio/animals/photos/full/2x1/dscf-227101995jpeg.webp"
-                                        alt="Fluffy Animals">
-                                    <div class="hover-overlay">
-                                    </div>
-                                    <div class="bg-gradient">
-                                    </div>
-                                    <div class="collection-title-block">
-                                        <span>
-                                            Fluffy Animals
-                                        </span>
-                                        <span class="count-collection-animals">
-                                            15 Species
-                                        </span>
-                                    </div>
+                        </div>
+
+                        <div class="box_climate box--right box--small">
+                            <div class="box__inner">
+                                <a href="#">
+                                    <img src="https://res.klook.com/images/fl_lossy.progressive,q_65/c_fill,w_3000,h_2000,f_auto/w_80,x_15,y_15,g_south_west,l_Klook_water_br_trans_yhcmh3/activities/v6bwf3e8qhdfhrgq7lv3/V%C3%A9V%C3%A0oC%E1%BB%95ngIMGWorldsofAdventure,Dubai-KlookVi%E1%BB%87tNam.jpg"
+                                        alt="">
                                 </a>
-                            </div>
-                            <div class="yellow-circle-collection">
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
 
+            {{-- Color --}}
+            <div class="container-xxl py-5">
+                <div class="container">
+                    <div class="row g-5 mb-5 align-items-end wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="col-lg-6">
+                            <p><span class="text-primary me-2">#</span>Color</p>
+                            <h1 class="display-5 mb-0">
+                                Let`s See Our <span class="text-primary">Choose</span> color for Animal
+                            </h1>
+                        </div>
+                    </div>
 
-    {{-- Climate --}}
-    <div class="container-xxl py-5">
-        <div class="container">
-            <div class="row g-5 mb-5 align-items-end wow fadeInUp" data-wow-delay="0.1s">
-                <div class="col-lg-6">
-                    <p><span class="text-primary me-2">#</span>Climate</p>
-                    <h1 class="display-5 mb-0">
-                        Let`s See Our <span class="text-primary">Choose</span> time saving to know how animals survive
+                    <div class="checkin">
+                        <div class="item">
+                            <img src="https://www.rspcansw.org.au/wp-content/uploads/2020/03/disneyblog6.jpg"
+                                class="zoom">
+                            <div class="content">
+                                <a href="#" class="title">Name Checkin</a>
+                                <div class="des">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing. Lorem, ipsum.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="item">
+                            <img src="https://www.rspcansw.org.au/wp-content/uploads/2020/03/disneyblog6.jpg"
+                                class="zoom">
+                            <div class="content">
+                                <a href="#" class="title">Name Checkin</a>
+                                <div class="des">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. In, optio ipsam. Temporibus
+                                    modi cumque
+                                    amet!
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="item">
+                            <img src="https://www.rspcansw.org.au/wp-content/uploads/2020/03/disneyblog6.jpg"
+                                class="zoom">
+                            <div class="content">
+                                <a href="#" class="title">Name Checkin</a>
+                                <div class="des">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="item">
+                            <img src="https://www.rspcansw.org.au/wp-content/uploads/2020/03/disneyblog6.jpg"
+                                class="zoom">
+                            <div class="content">
+                                <a href="#" class="title">Name Checkin</a>
+                                <div class="des">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing.
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Visiting Hours Start -->
+            <div class="container-xxl bg-primary visiting-hours my-5 py-5 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="container py-5">
+                    <div class="row g-5">
+                        <div class="col-md-6 wow fadeIn" data-wow-delay="0.3s">
+                            <h1 class="display-6 text-white mb-5">Visiting Hours</h1>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">
+                                    <span>Monday</span>
+                                    <span>9:00AM - 6:00PM</span>
+                                </li>
+                                <li class="list-group-item">
+                                    <span>Tuesday</span>
+                                    <span>9:00AM - 6:00PM</span>
+                                </li>
+                                <li class="list-group-item">
+                                    <span>Wednesday</span>
+                                    <span>9:00AM - 6:00PM</span>
+                                </li>
+                                <li class="list-group-item">
+                                    <span>Thursday</span>
+                                    <span>9:00AM - 6:00PM</span>
+                                </li>
+                                <li class="list-group-item">
+                                    <span>Friday</span>
+                                    <span>9:00AM - 6:00PM</span>
+                                </li>
+                                <li class="list-group-item">
+                                    <span>Saturday</span>
+                                    <span>9:00AM - 6:00PM</span>
+                                </li>
+                                <li class="list-group-item">
+                                    <span>Sunday</span>
+                                    <span>Closed</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6 text-light wow fadeIn" data-wow-delay="0.5s">
+                            <h1 class="display-6 text-white mb-5">Contact Info</h1>
+                            <table class="table">
+                                <tbody>
+                                    <tr>
+                                        <td>Office</td>
+                                        <td>123 Street, New York, USA</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Zoo</td>
+                                        <td>123 Street, New York, USA</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Ticket</td>
+                                        <td>
+                                            <p class="mb-2">+012 345 6789</p>
+                                            <p class="mb-0">ticket@example.com</p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Support</td>
+                                        <td>
+                                            <p class="mb-2">+012 345 6789</p>
+                                            <p class="mb-0">support@example.com</p>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Visiting Hours End -->
+
+            <!-- Membership Start -->
+            <div class="container-xxl py-5">
+                <div class="container">
+                    <div class="row g-5 mb-5 align-items-end wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="col-lg-6">
+                            <p><span class="text-primary me-2">#</span>Membership</p>
+                            <h1 class="display-5 mb-0">
+                                You Can Be A Proud Member Of
+                                <span class="text-primary">Zoofari</span>
+                            </h1>
+                        </div>
+                        <div class="col-lg-6 text-lg-end">
+                            <a class="btn btn-primary py-3 px-5" href="">Special Pricing</a>
+                        </div>
+                    </div>
+                    <div class="row g-4">
+                        <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                            <div class="membership-item position-relative">
+                                <img class="img-fluid" src="{{ asset('users/img/animal-lg-1.jpg') }}" alt="" />
+                                <h1 class="display-1">01</h1>
+                                <h4 class="text-white mb-3">Popular</h4>
+                                <h3 class="text-primary mb-4">$99.00</h3>
+                                <p><i class="fa fa-check text-primary me-3"></i>10% discount</p>
+                                <p>
+                                    <i class="fa fa-check text-primary me-3"></i>2 adult and 2 child
+                                </p>
+                                <p>
+                                    <i class="fa fa-check text-primary me-3"></i>Free animal
+                                    exhibition
+                                </p>
+                                <a class="btn btn-outline-light px-4 mt-3" href="">Get Started</a>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                            <div class="membership-item position-relative">
+                                <img class="img-fluid" src="{{ asset('users/img/animal-lg-2.jpg') }}" alt="" />
+                                <h1 class="display-1">02</h1>
+                                <h4 class="text-white mb-3">Standard</h4>
+                                <h3 class="text-primary mb-4">$149.00</h3>
+                                <p><i class="fa fa-check text-primary me-3"></i>15% discount</p>
+                                <p>
+                                    <i class="fa fa-check text-primary me-3"></i>4 adult and 4 child
+                                </p>
+                                <p>
+                                    <i class="fa fa-check text-primary me-3"></i>Free animal
+                                    exhibition
+                                </p>
+                                <a class="btn btn-outline-light px-4 mt-3" href="">Get Started</a>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                            <div class="membership-item position-relative">
+                                <img class="img-fluid" src="{{ asset('users/img/animal-lg-3.jpg') }}" alt="" />
+                                <h1 class="display-1">03</h1>
+                                <h4 class="text-white mb-3">Premium</h4>
+                                <h3 class="text-primary mb-4">$199.00</h3>
+                                <p><i class="fa fa-check text-primary me-3"></i>20% discount</p>
+                                <p>
+                                    <i class="fa fa-check text-primary me-3"></i>6 adult and 6 child
+                                </p>
+                                <p>
+                                    <i class="fa fa-check text-primary me-3"></i>Free animal
+                                    exhibition
+                                </p>
+                                <a class="btn btn-outline-light px-4 mt-3" href="">Get Started</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Membership End -->
+
+            <!-- Testimonial Start -->
+            <div class="container-xxl py-5">
+                <div class="container">
+                    <h1 class="display-5 text-center mb-5 wow fadeInUp" data-wow-delay="0.1s">
+                        Our Clients Say!
                     </h1>
-                </div>
-            </div>
-            <div class="row_climate">
-                <div class="box_climate box--left">
-                    <div class="box__inner">
-                        <a href="#">
-                            <img src="https://res.klook.com/images/fl_lossy.progressive,q_65/c_fill,w_3000,h_2000,f_auto/w_80,x_15,y_15,g_south_west,l_Klook_water_br_trans_yhcmh3/activities/v6bwf3e8qhdfhrgq7lv3/V%C3%A9V%C3%A0oC%E1%BB%95ngIMGWorldsofAdventure,Dubai-KlookVi%E1%BB%87tNam.jpg"
-                                alt="">
-                        </a>
-                    </div>
-                </div>
-
-                <div class="box_climate box--right">
-                    <div class="box__inner">
-                        <a href="#">
-                            <img src="https://res.klook.com/images/fl_lossy.progressive,q_65/c_fill,w_3000,h_2000,f_auto/w_80,x_15,y_15,g_south_west,l_Klook_water_br_trans_yhcmh3/activities/v6bwf3e8qhdfhrgq7lv3/V%C3%A9V%C3%A0oC%E1%BB%95ngIMGWorldsofAdventure,Dubai-KlookVi%E1%BB%87tNam.jpg"
-                                alt="">
-                        </a>
-                    </div>
-                </div>
-
-                <div class="box_climate box--left box--small">
-                    <div class="box__inner">
-                        <a href="#">
-                            <img src="https://res.klook.com/images/fl_lossy.progressive,q_65/c_fill,w_3000,h_2000,f_auto/w_80,x_15,y_15,g_south_west,l_Klook_water_br_trans_yhcmh3/activities/v6bwf3e8qhdfhrgq7lv3/V%C3%A9V%C3%A0oC%E1%BB%95ngIMGWorldsofAdventure,Dubai-KlookVi%E1%BB%87tNam.jpg"
-                                alt="">
-                        </a>
-                    </div>
-                </div>
-
-                <div class="box_climate box--right box--small">
-                    <div class="box__inner">
-                        <a href="#">
-                            <img src="https://res.klook.com/images/fl_lossy.progressive,q_65/c_fill,w_3000,h_2000,f_auto/w_80,x_15,y_15,g_south_west,l_Klook_water_br_trans_yhcmh3/activities/v6bwf3e8qhdfhrgq7lv3/V%C3%A9V%C3%A0oC%E1%BB%95ngIMGWorldsofAdventure,Dubai-KlookVi%E1%BB%87tNam.jpg"
-                                alt="">
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    {{-- Color --}}
-    <div class="container-xxl py-5">
-        <div class="container">
-            <div class="row g-5 mb-5 align-items-end wow fadeInUp" data-wow-delay="0.1s">
-                <div class="col-lg-6">
-                    <p><span class="text-primary me-2">#</span>Color</p>
-                    <h1 class="display-5 mb-0">
-                        Let`s See Our <span class="text-primary">Choose</span> color for Animal
-                    </h1>
-                </div>
-            </div>
-
-            <div class="checkin">
-                <div class="item">
-                    <img src="https://www.rspcansw.org.au/wp-content/uploads/2020/03/disneyblog6.jpg" class="zoom">
-                    <div class="content">
-                        <a href="#" class="title">Name Checkin</a>
-                        <div class="des">
-                            Lorem ipsum dolor sit amet consectetur adipisicing.
+                    <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="testimonial-item text-center">
+                            <img class="img-fluid rounded-circle border border-2 p-2 mx-auto mb-4"
+                                src="{{ asset('users/img/testimonial-1.jpg') }}" style="width: 100px; height: 100px" />
+                            <div class="testimonial-text rounded text-center p-4">
+                                <p>
+                                    Clita clita tempor justo dolor ipsum amet kasd amet duo justo
+                                    duo duo labore sed sed. Magna ut diam sit et amet stet eos sed
+                                    clita erat magna elitr erat sit sit erat at rebum justo sea
+                                    clita.
+                                </p>
+                                <h5 class="mb-1">Patient Name</h5>
+                                <span class="fst-italic">Profession</span>
+                            </div>
                         </div>
-                    </div>
-                </div>
-
-                <div class="item">
-                    <img src="https://www.rspcansw.org.au/wp-content/uploads/2020/03/disneyblog6.jpg" class="zoom">
-                    <div class="content">
-                        <a href="#" class="title">Name Checkin</a>
-                        <div class="des">
-                            Lorem ipsum dolor sit amet consectetur adipisicing.
+                        <div class="testimonial-item text-center">
+                            <img class="img-fluid rounded-circle border border-2 p-2 mx-auto mb-4"
+                                src="{{ asset('users/img/testimonial-2.jpg') }}" style="width: 100px; height: 100px" />
+                            <div class="testimonial-text rounded text-center p-4">
+                                <p>
+                                    Clita clita tempor justo dolor ipsum amet kasd amet duo justo
+                                    duo duo labore sed sed. Magna ut diam sit et amet stet eos sed
+                                    clita erat magna elitr erat sit sit erat at rebum justo sea
+                                    clita.
+                                </p>
+                                <h5 class="mb-1">Patient Name</h5>
+                                <span class="fst-italic">Profession</span>
+                            </div>
                         </div>
-                    </div>
-                </div>
-
-                <div class="item">
-                    <img src="https://www.rspcansw.org.au/wp-content/uploads/2020/03/disneyblog6.jpg" class="zoom">
-                    <div class="content">
-                        <a href="#" class="title">Name Checkin</a>
-                        <div class="des">
-                            Lorem ipsum dolor sit amet consectetur adipisicing.
-                        </div>
-                    </div>
-                </div>
-
-                <div class="item">
-                    <img src="https://www.rspcansw.org.au/wp-content/uploads/2020/03/disneyblog6.jpg" class="zoom">
-                    <div class="content">
-                        <a href="#" class="title">Name Checkin</a>
-                        <div class="des">
-                            Lorem ipsum dolor sit amet consectetur adipisicing.
-                        </div>
-                    </div>
-                </div>
-
-                <div class="item">
-                    <img src="https://www.rspcansw.org.au/wp-content/uploads/2020/03/disneyblog6.jpg" class="zoom">
-                    <div class="content">
-                        <a href="#" class="title">Name Checkin</a>
-                        <div class="des">
-                            Lorem ipsum dolor sit amet consectetur adipisicing.
-                        </div>
-                    </div>
-                </div>
-
-                <div class="item">
-                    <img src="https://www.rspcansw.org.au/wp-content/uploads/2020/03/disneyblog6.jpg" class="zoom">
-                    <div class="content">
-                        <a href="#" class="title">Name Checkin</a>
-                        <div class="des">
-                            Lorem ipsum dolor sit amet consectetur adipisicing.
+                        <div class="testimonial-item text-center">
+                            <img class="img-fluid rounded-circle border border-2 p-2 mx-auto mb-4"
+                                src="{{ asset('users/img/testimonial-3.jpg') }}" style="width: 100px; height: 100px" />
+                            <div class="testimonial-text rounded text-center p-4">
+                                <p>
+                                    Clita clita tempor justo dolor ipsum amet kasd amet duo justo
+                                    duo duo labore sed sed. Magna ut diam sit et amet stet eos sed
+                                    clita erat magna elitr erat sit sit erat at rebum justo sea
+                                    clita.
+                                </p>
+                                <h5 class="mb-1">Patient Name</h5>
+                                <span class="fst-italic">Profession</span>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-
-    <!-- Visiting Hours Start -->
-    <div class="container-xxl bg-primary visiting-hours my-5 py-5 wow fadeInUp" data-wow-delay="0.1s">
-        <div class="container py-5">
-            <div class="row g-5">
-                <div class="col-md-6 wow fadeIn" data-wow-delay="0.3s">
-                    <h1 class="display-6 text-white mb-5">Visiting Hours</h1>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">
-                            <span>Monday</span>
-                            <span>9:00AM - 6:00PM</span>
-                        </li>
-                        <li class="list-group-item">
-                            <span>Tuesday</span>
-                            <span>9:00AM - 6:00PM</span>
-                        </li>
-                        <li class="list-group-item">
-                            <span>Wednesday</span>
-                            <span>9:00AM - 6:00PM</span>
-                        </li>
-                        <li class="list-group-item">
-                            <span>Thursday</span>
-                            <span>9:00AM - 6:00PM</span>
-                        </li>
-                        <li class="list-group-item">
-                            <span>Friday</span>
-                            <span>9:00AM - 6:00PM</span>
-                        </li>
-                        <li class="list-group-item">
-                            <span>Saturday</span>
-                            <span>9:00AM - 6:00PM</span>
-                        </li>
-                        <li class="list-group-item">
-                            <span>Sunday</span>
-                            <span>Closed</span>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-md-6 text-light wow fadeIn" data-wow-delay="0.5s">
-                    <h1 class="display-6 text-white mb-5">Contact Info</h1>
-                    <table class="table">
-                        <tbody>
-                            <tr>
-                                <td>Office</td>
-                                <td>123 Street, New York, USA</td>
-                            </tr>
-                            <tr>
-                                <td>Zoo</td>
-                                <td>123 Street, New York, USA</td>
-                            </tr>
-                            <tr>
-                                <td>Ticket</td>
-                                <td>
-                                    <p class="mb-2">+012 345 6789</p>
-                                    <p class="mb-0">ticket@example.com</p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Support</td>
-                                <td>
-                                    <p class="mb-2">+012 345 6789</p>
-                                    <p class="mb-0">support@example.com</p>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Visiting Hours End -->
-
-    <!-- Membership Start -->
-    <div class="container-xxl py-5">
-        <div class="container">
-            <div class="row g-5 mb-5 align-items-end wow fadeInUp" data-wow-delay="0.1s">
-                <div class="col-lg-6">
-                    <p><span class="text-primary me-2">#</span>Membership</p>
-                    <h1 class="display-5 mb-0">
-                        You Can Be A Proud Member Of
-                        <span class="text-primary">Zoofari</span>
-                    </h1>
-                </div>
-                <div class="col-lg-6 text-lg-end">
-                    <a class="btn btn-primary py-3 px-5" href="">Special Pricing</a>
-                </div>
-            </div>
-            <div class="row g-4">
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="membership-item position-relative">
-                        <img class="img-fluid" src="{{ asset('users/img/animal-lg-1.jpg') }}" alt="" />
-                        <h1 class="display-1">01</h1>
-                        <h4 class="text-white mb-3">Popular</h4>
-                        <h3 class="text-primary mb-4">$99.00</h3>
-                        <p><i class="fa fa-check text-primary me-3"></i>10% discount</p>
-                        <p>
-                            <i class="fa fa-check text-primary me-3"></i>2 adult and 2 child
-                        </p>
-                        <p>
-                            <i class="fa fa-check text-primary me-3"></i>Free animal
-                            exhibition
-                        </p>
-                        <a class="btn btn-outline-light px-4 mt-3" href="">Get Started</a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="membership-item position-relative">
-                        <img class="img-fluid" src="{{ asset('users/img/animal-lg-2.jpg') }}" alt="" />
-                        <h1 class="display-1">02</h1>
-                        <h4 class="text-white mb-3">Standard</h4>
-                        <h3 class="text-primary mb-4">$149.00</h3>
-                        <p><i class="fa fa-check text-primary me-3"></i>15% discount</p>
-                        <p>
-                            <i class="fa fa-check text-primary me-3"></i>4 adult and 4 child
-                        </p>
-                        <p>
-                            <i class="fa fa-check text-primary me-3"></i>Free animal
-                            exhibition
-                        </p>
-                        <a class="btn btn-outline-light px-4 mt-3" href="">Get Started</a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="membership-item position-relative">
-                        <img class="img-fluid" src="{{ asset('users/img/animal-lg-3.jpg') }}" alt="" />
-                        <h1 class="display-1">03</h1>
-                        <h4 class="text-white mb-3">Premium</h4>
-                        <h3 class="text-primary mb-4">$199.00</h3>
-                        <p><i class="fa fa-check text-primary me-3"></i>20% discount</p>
-                        <p>
-                            <i class="fa fa-check text-primary me-3"></i>6 adult and 6 child
-                        </p>
-                        <p>
-                            <i class="fa fa-check text-primary me-3"></i>Free animal
-                            exhibition
-                        </p>
-                        <a class="btn btn-outline-light px-4 mt-3" href="">Get Started</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Membership End -->
-
-    <!-- Testimonial Start -->
-    <div class="container-xxl py-5">
-        <div class="container">
-            <h1 class="display-5 text-center mb-5 wow fadeInUp" data-wow-delay="0.1s">
-                Our Clients Say!
-            </h1>
-            <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.1s">
-                <div class="testimonial-item text-center">
-                    <img class="img-fluid rounded-circle border border-2 p-2 mx-auto mb-4"
-                        src="{{ asset('users/img/testimonial-1.jpg') }}" style="width: 100px; height: 100px" />
-                    <div class="testimonial-text rounded text-center p-4">
-                        <p>
-                            Clita clita tempor justo dolor ipsum amet kasd amet duo justo
-                            duo duo labore sed sed. Magna ut diam sit et amet stet eos sed
-                            clita erat magna elitr erat sit sit erat at rebum justo sea
-                            clita.
-                        </p>
-                        <h5 class="mb-1">Patient Name</h5>
-                        <span class="fst-italic">Profession</span>
-                    </div>
-                </div>
-                <div class="testimonial-item text-center">
-                    <img class="img-fluid rounded-circle border border-2 p-2 mx-auto mb-4"
-                        src="{{ asset('users/img/testimonial-2.jpg') }}" style="width: 100px; height: 100px" />
-                    <div class="testimonial-text rounded text-center p-4">
-                        <p>
-                            Clita clita tempor justo dolor ipsum amet kasd amet duo justo
-                            duo duo labore sed sed. Magna ut diam sit et amet stet eos sed
-                            clita erat magna elitr erat sit sit erat at rebum justo sea
-                            clita.
-                        </p>
-                        <h5 class="mb-1">Patient Name</h5>
-                        <span class="fst-italic">Profession</span>
-                    </div>
-                </div>
-                <div class="testimonial-item text-center">
-                    <img class="img-fluid rounded-circle border border-2 p-2 mx-auto mb-4"
-                        src="{{ asset('users/img/testimonial-3.jpg') }}" style="width: 100px; height: 100px" />
-                    <div class="testimonial-text rounded text-center p-4">
-                        <p>
-                            Clita clita tempor justo dolor ipsum amet kasd amet duo justo
-                            duo duo labore sed sed. Magna ut diam sit et amet stet eos sed
-                            clita erat magna elitr erat sit sit erat at rebum justo sea
-                            clita.
-                        </p>
-                        <h5 class="mb-1">Patient Name</h5>
-                        <span class="fst-italic">Profession</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Testimonial End -->
-@endsection
+            <!-- Testimonial End -->
+        @endsection
