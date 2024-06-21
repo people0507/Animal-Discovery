@@ -786,9 +786,9 @@ main .container .right {
 }
 
 .top .likes__count {
-    position: absolute;
-    top: 0;
-    left: 0;
+    /* position: absolute; */
+    /* top: 0; */
+    /* left: 0; */
     background: #ffadad;
     font-size: 20px;
     display: flex;

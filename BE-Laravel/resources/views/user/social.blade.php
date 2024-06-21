@@ -159,9 +159,9 @@
 
                         <div class="action-button">
                             <div class="interaction-buttons">
-                                <div class="heart__icon center__display">
+                                {{-- <div class="heart__icon center__display">
                                     <span><i class="far fa-heart"></i></span>
-                                </div>
+                                </div> --}}
                                 <span><i class="uil uil-comment-dots"></i></span>
                                 <span><i class="uil uil-share-alt"></i></span>
 
@@ -194,22 +194,15 @@
                                 <div class="video__container">
                                     <form class="create-post_cmt">
                                         <div class="heart__icon center__display">
-                                            <i class="far fa-heart"></i>
+                                            <i class="far fa-heart" style="font-size: 20px"></i>
                                         </div>
-                                        <br>
-                                        <br>
-                                        <br>
-                                        <br>
-                                        <br>
-                                        <br>
-                                        <br>
-                                        <div class="form__info center__display form-group">
-                                            <div class="input-data">
+                                        <div class="form__info center__display ">
+                                            <div class="input-data form-group">
                                                 <input type="text" name="user" id="user" required>
                                                 <div class="underline"></div>
                                                 <label>Name</label>
                                             </div>
-                                            <div class="input-data">
+                                            <div class="input-data form-group">
                                                 <input type="text" name="comment" id="comment" required>
                                                 <div class="underline"></div>
                                                 <label>Comment</label>
