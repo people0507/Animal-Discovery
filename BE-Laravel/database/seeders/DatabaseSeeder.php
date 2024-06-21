@@ -201,35 +201,56 @@ class DatabaseSeeder extends Seeder
         DB::table('color')->insert([
             [
                 'color_name' => 'Xanh lục',
+                'color_image' => 'green.jpg',
+                'color_description' => 'Màu xanh lục thường được thấy trên lưng của những loài bò sát như rắn và thằn lằn, giúp chúng hòa mình vào môi trường sống tự nhiên và có khả năng che chắn khỏi ánh nắng mặt trời.'
             ],
             [
                 'color_name' => 'Xanh dương',
+                'color_image' => 'blue.jpg',
+                'color_description' => 'Màu xanh dương thường xuất hiện trên lưng của cá và sinh vật biển khác, giúp chúng dễ dàng hòa tan vào màu nước biển và bảo vệ chúng khỏi con mồi săn mồi.'
             ],
             [
                 'color_name' => 'Đỏ',
+                'color_image' => 'red.jpg',
+                'color_description' => 'Màu đỏ thường là biểu tượng của sức mạnh và sự chú ý. Nhiều loài chim sử dụng màu đỏ trên lông hoặc mỏ để thu hút bạn tình hoặc để chiếm đóng vùng đất.'
             ],
             [
                 'color_name' => 'Vàng',
+                'color_image' => 'yellow.jpg',
+                'color_description' => 'Màu vàng là màu của sự nổi bật và khả năng sáng tỏ. Các loài côn trùng thường có màu vàng sáng để cảnh báo nguy hiểm hoặc để thu hút bạn tình.'
             ],
             [
                 'color_name' => 'Cam',
+                'color_image' => 'orange.jpg',
+                'color_description' => 'Màu cam thường thấy trên một số loài cá và động vật bò sát, giúp chúng camouflaged trong các môi trường sống như sa mạc hoặc rạn san hô.'
             ],
             [
                 'color_name' => 'Nâu',
+                'color_image' => 'brown.jpg',
+                'color_description' => 'Màu nâu thường thấy ở các loài động vật có vú như gấu, nai và linh dương. Màu nâu giúp chúng hòa mình vào môi trường rừng rậm và cỏ cây.'
             ],
             [
                 'color_name' => 'Trắng',
+                'color_image' => 'white.jpg',
+                'color_description' => 'Màu trắng thường thấy ở các loài chim nước và sinh vật sống ở môi trường lạnh như băng tuyết. Màu trắng giúp chúng che mình trong môi trường trắng tuyết và bảo vệ chúng khỏi kẻ săn mồi.'
             ],
             [
                 'color_name' => 'Đen',
+                'color_image' => 'black.jpg',
+                'color_description' => 'Màu đen thường thấy ở các loài chim và động vật có vú sống trong môi trường rừng sậy hoặc hang động. Màu sắc này giúp chúng ngụy trang vào ban đêm và che chắn khỏi sự chú ý của kẻ săn mồi.'
             ],
             [
                 'color_name' => 'Xám',
+                'color_image' => 'gray.jpg',
+                'color_description' => 'Màu xám thường xuất hiện trên lông của các loài linh dương và khỉ, giúp chúng hòa mình vào màu của cây cối và đá. Màu sắc này là sự kết hợp giữa sự bảo vệ và ngụy trang.'
             ],
             [
                 'color_name' => 'Tím',
+                'color_image' => 'purple.jpg',
+                'color_description' => 'Màu tím thường thấy ở một số loài côn trùng như bướm và ong, làm nổi bật chúng giữa thiên nhiên và thu hút sự chú ý của bạn tình.'
             ],
         ]);
+        
         DB::table('activity_time')->insert([
             [
                 'activity_name' => 'Ban ngày',
@@ -944,6 +965,50 @@ Kể từ năm 1782, đại bàng đầu trắng đã trở thành loài chim qu
                 ['animal_detail_id' => '1', 'climate_id' => '2'],
                 ['animal_detail_id' => '2', 'climate_id' => '4'],
                 ['animal_detail_id' => '3', 'climate_id' => '3']
+            ]
+        );
+        DB::table('animal_between_color')->insert(
+            [
+                ['animal_detail_id' => 3, 'color_id' => 8],
+                ['animal_detail_id' => 2, 'color_id' => 5],
+                ['animal_detail_id' => 1, 'color_id' => 9],
+                ['animal_detail_id' => 4, 'color_id' => 3],
+                ['animal_detail_id' => 1, 'color_id' => 4],
+                ['animal_detail_id' => 2, 'color_id' => 6],
+                ['animal_detail_id' => 4, 'color_id' => 1],
+                ['animal_detail_id' => 3, 'color_id' => 10],
+                ['animal_detail_id' => 2, 'color_id' => 7],
+                ['animal_detail_id' => 1, 'color_id' => 2],
+                ['animal_detail_id' => 4, 'color_id' => 5],
+                ['animal_detail_id' => 3, 'color_id' => 9],
+                ['animal_detail_id' => 1, 'color_id' => 8],
+                ['animal_detail_id' => 2, 'color_id' => 3],
+                ['animal_detail_id' => 4, 'color_id' => 10],
+                ['animal_detail_id' => 3, 'color_id' => 2],
+                ['animal_detail_id' => 1, 'color_id' => 7],
+                ['animal_detail_id' => 4, 'color_id' => 6],
+                ['animal_detail_id' => 2, 'color_id' => 1],
+                ['animal_detail_id' => 3, 'color_id' => 4],
+                ['animal_detail_id' => 1, 'color_id' => 5],
+                ['animal_detail_id' => 4, 'color_id' => 9],
+                ['animal_detail_id' => 2, 'color_id' => 8],
+                ['animal_detail_id' => 3, 'color_id' => 6],
+                ['animal_detail_id' => 1, 'color_id' => 1],
+                ['animal_detail_id' => 4, 'color_id' => 2],
+                ['animal_detail_id' => 2, 'color_id' => 9],
+                ['animal_detail_id' => 3, 'color_id' => 7],
+                ['animal_detail_id' => 1, 'color_id' => 10],
+                ['animal_detail_id' => 4, 'color_id' => 4],
+                ['animal_detail_id' => 2, 'color_id' => 10],
+                ['animal_detail_id' => 3, 'color_id' => 1],
+                ['animal_detail_id' => 1, 'color_id' => 6],
+                ['animal_detail_id' => 4, 'color_id' => 7],
+                ['animal_detail_id' => 2, 'color_id' => 2],
+                ['animal_detail_id' => 3, 'color_id' => 5],
+                ['animal_detail_id' => 1, 'color_id' => 3],
+                ['animal_detail_id' => 4, 'color_id' => 8],
+                ['animal_detail_id' => 2, 'color_id' => 4],
+                ['animal_detail_id' => 3, 'color_id' => 3]
             ]
         );
     }
