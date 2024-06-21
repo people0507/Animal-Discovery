@@ -3,15 +3,14 @@
 @section('content_user')
     <link rel="stylesheet" href="{{ asset('users/css/animal-detail.css') }}">
     @php
-        $breadcrumbs = [
-            ['name' => 'Home', 'url' => route('user.home')],
-            ['name' => 'List Animal For Category', 'url' => route('user.fillter-list-animal')],
-            ['name' => 'Animal', 'url' => route('user.home')],
-        ];
-
+        // $breadcrumbs = [
+        //     ['name' => 'Home', 'url' => route('user.home')],
+        //     ['name' => 'List Animal For Category', 'url' => route('user.fillter-list-animal')],
+        //     ['name' => 'Animal', 'url' => route('user.home')],
+        // ];
     @endphp
 
-    @include('user.includes.redirect', ['breadcrumbs' => $breadcrumbs])
+    {{-- @include('user.includes.redirect', ['breadcrumbs' => $breadcrumbs]) --}}
     <!-- About Start -->
     <div class="container-xxl py-5">
         <div class="container page-animal">
