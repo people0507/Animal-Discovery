@@ -12,6 +12,6 @@ class Nation extends Model
 
     public function animalDetail()
     {
-        return $this->belongsToMany(AnimalDetail::class,'animal_between_nation','animal_detail_id', 'nation_id');
+        return $this->belongsToMany(AnimalDetail::class,'animal_between_nation','animal_detail_id','nation_id');
     }
 }

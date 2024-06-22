@@ -1011,5 +1011,24 @@ Kể từ năm 1782, đại bàng đầu trắng đã trở thành loài chim qu
                 ['animal_detail_id' => 3, 'color_id' => 3]
             ]
         );
+        DB::table('animal_between_ocean')->insert(
+            [
+                ['animal_detail_id' => 1, 'ocean_id' => 4],
+                ['animal_detail_id' => 3, 'ocean_id' => 2],
+                ['animal_detail_id' => 2, 'ocean_id' => 5],
+                ['animal_detail_id' => 4, 'ocean_id' => 1],
+                ['animal_detail_id' => 1, 'ocean_id' => 3],
+                ['animal_detail_id' => 2, 'ocean_id' => 2],
+                ['animal_detail_id' => 3, 'ocean_id' => 5],
+                ['animal_detail_id' => 4, 'ocean_id' => 4],
+                ['animal_detail_id' => 1, 'ocean_id' => 1],
+                ['animal_detail_id' => 3, 'ocean_id' => 3],
+                ['animal_detail_id' => 2, 'ocean_id' => 4],
+                ['animal_detail_id' => 4, 'ocean_id' => 2],
+                ['animal_detail_id' => 1, 'ocean_id' => 5],
+                ['animal_detail_id' => 2, 'ocean_id' => 3],
+                ['animal_detail_id' => 3, 'ocean_id' => 1]
+            ]
+        );
     }
 }

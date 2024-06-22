@@ -24,6 +24,6 @@ class Color extends Model
 
     public function animalDetail()
     {
-        return $this->belongsToMany(AnimalDetail::class,'animal_between_nation','animal_detail_id', 'color_id');
+        return $this->belongsToMany(AnimalDetail::class,'animal_between_color','animal_detail_id', 'color_id');
     }
 }
