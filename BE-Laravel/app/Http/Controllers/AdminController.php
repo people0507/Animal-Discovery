@@ -4,10 +4,17 @@ namespace App\Http\Controllers;
 
 use App\Http\MessageContent;
 use App\Models\AnimalDetail;
+use App\Models\Biome;
+use App\Models\Climate;
+use App\Models\Nation;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Role;
 use App\Models\AnimalImage;
+use App\Models\Image;
+use App\Models\Area;
+use App\Models\Ocean;
+use App\Models\Color;
 use Str;
 use Hash;
 
@@ -21,16 +28,50 @@ class AdminController extends Controller
     public function listAnimal()
     {
         $animalDetail = AnimalDetail::all();
-        if ($animalDetail) {
-            return response()->json(
-                [
-                    'animal_detail' => $animalDetail,
-                ],
-                200
-            );
-        } else {
-            return response()->json(401);
+        return view('admin.animals.list-animal',compact('animalDetail'));
+    }
+
+    public function listAnimalArea($id){
+        $mode = 'area';
+        $data = AnimalDetail::where('id',$id)->with('areas')->first();
+        return view('admin.animals.list-animal-characteristic',compact('data','mode'));
+    }
+
+    public function listAnimalClimate($id){
+        $mode = 'climate';
+        $data = AnimalDetail::where('id',$id)->with('climates')->first();
+        return view('admin.animals.list-animal-characteristic',compact('data','mode'));
+    }
+
+    public function listAnimalNation($id){
+        $mode = 'nation';
+        $data = AnimalDetail::where('id',$id)->with('nations')->first();
+        return view('admin.animals.list-animal-characteristic',compact('data','mode'));
+    }
+
+    public function listAnimalColor($id){
+        $mode = 'color';
+        $data = AnimalDetail::where('id',$id)->with('colors')->first();
+        return view('admin.animals.list-animal-characteristic',compact('data','mode'));
+    }
+
+    public function listAnimalBiome($id){
+        $mode = 'biome';
+        $data = AnimalDetail::where('id',$id)->with('biomes')->first();
+        return view('admin.animals.list-animal-characteristic',compact('data','mode'));
+    }
+    public function listAnimalOcean($id){
+        $mode = 'ocean';
+        $data = AnimalDetail::where('id',$id)->with('oceans')->first();
+        return view('admin.animals.list-animal-characteristic',compact('data','mode'));
+    }
+
+    public function listAnimalImage($id){
+        $images = Image::where('id',$id)->get();
+        foreach($images as $image){
+            $image->animalDetail;
         }
+        return view('admin.animals.list-animal-image',compact('images'));
     }
 
     public function createAnimalDetail(Request $request)

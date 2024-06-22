@@ -44,7 +44,7 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="card-title">All Animal</h4>
+                        <h4 class="card-title">Danh sách động vật</h4>
                         <div class="table-responsive">
                             <table id="multi_col_order" class="table table-striped table-bordered display no-wrap"
                                 style="width:100%">
@@ -53,37 +53,36 @@
                                         <th>STT</th>
                                         <th>Tên động vật</th>
                                         <th>Tên khoa học</th>
-                                        <th>Ảnh</th>
+                                        <th>Danh sách ảnh</th>
                                         <th style="width: 20%">Đặc điểm</th>
                                         <th>Thao tác</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr
-                                        onclick="showModal('Great White Shark', 'Carcharodon carcharias', 'The great white shark is a large species of shark found in coastal waters.', 'https://news4sanantonio.com/resources/media2/16x9/full/1015/center/80/cab905ba-dbcd-43ab-99c7-3fbdf1eadd8b-large16x9_GettyImages515714114.jpg', 'Fish', '5 meters', '1.5 meters', '1100 kg', 'Large', '70 years', 'Shark sound', 'shark_video.mp4', 'Vulnerable', 'Diurnal', 'Carnivore')">
-                                        <td>1</td>
-                                        <td>Great White Shark</td>
-                                        <td>Carcharodon carcharias</td>
-                                        <td><img src="https://news4sanantonio.com/resources/media2/16x9/full/1015/center/80/cab905ba-dbcd-43ab-99c7-3fbdf1eadd8b-large16x9_GettyImages515714114.jpg"
-                                                alt="Shark" width="100"></td>
+                                    @foreach ($animalDetail as $key => $item)
+                                    <tr>
+                                        <td onclick="showModal('Great White Shark', 'Carcharodon carcharias', 'The great white shark is a large species of shark found in coastal waters.', 'https://news4sanantonio.com/resources/media2/16x9/full/1015/center/80/cab905ba-dbcd-43ab-99c7-3fbdf1eadd8b-large16x9_GettyImages515714114.jpg', 'Fish', '5 meters', '1.5 meters', '1100 kg', 'Large', '70 years', 'Shark sound', 'shark_video.mp4', 'Vulnerable', 'Diurnal', 'Carnivore')">{{$key+1}}</td>
+                                        <td>{{$item->animal_name}}</td>
+                                        <td>{{$item->animal_scientific_name}}</td>
+                                        <td><a href="{{route('list_animal_image',['id' => $item->id])}}">Xem Thêm</a></td>
                                         <td class="box-container">
                                             <div class="box-char">
-                                                <a href="#">Châu lục</a>
+                                                <a href="{{route('list_animal_area',['id' => $item->id])}}">Châu lục</a>
                                             </div>
                                             <div class="box-char">
-                                                <a href="#">Khí hậu</a>
+                                                <a href="{{route('list_animal_climate',['id' => $item->id])}}">Khí hậu</a>
                                             </div>
                                             <div class="box-char">
-                                                <a href="#">Quốc gia</a>
+                                                <a href="{{route('list_animal_nation',['id' => $item->id])}}">Quốc gia</a>
                                             </div>
                                             <div class="box-char">
-                                                <a href="#">Màu sắc</a>
+                                                <a href="{{route('list_animal_color',['id' => $item->id])}}">Màu sắc</a>
                                             </div>
                                             <div class="box-char">
-                                                <a href="#">Quần thể</a>
+                                                <a href="{{route('list_animal_biome',['id' => $item->id])}}">Quần thể</a>
                                             </div>
                                             <div class="box-char">
-                                                <a href="#">Đại dương</a>
+                                                <a href="{{route('list_animal_ocean',['id' => $item->id])}}">Đại dương</a>
                                             </div>
                                         </td>
                                         <td>
@@ -95,6 +94,7 @@
                                                 onclick="event.stopPropagation();"><i class="icon-settings"></i></a>
                                         </td>
                                     </tr>
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div>

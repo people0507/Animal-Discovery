@@ -14,7 +14,7 @@
                     </a>
                     <ul aria-expanded="false" class="collapse first-level base-level-line">
                         <li class="sidebar-item">
-                            <a href="{{ route('admin.list-animal') }}" class="sidebar-link">
+                            <a href="{{ route('list_animal') }}" class="sidebar-link">
                                 <span class="hide-menu"> All Animals </span>
                             </a>
                         </li>

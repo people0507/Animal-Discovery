@@ -137,7 +137,17 @@ Route::prefix('admin')->middleware('checklogin')->group(function () {
     Route::get('/all_role', [AdminController::class, 'listRole']);
 
     // Animal
-    Route::get('/list_animal', [AdminController::class, 'listAnimal']);
+    Route::get('/list_animal', [AdminController::class, 'listAnimal'])->name('list_animal');
+    // Animal Image
+    Route::get('/list_animal_image/{id}', [AdminController::class, 'listAnimalImage'])->name('list_animal_image');
+    //Animal characteristic
+    Route::get('/list_animal_area/{id}', [AdminController::class, 'listAnimalArea'])->name('list_animal_area');
+    Route::get('/list_animal_climate/{id}', [AdminController::class, 'listAnimalClimate'])->name('list_animal_climate');
+    Route::get('/list_animal_nation/{id}', [AdminController::class, 'listAnimalNation'])->name('list_animal_nation');
+    Route::get('/list_animal_color/{id}', [AdminController::class, 'listAnimalColor'])->name('list_animal_color');
+    Route::get('/list_animal_biome/{id}', [AdminController::class, 'listAnimalBiome'])->name('list_animal_biome');
+    Route::get('/list_animal_ocean/{id}', [AdminController::class, 'listAnimalOcean'])->name('list_animal_ocean');
+
     Route::post('/create_animal_detail', [AdminController::class, 'createAnimalDetail']);
     Route::get('/create_img_animal_detail', [AdminController::class, 'addImgAnimalView'])->name('admin.add-image-animal');
     Route::post('/create_img_animal_detail', [AdminController::class, 'addImgAnimalStore'])->name('admin.add-image-animal-store');

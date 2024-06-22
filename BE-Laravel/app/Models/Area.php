@@ -12,6 +12,6 @@ class Area extends Model
 
     public function animalDetail()
     {
-        return $this->belongsToMany(AnimalDetail::class,'animal_between_area','animal_detail_id', 'animal_area_id');
+        return $this->belongsToMany(AnimalDetail::class,'animal_between_area','animal_detail_id', 'area_id');
     }
 }
