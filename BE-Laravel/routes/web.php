@@ -135,8 +135,13 @@ Route::prefix('admin')->middleware('checklogin')->group(function () {
     Route::post('/update_user/{id}', [AdminController::class, 'updateUser']);
     Route::delete('/delete_user/{id}', [AdminController::class, 'deleteUser'])->name('delete_user');
     Route::get('/all_role', [AdminController::class, 'listRole']);
+
+    // Animal
     Route::get('/list_animal', [AdminController::class, 'listAnimal']);
     Route::post('/create_animal_detail', [AdminController::class, 'createAnimalDetail']);
-    Route::post('/edit_animal_detail', [AdminController::class, 'editAnimalDetail']);
+    Route::get('/create_img_animal_detail', [AdminController::class, 'addImgAnimalView'])->name('admin.add-image-animal');
+    Route::post('/create_img_animal_detail', [AdminController::class, 'addImgAnimalStore'])->name('admin.add-image-animal-store');
+    Route::get('/classification_animal', [AdminController::class, 'classificationView'])->name('admin.classification-animal');
+    Route::post('/classification_animal', [AdminController::class, 'classificationStore'])->name('admin.classification-animal-store');
     Route::delete('/delete_detail_animal/{id}', [AdminController::class, 'deleteAnimalDetail']);
 });
