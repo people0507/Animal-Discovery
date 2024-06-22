@@ -1,68 +1,86 @@
 <aside class="left-sidebar" data-sidebarbg="skin6">
-            <div class="scroll-sidebar" data-sidebarbg="skin6">
-                <nav class="sidebar-nav">
-                    <ul id="sidebarnav">
-                        <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="index.html"
-                                aria-expanded="false"><i data-feather="home" class="feather-icon"></i><span
-                                    class="hide-menu">Dashboard</span></a></li>
-                        <li class="list-divider"></li>
-                        <li class="nav-small-cap"><span class="hide-menu">Manager</span></li>
+    <div class="scroll-sidebar" data-sidebarbg="skin6">
+        <nav class="sidebar-nav">
+            <ul id="sidebarnav">
+                <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="index.html" aria-expanded="false"><i
+                            data-feather="home" class="feather-icon"></i><span class="hide-menu">Dashboard</span></a>
+                </li>
+                <li class="list-divider"></li>
+                <li class="nav-small-cap"><span class="hide-menu">Manager</span></li>
+                <li class="sidebar-item">
+                    <a class="sidebar-link has-arrow" href="javascript:void(0)" aria-expanded="false">
+                        <i data-feather="file-text" class="feather-icon"></i>
+                        <span class="hide-menu">Animal Management</span>
+                    </a>
+                    <ul aria-expanded="false" class="collapse first-level base-level-line">
+                        <li class="sidebar-item">
+                            <a href="{{ route('admin.list-animal') }}" class="sidebar-link">
+                                <span class="hide-menu"> All Animals </span>
+                            </a>
+                        </li>
                         <li class="sidebar-item">
                             <a class="sidebar-link has-arrow" href="javascript:void(0)" aria-expanded="false">
                                 <i data-feather="file-text" class="feather-icon"></i>
-                                <span class="hide-menu">Animal Management</span>
+                                <span class="hide-menu">Add Animal</span>
                             </a>
                             <ul aria-expanded="false" class="collapse first-level base-level-line">
                                 <li class="sidebar-item">
-                                    <a href="{{ route('admin.list-animal')}}" class="sidebar-link">
-                                        <span class="hide-menu"> All Animals </span>
+                                    <a href="{{ route('admin.add-animal') }}" class="sidebar-link">
+                                        <span class="hide-menu"> Add Basic </span>
                                     </a>
                                 </li>
                                 <li class="sidebar-item">
-                                    <a href="{{ route('admin.add-animal')}}" class="sidebar-link">
-                                        <span class="hide-menu"> Add Animal </span>
+                                    <a href="{{ route('admin.add-image-animal') }}" class="sidebar-link">
+                                        <span class="hide-menu"> Add Image</span>
+                                    </a>
+                                </li>
+                                <li class="sidebar-item">
+                                    <a href="{{ route('admin.classification-animal') }}" class="sidebar-link">
+                                        <span class="hide-menu">Classification</span>
                                     </a>
                                 </li>
                             </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li class="sidebar-item">
+                    <a class="sidebar-link has-arrow" href="javascript:void(0)" aria-expanded="false">
+                        <i data-feather="layers" class="feather-icon"></i>
+                        <span class="hide-menu">Animal Categories</span>
+                    </a>
+                    <ul aria-expanded="false" class="collapse first-level base-level-line">
+                        <li class="sidebar-item">
+                            <a href="category-list.html" class="sidebar-link">
+                                <span class="hide-menu"> All Categories </span>
+                            </a>
                         </li>
                         <li class="sidebar-item">
-                            <a class="sidebar-link has-arrow" href="javascript:void(0)" aria-expanded="false">
-                                <i data-feather="layers" class="feather-icon"></i>
-                                <span class="hide-menu">Animal Categories</span>
+                            <a href="add-category.html" class="sidebar-link">
+                                <span class="hide-menu"> Add Category </span>
                             </a>
-                            <ul aria-expanded="false" class="collapse first-level base-level-line">
-                                <li class="sidebar-item">
-                                    <a href="category-list.html" class="sidebar-link">
-                                        <span class="hide-menu"> All Categories </span>
-                                    </a>
-                                </li>
-                                <li class="sidebar-item">
-                                    <a href="add-category.html" class="sidebar-link">
-                                        <span class="hide-menu"> Add Category </span>
-                                    </a>
-                                </li>
-                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li class="sidebar-item">
+                    <a class="sidebar-link has-arrow" href="javascript:void(0)" aria-expanded="false">
+                        <i data-feather="users" class="feather-icon"></i>
+                        <span class="hide-menu">Users</span>
+                    </a>
+                    <ul aria-expanded="false" class="collapse first-level base-level-line">
+                        <li class="sidebar-item">
+                            <a href="{{ route('list_user') }}" class="sidebar-link">
+                                <span class="hide-menu"> All Users </span>
+                            </a>
                         </li>
                         <li class="sidebar-item">
-                            <a class="sidebar-link has-arrow" href="javascript:void(0)" aria-expanded="false">
-                                <i data-feather="users" class="feather-icon"></i>
-                                <span class="hide-menu">Users</span>
+                            <a href="{{ route('view_create_user') }}" class="sidebar-link">
+                                <span class="hide-menu"> Add User </span>
                             </a>
-                            <ul aria-expanded="false" class="collapse first-level base-level-line">
-                                <li class="sidebar-item">
-                                    <a href="{{ route('list_user')}}" class="sidebar-link">
-                                        <span class="hide-menu"> All Users </span>
-                                    </a>
-                                </li>
-                                <li class="sidebar-item">
-                                    <a href="{{ route('view_create_user')}}" class="sidebar-link">
-                                        <span class="hide-menu"> Add User </span>
-                                    </a>
-                                </li>
-                            </ul>
                         </li>
+                    </ul>
+                </li>
 
-                        <!-- <li class="sidebar-item">
+                <!-- <li class="sidebar-item">
                             <a class="sidebar-link has-arrow" href="javascript:void(0)" aria-expanded="false">
                                 <i data-feather="gamepad" class="feather-icon"></i>
                                 <span class="hide-menu">Games</span>
@@ -152,8 +170,8 @@
                                 </li>
                             </ul>
                         </li> -->
-                        <li class="list-divider"></li>
-                    </ul>
-                </nav>
-            </div>
-        </aside>
+                <li class="list-divider"></li>
+            </ul>
+        </nav>
+    </div>
+</aside>

@@ -13,29 +13,35 @@ use Hash;
 
 class AdminController extends Controller
 {
-    public function viewCreateUser(){
+    public function viewCreateUser()
+    {
         return view('admin.users.add-user');
     }
 
-    public function listAnimal(){
+    public function listAnimal()
+    {
         $animalDetail = AnimalDetail::all();
-        if($animalDetail){
+        if ($animalDetail) {
             return response()->json(
-                ['animal_detail' => $animalDetail,
-            ],200);
-        }else{
+                [
+                    'animal_detail' => $animalDetail,
+                ],
+                200
+            );
+        } else {
             return response()->json(401);
         }
     }
 
-    public function createAnimalDetail(Request $request){
+    public function createAnimalDetail(Request $request)
+    {
         MessageContent::loadMessages();
         $data = $request->all();
-        if(isset($data['animal_sound']) && $data['animal_sound'] != null){
+        if (isset($data['animal_sound']) && $data['animal_sound'] != null) {
             $uniqueFileSoundName = Str::uuid()->toString() . '.' . $data['animal_sound']->extension();
             $data['animal_sound']->move(public_path('animal_sounds'), $uniqueFileSoundName);
-        }else{
-            $uniqueFileSoundName=null;
+        } else {
+            $uniqueFileSoundName = null;
         }
         $animalDetail = new AnimalDetail();
         $animalDetail->animal_name = $data['animnal_name'];
@@ -47,24 +53,24 @@ class AdminController extends Controller
         $animalDetail->diet_nutrition_description = $data['diet_nutrition_description'];
         $animalDetail->mating_habit_description = $data['mating_habit_description'];
         $animalDetail->population_description = $data['population_description'];
-        $animalDetail->fun_fact=$data['fun_fact'];
-        $animalDetail->animal_length=$data['animal_length'];
-        $animalDetail->animal_height=$data['animal_height'];
-        $animalDetail->animal_weight=$data['animal_weight'];
-        $animalDetail->population_size=$data['population_size'];
-        $animalDetail->avg_lifespan=$data['avg_lifespan'];
-        $animalDetail->animal_sound=$uniqueFileSoundName;
-        $animalDetail->animal_video=$data['animal_video'];
+        $animalDetail->fun_fact = $data['fun_fact'];
+        $animalDetail->animal_length = $data['animal_length'];
+        $animalDetail->animal_height = $data['animal_height'];
+        $animalDetail->animal_weight = $data['animal_weight'];
+        $animalDetail->population_size = $data['population_size'];
+        $animalDetail->avg_lifespan = $data['avg_lifespan'];
+        $animalDetail->animal_sound = $uniqueFileSoundName;
+        $animalDetail->animal_video = $data['animal_video'];
         $animalDetail->conservation_status_id = 1;
         $animalDetail->activity_time_id = 1;
         $animalDetail->diet_type_id = 1;
-        $animalDetail->animal_category_id =1;
+        $animalDetail->animal_category_id = 1;
         $animalDetail->population_trending_id = 1;
         $animalDetail->created_by = 1;
         $animalDetail->save();
 
-        if(isset($data['animal_image']) && $data['animal_image'] != null){
-            foreach ($data['animal_image'] as $img ){
+        if (isset($data['animal_image']) && $data['animal_image'] != null) {
+            foreach ($data['animal_image'] as $img) {
                 $uniqueFileName = Str::uuid()->toString() . '.' . $img->extension();
                 $img->move(public_path('animal_images'), $uniqueFileName);
                 $animalImage = new AnimalImage();
@@ -74,51 +80,80 @@ class AdminController extends Controller
             }
         }
         if ($animalDetail->save()) {
-            return response()->json(['message' => MessageContent::getMessage('create_success')],200);
+            return response()->json(['message' => MessageContent::getMessage('create_success')], 200);
         } else {
-            return response()->json(['message' => MessageContent::getMessage('create_failed')],401);
+            return response()->json(['message' => MessageContent::getMessage('create_failed')], 401);
         }
     }
 
-    public function editAnimalDetail(){
-        
+    public function addImgAnimalView()
+    {
+        return view('admin.animals.add-img-animal');
+    }
+    public function addImgAnimalStore(Request $request)
+    {
+        $img = $request->file('file');
+        $imgName = time() . rand(1, 100) . '.' . $img->extension();
+        $img->move(public_path('images_animal'), $imgName);
+        return response()->json([
+            'success' => $imgName
+        ]);
     }
 
-    public function deleteAnimalDetail($id){
+    public function editAnimalDetail()
+    {
+    }
+
+    public function classificationView()
+    {
+        return view('admin.animals.add-classification-animal');
+    }
+    public function classificationStore()
+    {
+    }
+
+    public function deleteAnimalDetail($id)
+    {
         MessageContent::loadMessages();
         $animalDetail = AnimalDetail::find($id)->first();
-        if($animalDetail){
+        if ($animalDetail) {
             if ($animalDetail->delete()) {
-                return response()->json(['message' => MessageContent::getMessage('delete_success')],200);
+                return response()->json(['message' => MessageContent::getMessage('delete_success')], 200);
             } else {
-                return response()->json(['message' => MessageContent::getMessage('delete_failed')],401);
+                return response()->json(['message' => MessageContent::getMessage('delete_failed')], 401);
             }
         }
     }
 
-    public function listUser(){
+    public function listUser()
+    {
         $users = User::all();
-        return view('admin.users.list-user',compact('users'));
+        return view('admin.users.list-user', compact('users'));
     }
 
-    public function getUser($id){
-        $user = User::where('id',$id)->first();
+    public function getUser($id)
+    {
+        $user = User::where('id', $id)->first();
         $url = url('/');
-        if($user){
+        if ($user) {
             return response()->json(
-                ['user' => $user,
-                'url' => $url
-            ],200);
-        }else{
+                [
+                    'user' => $user,
+                    'url' => $url
+                ],
+                200
+            );
+        } else {
             return response()->json(401);
         }
     }
 
-    public function createUser(Request $request){
+    public function createUser(Request $request)
+    {
         MessageContent::loadMessages();
         $data = $request->all();
 
-        if(isset($data['avatar'])){
+        if (isset($data['avatar'])) {
             $uniqueFileName = Str::uuid()->toString() . '.' . $data['avatar']->extension();
             $data['avatar']->move(public_path('avatars'), $uniqueFileName);
         }
@@ -129,8 +164,8 @@ class AdminController extends Controller
         $user->gender = $data['gender'];
         $user->role_id = $data['role_id'];
         $user->birthdate = $data['birthdate'];
-        if(isset($uniqueFileName) && $uniqueFileName != ''){
-        $user->avatar = $uniqueFileName;
+        if (isset($uniqueFileName) && $uniqueFileName != '') {
+            $user->avatar = $uniqueFileName;
         }
         if ($user->save()) {
             return redirect()->route('list_user');
@@ -138,21 +173,22 @@ class AdminController extends Controller
             return back();
         }
     }
-    
-    public function updateUser($id,Request $request){
+
+    public function updateUser($id, Request $request)
+    {
         MessageContent::loadMessages();
         $data = $request->all();
 
-        if(isset($data['avatar'])){
+        if (isset($data['avatar'])) {
             $uniqueFileName = Str::uuid()->toString() . '.' . $data['avatar']->extension();
             $data['avatar']->move(public_path('avatars'), $uniqueFileName);
         }
-        $user = User::where('id',$id)->first();
+        $user = User::where('id', $id)->first();
         $user->gender = $data['gender'];
         $user->role_id = $data['role'];
         $user->birthdate = $data['birthdate'];
-        if(isset($uniqueFileName) && $uniqueFileName != ''){
-        $user->avatar = $uniqueFileName;
+        if (isset($uniqueFileName) && $uniqueFileName != '') {
+            $user->avatar = $uniqueFileName;
         }
         if ($user->save()) {
             return redirect()->route('list_user');
@@ -161,19 +197,24 @@ class AdminController extends Controller
         }
     }
 
-    public function deleteUser($id){
+    public function deleteUser($id)
+    {
         MessageContent::loadMessages();
         $user = User::find($id)->first();
         $user->delete();
     }
 
-    public function listRole(){
+    public function listRole()
+    {
         $role = Role::all();
-        if($role){
+        if ($role) {
             return response()->json(
-                ['role' => $role,
-            ],200);
-        }else{
+                [
+                    'role' => $role,
+                ],
+                200
+            );
+        } else {
             return response()->json(401);
         }
     }
