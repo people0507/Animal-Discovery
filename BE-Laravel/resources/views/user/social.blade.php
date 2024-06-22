@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="{{ asset('users/social_assets/css/style.css') }}">
     <!-- ICONCOUT CDN -->
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
 </head>
 
 <body>
@@ -157,9 +159,12 @@
 
                         <div class="action-button">
                             <div class="interaction-buttons">
-                                <span><i class="uil uil-heart"></i></span>
+                                {{-- <div class="heart__icon center__display">
+                                    <span><i class="far fa-heart"></i></span>
+                                </div> --}}
                                 <span><i class="uil uil-comment-dots"></i></span>
                                 <span><i class="uil uil-share-alt"></i></span>
+
                             </div>
                             <div class="bookmark">
                                 <span><i class="uil uil-bookmark-full"></i></span>
@@ -184,6 +189,65 @@
                         </div>
 
                         <div class="comments text-muted">"View all 277 comments"</div>
+                        <div>
+                            <div class="top">
+                                <div class="video__container">
+                                    <form class="create-post_cmt">
+                                        <div class="heart__icon center__display">
+                                            <i class="far fa-heart" style="font-size: 20px"></i>
+                                        </div>
+                                        <div class="form__info center__display ">
+                                            <div class="input-data form-group">
+                                                <input type="text" name="user" id="user" required>
+                                                <div class="underline"></div>
+                                                <label>Name</label>
+                                            </div>
+                                            <div class="input-data form-group">
+                                                <input type="text" name="comment" id="comment" required>
+                                                <div class="underline"></div>
+                                                <label>Comment</label>
+                                            </div>
+                                        </div>
+
+                                        <button type="submit" class="submit__btn">
+                                            Submit
+                                        </button>
+                                        <div class="likes__count">
+                                            <i class="far fa-heart"></i>
+                                            <small class="count">0</small>
+                                        </div>
+                                    </form>
+                                    {{-- <div class="likes__count">
+                                        <i class="far fa-heart"></i>
+                                        <small class="count">0</small>
+                                    </div> --}}
+                                </div>
+                            </div>
+                            <div class="comments__container center__display">
+                                <!-- <div class="comment__card">
+                                <div class="pic center__display">
+                                    A
+                                </div>
+                                <div class="comment__info">
+                                    <small class="nickname">
+                                        UserNameHere
+                                    </small>
+                                    <p class="comment">
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, in magnam! Libero?
+                                    </p>
+                                    <div class="comment__bottom">
+                                        <div class="heart__icon--comment">
+                                            <i class="far fa-heart"></i>
+                                        </div>
+                                        <button>
+                                            Reply
+                                        </button>
+                                    </div>
+                                </div>
+                            </div> -->
+                            </div>
+                        </div>
+
                     </div>
                     <div class="feed">
                         <!-- ================ FEED 2 ================ -->
