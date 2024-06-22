@@ -294,46 +294,80 @@
             border-radius: 5px;
         }
 
+        .card {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 300px;
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-align: center;
+        }
+
+        .card a {
+            color: white;
+            text-decoration: none;
+            font-size: 0.7em;
+            font-weight: bold;
+            padding: 10px 20px;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .card a:hover {
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
         /* .main-collection-container {
-                                                        display: grid;
-                                                        grid-template-columns: 1fr 1fr 1fr;
-                                                        gap: 20px;
-                                                    }
+                                                                        display: grid;
+                                                                        grid-template-columns: 1fr 1fr 1fr;
+                                                                        gap: 20px;
+                                                                    }
 
-                                                    .collection-group-block {
-                                                        display: flex;
-                                                        flex-direction: column;
-                                                        gap: 20px;
-                                                    }
+                                                                    .collection-group-block {
+                                                                        display: flex;
+                                                                        flex-direction: column;
+                                                                        gap: 20px;
+                                                                    }
 
-                                                    .center-column {
-                                                        justify-content: center;
-                                                    }
+                                                                    .center-column {
+                                                                        justify-content: center;
+                                                                    }
 
-                                                    .collection-animal-container {
-                                                        position: relative;
-                                                        text-align: center;
-                                                    }
+                                                                    .collection-animal-container {
+                                                                        position: relative;
+                                                                        text-align: center;
+                                                                    }
 
-                                                    .collection-animal-container .hover-overlay {
-                                                        border-radius: 28px;
-                                                        height: 100%;
-                                                    }
+                                                                    .collection-animal-container .hover-overlay {
+                                                                        border-radius: 28px;
+                                                                        height: 100%;
+                                                                    }
 
-                                                    .collection-animal-img {
-                                                        border-radius: 20px;
-                                                        width: 100%;
-                                                        height: auto;
-                                                    }
+                                                                    .collection-animal-img {
+                                                                        border-radius: 20px;
+                                                                        width: 100%;
+                                                                        height: auto;
+                                                                    }
 
-                                                    .hover-overlay,
-                                                    .bg-gradient {
-                                                        position: absolute;
-                                                        top: 0;
-                                                        left: 0;
-                                                        width: 100%;
-                                                        height: 100%;
-                                                    } */
+                                                                    .hover-overlay,
+                                                                    .bg-gradient {
+                                                                        position: absolute;
+                                                                        top: 0;
+                                                                        left: 0;
+                                                                        width: 100%;
+                                                                        height: 100%;
+                                                                    } */
 
         .card_cate .description p {
             white-space: nowrap;
@@ -667,96 +701,44 @@
                     </div>
                     <div class="photo-grid">
                         <div class="card card-tall card-wide"
-                            style="background-image:url('http://localhost:8000/colors/{{$green->color_image}}')">
-                            <a href="{{route('color',['id' => $green->id])}}">{{$green->color_name}}</a>
+                            style="background-image:url('http://localhost:8000/colors/{{ $green->color_image }}')">
+                            <a href="{{ route('color', ['id' => $green->id]) }}">{{ $green->color_name }}</a>
                         </div>
                         <div class="card card-tall"
-                            style="background-image:url('http://localhost:8000/colors/{{$blue->color_image}}')">
-                            <a href="{{route('color',['id' => $blue->id])}}">{{$blue->color_name}}</a>
+                            style="background-image:url('http://localhost:8000/colors/{{ $blue->color_image }}')">
+                            <a href="{{ route('color', ['id' => $blue->id]) }}">{{ $blue->color_name }}</a>
                         </div>
                         <div class="card"
-                            style="background-image:url('http://localhost:8000/colors/{{$red->color_image}}')">
-                            <a href="{{route('color',['id' => $red->id])}}">{{$red->color_name}}</a>
+                            style="background-image:url('http://localhost:8000/colors/{{ $red->color_image }}')">
+                            <a href="{{ route('color', ['id' => $red->id]) }}">{{ $red->color_name }}</a>
                         </div>
                         <div class="card"
-                            style="background-image:url('http://localhost:8000/colors/{{$yellow->color_image}}')">
-                            <a href="{{route('color',['id' => $yellow->id])}}">{{$yellow->color_name}}</a>
+                            style="background-image:url('http://localhost:8000/colors/{{ $yellow->color_image }}')">
+                            <a href="{{ route('color', ['id' => $yellow->id]) }}">{{ $yellow->color_name }}</a>
                         </div>
                         <div class="card"
-                            style="background-image:url('http://localhost:8000/colors/{{$orange->color_image}}')">
-                            <a href="{{route('color',['id' => $orange->id])}}">{{$orange->color_name}}</a>
+                            style="background-image:url('http://localhost:8000/colors/{{ $orange->color_image }}')">
+                            <a href="{{ route('color', ['id' => $orange->id]) }}">{{ $orange->color_name }}</a>
                         </div>
                         <div class="card"
-                            style="background-image:url('http://localhost:8000/colors/{{$brown->color_image}}')">
-                            <a href="{{route('color',['id' => $brown->id])}}">{{$brown->color_name}}</a>
+                            style="background-image:url('http://localhost:8000/colors/{{ $brown->color_image }}')">
+                            <a href="{{ route('color', ['id' => $brown->id]) }}">{{ $brown->color_name }}</a>
                         </div>
                         <div class="card card-wide"
-                            style="background-image:url('http://localhost:8000/colors/{{$white->color_image}}')">
-                            <a href="{{route('color',['id' => $white->id])}}">{{$white->color_name}}</a>
+                            style="background-image:url('http://localhost:8000/colors/{{ $white->color_image }}')">
+                            <a href="{{ route('color', ['id' => $white->id]) }}">{{ $white->color_name }}</a>
                         </div>
                         <div class="card"
-                            style="background-image:url('http://localhost:8000/colors/{{$black->color_image}}')">
-                            <a href="{{route('color',['id' => $black->id])}}">{{$black->color_name}}</a>
+                            style="background-image:url('http://localhost:8000/colors/{{ $black->color_image }}')">
+                            <a href="{{ route('color', ['id' => $black->id]) }}">{{ $black->color_name }}</a>
                         </div>
                         <div class="card"
-                            style="background-image:url('http://localhost:8000/colors/{{$gray->color_image}}')">
-                            <a href="{{route('color',['id' => $gray->id])}}">{{$gray->color_name}}</a>
+                            style="background-image:url('http://localhost:8000/colors/{{ $gray->color_image }}')">
+                            <a href="{{ route('color', ['id' => $gray->id]) }}">{{ $gray->color_name }}</a>
                         </div>
                         <div class="card"
-                            style="background-image:url('http://localhost:8000/colors/{{$purple->color_image}}')">
-                            <a href="{{route('color',['id' => $purple->id])}}">{{$purple->color_name}}</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-            {{-- Climate --}}
-            <div class="container-xxl py-5">
-                <div class="container">
-                    <div class="row g-5 mb-5 align-items-end wow fadeInUp" data-wow-delay="0.1s">
-                        <div class="col-lg-6">
-                            <p><span class="text-primary me-2">#</span>Đại Dương</p>
-                            <h1 class="display-5 mb-0">
-                                Tìm Kiếm Các <span class="text-primary">Loài Vật</span> Ở Các Đại Dương Rộng Lớn Sâu Thẳm
-                            </h1>
-                        </div>
-                    </div>
-                    <div class="row_climate">
-                        <div class="box_climate box--left">
-                            <div class="box__inner">
-                                <a href="#">
-                                    <img src="https://res.klook.com/images/fl_lossy.progressive,q_65/c_fill,w_3000,h_2000,f_auto/w_80,x_15,y_15,g_south_west,l_Klook_water_br_trans_yhcmh3/activities/v6bwf3e8qhdfhrgq7lv3/V%C3%A9V%C3%A0oC%E1%BB%95ngIMGWorldsofAdventure,Dubai-KlookVi%E1%BB%87tNam.jpg"
-                                        alt="">
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="box_climate box--right">
-                            <div class="box__inner">
-                                <a href="#">
-                                    <img src="https://res.klook.com/images/fl_lossy.progressive,q_65/c_fill,w_3000,h_2000,f_auto/w_80,x_15,y_15,g_south_west,l_Klook_water_br_trans_yhcmh3/activities/v6bwf3e8qhdfhrgq7lv3/V%C3%A9V%C3%A0oC%E1%BB%95ngIMGWorldsofAdventure,Dubai-KlookVi%E1%BB%87tNam.jpg"
-                                        alt="">
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="box_climate box--left box--small">
-                            <div class="box__inner">
-                                <a href="#">
-                                    <img src="https://res.klook.com/images/fl_lossy.progressive,q_65/c_fill,w_3000,h_2000,f_auto/w_80,x_15,y_15,g_south_west,l_Klook_water_br_trans_yhcmh3/activities/v6bwf3e8qhdfhrgq7lv3/V%C3%A9V%C3%A0oC%E1%BB%95ngIMGWorldsofAdventure,Dubai-KlookVi%E1%BB%87tNam.jpg"
-                                        alt="">
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="box_climate box--right box--small">
-                            <div class="box__inner">
-                                <a href="#">
-                                    <img src="https://res.klook.com/images/fl_lossy.progressive,q_65/c_fill,w_3000,h_2000,f_auto/w_80,x_15,y_15,g_south_west,l_Klook_water_br_trans_yhcmh3/activities/v6bwf3e8qhdfhrgq7lv3/V%C3%A9V%C3%A0oC%E1%BB%95ngIMGWorldsofAdventure,Dubai-KlookVi%E1%BB%87tNam.jpg"
-                                        alt="">
-                                </a>
-                            </div>
+                            style="background-image:url('http://localhost:8000/colors/{{ $purple->color_image }}')">
+                            <a href="{{ route('color', ['id' => $purple->id]) }}">{{ $purple->color_name }}</a>
                         </div>
                     </div>
                 </div>
@@ -776,55 +758,60 @@
 
                     <div class="checkin">
                         <div class="item">
-                            <img src="http://localhost:8000/climates/full/{{$tropical->climate_image}}"title="{{$tropical->climate_name}}"
+                            <img src="http://localhost:8000/climates/full/{{ $tropical->climate_image }}"title="{{ $tropical->climate_name }}"
                                 class="zoom">
                             <div class="content">
-                                <a href="{{route('climate',['id' => $tropical->id])}}" class="title">{{$tropical->climate_name}}</a>
+                                <a href="{{ route('climate', ['id' => $tropical->id]) }}"
+                                    class="title">{{ $tropical->climate_name }}</a>
                                 <div class="des">
-                                {{$tropical->climate_description}}
+                                    {{ $tropical->climate_description }}
                                 </div>
                             </div>
                         </div>
 
                         <div class="item">
-                            <img src="http://localhost:8000/climates/full/{{$arid->climate_image}}" title="{{$arid->climate_name}}"
-                                class="zoom">
+                            <img src="http://localhost:8000/climates/full/{{ $arid->climate_image }}"
+                                title="{{ $arid->climate_name }}" class="zoom">
                             <div class="content">
-                                <a href="{{route('climate',['id' => $arid->id])}}" class="title">{{$arid->climate_name}}</a>
+                                <a href="{{ route('climate', ['id' => $arid->id]) }}"
+                                    class="title">{{ $arid->climate_name }}</a>
                                 <div class="des">
-                                {{$arid->climate_description}}
+                                    {{ $arid->climate_description }}
                                 </div>
                             </div>
                         </div>
 
                         <div class="item">
-                            <img src="http://localhost:8000/climates/full/{{$temperate->climate_image}}" title="{{$temperate->climate_name}}"
-                                class="zoom">
+                            <img src="http://localhost:8000/climates/full/{{ $temperate->climate_image }}"
+                                title="{{ $temperate->climate_name }}" class="zoom">
                             <div class="content">
-                                <a href="{{route('climate',['id' => $temperate->id])}}" class="title">{{$temperate->climate_name}}</a>
+                                <a href="{{ route('climate', ['id' => $temperate->id]) }}"
+                                    class="title">{{ $temperate->climate_name }}</a>
                                 <div class="des">
-                                {{$temperate->climate_description}}
+                                    {{ $temperate->climate_description }}
                                 </div>
                             </div>
                         </div>
 
                         <div class="item">
-                            <img src="http://localhost:8000/climates/full/{{$cold->climate_image}}" title="{{$cold->climate_name}}"
-                                class="zoom">
+                            <img src="http://localhost:8000/climates/full/{{ $cold->climate_image }}"
+                                title="{{ $cold->climate_name }}" class="zoom">
                             <div class="content">
-                                <a href="{{route('climate',['id' => $cold->id])}}" class="title">{{$cold->climate_name}}</a>
+                                <a href="{{ route('climate', ['id' => $cold->id]) }}"
+                                    class="title">{{ $cold->climate_name }}</a>
                                 <div class="des">
-                                {{$cold->climate_description}}
+                                    {{ $cold->climate_description }}
                                 </div>
                             </div>
                         </div>
                         <div class="item">
-                            <img src="http://localhost:8000/climates/full/{{$polar->climate_image}}" title="{{$polar->climate_name}}"
-                                class="zoom">
+                            <img src="http://localhost:8000/climates/full/{{ $polar->climate_image }}"
+                                title="{{ $polar->climate_name }}" class="zoom">
                             <div class="content">
-                                <a href="{{route('climate',['id' => $polar->id])}}" class="title">{{$polar->climate_name}}</a>
+                                <a href="{{ route('climate', ['id' => $polar->id]) }}"
+                                    class="title">{{ $polar->climate_name }}</a>
                                 <div class="des">
-                                {{$polar->climate_description}}
+                                    {{ $polar->climate_description }}
                                 </div>
                             </div>
                         </div>

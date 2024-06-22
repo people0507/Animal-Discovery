@@ -5,7 +5,7 @@
     <div
         @if (isset($data1->climate_image) && $data1->climate_image != '') style = "background-image: url(http://localhost:8000/climates/full/{{ $data1->climate_image }});"
     @elseif(isset($data1->biome_image) && $data1->biome_image != '')
-        style = "background-image: url(http://localhost:8000/biomes/full/{{ $data1->biome_image }});  padding: 50px 0"
+        style = "background-color: #2EB872;  padding: 50px 0"
     @else
         class="slide-head" @endif>
         <header xmlns="http://www.w3.org/1999/html" class="main-head">
