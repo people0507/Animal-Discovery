@@ -25,7 +25,7 @@
                         <form action="#" method="POST" enctype="multipart/form-data">
                             <div class="form-body">
                                 <div class="row">
-                                    <div class="col-md-4">
+                                    <div class="col-md-12">
                                         <div class="form-group">
                                             <label>Name Animal</label>
                                             <input type="text" class="form-control" value="Sư Tử">
