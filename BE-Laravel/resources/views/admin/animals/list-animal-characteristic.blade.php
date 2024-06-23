@@ -6,10 +6,24 @@
             word-wrap: break-word;
             white-space: normal;
         }
+
+        .show-more,
+        .show-less {
+            color: rgb(46, 91, 255);
+            cursor: pointer;
+            text-decoration: underline;
+        }
+
+        .full-description {
+            display: none;
+        }
     </style>
     <div class="page-breadcrumb">
         <div class="row">
             <div class="col-7 align-self-center">
+                <a href="{{ route('list_animal') }}" class="btn btn-primary mb-3"><i class="fa fa-arrow-left"
+                        aria-hidden="true"></i>
+                    Quay lại</a>
                 <h3 class="page-title text-truncate text-dark font-weight-medium mb-1">{{ Auth::user()->name }}</h3>
                 <div class="d-flex align-items-center">
                     <nav aria-label="breadcrumb">
@@ -19,6 +33,11 @@
                         </ol>
                     </nav>
                 </div>
+            </div>
+            <div class="col-5 text-right">
+                <button class="btn btn-success" data-toggle="modal" data-target="#addContinentModal"><b
+                        style="font-size: 20px">+</b> Thêm châu lục</button>
+
             </div>
         </div>
     </div>
@@ -83,20 +102,31 @@
                                                 <td><img src="http://localhost:8000/areas/{{ $item->area_image }}"
                                                         width="200"></td>
                                                 <td>{{ $item->area_name }}</td>
-                                                <td style="width: 30%">{{ $item->area_description }}</td>
+                                                {{-- <td style="width: 30%">{{ $item->area_description }}</td> --}}
+                                                <td style="width: 30%">
+                                                    <div class="description" id="description-{{ $key }}">
+                                                        {{ Str::limit($item->area_description, 100) }}
+                                                        @if (strlen($item->area_description) > 100)
+                                                            <span class="show-more"
+                                                                onclick="showMore({{ $key }})">Show more</span>
+                                                        @endif
+                                                    </div>
+                                                    <div class="full-description" id="full-description-{{ $key }}"
+                                                        style="display: none;">
+                                                        {{ $item->area_description }}
+                                                        <span class="show-less"
+                                                            onclick="showLess({{ $key }})">Show less</span>
+                                                    </div>
+                                                </td>
                                                 <td>{{ $item->created_at }}</td>
                                                 <td>
-                                                    <form action="{{ route('delete_user', ['id' => $item->id]) }}"
-                                                        method="POST">
-                                                        @csrf
-                                                        @method('DELETE')
-                                                        <button class="icon-action" type="submit" style="color: red;">
-                                                            <i class="icon-close"></i>
-                                                        </button>
-                                                    </form>
+                                                    <a href="#" class="icon-action delete-action" data-toggle="modal"
+                                                        data-target="#deleteConfirmationModal_" style="color: red;"><i
+                                                            class="icon-close"></i></a>
                                                     /
-                                                    <a href="user-detail.html" class="icon-action"
-                                                        onclick="event.stopPropagation();"><i class="icon-settings"></i></a>
+                                                    <a href="#" class="icon-action"
+                                                        onclick="event.stopPropagation(); $('#editModal').modal('show');"><i
+                                                            class="icon-settings"></i></a>
                                                 </td>
                                             </tr>
                                         @endforeach
@@ -107,7 +137,22 @@
                                                 <td><img src="http://localhost:8000/climates/full/{{ $item->climate_image }}"
                                                         width="200"></td>
                                                 <td>{{ $item->climate_name }}</td>
-                                                <td>{{ $item->climate_description }}</td>
+                                                {{-- <td>{{ $item->climate_description }}</td> --}}
+                                                <td style="width: 30%">
+                                                    <div class="description" id="description-{{ $key }}">
+                                                        {{ Str::limit($item->climate_description, 100) }}
+                                                        @if (strlen($item->climate_description) > 100)
+                                                            <span class="show-more"
+                                                                onclick="showMore({{ $key }})">Show more</span>
+                                                        @endif
+                                                    </div>
+                                                    <div class="full-description" id="full-description-{{ $key }}"
+                                                        style="display: none;">
+                                                        {{ $item->climate_description }}
+                                                        <span class="show-less"
+                                                            onclick="showLess({{ $key }})">Show less</span>
+                                                    </div>
+                                                </td>
                                                 <td>{{ $item->created_at }}</td>
                                                 <td>
                                                     <form action="{{ route('delete_user', ['id' => $item->id]) }}"
@@ -152,7 +197,22 @@
                                                 <td><img src="http://localhost:8000/colors/{{ $item->color_image }}"
                                                         width="200"></td>
                                                 <td>{{ $item->color_name }}</td>
-                                                <td>{{ $item->color_description }}</td>
+                                                {{-- <td>{{ $item->color_description }}</td> --}}
+                                                <td>
+                                                    <div class="description" id="description-{{ $key }}">
+                                                        {{ Str::limit($item->color_description, 100) }}
+                                                        @if (strlen($item->color_description) > 100)
+                                                            <span class="show-more"
+                                                                onclick="showMore({{ $key }})">Show more</span>
+                                                        @endif
+                                                    </div>
+                                                    <div class="full-description" id="full-description-{{ $key }}"
+                                                        style="display: none;">
+                                                        {{ $item->color_description }}
+                                                        <span class="show-less"
+                                                            onclick="showLess({{ $key }})">Show less</span>
+                                                    </div>
+                                                </td>
                                                 <td>{{ $item->created_at }}</td>
                                                 <td>
                                                     <form action="{{ route('delete_user', ['id' => $item->id]) }}"
@@ -165,7 +225,8 @@
                                                     </form>
                                                     /
                                                     <a href="user-detail.html" class="icon-action"
-                                                        onclick="event.stopPropagation();"><i class="icon-settings"></i></a>
+                                                        onclick="event.stopPropagation();"><i
+                                                            class="icon-settings"></i></a>
                                                 </td>
                                             </tr>
                                         @endforeach
@@ -176,7 +237,22 @@
                                                 <td><img src="http://localhost:8000/biomes/full/{{ $item->biome_image }}"
                                                         width="200"></td>
                                                 <td>{{ $item->biome_name }}</td>
-                                                <td>{{ $item->biome_description }}</td>
+                                                {{-- <td>{{ $item->biome_description }}</td> --}}
+                                                <td style="width: 30%">
+                                                    <div class="description" id="description-{{ $key }}">
+                                                        {{ Str::limit($item->biome_description, 100) }}
+                                                        @if (strlen($item->biome_description) > 100)
+                                                            <span class="show-more"
+                                                                onclick="showMore({{ $key }})">Show more</span>
+                                                        @endif
+                                                    </div>
+                                                    <div class="full-description"
+                                                        id="full-description-{{ $key }}" style="display: none;">
+                                                        {{ $item->biome_description }}
+                                                        <span class="show-less"
+                                                            onclick="showLess({{ $key }})">Show less</span>
+                                                    </div>
+                                                </td>
                                                 <td>{{ $item->created_at }}</td>
                                                 <td>
                                                     <form action="{{ route('delete_user', ['id' => $item->id]) }}"
@@ -188,8 +264,9 @@
                                                         </button>
                                                     </form>
                                                     /
-                                                    <a href="user-detail.html" class="icon-action"
-                                                        onclick="event.stopPropagation();"><i class="icon-settings"></i></a>
+                                                    <a href="#" class="icon-action"
+                                                        onclick="event.stopPropagation(); $('#editModal').modal('show');"><i
+                                                            class="icon-settings"></i></a>
                                                 </td>
                                             </tr>
                                         @endforeach
@@ -212,8 +289,9 @@
                                                         </button>
                                                     </form>
                                                     /
-                                                    <a href="user-detail.html" class="icon-action"
-                                                        onclick="event.stopPropagation();"><i class="icon-settings"></i></a>
+                                                    <a href="#" class="icon-action"
+                                                        onclick="event.stopPropagation(); $('#editModal').modal('show');"><i
+                                                            class="icon-settings"></i></a>
                                                 </td>
                                             </tr>
                                         @endforeach
@@ -260,6 +338,108 @@
             </div>
         </div>
     </div>
+
+    {{-- Modal Create  --}}
+    <div class="modal fade" id="addContinentModal" tabindex="-1" role="dialog"
+        aria-labelledby="addContinentModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content" style=" padding:20px; border-radius: 12px;">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addContinentModalLabel">Thêm Châu Lục Mới</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="" id="addContinentForm" enctype="multipart/form-data">
+                        @csrf
+                        <div class="form-group">
+                            <label for="continentTitle">Tên châu lục</label>
+                            <input type="text" class="form-control" id="continentTitle"
+                                placeholder="Nhập tiêu đề bài viết">
+                        </div>
+                        <div class="form-group">
+                            <label for="continentDescription">Mô tả</label>
+                            <textarea class="form-control" id="continentDescription" rows="3" placeholder="Nhập mô tả"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="continentImage">Hình ảnh</label>
+                            <input type="file" class="form-control-file" id="continentImage">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+                    <button type="submit" class="btn btn-primary" form="addContinentForm">Lưu</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {{-- Modal delete --}}
+    <div class="modal fade" id="deleteConfirmationModal_" tabindex="-1" role="dialog"
+        aria-labelledby="deleteConfirmationModalLabel_" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="deleteConfirmationModalLabel_">Xóa thông tin châu lục</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Bạn có chắc chắn muốn xóa châu lục này không?
+                </div>
+                <div class="modal-footer">
+                    <form action="{{ route('admin.delete-animal', ['id' => $item->id]) }}" method="POST">
+                        @csrf
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Hủy</button>
+                        @method('DELETE')
+                        <button type="submit" class="btn btn-danger" id="confirmDeleteBtn">Xóa</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {{-- Modal Edit  --}}
+    <!-- Modal -->
+    <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editModalLabel">Sửa</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="editTitle">Tiêu đề</label>
+                            <input type="text" class="form-control" id="editTitle" placeholder="Nhập tiêu đề"
+                                value="Châu âu">
+                        </div>
+                        <div class="form-group">
+                            <label for="editDescription">Mô tả</label>
+                            <textarea class="form-control" id="editDescription" rows="3" placeholder="Nhập mô tả">Mô tả 1</textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="currentImage">Hình ảnh hiện tại</label>
+                            <br>
+                            <img src="" id="currentImage" class="img-fluid" alt="Hình ảnh hiện tại">
+                        </div>
+                        <div class="form-group">
+                            <label for="editImage">Chọn hình ảnh mới</label>
+                            <input type="file" class="form-control-file" id="editImage">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Lưu thay đổi</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 @endsection
 <script>
     function showModal(name, scientificName, description, imageSrc, category, length, height, weight, size, lifespan,
@@ -280,5 +460,15 @@
         document.getElementById('animalDiet').innerText = diet;
         document.getElementById('animalCategory').innerText = category;
         $('#animalModal').modal('show');
+    }
+
+    function showMore(id) {
+        document.getElementById('description-' + id).style.display = 'none';
+        document.getElementById('full-description-' + id).style.display = 'block';
+    }
+
+    function showLess(id) {
+        document.getElementById('full-description-' + id).style.display = 'none';
+        document.getElementById('description-' + id).style.display = 'block';
     }
 </script>
