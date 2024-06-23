@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('animal_detail', function (Blueprint $table) {
             $table->id();
-            $table->string('animal_name')->nullable();
+            $table->string('animal_name');
             $table->string('animal_scientific_name')->nullable();
             $table->text('animal_description')->nullable();
             $table->text('appearance_description')->nullable();
@@ -34,7 +34,6 @@ return new class extends Migration
             $table->text('fun_fact')->nullable();
             $table->string('top_speed')->nullable();
             $table->string('animal_length')->nullable();
-            $table->string('animal_height')->nullable();
             $table->string('animal_weight')->nullable();
             $table->string('animal_swing')->nullable();
             $table->string('population_size')->nullable();

@@ -21,67 +21,97 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="card-title">Add Users</h4>
-                            <form action="{{route('create_user')}}" method="POST" enctype="multipart/form-data">
+                        @if($mode == 'add')
+                        <h4 class="card-title">Thêm Mới Thông Tin Người Dùng</h4>
+                        @else
+                        <h4 class="card-title">Cập Nhật Thông Tin Người Dùng</h4>
+                        @endif
+                            <form action="{{$mode == 'add' ? route('admin.create_user') : route('admin.update_user',['id' => $user->id])}}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="form-body">
                                 <div class="row">
                                     <div class="col-md-4">
                                         <div class="form-group">
-                                            <label>Username</label>
-                                            <input type="text" name="username" class="form-control" placeholder="Username">
+                                            <label>Tên Người Dùng</label>
+                                            @if($mode == 'add')
+                                            <input type="text" name="username" class="form-control" placeholder="Hãy nhập thông tin">
+                                            @else
+                                            <input type="text" name="username" class="form-control" placeholder="Username" value="{{$user->name}}">
+                                            @endif
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label>Email</label>
-                                            <input type="text" name="email" class="form-control" placeholder="Name Scientific">
+                                            @if($mode == 'add')
+                                            <input type="text" name="email" class="form-control" placeholder="Hãy nhập thông tin">
+                                            @else
+                                            <input type="text" name="email" class="form-control" placeholder="Name Scientific" value="{{$user->email}}">
+                                            @endif
                                         </div>
                                     </div>
 
                                     <div class="col-md-4">
                                         <div class="form-group">
-                                            <label>Password</label>
-                                            <input type="password" name="password" class="form-control" placeholder="Password">
+                                            <label>Mật Khẩu</label>
+                                            @if($mode == 'add')
+                                            <input type="password" name="password" class="form-control" placeholder="Hãy nhập thông tin">
+                                            @else
+                                            <input type="password" name="password" class="form-control" placeholder="Password" value="{{$user->password}}">
+                                            @endif
                                         </div>
                                     </div>
 
                                     <div class="col-md-4">
                                         <div class="form-group">
-                                            <label>Gender</label>
+                                            <label>Giới Tính</label>
                                             <select name="gender" id="" class="form-control">
+                                            @if($mode == 'add')
                                                 <option value="1">Nam</option>
                                                 <option value="2">Nữ</option>
+                                            @else
+                                                <option value="1" {{$user->gender == 1 ? 'selected' : ''}}>Nam</option>
+                                                <option value="2" {{$user->gender == 2 ? 'selected' : ''}}>Nữ</option>
+                                            @endif
                                             </select>
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-group">
-                                            <label>Birthday</label>
-                                            <input type="date" name="birthdate" class="form-control" placeholder="Birthday">
+                                            <label>Ngày Sinh</label>
+                                            @if($mode == 'add')
+                                                <input type="date" name="birthdate" class="form-control" placeholder="Hãy nhập thông tin">
+                                            @else
+                                                <input type="date" name="birthdate" class="form-control" placeholder="Birthday" value="{{$user->birthdate}}">
+                                            @endif
                                         </div>
                                     </div>
                                     
                                     <div class="col-md-4">
                                         <div class="form-group">
-                                            <label>Role</label>
+                                            <label>Vai Trò</label>
                                             <select name="role_id" id="" class="form-control">
-                                                <option value="1">Admin</option>
-                                                <option value="2">User</option>
+                                                @foreach ($roles as $role)
+                                                    <option value="{{$role->id}}">{{$role->role_name}}</option>
+                                                @endforeach
                                             </select>
                                         </div>
                                     </div>
 
                                     <div class="col-md-4">
                                         <div class="form-group">
-                                            <label>Avatar</label>
+                                            <label>Ảnh Đại Diện</label>
                                             <input type="file" name="avatar" class="form-control">
                                         </div>
                                     </div>
                                 </div>
                                 <div class="form-actions text-right">
-                                    <button type="submit" class="btn btn-info">Submit</button>
-                                    <button type="reset" class="btn btn-dark">Reset</button>
+                                    @if($mode == 'add')
+                                    <button type="submit" class="btn btn-info">Thêm Mới</button>
+                                    @else
+                                    <button type="submit" class="btn btn-info">Cập Nhật</button>
+                                    @endif
+                                    <button type="reset" class="btn btn-dark">Làm Mới</button>
                                 </div>
                             </div>
                         </form>

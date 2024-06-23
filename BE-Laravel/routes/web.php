@@ -88,9 +88,7 @@ Route::get('/dashboard', function () {
 Route::get('/animals/list', function () {
     return view('admin.animals.list-animal');
 })->name('admin.list-animal');
-Route::get('/animals/add', function () {
-    return view('admin.animals.add-animal');
-})->name('admin.add-animal');
+
 // User
 // Route::get('/users/list', function () {
 //     return view('admin.users.list-user');
@@ -128,16 +126,20 @@ Route::prefix('animal_post')->group(function () {
 });
 
 Route::prefix('admin')->middleware('checklogin')->group(function () {
-    Route::get('/view_create_user', [AdminController::class, 'viewCreateUser'])->name('view_create_user');
-    Route::get('/list_user', [AdminController::class, 'listUser'])->name('list_user');
-    Route::post('/createUser', [AdminController::class, 'createUser'])->name('create_user');
-    Route::get('/get_user/{id}', [AdminController::class, 'getUser']);
-    Route::post('/update_user/{id}', [AdminController::class, 'updateUser']);
+    Route::get('/list_user', [AdminController::class, 'listUser'])->name('admin.list_user');
+    Route::get('/view_create_user', [AdminController::class, 'viewCreateUser'])->name('admin.view_add_user');
+    Route::post('/create-user', [AdminController::class, 'createUser'])->name('admin.create_user');
+    Route::get('/view_edit_user/{id}', [AdminController::class, 'viewEditUser'])->name('admin.view_edit_user');
+    Route::post('/update_user/{id}', [AdminController::class, 'updateUser'])->name('admin.update_user');
     Route::delete('/delete_user/{id}', [AdminController::class, 'deleteUser'])->name('delete_user');
-    Route::get('/all_role', [AdminController::class, 'listRole']);
 
     // Animal
     Route::get('/list_animal', [AdminController::class, 'listAnimal'])->name('list_animal');
+    Route::get('/animals/add', [AdminController::class, 'viewAddAnimal'])->name('admin.add-animal');
+    Route::post('/create_animal_detail', [AdminController::class, 'createAnimalDetail'])->name('admin.create-animal');
+    Route::get('/animals/edit/{id}', [AdminController::class, 'viewEditAnimal'])->name('admin.edit-animal');
+    Route::post('/update_animal_detail/{id}', [AdminController::class, 'updateAnimalDetail'])->name('admin.update-animal');
+    Route::delete('/delete_detail_animal/{id}', [AdminController::class, 'deleteAnimalDetail'])->name('admin.delete-animal');
     // Animal Image
     Route::get('/list_animal_image/{id}', [AdminController::class, 'listAnimalImage'])->name('list_animal_image');
     //Animal characteristic
@@ -148,10 +150,10 @@ Route::prefix('admin')->middleware('checklogin')->group(function () {
     Route::get('/list_animal_biome/{id}', [AdminController::class, 'listAnimalBiome'])->name('list_animal_biome');
     Route::get('/list_animal_ocean/{id}', [AdminController::class, 'listAnimalOcean'])->name('list_animal_ocean');
 
-    Route::post('/create_animal_detail', [AdminController::class, 'createAnimalDetail']);
+    
     Route::get('/create_img_animal_detail', [AdminController::class, 'addImgAnimalView'])->name('admin.add-image-animal');
     Route::post('/create_img_animal_detail', [AdminController::class, 'addImgAnimalStore'])->name('admin.add-image-animal-store');
     Route::get('/classification_animal', [AdminController::class, 'classificationView'])->name('admin.classification-animal');
     Route::post('/classification_animal', [AdminController::class, 'classificationStore'])->name('admin.classification-animal-store');
-    Route::delete('/delete_detail_animal/{id}', [AdminController::class, 'deleteAnimalDetail']);
+    
 });
