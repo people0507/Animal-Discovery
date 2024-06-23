@@ -21,21 +21,21 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="card-title">All Users</h4>
+                                <h4 class="card-title">Danh sách người dùng</h4>
                                 <div class="table-responsive">
                                     <table id="multi_col_order"
                                         class="table table-striped table-bordered display no-wrap" style="width:100%">
                                         <thead>
                                             <tr>
                                                 <th>STT</th>
-                                                <th>Username</th>
+                                                <th>Tên Người Dùng</th>
                                                 <th>Email</th>
-                                                <th>Gender</th>
-                                                <th>Birthday</th>
-                                                <th>Avatar</th>
-                                                <th>Role</th>
-                                                <th>Created At</th>
-                                                <th>Action</th>
+                                                <th>Giới Tính</th>
+                                                <th>Ngày Sinh</th>
+                                                <th>Ảnh Đại Diện</th>
+                                                <th>Vai Trò</th>
+                                                <th>Thời Gian Tạo</th>
+                                                <th>Thao Tác</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -64,15 +64,11 @@
                                                 @endif
                                                 <td>{{$user->created_at}}</td>
                                                 <td>
-                                                <form action="{{ route('delete_user', ['id' => $user->id]) }}" method="POST">
-                                                @csrf
-                                                @method('DELETE')
-                                                <button class="icon-action" type="submit" style="color: red;">
-                                                    <i class="icon-close"></i>
-                                                </button>
-                                                </form>
+                                                <a href="#" class="icon-action delete-action" data-toggle="modal"
+                                                data-target="#deleteConfirmationModal_{{$user->id}}" style="color: red;"><i
+                                                    class="icon-close"></i></a>
                                                     /
-                                                    <a href="user-detail.html" class="icon-action" onclick="event.stopPropagation();"><i class="icon-settings"></i></a>
+                                                    <a href="{{route('admin.view_edit_user',['id' => $user->id])}}" class="icon-action" onclick="event.stopPropagation();"><i class="icon-settings"></i></a>
                                                 </td>
                                             </tr>
                                             @endforeach
@@ -116,6 +112,33 @@
             </div>
         </div>
     </div>
+    <!-- Delete Modal -->
+    @foreach ($users as $key => $user)
+    <div class="modal fade" id="deleteConfirmationModal_{{$user->id}}" tabindex="-1" role="dialog"
+        aria-labelledby="deleteConfirmationModalLabel_{{$user->id}}" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="deleteConfirmationModalLabel_{{$user->id}}">Xóa thông tin người dùng</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Bạn có chắc chắn muốn xóa thông tin người dùng này không
+                </div>
+                <div class="modal-footer">
+                    <form action="{{ route('delete_user', ['id' => $user->id]) }}" method="POST">
+                    @csrf
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Hủy</button>
+                    @method('DELETE')
+                    <button type="submit" class="btn btn-danger" id="confirmDeleteBtn">Xóa</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    @endforeach
 @endsection
      <script>
         function showModal(name, scientificName, description, imageSrc, category, length, height, weight, size, lifespan, sound, video, conservationStatus, activity, diet) {
