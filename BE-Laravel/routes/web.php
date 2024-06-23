@@ -140,13 +140,33 @@ Route::prefix('admin')->middleware('checklogin')->group(function () {
     Route::delete('/delete_detail_animal/{id}', [AdminController::class, 'deleteAnimalDetail'])->name('admin.delete-animal');
     // Animal Image
     Route::get('/list_animal_image/{id}', [AdminController::class, 'listAnimalImage'])->name('list_animal_image');
+    Route::post('/add_image_animal/{id}', [AdminController::class, 'addAnimalImage'])->name('admin.add_image_animal');
+    Route::delete('/delete_image_animal/{id}', [AdminController::class, 'deleteImageAnimal'])->name('admin.delete_image_animal');
     //Animal characteristic
     Route::get('/list_animal_area/{id}', [AdminController::class, 'listAnimalArea'])->name('list_animal_area');
+    Route::post('/add_area_animal/{id}', [AdminController::class, 'addAreaAnimal'])->name('admin.add_area_animal');
+    Route::delete('/delete_area_animal/{id}/{id2}', [AdminController::class, 'deleteAreaAnimal'])->name('admin.delete_area_animal');
+
     Route::get('/list_animal_climate/{id}', [AdminController::class, 'listAnimalClimate'])->name('list_animal_climate');
+    Route::post('/add_climate_animal/{id}', [AdminController::class, 'addClimateAnimal'])->name('admin.add_climate_animal');
+    Route::delete('/delete_climate_animal/{id}/{id2}', [AdminController::class, 'deleteClimateAnimal'])->name('admin.delete_climate_animal');
+
     Route::get('/list_animal_nation/{id}', [AdminController::class, 'listAnimalNation'])->name('list_animal_nation');
+    Route::post('/add_nation_animal/{id}', [AdminController::class, 'addNationAnimal'])->name('admin.add_nation_animal');
+    Route::delete('/delete_nation_animal/{id}/{id2}', [AdminController::class, 'deleteNationAnimal'])->name('admin.delete_nation_animal');
+
+
     Route::get('/list_animal_color/{id}', [AdminController::class, 'listAnimalColor'])->name('list_animal_color');
+    Route::post('/add_color_animal/{id}', [AdminController::class, 'addColorAnimal'])->name('admin.add_color_animal');
+    Route::delete('/delete_color_animal/{id}/{id2}', [AdminController::class, 'deleteColorAnimal'])->name('admin.delete_color_animal');
+
     Route::get('/list_animal_biome/{id}', [AdminController::class, 'listAnimalBiome'])->name('list_animal_biome');
+    Route::post('/add_biome_animal/{id}', [AdminController::class, 'addBiomeAnimal'])->name('admin.add_biome_animal');
+    Route::delete('/delete_biome_animal/{id}/{id2}', [AdminController::class, 'deleteBiomeAnimal'])->name('admin.delete_biome_animal');
+
     Route::get('/list_animal_ocean/{id}', [AdminController::class, 'listAnimalOcean'])->name('list_animal_ocean');
+    Route::post('/add_ocean_animal/{id}', [AdminController::class, 'addOceanAnimal'])->name('admin.add_ocean_animal');
+    Route::delete('/delete_ocean_animal/{id}/{id2}', [AdminController::class, 'deleteOceanAnimal'])->name('admin.delete_ocean_animal');
 
 
     Route::get('/create_img_animal_detail', [AdminController::class, 'addImgAnimalView'])->name('admin.add-image-animal');

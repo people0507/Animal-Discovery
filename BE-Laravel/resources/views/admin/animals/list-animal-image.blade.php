@@ -51,18 +51,13 @@
                                             <td>{{ $image->animalDetail->animal_name }}</td>
                                             <td>{{ $image->created_at }}</td>
                                             <td>
-                                                <form action="{{ route('delete_user', ['id' => $image->id]) }}"
-                                                    method="POST">
-                                                    @csrf
-                                                    @method('DELETE')
-                                                    <a class="icon-action" type="submit" style="color: red;">
-                                                        <i class="icon-close"></i>
-                                                    </a>
-                                                </form>
-                                                /
+                                            <a href="#" class="icon-action delete-action" data-toggle="modal"
+                                                        data-target="#deleteConfirmationModal_{{$image->id}}" style="color: red;"><i
+                                                            class="icon-close"></i></a>
+                                                <!-- /
                                                 <a href="#" class="icon-action"
                                                     onclick="event.stopPropagation(); $('#editModal').modal('show');"><i
-                                                        class="icon-settings"></i></a>
+                                                        class="icon-settings"></i></a> -->
                                             </td>
                                         </tr>
                                     @endforeach
@@ -113,48 +108,48 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content" style=" padding:20px; border-radius: 12px;">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="addContinentModalLabel">Thêm Châu Lục Mới</h5>
+                    <h5 class="modal-title" id="addContinentModalLabel">Thêm Ảnh Động Vật</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form action="" id="addContinentForm" enctype="multipart/form-data">
+                    <form action="{{route('admin.add_image_animal',['id' => $animalDetail->id])}}" id="addContinentForm" enctype="multipart/form-data" method="post">
                         @csrf
                         <div class="form-group">
                             <label for="continentTitle">Tên động vật</label>
-                            <input type="text" class="form-control" id="continentTitle" value="Sư tử" readonly>
+                            <input type="text" class="form-control" id="continentTitle" value="{{$animalDetail->animal_name}}" readonly>
                         </div>
                         <div class="form-group">
                             <label for="continentImage">Hình ảnh</label>
-                            <input type="file" class="form-control-file" id="continentImage">
+                            <input name="animal_image" type="file" class="form-control-file" id="continentImage">
                         </div>
-                    </form>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
                     <button type="submit" class="btn btn-primary" form="addContinentForm">Lưu</button>
                 </div>
+                </form>
             </div>
         </div>
     </div>
-
+    @foreach ($images as $key => $image)
     {{-- Modal delete --}}
-    <div class="modal fade" id="deleteConfirmationModal_" tabindex="-1" role="dialog"
-        aria-labelledby="deleteConfirmationModalLabel_" aria-hidden="true">
+    <div class="modal fade" id="deleteConfirmationModal_{{$image->id}}" tabindex="-1" role="dialog"
+        aria-labelledby="deleteConfirmationModalLabel_{{$image->id}}" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="deleteConfirmationModalLabel_">Xóa thông tin châu lục</h5>
+                    <h5 class="modal-title" id="deleteConfirmationModalLabel_{{$image->id}}">Xóa thông tin châu lục</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
-                    Bạn có chắc chắn muốn xóa châu lục này không?
+                    Bạn có chắc chắn muốn xóa ảnh này không?
                 </div>
                 <div class="modal-footer">
-                    <form action="" method="POST">
+                    <form action="{{route('admin.delete_image_animal',['id' => $image->id])}}" method="POST">
                         @csrf
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Hủy</button>
                         @method('DELETE')
@@ -164,7 +159,7 @@
             </div>
         </div>
     </div>
-
+    @endforeach
     {{-- Modal Edit  --}}
     <!-- Modal -->
     <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel"
