@@ -87,10 +87,10 @@
                                         </td>
                                         <td>
                                             <a href="#" class="icon-action delete-action" data-toggle="modal"
-                                                data-target="#deleteConfirmationModal" style="color: red;"><i
+                                                data-target="#deleteConfirmationModal_{{$item->id}}" style="color: red;"><i
                                                     class="icon-close"></i></a>
                                             /
-                                            <a href="animal-detail.html" class="icon-action"
+                                            <a href="{{route('admin.edit-animal',['id' => $item->id])}}" class="icon-action"
                                                 onclick="event.stopPropagation();"><i class="icon-settings"></i></a>
                                         </td>
                                     </tr>
@@ -136,26 +136,32 @@
             </div>
         </div>
     </div>
-    <div class="modal fade" id="deleteConfirmationModal" tabindex="-1" role="dialog"
-        aria-labelledby="deleteConfirmationModalLabel" aria-hidden="true">
+    @foreach ($animalDetail as $key => $item)
+    <div class="modal fade" id="deleteConfirmationModal_{{$item->id}}" tabindex="-1" role="dialog"
+        aria-labelledby="deleteConfirmationModalLabel_{{$item->id}}" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="deleteConfirmationModalLabel">Xác nhận xóa</h5>
+                    <h5 class="modal-title" id="deleteConfirmationModalLabel_{{$item->id}}">Xóa thông tin động vật</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
-                    Bạn có chắc chắn muốn xóa mục này không?
+                    Bạn có chắc chắn muốn xóa thông tin động vật này không
                 </div>
                 <div class="modal-footer">
+                    <form action="{{ route('admin.delete-animal', ['id' => $item->id]) }}" method="POST">
+                    @csrf
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Hủy</button>
-                    <button type="button" class="btn btn-danger" id="confirmDeleteBtn">Xóa</button>
+                    @method('DELETE')
+                    <button type="submit" class="btn btn-danger" id="confirmDeleteBtn">Xóa</button>
+                    </form>
                 </div>
             </div>
         </div>
     </div>
+    @endforeach
 @endsection
 <script>
     function showModal(name, scientificName, description, imageSrc, category, length, height, weight, size, lifespan,

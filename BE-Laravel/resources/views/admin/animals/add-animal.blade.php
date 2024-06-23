@@ -21,102 +21,326 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="card-title">Animal</h4>
-                            <form action="#" method="POST" enctype="multipart/form-data">
+                        <h4 class="card-title">Thông tin chi tiết động vật</h4>
+                            <form action="{{ $mode == 'add' ? route('admin.create-animal') : route('admin.update-animal',['id' => $animalDetail->id])}}" method="POST" enctype="multipart/form-data">
+                            @csrf
                             <div class="form-body">
                                 <div class="row">
                                     <div class="col-md-4">
                                         <div class="form-group">
-                                            <label>Name Animal</label>
-                                            <input type="text" class="form-control" placeholder="Name Animal">
+                                            <label>Tên</label>
+                                            @if($mode == 'add')
+                                            <input name="animal_name" type="text" class="form-control" placeholder="Hãy nhập thông tin">
+                                            @else
+                                            <input name="animal_name" type="text" class="form-control" placeholder="Hãy nhập thông tin" value="{{$animalDetail->animal_name}}">
+                                            @endif
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-group">
-                                            <label>Name Scientific</label>
-                                            <input type="text" class="form-control" placeholder="Name Scientific">
+                                            <label>Tên Khoa Học</label>
+                                            @if($mode == 'add')
+                                            <input name="animal_scientific_name" type="text" class="form-control" placeholder="Hãy nhập thông tin">
+                                            @else
+                                            <input name="animal_scientific_name" type="text" class="form-control" placeholder="Hãy nhập thông tin" value="{{$animalDetail->animal_scientific_name}}">
+                                            @endif
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-group">
-                                            <label>Length</label>
-                                            <input type="text" class="form-control" placeholder="Length">
+                                            <label>Chiều Dài</label>
+                                            @if($mode == 'add')
+                                            <input name="animal_length" type="text" class="form-control" placeholder="Hãy nhập thông tin">
+                                            @else
+                                            <input name="animal_length" type="text" class="form-control" placeholder="Hãy nhập thông tin" value="{{$animalDetail->animal_length}}">
+                                            @endif
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-group">
-                                            <label>Height</label>
-                                            <input type="text" class="form-control" placeholder="Height">
+                                            <label>Tốc Độ Tối Đa</label>
+                                            @if($mode == 'add')
+                                            <input name="top_speed" type="text" class="form-control" placeholder="Hãy nhập thông tin">
+                                            @else
+                                            <input name="top_speed" type="text" class="form-control" placeholder="Hãy nhập thông tin" value="{{$animalDetail->top_speed}}">
+                                            @endif
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-group">
-                                            <label>Weight</label>
-                                            <input type="text" class="form-control" placeholder="Weight">
+                                            <label>Cân Nặng</label>
+                                            @if($mode == 'add')
+                                            <input name="animal_weight" type="text" class="form-control" placeholder="Hãy nhập thông tin">
+                                            @else
+                                            <input name="animal_weight" type="text" class="form-control" placeholder="Hãy nhập thông tin" value="{{$animalDetail->animal_weight}}">
+                                            @endif
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-group">
-                                            <label>Size</label>
-                                            <input type="text" class="form-control" placeholder="Size">
+                                            <label>Sải Cánh</label>
+                                            @if($mode == 'add')
+                                            <input name="animal_swing" type="text" class="form-control" placeholder="Hãy nhập thông tin">
+                                            @else
+                                            <input name="animal_swing" type="text" class="form-control" placeholder="Hãy nhập thông tin" value ="{{$animalDetail->animal_swing}}">
+                                            @endif
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-group">
-                                            <label>Average Lifespan</label>
-                                            <input type="text" class="form-control" placeholder="Average Lifespan">
+                                            <label>Số Lượng Quần Thể</label>
+                                            @if($mode == 'add')
+                                            <input name="population_size" type="text" class="form-control" placeholder="Hãy nhập thông tin">
+                                            @else
+                                            <input name="population_size" type="text" class="form-control" placeholder="Hãy nhập thông tin" value ="{{$animalDetail->population_size}}">
+                                            @endif
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-group">
-                                            <label>Sound</label>
-                                            <input type="text" class="form-control" placeholder="Sound">
+                                            <label>Tuổi Thọ Trung Bình</label>
+                                            @if($mode == 'add')
+                                            <input name="avg_lifespan" type="text" class="form-control" placeholder="Hãy nhập thông tin">
+                                            @else
+                                            <input name="avg_lifespan" type="text" class="form-control" placeholder="Hãy nhập thông tin" value ="{{$animalDetail->avg_lifespan}}">
+                                            @endif
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-group">
-                                            <label>Video</label>
-                                            <input type="url" class="form-control" placeholder="Video URL">
+                                            <label>Tiếng Kêu</label>
+                                            <input name="animal_sound" type="file" class="form-control" accept=".mp3,.mp4">
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-group">
-                                            <label>Conservation Status</label>
-                                            <input type="text" class="form-control" placeholder="Conservation Status">
+                                            <label>Hành Vi Giao Hợp</label>
+                                            @if($mode == 'add')
+                                            <input name="mating_behavior" type="text" class="form-control" placeholder="Hãy nhập thông tin">
+                                            @else
+                                            <input name="mating_behavior" type="text" class="form-control" placeholder="Hãy nhập thông tin" value ="{{$animalDetail->mating_behavior}}">
+                                            @endif
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-group">
-                                            <label>Active</label>
-                                            <input type="text" class="form-control" placeholder="Active">
+                                            <label>Mùa Sinh Sản</label>
+                                            @if($mode == 'add')
+                                            <input name="reproduction_season" type="text" class="form-control" placeholder="Hãy nhập thông tin">
+                                            @else
+                                            <input name="reproduction_season" type="text" class="form-control" placeholder="Hãy nhập thông tin" value ="{{$animalDetail->reproduction_season}}">
+                                            @endif
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-group">
-                                            <label>Diet</label>
-                                            <input type="text" class="form-control" placeholder="Diet">
+                                            <label>Thời Gian Mang Thai (Ấp Trứng)</label>
+                                            @if($mode == 'add')
+                                            <input name="pregnancy_duration" type="text" class="form-control" placeholder="Hãy nhập thông tin">
+                                            @else
+                                            <input name="pregnancy_duration" type="text" class="form-control" placeholder="Hãy nhập thông tin" value ="{{$animalDetail->pregnancy_duration}}">
+                                            @endif
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-group">
-                                            <label>Category</label>
-                                            <input type="text" class="form-control" placeholder="Category">
+                                            <label>Số Lượng Sinh Sản Con(Trứng) </label>
+                                            @if($mode == 'add')
+                                            <input name="baby_carrying" type="text" class="form-control" placeholder="Hãy nhập thông tin">
+                                            @else
+                                            <input name="pregnancy_duration" type="text" class="form-control" placeholder="Hãy nhập thông tin" value ="{{$animalDetail->pregnancy_duration}}">
+                                            @endif
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label>Tuổi Trưởng Thành</label>
+                                            @if($mode == 'add')
+                                            <input name="independent_age" type="text" class="form-control" placeholder="Hãy nhập thông tin">
+                                            @else
+                                            <input name="independent_age" type="text" class="form-control" placeholder="Hãy nhập thông tin" value ="{{$animalDetail->independent_age}}">
+                                            @endif
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label>Tình Trạng Bảo Tồn</label>
+                                            <select name="conservation_status_id" id="" class="form-control">
+                                            @if($mode == 'add')
+                                                @foreach ($conservationStatus as $item)
+                                                <option value="{{$item->id}}">{{$item->status_name}}</option>
+                                                @endforeach
+                                            @else
+                                                @foreach ($conservationStatus as $item)
+                                                    <option value="{{$item->id}}" {{$animalDetail->conservation_status_id == $item->id ? 'selected' : ''}} >{{$item->status_name}}</option>
+                                                @endforeach
+                                            @endif
+                                        </select>
+                                        
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label>Chế Độ Ăn</label>
+                                            <select name="diet_type" id="" class="form-control">
+                                            @if($mode == 'add')
+                                                @foreach ($dietType as $item)
+                                                    <option value="{{$item->id}}">{{$item->diet_name}}</option>
+                                                @endforeach
+                                            @else
+                                                @foreach ($dietType as $item)
+                                                    <option value="{{$item->id}}" {{$animalDetail->diet_type_id == $item->id ? 'selected' : ''}} >{{$item->diet_name}}</option>
+                                                @endforeach
+                                            @endif
+                                        </select>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label>Loại Động Vật</label>
+                                            <select name="category_id" id="" class="form-control">
+                                            @if($mode == 'add')
+                                                @foreach ($animalCategory as $item)
+                                                    <option value="{{$item->id}}">{{$item->category_name}}</option>
+                                                @endforeach
+                                            @else
+                                                @foreach ($animalCategory as $item)
+                                                    <option value="{{$item->id}}" {{$animalDetail->category_id == $item->id ? 'selected' : ''}} >{{$item->category_name}}</option>
+                                                @endforeach
+                                            @endif
+                                        </select>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label>Xu Hướng Quần Thể</label>
+                                            <select name="population_trending_id" id="" class="form-control">
+                                            @if($mode == 'add')
+                                                @foreach ($populationTrending as $item)
+                                                    <option value="{{$item->id}}">{{$item->population_trending_name}}</option>
+                                                @endforeach
+                                            @else
+                                                @foreach ($populationTrending as $item)
+                                                    <option value="{{$item->id}}" {{$animalDetail->population_trending_id == $item->id ? 'selected' : ''}} >{{$item->population_trending_name}}</option>
+                                                @endforeach
+                                            @endif
+                                        </select>
+                                    </div>
+                                    <div class="col-md-4 mt-3">
+                                        <label>Thời Gian Hoạt Động</label>
+                                        <select name="activity_time_id" id="" class="form-control">
+                                        @if($mode == 'add')
+                                            @foreach ($activityTime as $item)
+                                                <option value="{{$item->id}}">{{$item->activity_name}}</option>
+                                            @endforeach
+                                        @else
+                                            @foreach ($activityTime as $item)
+                                                <option value="{{$item->id}}" {{$animalDetail->activity_time_id == $item->id ? 'selected' : ''}} >{{$item->activity_name}}</option>
+                                            @endforeach
+                                        @endif
+                                        </select>
+                                    </div>
+                                    <div class="col-md-12 mt-3">
+                                        <div class="form-group">
+                                            <label>Đường Dẫn Video</label>
+                                            @if($mode == 'add')
+                                            <textarea name="animal_video" class="form-control" placeholder="Hãy nhập thông tin" style="height: 200px;"></textarea>
+                                            @else
+                                            <textarea name="animal_video" class="form-control" placeholder="Hãy nhập thông tin" style="height: 200px;">{{$animalDetail->animal_video}}</textarea>
+                                            @endif
                                         </div>
                                     </div>
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label>Description</label>
-                                            <textarea class="form-control" placeholder="Description"></textarea>
+                                            <label>Mô Tả</label>
+                                            @if($mode == 'add')
+                                            <textarea name="animal_description" class="form-control" placeholder="Hãy nhập thông tin" style="height: 200px;"></textarea>
+                                            @else
+                                            <textarea name="animal_description" class="form-control" placeholder="Hãy nhập thông tin" style="height: 200px;">{{$animalDetail->animal_description}}</textarea>
+                                            @endif
                                         </div>
                                     </div>
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label>Image</label>
-                                            <div class="dropzone" id="myDropzone" style="border: 1px solid #e9ecef;">
-                                                <div class="dz-message">
-                                                    <span>Click or drop files here to upload</span>
-                                                </div>
-                                            </div>
+                                            <label>Vẻ Bề Ngoài</label>
+                                            @if($mode == 'add')
+                                            <textarea name="appearance_description" class="form-control" placeholder="Hãy nhập thông tin" style="height: 200px;"></textarea>
+                                            @else
+                                            <textarea name="appearance_description" class="form-control" placeholder="Hãy nhập thông tin" style="height: 200px;">{{$animalDetail->appearance_description}}</textarea>
+                                            @endif
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label>Phân Bố Địa Lý</label>
+                                            @if($mode == 'add')
+                                            <textarea name="geography_description" class="form-control" placeholder="Hãy nhập thông tin" style="height: 200px;"></textarea>
+                                            @else
+                                            <textarea name="geography_description" class="form-control" placeholder="Hãy nhập thông tin" style="height: 200px;">{{$animalDetail->geography_description}}</textarea>
+                                            @endif
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label>Tập Tính & Lối Sống</label>
+                                            @if($mode == 'add')
+                                            <textarea name="habit_lifestyle_description" class="form-control" placeholder="Hãy nhập thông tin" style="height: 200px;"></textarea>
+                                            @else
+                                            <textarea name="habit_lifestyle_description" class="form-control" placeholder="Hãy nhập thông tin" style="height: 200px;">{{$animalDetail->habit_lifestyle_description}}</textarea>
+                                            @endif
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label>Tập Tính & Sinh Sản</label>
+                                            @if($mode == 'add')
+                                            <textarea name="mating_habit_description" class="form-control" placeholder="Hãy nhập thông tin" style="height: 200px;"></textarea>
+                                            @else
+                                            <textarea name="mating_habit_description" class="form-control" placeholder="Hãy nhập thông tin" style="height: 200px;">{{$animalDetail->mating_habit_description}}</textarea>
+                                            @endif
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label>Chế Độ Ăn & Dinh Dưỡng</label>
+                                            @if($mode == 'add')
+                                            <textarea name="diet_nutrition_description" class="form-control" placeholder="Hãy nhập thông tin" style="height: 200px;"></textarea>
+                                            @else
+                                            <textarea name="diet_nutrition_description" class="form-control" placeholder="Hãy nhập thông tin" style="height: 200px;">{{$animalDetail->diet_nutrition_description}}</textarea>
+                                            @endif
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label>Các Mối Đe Dọa Đối Với Quần Thể</label>
+                                            @if($mode == 'add')
+                                            <textarea name="population_threat" class="form-control" placeholder="Hãy nhập thông tin" style="height: 200px;"></textarea>
+                                            @else
+                                            <textarea name="population_threat" class="form-control" placeholder="Hãy nhập thông tin" style="height: 200px;">{{$animalDetail->population_threat}}</textarea>
+                                            @endif
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label>Số Lượng Trong Quần Thể</label>
+                                            @if($mode == 'add')
+                                            <textarea name="population_number" class="form-control" placeholder="Hãy nhập thông tin" style="height: 200px;"></textarea>
+                                            @else
+                                            <textarea name="population_number" class="form-control" placeholder="Hãy nhập thông tin" style="height: 200px;">{{$animalDetail->population_number}}</textarea>
+                                            @endif
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label>Vai Trò Sinh Thái</label>
+                                            @if($mode == 'add')
+                                            <textarea name="ecological_niche" class="form-control" placeholder="Hãy nhập thông tin" style="height: 200px;"></textarea>
+                                            @else
+                                            <textarea name="ecological_niche" class="form-control" placeholder="Hãy nhập thông tin" style="height: 200px;">{{$animalDetail->population_number}}</textarea>
+                                            @endif
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label>Những Sự Thật Thú Vị</label>
+                                            @if($mode == 'add')
+                                            <textarea name="fun_fact" class="form-control" placeholder="Hãy nhập thông tin" style="height: 200px;"></textarea>
+                                            @else
+                                            <textarea name="fun_fact" class="form-control" placeholder="Hãy nhập thông tin" style="height: 200px;">{{$animalDetail->fun_fact}}</textarea>
+                                            @endif
                                         </div>
                                     </div>
                                 </div>
