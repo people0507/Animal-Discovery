@@ -20,6 +20,7 @@ use App\Models\Color;
 use App\Models\Category;
 use App\Models\ActivityTime;
 use App\Models\PopulationTrending;
+use App\Models\Post;
 use Auth;
 use Str;
 use Hash;
@@ -351,23 +352,37 @@ class AdminController extends Controller
         }
     }
 
-    public function listRole()
-    {
-        $role = Role::all();
-        if ($role) {
-            return response()->json(
-                [
-                    'role' => $role,
-                ],
-                200
-            );
-        } else {
-            return response()->json(401);
-        }
-    }
 
     public function listPostsView()
     {
-        return view('admin.posts.list');
+        $posts = Post::with('user')->withCount('comments')->withCount('likes')->get();
+        return view('admin.posts.list',compact('posts'));
+    }
+
+    public function deletePost($id)
+    {
+        MessageContent::loadMessages();
+        $deletedRows = Post::destroy($id);
+        if ($deletedRows >  0) {
+            $message = MessageContent::getMessage('delete_success');
+            return redirect()->route('admin.list_posts')->with('success', $message);
+        } else {
+            $message = MessageContent::getMessage('delete_success');
+            return redirect()->back()->with('failed', $message);
+        }
+    }
+
+    public function approvalPost($id)
+    {
+        MessageContent::loadMessages();
+        $post = Post::where('id',$id)->first();
+        $post->status = Post::APPROVAL;
+        if ($post->save()) {
+            $message = MessageContent::getMessage('approval_success');
+            return redirect()->route('admin.list_posts')->with('success', $message);
+        } else {
+            $message = MessageContent::getMessage('approval_failed');
+            return redirect()->back()->with('failed', $message);
+        }
     }
 }

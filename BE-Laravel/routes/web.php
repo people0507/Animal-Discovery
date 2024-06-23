@@ -47,9 +47,6 @@ Route::get('/fillter-list-animal', function () {
 //     return view('user.list-blog');
 // })->name('user.list-blog');
 // list blog
-Route::get('/list-blog', function () {
-    return view('user.list-blog-2');
-})->name('user.list-blog');
 Route::get('/list-blog-3', function () {
     return view('user.list-blog-3');
 })->name('user.list-blog-3');
@@ -112,6 +109,7 @@ Route::prefix('animal_detail')->group(function () {
     Route::get('/get_animal_detail/{id}', [AnimalDetailController::class, 'getAnimalDetail']);
     Route::get('/fillter-climate/{id}', [AnimalDetailController::class, 'climateZone'])->name('climate-zone');
     Route::get('/fillter-biome/{id}', [AnimalDetailController::class, 'biome'])->name('biome');
+    Route::get('/list-blog',[AnimalDetailController::class, 'viewAnimalBlog'])->name('user.list-blog');
 });
 
 Route::prefix('animal_post')->group(function () {
@@ -158,4 +156,6 @@ Route::prefix('admin')->middleware('checklogin')->group(function () {
 
     // List posts
     Route::get('/list_posts', [AdminController::class, 'listPostsView'])->name('admin.list_posts');
+    Route::delete('/delete_posts/{id}', [AdminController::class, 'deletePost'])->name('admin.delete-posts');
+    Route::post('/approval_posts/{id}', [AdminController::class, 'approvalPost'])->name('admin.approval-posts');
 });

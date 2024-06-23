@@ -10,5 +10,21 @@ class Post extends Model
     use HasFactory;
     protected $table = 'post';
     protected $fillable = ['title','image','content'];
-    const PENDING = 1;
+    
+    public function user()
+    {
+        return $this->belongsTo(User::class,'user_id');
+    }
+
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
+    }
+
+    public function likes()
+    {
+        return $this->hasMany(Like::class);
+    }
+    const PENDING = 0;
+    const APPROVAL = 1;
 }
