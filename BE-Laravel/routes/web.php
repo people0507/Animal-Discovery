@@ -150,10 +150,12 @@ Route::prefix('admin')->middleware('checklogin')->group(function () {
     Route::get('/list_animal_biome/{id}', [AdminController::class, 'listAnimalBiome'])->name('list_animal_biome');
     Route::get('/list_animal_ocean/{id}', [AdminController::class, 'listAnimalOcean'])->name('list_animal_ocean');
 
-    
+
     Route::get('/create_img_animal_detail', [AdminController::class, 'addImgAnimalView'])->name('admin.add-image-animal');
     Route::post('/create_img_animal_detail', [AdminController::class, 'addImgAnimalStore'])->name('admin.add-image-animal-store');
     Route::get('/classification_animal', [AdminController::class, 'classificationView'])->name('admin.classification-animal');
     Route::post('/classification_animal', [AdminController::class, 'classificationStore'])->name('admin.classification-animal-store');
-    
+
+    // List posts
+    Route::get('/list_posts', [AdminController::class, 'listPostsView'])->name('admin.list_posts');
 });
