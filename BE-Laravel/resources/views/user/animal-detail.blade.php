@@ -363,54 +363,38 @@
 
                     <div class="s-gallery-block">
                         <div class="row">
-                            <div class="col-lg-6 no-gutter-r">
-                                <div class="s-gallery-item s-gallery-item--md open-gallery" data-id="53632">
-                                    <img src="https://s3.animalia.bio/animals/photos/full/1x1/EYiZers8nKz9njyjDPEJ.webp"
-                                        alt="Red Fox photo">
-                                </div>
-                            </div>
-                            <div class="col-lg-6 no-gutter-r">
-                                <div class="s-gallery-block__sm">
-                                    <div class="row">
-                                        <div class="col-sm-6 no-gutter-r">
-                                            <div class="s-gallery-item s-gallery-item--right open-gallery"
-                                                data-id="53631">
-                                                <img src="https://s3.animalia.bio/animals/photos/small/1x1/cHgSXm2fQkqpUkQ9nhCO.webp"
-                                                    alt="Red Fox photo">
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-6 no-gutter-r">
-                                            <div class="s-gallery-item s-gallery-item--right open-gallery"
-                                                data-id="53642">
-                                                <img src="https://s3.animalia.bio/animals/photos/small/1x1/lHfQHtQaLWP2F0CDENQM.webp"
-                                                    alt="Red Fox photo">
-                                            </div>
+                            @foreach ($photos as $index => $photo)
+                                @if ($index == 0)
+                                    <div class="col-lg-6 no-gutter-r">
+                                        <div class="s-gallery-item s-gallery-item--md open-gallery"
+                                            data-id="{{ $index }}">
+                                            <img src="{{ $photo['url'] }}" alt="Photo {{ $index }}">
                                         </div>
                                     </div>
-                                </div>
-                                <div class="s-gallery-block__sm">
-                                    <div class="row">
-                                        <div class="col-sm-6 no-gutter-r">
-                                            <div class="s-gallery-item s-gallery-item--right open-gallery"
-                                                data-id="53641">
-                                                <img src="https://s3.animalia.bio/animals/photos/small/1x1/Pl480lF7lqsclIy7gNAg.webp"
-                                                    alt="Red Fox photo">
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-6 no-gutter-r">
-                                            <div class="s-gallery-item s-gallery-item--right open-gallery"
-                                                style="position: relative" data-id="11833">
-                                                <img src="https://s3.animalia.bio/animals/photos/small/1x1/hunting-fox-hayden-valley.webp"
-                                                    alt="Hunting fox, Hayden Valley">
-                                                <div class="gallery_count_photos">
-                                                    View 27 more photos of Red Fox
-
+                                    <div class="col-lg-6 no-gutter-r">
+                                        <div class="s-gallery-block__sm">
+                                        @else
+                                            @if ($index % 2 == 1)
+                                                <div class="row">
+                                                    <div class="col-sm-6 no-gutter-r">
+                                                        <div class="s-gallery-item s-gallery-item--right open-gallery mb-3"
+                                                            data-id="{{ $index }}">
+                                                            <img src="{{ $photo['url'] }}"
+                                                                alt="Photo {{ $index }}">
+                                                        </div>
+                                                    </div>
+                                                @else
+                                                    <div class="col-sm-6 no-gutter-r">
+                                                        <div class="s-gallery-item s-gallery-item--right open-gallery"
+                                                            data-id="{{ $index }}">
+                                                            <img src="{{ $photo['url'] }}"
+                                                                alt="Photo {{ $index }}">
+                                                        </div>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                                            @endif
+                                @endif
+                            @endforeach
                         </div>
                     </div>
                 </div>
@@ -418,7 +402,6 @@
             <section class="video">
                 <div class="container">
                     <h2 class="a-h2">
-
                         Video
                     </h2>
                     <article class="content1">
@@ -429,23 +412,11 @@
 
                             <div id="rev_slider_1070_1"
                                 class="rev_slider fullwidthabanner revslider-initialised tp-simpleresponsive rev_redraw_on_blurfocus"
-                                style="margin-top: 0px; margin-bottom: 0px; height: 658px;" data-version="5.4.1"
-                                data-slideactive="rs-30180">
+                                style="margin-top: 0px; margin-bottom: 0px; height: 658px;">
                                 <ul class="tp-revslider-mainul"
                                     style="visibility: visible; display: block; overflow: hidden; width: 1170px; height: 100%; max-height: none; left: 0px;">
-
-                                    <li data-index="rs-30180" data-transition="fade" data-slotamount="default"
-                                        data-hideafterloop="0" data-hideslideonmobile="off" data-easein="default"
-                                        data-easeout="default" data-masterspeed="default"
-                                        data-thumb="https://img.youtube.com/vi/r2t0MidPKXQ/default.jpg" data-rotate="0"
-                                        data-saveperformance="off" data-title="Things you need to know about RED FOXES!"
-                                        data-param1="Documentary" data-param2="" data-param3="" data-param4=""
-                                        data-param5="" data-param6="" data-param7="" data-param8="" data-param9=""
-                                        data-param10="" data-description="" class="tp-revslider-slidesli active-revslide"
+                                    <li
                                         style="perspective: 6000px; width: 100%; height: 100%; overflow: hidden; z-index: 20; visibility: inherit; opacity: 1;">
-
-
-
                                         <div class="tp-parallax-wrap"
                                             style="position: absolute; display: block; visibility: visible; min-width: 100%; left: 0px; top: 0px; z-index: 7;">
                                             <div class="tp-loop-wrap"
@@ -453,111 +424,21 @@
                                                 <div class="tp-mask-wrap"
                                                     style="position: absolute; display: block; min-width: 100%; overflow: visible;">
                                                     <div class="tp-caption   tp-resizeme tp-videolayer coverscreenvideo HasListener rs-apiready"
-                                                        id="slide-3018-layer-30" data-x="0" data-y="0"
-                                                        data-type="video" data-responsive_offset="on"
-                                                        data-frames="[{&quot;speed&quot;:1000,&quot;to&quot;:&quot;o:1;&quot;,&quot;delay&quot;:1000,&quot;ease&quot;:&quot;Power1.easeInOut&quot;},{&quot;delay&quot;:&quot;wait&quot;,&quot;speed&quot;:1000,&quot;ease&quot;:&quot;nothing&quot;}]"
-                                                        data-ytid="r2t0MidPKXQ"
-                                                        data-videoattributes="version=3&amp;enablejsapi=1&amp;html5=1&amp;volume=100&amp;hd=1&amp;wmode=opaque&amp;showinfo=0&amp;ref=0&amp;rel=0&amp;origin=https://animalia.bio;"
-                                                        data-videorate="1" data-videowidth="100%" data-videoheight="100%"
-                                                        data-videocontrols="controls" data-videoloop="none"
-                                                        data-forcecover="1" data-aspectratio="16:9"
-                                                        data-textalign="['left','left','left','left']"
-                                                        data-paddingtop="[0,0,0,0]" data-paddingright="[0,0,0,0]"
-                                                        data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]"
-                                                        data-autoplay="off" data-nextslideatend="true" data-volume="100"
-                                                        data-forcerewind="on"
+                                                        id="slide-3018-layer-30"
                                                         style="z-index: 7; border-width: 0px; visibility: inherit; width: 1170px; height: 658px; transition: none 0s ease 0s; text-align: left; line-height: 0px; margin: 0px; padding: 0px; letter-spacing: 0px; font-weight: 400; font-size: 17px; white-space: nowrap; min-height: 0px; min-width: 0px; max-height: none; max-width: none; opacity: 1; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transform-origin: 50% 50% 0px;">
                                                         <iframe type="text/html"
-                                                            src="https://www.youtube-nocookie.com/embed/r2t0MidPKXQ?version=3&amp;enablejsapi=1&amp;html5=1&amp;volume=100&amp;hd=1&amp;wmode=opaque&amp;showinfo=0&amp;ref=0&amp;rel=0&amp;origin=https://www.animalia.bio;"
+                                                            src="https://www.youtube-nocookie.com/embed/r2t0MidPKXQ?;"
                                                             width="100%" height="100%"
                                                             style="opacity: 1; width: 100%; height: 100.019%; position: absolute; left: 0px; top: -0.0094984%; display: block; transition: none 0s ease 0s; text-align: left; line-height: 0px; border-width: 0px; margin: 0px; padding: 0px; letter-spacing: 0px; font-weight: 400; font-size: 16px; visibility: inherit;"
                                                             class="resizelistener" id="iframe77143"
-                                                            data-gtm-yt-inspected-6="true"
                                                             title="Things you need to know about RED FOXES!"></iframe>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </li>
-                                    <li data-index="rs-30181" data-transition="fade" data-slotamount="default"
-                                        data-hideafterloop="0" data-hideslideonmobile="off" data-easein="default"
-                                        data-easeout="default" data-masterspeed="default"
-                                        data-thumb="https://img.youtube.com/vi/OD4A9Xj0cYo/default.jpg" data-rotate="0"
-                                        data-saveperformance="off" data-title="Fantastic Mr. Fox | Destination WILD"
-                                        data-param1="Documentary" data-param2="" data-param3="" data-param4=""
-                                        data-param5="" data-param6="" data-param7="" data-param8="" data-param9=""
-                                        data-param10="" data-description="" class="tp-revslider-slidesli"
-                                        style="perspective: 6000px; width: 100%; height: 100%; overflow: hidden;">
-
-
-
-                                        <div class="tp-parallax-wrap "
-                                            style=" position:absolute;display:block;;visibility:hidden">
-                                            <div class="tp-loop-wrap" style="position:absolute;display:block;;">
-                                                <div class="tp-mask-wrap" style="position:absolute;display:block;;">
-                                                    <div class="tp-caption   tp-resizeme fullscreenvideo tp-videolayer"
-                                                        id="slide-3018-layer-31" data-x="0" data-y="0"
-                                                        data-type="video" data-responsive_offset="on"
-                                                        data-frames="[{&quot;speed&quot;:1000,&quot;to&quot;:&quot;o:1;&quot;,&quot;delay&quot;:1000,&quot;ease&quot;:&quot;Power1.easeInOut&quot;},{&quot;delay&quot;:&quot;wait&quot;,&quot;speed&quot;:1000,&quot;ease&quot;:&quot;nothing&quot;}]"
-                                                        data-ytid="OD4A9Xj0cYo"
-                                                        data-videoattributes="version=3&amp;enablejsapi=1&amp;html5=1&amp;volume=100&amp;hd=1&amp;wmode=opaque&amp;showinfo=0&amp;ref=0&amp;rel=0&amp;origin=https://animalia.bio;"
-                                                        data-videorate="1" data-videowidth="100%" data-videoheight="100%"
-                                                        data-videocontrols="controls" data-videoloop="none"
-                                                        data-forcecover="1" data-aspectratio="16:9"
-                                                        data-textalign="['left','left','left','left']"
-                                                        data-paddingtop="[0,0,0,0]" data-paddingright="[0,0,0,0]"
-                                                        data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]"
-                                                        data-autoplay="off" data-nextslideatend="true" data-volume="100"
-                                                        data-forcerewind="on"
-                                                        style="z-index: 7; border-width: 0px; visibility: hidden;"> </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li data-index="rs-30182" data-transition="fade" data-slotamount="default"
-                                        data-hideafterloop="0" data-hideslideonmobile="off" data-easein="default"
-                                        data-easeout="default" data-masterspeed="default"
-                                        data-thumb="https://img.youtube.com/vi/R1_3yYDnHfc/default.jpg" data-rotate="0"
-                                        data-saveperformance="off" data-title="Growing Fox Cubs | Nat Geo Wild"
-                                        data-param1="Lifestyle" data-param2="" data-param3="" data-param4=""
-                                        data-param5="" data-param6="" data-param7="" data-param8="" data-param9=""
-                                        data-param10="" data-description="" class="tp-revslider-slidesli"
-                                        style="perspective: 6000px; width: 100%; height: 100%; overflow: hidden;">
-
-
-
-                                        <div class="tp-parallax-wrap "
-                                            style=" position:absolute;display:block;;visibility:hidden">
-                                            <div class="tp-loop-wrap" style="position:absolute;display:block;;">
-                                                <div class="tp-mask-wrap" style="position:absolute;display:block;;">
-                                                    <div class="tp-caption   tp-resizeme fullscreenvideo tp-videolayer"
-                                                        id="slide-3018-layer-32" data-x="0" data-y="0"
-                                                        data-type="video" data-responsive_offset="on"
-                                                        data-frames="[{&quot;speed&quot;:1000,&quot;to&quot;:&quot;o:1;&quot;,&quot;delay&quot;:1000,&quot;ease&quot;:&quot;Power1.easeInOut&quot;},{&quot;delay&quot;:&quot;wait&quot;,&quot;speed&quot;:1000,&quot;ease&quot;:&quot;nothing&quot;}]"
-                                                        data-ytid="R1_3yYDnHfc"
-                                                        data-videoattributes="version=3&amp;enablejsapi=1&amp;html5=1&amp;volume=100&amp;hd=1&amp;wmode=opaque&amp;showinfo=0&amp;ref=0&amp;rel=0&amp;origin=https://animalia.bio;"
-                                                        data-videorate="1" data-videowidth="100%" data-videoheight="100%"
-                                                        data-videocontrols="controls" data-videoloop="none"
-                                                        data-forcecover="1" data-aspectratio="16:9"
-                                                        data-textalign="['left','left','left','left']"
-                                                        data-paddingtop="[0,0,0,0]" data-paddingright="[0,0,0,0]"
-                                                        data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]"
-                                                        data-autoplay="off" data-nextslideatend="true" data-volume="100"
-                                                        data-forcerewind="on"
-                                                        style="z-index: 7; border-width: 0px; visibility: hidden;"> </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li>
                                 </ul>
                                 <div class="tp-bannertimer tp-bottom" style="visibility: hidden; width: 0%;"></div>
-                                <div class="tp-loader spinner5" style="display: none;">
-                                    <div class="dot1"></div>
-                                    <div class="dot2"></div>
-                                    <div class="bounce1"></div>
-                                    <div class="bounce2"></div>
-                                    <div class="bounce3"></div>
-                                </div>
                             </div>
                             <div class="tp-tabs  outer-bottom hesperiden nav-pos-hor-left nav-pos-ver-bottom nav-dir-horizontal"
                                 style="max-width: 900px; max-height: 80px; overflow: visible; position: relative; background: rgb(255, 255, 255); padding: 0px; left: 0px; transform: matrix(1, 0, 0, 1, 0, 0); height: 80px;">
@@ -565,30 +446,13 @@
                                     style="max-width: 900px; max-height: 80px; overflow: hidden; position: relative; height: 80px; width: 900px;">
                                     <div class="tp-tabs-inner-wrapper"
                                         style="position: relative; width: 900px; height: 80px; left: 0px;">
-                                        <div data-liindex="0" data-liref="rs-30180" class="tp-tab selected"
+                                        <div class="tp-tab selected"
                                             style="width: 300px; height: 80px; left: 0px; top: 0px;">
                                             <div class="tp-tab-content"> <span class="tp-tab-date">Documentary</span>
                                                 <span class="tp-tab-title">Things you need to know about RED FOXES!</span>
                                             </div>
                                             <div class="tp-tab-image"
                                                 style="background-image: url(&quot;https://img.youtube.com/vi/r2t0MidPKXQ/default.jpg&quot;);">
-                                            </div>
-                                        </div>
-                                        <div data-liindex="1" data-liref="rs-30181" class="tp-tab"
-                                            style="width: 300px; height: 80px; left: 300px; top: 0px;">
-                                            <div class="tp-tab-content"> <span class="tp-tab-date">Documentary</span>
-                                                <span class="tp-tab-title">Fantastic Mr. Fox | Destination WILD</span>
-                                            </div>
-                                            <div class="tp-tab-image"
-                                                style="background-image: url(&quot;https://img.youtube.com/vi/OD4A9Xj0cYo/default.jpg&quot;);">
-                                            </div>
-                                        </div>
-                                        <div data-liindex="2" data-liref="rs-30182" class="tp-tab"
-                                            style="width: 300px; height: 80px; left: 600px; top: 0px;">
-                                            <div class="tp-tab-content"> <span class="tp-tab-date">Lifestyle</span> <span
-                                                    class="tp-tab-title">Growing Fox Cubs | Nat Geo Wild</span></div>
-                                            <div class="tp-tab-image"
-                                                style="background-image: url(&quot;https://img.youtube.com/vi/R1_3yYDnHfc/default.jpg&quot;);">
                                             </div>
                                         </div>
                                     </div>
@@ -606,7 +470,6 @@
                             <div class="col-lg-8">
                                 <div class="s-distr-content">
                                     <h2 class="a-h2">
-
                                         Phân bổ
                                     </h2>
                                     <h3 class="a-h3">
