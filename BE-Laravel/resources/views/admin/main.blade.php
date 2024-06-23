@@ -48,6 +48,7 @@
     <script src="{{ asset('admin/assets/libs/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js') }}"></script>
     <script src="{{ asset('admin/assets/extra-libs/jvector/jquery-jvectormap-2.0.2.min.js') }}"></script>
     <script src="{{ asset('admin/dist/js/pages/dashboards/dashboard1.min.js') }}"></script>
+
 </body>
 
 </html>
