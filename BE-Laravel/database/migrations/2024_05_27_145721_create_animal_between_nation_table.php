@@ -16,8 +16,8 @@ return new class extends Migration
         Schema::create('animal_between_nation', function (Blueprint $table) {
             $table->unsignedBigInteger('animal_detail_id');
             $table->foreign('animal_detail_id')->references('id')->on('animal_detail')->onDelete('cascade');
-            $table->unsignedBigInteger('animal_nation_id');
-            $table->foreign('animal_nation_id')->references('id')->on('animal_nation')->onDelete('cascade');
+            $table->unsignedBigInteger('nation_id');
+            $table->foreign('nation_id')->references('id')->on('nation')->onDelete('cascade');
             $table->timestamps();
         });
     }

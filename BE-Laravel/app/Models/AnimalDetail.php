@@ -17,31 +17,56 @@ class AnimalDetail extends Model
 
     public function areas()
     {
-        return $this->belongsToMany(Area::class,'animal_between_area','animal_detail_id', 'animal_area_id');
+        return $this->belongsToMany(Area::class,'animal_between_area','animal_detail_id', 'area_id');
     }
 
     public function nations()
     {
-        return $this->belongsToMany(Nation::class,'animal_between_nation','animal_detail_id', 'animal_nation_id');
+        return $this->belongsToMany(Nation::class,'animal_between_nation','animal_detail_id', 'nation_id');
     }
 
     public function colors()
     {
-        return $this->belongsToMany(Color::class,'animal_between_color','animal_detail_id', 'animal_color_id');
+        return $this->belongsToMany(Color::class,'animal_between_color','animal_detail_id', 'color_id');
     }
 
-    public function habitats()
+    public function biomes()
     {
-        return $this->belongsToMany(Habitat::class,'animal_between_habitat','animal_detail_id', 'animal_habitat_id');
+        return $this->belongsToMany(Biome::class,'animal_between_biome','animal_detail_id', 'biome_id');
+    }
+
+    public function climates()
+    {
+        return $this->belongsToMany(Climate::class,'animal_between_climate','animal_detail_id', 'climate_id');
     }
 
     public function oceans()
     {
-        return $this->belongsToMany(Ocean::class,'animal_between_ocean','animal_detail_id', 'animal_ocean_id');
+        return $this->belongsToMany(Ocean::class,'animal_between_ocean','animal_detail_id', 'ocean_id');
     }
 
     public function topics()
     {
         return $this->belongsToMany(Topic::class,'animal_between_topic','animal_detail_id', 'topic_id');
+    }
+
+    public function images()
+    {
+        return $this->hasOne(Image::class,'detail_id');
+    }
+
+    public function status()
+    {
+        return $this->belongsTo(ConservationStatus::class,'conservation_status_id');
+    }
+
+    public function diet()
+    {
+        return $this->belongsTo(DietType::class,'diet_type_id');
+    }
+
+    public function trend()
+    {
+        return $this->belongsTo(PopulationTrending::class,'population_trending_id');
     }
 }

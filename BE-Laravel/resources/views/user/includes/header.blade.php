@@ -43,17 +43,19 @@
     </button>
     <div class="collapse navbar-collapse py-4 py-lg-0" id="navbarCollapse">
         <div class="navbar-nav ms-auto">
-            <a href="{{ route('user.home') }}" class="nav-item nav-link {{ Request::is('/') ? 'active' : '' }}">Home</a>
-            <a href="{{ route('user.about') }}"
-                class="nav-item nav-link {{ Request::is('about') ? 'active' : '' }}">About</a>
-            <a href="service.html" class="nav-item nav-link">Services</a>
-            <div class="nav-item dropdown">
+            <a href="{{ route('user.home') }}" class="nav-item nav-link {{ Request::is('/') ? 'active' : '' }}">Trang
+                Chủ</a>
+            <a href="{{ route('user.list-blog') }}"
+                class="nav-item nav-link {{ Request::is('list-blog') ? 'active' : '' }}">Blog</a>
+            <a href="{{ route('user.list-blog-3') }}" class="nav-item nav-link">Danh Sách</a>
+            <div class="nav-item dropdown" style="z-index: 99999;">
                 <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                 <div class="dropdown-menu rounded-0 rounded-bottom m-0">
-                    <a href="animal.html" class="dropdown-item">Our Animals</a>
-                    <a href="membership.html" class="dropdown-item">Membership</a>
-                    <a href="visiting.html" class="dropdown-item">Visiting Hours</a>
-                    <a href="testimonial.html" class="dropdown-item">Testimonial</a>
+                    <a href="animal.html" class="dropdown-item">List Animals</a>
+                    <a href="membership.html" class="dropdown-item">List Blog</a>
+                    <a href="{{ route('user.social') }}" class="dropdown-item">Social</a>
+                    <a href="testimonial.html" class="dropdown-item">List Animal For Color</a>
+                    <a href="testimonial.html" class="dropdown-item">List Animal For Area</a>
                     <a href="404.html" class="dropdown-item">404 Page</a>
                 </div>
             </div>
