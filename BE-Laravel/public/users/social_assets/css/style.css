@@ -11,7 +11,8 @@
     --color-light: hsl(252, 30%, var(--light-color-lightness));
     --color-white: hsl(252, 30%, var(--white-color-lightness));
     --color-gray: hsl(var(--color-primary-hue), 0, 0);
-    --color-primary: hsl(var(--color-primary-hue), 75%, 60%);
+    /* --color-primary: hsl(var(--color-primary-hue), 75%, 60%); */
+    --color-primary: hsl(252, 75%, 60%);
     --color-secondary: hsl(252, 100%, 90%);
     --color-success: hsl(120, 95%, 65%);
     --color-danger: hsl(0, 95%, 65%);
