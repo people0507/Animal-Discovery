@@ -179,108 +179,55 @@ Bg3.addEventListener('click', () => {
 
 // END
 
-const submitBtn = document.querySelector('.submit__btn')
-const userName = document.querySelector('#user')
-const comment = document.querySelector('#comment')
-const likeIcon = document.querySelector('.heart__icon')
-const count = document.querySelector('.count')
-const commentsCont = document.querySelector('.comments__container')
+// LIKE
 
-likeIcon.addEventListener('click', likeVideo)
-submitBtn.addEventListener('click', submitFeedback)
+function likeVideo() {
+            const likeIcon = document.querySelector('#likeIcon i');
+            likeIcon.classList.toggle('liked');
 
-
-feedbackArr = []
-let positiveFeedback = false
-let likesCount = 0
-
-function submitFeedback(e){
-    // get user name
-    const userForm = userName.value
-    // get feedback
-    const commentForm = comment.value
-    // if inputs are not empty
-    if(userForm && commentForm !== ''){
-        // create new feedback
-        newFeedback = {
-            "id": Math.floor((Math.random() * 1000)+ 1),
-            "userName": userForm,
-            "userComment": commentForm,
-            "typeOfFeedback": positiveFeedback
+            if (likeIcon.classList.contains('liked')) {
+                likeIcon.classList.remove('far');
+                likeIcon.classList.add('fas');
+                // set feedback to liked
+                positiveFeedback = true;
+            } else {
+                likeIcon.classList.remove('fas');
+                likeIcon.classList.add('far');
+                // set feedback to not liked
+                positiveFeedback = false;
+            }
         }
-        // add new feedback to array
-        feedbackArr.push(newFeedback)
-        // if liked add to count
-        if(positiveFeedback === true){
-            addLikes()
-        }
-        // clear inputs
-        resetForm()
-        // add feedback to list
-        addFeedback(newFeedback)
-    }
 
-
-    e.preventDefault()
-}
-
-function likeVideo(){
-    likeIcon.classList.toggle('liked')
-
-    if(likeIcon.classList.contains('liked')){
-        likeIcon.innerHTML = `<i class="fas fa-heart"></i>`
-        // set feedback to liked
-        positiveFeedback = true
-    } else {
-        likeIcon.innerHTML = `<i class="far fa-heart"></i>`
-        // set feedback to not liked
-        positiveFeedback = false
-    }
-}
-
+        const likeIconContainer = document.querySelector('#likeIcon');
+        likeIconContainer.addEventListener('click', likeVideo);
 function addLikes(){
     likesCount++
     count.innerHTML = likesCount
 }
 
-function resetForm(){
-    userName.value = ''
-    comment.value = ''
-    likeIcon.innerHTML = `<i class="far fa-heart"></i>`
-    positiveFeedback = false
-}
+//  Modal Comment
+// Get the modal
+    var modal = document.getElementById("commentModal");
 
-function addFeedback(item){
-    // select first letter of the user name
-    const letter = (item.userName).charAt(0)
-    // create new div
-    const div = document.createElement('div')
-    // add class
-    div.classList = 'comment__card'
-    // add id
-    div.id = item.id
-    // add html
-    div.innerHTML = `
-    <div class="pic center__display">
-                    ${letter}
-                </div>
-                <div class="comment__info">
-                    <small class="nickname">
-                        ${item.userName}
-                    </small>
-                    <p class="comment">
-                        ${item.userComment}
-                    </p>
-                    <div class="comment__bottom">
-                        <div class="heart__icon--comment">
-                            ${item.typeOfFeedback ? `<i class="fas fa-heart positive"></i>` : `<i class="far fa-heart"></i>`}
-                        </div>
-                        <button>
-                            Reply
-                        </button>
-                    </div>
-                </div>
-    `
-    // insert feedback into the list
-    commentsCont.insertAdjacentElement('beforeend', div)
-}
+    // Get the button that opens the modal
+    var btn = document.getElementById("commentIcon");
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on the button, open the modal
+    btn.onclick = function() {
+        modal.style.display = "block";
+    }
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
