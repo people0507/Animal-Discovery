@@ -60,40 +60,50 @@
                                 </thead>
                                 <tbody>
                                     @foreach ($animalDetail as $key => $item)
-                                    <tr>
-                                        <td onclick="showModal('Great White Shark', 'Carcharodon carcharias', 'The great white shark is a large species of shark found in coastal waters.', 'https://news4sanantonio.com/resources/media2/16x9/full/1015/center/80/cab905ba-dbcd-43ab-99c7-3fbdf1eadd8b-large16x9_GettyImages515714114.jpg', 'Fish', '5 meters', '1.5 meters', '1100 kg', 'Large', '70 years', 'Shark sound', 'shark_video.mp4', 'Vulnerable', 'Diurnal', 'Carnivore')">{{$key+1}}</td>
-                                        <td>{{$item->animal_name}}</td>
-                                        <td>{{$item->animal_scientific_name}}</td>
-                                        <td><a href="{{route('list_animal_image',['id' => $item->id])}}">Xem Thêm</a></td>
-                                        <td class="box-container">
-                                            <div class="box-char">
-                                                <a href="{{route('list_animal_area',['id' => $item->id])}}">Châu lục</a>
-                                            </div>
-                                            <div class="box-char">
-                                                <a href="{{route('list_animal_climate',['id' => $item->id])}}">Khí hậu</a>
-                                            </div>
-                                            <div class="box-char">
-                                                <a href="{{route('list_animal_nation',['id' => $item->id])}}">Quốc gia</a>
-                                            </div>
-                                            <div class="box-char">
-                                                <a href="{{route('list_animal_color',['id' => $item->id])}}">Màu sắc</a>
-                                            </div>
-                                            <div class="box-char">
-                                                <a href="{{route('list_animal_biome',['id' => $item->id])}}">Quần thể</a>
-                                            </div>
-                                            <div class="box-char">
-                                                <a href="{{route('list_animal_ocean',['id' => $item->id])}}">Đại dương</a>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <a href="#" class="icon-action delete-action" data-toggle="modal"
-                                                data-target="#deleteConfirmationModal_{{$item->id}}" style="color: red;"><i
-                                                    class="icon-close"></i></a>
-                                            /
-                                            <a href="{{route('admin.edit-animal',['id' => $item->id])}}" class="icon-action"
-                                                onclick="event.stopPropagation();"><i class="icon-settings"></i></a>
-                                        </td>
-                                    </tr>
+                                        <tr>
+                                            <td
+                                                onclick="showModal('Great White Shark', 'Carcharodon carcharias', 'The great white shark is a large species of shark found in coastal waters.', 'https://news4sanantonio.com/resources/media2/16x9/full/1015/center/80/cab905ba-dbcd-43ab-99c7-3fbdf1eadd8b-large16x9_GettyImages515714114.jpg', 'Fish', '5 meters', '1.5 meters', '1100 kg', 'Large', '70 years', 'Shark sound', 'shark_video.mp4', 'Vulnerable', 'Diurnal', 'Carnivore')">
+                                                {{ $key + 1 }}</td>
+                                            <td>{{ $item->animal_name }}</td>
+                                            <td>{{ $item->animal_scientific_name }}</td>
+                                            <td><a href="{{ route('list_animal_image', ['id' => $item->id]) }}">Xem Thêm</a>
+                                            </td>
+                                            <td class="box-container">
+                                                <div class="box-char">
+                                                    <a href="{{ route('list_animal_area', ['id' => $item->id]) }}">Châu
+                                                        lục</a>
+                                                </div>
+                                                <div class="box-char">
+                                                    <a href="{{ route('list_animal_climate', ['id' => $item->id]) }}">Khí
+                                                        hậu</a>
+                                                </div>
+                                                <div class="box-char">
+                                                    <a href="{{ route('list_animal_nation', ['id' => $item->id]) }}">Quốc
+                                                        gia</a>
+                                                </div>
+                                                <div class="box-char">
+                                                    <a href="{{ route('list_animal_color', ['id' => $item->id]) }}">Màu
+                                                        sắc</a>
+                                                </div>
+                                                <div class="box-char">
+                                                    <a href="{{ route('list_animal_biome', ['id' => $item->id]) }}">Quần
+                                                        thể</a>
+                                                </div>
+                                                <div class="box-char">
+                                                    <a href="{{ route('list_animal_ocean', ['id' => $item->id]) }}">Đại
+                                                        dương</a>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <a href="#" class="icon-action delete-action" data-toggle="modal"
+                                                    data-target="#deleteConfirmationModal_{{ $item->id }}"
+                                                    style="color: red;"><i class="icon-close"></i></a>
+                                                /
+                                                <a href="{{ route('admin.edit-animal', ['id' => $item->id]) }}"
+                                                    class="icon-action" onclick="event.stopPropagation();"><i
+                                                        class="icon-settings"></i></a>
+                                            </td>
+                                        </tr>
                                     @endforeach
                                 </tbody>
                             </table>
@@ -137,30 +147,31 @@
         </div>
     </div>
     @foreach ($animalDetail as $key => $item)
-    <div class="modal fade" id="deleteConfirmationModal_{{$item->id}}" tabindex="-1" role="dialog"
-        aria-labelledby="deleteConfirmationModalLabel_{{$item->id}}" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="deleteConfirmationModalLabel_{{$item->id}}">Xóa thông tin động vật</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    Bạn có chắc chắn muốn xóa thông tin động vật này không
-                </div>
-                <div class="modal-footer">
-                    <form action="{{ route('admin.delete-animal', ['id' => $item->id]) }}" method="POST">
-                    @csrf
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Hủy</button>
-                    @method('DELETE')
-                    <button type="submit" class="btn btn-danger" id="confirmDeleteBtn">Xóa</button>
-                    </form>
+        <div class="modal fade" id="deleteConfirmationModal_{{ $item->id }}" tabindex="-1" role="dialog"
+            aria-labelledby="deleteConfirmationModalLabel_{{ $item->id }}" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="deleteConfirmationModalLabel_{{ $item->id }}">Xóa thông tin động
+                            vật</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        Bạn có chắc chắn muốn xóa thông tin động vật này không
+                    </div>
+                    <div class="modal-footer">
+                        <form action="{{ route('admin.delete-animal', ['id' => $item->id]) }}" method="POST">
+                            @csrf
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Hủy</button>
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-danger" id="confirmDeleteBtn">Xóa</button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
     @endforeach
 @endsection
 <script>

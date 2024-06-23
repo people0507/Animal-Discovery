@@ -54,7 +54,7 @@ class DatabaseSeeder extends Seeder
                 'climate_name' => 'Vùng lạnh',
                 'climate_image' => 'cold_region.jpg',
                 'climate_description' => 'Vùng đất có nhiệt độ thấp, có thể có tuyết phủ mặt đất lâu dài trong mùa đông và thích hợp cho loài cây cối chịu lạnh.'
-            ],[
+            ], [
                 'climate_name' => 'Vùng cực',
                 'climate_image' => 'polar_region.jpg',
                 'climate_description' => 'Vùng đất nằm gần các cực trái đất, có nhiệt độ rất thấp và thường có băng tuyết phủ mặt đất suốt năm.'
@@ -250,7 +250,7 @@ class DatabaseSeeder extends Seeder
                 'color_description' => 'Màu tím thường thấy ở một số loài côn trùng như bướm và ong, làm nổi bật chúng giữa thiên nhiên và thu hút sự chú ý của bạn tình.'
             ],
         ]);
-        
+
         DB::table('activity_time')->insert([
             [
                 'activity_name' => 'Ban ngày',
