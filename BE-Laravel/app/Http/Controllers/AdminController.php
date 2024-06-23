@@ -30,7 +30,7 @@ class AdminController extends Controller
     {
         $mode = 'add';
         $roles = Role::all();
-        return view('admin.users.add-user',compact('mode','roles'));
+        return view('admin.users.add-user', compact('mode', 'roles'));
     }
 
     public function createUser(Request $request)
@@ -59,11 +59,12 @@ class AdminController extends Controller
         }
     }
 
-    public function viewEditUser($id){
+    public function viewEditUser($id)
+    {
         $mode = 'edit';
         $roles = Role::all();
-        $user = User::where('id',$id)->first();
-        return view('admin.users.add-user',compact('mode','roles','user'));
+        $user = User::where('id', $id)->first();
+        return view('admin.users.add-user', compact('mode', 'roles', 'user'));
     }
 
     public function updateUser($id, Request $request)
@@ -101,21 +102,22 @@ class AdminController extends Controller
         $deletedRows = User::destroy($id);
         if ($deletedRows >  0) {
             $message = MessageContent::getMessage('delete_success');
-            return redirect()->route('admin.list_user')->with('success',$message);
+            return redirect()->route('admin.list_user')->with('success', $message);
         } else {
             $message = MessageContent::getMessage('delete_success');
-            return redirect()->back()->with('failed',$message);
+            return redirect()->back()->with('failed', $message);
         }
     }
 
-    public function viewAddAnimal(){
+    public function viewAddAnimal()
+    {
         $mode = 'add';
         $conservationStatus = ConservationStatus::all();
         $dietType = DietType::all();
         $animalCategory = Category::all();
         $activityTime = ActivityTime::all();
         $populationTrending = PopulationTrending::all();
-        return view('admin.animals.add-animal',compact('conservationStatus','dietType','animalCategory','activityTime','populationTrending','mode'));
+        return view('admin.animals.add-animal', compact('conservationStatus', 'dietType', 'animalCategory', 'activityTime', 'populationTrending', 'mode'));
     }
 
     public function createAnimalDetail(Request $request)
@@ -173,25 +175,26 @@ class AdminController extends Controller
         // }
         if ($animalDetail->save()) {
             $message = MessageContent::getMessage('create_success');
-            return redirect()->route('list_animal')->with('success',$message);
+            return redirect()->route('list_animal')->with('success', $message);
         } else {
             $message = MessageContent::getMessage('create_failed');
-            return redirect()->back()->with('failed',$message);
+            return redirect()->back()->with('failed', $message);
         }
     }
 
-    public function viewEditAnimal($id){
+    public function viewEditAnimal($id)
+    {
         $mode = 'edit';
         $conservationStatus = ConservationStatus::all();
         $dietType = DietType::all();
         $animalCategory = Category::all();
         $activityTime = ActivityTime::all();
         $populationTrending = PopulationTrending::all();
-        $animalDetail = AnimalDetail::where('id',$id)->first();
-        return view('admin.animals.add-animal',compact('conservationStatus','dietType','animalCategory','activityTime','populationTrending','animalDetail','mode'));
+        $animalDetail = AnimalDetail::where('id', $id)->first();
+        return view('admin.animals.add-animal', compact('conservationStatus', 'dietType', 'animalCategory', 'activityTime', 'populationTrending', 'animalDetail', 'mode'));
     }
 
-    public function updateAnimalDetail($id,Request $request)
+    public function updateAnimalDetail($id, Request $request)
     {
         MessageContent::loadMessages();
         $data = $request->all();
@@ -199,7 +202,7 @@ class AdminController extends Controller
             $uniqueFileSoundName = Str::uuid()->toString() . '.' . $data['animal_sound']->extension();
             $data['animal_sound']->move(public_path('animal_sounds'), $uniqueFileSoundName);
         }
-        $animalDetail = AnimalDetail::where('id',$id)->first();
+        $animalDetail = AnimalDetail::where('id', $id)->first();
         $animalDetail->animal_name = $data['animal_name'];
         $animalDetail->animal_scientific_name = $data['animal_scientific_name'];
         $animalDetail->animal_description = $data['animal_description'];
@@ -223,7 +226,7 @@ class AdminController extends Controller
         $animalDetail->independent_age = $data['independent_age'];
         $animalDetail->avg_lifespan = $data['avg_lifespan'];
         if (isset($data['animal_sound']) && $data['animal_sound'] != null) {
-        $animalDetail->animal_sound = $uniqueFileSoundName;
+            $animalDetail->animal_sound = $uniqueFileSoundName;
         }
         $animalDetail->animal_video = $data['animal_video'];
         $animalDetail->conservation_status_id = $data['conservation_status_id'];
@@ -246,60 +249,67 @@ class AdminController extends Controller
         // }
         if ($animalDetail->save()) {
             $message = MessageContent::getMessage('update_success');
-            return redirect()->route('list_animal')->with('success',$message);
+            return redirect()->route('list_animal')->with('success', $message);
         } else {
             $message = MessageContent::getMessage('update_failed');
-            return redirect()->back()->with('failed',$message);
+            return redirect()->back()->with('failed', $message);
         }
     }
 
     public function listAnimal()
     {
         $animalDetail = AnimalDetail::all();
-        return view('admin.animals.list-animal',compact('animalDetail'));
+        return view('admin.animals.list-animal', compact('animalDetail'));
     }
 
-    public function listAnimalArea($id){
+    public function listAnimalArea($id)
+    {
         $mode = 'area';
-        $data = AnimalDetail::where('id',$id)->with('areas')->first();
-        return view('admin.animals.list-animal-characteristic',compact('data','mode'));
+        $data = AnimalDetail::where('id', $id)->with('areas')->first();
+        return view('admin.animals.list-animal-characteristic', compact('data', 'mode'));
     }
 
-    public function listAnimalClimate($id){
+    public function listAnimalClimate($id)
+    {
         $mode = 'climate';
-        $data = AnimalDetail::where('id',$id)->with('climates')->first();
-        return view('admin.animals.list-animal-characteristic',compact('data','mode'));
+        $data = AnimalDetail::where('id', $id)->with('climates')->first();
+        return view('admin.animals.list-animal-characteristic', compact('data', 'mode'));
     }
 
-    public function listAnimalNation($id){
+    public function listAnimalNation($id)
+    {
         $mode = 'nation';
-        $data = AnimalDetail::where('id',$id)->with('nations')->first();
-        return view('admin.animals.list-animal-characteristic',compact('data','mode'));
+        $data = AnimalDetail::where('id', $id)->with('nations')->first();
+        return view('admin.animals.list-animal-characteristic', compact('data', 'mode'));
     }
 
-    public function listAnimalColor($id){
+    public function listAnimalColor($id)
+    {
         $mode = 'color';
-        $data = AnimalDetail::where('id',$id)->with('colors')->first();
-        return view('admin.animals.list-animal-characteristic',compact('data','mode'));
+        $data = AnimalDetail::where('id', $id)->with('colors')->first();
+        return view('admin.animals.list-animal-characteristic', compact('data', 'mode'));
     }
 
-    public function listAnimalBiome($id){
+    public function listAnimalBiome($id)
+    {
         $mode = 'biome';
-        $data = AnimalDetail::where('id',$id)->with('biomes')->first();
-        return view('admin.animals.list-animal-characteristic',compact('data','mode'));
+        $data = AnimalDetail::where('id', $id)->with('biomes')->first();
+        return view('admin.animals.list-animal-characteristic', compact('data', 'mode'));
     }
-    public function listAnimalOcean($id){
+    public function listAnimalOcean($id)
+    {
         $mode = 'ocean';
-        $data = AnimalDetail::where('id',$id)->with('oceans')->first();
-        return view('admin.animals.list-animal-characteristic',compact('data','mode'));
+        $data = AnimalDetail::where('id', $id)->with('oceans')->first();
+        return view('admin.animals.list-animal-characteristic', compact('data', 'mode'));
     }
 
-    public function listAnimalImage($id){
-        $images = Image::where('id',$id)->get();
-        foreach($images as $image){
+    public function listAnimalImage($id)
+    {
+        $images = Image::where('id', $id)->get();
+        foreach ($images as $image) {
             $image->animalDetail;
         }
-        return view('admin.animals.list-animal-image',compact('images'));
+        return view('admin.animals.list-animal-image', compact('images'));
     }
 
     public function addImgAnimalView()
@@ -334,10 +344,10 @@ class AdminController extends Controller
         $deletedRows = AnimalDetail::destroy($id);
         if ($deletedRows >  0) {
             $message = MessageContent::getMessage('delete_success');
-            return redirect()->route('list_animal')->with('success',$message);
+            return redirect()->route('list_animal')->with('success', $message);
         } else {
             $message = MessageContent::getMessage('delete_success');
-            return redirect()->back()->with('failed',$message);
+            return redirect()->back()->with('failed', $message);
         }
     }
 
@@ -354,5 +364,10 @@ class AdminController extends Controller
         } else {
             return response()->json(401);
         }
+    }
+
+    public function listPostsView()
+    {
+        return view('admin.posts.list');
     }
 }

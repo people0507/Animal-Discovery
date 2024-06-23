@@ -79,6 +79,19 @@
                         </li>
                     </ul>
                 </li>
+                <li class="sidebar-item">
+                    <a class="sidebar-link has-arrow" href="javascript:void(0)" aria-expanded="false">
+                        <i data-feather="users" class="feather-icon"></i>
+                        <span class="hide-menu">Post Animal</span>
+                    </a>
+                    <ul aria-expanded="false" class="collapse first-level base-level-line">
+                        <li class="sidebar-item">
+                            <a href="{{ route('admin.list_posts') }}" class="sidebar-link">
+                                <span class="hide-menu"> All Posts </span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
 
                 <!-- <li class="sidebar-item">
                             <a class="sidebar-link has-arrow" href="javascript:void(0)" aria-expanded="false">
