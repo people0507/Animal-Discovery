@@ -11,7 +11,10 @@
     <!-- ICONCOUT CDN -->
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
 </head>
 
 <body>
@@ -159,10 +162,8 @@
 
                         <div class="action-button">
                             <div class="interaction-buttons">
-                                {{-- <div class="heart__icon center__display">
-                                    <span><i class="far fa-heart"></i></span>
-                                </div> --}}
-                                <span><i class="uil uil-comment-dots"></i></span>
+                                <span id="likeIcon"><i class="far fa-heart"></i></span>
+                                <span id="commentIcon"><i class="uil uil-comment-dots"></i></span>
                                 <span><i class="uil uil-share-alt"></i></span>
 
                             </div>
@@ -189,65 +190,6 @@
                         </div>
 
                         <div class="comments text-muted">"View all 277 comments"</div>
-                        <div>
-                            <div class="top">
-                                <div class="video__container">
-                                    <form class="create-post_cmt">
-                                        <div class="heart__icon center__display">
-                                            <i class="far fa-heart" style="font-size: 20px"></i>
-                                        </div>
-                                        <div class="form__info center__display ">
-                                            <div class="input-data form-group">
-                                                <input type="text" name="user" id="user" required>
-                                                <div class="underline"></div>
-                                                <label>Name</label>
-                                            </div>
-                                            <div class="input-data form-group">
-                                                <input type="text" name="comment" id="comment" required>
-                                                <div class="underline"></div>
-                                                <label>Comment</label>
-                                            </div>
-                                        </div>
-
-                                        <button type="submit" class="submit__btn">
-                                            Submit
-                                        </button>
-                                        <div class="likes__count">
-                                            <i class="far fa-heart"></i>
-                                            <small class="count">0</small>
-                                        </div>
-                                    </form>
-                                    {{-- <div class="likes__count">
-                                        <i class="far fa-heart"></i>
-                                        <small class="count">0</small>
-                                    </div> --}}
-                                </div>
-                            </div>
-                            <div class="comments__container center__display">
-                                <!-- <div class="comment__card">
-                                <div class="pic center__display">
-                                    A
-                                </div>
-                                <div class="comment__info">
-                                    <small class="nickname">
-                                        UserNameHere
-                                    </small>
-                                    <p class="comment">
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, in magnam! Libero?
-                                    </p>
-                                    <div class="comment__bottom">
-                                        <div class="heart__icon--comment">
-                                            <i class="far fa-heart"></i>
-                                        </div>
-                                        <button>
-                                            Reply
-                                        </button>
-                                    </div>
-                                </div>
-                            </div> -->
-                            </div>
-                        </div>
-
                     </div>
                     <div class="feed">
                         <!-- ================ FEED 2 ================ -->
@@ -362,8 +304,88 @@
             </div>
         </div>
     </div>
+    <div id="commentModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Leave a Comment</h2>
+            <div class="comments-modal">
+                <div class="comment container">
+                    <div class="c-user">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJxA7pQkxq3NaB1gvfVi6jV25AHuY_CEjk-Q&s"
+                            alt="" class="usr-img">
+                        <p class="usr-name">amyrobson</p>
+                        <p class="cmnt-at">1 month ago</p>
+                    </div>
+                    <p class="c-text">
+                        <span class="reply-to"></span>
+                        <span class="c-body">Impressive! Though it seems the drag feature could be improved. But
+                            overall it
+                            looks incredible. You've nailed the design and the responsiveness at various breakpoints
+                            works
+                            really well.</span>
+                    </p>
+                </div>
+                <div class="comment container">
+                    <div class="c-user">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJxA7pQkxq3NaB1gvfVi6jV25AHuY_CEjk-Q&s"
+                            alt="" class="usr-img">
+                        <p class="usr-name">amyrobson</p>
+                        <p class="cmnt-at">1 month ago</p>
+                    </div>
+                    <p class="c-text">
+                        <span class="reply-to"></span>
+                        <span class="c-body">Impressive! Though it seems the drag feature could be improved. But
+                            overall it
+                            looks incredible. You've nailed the design and the responsiveness at various breakpoints
+                            works
+                            really well.</span>
+                    </p>
+                </div>
+                <div class="comment container">
+                    <div class="c-user">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJxA7pQkxq3NaB1gvfVi6jV25AHuY_CEjk-Q&s"
+                            alt="" class="usr-img">
+                        <p class="usr-name">amyrobson</p>
+                        <p class="cmnt-at">1 month ago</p>
+                    </div>
+                    <p class="c-text">
+                        <span class="reply-to"></span>
+                        <span class="c-body">Impressive! Though it seems the drag feature could be improved. But
+                            overall it
+                            looks incredible. You've nailed the design and the responsiveness at various breakpoints
+                            works
+                            really well.</span>
+                    </p>
+                </div>
+                <div class="comment container">
+                    <div class="c-user">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJxA7pQkxq3NaB1gvfVi6jV25AHuY_CEjk-Q&s"
+                            alt="" class="usr-img">
+                        <p class="usr-name">amyrobson</p>
+                        <p class="cmnt-at">1 month ago</p>
+                    </div>
+                    <p class="c-text">
+                        <span class="reply-to"></span>
+                        <span class="c-body">Impressive! Though it seems the drag feature could be improved. But
+                            overall it
+                            looks incredible. You've nailed the design and the responsiveness at various breakpoints
+                            works
+                            really well.</span>
+                    </p>
+                </div>
+            </div>
+
+            <div class="comment-box">
+                <input type="text" class="btn-comment" placeholder="Viết bình luận ...">
+                <br>
+                <button type="button" class="btn btn-primary" style="margin-top: 10px">Submit</button>
+            </div>
+        </div>
+    </div>
+
     {{-- <script src="./assets/js/main.js"></script> --}}
     <script src="{{ asset('users/social_assets/js/main.js') }}"></script>
+
 </body>
 
 
