@@ -423,11 +423,10 @@
                                                 style="position: absolute; display: block; min-width: 100%;">
                                                 <div class="tp-mask-wrap"
                                                     style="position: absolute; display: block; min-width: 100%; overflow: visible;">
-                                                    <div class="tp-caption   tp-resizeme tp-videolayer coverscreenvideo HasListener rs-apiready"
+                                                    <div class="tp-caption tp-resizeme tp-videolayer coverscreenvideo HasListener rs-apiready"
                                                         id="slide-3018-layer-30"
                                                         style="z-index: 7; border-width: 0px; visibility: inherit; width: 1170px; height: 658px; transition: none 0s ease 0s; text-align: left; line-height: 0px; margin: 0px; padding: 0px; letter-spacing: 0px; font-weight: 400; font-size: 17px; white-space: nowrap; min-height: 0px; min-width: 0px; max-height: none; max-width: none; opacity: 1; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transform-origin: 50% 50% 0px;">
-                                                        <iframe type="text/html"
-                                                            src="https://www.youtube-nocookie.com/embed/r2t0MidPKXQ?;"
+                                                        <iframe type="text/html" src="{{ $videos['url'] }}"
                                                             width="100%" height="100%"
                                                             style="opacity: 1; width: 100%; height: 100.019%; position: absolute; left: 0px; top: -0.0094984%; display: block; transition: none 0s ease 0s; text-align: left; line-height: 0px; border-width: 0px; margin: 0px; padding: 0px; letter-spacing: 0px; font-weight: 400; font-size: 16px; visibility: inherit;"
                                                             class="resizelistener" id="iframe77143"

@@ -73,7 +73,11 @@ class AnimalDetailController extends Controller
             ['url' => 'https://media.wired.com/photos/593261cab8eb31692072f129/master/pass/85120553.jpg'],
         ];
 
-        return view('user.animal-detail', compact('data', 'habitImage', 'populationImage', 'conservationStatus', 'photos'));
+        $videos = [
+            'url' => 'https://www.youtube-nocookie.com/embed/r2t0MidPKXQ?;',
+        ];
+
+        return view('user.animal-detail', compact('data', 'habitImage', 'populationImage', 'conservationStatus', 'photos', 'videos'));
     }
 
     public function getAnimalDetailAreas($id)
