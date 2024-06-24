@@ -511,7 +511,8 @@
                 </form>
             </div>
             <div class="modal-footer">
-                <button type="submit" class="btn btn-primary mb-2" form="addContinentForm">Lưu</button>
+                <button type="submit" class="btn btn-primary" style="margin-right: 10px"
+                    form="addContinentForm">Lưu</button>
                 <button type="button" class="btn btn-secondary" id="closeModalButton">Đóng</button>
             </div>
         </div>

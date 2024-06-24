@@ -54,7 +54,7 @@
                                         <th>Tên động vật</th>
                                         <th>Tên khoa học</th>
                                         <th>Danh sách ảnh</th>
-                                        <th style="width: 20%">Đặc điểm</th>
+                                        <th style="width: 25%">Đặc điểm</th>
                                         <th>Thao tác</th>
                                     </tr>
                                 </thead>
