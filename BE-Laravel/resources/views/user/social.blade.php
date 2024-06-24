@@ -127,6 +127,7 @@
             <div class="middle">
 
                 <!-- ================ FEEDS ================ -->
+                 @foreach ($posts as $post)
                 <div class="feeds">
                     <div class="feed">
                         <!-- ================ FEED 1 ================ -->
@@ -136,7 +137,7 @@
                                     <img src="{{ asset('users/social_assets/images/profile-10.jpg') }}" alt="">
                                 </div>
                                 <div class="ingo">
-                                    <h3>Lana Rose</h3>
+                                    <h3>{{$post->user->name}}</h3>
                                     <small>Dubai, 15 MINUTED AGO</small>
                                 </div>
                             </div>
@@ -144,9 +145,13 @@
                                 <i class="uil uil-ellipsis-h"></i>
                             </span>
                         </div>
+                        
+                        <div class="content" style="margin:5px 0px">
+                            <p>{{$post->content}}</p>
+                        </div>
 
                         <div class="photo">
-                            <img src="{{ asset('users/social_assets/images/feed-1.jpg') }}" alt="">
+                            <img src="http://localhost:8000/posts/{{$post->image}}" alt="">
                         </div>
 
                         <div class="action-button">
@@ -168,180 +173,20 @@
                                     alt=""></span>
                             <span><img src="{{ asset('users/social_assets/images/profile-13.jpg') }}"
                                     alt=""></span>
-                            <p>Like by <b>Ernest Aritn</b> and <b>2, 330 others</b></p>
+                            <p>Like by <b>Ernest Aritn</b> and <b>{{$post->likes_count}} others</b></p>
                         </div>
 
                         <div class="caption">
                             <p>
-                                <b>Lana Rose</b> Lorem ipsum dolor, sit amet consectetur adipisicing.
+                                <b>{{$post->user->name}}</b> {{$post->title}}
                                 <span class="harsh-tag">#lifestyle</span>
                             </p>
                         </div>
 
-                        <div class="comments text-muted">"View all 277 comments"</div>
-                    </div>
-                    <div class="feed">
-                        <!-- ================ FEED 1 ================ -->
-                        <div class="head">
-                            <div class="user">
-                                <div class="profile-picture">
-                                    <img src="{{ asset('users/social_assets/images/profile-10.jpg') }}"
-                                        alt="">
-                                </div>
-                                <div class="ingo">
-                                    <h3>Lana Rose</h3>
-                                    <small>Dubai, 15 MINUTED AGO</small>
-                                </div>
-                            </div>
-                            <span class="edit">
-                                <i class="uil uil-ellipsis-h"></i>
-                            </span>
-                        </div>
-
-                        <div class="photo">
-                            <img src="{{ asset('users/social_assets/images/feed-1.jpg') }}" alt="">
-                        </div>
-
-                        <div class="action-button">
-                            <div class="interaction-buttons">
-                                <span id="likeIcon"><i class="far fa-heart"></i></span>
-                                <span id="commentIcon"><i class="uil uil-comment-dots"></i></span>
-                                <span><i class="uil uil-share-alt"></i></span>
-
-                            </div>
-                            <div class="bookmark">
-                                <span><i class="uil uil-bookmark-full"></i></span>
-                            </div>
-                        </div>
-
-                        <div class="liked-by">
-                            <span><img src="{{ asset('users/social_assets/images/profile-10.jpg') }}"
-                                    alt=""></span>
-                            <span><img src="{{ asset('users/social_assets/images/profile-15.jpg') }}"
-                                    alt=""></span>
-                            <span><img src="{{ asset('users/social_assets/images/profile-13.jpg') }}"
-                                    alt=""></span>
-                            <p>Like by <b>Ernest Aritn</b> and <b>2, 330 others</b></p>
-                        </div>
-
-                        <div class="caption">
-                            <p>
-                                <b>Lana Rose</b> Lorem ipsum dolor, sit amet consectetur adipisicing.
-                                <span class="harsh-tag">#lifestyle</span>
-                            </p>
-                        </div>
-
-                        <div class="comments text-muted">"View all 277 comments"</div>
-                    </div>
-                    <div class="feed">
-                        <!-- ================ FEED 1 ================ -->
-                        <div class="head">
-                            <div class="user">
-                                <div class="profile-picture">
-                                    <img src="{{ asset('users/social_assets/images/profile-10.jpg') }}"
-                                        alt="">
-                                </div>
-                                <div class="ingo">
-                                    <h3>Lana Rose</h3>
-                                    <small>Dubai, 15 MINUTED AGO</small>
-                                </div>
-                            </div>
-                            <span class="edit">
-                                <i class="uil uil-ellipsis-h"></i>
-                            </span>
-                        </div>
-
-                        <div class="photo">
-                            <img src="{{ asset('users/social_assets/images/feed-1.jpg') }}" alt="">
-                        </div>
-
-                        <div class="action-button">
-                            <div class="interaction-buttons">
-                                <span id="likeIcon"><i class="far fa-heart"></i></span>
-                                <span id="commentIcon"><i class="uil uil-comment-dots"></i></span>
-                                <span><i class="uil uil-share-alt"></i></span>
-
-                            </div>
-                            <div class="bookmark">
-                                <span><i class="uil uil-bookmark-full"></i></span>
-                            </div>
-                        </div>
-
-                        <div class="liked-by">
-                            <span><img src="{{ asset('users/social_assets/images/profile-10.jpg') }}"
-                                    alt=""></span>
-                            <span><img src="{{ asset('users/social_assets/images/profile-15.jpg') }}"
-                                    alt=""></span>
-                            <span><img src="{{ asset('users/social_assets/images/profile-13.jpg') }}"
-                                    alt=""></span>
-                            <p>Like by <b>Ernest Aritn</b> and <b>2, 330 others</b></p>
-                        </div>
-
-                        <div class="caption">
-                            <p>
-                                <b>Lana Rose</b> Lorem ipsum dolor, sit amet consectetur adipisicing.
-                                <span class="harsh-tag">#lifestyle</span>
-                            </p>
-                        </div>
-
-                        <div class="comments text-muted">"View all 277 comments"</div>
-                    </div>
-                    <div class="feed">
-                        <!-- ================ FEED 1 ================ -->
-                        <div class="head">
-                            <div class="user">
-                                <div class="profile-picture">
-                                    <img src="{{ asset('users/social_assets/images/profile-10.jpg') }}"
-                                        alt="">
-                                </div>
-                                <div class="ingo">
-                                    <h3>Lana Rose</h3>
-                                    <small>Dubai, 15 MINUTED AGO</small>
-                                </div>
-                            </div>
-                            <span class="edit">
-                                <i class="uil uil-ellipsis-h"></i>
-                            </span>
-                        </div>
-
-                        <div class="photo">
-                            <img src="{{ asset('users/social_assets/images/feed-1.jpg') }}" alt="">
-                        </div>
-
-                        <div class="action-button">
-                            <div class="interaction-buttons">
-                                <span id="likeIcon"><i class="far fa-heart"></i></span>
-                                <span id="commentIcon"><i class="uil uil-comment-dots"></i></span>
-                                <span><i class="uil uil-share-alt"></i></span>
-
-                            </div>
-                            <div class="bookmark">
-                                <span><i class="uil uil-bookmark-full"></i></span>
-                            </div>
-                        </div>
-
-                        <div class="liked-by">
-                            <span><img src="{{ asset('users/social_assets/images/profile-10.jpg') }}"
-                                    alt=""></span>
-                            <span><img src="{{ asset('users/social_assets/images/profile-15.jpg') }}"
-                                    alt=""></span>
-                            <span><img src="{{ asset('users/social_assets/images/profile-13.jpg') }}"
-                                    alt=""></span>
-                            <p>Like by <b>Ernest Aritn</b> and <b>2, 330 others</b></p>
-                        </div>
-
-                        <div class="caption">
-                            <p>
-                                <b>Lana Rose</b> Lorem ipsum dolor, sit amet consectetur adipisicing.
-                                <span class="harsh-tag">#lifestyle</span>
-                            </p>
-                        </div>
-
-                        <div class="comments text-muted">"View all 277 comments"</div>
+                        <div class="comments text-muted">"View all {{$post->comments_count}} comments"</div>
                     </div>
                 </div>
-
-
+                @endforeach
             </div>
     </main>
 
