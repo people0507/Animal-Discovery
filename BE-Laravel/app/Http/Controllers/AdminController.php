@@ -257,6 +257,26 @@ class AdminController extends Controller
         }
     }
 
+    public function addAnimalImage($id,Request $request){
+        $data = $request->all();
+        if(isset($data['animal_image']) && $data['animal_image'] != null){
+            $uniqueFileName = Str::uuid()->toString() . '.' . $data['animal_image']->extension();
+            $data['animal_image']->move(public_path('animal_images'), $uniqueFileName);
+            $animalImage = new Image();
+            $animalImage->image_name = $uniqueFileName;
+            $animalImage->detail_id = $id;
+            $animalImage->save();
+            return redirect()->route('list_animal_image', ['id' => $id]);
+        }else{
+            return redirect()->back();
+        }
+    }
+
+    public function deleteImageAnimal($id){
+        Image::destroy($id);
+        return redirect()->back();
+    } 
+
     public function listAnimal()
     {
         $animalDetail = AnimalDetail::all();
@@ -267,50 +287,142 @@ class AdminController extends Controller
     {
         $mode = 'area';
         $data = AnimalDetail::where('id', $id)->with('areas')->first();
-        return view('admin.animals.list-animal-characteristic', compact('data', 'mode'));
+        $areas = Area::all();
+        return view('admin.animals.list-animal-characteristic', compact('data', 'mode','areas'));
+    }
+
+    public function addAreaAnimal($id,Request $request)
+    {
+        $animalDetail = AnimalDetail::where('id',$id)->first();
+        $animalDetail->areas()->attach($request->area_id);
+        return redirect()->route('list_animal_area', ['id' => $id]);
+    }
+
+    public function deleteAreaAnimal($id,$id2)
+    {
+        $animalDetail = AnimalDetail::where('id',$id)->first();
+        $animalDetail->areas()->detach($id2);
+        return redirect()->route('list_animal_area', ['id' => $id]);
     }
 
     public function listAnimalClimate($id)
     {
         $mode = 'climate';
         $data = AnimalDetail::where('id', $id)->with('climates')->first();
-        return view('admin.animals.list-animal-characteristic', compact('data', 'mode'));
+        $climates = Climate::all();
+        return view('admin.animals.list-animal-characteristic', compact('data', 'mode','climates'));
+    }
+
+    public function addClimateAnimal($id,Request $request)
+    {
+        $animalDetail = AnimalDetail::where('id',$id)->first();
+        $animalDetail->climates()->attach($request->climate_id);
+        return redirect()->route('list_animal_climate', ['id' => $id]);
+    }
+
+    public function deleteClimateAnimal($id,$id2)
+    {
+        $animalDetail = AnimalDetail::where('id',$id)->first();
+        $animalDetail->climates()->detach($id2);
+        return redirect()->route('list_animal_climate', ['id' => $id]);
     }
 
     public function listAnimalNation($id)
     {
         $mode = 'nation';
         $data = AnimalDetail::where('id', $id)->with('nations')->first();
-        return view('admin.animals.list-animal-characteristic', compact('data', 'mode'));
+        $nations = Nation::all();
+        return view('admin.animals.list-animal-characteristic', compact('data', 'mode','nations'));
+    }
+
+    public function addNationAnimal($id,Request $request)
+    {
+        $animalDetail = AnimalDetail::where('id',$id)->first();
+        $animalDetail->nations()->attach($request->nation_id);
+        return redirect()->route('list_animal_nation', ['id' => $id]);
+    }
+
+    public function deleteNationAnimal($id,$id2)
+    {
+        $animalDetail = AnimalDetail::where('id',$id)->first();
+        $animalDetail->nations()->detach($id2);
+        return redirect()->route('list_animal_nation', ['id' => $id]);
     }
 
     public function listAnimalColor($id)
     {
         $mode = 'color';
         $data = AnimalDetail::where('id', $id)->with('colors')->first();
-        return view('admin.animals.list-animal-characteristic', compact('data', 'mode'));
+        $colors = Color::all();
+        return view('admin.animals.list-animal-characteristic', compact('data', 'mode','colors'));
+    }
+
+    public function addColorAnimal($id,Request $request)
+    {
+        $animalDetail = AnimalDetail::where('id',$id)->first();
+        $animalDetail->colors()->attach($request->color_id);
+        return redirect()->route('list_animal_color', ['id' => $id]);
+    }
+
+    public function deleteColorAnimal($id,$id2)
+    {
+        $animalDetail = AnimalDetail::where('id',$id)->first();
+        $animalDetail->colors()->detach($id2);
+        return redirect()->route('list_animal_color', ['id' => $id]);
     }
 
     public function listAnimalBiome($id)
     {
         $mode = 'biome';
         $data = AnimalDetail::where('id', $id)->with('biomes')->first();
-        return view('admin.animals.list-animal-characteristic', compact('data', 'mode'));
+        $biomes = Biome::all();
+        return view('admin.animals.list-animal-characteristic', compact('data', 'mode','biomes'));
     }
+
+    public function addBiomeAnimal($id,Request $request)
+    {
+        $animalDetail = AnimalDetail::where('id',$id)->first();
+        $animalDetail->biomes()->attach($request->biome_id);
+        return redirect()->route('list_animal_biome', ['id' => $id]);
+    }
+
+    public function deleteBiomeAnimal($id,$id2)
+    {
+        $animalDetail = AnimalDetail::where('id',$id)->first();
+        $animalDetail->biomes()->detach($id2);
+        return redirect()->route('list_animal_biome', ['id' => $id]);
+    }
+
     public function listAnimalOcean($id)
     {
         $mode = 'ocean';
         $data = AnimalDetail::where('id', $id)->with('oceans')->first();
-        return view('admin.animals.list-animal-characteristic', compact('data', 'mode'));
+        $oceans = Ocean::all();
+        return view('admin.animals.list-animal-characteristic', compact('data', 'mode','oceans'));
+    }
+
+    public function addOceanAnimal($id,Request $request)
+    {
+        $animalDetail = AnimalDetail::where('id',$id)->first();
+        $animalDetail->oceans()->attach($request->ocean_id);
+        return redirect()->route('list_animal_ocean', ['id' => $id]);
+    }
+
+    public function deleteOceanAnimal($id,$id2)
+    {
+        $animalDetail = AnimalDetail::where('id',$id)->first();
+        $animalDetail->oceans()->detach($id2);
+        return redirect()->route('list_animal_ocean', ['id' => $id]);
     }
 
     public function listAnimalImage($id)
     {
-        $images = Image::where('id', $id)->get();
+        $images = Image::where('detail_id', $id)->get();
         foreach ($images as $image) {
             $image->animalDetail;
         }
-        return view('admin.animals.list-animal-image', compact('images'));
+        $animalDetail = AnimalDetail::where('id', $id)->first();
+        return view('admin.animals.list-animal-image', compact('images','animalDetail'));
     }
 
     public function addImgAnimalView()
