@@ -26,7 +26,7 @@
                 <div class="d-flex align-items-center">
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb m-0 p-0">
-                            <li class="breadcrumb-item"><a href="index.html">Animal Management</a>
+                            <li class="breadcrumb-item"><a href="{{ route('admin.home') }}">Animal Management</a>
                             </li>
                         </ol>
                     </nav>
@@ -41,29 +41,28 @@
                     <div class="card-body">
                         <h4 class="card-title">Danh sách bài viết động vật</h4>
                         <div class="table-responsive">
-                            <table id="multi_col_order" class="table table-striped table-bordered display no-wrap"
+                            <table id="multi_col_order" class="table table-striped table-bordered display "
                                 style="width:100%">
                                 <thead>
                                     <tr>
-                                        <th style="width: 65px;">STT</th>
-                                        <th>Tiêu đề bài viết</th>
-                                        <th>Ảnh</th>
-                                        <th>Nội dung</th>
-                                        <th>Người tạo</th>
-                                        <th>Tương tác</th>
-                                        <th>Trạng thái</th>
-                                        <th>Thời Gian Tạo</th>
-                                        <th>Thao tác</th>
+                                        <th style="width: 65px; text-align: center; vertical-align: middle;">STT</th>
+                                        <th style="text-align: center; vertical-align: middle;">Tiêu đề bài viết</th>
+                                        <th style="text-align: center; vertical-align: middle;">Ảnh</th>
+                                        <th style="text-align: center; vertical-align: middle;">Nội dung</th>
+                                        <th style="text-align: center; vertical-align: middle;">Người tạo</th>
+                                        <th style="text-align: center; vertical-align: middle;">Tương tác</th>
+                                        <th style="text-align: center; vertical-align: middle;">Trạng thái</th>
+                                        <th style="text-align: center; vertical-align: middle;">Thời Gian Tạo</th>
+                                        <th style="text-align: center; vertical-align: middle;">Thao tác</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     @foreach ($posts as $key => $post)
                                         <tr>
                                             <td>{{ $key + 1 }}</td>
-                                            <td style="width: 10%">{{ $post->title }}</td>
+                                            <td>{{ $post->title }}</td>
                                             <td><img src="http://127.0.0.1:8000/posts/{{ $post->image }}"
                                                     alt="{{ $post->title }}" width="200"></td>
-                                            {{-- <td style="width: 30%">{{ $post->content }}</td> --}}
                                             <td style="width: 20%">
                                                 <div class="description" id="description-{{ $key }}">
                                                     {{ Str::limit($post->content, 100) }}
@@ -80,10 +79,12 @@
                                                 </div>
                                             </td>
                                             <td>{{ $post->user->name }}</td>
-                                            <td>Thích: {{ $post->likes_count }},Bình Luận: {{ $post->comments_count }}
+                                            <td><i class="fa fa-thumbs-up" aria-hidden="true"></i>
+                                                {{ $post->likes_count }} / <i class="fa fa-comment" aria-hidden="true"></i>
+                                                {{ $post->comments_count }}
                                             </td>
                                             @if ($post->status == 0)
-                                                <td>Chưa Phê Duyệt</td>
+                                                <td style="color: red">Chưa Phê Duyệt</td>
                                             @else
                                                 <td style="color: green">Đã Phê Duyệt</td>
                                             @endif

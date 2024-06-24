@@ -54,9 +54,9 @@ class AdminController extends Controller
             $user->avatar = $uniqueFileName;
         }
         if ($user->save()) {
-            return redirect()->route('admin.list_user');
+            return redirect()->route('admin.list_user')->with('success', 'Người dùng đã được tạo thành công!');
         } else {
-            return back();
+            return back()->with('failed', 'Tạo người dùng thất bại. Vui lòng thử lại.');
         }
     }
 
@@ -85,10 +85,28 @@ class AdminController extends Controller
             $user->avatar = $uniqueFileName;
         }
         if ($user->save()) {
-            return redirect()->route('admin.list_user');
+            return redirect()->route('admin.list_user')->with('success', 'Người dùng đã được tạo thành công!');
         } else {
-            return redirect()->back();
+            return redirect()->back()->with('failed', 'Tạo người dùng thất bại. Vui lòng thử lại.');
         }
+    }
+
+    public function detailAnimal($id = 1)
+    {
+        $conservationStatus = ConservationStatus::all();
+        $dietType = DietType::all();
+        $animalCategory = Category::all();
+        $activityTime = ActivityTime::all();
+        $populationTrending = PopulationTrending::all();
+        $animalDetail = AnimalDetail::where('id', $id)->first();
+        return view('admin.animals.detail-animal', compact(
+            'conservationStatus',
+            'dietType',
+            'animalCategory',
+            'activityTime',
+            'populationTrending',
+            'animalDetail'
+        ));
     }
 
     public function listUser()
@@ -257,9 +275,10 @@ class AdminController extends Controller
         }
     }
 
-    public function addAnimalImage($id,Request $request){
+    public function addAnimalImage($id, Request $request)
+    {
         $data = $request->all();
-        if(isset($data['animal_image']) && $data['animal_image'] != null){
+        if (isset($data['animal_image']) && $data['animal_image'] != null) {
             $uniqueFileName = Str::uuid()->toString() . '.' . $data['animal_image']->extension();
             $data['animal_image']->move(public_path('animal_images'), $uniqueFileName);
             $animalImage = new Image();
@@ -267,15 +286,16 @@ class AdminController extends Controller
             $animalImage->detail_id = $id;
             $animalImage->save();
             return redirect()->route('list_animal_image', ['id' => $id]);
-        }else{
+        } else {
             return redirect()->back();
         }
     }
 
-    public function deleteImageAnimal($id){
+    public function deleteImageAnimal($id)
+    {
         Image::destroy($id);
         return redirect()->back();
-    } 
+    }
 
     public function listAnimal()
     {
@@ -288,21 +308,30 @@ class AdminController extends Controller
         $mode = 'area';
         $data = AnimalDetail::where('id', $id)->with('areas')->first();
         $areas = Area::all();
-        return view('admin.animals.list-animal-characteristic', compact('data', 'mode','areas'));
+        return view('admin.animals.list-animal-characteristic', compact('data', 'mode', 'areas'));
     }
 
-    public function addAreaAnimal($id,Request $request)
+    public function addAreaAnimal($id, Request $request)
     {
-        $animalDetail = AnimalDetail::where('id',$id)->first();
-        $animalDetail->areas()->attach($request->area_id);
-        return redirect()->route('list_animal_area', ['id' => $id]);
+        $animalDetail = AnimalDetail::where('id', $id)->first();
+
+        if ($animalDetail) {
+            try {
+                $animalDetail->areas()->attach($request->area_id);
+                return redirect()->route('list_animal_area', ['id' => $id])->with('success', 'Area được thêm thành công!');
+            } catch (\Exception $e) {
+                return redirect()->route('list_animal_area', ['id' => $id])->with('failed', 'Failed to add area.');
+            }
+        } else {
+            return redirect()->route('list_animal_area', ['id' => $id])->with('failed', 'Animal not found.');
+        }
     }
 
-    public function deleteAreaAnimal($id,$id2)
+    public function deleteAreaAnimal($id, $id2)
     {
-        $animalDetail = AnimalDetail::where('id',$id)->first();
+        $animalDetail = AnimalDetail::where('id', $id)->first();
         $animalDetail->areas()->detach($id2);
-        return redirect()->route('list_animal_area', ['id' => $id]);
+        return redirect()->route('list_animal_area', ['id' => $id])->with('success', 'Xóa thành công!');
     }
 
     public function listAnimalClimate($id)
@@ -310,21 +339,21 @@ class AdminController extends Controller
         $mode = 'climate';
         $data = AnimalDetail::where('id', $id)->with('climates')->first();
         $climates = Climate::all();
-        return view('admin.animals.list-animal-characteristic', compact('data', 'mode','climates'));
+        return view('admin.animals.list-animal-characteristic', compact('data', 'mode', 'climates'));
     }
 
-    public function addClimateAnimal($id,Request $request)
+    public function addClimateAnimal($id, Request $request)
     {
-        $animalDetail = AnimalDetail::where('id',$id)->first();
+        $animalDetail = AnimalDetail::where('id', $id)->first();
         $animalDetail->climates()->attach($request->climate_id);
-        return redirect()->route('list_animal_climate', ['id' => $id]);
+        return redirect()->route('list_animal_climate', ['id' => $id])->with('success', 'Thêm thành công!');
     }
 
-    public function deleteClimateAnimal($id,$id2)
+    public function deleteClimateAnimal($id, $id2)
     {
-        $animalDetail = AnimalDetail::where('id',$id)->first();
+        $animalDetail = AnimalDetail::where('id', $id)->first();
         $animalDetail->climates()->detach($id2);
-        return redirect()->route('list_animal_climate', ['id' => $id]);
+        return redirect()->route('list_animal_climate', ['id' => $id])->with('success', 'Xóa thành công!');
     }
 
     public function listAnimalNation($id)
@@ -332,21 +361,21 @@ class AdminController extends Controller
         $mode = 'nation';
         $data = AnimalDetail::where('id', $id)->with('nations')->first();
         $nations = Nation::all();
-        return view('admin.animals.list-animal-characteristic', compact('data', 'mode','nations'));
+        return view('admin.animals.list-animal-characteristic', compact('data', 'mode', 'nations'));
     }
 
-    public function addNationAnimal($id,Request $request)
+    public function addNationAnimal($id, Request $request)
     {
-        $animalDetail = AnimalDetail::where('id',$id)->first();
+        $animalDetail = AnimalDetail::where('id', $id)->first();
         $animalDetail->nations()->attach($request->nation_id);
-        return redirect()->route('list_animal_nation', ['id' => $id]);
+        return redirect()->route('list_animal_nation', ['id' => $id])->with('success', 'Thêm thành công!');
     }
 
-    public function deleteNationAnimal($id,$id2)
+    public function deleteNationAnimal($id, $id2)
     {
-        $animalDetail = AnimalDetail::where('id',$id)->first();
+        $animalDetail = AnimalDetail::where('id', $id)->first();
         $animalDetail->nations()->detach($id2);
-        return redirect()->route('list_animal_nation', ['id' => $id]);
+        return redirect()->route('list_animal_nation', ['id' => $id])->with('success', 'Xóa thành công!');
     }
 
     public function listAnimalColor($id)
@@ -354,21 +383,21 @@ class AdminController extends Controller
         $mode = 'color';
         $data = AnimalDetail::where('id', $id)->with('colors')->first();
         $colors = Color::all();
-        return view('admin.animals.list-animal-characteristic', compact('data', 'mode','colors'));
+        return view('admin.animals.list-animal-characteristic', compact('data', 'mode', 'colors'));
     }
 
-    public function addColorAnimal($id,Request $request)
+    public function addColorAnimal($id, Request $request)
     {
-        $animalDetail = AnimalDetail::where('id',$id)->first();
+        $animalDetail = AnimalDetail::where('id', $id)->first();
         $animalDetail->colors()->attach($request->color_id);
-        return redirect()->route('list_animal_color', ['id' => $id]);
+        return redirect()->route('list_animal_color', ['id' => $id])->with('success', 'Thêm thành công!');
     }
 
-    public function deleteColorAnimal($id,$id2)
+    public function deleteColorAnimal($id, $id2)
     {
-        $animalDetail = AnimalDetail::where('id',$id)->first();
+        $animalDetail = AnimalDetail::where('id', $id)->first();
         $animalDetail->colors()->detach($id2);
-        return redirect()->route('list_animal_color', ['id' => $id]);
+        return redirect()->route('list_animal_color', ['id' => $id])->with('success', 'Xóa thành công!');
     }
 
     public function listAnimalBiome($id)
@@ -376,21 +405,21 @@ class AdminController extends Controller
         $mode = 'biome';
         $data = AnimalDetail::where('id', $id)->with('biomes')->first();
         $biomes = Biome::all();
-        return view('admin.animals.list-animal-characteristic', compact('data', 'mode','biomes'));
+        return view('admin.animals.list-animal-characteristic', compact('data', 'mode', 'biomes'));
     }
 
-    public function addBiomeAnimal($id,Request $request)
+    public function addBiomeAnimal($id, Request $request)
     {
-        $animalDetail = AnimalDetail::where('id',$id)->first();
+        $animalDetail = AnimalDetail::where('id', $id)->first();
         $animalDetail->biomes()->attach($request->biome_id);
-        return redirect()->route('list_animal_biome', ['id' => $id]);
+        return redirect()->route('list_animal_biome', ['id' => $id])->with('success', 'Thêm thành công!');
     }
 
-    public function deleteBiomeAnimal($id,$id2)
+    public function deleteBiomeAnimal($id, $id2)
     {
-        $animalDetail = AnimalDetail::where('id',$id)->first();
+        $animalDetail = AnimalDetail::where('id', $id)->first();
         $animalDetail->biomes()->detach($id2);
-        return redirect()->route('list_animal_biome', ['id' => $id]);
+        return redirect()->route('list_animal_biome', ['id' => $id])->with('success', 'Xóa thành công!');
     }
 
     public function listAnimalOcean($id)
@@ -398,21 +427,21 @@ class AdminController extends Controller
         $mode = 'ocean';
         $data = AnimalDetail::where('id', $id)->with('oceans')->first();
         $oceans = Ocean::all();
-        return view('admin.animals.list-animal-characteristic', compact('data', 'mode','oceans'));
+        return view('admin.animals.list-animal-characteristic', compact('data', 'mode', 'oceans'));
     }
 
-    public function addOceanAnimal($id,Request $request)
+    public function addOceanAnimal($id, Request $request)
     {
-        $animalDetail = AnimalDetail::where('id',$id)->first();
+        $animalDetail = AnimalDetail::where('id', $id)->first();
         $animalDetail->oceans()->attach($request->ocean_id);
-        return redirect()->route('list_animal_ocean', ['id' => $id]);
+        return redirect()->route('list_animal_ocean', ['id' => $id])->with('success', 'Thêm thành công!');
     }
 
-    public function deleteOceanAnimal($id,$id2)
+    public function deleteOceanAnimal($id, $id2)
     {
-        $animalDetail = AnimalDetail::where('id',$id)->first();
+        $animalDetail = AnimalDetail::where('id', $id)->first();
         $animalDetail->oceans()->detach($id2);
-        return redirect()->route('list_animal_ocean', ['id' => $id]);
+        return redirect()->route('list_animal_ocean', ['id' => $id])->with('success', 'Xóa thành công!');
     }
 
     public function listAnimalImage($id)
@@ -422,7 +451,7 @@ class AdminController extends Controller
             $image->animalDetail;
         }
         $animalDetail = AnimalDetail::where('id', $id)->first();
-        return view('admin.animals.list-animal-image', compact('images','animalDetail'));
+        return view('admin.animals.list-animal-image', compact('images', 'animalDetail'));
     }
 
     public function addImgAnimalView()
@@ -468,7 +497,7 @@ class AdminController extends Controller
     public function listPostsView()
     {
         $posts = Post::with('user')->withCount('comments')->withCount('likes')->get();
-        return view('admin.posts.list',compact('posts'));
+        return view('admin.posts.list', compact('posts'));
     }
 
     public function deletePost($id)
@@ -487,7 +516,7 @@ class AdminController extends Controller
     public function approvalPost($id)
     {
         MessageContent::loadMessages();
-        $post = Post::where('id',$id)->first();
+        $post = Post::where('id', $id)->first();
         $post->status = Post::APPROVAL;
         if ($post->save()) {
             $message = MessageContent::getMessage('approval_success');
