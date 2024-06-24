@@ -9,6 +9,8 @@ return [
     'create_failed' => 'Tạo dữ liệu mới thất bại !!!',
     'update_success' => 'Cập nhật dữ liệu thành công !!!',
     'update_failed' => 'Cập nhật dữ liệu thất bại !!!',
+    'approval_success' => 'Phê duyệt thành công !!!',
+    'approval_failed' => 'Phê duyệt thất bại !!!',
     'delete_success' => 'Xóa thành công !!!',
     'delete_failed' => 'Xóa thất bại !!!',
 ];

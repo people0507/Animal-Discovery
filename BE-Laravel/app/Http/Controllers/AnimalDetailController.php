@@ -13,6 +13,7 @@ use App\Http\MessageContent;
 use App\Models\ConservationStatus;
 use App\Models\Color;
 use App\Models\Ocean;
+use App\Models\Post;
 
 class AnimalDetailController extends Controller
 {
@@ -39,6 +40,11 @@ class AnimalDetailController extends Controller
         $atlantic = OCEAN::where('id', Ocean::ATLANTIC)->first();
         $arctic = OCEAN::where('id', Ocean::ARCTIC)->first();
         return view('user.home', compact('areas', 'tropical', 'arid', 'temperate', 'cold', 'polar', 'green', 'blue', 'red', 'yellow', 'orange', 'brown', 'white', 'black', 'gray', 'purple', 'pacific', 'indian', 'atlantic', 'arctic'));
+    }
+
+    public function viewAnimalBlog(){
+        $posts = Post::where('status',Post::APPROVAL)->get();
+        return view('user.list-blog-2',compact('posts'));
     }
 
     public function color($id)
