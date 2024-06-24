@@ -41,6 +41,8 @@
 
         .animals-invert__item-img img {
             width: 275px;
+            object-fit: cover;
+            height: 100%;
             display: block;
             border-top-left-radius: 10px;
             border-bottom-left-radius: 10px;
@@ -90,21 +92,20 @@
             </h1>
             <div class="containers articles-container">
                 @foreach ($posts as $post)
-                <a href="https://animalia.bio/blog/animaliabio-latest-updates" class="animals-invert__item ">
-                    <div class="animals-invert__item-img">
-                        <img src="http://127.0.0.1:8000/posts/{{$post->image}}"
-                            onerror="this.src = '/img/error_img.svg'" alt="alt">
-                    </div>
-                    <div class="animals-invert__item-content">
-                        <h2 class="f-h2">{{$post->title}}</h2>
-                        <p>{{$post->content}}</p>
-                    </div>
-                </a>
+                    <a href="https://animalia.bio/blog/animaliabio-latest-updates" class="animals-invert__item ">
+                        <div class="animals-invert__item-img">
+                            <img src="http://127.0.0.1:8000/posts/{{ $post->image }}"
+                                onerror="this.src = '/img/error_img.svg'" alt="alt">
+                        </div>
+                        <div class="animals-invert__item-content">
+                            <h2 class="f-h2">{{ $post->title }}</h2>
+                            <p>{{ $post->content }}</p>
+                        </div>
+                    </a>
                 @endforeach
             </div>
             <div class="blog-pagination">
-                <span class="blog-load-more hidden" out-of=" out of " load-more="LOAD MORE" last_page="1"
-                    next_page="2">
+                <span class="blog-load-more hidden" out-of=" out of " load-more="LOAD MORE" last_page="1" next_page="2">
                     1 - 40 out of 15 <span class="fwb text-uppercase">
                         LOAD MORE
                     </span>

@@ -23,7 +23,64 @@
             border: 1px solid blue;
             /* Optional: different border for even items */
         }
+
+        .notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 15px;
+            background-color: #4CAF50;
+            /* Màu xanh */
+            color: white;
+            z-index: 9999;
+            display: none;
+            /* Ẩn ban đầu */
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .notification.success {
+            background-color: #4CAF50;
+            /* Màu xanh */
+        }
+
+        .notification.failed {
+            background-color: #ff3333;
+            /* Màu đỏ */
+            color: white;
+        }
+
+
+        .notification.show {
+            display: block;
+            animation: slideInRight 0.5s ease-out forwards;
+        }
+
+        @keyframes slideInRight {
+            0% {
+                transform: translateX(100%);
+            }
+
+            100% {
+                transform: translateX(0);
+            }
+        }
     </style>
+    @if (session('success'))
+        <div id="notification" class="notification success">
+            <p id="notification-message"></p>
+            <span id="close-notification" class="close-notification"><i class="fa fa-check" aria-hidden="true"></i>
+                {{ session('success') }}</span>
+        </div>
+    @endif
+
+    @if (session('failed'))
+        <div id="notification" class="notification failed">
+            <p id="notification-message"></p>
+            <span id="close-notification" class="close-notification"><i class="fa fa-exclamation-triangle"
+                    aria-hidden="true"></i> {{ session('failed') }}</span>
+        </div>
+    @endif
     <div class="page-breadcrumb">
         <div class="row">
             <div class="col-7 align-self-center">
@@ -31,7 +88,7 @@
                 <div class="d-flex align-items-center">
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb m-0 p-0">
-                            <li class="breadcrumb-item"><a href="index.html">Animal Management</a>
+                            <li class="breadcrumb-item"><a href="{{ route('admin.home') }}">Animal Management</a>
                             </li>
                         </ol>
                     </nav>
@@ -64,7 +121,10 @@
                                             <td
                                                 onclick="showModal('Great White Shark', 'Carcharodon carcharias', 'The great white shark is a large species of shark found in coastal waters.', 'https://news4sanantonio.com/resources/media2/16x9/full/1015/center/80/cab905ba-dbcd-43ab-99c7-3fbdf1eadd8b-large16x9_GettyImages515714114.jpg', 'Fish', '5 meters', '1.5 meters', '1100 kg', 'Large', '70 years', 'Shark sound', 'shark_video.mp4', 'Vulnerable', 'Diurnal', 'Carnivore')">
                                                 {{ $key + 1 }}</td>
-                                            <td>{{ $item->animal_name }}</td>
+                                            <td>
+                                                <a
+                                                    href="{{ route('detail_animal', ['id' => $item->id]) }}">{{ $item->animal_name }}</a>
+                                            </td>
                                             <td>{{ $item->animal_scientific_name }}</td>
                                             <td><a href="{{ route('list_animal_image', ['id' => $item->id]) }}">Xem Thêm</a>
                                             </td>
@@ -207,4 +267,35 @@
         alert('Xóa thành công!');
         $('#deleteConfirmationModal').modal('hide');
     });
+
+    // Hiển thị thông báo
+    function showNotification(message) {
+        var notification = document.querySelector('.notification');
+        notification.innerHTML = message;
+        notification.classList.add('show');
+
+        // Tự động ẩn sau 5 giây
+        setTimeout(function() {
+            hideNotification();
+        }, 5000); // Ẩn sau 5 giây
+    }
+
+    // Ẩn thông báo
+    function hideNotification() {
+        var notification = document.querySelector('.notification');
+        notification.classList.remove('show');
+    }
+
+    // Hiển thị thông báo khi trang được load
+    window.onload = function() {
+        var successMessage = "{{ session('success') }}";
+        var failedMessage = "{{ session('failed') }}";
+
+        if (failedMessage) {
+            showNotification(failedMessage);
+        }
+        if (successMessage) {
+            showNotification(successMessage);
+        }
+    };
 </script>

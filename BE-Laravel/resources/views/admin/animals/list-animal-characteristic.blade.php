@@ -17,7 +17,60 @@
         .full-description {
             display: none;
         }
+
+        .notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 15px;
+            background-color: #4CAF50;
+            /* Màu xanh */
+            color: white;
+            z-index: 9999;
+            display: none;
+            /* Ẩn ban đầu */
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .notification.success {
+            background-color: #4CAF50;
+        }
+
+        .notification.failed {
+            background-color: #ff3333;
+            color: white;
+        }
+
+
+        .notification.show {
+            display: block;
+            animation: slideInRight 0.5s ease-out forwards;
+        }
+
+        @keyframes slideInRight {
+            0% {
+                transform: translateX(100%);
+            }
+
+            100% {
+                transform: translateX(0);
+            }
+        }
     </style>
+    @if (session('success'))
+        <div id="notification" class="notification success">
+            <p id="notification-message"></p>
+            <span id="close-notification" class="close-notification">{{ session('success') }}</span>
+        </div>
+    @endif
+
+    @if (session('failed'))
+        <div id="notification" class="notification failed">
+            <p id="notification-message"></p>
+            <span id="close-notification" class="close-notification">{{ session('failed') }}</span>
+        </div>
+    @endif
     <div class="page-breadcrumb">
         <div class="row">
             <div class="col-7 align-self-center">
@@ -28,7 +81,7 @@
                 <div class="d-flex align-items-center">
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb m-0 p-0">
-                            <li class="breadcrumb-item"><a href="index.html">Animal Management</a>
+                            <li class="breadcrumb-item"><a href="{{ route('admin.home') }}">Animal Management</a>
                             </li>
                         </ol>
                     </nav>
@@ -36,24 +89,24 @@
             </div>
             <div class="col-5 text-right">
                 @if ($mode == 'area')
-                        <button class="btn btn-success" data-toggle="modal" data-target="#addAreaModal"><b
-                        style="font-size: 20px">+</b> Thêm châu lục</button>
-                        @elseif($mode == 'climate')
-                        <button class="btn btn-success" data-toggle="modal" data-target="#addClimateModal"><b
-                        style="font-size: 20px">+</b> Thêm Khí Hậu</button>
-                        @elseif($mode == 'nation')
-                        <button class="btn btn-success" data-toggle="modal" data-target="#addNationModal"><b
-                        style="font-size: 20px">+</b> Thêm Quốc Gia</button>
-                        @elseif($mode == 'color')
-                        <button class="btn btn-success" data-toggle="modal" data-target="#addColorModal"><b
-                        style="font-size: 20px">+</b> Thêm Màu Sắc</button>
-                        @elseif($mode == 'biome')
-                        <button class="btn btn-success" data-toggle="modal" data-target="#addBiomeModal"><b
-                        style="font-size: 20px">+</b> Thêm Quần Xã</button>
-                        @else
-                        <button class="btn btn-success" data-toggle="modal" data-target="#addOceanModal"><b
-                        style="font-size: 20px">+</b> Thêm Đại Dương</button>
-                        @endif
+                    <button class="btn btn-success" data-toggle="modal" data-target="#addAreaModal"><b
+                            style="font-size: 20px">+</b> Thêm châu lục</button>
+                @elseif($mode == 'climate')
+                    <button class="btn btn-success" data-toggle="modal" data-target="#addClimateModal"><b
+                            style="font-size: 20px">+</b> Thêm Khí Hậu</button>
+                @elseif($mode == 'nation')
+                    <button class="btn btn-success" data-toggle="modal" data-target="#addNationModal"><b
+                            style="font-size: 20px">+</b> Thêm Quốc Gia</button>
+                @elseif($mode == 'color')
+                    <button class="btn btn-success" data-toggle="modal" data-target="#addColorModal"><b
+                            style="font-size: 20px">+</b> Thêm Màu Sắc</button>
+                @elseif($mode == 'biome')
+                    <button class="btn btn-success" data-toggle="modal" data-target="#addBiomeModal"><b
+                            style="font-size: 20px">+</b> Thêm Quần Xã</button>
+                @else
+                    <button class="btn btn-success" data-toggle="modal" data-target="#addOceanModal"><b
+                            style="font-size: 20px">+</b> Thêm Đại Dương</button>
+                @endif
             </div>
         </div>
     </div>
@@ -137,35 +190,44 @@
                                                 <td>{{ $item->created_at }}</td>
                                                 <td>
                                                     <a href="#" class="icon-action delete-action" data-toggle="modal"
-                                                        data-target="#deleteConfirmationModal_{{$item->id}}" style="color: red;"><i
-                                                            class="icon-close"></i></a>
+                                                        data-target="#deleteConfirmationModal_{{ $item->id }}"
+                                                        style="color: red;"><i class="icon-close"></i></a>
                                                 </td>
                                             </tr>
                                             {{-- Modal delete --}}
-                                        <div class="modal fade" id="deleteConfirmationModal_{{$item->id}}" tabindex="-1" role="dialog"
-                                            aria-labelledby="deleteConfirmationModalLabel_{{$item->id}}" aria-hidden="true">
-                                            <div class="modal-dialog" role="document">
-                                                <div class="modal-content">
-                                                    <div class="modal-header">
-                                                        <h5 class="modal-title" id="deleteConfirmationModalLabel_{{$item->id}}">Xóa châu lục có động vật</h5>
-                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                            <span aria-hidden="true">&times;</span>
-                                                        </button>
-                                                    </div>
-                                                    <div class="modal-body">
-                                                        Bạn có chắc chắn muốn xóa châu lục này không?
-                                                    </div>
-                                                    <div class="modal-footer">
-                                                        <form action="{{route('admin.delete_area_animal',['id' => $data->id,'id2'=>$item->id])}}" method="POST">
-                                                            @csrf
-                                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Hủy</button>
-                                                            @method('DELETE')
-                                                            <button type="submit" class="btn btn-danger" id="confirmDeleteBtn">Xóa</button>
-                                                        </form>
+                                            <div class="modal fade" id="deleteConfirmationModal_{{ $item->id }}"
+                                                tabindex="-1" role="dialog"
+                                                aria-labelledby="deleteConfirmationModalLabel_{{ $item->id }}"
+                                                aria-hidden="true">
+                                                <div class="modal-dialog" role="document">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title"
+                                                                id="deleteConfirmationModalLabel_{{ $item->id }}">Xóa
+                                                                châu lục có động vật</h5>
+                                                            <button type="button" class="close" data-dismiss="modal"
+                                                                aria-label="Close">
+                                                                <span aria-hidden="true">&times;</span>
+                                                            </button>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            Bạn có chắc chắn muốn xóa châu lục này không?
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <form
+                                                                action="{{ route('admin.delete_area_animal', ['id' => $data->id, 'id2' => $item->id]) }}"
+                                                                method="POST">
+                                                                @csrf
+                                                                <button type="button" class="btn btn-secondary"
+                                                                    data-dismiss="modal">Hủy</button>
+                                                                @method('DELETE')
+                                                                <button type="submit" class="btn btn-danger"
+                                                                    id="confirmDeleteBtn">Xóa</button>
+                                                            </form>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
                                         @endforeach
                                     @elseif($mode == 'climate')
                                         @foreach ($data->climates as $key => $item)
@@ -183,8 +245,8 @@
                                                                 onclick="showMore({{ $key }})">Show more</span>
                                                         @endif
                                                     </div>
-                                                    <div class="full-description" id="full-description-{{ $key }}"
-                                                        style="display: none;">
+                                                    <div class="full-description"
+                                                        id="full-description-{{ $key }}" style="display: none;">
                                                         {{ $item->climate_description }}
                                                         <span class="show-less"
                                                             onclick="showLess({{ $key }})">Show less</span>
@@ -192,36 +254,46 @@
                                                 </td>
                                                 <td>{{ $item->created_at }}</td>
                                                 <td>
-                                                <a href="#" class="icon-action delete-action" data-toggle="modal"
-                                                        data-target="#deleteConfirmationModal_{{$item->id}}" style="color: red;"><i
-                                                            class="icon-close"></i></a>
+                                                    <a href="#" class="icon-action delete-action"
+                                                        data-toggle="modal"
+                                                        data-target="#deleteConfirmationModal_{{ $item->id }}"
+                                                        style="color: red;"><i class="icon-close"></i></a>
                                                 </td>
                                             </tr>
-                                              {{-- Modal delete --}}
-                                        <div class="modal fade" id="deleteConfirmationModal_{{$item->id}}" tabindex="-1" role="dialog"
-                                            aria-labelledby="deleteConfirmationModalLabel_{{$item->id}}" aria-hidden="true">
-                                            <div class="modal-dialog" role="document">
-                                                <div class="modal-content">
-                                                    <div class="modal-header">
-                                                        <h5 class="modal-title" id="deleteConfirmationModalLabel_{{$item->id}}">Xóa vùng khí hậu có động vật</h5>
-                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                            <span aria-hidden="true">&times;</span>
-                                                        </button>
-                                                    </div>
-                                                    <div class="modal-body">
-                                                        Bạn có chắc chắn muốn xóa vùng khí hậu này không?
-                                                    </div>
-                                                    <div class="modal-footer">
-                                                        <form action="{{route('admin.delete_climate_animal',['id' => $data->id,'id2'=>$item->id])}}" method="POST">
-                                                            @csrf
-                                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Hủy</button>
-                                                            @method('DELETE')
-                                                            <button type="submit" class="btn btn-danger" id="confirmDeleteBtn">Xóa</button>
-                                                        </form>
+                                            {{-- Modal delete --}}
+                                            <div class="modal fade" id="deleteConfirmationModal_{{ $item->id }}"
+                                                tabindex="-1" role="dialog"
+                                                aria-labelledby="deleteConfirmationModalLabel_{{ $item->id }}"
+                                                aria-hidden="true">
+                                                <div class="modal-dialog" role="document">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title"
+                                                                id="deleteConfirmationModalLabel_{{ $item->id }}">Xóa
+                                                                vùng khí hậu có động vật</h5>
+                                                            <button type="button" class="close" data-dismiss="modal"
+                                                                aria-label="Close">
+                                                                <span aria-hidden="true">&times;</span>
+                                                            </button>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            Bạn có chắc chắn muốn xóa vùng khí hậu này không?
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <form
+                                                                action="{{ route('admin.delete_climate_animal', ['id' => $data->id, 'id2' => $item->id]) }}"
+                                                                method="POST">
+                                                                @csrf
+                                                                <button type="button" class="btn btn-secondary"
+                                                                    data-dismiss="modal">Hủy</button>
+                                                                @method('DELETE')
+                                                                <button type="submit" class="btn btn-danger"
+                                                                    id="confirmDeleteBtn">Xóa</button>
+                                                            </form>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
                                         @endforeach
                                     @elseif($mode == 'nation')
                                         @foreach ($data->nations as $key => $item)
@@ -230,36 +302,46 @@
                                                 <td>{{ $item->nation_name }}</td>
                                                 <td>{{ $item->created_at }}</td>
                                                 <td>
-                                                <a href="#" class="icon-action delete-action" data-toggle="modal"
-                                                        data-target="#deleteConfirmationModal_{{$item->id}}" style="color: red;"><i
-                                                            class="icon-close"></i></a>
+                                                    <a href="#" class="icon-action delete-action"
+                                                        data-toggle="modal"
+                                                        data-target="#deleteConfirmationModal_{{ $item->id }}"
+                                                        style="color: red;"><i class="icon-close"></i></a>
                                                 </td>
                                             </tr>
-                                                  {{-- Modal delete --}}
-                                        <div class="modal fade" id="deleteConfirmationModal_{{$item->id}}" tabindex="-1" role="dialog"
-                                            aria-labelledby="deleteConfirmationModalLabel_{{$item->id}}" aria-hidden="true">
-                                            <div class="modal-dialog" role="document">
-                                                <div class="modal-content">
-                                                    <div class="modal-header">
-                                                        <h5 class="modal-title" id="deleteConfirmationModalLabel_{{$item->id}}">Xóa quốc gia có động vật</h5>
-                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                            <span aria-hidden="true">&times;</span>
-                                                        </button>
-                                                    </div>
-                                                    <div class="modal-body">
-                                                        Bạn có chắc chắn muốn xóa quốc gia này không?
-                                                    </div>
-                                                    <div class="modal-footer">
-                                                        <form action="{{route('admin.delete_nation_animal',['id' => $data->id,'id2'=>$item->id])}}" method="POST">
-                                                            @csrf
-                                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Hủy</button>
-                                                            @method('DELETE')
-                                                            <button type="submit" class="btn btn-danger" id="confirmDeleteBtn">Xóa</button>
-                                                        </form>
+                                            {{-- Modal delete --}}
+                                            <div class="modal fade" id="deleteConfirmationModal_{{ $item->id }}"
+                                                tabindex="-1" role="dialog"
+                                                aria-labelledby="deleteConfirmationModalLabel_{{ $item->id }}"
+                                                aria-hidden="true">
+                                                <div class="modal-dialog" role="document">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title"
+                                                                id="deleteConfirmationModalLabel_{{ $item->id }}">Xóa
+                                                                quốc gia có động vật</h5>
+                                                            <button type="button" class="close" data-dismiss="modal"
+                                                                aria-label="Close">
+                                                                <span aria-hidden="true">&times;</span>
+                                                            </button>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            Bạn có chắc chắn muốn xóa quốc gia này không?
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <form
+                                                                action="{{ route('admin.delete_nation_animal', ['id' => $data->id, 'id2' => $item->id]) }}"
+                                                                method="POST">
+                                                                @csrf
+                                                                <button type="button" class="btn btn-secondary"
+                                                                    data-dismiss="modal">Hủy</button>
+                                                                @method('DELETE')
+                                                                <button type="submit" class="btn btn-danger"
+                                                                    id="confirmDeleteBtn">Xóa</button>
+                                                            </form>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
                                         @endforeach
                                     @elseif($mode == 'color')
                                         @foreach ($data->colors as $key => $item)
@@ -277,8 +359,8 @@
                                                                 onclick="showMore({{ $key }})">Show more</span>
                                                         @endif
                                                     </div>
-                                                    <div class="full-description" id="full-description-{{ $key }}"
-                                                        style="display: none;">
+                                                    <div class="full-description"
+                                                        id="full-description-{{ $key }}" style="display: none;">
                                                         {{ $item->color_description }}
                                                         <span class="show-less"
                                                             onclick="showLess({{ $key }})">Show less</span>
@@ -286,36 +368,46 @@
                                                 </td>
                                                 <td>{{ $item->created_at }}</td>
                                                 <td>
-                                                <a href="#" class="icon-action delete-action" data-toggle="modal"
-                                                        data-target="#deleteConfirmationModal_{{$item->id}}" style="color: red;"><i
-                                                            class="icon-close"></i></a>
+                                                    <a href="#" class="icon-action delete-action"
+                                                        data-toggle="modal"
+                                                        data-target="#deleteConfirmationModal_{{ $item->id }}"
+                                                        style="color: red;"><i class="icon-close"></i></a>
                                                 </td>
                                             </tr>
-                                                      {{-- Modal delete --}}
-                                        <div class="modal fade" id="deleteConfirmationModal_{{$item->id}}" tabindex="-1" role="dialog"
-                                            aria-labelledby="deleteConfirmationModalLabel_{{$item->id}}" aria-hidden="true">
-                                            <div class="modal-dialog" role="document">
-                                                <div class="modal-content">
-                                                    <div class="modal-header">
-                                                        <h5 class="modal-title" id="deleteConfirmationModalLabel_{{$item->id}}">Xóa màu sắc có động vật</h5>
-                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                            <span aria-hidden="true">&times;</span>
-                                                        </button>
-                                                    </div>
-                                                    <div class="modal-body">
-                                                        Bạn có chắc chắn muốn xóa màu sắc này không?
-                                                    </div>
-                                                    <div class="modal-footer">
-                                                        <form action="{{route('admin.delete_color_animal',['id' => $data->id,'id2'=>$item->id])}}" method="POST">
-                                                            @csrf
-                                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Hủy</button>
-                                                            @method('DELETE')
-                                                            <button type="submit" class="btn btn-danger" id="confirmDeleteBtn">Xóa</button>
-                                                        </form>
+                                            {{-- Modal delete --}}
+                                            <div class="modal fade" id="deleteConfirmationModal_{{ $item->id }}"
+                                                tabindex="-1" role="dialog"
+                                                aria-labelledby="deleteConfirmationModalLabel_{{ $item->id }}"
+                                                aria-hidden="true">
+                                                <div class="modal-dialog" role="document">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title"
+                                                                id="deleteConfirmationModalLabel_{{ $item->id }}">Xóa
+                                                                màu sắc có động vật</h5>
+                                                            <button type="button" class="close" data-dismiss="modal"
+                                                                aria-label="Close">
+                                                                <span aria-hidden="true">&times;</span>
+                                                            </button>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            Bạn có chắc chắn muốn xóa màu sắc này không?
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <form
+                                                                action="{{ route('admin.delete_color_animal', ['id' => $data->id, 'id2' => $item->id]) }}"
+                                                                method="POST">
+                                                                @csrf
+                                                                <button type="button" class="btn btn-secondary"
+                                                                    data-dismiss="modal">Hủy</button>
+                                                                @method('DELETE')
+                                                                <button type="submit" class="btn btn-danger"
+                                                                    id="confirmDeleteBtn">Xóa</button>
+                                                            </form>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
                                         @endforeach
                                     @elseif($mode == 'biome')
                                         @foreach ($data->biomes as $key => $item)
@@ -342,36 +434,46 @@
                                                 </td>
                                                 <td>{{ $item->created_at }}</td>
                                                 <td>
-                                                <a href="#" class="icon-action delete-action" data-toggle="modal"
-                                                        data-target="#deleteConfirmationModal_{{$item->id}}" style="color: red;"><i
-                                                            class="icon-close"></i></a>
+                                                    <a href="#" class="icon-action delete-action"
+                                                        data-toggle="modal"
+                                                        data-target="#deleteConfirmationModal_{{ $item->id }}"
+                                                        style="color: red;"><i class="icon-close"></i></a>
                                                 </td>
                                             </tr>
-                                                         {{-- Modal delete --}}
-                                        <div class="modal fade" id="deleteConfirmationModal_{{$item->id}}" tabindex="-1" role="dialog"
-                                            aria-labelledby="deleteConfirmationModalLabel_{{$item->id}}" aria-hidden="true">
-                                            <div class="modal-dialog" role="document">
-                                                <div class="modal-content">
-                                                    <div class="modal-header">
-                                                        <h5 class="modal-title" id="deleteConfirmationModalLabel_{{$item->id}}">Xóa quần xã sinh thái có động vật</h5>
-                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                            <span aria-hidden="true">&times;</span>
-                                                        </button>
-                                                    </div>
-                                                    <div class="modal-body">
-                                                        Bạn có chắc chắn muốn xóa quần xã sinh thái này không?
-                                                    </div>
-                                                    <div class="modal-footer">
-                                                        <form action="{{route('admin.delete_biome_animal',['id' => $data->id,'id2'=>$item->id])}}" method="POST">
-                                                            @csrf
-                                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Hủy</button>
-                                                            @method('DELETE')
-                                                            <button type="submit" class="btn btn-danger" id="confirmDeleteBtn">Xóa</button>
-                                                        </form>
+                                            {{-- Modal delete --}}
+                                            <div class="modal fade" id="deleteConfirmationModal_{{ $item->id }}"
+                                                tabindex="-1" role="dialog"
+                                                aria-labelledby="deleteConfirmationModalLabel_{{ $item->id }}"
+                                                aria-hidden="true">
+                                                <div class="modal-dialog" role="document">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title"
+                                                                id="deleteConfirmationModalLabel_{{ $item->id }}">Xóa
+                                                                quần xã sinh thái có động vật</h5>
+                                                            <button type="button" class="close" data-dismiss="modal"
+                                                                aria-label="Close">
+                                                                <span aria-hidden="true">&times;</span>
+                                                            </button>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            Bạn có chắc chắn muốn xóa quần xã sinh thái này không?
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <form
+                                                                action="{{ route('admin.delete_biome_animal', ['id' => $data->id, 'id2' => $item->id]) }}"
+                                                                method="POST">
+                                                                @csrf
+                                                                <button type="button" class="btn btn-secondary"
+                                                                    data-dismiss="modal">Hủy</button>
+                                                                @method('DELETE')
+                                                                <button type="submit" class="btn btn-danger"
+                                                                    id="confirmDeleteBtn">Xóa</button>
+                                                            </form>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
                                         @endforeach
                                     @else
                                         @foreach ($data->oceans as $key => $item)
@@ -383,36 +485,46 @@
                                                 <td>{{ $item->ocean_description }}</td>
                                                 <td>{{ $item->created_at }}</td>
                                                 <td>
-                                                <a href="#" class="icon-action delete-action" data-toggle="modal"
-                                                        data-target="#deleteConfirmationModal_{{$item->id}}" style="color: red;"><i
-                                                            class="icon-close"></i></a>
+                                                    <a href="#" class="icon-action delete-action"
+                                                        data-toggle="modal"
+                                                        data-target="#deleteConfirmationModal_{{ $item->id }}"
+                                                        style="color: red;"><i class="icon-close"></i></a>
                                                 </td>
                                             </tr>
-                                                            {{-- Modal delete --}}
-                                        <div class="modal fade" id="deleteConfirmationModal_{{$item->id}}" tabindex="-1" role="dialog"
-                                            aria-labelledby="deleteConfirmationModalLabel_{{$item->id}}" aria-hidden="true">
-                                            <div class="modal-dialog" role="document">
-                                                <div class="modal-content">
-                                                    <div class="modal-header">
-                                                        <h5 class="modal-title" id="deleteConfirmationModalLabel_{{$item->id}}">Xóa đại dương có động vật</h5>
-                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                            <span aria-hidden="true">&times;</span>
-                                                        </button>
-                                                    </div>
-                                                    <div class="modal-body">
-                                                        Bạn có chắc chắn muốn xóa đại dương này không?
-                                                    </div>
-                                                    <div class="modal-footer">
-                                                        <form action="{{route('admin.delete_ocean_animal',['id' => $data->id,'id2'=>$item->id])}}" method="POST">
-                                                            @csrf
-                                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Hủy</button>
-                                                            @method('DELETE')
-                                                            <button type="submit" class="btn btn-danger" id="confirmDeleteBtn">Xóa</button>
-                                                        </form>
+                                            {{-- Modal delete --}}
+                                            <div class="modal fade" id="deleteConfirmationModal_{{ $item->id }}"
+                                                tabindex="-1" role="dialog"
+                                                aria-labelledby="deleteConfirmationModalLabel_{{ $item->id }}"
+                                                aria-hidden="true">
+                                                <div class="modal-dialog" role="document">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title"
+                                                                id="deleteConfirmationModalLabel_{{ $item->id }}">Xóa
+                                                                đại dương có động vật</h5>
+                                                            <button type="button" class="close" data-dismiss="modal"
+                                                                aria-label="Close">
+                                                                <span aria-hidden="true">&times;</span>
+                                                            </button>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            Bạn có chắc chắn muốn xóa đại dương này không?
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <form
+                                                                action="{{ route('admin.delete_ocean_animal', ['id' => $data->id, 'id2' => $item->id]) }}"
+                                                                method="POST">
+                                                                @csrf
+                                                                <button type="button" class="btn btn-secondary"
+                                                                    data-dismiss="modal">Hủy</button>
+                                                                @method('DELETE')
+                                                                <button type="submit" class="btn btn-danger"
+                                                                    id="confirmDeleteBtn">Xóa</button>
+                                                            </form>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
                                         @endforeach
                                     @endif
 
@@ -460,198 +572,204 @@
 
     @if ($mode == 'area')
         {{-- Modal Create  --}}
-    <div class="modal fade" id="addAreaModal" tabindex="-1" role="dialog"
-        aria-labelledby="addAreaModal" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content" style=" padding:20px; border-radius: 12px;">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="addAreaModal">Thêm châu lục có loài động vật này </h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
+        <div class="modal fade" id="addAreaModal" tabindex="-1" role="dialog" aria-labelledby="addAreaModal"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content" style=" padding:20px; border-radius: 12px;">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="addAreaModal">Thêm châu lục có loài động vật này </h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="{{ route('admin.add_area_animal', ['id' => $data->id]) }}" id="addContinentForm"
+                            enctype="multipart/form-data" method="post">
+                            @csrf
+                            <div class="form-group">
+                                <label for="continentTitle">Tên châu lục</label>
+                                <select name="area_id" id="" class="form-control">
+                                    @foreach ($areas as $item)
+                                        <option value="{{ $item->id }}">{{ $item->area_name }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+                        <button type="submit" class="btn btn-primary" form="addContinentForm">Lưu</button>
+                    </div>
+                    </form>
                 </div>
-                <div class="modal-body">
-                    <form action="{{route('admin.add_area_animal',['id' => $data->id])}}" id="addContinentForm" enctype="multipart/form-data" method="post">
-                        @csrf
-                        <div class="form-group">
-                            <label for="continentTitle">Tên châu lục</label>
-                            <select name="area_id" id="" class="form-control">
-                                @foreach ($areas as $item)
-                                    <option value="{{$item->id}}">{{$item->area_name}}</option>
-                                @endforeach
-                            </select>
-                        </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
-                    <button type="submit" class="btn btn-primary" form="addContinentForm">Lưu</button>
-                </div>
-                </form>
             </div>
         </div>
-    </div>
     @elseif($mode == 'climate')
         {{-- Modal Create  --}}
-        <div class="modal fade" id="addClimateModal" tabindex="-1" role="dialog"
-        aria-labelledby="addClimateModal" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content" style=" padding:20px; border-radius: 12px;">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="addClimateModal">Thêm vùng khí hậu có loài động vật này </h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
+        <div class="modal fade" id="addClimateModal" tabindex="-1" role="dialog" aria-labelledby="addClimateModal"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content" style=" padding:20px; border-radius: 12px;">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="addClimateModal">Thêm vùng khí hậu có loài động vật này </h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="{{ route('admin.add_climate_animal', ['id' => $data->id]) }}" id="addContinentForm"
+                            enctype="multipart/form-data" method="post">
+                            @csrf
+                            <div class="form-group">
+                                <label for="continentTitle">Tên Vùng Khí Hậu</label>
+                                <select name="climate_id" id="" class="form-control">
+                                    @foreach ($climates as $item)
+                                        <option value="{{ $item->id }}">{{ $item->climate_name }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+                        <button type="submit" class="btn btn-primary" form="addContinentForm">Lưu</button>
+                    </div>
+                    </form>
                 </div>
-                <div class="modal-body">
-                    <form action="{{route('admin.add_climate_animal',['id' => $data->id])}}" id="addContinentForm" enctype="multipart/form-data" method="post">
-                        @csrf
-                        <div class="form-group">
-                            <label for="continentTitle">Tên Vùng Khí Hậu</label>
-                            <select name="climate_id" id="" class="form-control">
-                                @foreach ($climates as $item)
-                                    <option value="{{$item->id}}">{{$item->climate_name}}</option>
-                                @endforeach
-                            </select>
-                        </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
-                    <button type="submit" class="btn btn-primary" form="addContinentForm">Lưu</button>
-                </div>
-                </form>
             </div>
         </div>
-    </div>
     @elseif($mode == 'nation')
-      {{-- Modal Create  --}}
-      <div class="modal fade" id="addNationModal" tabindex="-1" role="dialog"
-        aria-labelledby="addNationModal" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content" style=" padding:20px; border-radius: 12px;">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="addNationModal">Thêm quốc gia có loài động vật này </h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
+        {{-- Modal Create  --}}
+        <div class="modal fade" id="addNationModal" tabindex="-1" role="dialog" aria-labelledby="addNationModal"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content" style=" padding:20px; border-radius: 12px;">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="addNationModal">Thêm quốc gia có loài động vật này </h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="{{ route('admin.add_nation_animal', ['id' => $data->id]) }}" id="addContinentForm"
+                            enctype="multipart/form-data" method="post">
+                            @csrf
+                            <div class="form-group">
+                                <label for="continentTitle">Tên Vùng Khí Hậu</label>
+                                <select name="nation_id" id="" class="form-control">
+                                    @foreach ($nations as $item)
+                                        <option value="{{ $item->id }}">{{ $item->nation_name }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+                        <button type="submit" class="btn btn-primary" form="addContinentForm">Lưu</button>
+                    </div>
+                    </form>
                 </div>
-                <div class="modal-body">
-                    <form action="{{route('admin.add_nation_animal',['id' => $data->id])}}" id="addContinentForm" enctype="multipart/form-data" method="post">
-                        @csrf
-                        <div class="form-group">
-                            <label for="continentTitle">Tên Vùng Khí Hậu</label>
-                            <select name="nation_id" id="" class="form-control">
-                                @foreach ($nations as $item)
-                                    <option value="{{$item->id}}">{{$item->nation_name}}</option>
-                                @endforeach
-                            </select>
-                        </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
-                    <button type="submit" class="btn btn-primary" form="addContinentForm">Lưu</button>
-                </div>
-                </form>
             </div>
         </div>
-    </div>
     @elseif($mode == 'color')
-     {{-- Modal Create  --}}
-     <div class="modal fade" id="addColorModal" tabindex="-1" role="dialog"
-        aria-labelledby="addColorModal" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content" style=" padding:20px; border-radius: 12px;">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="addColorModal">Thêm màu sắc có loài động vật này </h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
+        {{-- Modal Create  --}}
+        <div class="modal fade" id="addColorModal" tabindex="-1" role="dialog" aria-labelledby="addColorModal"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content" style=" padding:20px; border-radius: 12px;">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="addColorModal">Thêm màu sắc có loài động vật này </h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="{{ route('admin.add_color_animal', ['id' => $data->id]) }}" id="addContinentForm"
+                            enctype="multipart/form-data" method="post">
+                            @csrf
+                            <div class="form-group">
+                                <label for="continentTitle">Tên Màu Sắc</label>
+                                <select name="color_id" id="" class="form-control">
+                                    @foreach ($colors as $item)
+                                        <option value="{{ $item->id }}">{{ $item->color_name }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+                        <button type="submit" class="btn btn-primary" form="addContinentForm">Lưu</button>
+                    </div>
+                    </form>
                 </div>
-                <div class="modal-body">
-                    <form action="{{route('admin.add_color_animal',['id' => $data->id])}}" id="addContinentForm" enctype="multipart/form-data" method="post">
-                        @csrf
-                        <div class="form-group">
-                            <label for="continentTitle">Tên Màu Sắc</label>
-                            <select name="color_id" id="" class="form-control">
-                                @foreach ($colors as $item)
-                                    <option value="{{$item->id}}">{{$item->color_name}}</option>
-                                @endforeach
-                            </select>
-                        </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
-                    <button type="submit" class="btn btn-primary" form="addContinentForm">Lưu</button>
-                </div>
-                </form>
             </div>
         </div>
-    </div>
     @elseif($mode == 'biome')
-     {{-- Modal Create  --}}
-     <div class="modal fade" id="addBiomeModal" tabindex="-1" role="dialog"
-        aria-labelledby="addBiomeModal" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content" style=" padding:20px; border-radius: 12px;">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="addBiomeModal">Thêm màu quần xã sinh học có loài động vật này </h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
+        {{-- Modal Create  --}}
+        <div class="modal fade" id="addBiomeModal" tabindex="-1" role="dialog" aria-labelledby="addBiomeModal"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content" style=" padding:20px; border-radius: 12px;">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="addBiomeModal">Thêm màu quần xã sinh học có loài động vật này </h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="{{ route('admin.add_biome_animal', ['id' => $data->id]) }}" id="addContinentForm"
+                            enctype="multipart/form-data" method="post">
+                            @csrf
+                            <div class="form-group">
+                                <label for="continentTitle">Tên Quần Xã Sinh Học</label>
+                                <select name="biome_id" id="" class="form-control">
+                                    @foreach ($biomes as $item)
+                                        <option value="{{ $item->id }}">{{ $item->biome_name }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+                        <button type="submit" class="btn btn-primary" form="addContinentForm">Lưu</button>
+                    </div>
+                    </form>
                 </div>
-                <div class="modal-body">
-                    <form action="{{route('admin.add_biome_animal',['id' => $data->id])}}" id="addContinentForm" enctype="multipart/form-data" method="post">
-                        @csrf
-                        <div class="form-group">
-                            <label for="continentTitle">Tên Quần Xã Sinh Học</label>
-                            <select name="biome_id" id="" class="form-control">
-                                @foreach ($biomes as $item)
-                                    <option value="{{$item->id}}">{{$item->biome_name}}</option>
-                                @endforeach
-                            </select>
-                        </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
-                    <button type="submit" class="btn btn-primary" form="addContinentForm">Lưu</button>
-                </div>
-                </form>
             </div>
         </div>
-    </div>
     @else
         {{-- Modal Create  --}}
-     <div class="modal fade" id="addOceanModal" tabindex="-1" role="dialog"
-        aria-labelledby="addOceanModal" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content" style=" padding:20px; border-radius: 12px;">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="addOceanModal">Thêm màu đại dương có loài động vật này </h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
+        <div class="modal fade" id="addOceanModal" tabindex="-1" role="dialog" aria-labelledby="addOceanModal"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content" style=" padding:20px; border-radius: 12px;">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="addOceanModal">Thêm màu đại dương có loài động vật này </h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="{{ route('admin.add_ocean_animal', ['id' => $data->id]) }}" id="addContinentForm"
+                            enctype="multipart/form-data" method="post">
+                            @csrf
+                            <div class="form-group">
+                                <label for="continentTitle">Tên Đại Dương</label>
+                                <select name="ocean_id" id="" class="form-control">
+                                    @foreach ($oceans as $item)
+                                        <option value="{{ $item->id }}">{{ $item->ocean_name }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+                        <button type="submit" class="btn btn-primary" form="addContinentForm">Lưu</button>
+                    </div>
+                    </form>
                 </div>
-                <div class="modal-body">
-                    <form action="{{route('admin.add_ocean_animal',['id' => $data->id])}}" id="addContinentForm" enctype="multipart/form-data" method="post">
-                        @csrf
-                        <div class="form-group">
-                            <label for="continentTitle">Tên Đại Dương</label>
-                            <select name="ocean_id" id="" class="form-control">
-                                @foreach ($oceans as $item)
-                                    <option value="{{$item->id}}">{{$item->ocean_name}}</option>
-                                @endforeach
-                            </select>
-                        </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
-                    <button type="submit" class="btn btn-primary" form="addContinentForm">Lưu</button>
-                </div>
-                </form>
             </div>
         </div>
-    </div>
     @endif
-    
+
 
     {{-- Modal Edit  --}}
     <!-- Modal -->
@@ -722,4 +840,34 @@
         document.getElementById('full-description-' + id).style.display = 'none';
         document.getElementById('description-' + id).style.display = 'block';
     }
+    // Hiển thị thông báo
+    function showNotification(message) {
+        var notification = document.querySelector('.notification');
+        notification.innerHTML = message;
+        notification.classList.add('show');
+
+        // Tự động ẩn sau 5 giây
+        setTimeout(function() {
+            hideNotification();
+        }, 5000); // Ẩn sau 5 giây
+    }
+
+    // Ẩn thông báo
+    function hideNotification() {
+        var notification = document.querySelector('.notification');
+        notification.classList.remove('show');
+    }
+
+    // Hiển thị thông báo khi trang được load
+    window.onload = function() {
+        var successMessage = "{{ session('success') }}";
+        var failedMessage = "{{ session('failed') }}";
+
+        if (failedMessage) {
+            showNotification(failedMessage);
+        }
+        if (successMessage) {
+            showNotification(successMessage);
+        }
+    };
 </script>
