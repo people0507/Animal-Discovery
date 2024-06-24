@@ -73,6 +73,7 @@ img {
     cursor: pointer;
     transition: all 300ms ease;
     font-size: 0.9rem;
+    border: 0.7px solid hsl(152, 75%, 60%);
 }
 
 .btn:hover {
@@ -1196,9 +1197,11 @@ display: -ms-flexbox;
 
 .modal-header,
 .modal-footer {
-    padding: 10px;
+    padding: 20px;
     background-color: #f1f1f1;
     border-bottom: 1px solid #888;
+    border-radius: var(--card-border-radius);
+    border: none;
 }
 
 .modal-body {
