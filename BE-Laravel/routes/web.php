@@ -109,7 +109,7 @@ Route::prefix('animal_detail')->group(function () {
     Route::get('/get_animal_detail/{id}', [AnimalDetailController::class, 'getAnimalDetail']);
     Route::get('/fillter-climate/{id}', [AnimalDetailController::class, 'climateZone'])->name('climate-zone');
     Route::get('/fillter-biome/{id}', [AnimalDetailController::class, 'biome'])->name('biome');
-    Route::get('/list-blog',[AnimalDetailController::class, 'viewAnimalBlog'])->name('user.list-blog');
+    Route::get('/list-blog', [AnimalDetailController::class, 'viewAnimalBlog'])->name('user.list-blog');
 });
 
 Route::prefix('animal_post')->group(function () {
@@ -133,6 +133,7 @@ Route::prefix('admin')->middleware('checklogin')->group(function () {
 
     // Animal
     Route::get('/list_animal', [AdminController::class, 'listAnimal'])->name('list_animal');
+    Route::get('/detail_animal/{id}', [AdminController::class, 'detailAnimal'])->name('detail_animal');
     Route::get('/animals/add', [AdminController::class, 'viewAddAnimal'])->name('admin.add-animal');
     Route::post('/create_animal_detail', [AdminController::class, 'createAnimalDetail'])->name('admin.create-animal');
     Route::get('/animals/edit/{id}', [AdminController::class, 'viewEditAnimal'])->name('admin.edit-animal');

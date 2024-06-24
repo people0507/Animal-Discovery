@@ -1,6 +1,66 @@
 @extends('admin.main')
 @section('title', 'Home Page Admin')
 @section('content_admin')
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+
+    <style>
+        .notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 15px;
+            background-color: #4CAF50;
+            /* Màu xanh */
+            color: white;
+            z-index: 9999;
+            display: none;
+            /* Ẩn ban đầu */
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .notification.success {
+            background-color: #4CAF50;
+            /* Màu xanh */
+        }
+
+        .notification.failed {
+            background-color: #ff3333;
+            /* Màu đỏ */
+            color: white;
+        }
+
+
+        .notification.show {
+            display: block;
+            animation: slideInRight 0.5s ease-out forwards;
+        }
+
+        @keyframes slideInRight {
+            0% {
+                transform: translateX(100%);
+            }
+
+            100% {
+                transform: translateX(0);
+            }
+        }
+    </style>
+    @if (session('success'))
+        <div id="notification" class="notification success">
+            <p id="notification-message"></p>
+            <span id="close-notification" class="close-notification"><i class="fa fa-check" aria-hidden="true"></i>
+                {{ session('success') }}</span>
+        </div>
+    @endif
+
+    @if (session('failed'))
+        <div id="notification" class="notification failed">
+            <p id="notification-message"></p>
+            <span id="close-notification" class="close-notification"><i class="fa fa-exclamation-triangle"
+                    aria-hidden="true"></i> {{ session('failed') }}</span>
+        </div>
+    @endif
     <div class="page-breadcrumb">
         <div class="row">
             <div class="col-7 align-self-center">
@@ -8,7 +68,7 @@
                 <div class="d-flex align-items-center">
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb m-0 p-0">
-                            <li class="breadcrumb-item"><a href="index.html">Animal Management</a>
+                            <li class="breadcrumb-item"><a href="{{ route('admin.home') }}">Animal Management</a>
                             </li>
                         </ol>
                     </nav>
@@ -17,76 +77,81 @@
         </div>
     </div>
     <div class="container-fluid">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="card">
-                            <div class="card-body">
-                                <h4 class="card-title">Danh sách người dùng</h4>
-                                <div class="table-responsive">
-                                    <table id="multi_col_order"
-                                        class="table table-striped table-bordered display no-wrap" style="width:100%">
-                                        <thead>
-                                            <tr>
-                                                <th>STT</th>
-                                                <th>Tên Người Dùng</th>
-                                                <th>Email</th>
-                                                <th>Giới Tính</th>
-                                                <th>Ngày Sinh</th>
-                                                <th>Ảnh Đại Diện</th>
-                                                <th>Vai Trò</th>
-                                                <th>Thời Gian Tạo</th>
-                                                <th>Thao Tác</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            @foreach ($users as $user)
-                                            <tr>
-                                                <td>1</td>
-                                                <td>{{$user->name}}</td>
-                                                <td>{{$user->email}}</td>
-                                                @if($user->gender == 1)
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Danh sách người dùng</h4>
+                        <div class="table-responsive">
+                            <table id="multi_col_order" class="table table-striped table-bordered display no-wrap"
+                                style="width:100%">
+                                <thead>
+                                    <tr>
+                                        <th>STT</th>
+                                        <th>Tên Người Dùng</th>
+                                        <th>Email</th>
+                                        <th>Giới Tính</th>
+                                        <th>Ngày Sinh</th>
+                                        <th>Ảnh Đại Diện</th>
+                                        <th>Vai Trò</th>
+                                        <th>Thời Gian Tạo</th>
+                                        <th>Thao Tác</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach ($users as $user)
+                                        <tr>
+                                            <td>1</td>
+                                            <td>{{ $user->name }}</td>
+                                            <td>{{ $user->email }}</td>
+                                            @if ($user->gender == 1)
                                                 <td>Nam</td>
-                                                @elseif($user->gender == 2)
+                                            @elseif($user->gender == 2)
                                                 <td>Nữ</td>
-                                                @else
+                                            @else
                                                 <td></td>
-                                                @endif
-                                                <td>{{$user->birthdate}}</td>
-                                                @if($user->avatar != null)
-                                                <td><img src="http://localhost:8000/avatars/{{$user->avatar}}" width="100"></td>
-                                                @else
-                                                <td><img src="https://i.pinimg.com/originals/6a/44/f0/6a44f0e35b10e6ed063eeebf7ed844f9.jpg" width="100"></td>
-                                                @endif
-                                                @if($user->role_id == 1)
+                                            @endif
+                                            <td>{{ $user->birthdate }}</td>
+                                            @if ($user->avatar != null)
+                                                <td><img src="http://localhost:8000/avatars/{{ $user->avatar }}"
+                                                        width="100"></td>
+                                            @else
+                                                <td><img src="https://i.pinimg.com/originals/6a/44/f0/6a44f0e35b10e6ed063eeebf7ed844f9.jpg"
+                                                        width="100"></td>
+                                            @endif
+                                            @if ($user->role_id == 1)
                                                 <td>Admin</td>
-                                                @else
+                                            @else
                                                 <td>User</td>
-                                                @endif
-                                                <td>{{$user->created_at}}</td>
-                                                <td>
+                                            @endif
+                                            <td>{{ $user->created_at }}</td>
+                                            <td>
                                                 <a href="#" class="icon-action delete-action" data-toggle="modal"
-                                                data-target="#deleteConfirmationModal_{{$user->id}}" style="color: red;"><i
-                                                    class="icon-close"></i></a>
-                                                    /
-                                                    <a href="{{route('admin.view_edit_user',['id' => $user->id])}}" class="icon-action" onclick="event.stopPropagation();"><i class="icon-settings"></i></a>
-                                                </td>
-                                            </tr>
-                                            @endforeach
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
+                                                    data-target="#deleteConfirmationModal_{{ $user->id }}"
+                                                    style="color: red;"><i class="icon-close"></i></a>
+                                                /
+                                                <a href="{{ route('admin.view_edit_user', ['id' => $user->id]) }}"
+                                                    class="icon-action" onclick="event.stopPropagation();"><i
+                                                        class="icon-settings"></i></a>
+                                            </td>
+                                        </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
     <!-- Modal -->
-    <div class="modal fade" id="animalModal" tabindex="-1" role="dialog" aria-labelledby="animalModalLabel" aria-hidden="true">
+    <div class="modal fade" id="animalModal" tabindex="-1" role="dialog" aria-labelledby="animalModalLabel"
+        aria-hidden="true">
         <div class="modal-dialog modal-dialog-right" role="document">
             <div class="modal-content">
                 <div class="modal-header">
                     <h3 class="modal-title" id="animalModalLabel">
-                       <b>Animal Details</b>
+                        <b>Animal Details</b>
                     </h3>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
@@ -114,49 +179,81 @@
     </div>
     <!-- Delete Modal -->
     @foreach ($users as $key => $user)
-    <div class="modal fade" id="deleteConfirmationModal_{{$user->id}}" tabindex="-1" role="dialog"
-        aria-labelledby="deleteConfirmationModalLabel_{{$user->id}}" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="deleteConfirmationModalLabel_{{$user->id}}">Xóa thông tin người dùng</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    Bạn có chắc chắn muốn xóa thông tin người dùng này không
-                </div>
-                <div class="modal-footer">
-                    <form action="{{ route('delete_user', ['id' => $user->id]) }}" method="POST">
-                    @csrf
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Hủy</button>
-                    @method('DELETE')
-                    <button type="submit" class="btn btn-danger" id="confirmDeleteBtn">Xóa</button>
-                    </form>
+        <div class="modal fade" id="deleteConfirmationModal_{{ $user->id }}" tabindex="-1" role="dialog"
+            aria-labelledby="deleteConfirmationModalLabel_{{ $user->id }}" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="deleteConfirmationModalLabel_{{ $user->id }}">Xóa thông tin người
+                            dùng</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        Bạn có chắc chắn muốn xóa thông tin người dùng này không
+                    </div>
+                    <div class="modal-footer">
+                        <form action="{{ route('delete_user', ['id' => $user->id]) }}" method="POST">
+                            @csrf
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Hủy</button>
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-danger" id="confirmDeleteBtn">Xóa</button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
     @endforeach
 @endsection
-     <script>
-        function showModal(name, scientificName, description, imageSrc, category, length, height, weight, size, lifespan, sound, video, conservationStatus, activity, diet) {
-            document.getElementById('animalName').innerText = name;
-            document.getElementById('animalScientificName').innerText = scientificName;
-            document.getElementById('animalDescription').innerText = description;
-            document.getElementById('animalImage').src = imageSrc;
-            document.getElementById('animalLength').innerText = length;
-            document.getElementById('animalHeight').innerText = height;
-            document.getElementById('animalWeight').innerText = weight;
-            document.getElementById('animalSize').innerText = size;
-            document.getElementById('animalLifespan').innerText = lifespan;
-            document.getElementById('animalSound').innerText = sound;
-            document.getElementById('animalVideo').innerText = video;
-            document.getElementById('animalConservationStatus').innerText = conservationStatus;
-            document.getElementById('animalActivity').innerText = activity;
-            document.getElementById('animalDiet').innerText = diet;
-            document.getElementById('animalCategory').innerText = category;
-            $('#animalModal').modal('show');
+<script>
+    function showModal(name, scientificName, description, imageSrc, category, length, height, weight, size, lifespan,
+        sound, video, conservationStatus, activity, diet) {
+        document.getElementById('animalName').innerText = name;
+        document.getElementById('animalScientificName').innerText = scientificName;
+        document.getElementById('animalDescription').innerText = description;
+        document.getElementById('animalImage').src = imageSrc;
+        document.getElementById('animalLength').innerText = length;
+        document.getElementById('animalHeight').innerText = height;
+        document.getElementById('animalWeight').innerText = weight;
+        document.getElementById('animalSize').innerText = size;
+        document.getElementById('animalLifespan').innerText = lifespan;
+        document.getElementById('animalSound').innerText = sound;
+        document.getElementById('animalVideo').innerText = video;
+        document.getElementById('animalConservationStatus').innerText = conservationStatus;
+        document.getElementById('animalActivity').innerText = activity;
+        document.getElementById('animalDiet').innerText = diet;
+        document.getElementById('animalCategory').innerText = category;
+        $('#animalModal').modal('show');
+    }
+    // Hiển thị thông báo
+    function showNotification(message) {
+        var notification = document.querySelector('.notification');
+        notification.innerHTML = message;
+        notification.classList.add('show');
+
+        // Tự động ẩn sau 5 giây
+        setTimeout(function() {
+            hideNotification();
+        }, 5000); // Ẩn sau 5 giây
+    }
+
+    // Ẩn thông báo
+    function hideNotification() {
+        var notification = document.querySelector('.notification');
+        notification.classList.remove('show');
+    }
+
+    // Hiển thị thông báo khi trang được load
+    window.onload = function() {
+        var successMessage = "{{ session('success') }}";
+        var failedMessage = "{{ session('failed') }}";
+
+        if (failedMessage) {
+            showNotification(failedMessage);
         }
-        </script>
+        if (successMessage) {
+            showNotification(successMessage);
+        }
+    };
+</script>
