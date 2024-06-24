@@ -28,7 +28,7 @@
                 <input type="search" placeholder="Search for creators inspirations">
             </div>
             <div class="create">
-                <label class="btn btn-primary" for="create-post">Create</label>
+                {{-- <label class="btn btn-primary" for="create-post" id="createPostButton">Create</label> --}}
                 <div class="profile-picture">
                     <img src="{{ asset('users/social_assets/images/profile-1.jpg') }}">
                 </div>
@@ -117,7 +117,9 @@
 
                 </div>
                 <!-- ======================= END OF SIDEBAR ======================= -->
-                <label for="create-post" class="btn btn-primary">Create Post</label>
+                <label for="create-post" class="btn btn-primary" id="createPostButton">
+                    Create Post
+                </label>
             </div>
             <!-- ================ END OF LEFT ================ -->
 
@@ -132,6 +134,165 @@
                             <div class="user">
                                 <div class="profile-picture">
                                     <img src="{{ asset('users/social_assets/images/profile-10.jpg') }}" alt="">
+                                </div>
+                                <div class="ingo">
+                                    <h3>Lana Rose</h3>
+                                    <small>Dubai, 15 MINUTED AGO</small>
+                                </div>
+                            </div>
+                            <span class="edit">
+                                <i class="uil uil-ellipsis-h"></i>
+                            </span>
+                        </div>
+
+                        <div class="photo">
+                            <img src="{{ asset('users/social_assets/images/feed-1.jpg') }}" alt="">
+                        </div>
+
+                        <div class="action-button">
+                            <div class="interaction-buttons">
+                                <span id="likeIcon"><i class="far fa-heart"></i></span>
+                                <span id="commentIcon"><i class="uil uil-comment-dots"></i></span>
+                                <span><i class="uil uil-share-alt"></i></span>
+
+                            </div>
+                            <div class="bookmark">
+                                <span><i class="uil uil-bookmark-full"></i></span>
+                            </div>
+                        </div>
+
+                        <div class="liked-by">
+                            <span><img src="{{ asset('users/social_assets/images/profile-10.jpg') }}"
+                                    alt=""></span>
+                            <span><img src="{{ asset('users/social_assets/images/profile-15.jpg') }}"
+                                    alt=""></span>
+                            <span><img src="{{ asset('users/social_assets/images/profile-13.jpg') }}"
+                                    alt=""></span>
+                            <p>Like by <b>Ernest Aritn</b> and <b>2, 330 others</b></p>
+                        </div>
+
+                        <div class="caption">
+                            <p>
+                                <b>Lana Rose</b> Lorem ipsum dolor, sit amet consectetur adipisicing.
+                                <span class="harsh-tag">#lifestyle</span>
+                            </p>
+                        </div>
+
+                        <div class="comments text-muted">"View all 277 comments"</div>
+                    </div>
+                    <div class="feed">
+                        <!-- ================ FEED 1 ================ -->
+                        <div class="head">
+                            <div class="user">
+                                <div class="profile-picture">
+                                    <img src="{{ asset('users/social_assets/images/profile-10.jpg') }}"
+                                        alt="">
+                                </div>
+                                <div class="ingo">
+                                    <h3>Lana Rose</h3>
+                                    <small>Dubai, 15 MINUTED AGO</small>
+                                </div>
+                            </div>
+                            <span class="edit">
+                                <i class="uil uil-ellipsis-h"></i>
+                            </span>
+                        </div>
+
+                        <div class="photo">
+                            <img src="{{ asset('users/social_assets/images/feed-1.jpg') }}" alt="">
+                        </div>
+
+                        <div class="action-button">
+                            <div class="interaction-buttons">
+                                <span id="likeIcon"><i class="far fa-heart"></i></span>
+                                <span id="commentIcon"><i class="uil uil-comment-dots"></i></span>
+                                <span><i class="uil uil-share-alt"></i></span>
+
+                            </div>
+                            <div class="bookmark">
+                                <span><i class="uil uil-bookmark-full"></i></span>
+                            </div>
+                        </div>
+
+                        <div class="liked-by">
+                            <span><img src="{{ asset('users/social_assets/images/profile-10.jpg') }}"
+                                    alt=""></span>
+                            <span><img src="{{ asset('users/social_assets/images/profile-15.jpg') }}"
+                                    alt=""></span>
+                            <span><img src="{{ asset('users/social_assets/images/profile-13.jpg') }}"
+                                    alt=""></span>
+                            <p>Like by <b>Ernest Aritn</b> and <b>2, 330 others</b></p>
+                        </div>
+
+                        <div class="caption">
+                            <p>
+                                <b>Lana Rose</b> Lorem ipsum dolor, sit amet consectetur adipisicing.
+                                <span class="harsh-tag">#lifestyle</span>
+                            </p>
+                        </div>
+
+                        <div class="comments text-muted">"View all 277 comments"</div>
+                    </div>
+                    <div class="feed">
+                        <!-- ================ FEED 1 ================ -->
+                        <div class="head">
+                            <div class="user">
+                                <div class="profile-picture">
+                                    <img src="{{ asset('users/social_assets/images/profile-10.jpg') }}"
+                                        alt="">
+                                </div>
+                                <div class="ingo">
+                                    <h3>Lana Rose</h3>
+                                    <small>Dubai, 15 MINUTED AGO</small>
+                                </div>
+                            </div>
+                            <span class="edit">
+                                <i class="uil uil-ellipsis-h"></i>
+                            </span>
+                        </div>
+
+                        <div class="photo">
+                            <img src="{{ asset('users/social_assets/images/feed-1.jpg') }}" alt="">
+                        </div>
+
+                        <div class="action-button">
+                            <div class="interaction-buttons">
+                                <span id="likeIcon"><i class="far fa-heart"></i></span>
+                                <span id="commentIcon"><i class="uil uil-comment-dots"></i></span>
+                                <span><i class="uil uil-share-alt"></i></span>
+
+                            </div>
+                            <div class="bookmark">
+                                <span><i class="uil uil-bookmark-full"></i></span>
+                            </div>
+                        </div>
+
+                        <div class="liked-by">
+                            <span><img src="{{ asset('users/social_assets/images/profile-10.jpg') }}"
+                                    alt=""></span>
+                            <span><img src="{{ asset('users/social_assets/images/profile-15.jpg') }}"
+                                    alt=""></span>
+                            <span><img src="{{ asset('users/social_assets/images/profile-13.jpg') }}"
+                                    alt=""></span>
+                            <p>Like by <b>Ernest Aritn</b> and <b>2, 330 others</b></p>
+                        </div>
+
+                        <div class="caption">
+                            <p>
+                                <b>Lana Rose</b> Lorem ipsum dolor, sit amet consectetur adipisicing.
+                                <span class="harsh-tag">#lifestyle</span>
+                            </p>
+                        </div>
+
+                        <div class="comments text-muted">"View all 277 comments"</div>
+                    </div>
+                    <div class="feed">
+                        <!-- ================ FEED 1 ================ -->
+                        <div class="head">
+                            <div class="user">
+                                <div class="profile-picture">
+                                    <img src="{{ asset('users/social_assets/images/profile-10.jpg') }}"
+                                        alt="">
                                 </div>
                                 <div class="ingo">
                                     <h3>Lana Rose</h3>
@@ -240,8 +401,10 @@
     </div>
     <div id="commentModal" class="modal">
         <div class="modal-content">
-            <span class="close">&times;</span>
-            <h2>Leave a Comment</h2>
+            <div class="modal-header">
+                <span class="close">&times;</span>
+                <h2>Leave a Comment</h2>
+            </div>
             <div class="comments-modal">
                 <div class="comment container">
                     <div class="c-user">
@@ -317,13 +480,99 @@
         </div>
     </div>
 
-    <div id="createPostModal">
-
+    {{-- Modal Create  --}}
+    <div id="addContinentModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close" id="closeModal">&times;</span>
+                <h5 class="modal-title">Thêm bài viết</h5>
+            </div>
+            <div class="modal-body">
+                <form id="addContinentForm" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label for="continentTitle">Tên bài viết</label>
+                        <input type="text" class="form-control" name="" id="continentTitle"
+                            placeholder="Nhập tiêu đề bài viết" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="continentDescription">Mô tả</label>
+                        <textarea class="form-control" name="" id="continentDescription" rows="3" placeholder="Nhập mô tả"
+                            required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="continentTitle">Đường dẫn về động vật</label>
+                        <input type="text" class="form-control" name="" id="continentTitle"
+                            placeholder="Nhập đường dẫn động vật" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="continentImage">Hình ảnh</label>
+                        <input type="file" class="form-control-file" name="" id="continentImage" required>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-primary" style="margin-right: 10px"
+                    form="addContinentForm">Lưu</button>
+                <button type="button" class="btn btn-secondary" id="closeModalButton">Đóng</button>
+            </div>
+        </div>
     </div>
 
     {{-- <script src="./assets/js/main.js"></script> --}}
     <script src="{{ asset('users/social_assets/js/main.js') }}"></script>
+    <!-- jQuery, Popper.js, and Bootstrap JS -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var createPostButton = document.getElementById('createPostButton');
+            var addContinentModal = document.getElementById('addContinentModal');
+            var closeModal = document.getElementById('closeModal');
+            var closeModalButton = document.getElementById('closeModalButton');
+            var addContinentForm = document.getElementById('addContinentForm');
 
+            // Mở modal khi nhấn nút "Create Post"
+            createPostButton.addEventListener('click', function() {
+                addContinentModal.style.display = 'flex';
+            });
+
+            // Đóng modal khi nhấn nút "X" hoặc "Đóng"
+            closeModal.addEventListener('click', function() {
+                addContinentModal.style.display = 'none';
+            });
+
+            closeModalButton.addEventListener('click', function() {
+                addContinentModal.style.display = 'none';
+            });
+
+            // Đóng modal khi nhấn ra ngoài modal
+            window.addEventListener('click', function(event) {
+                if (event.target === addContinentModal) {
+                    addContinentModal.style.display = 'none';
+                }
+            });
+
+            // Xử lý submit form thêm mới châu lục
+            addContinentForm.addEventListener('submit', function(event) {
+                event.preventDefault();
+
+                var formData = new FormData(addContinentForm);
+
+                // Xử lý form data (ví dụ: gửi form data đến server bằng fetch API hoặc XMLHttpRequest)
+                fetch('/your-api-endpoint', {
+                        method: 'POST',
+                        body: formData,
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        console.log('Success:', data);
+                        // Đóng modal sau khi submit thành công
+                        addContinentModal.style.display = 'none';
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                    });
+            });
+        });
+    </script>
 </body>
 
 
