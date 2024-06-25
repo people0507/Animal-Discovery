@@ -53,7 +53,7 @@
                 <div class="dropdown-menu rounded-0 rounded-bottom m-0">
                     <a href="animal.html" class="dropdown-item">List Animals</a>
                     <a href="membership.html" class="dropdown-item">List Blog</a>
-                    <a href="{{ route('user.social') }}" class="dropdown-item">Social</a>
+                    <a href="{{ route('user.list_post_social') }}" class="dropdown-item">Social</a>
                     <a href="testimonial.html" class="dropdown-item">List Animal For Color</a>
                     <a href="testimonial.html" class="dropdown-item">List Animal For Area</a>
                     <a href="404.html" class="dropdown-item">404 Page</a>

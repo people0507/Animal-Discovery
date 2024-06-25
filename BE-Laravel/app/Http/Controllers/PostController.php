@@ -6,10 +6,19 @@ use Illuminate\Http\Request;
 use App\Models\Post;
 use App\Models\Comment;
 use App\Models\Like;
+use Auth;
 use Str;
 use App\Http\MessageContent;
 class PostController extends Controller
 {
+    public function listPostSocial(){
+        $posts = Post::with('user')->withCount('comments')->withCount('likes')->get();
+        foreach ($posts as $post) {
+            $post->liked_by_user = $post->likes->where('user_id', Auth::id())->count() > 0;
+        }
+        return view('user.social',compact('posts'));
+    }
+
     public function createPost(Request $request){
         MessageContent::loadMessages();
 
@@ -25,7 +34,7 @@ class PostController extends Controller
         $post->image = $uniqueFileName;
         $post->status = Post::PENDING;
         $post->content = $data['content'];
-        $post->user_id = 1;
+        $post->user_id = Auth::id();
         $post->save();
         
         if ($post->save()) {

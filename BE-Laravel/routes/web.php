@@ -57,9 +57,9 @@ Route::get('/blog-detail', function () {
 })->name('user.blog-detail');
 
 // social
-Route::get('/social', function () {
-    return view('user.social');
-})->name('user.social');
+// Route::get('/social', function () {
+//     return view('user.social');
+// })->name('user.social');
 
 // Route::get('/categories-list', function () {
 //     return view('user.categories-animal');
@@ -113,7 +113,8 @@ Route::prefix('animal_detail')->group(function () {
 });
 
 Route::prefix('animal_post')->group(function () {
-    Route::post('/create_animal_post', [PostController::class, 'createPost']);
+    Route::get('/list_post_social', [PostController::class, 'listPostSocial'])->name('user.list_post_social');
+    Route::post('/create_animal_post', [PostController::class, 'createPost'])->name('user.create_animal_post');
     Route::post('/edit_animal_post', [PostController::class, 'editPost']);
     Route::post('/delete_animal_post', [PostController::class, 'deletePost']);
     Route::post('/create_animal_comment', [PostController::class, 'createComment']);
