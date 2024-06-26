@@ -127,65 +127,79 @@
             <div class="middle">
 
                 <!-- ================ FEEDS ================ -->
-                 @foreach ($posts as $post)
-                <div class="feeds">
-                    <div class="feed">
-                        <!-- ================ FEED 1 ================ -->
-                        <div class="head">
-                            <div class="user">
-                                <div class="profile-picture">
-                                    <img src="{{ asset('users/social_assets/images/profile-10.jpg') }}" alt="">
+                @foreach ($posts as $key => $post)
+                    <div class="feeds">
+                        <div class="feed">
+                            <!-- ================ FEED 1 ================ -->
+                            <div class="head">
+                                <div class="user">
+                                    <div class="profile-picture">
+                                        <img src="{{ asset('users/social_assets/images/profile-10.jpg') }}"
+                                            alt="">
+                                    </div>
+                                    <div class="ingo">
+                                        <h3>{{ $post->user->name }}</h3>
+                                        <small>Dubai, 15 MINUTED AGO</small>
+                                    </div>
                                 </div>
-                                <div class="ingo">
-                                    <h3>{{$post->user->name}}</h3>
-                                    <small>Dubai, 15 MINUTED AGO</small>
+                                <span class="edit">
+                                    <i class="uil uil-ellipsis-h"></i>
+                                </span>
+                            </div>
+
+                            <div class="content" style="margin:5px 0px">
+                                {{-- <p>{{ $post->content }}</p> --}}
+                                <div class="description" id="description-{{ $key }}">
+                                    {{ Str::limit($post->content, 300) }}
+                                    @if (strlen($post->content) > 300)
+                                        <span class="show-more" onclick="showMore({{ $key }})">Show
+                                            more</span>
+                                    @endif
+                                </div>
+                                <div class="full-description" id="full-description-{{ $key }}"
+                                    style="display: none;">
+                                    {{ $post->content }}
+                                    <span class="show-less" onclick="showLess({{ $key }})">Show
+                                        less</span>
                                 </div>
                             </div>
-                            <span class="edit">
-                                <i class="uil uil-ellipsis-h"></i>
-                            </span>
-                        </div>
-                        
-                        <div class="content" style="margin:5px 0px">
-                            <p>{{$post->content}}</p>
-                        </div>
 
-                        <div class="photo">
-                            <img src="http://localhost:8000/posts/{{$post->image}}" alt="">
-                        </div>
-
-                        <div class="action-button">
-                            <div class="interaction-buttons">
-                                <span id="likeIcon"><i class="far fa-heart"></i></span>
-                                <span id="commentIcon"><i class="uil uil-comment-dots"></i></span>
-                                <span><i class="uil uil-share-alt"></i></span>
-
+                            <div class="photo">
+                                <img src="http://localhost:8000/posts/{{ $post->image }}" alt="">
                             </div>
-                            <div class="bookmark">
-                                <span><i class="uil uil-bookmark-full"></i></span>
+
+                            <div class="action-button">
+                                <div class="interaction-buttons">
+                                    <span id="likeIcon"><i class="far fa-heart"></i></span>
+                                    <span id="commentIcon"><i class="uil uil-comment-dots"></i></span>
+                                    <span><i class="uil uil-share-alt"></i></span>
+
+                                </div>
+                                <div class="bookmark">
+                                    <span><i class="uil uil-bookmark-full"></i></span>
+                                </div>
                             </div>
-                        </div>
 
-                        <div class="liked-by">
-                            <span><img src="{{ asset('users/social_assets/images/profile-10.jpg') }}"
-                                    alt=""></span>
-                            <span><img src="{{ asset('users/social_assets/images/profile-15.jpg') }}"
-                                    alt=""></span>
-                            <span><img src="{{ asset('users/social_assets/images/profile-13.jpg') }}"
-                                    alt=""></span>
-                            <p>Like by <b>Ernest Aritn</b> and <b>{{$post->likes_count}} others</b></p>
-                        </div>
+                            <div class="liked-by">
+                                <span><img src="{{ asset('users/social_assets/images/profile-10.jpg') }}"
+                                        alt=""></span>
+                                <span><img src="{{ asset('users/social_assets/images/profile-15.jpg') }}"
+                                        alt=""></span>
+                                <span><img src="{{ asset('users/social_assets/images/profile-13.jpg') }}"
+                                        alt=""></span>
+                                <p>Like by <b>Ernest Aritn</b> and <b>{{ $post->likes_count }} others</b></p>
+                            </div>
 
-                        <div class="caption">
-                            <p>
-                                <b>{{$post->user->name}}</b> {{$post->title}}
-                                <span class="harsh-tag">#lifestyle</span>
-                            </p>
-                        </div>
+                            <div class="caption">
+                                <p>
+                                    <b>{{ $post->user->name }}</b> {{ $post->title }}
+                                    <span class="harsh-tag">#lifestyle</span>
+                                </p>
+                            </div>
 
-                        <div class="comments text-muted">"View all {{$post->comments_count}} comments"</div>
+                            <div class="comments text-muted">"View all {{ $post->comments_count }} comments"</div>
+                        </div>
                     </div>
-                </div>
                 @endforeach
             </div>
     </main>
@@ -417,6 +431,16 @@
                     });
             });
         });
+
+        function showMore(id) {
+            document.getElementById('description-' + id).style.display = 'none';
+            document.getElementById('full-description-' + id).style.display = 'block';
+        }
+
+        function showLess(id) {
+            document.getElementById('full-description-' + id).style.display = 'none';
+            document.getElementById('description-' + id).style.display = 'block';
+        }
     </script>
 </body>
 
