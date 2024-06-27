@@ -147,7 +147,7 @@
                                                 </div>
                                                 <div class="box-char">
                                                     <a href="{{ route('list_animal_biome', ['id' => $item->id]) }}">Quần
-                                                        thể</a>
+                                                        xã</a>
                                                 </div>
                                                 <div class="box-char">
                                                     <a href="{{ route('list_animal_ocean', ['id' => $item->id]) }}">Đại
@@ -263,10 +263,6 @@
         });
     });
 
-    $('#confirmDeleteBtn').click(function() {
-        alert('Xóa thành công!');
-        $('#deleteConfirmationModal').modal('hide');
-    });
 
     // Hiển thị thông báo
     function showNotification(message) {

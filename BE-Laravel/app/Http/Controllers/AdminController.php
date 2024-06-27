@@ -38,7 +38,7 @@ class AdminController extends Controller
     {
         MessageContent::loadMessages();
         $data = $request->all();
-
+        try {
         if (isset($data['avatar'])) {
             $uniqueFileName = Str::uuid()->toString() . '.' . $data['avatar']->extension();
             $data['avatar']->move(public_path('avatars'), $uniqueFileName);
@@ -53,10 +53,12 @@ class AdminController extends Controller
         if (isset($uniqueFileName) && $uniqueFileName != '') {
             $user->avatar = $uniqueFileName;
         }
-        if ($user->save()) {
-            return redirect()->route('admin.list_user')->with('success', 'Người dùng đã được tạo thành công!');
-        } else {
-            return back()->with('failed', 'Tạo người dùng thất bại. Vui lòng thử lại.');
+        $user->save();
+        $message = MessageContent::getMessage('create_success');
+            return redirect()->route('admin.list_user')->with('success', $message);
+        } catch (\Exception $e) {
+        $message = MessageContent::getMessage('create_failed');
+            return back()->with('failed', $message);
         }
     }
 
@@ -72,23 +74,27 @@ class AdminController extends Controller
     {
         MessageContent::loadMessages();
         $data = $request->all();
-
+        try {
         if (isset($data['avatar'])) {
             $uniqueFileName = Str::uuid()->toString() . '.' . $data['avatar']->extension();
             $data['avatar']->move(public_path('avatars'), $uniqueFileName);
         }
         $user = User::where('id', $id)->first();
+        $user->name = $data['username'];
+        $user->email = $data['email'];
         $user->gender = $data['gender'];
         $user->role_id = $data['role_id'];
         $user->birthdate = $data['birthdate'];
         if (isset($uniqueFileName) && $uniqueFileName != '') {
             $user->avatar = $uniqueFileName;
         }
-        if ($user->save()) {
-            return redirect()->route('admin.list_user')->with('success', 'Người dùng đã được tạo thành công!');
-        } else {
-            return redirect()->back()->with('failed', 'Tạo người dùng thất bại. Vui lòng thử lại.');
-        }
+        $user->save();
+        $message = MessageContent::getMessage('update_success');
+        return redirect()->route('admin.list_user')->with('success', $message);
+    } catch (\Exception $e) {
+        $message = MessageContent::getMessage('update_failed');
+        return redirect()->back()->with('failed', $message);
+    }
     }
 
     public function detailAnimal($id = 1)
@@ -117,15 +123,15 @@ class AdminController extends Controller
 
     public function deleteUser($id)
     {
+        try {
         MessageContent::loadMessages();
-        $deletedRows = User::destroy($id);
-        if ($deletedRows >  0) {
-            $message = MessageContent::getMessage('delete_success');
-            return redirect()->route('admin.list_user')->with('success', $message);
-        } else {
-            $message = MessageContent::getMessage('delete_success');
-            return redirect()->back()->with('failed', $message);
-        }
+        User::destroy($id);
+        $message = MessageContent::getMessage('delete_success');
+        return redirect()->route('admin.list_user')->with('success', $message);
+    } catch (\Exception $e) {
+        $message = MessageContent::getMessage('delete_success');
+        return redirect()->back()->with('failed', $message);
+    }      
     }
 
     public function viewAddAnimal()
@@ -143,6 +149,7 @@ class AdminController extends Controller
     {
         MessageContent::loadMessages();
         $data = $request->all();
+        try {
         if (isset($data['animal_sound']) && $data['animal_sound'] != null) {
             $uniqueFileSoundName = Str::uuid()->toString() . '.' . $data['animal_sound']->extension();
             $data['animal_sound']->move(public_path('animal_sounds'), $uniqueFileSoundName);
@@ -182,20 +189,9 @@ class AdminController extends Controller
         $animalDetail->created_by = Auth::id();
         $animalDetail->save();
 
-        // if (isset($data['animal_image']) && $data['animal_image'] != null) {
-        //     foreach ($data['animal_image'] as $img) {
-        //         $uniqueFileName = Str::uuid()->toString() . '.' . $img->extension();
-        //         $img->move(public_path('animal_images'), $uniqueFileName);
-        //         $animalImage = new Image();
-        //         $animalImage->image_name = $uniqueFileName;
-        //         $animalImage->detail_id = 1;
-        //         $animalImage->save();
-        //     }
-        // }
-        if ($animalDetail->save()) {
-            $message = MessageContent::getMessage('create_success');
+        $message = MessageContent::getMessage('create_success');
             return redirect()->route('list_animal')->with('success', $message);
-        } else {
+        } catch (\Exception $e) {
             $message = MessageContent::getMessage('create_failed');
             return redirect()->back()->with('failed', $message);
         }
@@ -217,6 +213,7 @@ class AdminController extends Controller
     {
         MessageContent::loadMessages();
         $data = $request->all();
+        try {
         if (isset($data['animal_sound']) && $data['animal_sound'] != null) {
             $uniqueFileSoundName = Str::uuid()->toString() . '.' . $data['animal_sound']->extension();
             $data['animal_sound']->move(public_path('animal_sounds'), $uniqueFileSoundName);
@@ -256,45 +253,39 @@ class AdminController extends Controller
         $animalDetail->created_by = Auth::id();
         $animalDetail->save();
 
-        // if (isset($data['animal_image']) && $data['animal_image'] != null) {
-        //     foreach ($data['animal_image'] as $img) {
-        //         $uniqueFileName = Str::uuid()->toString() . '.' . $img->extension();
-        //         $img->move(public_path('animal_images'), $uniqueFileName);
-        //         $animalImage = new Image();
-        //         $animalImage->image_name = $uniqueFileName;
-        //         $animalImage->detail_id = 1;
-        //         $animalImage->save();
-        //     }
-        // }
-        if ($animalDetail->save()) {
-            $message = MessageContent::getMessage('update_success');
-            return redirect()->route('list_animal')->with('success', $message);
-        } else {
-            $message = MessageContent::getMessage('update_failed');
+        $message = MessageContent::getMessage('update_success');
+        return redirect()->route('list_animal')->with('success', $message);
+    } catch (\Exception $e) {
+        $message = MessageContent::getMessage('update_failed');
             return redirect()->back()->with('failed', $message);
-        }
+    }
     }
 
     public function addAnimalImage($id, Request $request)
     {
+        MessageContent::loadMessages();
         $data = $request->all();
-        if (isset($data['animal_image']) && $data['animal_image'] != null) {
+        try {
             $uniqueFileName = Str::uuid()->toString() . '.' . $data['animal_image']->extension();
             $data['animal_image']->move(public_path('animal_images'), $uniqueFileName);
             $animalImage = new Image();
             $animalImage->image_name = $uniqueFileName;
             $animalImage->detail_id = $id;
             $animalImage->save();
-            return redirect()->route('list_animal_image', ['id' => $id]);
-        } else {
-            return redirect()->back();
+            $message = MessageContent::getMessage('create_success');
+            return redirect()->route('list_animal_image', ['id' => $id])->with('success',$message);
+        } catch (\Exception $e) {
+            $message = MessageContent::getMessage('create_failed');
+            return redirect()->route('list_animal_image', ['id' => $id])->with('failed',$message);
         }
     }
 
     public function deleteImageAnimal($id)
     {
+        MessageContent::loadMessages();
         Image::destroy($id);
-        return redirect()->back();
+        $message = MessageContent::getMessage('delete_success');
+        return redirect()->back()->with('success',$message);
     }
 
     public function listAnimal()
@@ -313,25 +304,25 @@ class AdminController extends Controller
 
     public function addAreaAnimal($id, Request $request)
     {
+        MessageContent::loadMessages();
         $animalDetail = AnimalDetail::where('id', $id)->first();
-
-        if ($animalDetail) {
             try {
                 $animalDetail->areas()->attach($request->area_id);
-                return redirect()->route('list_animal_area', ['id' => $id])->with('success', 'Area được thêm thành công!');
+                $message = MessageContent::getMessage('create_success');
+                return redirect()->route('list_animal_area', ['id' => $id])->with('success',$message);
             } catch (\Exception $e) {
-                return redirect()->route('list_animal_area', ['id' => $id])->with('failed', 'Failed to add area.');
+                $message = MessageContent::getMessage('create_failed');
+                return redirect()->route('list_animal_area', ['id' => $id])->with('failed',$message);
             }
-        } else {
-            return redirect()->route('list_animal_area', ['id' => $id])->with('failed', 'Animal not found.');
-        }
     }
 
     public function deleteAreaAnimal($id, $id2)
     {
+        MessageContent::loadMessages();
         $animalDetail = AnimalDetail::where('id', $id)->first();
         $animalDetail->areas()->detach($id2);
-        return redirect()->route('list_animal_area', ['id' => $id])->with('success', 'Xóa thành công!');
+        $message = MessageContent::getMessage('delete_success');
+        return redirect()->route('list_animal_area', ['id' => $id])->with('success', $message);
     }
 
     public function listAnimalClimate($id)
@@ -344,16 +335,25 @@ class AdminController extends Controller
 
     public function addClimateAnimal($id, Request $request)
     {
+        MessageContent::loadMessages();
+        try { 
         $animalDetail = AnimalDetail::where('id', $id)->first();
         $animalDetail->climates()->attach($request->climate_id);
-        return redirect()->route('list_animal_climate', ['id' => $id])->with('success', 'Thêm thành công!');
+        $message = MessageContent::getMessage('create_success');
+        return redirect()->route('list_animal_climate', ['id' => $id])->with('success', $message);
+        } catch (\Exception $e) {
+        $message = MessageContent::getMessage('create_failed');
+        return redirect()->route('list_animal_climate', ['id' => $id])->with('failed', $message);
+    }
     }
 
     public function deleteClimateAnimal($id, $id2)
     {
+        MessageContent::loadMessages();
         $animalDetail = AnimalDetail::where('id', $id)->first();
         $animalDetail->climates()->detach($id2);
-        return redirect()->route('list_animal_climate', ['id' => $id])->with('success', 'Xóa thành công!');
+        $message = MessageContent::getMessage('delete_success');
+        return redirect()->route('list_animal_climate', ['id' => $id])->with('success',$message);
     }
 
     public function listAnimalNation($id)
@@ -366,16 +366,25 @@ class AdminController extends Controller
 
     public function addNationAnimal($id, Request $request)
     {
+        MessageContent::loadMessages();
+        try {
         $animalDetail = AnimalDetail::where('id', $id)->first();
         $animalDetail->nations()->attach($request->nation_id);
-        return redirect()->route('list_animal_nation', ['id' => $id])->with('success', 'Thêm thành công!');
+        $message = MessageContent::getMessage('create_success');
+        return redirect()->route('list_animal_nation', ['id' => $id])->with('success', $message );
+        } catch (\Exception $e) {
+        $message = MessageContent::getMessage('create_failed');
+        return redirect()->route('list_animal_nation', ['id' => $id])->with('failed', $message );
+        }
     }
 
     public function deleteNationAnimal($id, $id2)
     {
+        MessageContent::loadMessages();
         $animalDetail = AnimalDetail::where('id', $id)->first();
         $animalDetail->nations()->detach($id2);
-        return redirect()->route('list_animal_nation', ['id' => $id])->with('success', 'Xóa thành công!');
+        $message = MessageContent::getMessage('delete_success');
+        return redirect()->route('list_animal_nation', ['id' => $id])->with('success', $message);
     }
 
     public function listAnimalColor($id)
@@ -388,16 +397,25 @@ class AdminController extends Controller
 
     public function addColorAnimal($id, Request $request)
     {
+        MessageContent::loadMessages();
+        try {
         $animalDetail = AnimalDetail::where('id', $id)->first();
         $animalDetail->colors()->attach($request->color_id);
-        return redirect()->route('list_animal_color', ['id' => $id])->with('success', 'Thêm thành công!');
+        $message = MessageContent::getMessage('create_success');
+        return redirect()->route('list_animal_color', ['id' => $id])->with('success', $message);
+        } catch (\Exception $e) {
+        $message = MessageContent::getMessage('delete_success');
+        return redirect()->route('list_animal_color', ['id' => $id])->with('failed', $message);
+        }
     }
 
     public function deleteColorAnimal($id, $id2)
     {
+        MessageContent::loadMessages();
         $animalDetail = AnimalDetail::where('id', $id)->first();
         $animalDetail->colors()->detach($id2);
-        return redirect()->route('list_animal_color', ['id' => $id])->with('success', 'Xóa thành công!');
+        $message = MessageContent::getMessage('delete_success');
+        return redirect()->route('list_animal_color', ['id' => $id])->with('success',$message);
     }
 
     public function listAnimalBiome($id)
@@ -410,16 +428,25 @@ class AdminController extends Controller
 
     public function addBiomeAnimal($id, Request $request)
     {
+        MessageContent::loadMessages();
+        try {
         $animalDetail = AnimalDetail::where('id', $id)->first();
         $animalDetail->biomes()->attach($request->biome_id);
-        return redirect()->route('list_animal_biome', ['id' => $id])->with('success', 'Thêm thành công!');
+        $message = MessageContent::getMessage('create_success');
+        return redirect()->route('list_animal_biome', ['id' => $id])->with('success', $message);
+        } catch (\Exception $e) {
+        $message = MessageContent::getMessage('create_failed');
+        return redirect()->route('list_animal_biome', ['id' => $id])->with('failed',  $message);
+        }
     }
 
     public function deleteBiomeAnimal($id, $id2)
     {
+        MessageContent::loadMessages();
         $animalDetail = AnimalDetail::where('id', $id)->first();
         $animalDetail->biomes()->detach($id2);
-        return redirect()->route('list_animal_biome', ['id' => $id])->with('success', 'Xóa thành công!');
+        $message = MessageContent::getMessage('delete_success');
+        return redirect()->route('list_animal_biome', ['id' => $id])->with('success', $message);
     }
 
     public function listAnimalOcean($id)
@@ -432,16 +459,25 @@ class AdminController extends Controller
 
     public function addOceanAnimal($id, Request $request)
     {
+        MessageContent::loadMessages();
+        try {
         $animalDetail = AnimalDetail::where('id', $id)->first();
         $animalDetail->oceans()->attach($request->ocean_id);
-        return redirect()->route('list_animal_ocean', ['id' => $id])->with('success', 'Thêm thành công!');
+        $message = MessageContent::getMessage('create_success');
+        return redirect()->route('list_animal_ocean', ['id' => $id])->with('success', $message);
+        } catch (\Exception $e) {
+        $message = MessageContent::getMessage('create_failed');
+        return redirect()->route('list_animal_ocean', ['id' => $id])->with('failed', $message);
+        }
     }
 
     public function deleteOceanAnimal($id, $id2)
     {
+        MessageContent::loadMessages();
         $animalDetail = AnimalDetail::where('id', $id)->first();
         $animalDetail->oceans()->detach($id2);
-        return redirect()->route('list_animal_ocean', ['id' => $id])->with('success', 'Xóa thành công!');
+        $message = MessageContent::getMessage('delete_success');
+        return redirect()->route('list_animal_ocean', ['id' => $id])->with('success', $message );
     }
 
     public function listAnimalImage($id)

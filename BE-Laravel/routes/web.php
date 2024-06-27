@@ -97,8 +97,8 @@ Route::get('/animals/list', function () {
 Route::get('/view_login', [LoginController::class, 'viewLogin'])->name('view_login');
 Route::get('/view_register', [LoginController::class, 'viewRegister'])->name('view_register');
 Route::post('/login', [LoginController::class, 'login'])->name('login');
+Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 Route::post('/register', [LoginController::class, 'register'])->name('register');
-Route::post('/create', [AdminController::class, 'create']);
 
 Route::prefix('animal_detail')->group(function () {
     Route::get('/view_animal_page', [AnimalDetailController::class, 'viewAnimalPage'])->name('user.home');
@@ -112,7 +112,7 @@ Route::prefix('animal_detail')->group(function () {
     Route::get('/list-blog', [AnimalDetailController::class, 'viewAnimalBlog'])->name('user.list-blog');
 });
 
-Route::prefix('animal_post')->group(function () {
+Route::prefix('animal_post')->middleware('checklogin')->group(function () {
     Route::get('/list_post_social', [PostController::class, 'listPostSocial'])->name('user.list_post_social');
     Route::post('/get_list_comment', [PostController::class, 'getListComment'])->name('user.get_list_comment');
     Route::post('/create_animal_post', [PostController::class, 'createPost'])->name('user.create_animal_post');
