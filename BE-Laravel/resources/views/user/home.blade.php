@@ -407,31 +407,25 @@
         <div class="container">
             <div class="row g-5">
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <p><span class="text-primary me-2">#</span>Welcome To Zoofari</p>
+                    <p><span class="text-primary me-2">#</span>Chào Mừng Đến Với Thế Giới Động Vật</p>
                     <h1 class="display-5 mb-4">
-                        Why You Should Visit
-                        <span class="text-primary">Zoofari</span> Park!
+                        Bạn Không Thể Đến Sở Thú .Đừng Lo Đã Có
+                        <span class="text-primary">Thế Giới Động Vật</span>
                     </h1>
                     <p class="mb-4">
-                        Stet no et lorem dolor et diam, amet duo ut dolore vero eos. No
-                        stet est diam rebum amet diam ipsum. Clita clita labore, dolor duo
-                        nonumy clita sit at, sed sit sanctus dolor eos.
+                    Trang web "Thế Giới Động Vật" là một kho tàng kiến thức phong phú về các loài động vật từ khắp các châu lục rộng lớn cho đến các đại dương sâu thẳm. Tại đây, người dùng có thể khám phá những bài viết chi tiết về các loài động vật đa dạng, từ sư tử ở châu Phi, gấu trúc ở châu Á, đến cá mập ở các đại dương. Mỗi loài động vật đều được trình bày với hình ảnh chất lượng cao, thông tin về môi trường sống, thói quen, và những câu chuyện thú vị xoay quanh chúng. Ngoài ra, trang web còn có các video và tài liệu giáo dục giúp người dùng hiểu rõ hơn về sự đa dạng và vẻ đẹp của thế giới động vật. Đây thực sự là một điểm đến lý tưởng cho những ai yêu thích và muốn tìm hiểu về thiên nhiên hoang dã.
                     </p>
                     <h5 class="mb-3">
-                        <i class="far fa-check-circle text-primary me-3"></i>Free Car
-                        Parking
+                        <i class="far fa-check-circle text-primary me-3"></i>Trải Nghiệm Miễn Phí
                     </h5>
                     <h5 class="mb-3">
-                        <i class="far fa-check-circle text-primary me-3"></i>Natural
-                        Environment
+                        <i class="far fa-check-circle text-primary me-3"></i>Kiến Thức Bổ Ích
                     </h5>
                     <h5 class="mb-3">
-                        <i class="far fa-check-circle text-primary me-3"></i>Professional
-                        Guide & Security
+                        <i class="far fa-check-circle text-primary me-3"></i>Nâng Cao Hiểu Biết
                     </h5>
                     <h5 class="mb-3">
-                        <i class="far fa-check-circle text-primary me-3"></i>World Best
-                        Animals
+                        <i class="far fa-check-circle text-primary me-3"></i>Kết Nối Tới Những Người Có Cùng Đam Mê 
                     </h5>
                     <a class="btn btn-primary py-3 px-5 mt-3" href="">Read More</a>
                 </div>
