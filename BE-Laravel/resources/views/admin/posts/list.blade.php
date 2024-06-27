@@ -67,15 +67,13 @@
                                                 <div class="description" id="description-{{ $key }}">
                                                     {{ Str::limit($post->content, 100) }}
                                                     @if (strlen($post->content) > 100)
-                                                        <span class="show-more" onclick="showMore({{ $key }})">Show
-                                                            more</span>
+                                                        <span class="show-more" onclick="showMore({{ $key }})">Xem Thêm</span>
                                                     @endif
                                                 </div>
                                                 <div class="full-description" id="full-description-{{ $key }}"
                                                     style="display: none;">
                                                     {{ $post->content }}
-                                                    <span class="show-less" onclick="showLess({{ $key }})">Show
-                                                        less</span>
+                                                    <span class="show-less" onclick="showLess({{ $key }})">Ẩn bớt</span>
                                                 </div>
                                             </td>
                                             <td>{{ $post->user->name }}</td>

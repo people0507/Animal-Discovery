@@ -23,10 +23,6 @@
             <h2 class="logo">
             Cộng Đồng Động Vật
             </h2>
-            <div class="search-bar">
-                <i class="uil uil-search"></i>
-                <input type="search" placeholder="Search for creators inspirations">
-            </div>
             <div class="create">
                 {{-- <label class="btn btn-primary" for="create-post" id="createPostButton">Create</label> --}}
                 <div class="profile-picture">
@@ -59,12 +55,12 @@
                     <a class="menu-item active">
                         <span><i class="uil uil-home"></i>
                         </span>
-                        <h3>Home</h3>
+                        <h3>Trang chủ</h3>
                     </a>
                     <a class="menu-item" id="notification">
                         <span><i class="uil uil-bell"><small class="notification-count">4</small></i>
                         </span>
-                        <h3>Notifications</h3>
+                        <h3>Thông Báo</h3>
                         <!-- ----------------------- NOTIFICATION POPUP ----------------------- -->
                         <div class="notification-popup" style="display: none;">
                             <div>
@@ -112,7 +108,7 @@
                     <a class="menu-item" id="theme">
                         <span><i class="uil uil-palette"></i>
                         </span>
-                        <h3>Theme</h3>
+                        <h3>Giao Diện</h3>
                     </a>
 
                 </div>
@@ -153,15 +149,13 @@
                                 <div class="description" id="description-{{ $key }}">
                                     {{ Str::limit($post->content, 300) }}
                                     @if (strlen($post->content) > 300)
-                                        <span class="show-more" onclick="showMore({{ $key }})">Show
-                                            more</span>
+                                        <span class="show-more" onclick="showMore({{ $key }})">Xem Thêm</span>
                                     @endif
                                 </div>
                                 <div class="full-description" id="full-description-{{ $key }}"
                                     style="display: none;">
                                     {{ $post->content }}
-                                    <span class="show-less" onclick="showLess({{ $key }})">Show
-                                        less</span>
+                                    <span class="show-less" onclick="showLess({{ $key }})">Ẩn bớt</span>
                                 </div>
                             </div>
 
@@ -271,7 +265,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <span class="close_{{$key}}">&times;</span>
-                    <h2>Leave a Comment</h2>
+                    <h2>Để lại bình luận </h2>
                 </div>
                 <div class="comments-modal">
 
@@ -280,7 +274,7 @@
                     <input id="inputComment_{{$key}}" type="text" class="btn-comment" placeholder="Viết bình luận ...">
                     <br>
                     <button id="submitComment_{{$key}}" type="button" class="btn btn-primary"
-                        style="margin-top: 10px">Submit</button>
+                        style="margin-top: 10px">Bình Luận</button>
                 </div>
             </div>
         </div>

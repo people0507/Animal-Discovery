@@ -177,14 +177,14 @@
                                                         {{ Str::limit($item->area_description, 100) }}
                                                         @if (strlen($item->area_description) > 100)
                                                             <span class="show-more"
-                                                                onclick="showMore({{ $key }})">Show more</span>
+                                                                onclick="showMore({{ $key }})">Xem thêm</span>
                                                         @endif
                                                     </div>
                                                     <div class="full-description" id="full-description-{{ $key }}"
                                                         style="display: none;">
                                                         {{ $item->area_description }}
                                                         <span class="show-less"
-                                                            onclick="showLess({{ $key }})">Show less</span>
+                                                            onclick="showLess({{ $key }})">Ẩn bớt</span>
                                                     </div>
                                                 </td>
                                                 <td>{{ $item->created_at }}</td>
@@ -242,14 +242,14 @@
                                                         {{ Str::limit($item->climate_description, 100) }}
                                                         @if (strlen($item->climate_description) > 100)
                                                             <span class="show-more"
-                                                                onclick="showMore({{ $key }})">Show more</span>
+                                                                onclick="showMore({{ $key }})">Xem Thêm</span>
                                                         @endif
                                                     </div>
                                                     <div class="full-description"
                                                         id="full-description-{{ $key }}" style="display: none;">
                                                         {{ $item->climate_description }}
                                                         <span class="show-less"
-                                                            onclick="showLess({{ $key }})">Show less</span>
+                                                            onclick="showLess({{ $key }})">Ẩn bớt</span>
                                                     </div>
                                                 </td>
                                                 <td>{{ $item->created_at }}</td>
@@ -356,14 +356,14 @@
                                                         {{ Str::limit($item->color_description, 100) }}
                                                         @if (strlen($item->color_description) > 100)
                                                             <span class="show-more"
-                                                                onclick="showMore({{ $key }})">Show more</span>
+                                                                onclick="showMore({{ $key }})">Xem Thêm</span>
                                                         @endif
                                                     </div>
                                                     <div class="full-description"
                                                         id="full-description-{{ $key }}" style="display: none;">
                                                         {{ $item->color_description }}
                                                         <span class="show-less"
-                                                            onclick="showLess({{ $key }})">Show less</span>
+                                                            onclick="showLess({{ $key }})">Ẩn bớt</span>
                                                     </div>
                                                 </td>
                                                 <td>{{ $item->created_at }}</td>
@@ -422,14 +422,14 @@
                                                         {{ Str::limit($item->biome_description, 100) }}
                                                         @if (strlen($item->biome_description) > 100)
                                                             <span class="show-more"
-                                                                onclick="showMore({{ $key }})">Show more</span>
+                                                                onclick="showMore({{ $key }})">Xem Thêm</span>
                                                         @endif
                                                     </div>
                                                     <div class="full-description"
                                                         id="full-description-{{ $key }}" style="display: none;">
                                                         {{ $item->biome_description }}
                                                         <span class="show-less"
-                                                            onclick="showLess({{ $key }})">Show less</span>
+                                                            onclick="showLess({{ $key }})">Ẩn bớt</span>
                                                     </div>
                                                 </td>
                                                 <td>{{ $item->created_at }}</td>
