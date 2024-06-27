@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Social - Cuong</title>
+    <title>Cộng Đồng Động Vật</title>
     <!-- STYLESHEET -->
     <link rel="stylesheet" href="{{ asset('users/social_assets/css/style.css') }}">
     <!-- ICONCOUT CDN -->
@@ -21,7 +21,7 @@
     <nav>
         <div class="container">
             <h2 class="logo">
-                CuongSocial
+            Cộng Đồng Động Vật
             </h2>
             <div class="search-bar">
                 <i class="uil uil-search"></i>
@@ -46,9 +46,9 @@
                         <img src="{{ asset('users/social_assets/images/profile-1.jpg') }}">
                     </div>
                     <div class="handle">
-                        <h4>Anna Jr</h4>
+                        <h4>{{Auth::user()->name}}</h4>
                         <p class="text-muted">
-                            @anna
+                            {{Auth::user()->email}}
                         </p>
                     </div>
                 </div>
@@ -163,14 +163,6 @@
                                     <span class="show-less" onclick="showLess({{ $key }})">Show
                                         less</span>
                                 </div>
-                                <span class="edit">
-                                    <i class="uil uil-ellipsis-h"></i>
-                                </span>
-                            </div>
-
-
-                            <div class="content" style="margin:5px 0px">
-                                <p>{{$post->content}}</p>
                             </div>
 
                             <div class="photo">

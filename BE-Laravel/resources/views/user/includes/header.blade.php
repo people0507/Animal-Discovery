@@ -4,7 +4,7 @@
         <div class="col-lg-7 px-5 text-start">
             <div class="h-100 d-inline-flex align-items-center py-3 me-4">
                 <small class="fa fa-map-marker-alt text-primary me-2"></small>
-                <small>123 Street, New York, USA</small>
+                <small>175 P. Tây Sơn, Trung Liệt, Đống Đa, Hà Nội</small>
             </div>
             <div class="h-100 d-inline-flex align-items-center py-3">
                 <small class="far fa-clock text-primary me-2"></small>
@@ -14,7 +14,7 @@
         <div class="col-lg-5 px-5 text-end">
             <div class="h-100 d-inline-flex align-items-center py-3 me-4">
                 <small class="fa fa-phone-alt text-primary me-2"></small>
-                <small>+012 345 6789</small>
+                <small>+024 3852 2201</small>
             </div>
             <div class="h-100 d-inline-flex align-items-center">
                 <a class="btn btn-sm-square bg-white text-primary me-1" href=""><i
@@ -36,7 +36,7 @@
     data-wow-delay="0.1s">
     <a href="{{ route('user.home') }}" class="navbar-brand p-0">
         <img class="img-fluid me-3" src="{{ asset('users/img/icon/icon-10.png') }}" alt="Icon" />
-        <h1 class="m-0 text-primary">Zoofari</h1>
+        <h1 class="m-0 text-primary">Động Vật Hoang Dã</h1>
     </a>
     <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
         <span class="navbar-toggler-icon"></span>
@@ -60,7 +60,7 @@
                 </div>
             </div>
             <a href="{{ route('user.contract') }}"
-                class="nav-item nav-link {{ Request::is('contract') ? 'active' : '' }}"">Contact</a>
+                class="nav-item nav-link {{ Request::is('contract') ? 'active' : '' }}">Liên Hệ</a>
         </div>
         <a href="" class="btn btn-primary">Buy Ticket<i class="fa fa-arrow-right ms-3"></i></a>
     </div>
