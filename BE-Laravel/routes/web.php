@@ -114,14 +114,14 @@ Route::prefix('animal_detail')->group(function () {
 
 Route::prefix('animal_post')->group(function () {
     Route::get('/list_post_social', [PostController::class, 'listPostSocial'])->name('user.list_post_social');
+    Route::post('/get_list_comment', [PostController::class, 'getListComment'])->name('user.get_list_comment');
     Route::post('/create_animal_post', [PostController::class, 'createPost'])->name('user.create_animal_post');
     Route::post('/edit_animal_post', [PostController::class, 'editPost']);
     Route::post('/delete_animal_post', [PostController::class, 'deletePost']);
-    Route::post('/create_animal_comment', [PostController::class, 'createComment']);
+    Route::post('/create_animal_comment', [PostController::class, 'createComment'])->name('user.create_animal_comment');
     Route::post('/edit_animal_comment', [PostController::class, 'editComment']);
     Route::post('/delete_animal_comment', [PostController::class, 'deleteComment']);
-    Route::post('/animal_like', [PostController::class, 'like']);
-    Route::post('/animal_dislike', [PostController::class, 'dislike']);
+    Route::post('/post_like_or_dislike', [PostController::class, 'likeOrDislike'])->name('user.post_like_or_dislike');
 });
 
 Route::prefix('admin')->middleware('checklogin')->group(function () {
