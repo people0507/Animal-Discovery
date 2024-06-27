@@ -4,7 +4,7 @@
             <div class="col-lg-6 p-0 wow fadeIn" data-wow-delay="0.1s">
                 <div class="header-bg h-100 d-flex flex-column justify-content-center p-5">
                     <h1 class="display-4 text-light mb-5">
-                        Enjoy Wonderful Day With Your Family
+                        Tận Hưởng Các Trải Nghiệm Kì Thú Cùng Các Loài Vật 
                     </h1>
                 </div>
             </div>
