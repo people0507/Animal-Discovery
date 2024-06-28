@@ -36,7 +36,7 @@ class PostController extends Controller
         $data = $request->all();
         if(isset($data['image']) && $data['image'] != null){
             $uniqueFileName = Str::uuid()->toString() . '.' . $data['image']->extension();
-            $data['image']->move(public_path('animal_post_images'), $uniqueFileName);
+            $data['image']->move(public_path('posts'), $uniqueFileName);
         }else{
             $uniqueFileName=null;
         }
@@ -48,11 +48,7 @@ class PostController extends Controller
         $post->user_id = Auth::id();
         $post->save();
         
-        if ($post->save()) {
-            return response()->json(['message' => MessageContent::getMessage('create_success')],200);
-        } else {
-            return response()->json(['message' => MessageContent::getMessage('create_failed')],401);
-        }
+        return redirect()->route('user.list_post_social');
     }
 
     public function editPost(Request $request){
@@ -125,13 +121,6 @@ class PostController extends Controller
         ->delete();
         }
         return response()->json(123);
-    }
-
-    public function dislike(Request $request){
-        Like::where('user_id', Auth::id())
-        ->where('post_id', $request->post_id)
-        ->delete();
-        return response()->json(false);
     }
     
 }

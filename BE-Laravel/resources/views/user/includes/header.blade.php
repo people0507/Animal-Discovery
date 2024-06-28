@@ -62,7 +62,6 @@
             <a href="{{ route('user.contract') }}"
                 class="nav-item nav-link {{ Request::is('contract') ? 'active' : '' }}">Liên Hệ</a>
         </div>
-        <a href="" class="btn btn-primary">Buy Ticket<i class="fa fa-arrow-right ms-3"></i></a>
     </div>
 </nav>
 <!-- Navbar End -->

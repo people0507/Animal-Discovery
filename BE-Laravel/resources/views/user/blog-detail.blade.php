@@ -1,28 +1,18 @@
 @extends('user.main')
 @section('title', 'Categories Animal')
 @section('content_user')
+
     <link rel="stylesheet" href="{{ asset('users/comment/style.css') }}">
     <!-- Blog Detail Start -->
     <div class="container py-5">
         <div class="s-char-block">
             <h1 class="article-header">
-                The Great Meadow Rebirth
+                {{$post->title}}
             </h1>
             <div class="article-container">
-                <p dir="ltr">In one of <a
-                        href="../../../how-natural-and-humanmade-disasters-can-impact-habitats-and-populations">my previous
-                        posts</a>, I wrote about the human tragedy and environmental damage caused by the destruction of the
-                    Kakhovka Hydroelectric Power Station dam by Russian occupiers.</p>
-                <p><strong>&nbsp;</strong></p>
-                <p dir="ltr">An interesting aspect of this story is that it contains a double crime against Ukraine and
-                    its people. The first crime was the construction of this dam, which flooded a vast area of ​​the Dnipro
-                    River floodplains, historically known as the Great Meadow.</p>
-                <p><strong>&nbsp;</strong></p>
-                <p dir="ltr">Ukrainian Cossacks called the Great Meadow their father, for the shelter and security it
-                    provided. The Great Meadow is not only an important part of national identity, which the empire always
-                    tried to overcome but also a unique ecosystem of river floodplains in Europe in terms of size.</p>
+                <p>{{$post->content}}</p>
                 <p><strong>&nbsp;<img
-                            src="https://s3.animalia.bio/blog/original/XLgtJu4aCxtlnqFSPUBk4dv49VNjpL0fIhLLVc8W.webp"
+                            src="http://127.0.0.1:8000/posts/{{ $post->image }}"
                             alt="" width="100%"></strong></p>
             </div>
             {{-- <div class="col-12 py-4 ">
