@@ -43,8 +43,13 @@ class AnimalDetailController extends Controller
     }
 
     public function viewAnimalBlog(){
-        $posts = Post::where('status',Post::APPROVAL)->get();
+        $posts = Post::where('status',Post::APPROVAL)->paginate(5);
         return view('user.list-blog-2',compact('posts'));
+    }
+
+    public function viewDetailBlog($id){
+        $post = Post::where('id',$id)->first();
+        return view('user.blog-detail',compact('post'));
     }
 
     public function color($id)
@@ -52,7 +57,7 @@ class AnimalDetailController extends Controller
         $data = AnimalDetail::whereHas('colors', function ($query) use ($id) {
             $query->where('color_id', $id);
         })->with(['images' => function ($query) {;
-        }])->get();
+        }])->paginate(5);
         $data1 = Color::where('id', $id)->first();
         return view('user.categories-animal', compact('data', 'data1'));
     }
@@ -91,7 +96,7 @@ class AnimalDetailController extends Controller
         $data = AnimalDetail::whereHas('areas', function ($query) use ($id) {
             $query->where('area_id', $id);
         })->with(['images' => function ($query) {;
-        }])->get();
+        }])->paginate(5);
         $data1 = Area::where('id', $id)->first();
         return view('user.categories-animal', compact('data', 'data1'));
     }
@@ -101,7 +106,7 @@ class AnimalDetailController extends Controller
         $data = AnimalDetail::whereHas('climates', function ($query) use ($id) {
             $query->where('climate_id', $id);
         })->with(['images' => function ($query) {;
-        }])->get();
+        }])->paginate(5);
         $count = $data->count();
         $data1 = Climate::where('id', $id)->first();
         return view('user.filter-list-animal', compact('data', 'data1', 'count'));
@@ -112,7 +117,7 @@ class AnimalDetailController extends Controller
         $data = AnimalDetail::whereHas('biomes', function ($query) use ($id) {
             $query->where('biome_id', $id);
         })->with(['images' => function ($query) {;
-        }])->get();
+        }])->paginate(5);
         $count = $data->count();
         $data1 = Biome::where('id', $id)->first();
         return view('user.filter-list-animal', compact('data', 'data1', 'count'));

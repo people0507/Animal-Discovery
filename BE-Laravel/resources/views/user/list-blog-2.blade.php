@@ -83,34 +83,41 @@
             font-weight: 700;
             text-transform: uppercase;
         }
+        .multiline-ellipsis {
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;
+            /* Số lượng dòng hiển thị */
+            overflow: hidden;
+            text-overflow: ellipsis;
+            height: 3em;
+            /* 3 dòng x 1.5em mỗi dòng (tùy thuộc vào line-height) */
+            line-height: 1.5em;
+            /* Điều chỉnh khoảng cách dòng */
+        }
     </style>
     <!-- Blog Start -->
     <div class="container pt-5">
         <div class="f-page__content">
             <h1 class="collection-title">
-                Blog
+                Những blog hay, được được sưu tầm từ diễn đàn của chúng tôi 
             </h1>
             <div class="containers articles-container">
                 @foreach ($posts as $post)
-                    <a href="https://animalia.bio/blog/animaliabio-latest-updates" class="animals-invert__item ">
+                    <a href="{{route('user.detail-blog',['id' => $post->id])}}" class="animals-invert__item ">
                         <div class="animals-invert__item-img">
                             <img src="http://127.0.0.1:8000/posts/{{ $post->image }}"
                                 onerror="this.src = '/img/error_img.svg'" alt="alt">
                         </div>
                         <div class="animals-invert__item-content">
                             <h2 class="f-h2">{{ $post->title }}</h2>
-                            <p>{{ $post->content }}</p>
+                            <p class="multiline-ellipsis">{{ $post->content }}</p>
                         </div>
                     </a>
                 @endforeach
             </div>
-            <div class="blog-pagination">
-                <span class="blog-load-more hidden" out-of=" out of " load-more="LOAD MORE" last_page="1" next_page="2">
-                    1 - 40 out of 15 <span class="fwb text-uppercase">
-                        LOAD MORE
-                    </span>
-                </span>
-            </div>
+        {{ $posts->links('pagination::bootstrap-4') }}
+
         </div>
     </div>
     <!-- Blog End -->

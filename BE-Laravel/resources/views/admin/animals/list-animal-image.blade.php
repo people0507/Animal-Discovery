@@ -148,6 +148,7 @@
                                 </tbody>
                             </table>
                         </div>
+                        {{ $images->links('pagination::bootstrap-4') }}
                     </div>
                 </div>
             </div>

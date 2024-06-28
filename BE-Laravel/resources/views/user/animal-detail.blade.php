@@ -356,9 +356,7 @@
                 <a class="anchor" id="photo-gallery"></a>
                 <div class="container">
                     <h2 class="a-h2">
-                        Photos with
-
-                        Red Fox
+                        Hình Ảnh
                     </h2>
 
                     <div class="s-gallery-block">
@@ -584,7 +582,7 @@
                                 <div class="col-sm-3">
                                     <div class="s-habbit-group__slug">
 
-                                        Bird's call
+                                        Tiếng Kêu
                                     </div>
                                 </div>
                                 <div class="col-sm-9">

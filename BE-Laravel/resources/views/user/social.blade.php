@@ -31,9 +31,67 @@
             </div>
         </div>
     </nav>
+    <style>
+        .notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 15px;
+            background-color: #4CAF50;
+            /* Màu xanh */
+            color: white;
+            z-index: 9999;
+            display: none;
+            /* Ẩn ban đầu */
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
 
+        .notification.success {
+            background-color: #4CAF50;
+            /* Màu xanh */
+        }
+
+        .notification.failed {
+            background-color: #ff3333;
+            /* Màu đỏ */
+            color: white;
+        }
+
+
+        .notification.show {
+            display: block;
+            animation: slideInRight 0.5s ease-out forwards;
+        }
+
+        @keyframes slideInRight {
+            0% {
+                transform: translateX(100%);
+            }
+
+            100% {
+                transform: translateX(0);
+            }
+        }
+    </style>
     <!----------------------------- MAIN ----------------------------->
     <main>
+        
+    @if (session('success'))
+        <div id="notification" class="notification success">
+            <p id="notification-message"></p>
+            <span id="close-notification" class="close-notification"><i class="fa fa-check" aria-hidden="true"></i>
+                {{ session('success') }}</span>
+        </div>
+    @endif
+
+    @if (session('failed'))
+        <div id="notification" class="notification failed">
+            <p id="notification-message"></p>
+            <span id="close-notification" class="close-notification"><i class="fa fa-exclamation-triangle"
+                    aria-hidden="true"></i> {{ session('failed') }}</span>
+        </div>
+    @endif
         <div class="container">
             <!-- ================ LEFT ================ -->
             <div class="left">
@@ -288,33 +346,29 @@
                 <h5 class="modal-title">Thêm bài viết</h5>
             </div>
             <div class="modal-body">
-                <form id="addContinentForm" enctype="multipart/form-data">
+                <form action="{{route('user.create_animal_post')}}" id="addContinentForm" enctype="multipart/form-data" method="post">
+                    @csrf
                     <div class="form-group">
                         <label for="continentTitle">Tên bài viết</label>
-                        <input type="text" class="form-control" name="" id="continentTitle"
+                        <input type="text" class="form-control" name="title" id="continentTitle"
                             placeholder="Nhập tiêu đề bài viết" required>
                     </div>
                     <div class="form-group">
                         <label for="continentDescription">Mô tả</label>
-                        <textarea class="form-control" name="" id="continentDescription" rows="3"
+                        <textarea style="height:300px" class="form-control" name="content" id="continentDescription" rows="3"
                             placeholder="Nhập mô tả" required></textarea>
                     </div>
                     <div class="form-group">
-                        <label for="continentTitle">Đường dẫn về động vật</label>
-                        <input type="text" class="form-control" name="" id="continentTitle"
-                            placeholder="Nhập đường dẫn động vật" required>
-                    </div>
-                    <div class="form-group">
                         <label for="continentImage">Hình ảnh</label>
-                        <input type="file" class="form-control-file" name="" id="continentImage" required>
+                        <input type="file" class="form-control-file" name="image" id="continentImage" required>
                     </div>
-                </form>
             </div>
             <div class="modal-footer">
-                <button type="submit" class="btn btn-primary" style="margin-right: 10px"
-                    form="addContinentForm">Lưu</button>
+                <button type="submit" class="btn btn-primary" style="margin-right: 10px" >Lưu</button>
                 <button type="button" class="btn btn-secondary" id="closeModalButton">Đóng</button>
             </div>
+            </form>
+
         </div>
     </div>
 
@@ -353,27 +407,6 @@
                 }
             });
 
-            // Xử lý submit form thêm mới châu lục
-            addContinentForm.addEventListener('submit', function (event) {
-                event.preventDefault();
-
-                var formData = new FormData(addContinentForm);
-
-                // Xử lý form data (ví dụ: gửi form data đến server bằng fetch API hoặc XMLHttpRequest)
-                fetch('/your-api-endpoint', {
-                    method: 'POST',
-                    body: formData,
-                })
-                    .then(response => response.json())
-                    .then(data => {
-                        console.log('Success:', data);
-                        // Đóng modal sau khi submit thành công
-                        addContinentModal.style.display = 'none';
-                    })
-                    .catch(error => {
-                        console.error('Error:', error);
-                    });
-            });
         });
 
         function showMore(id) {
@@ -512,6 +545,38 @@
         });
 
     </script>
+    <script>
+    // Hiển thị thông báo
+    function showNotification(message) {
+        var notification = document.querySelector('.notification');
+        notification.innerHTML = message;
+        notification.classList.add('show');
+
+        // Tự động ẩn sau 5 giây
+        setTimeout(function() {
+            hideNotification();
+        }, 5000); // Ẩn sau 5 giây
+    }
+
+    // Ẩn thông báo
+    function hideNotification() {
+        var notification = document.querySelector('.notification');
+        notification.classList.remove('show');
+    }
+
+    // Hiển thị thông báo khi trang được load
+    window.onload = function() {
+        var successMessage = "{{ session('success') }}";
+        var failedMessage = "{{ session('failed') }}";
+
+        if (failedMessage) {
+            showNotification(failedMessage);
+        }
+        if (successMessage) {
+            showNotification(successMessage);
+        }
+    };
+</script>
 </body>
 
 

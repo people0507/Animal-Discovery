@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <!-- Favicon icon -->
-    <title>Adminmart Template - The Ultimate Multipurpose admin template</title>
+    <title>Quản Lý Khám Phá Thế Giới Động Vật</title>
     <!-- Custom CSS -->
     <link href="{{ asset('admin/assets/extra-libs/c3/c3.min.css') }}" rel="stylesheet">
     <link href="{{ asset('admin/assets/libs/chartist/dist/chartist.min.css') }}" rel="stylesheet">

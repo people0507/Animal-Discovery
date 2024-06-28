@@ -117,7 +117,7 @@ class AdminController extends Controller
 
     public function listUser()
     {
-        $users = User::all();
+        $users = User::paginate(5);
         return view('admin.users.list-user', compact('users'));
     }
 
@@ -290,7 +290,7 @@ class AdminController extends Controller
 
     public function listAnimal()
     {
-        $animalDetail = AnimalDetail::all();
+        $animalDetail = AnimalDetail::paginate(5);
         return view('admin.animals.list-animal', compact('animalDetail'));
     }
 
@@ -482,7 +482,7 @@ class AdminController extends Controller
 
     public function listAnimalImage($id)
     {
-        $images = Image::where('detail_id', $id)->get();
+        $images = Image::where('detail_id', $id)->paginate(5);
         foreach ($images as $image) {
             $image->animalDetail;
         }
@@ -532,7 +532,7 @@ class AdminController extends Controller
 
     public function listPostsView()
     {
-        $posts = Post::with('user')->withCount('comments')->withCount('likes')->get();
+        $posts = Post::with('user')->withCount('comments')->withCount('likes')->paginate(5);
         return view('admin.posts.list', compact('posts'));
     }
 

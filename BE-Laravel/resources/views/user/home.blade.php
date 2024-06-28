@@ -561,9 +561,7 @@
                                 <h2 style="font-weight: 700"><a
                                         href="{{ route('user.cate-list', ['id' => $area->id]) }}">{{ $area->area_name }}</a>
                                 </h2>
-                                <p style="color: #000000; font-weight:600">Winter has so much to offer -
-                                    creative activities Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos
-                                    numquam reiciendis, provident ea est corporis.</p>
+                                <p style="color: #000000; font-weight:600">{{$area->area_description}}</p>
                             </div>
                         </div>
                     </label>

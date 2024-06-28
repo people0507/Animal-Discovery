@@ -52,9 +52,9 @@ Route::get('/list-blog-3', function () {
 })->name('user.list-blog-3');
 
 // blog detail
-Route::get('/blog-detail', function () {
-    return view('user.blog-detail');
-})->name('user.blog-detail');
+// Route::get('/blog-detail', function () {
+//     return view('user.blog-detail');
+// })->name('user.blog-detail');
 
 // social
 // Route::get('/social', function () {
@@ -110,6 +110,7 @@ Route::prefix('animal_detail')->group(function () {
     Route::get('/fillter-climate/{id}', [AnimalDetailController::class, 'climateZone'])->name('climate-zone');
     Route::get('/fillter-biome/{id}', [AnimalDetailController::class, 'biome'])->name('biome');
     Route::get('/list-blog', [AnimalDetailController::class, 'viewAnimalBlog'])->name('user.list-blog');
+    Route::get('/detail-blog/{id}', [AnimalDetailController::class, 'viewDetailBlog'])->name('user.detail-blog');
 });
 
 Route::prefix('animal_post')->middleware('checklogin')->group(function () {
