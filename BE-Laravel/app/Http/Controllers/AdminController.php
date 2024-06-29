@@ -115,9 +115,40 @@ class AdminController extends Controller
         ));
     }
 
+    public function dashBoard(){
+        $user = User::count();
+        $animalDetail = AnimalDetail::count();
+        $post = Post::count();
+        return view('admin.home',compact('user', 'animalDetail', 'post'));
+    }
     public function listUser()
     {
         $users = User::paginate(5);
+        return view('admin.users.list-user', compact('users'));
+    }
+
+    public function searchUser(Request $request){
+        $data = $request->all();
+        $key_word = $data['key_word'];
+        $role_id = $data['role_id'];
+        $date_filter = $data['date_filter'];
+
+
+        $query = User::query();
+
+        if ($key_word !== null) {
+            $query->where('email', 'like', '%' . $key_word . '%');
+        }
+
+        if ($role_id !== null) {
+            $query->where('role_id',$role_id );
+        }
+
+        if (!empty($date_filter)) {
+            $query->whereDate('created_at',$date_filter);
+        }
+
+        $users = $query->paginate(5);
         return view('admin.users.list-user', compact('users'));
     }
 
@@ -291,6 +322,31 @@ class AdminController extends Controller
     public function listAnimal()
     {
         $animalDetail = AnimalDetail::paginate(5);
+        return view('admin.animals.list-animal', compact('animalDetail'));
+    }
+
+    public function searchAnimal(Request $request){
+        $data = $request->all();
+        $key_word = $data['key_word'];
+        $key_word1 = $data['key_word1'];
+        $date_filter = $data['date_filter'];
+
+        $query = AnimalDetail::query();
+
+        if (!empty($key_word)) {
+            $query->where('animal_name', 'like', '%' . $key_word . '%');
+        }
+
+        if (!empty($key_word1)) {
+            $query->where('animal_scientific_name', 'like', '%' . $key_word1 . '%');
+        }
+
+        if (!empty($date_filter)) {
+            $query->whereDate('created_at',$date_filter);
+        }
+
+        
+        $animalDetail = $query->paginate(5);
         return view('admin.animals.list-animal', compact('animalDetail'));
     }
 
@@ -536,6 +592,28 @@ class AdminController extends Controller
         return view('admin.posts.list', compact('posts'));
     }
 
+    public function searchPost(Request $request){
+        $data = $request->all();
+        $key_word = $data['key_word'];
+        $status = $data['status'];
+        $date_filter = $data['date_filter'];
+        $query = Post::with('user')->withCount('comments')->withCount('likes');
+
+        if (!empty($key_word)) {
+            $query->where('title', 'like', '%' . $key_word . '%');
+        }
+
+        if (!empty($status)) {
+            $query->where('status',$status );
+        }
+
+        if (!empty($date_filter)) {
+            $query->whereDate('created_at',$date_filter);
+        }
+
+        $posts = $query->paginate(5);
+        return view('admin.posts.list', compact('posts'));
+    }
     public function deletePost($id)
     {
         MessageContent::loadMessages();

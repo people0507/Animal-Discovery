@@ -4,7 +4,7 @@
             <a class="nav-toggler waves-effect waves-light d-block d-md-none" href="javascript:void(0)"><i
                     class="ti-menu ti-close"></i></a>
             <div class="navbar-brand">
-                <a href="{{ route('admin.home') }}">
+                <a href="{{ route('admin.dashboard') }}">
                     <b class="logo-icon">
                         <img src="{{ asset('admin/assets/images/logo-icon.png') }}" alt="homepage" class="dark-logo" />
                         <img src="{{ asset('admin/assets/images/logo-icon.png') }}" alt="homepage" class="light-logo" />

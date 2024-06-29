@@ -81,7 +81,7 @@
                 <div class="d-flex align-items-center">
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb m-0 p-0">
-                            <li class="breadcrumb-item"><a href="{{ route('admin.home') }}">Animal Management</a>
+                            <li class="breadcrumb-item"><a href="{{ route('list_animal') }}">Quản Lý Động Vật</a>
                             </li>
                         </ol>
                     </nav>
@@ -93,19 +93,19 @@
                             style="font-size: 20px">+</b> Thêm châu lục</button>
                 @elseif($mode == 'climate')
                     <button class="btn btn-success" data-toggle="modal" data-target="#addClimateModal"><b
-                            style="font-size: 20px">+</b> Thêm Khí Hậu</button>
+                            style="font-size: 20px">+</b> Thêm khí dậu</button>
                 @elseif($mode == 'nation')
                     <button class="btn btn-success" data-toggle="modal" data-target="#addNationModal"><b
-                            style="font-size: 20px">+</b> Thêm Quốc Gia</button>
+                            style="font-size: 20px">+</b> Thêm quốc gia</button>
                 @elseif($mode == 'color')
                     <button class="btn btn-success" data-toggle="modal" data-target="#addColorModal"><b
-                            style="font-size: 20px">+</b> Thêm Màu Sắc</button>
+                            style="font-size: 20px">+</b> Thêm màu sắc</button>
                 @elseif($mode == 'biome')
                     <button class="btn btn-success" data-toggle="modal" data-target="#addBiomeModal"><b
-                            style="font-size: 20px">+</b> Thêm Quần Xã</button>
+                            style="font-size: 20px">+</b> Thêm quần xã</button>
                 @else
                     <button class="btn btn-success" data-toggle="modal" data-target="#addOceanModal"><b
-                            style="font-size: 20px">+</b> Thêm Đại Dương</button>
+                            style="font-size: 20px">+</b> Thêm đại dương</button>
                 @endif
             </div>
         </div>
@@ -133,31 +133,31 @@
                                 style="width:100%">
                                 <thead>
                                     <tr>
-                                        <th>STT</th>
+                                        <th>Stt</th>
                                         @if ($mode == 'area')
-                                            <th>Ảnh Châu Lục</th>
-                                            <th>Tên Châu Lục</th>
-                                            <th>Mô Tả Châu Lục</th>
+                                            <th>Ảnh châu lục</th>
+                                            <th>Tên châu lục</th>
+                                            <th>Mô tả châu lục</th>
                                         @elseif($mode == 'climate')
-                                            <th>Ảnh Vùng Khí Hậu</th>
-                                            <th>Tên Vùng Khí Hậu</th>
-                                            <th>Mô Tả Vùng Khí Hậu</th>
+                                            <th>Ảnh vùng khí hậu</th>
+                                            <th>Tên vùng khí hậu</th>
+                                            <th>Mô tả vùng khí hậu</th>
                                         @elseif($mode == 'nation')
-                                            <th>Tên Quốc Gia</th>
+                                            <th>Tên quốc gia</th>
                                         @elseif($mode == 'color')
-                                            <th>Ảnh Màu Sắc</th>
-                                            <th>Tên Màu Sắc</th>
-                                            <th>Mô Tả Màu Sắc</th>
+                                            <th>Ảnh màu sắc</th>
+                                            <th>Tên màu sắc</th>
+                                            <th>Mô Tả màu sắc</th>
                                         @elseif($mode == 'biome')
-                                            <th>Ảnh Quần Xã Sinh Học</th>
-                                            <th>Tên Quần Xã Sinh Học</th>
-                                            <th>Mô Tả Quần Xã Sinh Học</th>
+                                            <th>Ảnh quần xã</th>
+                                            <th>Tên quần xã</th>
+                                            <th>Mô tả quần xã</th>
                                         @else
-                                            <th>Ảnh Đại Dương</th>
-                                            <th>Tên Đại Dương</th>
-                                            <th>Mô Tả Đại Dương</th>
+                                            <th>Ảnh đại dương</th>
+                                            <th>Tên đại dương</th>
+                                            <th>Mô tả đại dương</th>
                                         @endif
-                                        <th>Thời Gian Tạo</th>
+                                        <th>Thời gian tạo</th>
                                         <th>Thao tác</th>
                                     </tr>
 
