@@ -409,7 +409,7 @@
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
                     <p><span class="text-primary me-2">#</span>Chào Mừng Đến Với Thế Giới Động Vật</p>
                     <h1 class="display-5 mb-4">
-                        Bạn Không Thể Đến Sở Thú .Đừng Lo Đã Có
+                        Bạn Không Thể Đến Sở Thú .Đừng Lo Đã Có Trang Web
                         <span class="text-primary">Thế Giới Động Vật</span>
                     </h1>
                     <p class="mb-4">
