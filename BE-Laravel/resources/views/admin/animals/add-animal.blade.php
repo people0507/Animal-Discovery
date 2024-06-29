@@ -69,7 +69,7 @@
                 <div class="d-flex align-items-center">
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb m-0 p-0">
-                            <li class="breadcrumb-item"><a href="{{ route('admin.home') }}">Thông tin động vật</a>
+                            <li class="breadcrumb-item"><a href="{{ route('list_animal') }}">Thông tin động vật</a>
                             </li>
                         </ol>
                     </nav>
@@ -488,7 +488,7 @@
                 dictDefaultMessage: "Kéo và thả tệp tin hoặc nhấp để tải lên", // Thông báo mặc định
             };
 
-            Dropzone.options.myDropzone.url = "{{ route('admin.home') }}";
+            Dropzone.options.myDropzone.url = "{{ route('list_animal') }}";
         }
     </script>
 @endsection

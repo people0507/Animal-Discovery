@@ -2,26 +2,26 @@
     <div class="scroll-sidebar" data-sidebarbg="skin6">
         <nav class="sidebar-nav">
             <ul id="sidebarnav">
-                <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="{{ route('admin.home') }}"
+                <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="{{ route('admin.dashboard') }}"
                         aria-expanded="false"><i data-feather="home" class="feather-icon"></i><span
                             class="hide-menu">Dashboard</span></a>
                 </li>
                 <li class="list-divider"></li>
-                <li class="nav-small-cap"><span class="hide-menu">Quản ý</span></li>
+                <li class="nav-small-cap"><span class="hide-menu">Quản Lý</span></li>
                 <li class="sidebar-item">
                     <a class="sidebar-link has-arrow" href="javascript:void(0)" aria-expanded="false">
                         <i data-feather="file-text" class="feather-icon"></i>
-                        <span class="hide-menu">Quản lý động vật</span>
+                        <span class="hide-menu">Quản Lý Động Vật</span>
                     </a>
                     <ul aria-expanded="false" class="collapse first-level base-level-line">
                         <li class="sidebar-item">
                             <a href="{{ route('list_animal') }}" class="sidebar-link">
-                                <span class="hide-menu"> Danh sách động vật </span>
+                                <span class="hide-menu"> Danh Sách Động Vật </span>
                             </a>
                         </li>
                         <li class="sidebar-item">
                             <a href="{{ route('admin.add-animal') }}" class="sidebar-link">
-                                <span class="hide-menu"> Thêm động vật</span>
+                                <span class="hide-menu"> Thêm Động Vật</span>
                             </a>
                         </li>
                     </ul>
@@ -29,17 +29,17 @@
                 <li class="sidebar-item">
                     <a class="sidebar-link has-arrow" href="javascript:void(0)" aria-expanded="false">
                         <i data-feather="users" class="feather-icon"></i>
-                        <span class="hide-menu">Quản lý người dùng</span>
+                        <span class="hide-menu">Quản Lý Người Dùng</span>
                     </a>
                     <ul aria-expanded="false" class="collapse first-level base-level-line">
                         <li class="sidebar-item">
                             <a href="{{ route('admin.list_user') }}" class="sidebar-link">
-                                <span class="hide-menu"> Danh sách người dùng</span>
+                                <span class="hide-menu"> Danh Sách Người Dùng</span>
                             </a>
                         </li>
                         <li class="sidebar-item">
                             <a href="{{ route('admin.view_add_user') }}" class="sidebar-link">
-                                <span class="hide-menu"> Thêm người dùng </span>
+                                <span class="hide-menu"> Thêm Người Dùng </span>
                             </a>
                         </li>
                     </ul>
@@ -47,12 +47,12 @@
                 <li class="sidebar-item">
                     <a class="sidebar-link has-arrow" href="javascript:void(0)" aria-expanded="false">
                         <i data-feather="users" class="feather-icon"></i>
-                        <span class="hide-menu">Quản lý diễn đàn</span>
+                        <span class="hide-menu">Quản Lý Diễn Đàn</span>
                     </a>
                     <ul aria-expanded="false" class="collapse first-level base-level-line">
                         <li class="sidebar-item">
                             <a href="{{ route('admin.list_posts') }}" class="sidebar-link">
-                                <span class="hide-menu"> Bài viết </span>
+                                <span class="hide-menu"> Bài Viết </span>
                             </a>
                         </li>
                     </ul>
