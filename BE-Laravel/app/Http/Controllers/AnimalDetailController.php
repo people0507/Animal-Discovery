@@ -75,20 +75,9 @@ class AnimalDetailController extends Controller
         $habitImage = Image::where('detail_id', $data->id)->inRandomOrder()->first();
         $populationImage = Image::where('detail_id', $data->id)->inRandomOrder()->first();
         $conservationStatus = ConservationStatus::all();
+        $multiImages = $data->multiImages;
 
-        $photos = [
-            ['url' => 'https://media.wired.com/photos/593261cab8eb31692072f129/master/pass/85120553.jpg'],
-            ['url' => 'https://media.wired.com/photos/593261cab8eb31692072f129/master/pass/85120553.jpg'],
-            ['url' => 'https://media.wired.com/photos/593261cab8eb31692072f129/master/pass/85120553.jpg'],
-            ['url' => 'https://media.wired.com/photos/593261cab8eb31692072f129/master/pass/85120553.jpg'],
-            ['url' => 'https://media.wired.com/photos/593261cab8eb31692072f129/master/pass/85120553.jpg'],
-        ];
-
-        $videos = [
-            'url' => 'https://www.youtube-nocookie.com/embed/r2t0MidPKXQ?;',
-        ];
-
-        return view('user.animal-detail', compact('data', 'habitImage', 'populationImage', 'conservationStatus', 'photos', 'videos'));
+        return view('user.animal-detail', compact('data', 'habitImage', 'populationImage', 'conservationStatus','multiImages'));
     }
 
     public function getAnimalDetailAreas($id)

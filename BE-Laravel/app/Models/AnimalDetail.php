@@ -55,6 +55,11 @@ class AnimalDetail extends Model
         return $this->hasOne(Image::class,'detail_id');
     }
 
+    public function multiImages()
+    {
+        return $this->hasMany(Image::class,'detail_id');
+    }
+
     public function status()
     {
         return $this->belongsTo(ConservationStatus::class,'conservation_status_id');
