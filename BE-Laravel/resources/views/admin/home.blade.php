@@ -1,15 +1,73 @@
 @extends('admin.main')
 @section('title', 'Home Page Admin')
 @section('content_admin')
+<style>
+        .notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 15px;
+            background-color: #4CAF50;
+            /* Màu xanh */
+            color: white;
+            z-index: 9999;
+            display: none;
+            /* Ẩn ban đầu */
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .notification.success {
+            background-color: #4CAF50;
+            /* Màu xanh */
+        }
+
+        .notification.failed {
+            background-color: #ff3333;
+            /* Màu đỏ */
+            color: white;
+        }
+
+
+        .notification.show {
+            display: block;
+            animation: slideInRight 0.5s ease-out forwards;
+        }
+
+        @keyframes slideInRight {
+            0% {
+                transform: translateX(100%);
+            }
+
+            100% {
+                transform: translateX(0);
+            }
+        }
+    </style>
+    @if (session('success'))
+        <div id="notification" class="notification success">
+            <p id="notification-message"></p>
+            <span id="close-notification" class="close-notification"><i class="fa fa-check" aria-hidden="true"></i>
+                {{ session('success') }}</span>
+        </div>
+    @endif
+
+    @if (session('failed'))
+        <div id="notification" class="notification failed">
+            <p id="notification-message"></p>
+            <span id="close-notification" class="close-notification"><i class="fa fa-exclamation-triangle"
+                    aria-hidden="true"></i> {{ session('failed') }}</span>
+        </div>
+    @endif
     <div class="page-breadcrumb">
         <div class="row">
             <div class="col-7 align-self-center">
-                <h3 class="page-title text-truncate text-dark font-weight-medium mb-1">Good Morning {{ Auth::user()->name }}!
+                <h3 class="page-title text-truncate text-dark font-weight-medium mb-1">Xin Chào {{ Auth::user()->name }}!
                 </h3>
                 <div class="d-flex align-items-center">
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb m-0 p-0">
-                            <li class="breadcrumb-item"><a href="{{ route('admin.home') }}">Dashboard</a>
+                            <li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}">Dashboard</a>
                             </li>
                         </ol>
                     </nav>
@@ -24,14 +82,12 @@
                     <div class="d-flex d-lg-flex d-md-block align-items-center">
                         <div>
                             <div class="d-inline-flex align-items-center">
-                                <h2 class="text-dark mb-1 font-weight-medium">236</h2>
-                                <span
-                                    class="badge bg-primary font-12 text-white font-weight-medium badge-pill ml-2 d-lg-block d-md-none">+18.33%</span>
+                                <h2 class="text-dark mb-1 font-weight-medium">{{$user}}</h2>
                             </div>
-                            <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">New Clients</h6>
+                            <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">Người Dùng</h6>
                         </div>
                         <div class="ml-auto mt-md-3 mt-lg-0">
-                            <span class="opacity-7 text-muted"><i data-feather="user-plus"></i></span>
+                            <span class="opacity-7 text-muted"><i data-feather="user"></i></span>
                         </div>
                     </div>
                 </div>
@@ -56,14 +112,12 @@
                     <div class="d-flex d-lg-flex d-md-block align-items-center">
                         <div>
                             <div class="d-inline-flex align-items-center">
-                                <h2 class="text-dark mb-1 font-weight-medium">1538</h2>
-                                <span
-                                    class="badge bg-danger font-12 text-white font-weight-medium badge-pill ml-2 d-md-none d-lg-block">-18.33%</span>
+                                <h2 class="text-dark mb-1 font-weight-medium">{{$post}}</h2>
                             </div>
-                            <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">New Projects</h6>
+                            <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">Bài Viết</h6>
                         </div>
                         <div class="ml-auto mt-md-3 mt-lg-0">
-                            <span class="opacity-7 text-muted"><i data-feather="file-plus"></i></span>
+                            <span class="opacity-7 text-muted"><i data-feather="file-text"></i></span>
                         </div>
                     </div>
                 </div>
@@ -72,11 +126,11 @@
                 <div class="card-body">
                     <div class="d-flex d-lg-flex d-md-block align-items-center">
                         <div>
-                            <h2 class="text-dark mb-1 font-weight-medium">864</h2>
-                            <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">Projects</h6>
+                            <h2 class="text-dark mb-1 font-weight-medium">{{$animalDetail}}</h2>
+                            <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">Động Vật</h6>
                         </div>
                         <div class="ml-auto mt-md-3 mt-lg-0">
-                            <span class="opacity-7 text-muted"><i data-feather="globe"></i></span>
+                            <span class="opacity-7 text-muted"><i data-feather="gitlab"></i></span>
                         </div>
                     </div>
                 </div>
@@ -174,7 +228,7 @@
         <!-- *************************************************************** -->
         <!-- Start Top Leader Table -->
         <!-- *************************************************************** -->
-        <div class="row">
+        <!-- <div class="row">
             <div class="col-12">
                 <div class="card">
                     <div class="card-body">
@@ -350,9 +404,41 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
         <!-- *************************************************************** -->
         <!-- End Top Leader Table -->
         <!-- *************************************************************** -->
     </div>
 @endsection
+<script>
+    // Hiển thị thông báo
+    function showNotification(message) {
+        var notification = document.querySelector('.notification');
+        notification.innerHTML = message;
+        notification.classList.add('show');
+
+        // Tự động ẩn sau 5 giây
+        setTimeout(function() {
+            hideNotification();
+        }, 5000); // Ẩn sau 5 giây
+    }
+
+    // Ẩn thông báo
+    function hideNotification() {
+        var notification = document.querySelector('.notification');
+        notification.classList.remove('show');
+    }
+
+    // Hiển thị thông báo khi trang được load
+    window.onload = function() {
+        var successMessage = "{{ session('success') }}";
+        var failedMessage = "{{ session('failed') }}";
+
+        if (failedMessage) {
+            showNotification(failedMessage);
+        }
+        if (successMessage) {
+            showNotification(successMessage);
+        }
+    };
+</script>

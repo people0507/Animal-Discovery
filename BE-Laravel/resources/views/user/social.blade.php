@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Social - Cuong</title>
+    <title>Cộng Đồng Động Vật</title>
     <!-- STYLESHEET -->
     <link rel="stylesheet" href="{{ asset('users/social_assets/css/style.css') }}">
     <!-- ICONCOUT CDN -->
@@ -21,12 +21,8 @@
     <nav>
         <div class="container">
             <h2 class="logo">
-                CuongSocial
+            Cộng Đồng Động Vật
             </h2>
-            <div class="search-bar">
-                <i class="uil uil-search"></i>
-                <input type="search" placeholder="Search for creators inspirations">
-            </div>
             <div class="create">
                 {{-- <label class="btn btn-primary" for="create-post" id="createPostButton">Create</label> --}}
                 <div class="profile-picture">
@@ -35,9 +31,67 @@
             </div>
         </div>
     </nav>
+    <style>
+        .notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 15px;
+            background-color: #4CAF50;
+            /* Màu xanh */
+            color: white;
+            z-index: 9999;
+            display: none;
+            /* Ẩn ban đầu */
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
 
+        .notification.success {
+            background-color: #4CAF50;
+            /* Màu xanh */
+        }
+
+        .notification.failed {
+            background-color: #ff3333;
+            /* Màu đỏ */
+            color: white;
+        }
+
+
+        .notification.show {
+            display: block;
+            animation: slideInRight 0.5s ease-out forwards;
+        }
+
+        @keyframes slideInRight {
+            0% {
+                transform: translateX(100%);
+            }
+
+            100% {
+                transform: translateX(0);
+            }
+        }
+    </style>
     <!----------------------------- MAIN ----------------------------->
     <main>
+        
+    @if (session('success'))
+        <div id="notification" class="notification success">
+            <p id="notification-message"></p>
+            <span id="close-notification" class="close-notification"><i class="fa fa-check" aria-hidden="true"></i>
+                {{ session('success') }}</span>
+        </div>
+    @endif
+
+    @if (session('failed'))
+        <div id="notification" class="notification failed">
+            <p id="notification-message"></p>
+            <span id="close-notification" class="close-notification"><i class="fa fa-exclamation-triangle"
+                    aria-hidden="true"></i> {{ session('failed') }}</span>
+        </div>
+    @endif
         <div class="container">
             <!-- ================ LEFT ================ -->
             <div class="left">
@@ -46,9 +100,9 @@
                         <img src="{{ asset('users/social_assets/images/profile-1.jpg') }}">
                     </div>
                     <div class="handle">
-                        <h4>Anna Jr</h4>
+                        <h4>{{Auth::user()->name}}</h4>
                         <p class="text-muted">
-                            @anna
+                            {{Auth::user()->email}}
                         </p>
                     </div>
                 </div>
@@ -59,12 +113,12 @@
                     <a class="menu-item active">
                         <span><i class="uil uil-home"></i>
                         </span>
-                        <h3>Home</h3>
+                        <h3>Trang chủ</h3>
                     </a>
                     <a class="menu-item" id="notification">
                         <span><i class="uil uil-bell"><small class="notification-count">4</small></i>
                         </span>
-                        <h3>Notifications</h3>
+                        <h3>Thông Báo</h3>
                         <!-- ----------------------- NOTIFICATION POPUP ----------------------- -->
                         <div class="notification-popup" style="display: none;">
                             <div>
@@ -112,7 +166,7 @@
                     <a class="menu-item" id="theme">
                         <span><i class="uil uil-palette"></i>
                         </span>
-                        <h3>Theme</h3>
+                        <h3>Giao Diện</h3>
                     </a>
 
                 </div>
@@ -153,24 +207,14 @@
                                 <div class="description" id="description-{{ $key }}">
                                     {{ Str::limit($post->content, 300) }}
                                     @if (strlen($post->content) > 300)
-                                        <span class="show-more" onclick="showMore({{ $key }})">Show
-                                            more</span>
+                                        <span class="show-more" onclick="showMore({{ $key }})">Xem Thêm</span>
                                     @endif
                                 </div>
                                 <div class="full-description" id="full-description-{{ $key }}"
                                     style="display: none;">
                                     {{ $post->content }}
-                                    <span class="show-less" onclick="showLess({{ $key }})">Show
-                                        less</span>
+                                    <span class="show-less" onclick="showLess({{ $key }})">Ẩn bớt</span>
                                 </div>
-                                <span class="edit">
-                                    <i class="uil uil-ellipsis-h"></i>
-                                </span>
-                            </div>
-
-
-                            <div class="content" style="margin:5px 0px">
-                                <p>{{$post->content}}</p>
                             </div>
 
                             <div class="photo">
@@ -279,7 +323,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <span class="close_{{$key}}">&times;</span>
-                    <h2>Leave a Comment</h2>
+                    <h2>Để lại bình luận </h2>
                 </div>
                 <div class="comments-modal">
 
@@ -288,7 +332,7 @@
                     <input id="inputComment_{{$key}}" type="text" class="btn-comment" placeholder="Viết bình luận ...">
                     <br>
                     <button id="submitComment_{{$key}}" type="button" class="btn btn-primary"
-                        style="margin-top: 10px">Submit</button>
+                        style="margin-top: 10px">Bình Luận</button>
                 </div>
             </div>
         </div>
@@ -302,33 +346,29 @@
                 <h5 class="modal-title">Thêm bài viết</h5>
             </div>
             <div class="modal-body">
-                <form id="addContinentForm" enctype="multipart/form-data">
+                <form action="{{route('user.create_animal_post')}}" id="addContinentForm" enctype="multipart/form-data" method="post">
+                    @csrf
                     <div class="form-group">
                         <label for="continentTitle">Tên bài viết</label>
-                        <input type="text" class="form-control" name="" id="continentTitle"
+                        <input type="text" class="form-control" name="title" id="continentTitle"
                             placeholder="Nhập tiêu đề bài viết" required>
                     </div>
                     <div class="form-group">
                         <label for="continentDescription">Mô tả</label>
-                        <textarea class="form-control" name="" id="continentDescription" rows="3"
+                        <textarea style="height:300px" class="form-control" name="content" id="continentDescription" rows="3"
                             placeholder="Nhập mô tả" required></textarea>
                     </div>
                     <div class="form-group">
-                        <label for="continentTitle">Đường dẫn về động vật</label>
-                        <input type="text" class="form-control" name="" id="continentTitle"
-                            placeholder="Nhập đường dẫn động vật" required>
-                    </div>
-                    <div class="form-group">
                         <label for="continentImage">Hình ảnh</label>
-                        <input type="file" class="form-control-file" name="" id="continentImage" required>
+                        <input type="file" class="form-control-file" name="image" id="continentImage" required>
                     </div>
-                </form>
             </div>
             <div class="modal-footer">
-                <button type="submit" class="btn btn-primary" style="margin-right: 10px"
-                    form="addContinentForm">Lưu</button>
+                <button type="submit" class="btn btn-primary" style="margin-right: 10px" >Lưu</button>
                 <button type="button" class="btn btn-secondary" id="closeModalButton">Đóng</button>
             </div>
+            </form>
+
         </div>
     </div>
 
@@ -367,27 +407,6 @@
                 }
             });
 
-            // Xử lý submit form thêm mới châu lục
-            addContinentForm.addEventListener('submit', function (event) {
-                event.preventDefault();
-
-                var formData = new FormData(addContinentForm);
-
-                // Xử lý form data (ví dụ: gửi form data đến server bằng fetch API hoặc XMLHttpRequest)
-                fetch('/your-api-endpoint', {
-                    method: 'POST',
-                    body: formData,
-                })
-                    .then(response => response.json())
-                    .then(data => {
-                        console.log('Success:', data);
-                        // Đóng modal sau khi submit thành công
-                        addContinentModal.style.display = 'none';
-                    })
-                    .catch(error => {
-                        console.error('Error:', error);
-                    });
-            });
         });
 
         function showMore(id) {
@@ -526,6 +545,38 @@
         });
 
     </script>
+    <script>
+    // Hiển thị thông báo
+    function showNotification(message) {
+        var notification = document.querySelector('.notification');
+        notification.innerHTML = message;
+        notification.classList.add('show');
+
+        // Tự động ẩn sau 5 giây
+        setTimeout(function() {
+            hideNotification();
+        }, 5000); // Ẩn sau 5 giây
+    }
+
+    // Ẩn thông báo
+    function hideNotification() {
+        var notification = document.querySelector('.notification');
+        notification.classList.remove('show');
+    }
+
+    // Hiển thị thông báo khi trang được load
+    window.onload = function() {
+        var successMessage = "{{ session('success') }}";
+        var failedMessage = "{{ session('failed') }}";
+
+        if (failedMessage) {
+            showNotification(failedMessage);
+        }
+        if (successMessage) {
+            showNotification(successMessage);
+        }
+    };
+</script>
 </body>
 
 

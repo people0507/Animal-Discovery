@@ -36,6 +36,41 @@
             animation: slideInRight 0.5s ease-out forwards;
         }
 
+        .search-container {
+        display: flex;
+        gap: 10px;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .search-input .search-datetime {
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        width: 200px;
+    }
+
+    .search-select {
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+
+    .search-button {
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        background-color: #007BFF;
+        color: white;
+        cursor: pointer;
+    }
+
+    .search-button:hover {
+        background-color: #0056b3;
+    }
+
         @keyframes slideInRight {
             0% {
                 transform: translateX(100%);
@@ -68,11 +103,26 @@
                 <div class="d-flex align-items-center">
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb m-0 p-0">
-                            <li class="breadcrumb-item"><a href="{{ route('admin.home') }}">Animal Management</a>
+                            <li class="breadcrumb-item"><a href="{{ route('admin.list_user') }}">Quản Lý Người Dùng</a>
                             </li>
                         </ol>
                     </nav>
                 </div>
+            </div>
+            <div class="col mt-3">
+            <form action="{{route('admin.search_user')}}" method="post">
+                @csrf
+                <div class="search-container">
+                    <input type="text" name="key_word" class="search-input" placeholder="Nhập email">
+                    <select class="search-select ml-3 mr-3" name="role_id">
+                        <option value="">Vai trò</option>
+                        <option value="1">Quản lý</option>
+                        <option value="2">Người dùng</option>
+                    </select>
+                    <input type="date" class="search-datetime" name="date_filter">
+                    <button type="submit" class="search-button">Tìm Kiếm</button>
+                </div>
+            </form>
             </div>
         </div>
     </div>
@@ -139,6 +189,7 @@
                                 </tbody>
                             </table>
                         </div>
+                        {{ $users->links('pagination::bootstrap-4') }}
                     </div>
                 </div>
             </div>

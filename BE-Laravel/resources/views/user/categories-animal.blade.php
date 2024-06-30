@@ -39,14 +39,6 @@
             /* Điều chỉnh khoảng cách dòng */
         }
     </style>
-    @php
-        $breadcrumbs = [
-            ['name' => 'Home', 'url' => route('user.home')],
-            ['name' => 'List Animal For Category', 'url' => route('user.fillter-list-animal')],
-        ];
-    @endphp
-
-    @include('user.includes.redirect', ['breadcrumbs' => $breadcrumbs])
     <!-- About Start -->
     <div class="container-xxl py-5">
         <div class="container">
@@ -79,7 +71,7 @@
                         </div>
                     </div>
                 @endforeach
-
+                {{ $data->links('pagination::bootstrap-4') }}
                 <!-- <div class="item-animal">
                                 <div class="row">
                                     <div class="col-6">

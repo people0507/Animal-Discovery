@@ -52,9 +52,9 @@ Route::get('/list-blog-3', function () {
 })->name('user.list-blog-3');
 
 // blog detail
-Route::get('/blog-detail', function () {
-    return view('user.blog-detail');
-})->name('user.blog-detail');
+// Route::get('/blog-detail', function () {
+//     return view('user.blog-detail');
+// })->name('user.blog-detail');
 
 // social
 // Route::get('/social', function () {
@@ -77,9 +77,7 @@ Route::get('/blog-detail', function () {
 
 
 // ----------- Admin -----------
-Route::get('/dashboard', function () {
-    return view('admin.home');
-})->name('admin.home');
+
 
 // Animal
 Route::get('/animals/list', function () {
@@ -97,8 +95,8 @@ Route::get('/animals/list', function () {
 Route::get('/view_login', [LoginController::class, 'viewLogin'])->name('view_login');
 Route::get('/view_register', [LoginController::class, 'viewRegister'])->name('view_register');
 Route::post('/login', [LoginController::class, 'login'])->name('login');
+Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 Route::post('/register', [LoginController::class, 'register'])->name('register');
-Route::post('/create', [AdminController::class, 'create']);
 
 Route::prefix('animal_detail')->group(function () {
     Route::get('/view_animal_page', [AnimalDetailController::class, 'viewAnimalPage'])->name('user.home');
@@ -110,9 +108,10 @@ Route::prefix('animal_detail')->group(function () {
     Route::get('/fillter-climate/{id}', [AnimalDetailController::class, 'climateZone'])->name('climate-zone');
     Route::get('/fillter-biome/{id}', [AnimalDetailController::class, 'biome'])->name('biome');
     Route::get('/list-blog', [AnimalDetailController::class, 'viewAnimalBlog'])->name('user.list-blog');
+    Route::get('/detail-blog/{id}', [AnimalDetailController::class, 'viewDetailBlog'])->name('user.detail-blog');
 });
 
-Route::prefix('animal_post')->group(function () {
+Route::prefix('animal_post')->middleware('checklogin')->group(function () {
     Route::get('/list_post_social', [PostController::class, 'listPostSocial'])->name('user.list_post_social');
     Route::post('/get_list_comment', [PostController::class, 'getListComment'])->name('user.get_list_comment');
     Route::post('/create_animal_post', [PostController::class, 'createPost'])->name('user.create_animal_post');
@@ -124,8 +123,10 @@ Route::prefix('animal_post')->group(function () {
     Route::post('/post_like_or_dislike', [PostController::class, 'likeOrDislike'])->name('user.post_like_or_dislike');
 });
 
-Route::prefix('admin')->middleware('checklogin')->group(function () {
+Route::prefix('admin')->middleware(['checklogin','checkrole'])->group(function () {
+    Route::get('/dashboard', [AdminController::class, 'dashBoard'])->name('admin.dashboard');
     Route::get('/list_user', [AdminController::class, 'listUser'])->name('admin.list_user');
+    Route::post('/search_user', [AdminController::class, 'searchUser'])->name('admin.search_user');
     Route::get('/view_create_user', [AdminController::class, 'viewCreateUser'])->name('admin.view_add_user');
     Route::post('/create-user', [AdminController::class, 'createUser'])->name('admin.create_user');
     Route::get('/view_edit_user/{id}', [AdminController::class, 'viewEditUser'])->name('admin.view_edit_user');
@@ -134,6 +135,7 @@ Route::prefix('admin')->middleware('checklogin')->group(function () {
 
     // Animal
     Route::get('/list_animal', [AdminController::class, 'listAnimal'])->name('list_animal');
+    Route::post('/search_animal', [AdminController::class, 'searchAnimal'])->name('admin.search_animal');
     Route::get('/detail_animal/{id}', [AdminController::class, 'detailAnimal'])->name('detail_animal');
     Route::get('/animals/add', [AdminController::class, 'viewAddAnimal'])->name('admin.add-animal');
     Route::post('/create_animal_detail', [AdminController::class, 'createAnimalDetail'])->name('admin.create-animal');
@@ -178,6 +180,7 @@ Route::prefix('admin')->middleware('checklogin')->group(function () {
 
     // List posts
     Route::get('/list_posts', [AdminController::class, 'listPostsView'])->name('admin.list_posts');
+    Route::post('/search_posts', [AdminController::class, 'searchPost'])->name('admin.search_posts');
     Route::delete('/delete_posts/{id}', [AdminController::class, 'deletePost'])->name('admin.delete-posts');
     Route::post('/approval_posts/{id}', [AdminController::class, 'approvalPost'])->name('admin.approval-posts');
 });

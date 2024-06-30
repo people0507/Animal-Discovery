@@ -2,67 +2,44 @@
     <div class="scroll-sidebar" data-sidebarbg="skin6">
         <nav class="sidebar-nav">
             <ul id="sidebarnav">
-                <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="{{ route('admin.home') }}"
+                <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="{{ route('admin.dashboard') }}"
                         aria-expanded="false"><i data-feather="home" class="feather-icon"></i><span
                             class="hide-menu">Dashboard</span></a>
                 </li>
                 <li class="list-divider"></li>
-                <li class="nav-small-cap"><span class="hide-menu">Manager</span></li>
+                <li class="nav-small-cap"><span class="hide-menu">Quản Lý</span></li>
                 <li class="sidebar-item">
                     <a class="sidebar-link has-arrow" href="javascript:void(0)" aria-expanded="false">
                         <i data-feather="file-text" class="feather-icon"></i>
-                        <span class="hide-menu">Animal Management</span>
+                        <span class="hide-menu">Quản Lý Động Vật</span>
                     </a>
                     <ul aria-expanded="false" class="collapse first-level base-level-line">
                         <li class="sidebar-item">
                             <a href="{{ route('list_animal') }}" class="sidebar-link">
-                                <span class="hide-menu"> All Animals </span>
+                                <span class="hide-menu"> Danh Sách Động Vật </span>
                             </a>
                         </li>
                         <li class="sidebar-item">
                             <a href="{{ route('admin.add-animal') }}" class="sidebar-link">
-                                <span class="hide-menu"> Add Animals </span>
+                                <span class="hide-menu"> Thêm Động Vật</span>
                             </a>
                         </li>
-                        {{-- <li class="sidebar-item">
-                            <a class="sidebar-link has-arrow" href="javascript:void(0)" aria-expanded="false">
-                                <i data-feather="file-text" class="feather-icon"></i>
-                                <span class="hide-menu">Add Animal</span>
-                            </a>
-                            <ul aria-expanded="false" class="collapse first-level base-level-line">
-                                <li class="sidebar-item">
-                                    <a href="{{ route('admin.add-animal') }}" class="sidebar-link">
-                                        <span class="hide-menu"> Add Basic </span>
-                                    </a>
-                                </li>
-                                <li class="sidebar-item">
-                                    <a href="{{ route('admin.add-image-animal') }}" class="sidebar-link">
-                                        <span class="hide-menu"> Add Image</span>
-                                    </a>
-                                </li>
-                                <li class="sidebar-item">
-                                    <a href="{{ route('admin.classification-animal') }}" class="sidebar-link">
-                                        <span class="hide-menu">Classification</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li> --}}
                     </ul>
                 </li>
                 <li class="sidebar-item">
                     <a class="sidebar-link has-arrow" href="javascript:void(0)" aria-expanded="false">
                         <i data-feather="users" class="feather-icon"></i>
-                        <span class="hide-menu">Users</span>
+                        <span class="hide-menu">Quản Lý Người Dùng</span>
                     </a>
                     <ul aria-expanded="false" class="collapse first-level base-level-line">
                         <li class="sidebar-item">
                             <a href="{{ route('admin.list_user') }}" class="sidebar-link">
-                                <span class="hide-menu"> All Users </span>
+                                <span class="hide-menu"> Danh Sách Người Dùng</span>
                             </a>
                         </li>
                         <li class="sidebar-item">
                             <a href="{{ route('admin.view_add_user') }}" class="sidebar-link">
-                                <span class="hide-menu"> Add User </span>
+                                <span class="hide-menu"> Thêm Người Dùng </span>
                             </a>
                         </li>
                     </ul>
@@ -70,12 +47,12 @@
                 <li class="sidebar-item">
                     <a class="sidebar-link has-arrow" href="javascript:void(0)" aria-expanded="false">
                         <i data-feather="users" class="feather-icon"></i>
-                        <span class="hide-menu">Post Animal</span>
+                        <span class="hide-menu">Quản Lý Diễn Đàn</span>
                     </a>
                     <ul aria-expanded="false" class="collapse first-level base-level-line">
                         <li class="sidebar-item">
                             <a href="{{ route('admin.list_posts') }}" class="sidebar-link">
-                                <span class="hide-menu"> All Posts </span>
+                                <span class="hide-menu"> Bài Viết </span>
                             </a>
                         </li>
                     </ul>

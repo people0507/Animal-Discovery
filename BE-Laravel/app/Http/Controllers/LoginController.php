@@ -41,14 +41,19 @@ class LoginController extends Controller
             $user = auth()->user();
             if($user->role_id == User::ADMIN){
                 $message = MessageContent::getMessage('login_success');
-                return view('admin.home',compact('user', 'message'));
+                return redirect()->route('admin.dashboard')->with('success', $message);
             }else{
                 $message = MessageContent::getMessage('login_success');
-                return view('user.home',compact('user', 'message'));
+                return redirect()->route('user.list_post_social')->with('success', $message);
             }
         }else{
             $message = MessageContent::getMessage('login_failed');
-            return view('authen.login');
+            return view('authen.login')->with('failed', $message);
         }
+    }
+
+    function logout(){
+        Auth::logout();
+        return redirect()->route('view_login');
     }
 }
