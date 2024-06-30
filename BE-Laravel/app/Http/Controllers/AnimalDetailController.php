@@ -2,9 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ActivityTime;
 use App\Models\Biome;
+use App\Models\Category;
 use App\Models\Climate;
+use App\Models\DietType;
 use App\Models\Image;
+use App\Models\PopulationTrending;
 use Illuminate\Http\Request;
 use App\Models\AnimalDetail;
 use Str;
@@ -14,6 +18,7 @@ use App\Models\ConservationStatus;
 use App\Models\Color;
 use App\Models\Ocean;
 use App\Models\Post;
+use App\Models\Nation;
 
 class AnimalDetailController extends Controller
 {
@@ -78,6 +83,22 @@ class AnimalDetailController extends Controller
         $multiImages = $data->multiImages;
 
         return view('user.animal-detail', compact('data', 'habitImage', 'populationImage', 'conservationStatus','multiImages'));
+    }
+
+    public function viewSearchFilter(){
+        $areas = Area::all();
+        $climates = Climate::all();
+        $biomes = Biome::all();
+        $nations = Nation::all();
+        $colors = Color::all();
+        $oceans = Ocean::all();
+        $status = ConservationStatus::all();
+        $activity_times = ActivityTime ::all();
+        $population_trendings = PopulationTrending::all();
+        $diet_types = DietType::all();
+        $categories = Category::all();
+        $data = AnimalDetail::with('images')->paginate(5);
+        return view('user.search_filter',compact('areas', 'climates', 'biomes','nations','colors','oceans','status','activity_times','population_trendings','diet_types','categories','data'));
     }
 
     public function getAnimalDetailAreas($id)
