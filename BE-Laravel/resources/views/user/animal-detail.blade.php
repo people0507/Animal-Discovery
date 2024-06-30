@@ -359,41 +359,27 @@
                         Hình Ảnh
                     </h2>
 
-                    <div class="s-gallery-block">
-                        <div class="row">
-                            @foreach ($photos as $index => $photo)
-                                @if ($index == 0)
-                                    <div class="col-lg-6 no-gutter-r">
-                                        <div class="s-gallery-item s-gallery-item--md open-gallery"
-                                            data-id="{{ $index }}">
-                                            <img src="{{ $photo['url'] }}" alt="Photo {{ $index }}">
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6 no-gutter-r">
-                                        <div class="s-gallery-block__sm">
-                                        @else
-                                            @if ($index % 2 == 1)
-                                                <div class="row">
-                                                    <div class="col-sm-6 no-gutter-r">
-                                                        <div class="s-gallery-item s-gallery-item--right open-gallery mb-3"
-                                                            data-id="{{ $index }}">
-                                                            <img src="{{ $photo['url'] }}"
-                                                                alt="Photo {{ $index }}">
-                                                        </div>
-                                                    </div>
-                                                @else
-                                                    <div class="col-sm-6 no-gutter-r">
-                                                        <div class="s-gallery-item s-gallery-item--right open-gallery"
-                                                            data-id="{{ $index }}">
-                                                            <img src="{{ $photo['url'] }}"
-                                                                alt="Photo {{ $index }}">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            @endif
-                                @endif
-                            @endforeach
+                    <div id="carouselExampleIndicators" class="carousel slide">
+                    <div class="carousel-indicators">
+                    @foreach ($multiImages as $key => $image)
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="{{$key}}" class="{{$key == 0 ? 'active':''}}" aria-current="true" aria-label="Slide 1"></button>
+                    @endforeach
+                    </div>
+                    <div class="carousel-inner">
+                        @foreach ($multiImages as $key => $image)
+                        <div class="carousel-item {{$key == 0 ? 'active':''}}">
+                        <img src="http://localhost:8000/animal_images/{{ $image->image_name }}" class="d-block w-100" alt="...">
                         </div>
+                        @endforeach
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
                     </div>
                 </div>
             </section>
@@ -424,7 +410,7 @@
                                                     <div class="tp-caption tp-resizeme tp-videolayer coverscreenvideo HasListener rs-apiready"
                                                         id="slide-3018-layer-30"
                                                         style="z-index: 7; border-width: 0px; visibility: inherit; width: 1170px; height: 658px; transition: none 0s ease 0s; text-align: left; line-height: 0px; margin: 0px; padding: 0px; letter-spacing: 0px; font-weight: 400; font-size: 17px; white-space: nowrap; min-height: 0px; min-width: 0px; max-height: none; max-width: none; opacity: 1; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transform-origin: 50% 50% 0px;">
-                                                        <iframe type="text/html" src="{{ $videos['url'] }}"
+                                                        <iframe type="text/html" src="{{ $data->animal_video }}"
                                                             width="100%" height="100%"
                                                             style="opacity: 1; width: 100%; height: 100.019%; position: absolute; left: 0px; top: -0.0094984%; display: block; transition: none 0s ease 0s; text-align: left; line-height: 0px; border-width: 0px; margin: 0px; padding: 0px; letter-spacing: 0px; font-weight: 400; font-size: 16px; visibility: inherit;"
                                                             class="resizelistener" id="iframe77143"
@@ -445,8 +431,8 @@
                                         style="position: relative; width: 900px; height: 80px; left: 0px;">
                                         <div class="tp-tab selected"
                                             style="width: 300px; height: 80px; left: 0px; top: 0px;">
-                                            <div class="tp-tab-content"> <span class="tp-tab-date">Documentary</span>
-                                                <span class="tp-tab-title">Things you need to know about RED FOXES!</span>
+                                            <div class="tp-tab-content"> <span class="tp-tab-date">Video Tài Liệu</span>
+                                                <span class="tp-tab-title">{{$data->animal_name}}</span>
                                             </div>
                                             <div class="tp-tab-image"
                                                 style="background-image: url(&quot;https://img.youtube.com/vi/r2t0MidPKXQ/default.jpg&quot;);">
@@ -525,7 +511,7 @@
                     <div class="s-distr-zone">
                         <h3 class="a-h3">
 
-                            Quần Thể Sinh Vật
+                            Quần Xã Sinh Vật
                         </h3>
                         <div class="s-distr-block">
                             <div class="row">
