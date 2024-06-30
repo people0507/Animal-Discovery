@@ -395,7 +395,11 @@
     @foreach ($areas as $key => $area)
         <style>
             .card_cate[for="c{{ $key + 1 }}"] {
+                @if($area->area_image != null)
                 background-image: url("http://localhost:8000/areas/{{ $area->area_image }}");
+                @else
+                background-image: url("http://localhost:8000/error/error.jpg");
+                @endif
                 background-size: cover;
                 background-position: center;
                 background-repeat: no-repeat;
@@ -750,8 +754,12 @@
 
                     <div class="checkin">
                         <div class="item">
+                            @if($tropical->climate_image != null)
                             <img src="http://localhost:8000/climates/full/{{ $tropical->climate_image }}"title="{{ $tropical->climate_name }}"
                                 class="zoom">
+                            @else
+                            <img src="http://localhost:8000/error/error.jpg" alt="error">
+                            @endif
                             <div class="content">
                                 <a href="{{ route('climate', ['id' => $tropical->id]) }}"
                                     class="title">{{ $tropical->climate_name }}</a>
@@ -762,8 +770,12 @@
                         </div>
 
                         <div class="item">
+                            @if($arid->climate_image != null)
                             <img src="http://localhost:8000/climates/full/{{ $arid->climate_image }}"
                                 title="{{ $arid->climate_name }}" class="zoom">
+                            @else
+                            <img src="http://localhost:8000/error/error.jpg" alt="error">
+                            @endif
                             <div class="content">
                                 <a href="{{ route('climate', ['id' => $arid->id]) }}"
                                     class="title">{{ $arid->climate_name }}</a>
@@ -774,8 +786,12 @@
                         </div>
 
                         <div class="item">
+                            @if($temperate->climate_image != null)
                             <img src="http://localhost:8000/climates/full/{{ $temperate->climate_image }}"
                                 title="{{ $temperate->climate_name }}" class="zoom">
+                            @else
+                            <img src="http://localhost:8000/error/error.jpg" alt="error">
+                            @endif
                             <div class="content">
                                 <a href="{{ route('climate', ['id' => $temperate->id]) }}"
                                     class="title">{{ $temperate->climate_name }}</a>
@@ -786,8 +802,12 @@
                         </div>
 
                         <div class="item">
+                            @if($cold->climate_image != null)
                             <img src="http://localhost:8000/climates/full/{{ $cold->climate_image }}"
                                 title="{{ $cold->climate_name }}" class="zoom">
+                            @else
+                            <img src="http://localhost:8000/error/error.jpg" alt="error">
+                            @endif
                             <div class="content">
                                 <a href="{{ route('climate', ['id' => $cold->id]) }}"
                                     class="title">{{ $cold->climate_name }}</a>
@@ -797,8 +817,12 @@
                             </div>
                         </div>
                         <div class="item">
+                            @if($polar->climate_image != null)
                             <img src="http://localhost:8000/climates/full/{{ $polar->climate_image }}"
                                 title="{{ $polar->climate_name }}" class="zoom">
+                            @else
+                            <img src="http://localhost:8000/error/error.jpg" alt="error">
+                            @endif
                             <div class="content">
                                 <a href="{{ route('climate', ['id' => $polar->id]) }}"
                                     class="title">{{ $polar->climate_name }}</a>

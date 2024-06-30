@@ -61,7 +61,7 @@ class AnimalDetailController extends Controller
     {
         $data = AnimalDetail::whereHas('colors', function ($query) use ($id) {
             $query->where('color_id', $id);
-        })->with(['images' => function ($query) {;
+        })->with(['images' => function ($query) {
         }])->paginate(5);
         $data1 = Color::where('id', $id)->first();
         return view('user.categories-animal', compact('data', 'data1'));
@@ -81,8 +81,8 @@ class AnimalDetailController extends Controller
         $populationImage = Image::where('detail_id', $data->id)->inRandomOrder()->first();
         $conservationStatus = ConservationStatus::all();
         $multiImages = $data->multiImages;
-
-        return view('user.animal-detail', compact('data', 'habitImage', 'populationImage', 'conservationStatus','multiImages'));
+        $dataRandom = AnimalDetail::with('images')->inRandomOrder()->take(5)->get();
+        return view('user.animal-detail', compact('data', 'habitImage', 'populationImage', 'conservationStatus','multiImages','dataRandom'));
     }
 
     public function viewSearchFilter(){
@@ -98,6 +98,100 @@ class AnimalDetailController extends Controller
         $diet_types = DietType::all();
         $categories = Category::all();
         $data = AnimalDetail::with('images')->paginate(5);
+        return view('user.search_filter',compact('areas', 'climates', 'biomes','nations','colors','oceans','status','activity_times','population_trendings','diet_types','categories','data'));
+    }
+
+    public function searchFilter(Request $request){
+        $areas = Area::all();
+        $climates = Climate::all();
+        $biomes = Biome::all();
+        $nations = Nation::all();
+        $colors = Color::all();
+        $oceans = Ocean::all();
+        $status = ConservationStatus::all();
+        $activity_times = ActivityTime ::all();
+        $population_trendings = PopulationTrending::all();
+        $diet_types = DietType::all();
+        $categories = Category::all();
+
+        $data = $request->all();
+        $arrayArea = isset($data['area_array']) ? $data['area_array'] : null; 
+        $arrayNation = isset($data['nation_array']) ? $data['nation_array'] : null;
+        $arrayClimate = isset($data['climate_array']) ? $data['climate_array'] : null; 
+        $arrayBiome = isset($data['biome_array']) ? $data['biome_array'] : null;
+        $arrayColor = isset($data['color_array']) ? $data['color_array'] : null;
+        $arrayOcean = isset($data['ocean_array']) ? $data['ocean_array'] : null;
+        $arrayStatus = isset($data['status_array']) ? $data['status_array'] : null;
+        $arrayActivityTime = isset($data['activity_time_array']) ? $data['activity_time_array'] : null;
+        $arrayPopulationTrending = isset($data['population_trending_array']) ? $data['population_trending_array'] : null;
+        $arrayDietType = isset($data['diet_type_array']) ? $data['diet_type_array'] : null;
+        $arrayCategory = isset($data['category_array']) ? $data['category_array'] : null;
+        $keyWord = isset($data['keyword']) ? $data['keyword'] : null; 
+
+
+        $query = AnimalDetail::with('images');
+        if ( $arrayArea !== null) {
+            $query->whereHas('areas', function($q) use ($arrayArea) {
+                $q->whereIn('area_id', $arrayArea);
+            });
+        }
+
+        if ( $arrayNation !== null) {
+            $query->whereHas('nations', function($q) use ($arrayNation) {
+                $q->whereIn('nation_id', $arrayNation);
+            });
+        }
+
+        if ( $arrayClimate !== null) {
+            $query->whereHas('climates', function($q) use ($arrayClimate) {
+                $q->whereIn('climate_id', $arrayClimate);
+            });
+        }
+
+        if ( $arrayBiome !== null) {
+            $query->whereHas('biomes', function($q) use ($arrayBiome) {
+                $q->whereIn('biome_id', $arrayBiome);
+            });
+        }
+
+        if ( $arrayColor !== null) {
+            $query->whereHas('colors', function($q) use ($arrayColor) {
+                $q->whereIn('color_id', $arrayColor);
+            });
+        }
+
+        if ( $arrayOcean !== null) {
+            $query->whereHas('oceans', function($q) use ($arrayOcean) {
+                $q->whereIn('ocean_id', $arrayOcean);
+            });
+        }
+
+        if ( $arrayStatus !== null) {
+            $query->whereIn('conservation_status_id', $arrayStatus);
+        }
+
+        if ( $arrayActivityTime !== null) {
+            $query->whereIn('activity_time_id', $arrayActivityTime);
+        }
+
+        if ( $arrayPopulationTrending !== null) {
+            $query->whereIn('population_trending_id', $arrayPopulationTrending);
+        }
+        
+        if ( $arrayDietType !== null) {
+            $query->whereIn('diet_type_id', $arrayDietType);
+        }
+
+        if ( $arrayCategory !== null) {
+            $query->whereIn('category_id', $arrayCategory);
+        }
+
+        if ($keyWord !== null) {
+            $query->where('animal_name', 'like', '%' . $keyWord . '%')
+                  ->orWhere('animal_scientific_name', 'like', '%' . $keyWord . '%');
+        }
+     
+        $data = $query->paginate(5);
         return view('user.search_filter',compact('areas', 'climates', 'biomes','nations','colors','oceans','status','activity_times','population_trendings','diet_types','categories','data'));
     }
 

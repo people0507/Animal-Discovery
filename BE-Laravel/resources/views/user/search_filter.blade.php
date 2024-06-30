@@ -287,6 +287,18 @@
             color: black; /* Black text on hover */
             border: 2px solid #4CAF50; /* Green border on hover */
         }
+
+        .search-input {
+            border: none;
+            outline: none;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 8px;
+            flex: 1;
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.5);
+            transition: box-shadow 0.3s ease-in-out;
+            margin-right: 10px
+        }
 </style>
 <!-- Blog Start -->
 <div class="container pt-5">
@@ -304,8 +316,8 @@
             </div>
 
             <!-- Tab content -->
-            <form action="">
-
+            <form action="{{route('user.search_filter')}}" method="post">
+                @csrf
                 <div class="tab-content">
                     <div class="tab-pane active">
                         <div class="container_select_mui">
@@ -359,7 +371,7 @@
                                 @foreach ($climates as $climate)
                                     <li class="item">
                                         <span class="ml-2 mr-2">
-                                            <input class="checkBox" type="checkbox" name="cimate_array[]"
+                                            <input class="checkBox" type="checkbox" name="climate_array[]"
                                                 value="{{$climate->id}}">
                                         </span>
                                         <span class="item-text">{{$climate->climate_name}}</span>
@@ -379,10 +391,10 @@
                                 @foreach ($biomes as $biome)
                                     <li class="item">
                                         <span class="ml-2 mr-2">
-                                            <input class="checkBox" type="checkbox" name="cimate_array[]"
-                                                value="{{$climate->id}}">
+                                            <input class="checkBox" type="checkbox" name="biome_array[]"
+                                                value="{{$biome->id}}">
                                         </span>
-                                        <span class="item-text">{{$climate->climate_name}}</span>
+                                        <span class="item-text">{{$biome->biome_name}}</span>
                                     </li>
                                 @endforeach
                             </ul>
@@ -523,6 +535,7 @@
                     </div>
                 </div>
                 <div style="display: flex;justify-content: center;align-items:center;">
+                <input type="text" name="keyword" class="search-input" placeholder="Nhập tên động vật...">
                     <button class="styled-button" type="submit">Tìm Kiếm</button>
                 </div>
             </form>
@@ -530,7 +543,7 @@
         <div class="col-8">
             @foreach ($data as $item)
             <div class="containers articles-container">
-                <a href="" class="animals-invert__item ">
+                <a href="{{route('user.animal-detail',['id' => $item->id])}}" class="animals-invert__item ">
                     <div class="animals-invert__item-img">
                         <img src="http://127.0.0.1:8000/animal_images/{{$item->images->image_name}}" alt="alt">
                     </div>
@@ -555,7 +568,7 @@
     document.querySelectorAll('.container_select_mui').forEach(container => {
         const btn = container.querySelector('.btn-select');
         const items = container.querySelectorAll('.checkBox');
-        console.log(items);
+
         btn.addEventListener('click', () => {
             btn.classList.toggle('open');
         });

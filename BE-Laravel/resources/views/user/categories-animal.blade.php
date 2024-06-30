@@ -65,8 +65,13 @@
                                         class="fa-solid fa-arrow-right"></i></a>
                             </div>
                             <div class="col-6">
+                                @if($item->images->image_name != null)
                                 <img src="http://localhost:8000/animal_images/{{ $item->images->image_name }}"
                                     width="100%" alt="" class="item-animal-img">
+                                @else
+                                <img src="http://localhost:8000/error/error.jpg"
+                                    width="100%" alt="" class="item-animal-img">
+                                @endif
                             </div>
                         </div>
                     </div>
