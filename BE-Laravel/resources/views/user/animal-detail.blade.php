@@ -1,6 +1,19 @@
 @extends('user.main')
 @section('title', 'Categories Animal')
 @section('content_user')
+
+<style>
+    .truncate-text {
+    position: relative;
+    max-height: 6em;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+    line-height: 1.5em;
+    height: calc(1.5em * 4);
+}
+</style>
     <link rel="stylesheet" href="{{ asset('users/css/animal-detail.css') }}">
     @php
         // $breadcrumbs = [
@@ -17,8 +30,13 @@
             <div class="main-animal">
                 <div class="row">
                     <div class="col-8">
+                        @if($data->images->image_name != null)
                         <img src="http://localhost:8000/animal_images/{{ $data->images->image_name }}" width="100%"
                             alt="" class="animal-detail-img">
+                        @else
+                        <img src="http://localhost:8000/error/error.jpg" width="100%"
+                            alt="" class="animal-detail-img">
+                        @endif
                     </div>
                     <div class="col-lg-4">
                         <div class="s-char-content">
@@ -368,7 +386,11 @@
                     <div class="carousel-inner">
                         @foreach ($multiImages as $key => $image)
                         <div class="carousel-item {{$key == 0 ? 'active':''}}">
+                        @if($image->image_name != null)
                         <img src="http://localhost:8000/animal_images/{{ $image->image_name }}" class="d-block w-100" alt="...">
+                        @else
+                        <img src="http://localhost:8000/error/error.jpg" class="d-block w-100" alt="...">
+                        @endif
                         </div>
                         @endforeach
                     </div>
@@ -517,9 +539,15 @@
                             <div class="row">
                                 @foreach ($data->biomes as $item)
                                     <div class="col-lg-3 col-md-6 s-distr-margin">
+                                        @if($item->biome_image != null)
                                         <a href="{{ route('biome', ['id' => $item->id]) }}" class="s-distr-zone-item "
                                             style="background-color: #00c853; background-image: url(http://localhost:8000/biomes/small/{{ $item->biome_image }}); background-size: cover"><span>{{ $item->biome_name }}</span>
                                         </a>
+                                        @else
+                                        <a href="{{ route('biome', ['id' => $item->id]) }}" class="s-distr-zone-item "
+                                            style="background-color: #00c853; background-image: url(http://localhost:8000/error/error.jpg); background-size: cover"><span>{{ $item->biome_name }}</span>
+                                        </a>
+                                        @endif
                                     </div>
                                 @endforeach
                             </div>
@@ -533,10 +561,17 @@
                         <div class="row">
                             @foreach ($data->climates as $item)
                                 <div class="col-lg-3 col-md-6 s-distr-margin">
+                                    @if($item->climate_image != null)
                                     <a href="{{ route('climate-zone', ['id' => $item->id]) }}"
                                         class="s-distr-climate__link "
                                         style="background-color: #4CAF50; background-image: url(http://localhost:8000/climates/small/{{ $item->climate_image }});"><span>{{ $item->climate_name }}</span>
                                     </a>
+                                    @else
+                                    <a href="{{ route('climate-zone', ['id' => $item->id]) }}"
+                                        class="s-distr-climate__link "
+                                        style="background-color: #4CAF50; background-image: url(http://localhost:8000/error/error.jpg);"><span>{{ $item->climate_name }}</span>
+                                    </a>
+                                    @endif
                                 </div>
                             @endforeach
                         </div>
@@ -549,8 +584,13 @@
                     <div class="row">
                         <div class="col-lg-6">
                             <div class="s-habbit-img open-gallery" data-id="11849">
+                                @if($habitImage->image_name != null)
                                 <img src="http://localhost:8000/animal_images/{{ $habitImage->image_name }}"
                                     alt="Red Fox 2016-05-19 (11)">
+                                @else
+                                <img src="http://localhost:8000/error/error.jpg"
+                                    alt="Red Fox 2016-05-19 (11)">
+                                @endif
                             </div>
                             <div class="optimanetwork">
                                 <script data-adscript="" src="https://servingcdn.net?uid=64a8647323c90d5fba5ff554&amp;w=300&amp;h=250"
@@ -713,8 +753,13 @@
                         <div class="row">
                             <div class="col-lg-6">
                                 <div class="s-population-img open-gallery" data-id="53626">
+                                    @if($populationImage->image_name != null)
                                     <img src="http://localhost:8000/animal_images/{{ $populationImage->image_name }}"
                                         alt="Red Fox photo">
+                                    @else
+                                    <img src="http://localhost:8000/error/error.jpg"
+                                        alt="Red Fox photo">
+                                    @endif
                                 </div>
                                 <div class="s-population-link">
                                     <div class="row align-items-center">
@@ -786,7 +831,7 @@
                     </div>
                 </div>
             </section>
-            <section class="s-related">
+            <!-- <section class="s-related">
                 <div class="container">
                     <h2 class="a-h2">
 
@@ -840,9 +885,9 @@
                         </a>
                     </div>
                 </div>
-            </section>
+            </section> -->
 
-            <section class="s-fascinating">
+            <!-- <section class="s-fascinating">
                 <div class="container">
                     <h2 class="a-h2">
                         Coloring Pages
@@ -1006,8 +1051,8 @@
                         </div>
                     </div>
                 </div>
-            </section>
-            <section class="s-ref">
+            </section> -->
+            <!-- <section class="s-ref">
                 <a class="anchor" id="refs"></a>
                 <div class="container">
                     <h2 class="a-h2">
@@ -1031,94 +1076,36 @@
                         </div>
                     </div>
                 </div>
-            </section>
+            </section> -->
             <section class="slide-show-more">
                 <div class="slide-container swiper">
                     <div class="slide-content">
                         <h2 class="a-h2">
-                            More Fascinating Animals to Learn About
+                            Một số động vật khác bạn có thể xem thêm
                         </h2>
                         <div class="card-wrapper swiper-wrapper">
+                            @foreach ($dataRandom as $item)
+                            
                             <div class="card swiper-slide">
                                 <div class="image-content">
                                     <span class="overlay"></span>
                                     <div class="card-image">
-                                        <img src="https://cdn.firstcry.com/education/2022/11/26141737/Animal-Name-Starting-With-L-For-Kids.jpg"
+                                        @if($item->images->image_name != null)
+                                        <img src="http://localhost:8000/animal_images/{{$item->images->image_name}}"
                                             alt="" class="card-img">
+                                        @else
+                                        <img src="http://localhost:8000/error/error.jpg"
+                                            alt="" class="card-img">
+                                        @endif
                                     </div>
                                 </div>
                                 <div class="card-content">
-                                    <h2 class="name">Lion</h2>
-                                    <p class="description">The lorem text the section that contains header with having
-                                        open
-                                        functionality. Lorem dolor sit amet consectetur adipisicing elit.</p>
-                                    <a href="#" class="button">View More</a>
+                                    <h2 class="name">{{$item->animal_name}}</h2>
+                                    <p class="description truncate-text">{{$item->animal_description}}</p>
+                                    <a href="{{route('user.animal-detail',['id' => $item->id])}}" class="button">View More</a>
                                 </div>
                             </div>
-                            <div class="card swiper-slide">
-                                <div class="image-content">
-                                    <span class="overlay"></span>
-                                    <div class="card-image">
-                                        <img src="https://cdn.firstcry.com/education/2022/11/26141737/Animal-Name-Starting-With-L-For-Kids.jpg"
-                                            alt="" class="card-img">
-                                    </div>
-                                </div>
-                                <div class="card-content">
-                                    <h2 class="name">Lion</h2>
-                                    <p class="description">The lorem text the section that contains header with having
-                                        open
-                                        functionality. Lorem dolor sit amet consectetur adipisicing elit.</p>
-                                    <a href="#" class="button">View More</a>
-                                </div>
-                            </div>
-                            <div class="card swiper-slide">
-                                <div class="image-content">
-                                    <span class="overlay"></span>
-                                    <div class="card-image">
-                                        <img src="https://cdn.firstcry.com/education/2022/11/26141737/Animal-Name-Starting-With-L-For-Kids.jpg"
-                                            alt="" class="card-img">
-                                    </div>
-                                </div>
-                                <div class="card-content">
-                                    <h2 class="name">Lion</h2>
-                                    <p class="description">The lorem text the section that contains header with having
-                                        open
-                                        functionality. Lorem dolor sit amet consectetur adipisicing elit.</p>
-                                    <a href="#" class="button">View More</a>
-                                </div>
-                            </div>
-                            <div class="card swiper-slide">
-                                <div class="image-content">
-                                    <span class="overlay"></span>
-                                    <div class="card-image">
-                                        <img src="https://cdn.firstcry.com/education/2022/11/26141737/Animal-Name-Starting-With-L-For-Kids.jpg"
-                                            alt="" class="card-img">
-                                    </div>
-                                </div>
-                                <div class="card-content">
-                                    <h2 class="name">Lion</h2>
-                                    <p class="description">The lorem text the section that contains header with having
-                                        open
-                                        functionality. Lorem dolor sit amet consectetur adipisicing elit.</p>
-                                    <a href="#" class="button">View More</a>
-                                </div>
-                            </div>
-                            <div class="card swiper-slide">
-                                <div class="image-content">
-                                    <span class="overlay"></span>
-                                    <div class="card-image">
-                                        <img src="https://cdn.firstcry.com/education/2022/11/26141737/Animal-Name-Starting-With-L-For-Kids.jpg"
-                                            alt="" class="card-img">
-                                    </div>
-                                </div>
-                                <div class="card-content">
-                                    <h2 class="name">Lion</h2>
-                                    <p class="description">The lorem text the section that contains header with having
-                                        open
-                                        functionality. Lorem dolor sit amet consectetur adipisicing elit.</p>
-                                    <a href="#" class="button">View More</a>
-                                </div>
-                            </div>
+                            @endforeach
                         </div>
                     </div>
                     <div class="swiper-button-next swiper-navBtn"></div>

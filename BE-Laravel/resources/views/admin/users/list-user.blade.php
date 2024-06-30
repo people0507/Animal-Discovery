@@ -166,7 +166,7 @@
                                                 <td><img src="http://localhost:8000/avatars/{{ $user->avatar }}"
                                                         width="100"></td>
                                             @else
-                                                <td><img src="https://i.pinimg.com/originals/6a/44/f0/6a44f0e35b10e6ed063eeebf7ed844f9.jpg"
+                                                <td><img src="http://localhost:8000/error/user_error.jpg"
                                                         width="100"></td>
                                             @endif
                                             @if ($user->role_id == 1)
