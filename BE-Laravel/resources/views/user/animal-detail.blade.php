@@ -13,6 +13,11 @@
     line-height: 1.5em;
     height: calc(1.5em * 4);
 }
+    #mapid{
+        height: 600px;
+        width:400px;
+        border:1px solid black;
+    }
 </style>
     <link rel="stylesheet" href="{{ asset('users/css/animal-detail.css') }}">
     @php
@@ -44,72 +49,6 @@
                                 <h1 class="a-h1">
                                     {{ $data->animal_name }}
                                 </h1>
-                                <div class="animal-language-switcher">
-                                    <div class="animal-header-language-switcher" id="animal-language-switcher">
-                                        <div class="animal-header-language-switcher-content">
-                                            <div class="lang-icon">
-                                                <img src="/img/lang-switcher-blue.svg" alt="">
-                                            </div>
-                                            <div class="lang-caret">
-                                                <img src="/img/lang-switcher-caret-blue.svg" alt="">
-                                            </div>
-                                        </div>
-                                        <div class="animal-header-language-select" id="animal-language-switcher-select"
-                                            style="display: none;">
-                                            <div>
-                                                <span>English</span>
-                                            </div>
-                                            <div>
-                                                <a
-                                                    href="https://animalia.bio/index.php/uk/northern-cardinal?collection=38">Українська</a>
-                                            </div>
-                                            <div>
-                                                <a
-                                                    href="https://animalia.bio/index.php/es/northern-cardinal?collection=38">Español</a>
-                                            </div>
-                                            <div>
-                                                <a
-                                                    href="https://animalia.bio/index.php/it/northern-cardinal?collection=38">Italiano</a>
-                                            </div>
-                                            <div>
-                                                <a
-                                                    href="https://animalia.bio/index.php/fr/northern-cardinal?collection=38">Français</a>
-                                            </div>
-                                            <div>
-                                                <a
-                                                    href="https://animalia.bio/index.php/de/northern-cardinal?collection=38">Deutsch</a>
-                                            </div>
-                                            <div>
-                                                <a
-                                                    href="https://animalia.bio/index.php/pt/northern-cardinal?collection=38">Português</a>
-                                            </div>
-                                            <div>
-                                                <a
-                                                    href="https://animalia.bio/index.php/pl/northern-cardinal?collection=38">Polski</a>
-                                            </div>
-                                            <div>
-                                                <a
-                                                    href="https://animalia.bio/index.php/da/northern-cardinal?collection=38">Dansk</a>
-                                            </div>
-                                            <div>
-                                                <a
-                                                    href="https://animalia.bio/index.php/fi/northern-cardinal?collection=38">Suomi</a>
-                                            </div>
-                                            <div>
-                                                <a
-                                                    href="https://animalia.bio/index.php/sv/northern-cardinal?collection=38">Svenska</a>
-                                            </div>
-                                            <div>
-                                                <a
-                                                    href="https://animalia.bio/index.php/ko/northern-cardinal?collection=38">한국어</a>
-                                            </div>
-                                            <div>
-                                                <a
-                                                    href="https://animalia.bio/index.php/nl/northern-cardinal?collection=38">Nederlands</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
                             <div class="s-char-kinds">
                                 <div class="s-char-kinds__item">
@@ -512,7 +451,7 @@
                             </div>
                             <div class="col-lg-4">
                                 <div class="s-distr-map zoom-map-trigger">
-                                <div id="mapid" style="height: 400px;width:400px"></div>
+                                <div id="mapid"></div>
                                 </div>
                             </div>
                         </div>
@@ -1174,25 +1113,18 @@
         });
     </script>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
-<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
-<script>
-    var mymap = L.map('mapid').setView([0, 0], 2);
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script>
+        let arrCordinate = @json($newArrayCordinate);
+        var mymap = L.map('mapid').setView([0, 0], 2);
 
-// Thêm tile layer (ví dụ: OpenStreetMap)
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    maxZoom: 19,
-    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-}).addTo(mymap);
-var countries = [
-    [14.0583, 108.2772],   // Vietnam
-    [37.0902, -95.7129],   // United States
-    [-14.2350, -51.9253],  // Brazil
-    // Thêm các tọa độ quốc gia khác tương tự
-];
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">Bản Đồ Thế Giới</a> contributors'
+    }).addTo(mymap);
 
-// Thêm marker cho từng quốc gia
-countries.forEach(function(coords) {
-    L.marker(coords).addTo(mymap);
-});
-</script>
+    arrCordinate.forEach(function(coords) {
+        L.marker(coords.coords).addTo(mymap).bindPopup(coords.name).openPopup();
+    });
+    </script>   
 @endsection
