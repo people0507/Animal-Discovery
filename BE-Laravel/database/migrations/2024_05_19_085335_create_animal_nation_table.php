@@ -17,6 +17,8 @@ return new class extends Migration
             $table->id();
             $table->string('nation_name');
             $table->text('nation_description')->nullable();
+            $table->float('nation_latitude', 10, 6); 
+            $table->float('nation_longitude', 10, 6);
             $table->timestamps();
         });
     }

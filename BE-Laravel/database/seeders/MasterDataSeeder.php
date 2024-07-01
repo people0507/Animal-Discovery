@@ -489,771 +489,1161 @@ class MasterDataSeeder extends Seeder
             [
                 [
                     'nation_name' => 'Afghanistan',
-                    'nation_description' => 'Afghanistan, nằm ở ngã tư của Trung Á và Nam Á, nổi tiếng với các dãy núi Hindu Kush hùng vĩ. Quốc gia này có các vùng đất hoang mạc và thung lũng xanh tươi, là nơi sinh sống của các loài động vật hoang dã như báo tuyết, linh dương Marco Polo và cừu hoang.'
+                    'nation_description' => 'Afghanistan, nằm ở ngã tư của Trung Á và Nam Á, nổi tiếng với các dãy núi Hindu Kush hùng vĩ. Quốc gia này có các vùng đất hoang mạc và thung lũng xanh tươi, là nơi sinh sống của các loài động vật hoang dã như báo tuyết, linh dương Marco Polo và cừu hoang.',
+                    'nation_latitude' => 33.9391,
+                    'nation_longitude' => 67.7100,
                 ],
                 [
                     'nation_name' => 'Albania',
-                    'nation_description' => 'Albania, nằm ở Đông Nam Châu Âu trên bán đảo Balkan, có các dãy núi đồi trập trùng và bờ biển Địa Trung Hải. Nước này là nơi cư trú của nhiều loài động vật hoang dã như gấu nâu, chó sói xám và đại bàng vàng.'
+                    'nation_description' => 'Albania, nằm ở Đông Nam Châu Âu trên bán đảo Balkan, có các dãy núi đồi trập trùng và bờ biển Địa Trung Hải. Nước này là nơi cư trú của nhiều loài động vật hoang dã như gấu nâu, chó sói xám và đại bàng vàng.',
+                    'nation_latitude' => 41.1533,
+                    'nation_longitude' => 20.1683,
                 ],
                 [
                     'nation_name' => 'Algeria',
-                    'nation_description' => 'Algeria, quốc gia lớn nhất ở Châu Phi, nằm ở vùng Maghreb của Bắc Phi và có một phần lớn diện tích là sa mạc Sahara. Các khu vực rừng núi phía bắc và ven biển là nơi sinh sống của các loài động vật như cáo Fenec, cừu Barbary và nhiều loài chim di cư.'
+                    'nation_description' => 'Algeria, quốc gia lớn nhất ở Châu Phi, nằm ở vùng Maghreb của Bắc Phi và có một phần lớn diện tích là sa mạc Sahara. Các khu vực rừng núi phía bắc và ven biển là nơi sinh sống của các loài động vật như cáo Fenec, cừu Barbary và nhiều loài chim di cư.',
+                    'nation_latitude' => 28.0339,
+                    'nation_longitude' => 1.6596,
                 ],
                 [
                     'nation_name' => 'Andorra',
-                    'nation_description' => 'Andorra, một quốc gia nhỏ nằm giữa Pháp và Tây Ban Nha trong dãy Pyrenees, nổi tiếng với các khu vực núi non và thung lũng đẹp như tranh vẽ. Nước này là nơi sinh sống của các loài động vật như sơn dương Pyrenees, đại bàng vàng và loài cú lớn.'
+                    'nation_description' => 'Andorra, một quốc gia nhỏ nằm giữa Pháp và Tây Ban Nha trong dãy Pyrenees, nổi tiếng với các khu vực núi non và thung lũng đẹp như tranh vẽ. Nước này là nơi sinh sống của các loài động vật như sơn dương Pyrenees, đại bàng vàng và loài cú lớn.',
+                    'nation_latitude' => 42.5063,
+                    'nation_longitude' => 1.5218,
                 ],
                 [
                     'nation_name' => 'Angola',
-                    'nation_description' => 'Angola nằm ở Tây Nam Châu Phi, có đa dạng địa lý từ bờ biển Đại Tây Dương đến các cao nguyên nội địa và rừng nhiệt đới. Nước này là nơi cư trú của nhiều loài động vật hoang dã như voi châu Phi, sư tử, báo và nhiều loài chim hiếm.'
+                    'nation_description' => 'Angola nằm ở Tây Nam Châu Phi, có đa dạng địa lý từ bờ biển Đại Tây Dương đến các cao nguyên nội địa và rừng nhiệt đới. Nước này là nơi cư trú của nhiều loài động vật hoang dã như voi châu Phi, sư tử, báo và nhiều loài chim hiếm.',
+                    'nation_latitude' => -11.2027,
+                    'nation_longitude' => 17.8739,
                 ],
                 [
                     'nation_name' => 'Antigua and Barbuda',
-                    'nation_description' => 'Antigua and Barbuda, quốc gia ở vùng Caribe, nổi tiếng với các bãi biển cát trắng và nước biển trong xanh. Địa lý của nó bao gồm các rạn san hô, đầm lầy và rừng mưa nhiệt đới. Nơi đây là nhà của nhiều loài động vật biển, rùa biển và các loài chim nhiệt đới.'
+                    'nation_description' => 'Antigua and Barbuda, quốc gia ở vùng Caribe, nổi tiếng với các bãi biển cát trắng và nước biển trong xanh. Địa lý của nó bao gồm các rạn san hô, đầm lầy và rừng mưa nhiệt đới. Nơi đây là nhà của nhiều loài động vật biển, rùa biển và các loài chim nhiệt đới.',
+                    'nation_latitude' => 17.0608,
+                    'nation_longitude' => -61.7964,
                 ],
                 [
                     'nation_name' => 'Argentina',
-                    'nation_description' => 'Argentina nằm ở Nam Mỹ, nổi tiếng với dãy núi Andes, vùng đất Pampas và các khu rừng nhiệt đới. Quốc gia này là nơi sinh sống của nhiều loài động vật như báo sư tử, lạc đà guanaco, và chim cánh cụt Magellanic.'
+                    'nation_description' => 'Argentina nằm ở Nam Mỹ, nổi tiếng với dãy núi Andes, vùng đất Pampas và các khu rừng nhiệt đới. Quốc gia này là nơi sinh sống của nhiều loài động vật như báo sư tử, lạc đà guanaco, và chim cánh cụt Magellanic.',
+                    'nation_latitude' => -38.4161,
+                    'nation_longitude' => -63.6167,
                 ],
                 [
                     'nation_name' => 'Armenia',
-                    'nation_description' => 'Armenia nằm ở vùng Caucasus của Âu-Á, có địa lý đa dạng với các dãy núi cao và thung lũng. Nước này là nơi sinh sống của nhiều loài động vật như báo Caucasus, gấu nâu và nhiều loài chim săn mồi.'
+                    'nation_description' => 'Armenia nằm ở vùng Caucasus của Âu-Á, có địa lý đa dạng với các dãy núi cao và thung lũng. Nước này là nơi sinh sống của nhiều loài động vật như báo Caucasus, gấu nâu và nhiều loài chim săn mồi.',
+                    'nation_latitude' => 40.0691,
+                    'nation_longitude' => 45.0382,
                 ],
                 [
                     'nation_name' => 'Australia',
-                    'nation_description' => 'Australia là một lục địa và quốc gia bao quanh bởi Ấn Độ Dương và Thái Bình Dương. Nước này nổi tiếng với các vùng sa mạc, rừng nhiệt đới và rạn san hô Great Barrier. Hệ động vật độc đáo của Australia bao gồm kangaroo, koala, và nhiều loài thú có túi khác.'
+                    'nation_description' => 'Australia là một lục địa và quốc gia bao quanh bởi Ấn Độ Dương và Thái Bình Dương. Nước này nổi tiếng với các vùng sa mạc, rừng nhiệt đới và rạn san hô Great Barrier. Hệ động vật độc đáo của Australia bao gồm kangaroo, koala, và nhiều loài thú có túi khác.',
+                    'nation_latitude' => -25.2744,
+                    'nation_longitude' => 133.7751,
                 ],
                 [
                     'nation_name' => 'Austria',
-                    'nation_description' => 'Austria nằm ở Trung Âu, nổi tiếng với dãy núi Alps và các hồ nước trong xanh. Quốc gia này có các khu rừng và đồng cỏ là nơi cư trú của các loài động vật như hươu đỏ, cáo, và nhiều loài chim núi.'
+                    'nation_description' => 'Austria nằm ở Trung Âu, nổi tiếng với dãy núi Alps và các hồ nước trong xanh. Quốc gia này có các khu rừng và đồng cỏ là nơi cư trú của các loài động vật như hươu đỏ, cáo, và nhiều loài chim núi.',
+                    'nation_latitude' => 47.5162,
+                    'nation_longitude' => 14.5501,
                 ],
                 [
                     'nation_name' => 'Azerbaijan',
-                    'nation_description' => 'Azerbaijan nằm ở vùng Caucasus giữa Châu Âu và Châu Á, có địa lý đa dạng với núi cao, đồng bằng và biển Caspi. Động vật hoang dã bao gồm báo Caucasus, linh dương và nhiều loài chim nước.'
+                    'nation_description' => 'Azerbaijan nằm ở vùng Caucasus giữa Châu Âu và Châu Á, có địa lý đa dạng với núi cao, đồng bằng và biển Caspi. Động vật hoang dã bao gồm báo Caucasus, linh dương và nhiều loài chim nước.',
+                    'nation_latitude' => 40.1431,
+                    'nation_longitude' => 47.5769,
                 ],
                 [
                     'nation_name' => 'Bahamas',
-                    'nation_description' => 'Bahamas, một quốc gia đảo ở vùng Caribe, nổi tiếng với các bãi biển cát trắng và nước biển trong xanh. Các rạn san hô và đầm lầy là nơi cư trú của nhiều loài động vật biển, rùa biển và các loài chim nhiệt đới.'
+                    'nation_description' => 'Bahamas, một quốc gia đảo ở vùng Caribe, nổi tiếng với các bãi biển cát trắng và nước biển trong xanh. Các rạn san hô và đầm lầy là nơi cư trú của nhiều loài động vật biển, rùa biển và các loài chim nhiệt đới.',
+                    'nation_latitude' => 25.0343,
+                    'nation_longitude' => -77.3963,
                 ],
                 [
                     'nation_name' => 'Bahrain',
-                    'nation_description' => 'Bahrain là một quốc gia đảo ở vịnh Ba Tư, nổi tiếng với các khu vực sa mạc và bờ biển. Động vật hoang dã bao gồm linh dương, cáo sa mạc và nhiều loài chim di cư.'
+                    'nation_description' => 'Bahrain là một quốc gia đảo ở vịnh Ba Tư, nổi tiếng với các khu vực sa mạc và bờ biển. Động vật hoang dã bao gồm linh dương, cáo sa mạc và nhiều loài chim di cư.',
+                    'nation_latitude' => 25.9304,
+                    'nation_longitude' => 50.6378,
                 ],
                 [
                     'nation_name' => 'Bangladesh',
-                    'nation_description' => 'Bangladesh nằm ở Nam Á, nổi tiếng với các vùng đồng bằng sông Hằng và các khu rừng ngập mặn Sundarbans. Nơi đây là nhà của loài hổ Bengal, cá sấu nước mặn và nhiều loài chim nước.'
+                    'nation_description' => 'Bangladesh nằm ở Nam Á, nổi tiếng với các vùng đồng bằng sông Hằng và các khu rừng ngập mặn Sundarbans. Nơi đây là nhà của loài hổ Bengal, cá sấu nước mặn và nhiều loài chim nước.',
+                    'nation_latitude' => 23.685,
+                    'nation_longitude' => 90.3563,
                 ],
                 [
                     'nation_name' => 'Barbados',
-                    'nation_description' => 'Barbados là một quốc gia đảo ở vùng Caribe, nổi tiếng với các bãi biển đẹp và rạn san hô. Động vật hoang dã bao gồm các loài động vật biển, rùa biển và nhiều loài chim nhiệt đới.'
+                    'nation_description' => 'Barbados là một quốc gia đảo ở vùng Caribe, nổi tiếng với các bãi biển đẹp và rạn san hô. Động vật hoang dã bao gồm các loài động vật biển, rùa biển và nhiều loài chim nhiệt đới.',
+                    'nation_latitude' => 13.1939,
+                    'nation_longitude' => -59.5432,
                 ],
                 [
                     'nation_name' => 'Belarus',
-                    'nation_description' => 'Belarus nằm ở Đông Âu, có các vùng đất bằng phẳng và rừng rậm. Quốc gia này là nơi sinh sống của nhiều loài động vật hoang dã như hươu, lợn rừng, và nhiều loài chim săn mồi.'
+                    'nation_description' => 'Belarus nằm ở Đông Âu, có các vùng đất bằng phẳng và rừng rậm. Quốc gia này là nơi sinh sống của nhiều loài động vật hoang dã như hươu, lợn rừng, và nhiều loài chim săn mồi.',
+                    'nation_latitude' => 53.7098,
+                    'nation_longitude' => 27.9534,
                 ],
                 [
                     'nation_name' => 'Belgium',
-                    'nation_description' => 'Belgium nằm ở Tây Âu, có địa hình đa dạng với các đồng bằng, rừng và bờ biển. Động vật hoang dã bao gồm cáo, hươu và nhiều loài chim nước.'
+                    'nation_description' => 'Belgium nằm ở Tây Âu, có địa hình đa dạng với các đồng bằng, rừng và bờ biển. Động vật hoang dã bao gồm cáo, hươu và nhiều loài chim nước.',
+                    'nation_latitude' => 50.5039,
+                    'nation_longitude' => 4.4699,
                 ],
                 [
                     'nation_name' => 'Belize',
-                    'nation_description' => 'Belize nằm ở Trung Mỹ, nổi tiếng với các rạn san hô và rừng nhiệt đới. Quốc gia này là nơi sinh sống của nhiều loài động vật như báo đốm, hươu đuôi trắng và nhiều loài chim nhiệt đới.'
+                    'nation_description' => 'Belize nằm ở Trung Mỹ, nổi tiếng với các rạn san hô và rừng nhiệt đới. Quốc gia này là nơi sinh sống của nhiều loài động vật như báo đốm, hươu đuôi trắng và nhiều loài chim nhiệt đới.',
+                    'nation_latitude' => 17.1899,
+                    'nation_longitude' => -88.4976,
                 ],
                 [
                     'nation_name' => 'Benin',
-                    'nation_description' => 'Benin nằm ở Tây Phi, có địa lý đa dạng với rừng nhiệt đới, đồng cỏ và bờ biển. Động vật hoang dã bao gồm voi, sư tử và nhiều loài linh dương.'
+                    'nation_description' => 'Benin nằm ở Tây Phi, có địa lý đa dạng với rừng nhiệt đới, đồng cỏ và bờ biển. Động vật hoang dã bao gồm voi, sư tử và nhiều loài linh dương.',
+                    'nation_latitude' => 9.3077,
+                    'nation_longitude' => 2.3158,
                 ],
                 [
                     'nation_name' => 'Bhutan',
-                    'nation_description' => 'Bhutan nằm ở Đông Himalaya, nổi tiếng với các dãy núi cao và rừng rậm. Quốc gia này là nơi sinh sống của nhiều loài động vật như báo tuyết, linh dương và nhiều loài chim săn mồi.'
+                    'nation_description' => 'Bhutan nằm ở Đông Himalaya, nổi tiếng với các dãy núi cao và rừng rậm. Quốc gia này là nơi sinh sống của nhiều loài động vật như báo tuyết, linh dương và nhiều loài chim săn mồi.',
+                    'nation_latitude' => 27.5142,
+                    'nation_longitude' => 90.4336,
                 ],
                 [
                     'nation_name' => 'Bolivia',
-                    'nation_description' => 'Bolivia nằm ở Nam Mỹ, có địa lý đa dạng từ dãy Andes đến rừng mưa Amazon. Động vật hoang dã bao gồm báo sư tử, lạc đà guanaco, và nhiều loài chim nhiệt đới.'
+                    'nation_description' => 'Bolivia nằm ở Nam Mỹ, có địa lý đa dạng từ dãy Andes đến rừng mưa Amazon. Động vật hoang dã bao gồm báo sư tử, lạc đà guanaco, và nhiều loài chim nhiệt đới.',
+                    'nation_latitude' => -16.2902,
+                    'nation_longitude' => -63.5887,
                 ],
                 [
                     'nation_name' => 'Bosnia and Herzegovina',
-                    'nation_description' => 'Bosnia and Herzegovina nằm ở Đông Nam Châu Âu, có địa lý đa dạng với các dãy núi, sông suối và rừng rậm. Quốc gia này là nơi sinh sống của nhiều loài động vật như gấu nâu, chó sói xám và đại bàng vàng.'
+                    'nation_description' => 'Bosnia and Herzegovina nằm ở Đông Nam Châu Âu, có địa lý đa dạng với các dãy núi, sông suối và rừng rậm. Quốc gia này là nơi sinh sống của nhiều loài động vật như gấu nâu, chó sói xám và đại bàng vàng.',
+                    'nation_latitude' => 43.9159,
+                    'nation_longitude' => 17.6791,
                 ],
                 [
                     'nation_name' => 'Botswana',
-                    'nation_description' => 'Botswana nằm ở Nam Phi, nổi tiếng với các khu vực đồng cỏ và sa mạc Kalahari. Động vật hoang dã bao gồm voi châu Phi, sư tử, báo và nhiều loài chim hiếm.'
+                    'nation_description' => 'Botswana nằm ở Nam Phi, nổi tiếng với các khu vực đồng cỏ và sa mạc Kalahari. Động vật hoang dã bao gồm voi châu Phi, sư tử, báo và nhiều loài chim hiếm.',
+                    'nation_latitude' => -22.3285,
+                    'nation_longitude' => 24.6849,
                 ],
                 [
                     'nation_name' => 'Brazil',
-                    'nation_description' => 'Brazil nằm ở Nam Mỹ, nổi tiếng với rừng mưa Amazon, các bãi biển dài và thác nước hùng vĩ. Động vật hoang dã bao gồm báo đốm, cá sấu Caiman và nhiều loài chim nhiệt đới.'
+                    'nation_description' => 'Brazil nằm ở Nam Mỹ, nổi tiếng với rừng mưa Amazon, các bãi biển dài và thác nước hùng vĩ. Động vật hoang dã bao gồm báo đốm, cá sấu Caiman và nhiều loài chim nhiệt đới.',
+                    'nation_latitude' => -14.235,
+                    'nation_longitude' => -51.9253,
                 ],
                 [
                     'nation_name' => 'Brunei',
-                    'nation_description' => 'Brunei nằm ở Đông Nam Á trên đảo Borneo, có các khu rừng nhiệt đới và bờ biển dài. Động vật hoang dã bao gồm các loài linh trưởng, báo mây và nhiều loài chim hiếm.'
+                    'nation_description' => 'Brunei nằm ở Đông Nam Á trên đảo Borneo, có các khu rừng nhiệt đới và bờ biển dài. Động vật hoang dã bao gồm các loài linh trưởng, báo mây và nhiều loài chim hiếm.',
+                    'nation_latitude' => 4.5353,
+                    'nation_longitude' => 114.7277,
                 ],
                 [
                     'nation_name' => 'Bulgaria',
-                    'nation_description' => 'Bulgaria nằm ở Đông Nam Châu Âu, có địa lý đa dạng với các dãy núi, đồng bằng và bờ biển Biển Đen. Động vật hoang dã bao gồm gấu nâu, cáo và nhiều loài chim săn mồi.'
+                    'nation_description' => 'Bulgaria nằm ở Đông Nam Châu Âu, có địa lý đa dạng với các dãy núi, đồng bằng và bờ biển Biển Đen. Động vật hoang dã bao gồm gấu nâu, cáo và nhiều loài chim săn mồi.',
+                    'nation_latitude' => 42.7339,
+                    'nation_longitude' => 25.4858,
                 ],
                 [
                     'nation_name' => 'Burkina Faso',
-                    'nation_description' => 'Burkina Faso nằm ở Tây Phi, có địa lý chủ yếu là đồng cỏ và sa mạc. Động vật hoang dã bao gồm voi, linh dương và nhiều loài chim.'
+                    'nation_description' => 'Burkina Faso nằm ở Tây Phi, có địa lý chủ yếu là đồng cỏ và sa mạc. Động vật hoang dã bao gồm voi, linh dương và nhiều loài chim.',
+                    'nation_latitude' => 12.2383,
+                    'nation_longitude' => -1.5616,
                 ],
                 [
                     'nation_name' => 'Burundi',
-                    'nation_description' => 'Burundi nằm ở Đông Phi, có các dãy núi, hồ nước và rừng nhiệt đới. Động vật hoang dã bao gồm voi, tinh tinh và nhiều loài chim nhiệt đới.'
+                    'nation_description' => 'Burundi nằm ở Đông Phi, có các dãy núi, hồ nước và rừng nhiệt đới. Động vật hoang dã bao gồm voi, tinh tinh và nhiều loài chim nhiệt đới.',
+                    'nation_latitude' => -3.3731,
+                    'nation_longitude' => 29.9189,
                 ],
                 [
                     'nation_name' => 'Cabo Verde',
-                    'nation_description' => 'Cabo Verde, một quốc gia đảo ở Tây Phi, có các bãi biển đẹp và rạn san hô. Động vật hoang dã bao gồm nhiều loài chim biển, rùa biển và cá heo.'
+                    'nation_description' => 'Cabo Verde, một quốc gia đảo ở Tây Phi, có các bãi biển đẹp và rạn san hô. Động vật hoang dã bao gồm nhiều loài chim biển, rùa biển và cá heo.',
+                    'nation_latitude' => 16.5388,
+                    'nation_longitude' => -23.0418,
                 ],
                 [
                     'nation_name' => 'Cambodia',
-                    'nation_description' => 'Cambodia nằm ở Đông Nam Á, nổi tiếng với các khu rừng nhiệt đới và hệ thống sông Mê Kông. Động vật hoang dã bao gồm voi, hổ và nhiều loài chim.'
+                    'nation_description' => 'Cambodia nằm ở Đông Nam Á, nổi tiếng với các khu rừng nhiệt đới và hệ thống sông Mê Kông. Động vật hoang dã bao gồm voi, hổ và nhiều loài chim.',
+                    'nation_latitude' => 12.5657,
+                    'nation_longitude' => 104.991,
                 ],
                 [
                     'nation_name' => 'Cameroon',
-                    'nation_description' => 'Cameroon nằm ở Trung Phi, có địa lý đa dạng từ bờ biển đến các dãy núi và rừng nhiệt đới. Động vật hoang dã bao gồm voi, khỉ đột và nhiều loài chim.'
+                    'nation_description' => 'Cameroon nằm ở Trung Phi, có địa lý đa dạng từ bờ biển đến các dãy núi và rừng nhiệt đới. Động vật hoang dã bao gồm voi, khỉ đột và nhiều loài chim.',
+                    'nation_latitude' => 7.3697,
+                    'nation_longitude' => 12.3547,
                 ],
                 [
                     'nation_name' => 'Canada',
-                    'nation_description' => 'Canada nằm ở Bắc Mỹ, nổi tiếng với các khu vực núi non, rừng rậm và hồ nước rộng lớn. Động vật hoang dã bao gồm gấu, hươu và nhiều loài chim.'
+                    'nation_description' => 'Canada nằm ở Bắc Mỹ, nổi tiếng với các khu vực núi non, rừng rậm và hồ nước rộng lớn. Động vật hoang dã bao gồm gấu, hươu và nhiều loài chim.',
+                    'nation_latitude' => 56.1304,
+                    'nation_longitude' => -106.3468,
                 ],
                 [
                     'nation_name' => 'Central African Republic',
-                    'nation_description' => 'Central African Republic nằm ở Trung Phi, có các khu rừng nhiệt đới và đồng cỏ. Động vật hoang dã bao gồm voi, tinh tinh và nhiều loài chim.'
+                    'nation_description' => 'Central African Republic nằm ở Trung Phi, có các khu rừng nhiệt đới và đồng cỏ. Động vật hoang dã bao gồm voi, tinh tinh và nhiều loài chim.',
+                    'nation_latitude' => 6.6111,
+                    'nation_longitude' => 20.9394,
                 ],
                 [
                     'nation_name' => 'Chad',
-                    'nation_description' => 'Chad nằm ở Trung Phi, có địa lý chủ yếu là sa mạc và hồ nước. Động vật hoang dã bao gồm linh dương, voi và nhiều loài chim.'
+                    'nation_description' => 'Chad nằm ở Trung Phi, có địa lý chủ yếu là sa mạc và hồ nước. Động vật hoang dã bao gồm linh dương, voi và nhiều loài chim.',
+                    'nation_latitude' => 15.4542,
+                    'nation_longitude' => 18.7322,
                 ],
                 [
                     'nation_name' => 'Chile',
-                    'nation_description' => 'Chile nằm ở Nam Mỹ, nổi tiếng với dãy núi Andes, sa mạc Atacama và các khu rừng nhiệt đới. Động vật hoang dã bao gồm lạc đà guanaco, báo sư tử và nhiều loài chim.'
+                    'nation_description' => 'Chile nằm ở Nam Mỹ, nổi tiếng với dãy núi Andes, sa mạc Atacama và các khu rừng nhiệt đới. Động vật hoang dã bao gồm lạc đà guanaco, báo sư tử và nhiều loài chim.',
+                    'nation_latitude' => -35.6751,
+                    'nation_longitude' => -71.543,
                 ],
                 [
                     'nation_name' => 'China',
-                    'nation_description' => 'China nằm ở Đông Á, có địa lý đa dạng từ các sa mạc, dãy núi đến rừng rậm và đồng bằng. Động vật hoang dã bao gồm gấu trúc, hổ và nhiều loài chim.'
+                    'nation_description' => 'China nằm ở Đông Á, có địa lý đa dạng từ các sa mạc, dãy núi đến rừng rậm và đồng bằng. Động vật hoang dã bao gồm gấu trúc, hổ và nhiều loài chim.',
+                    'nation_latitude' => 35.8617,
+                    'nation_longitude' => 104.1954,
                 ],
                 [
                     'nation_name' => 'Colombia',
-                    'nation_description' => 'Colombia nằm ở Nam Mỹ, nổi tiếng với các khu rừng mưa nhiệt đới và dãy núi Andes. Động vật hoang dã bao gồm báo sư tử, lạc đà guanaco và nhiều loài chim.'
+                    'nation_description' => 'Colombia nằm ở Nam Mỹ, nổi tiếng với các khu rừng mưa nhiệt đới và dãy núi Andes. Động vật hoang dã bao gồm báo sư tử, lạc đà guanaco và nhiều loài chim.',
+                    'nation_latitude' => 4.5709,
+                    'nation_longitude' => -74.2973,
                 ],
                 [
                     'nation_name' => 'Comoros',
-                    'nation_description' => 'Comoros là một quốc gia đảo ở Ấn Độ Dương, nổi tiếng với các bãi biển đẹp và rạn san hô. Động vật hoang dã bao gồm nhiều loài động vật biển và chim biển.'
+                    'nation_description' => 'Comoros là một quốc gia đảo ở Ấn Độ Dương, nổi tiếng với các bãi biển đẹp và rạn san hô. Động vật hoang dã bao gồm nhiều loài động vật biển và chim biển.',
+                    'nation_latitude' => -11.6455,
+                    'nation_longitude' => 43.3333,
                 ],
                 [
                     'nation_name' => 'Congo (Congo-Brazzaville)',
-                    'nation_description' => 'Congo nằm ở Trung Phi, có các khu rừng nhiệt đới và sông Congo. Động vật hoang dã bao gồm tinh tinh, voi và nhiều loài chim.'
+                    'nation_description' => 'Congo nằm ở Trung Phi, có các khu rừng nhiệt đới và sông Congo. Động vật hoang dã bao gồm tinh tinh, voi và nhiều loài chim.',
+                    'nation_latitude' => -0.228,
+                    'nation_longitude' => 15.8277,
                 ],
                 [
                     'nation_name' => 'Costa Rica',
-                    'nation_description' => 'Costa Rica nằm ở Trung Mỹ, nổi tiếng với các khu rừng nhiệt đới và bờ biển đẹp. Động vật hoang dã bao gồm báo sư tử, lười và nhiều loài chim nhiệt đới.'
+                    'nation_description' => 'Costa Rica nằm ở Trung Mỹ, nổi tiếng với các khu rừng nhiệt đới và bờ biển đẹp. Động vật hoang dã bao gồm báo sư tử, lười và nhiều loài chim nhiệt đới.',
+                    'nation_latitude' => 9.7489,
+                    'nation_longitude' => -83.7534,
                 ],
                 [
                     'nation_name' => 'Croatia',
-                    'nation_description' => 'Croatia nằm ở Đông Nam Châu Âu, có bờ biển dài và các dãy núi. Động vật hoang dã bao gồm gấu nâu, cáo và nhiều loài chim.'
+                    'nation_description' => 'Croatia nằm ở Đông Nam Châu Âu, có bờ biển dài và các dãy núi. Động vật hoang dã bao gồm gấu nâu, cáo và nhiều loài chim.',
+                    'nation_latitude' => 45.1,
+                    'nation_longitude' => 15.2,
                 ],
                 [
                     'nation_name' => 'Cuba',
-                    'nation_description' => 'Cuba là một quốc gia đảo ở vùng Caribe, nổi tiếng với các bãi biển và rạn san hô. Động vật hoang dã bao gồm nhiều loài chim, rùa biển và cá heo.'
+                    'nation_description' => 'Cuba là một quốc gia đảo ở vùng Caribe, nổi tiếng với các bãi biển và rạn san hô. Động vật hoang dã bao gồm nhiều loài chim, rùa biển và cá heo.',
+                    'nation_latitude' => 21.5218,
+                    'nation_longitude' => -77.7812,
                 ],
                 [
                     'nation_name' => 'Cyprus',
-                    'nation_description' => 'Cyprus là một quốc gia đảo ở Đông Địa Trung Hải, có các dãy núi và bờ biển đẹp. Động vật hoang dã bao gồm nhiều loài chim và rùa biển.'
+                    'nation_description' => 'Cyprus là một quốc gia đảo ở Đông Địa Trung Hải, có các dãy núi và bờ biển đẹp. Động vật hoang dã bao gồm nhiều loài chim và rùa biển.',
+                    'nation_latitude' => 35.1264,
+                    'nation_longitude' => 33.4299,
                 ],
                 [
                     'nation_name' => 'Czechia (Czech Republic)',
-                    'nation_description' => 'Czechia nằm ở Trung Âu, có địa lý đa dạng với các dãy núi, rừng và sông suối. Động vật hoang dã bao gồm hươu, lợn rừng và nhiều loài chim săn mồi.'
+                    'nation_description' => 'Czechia nằm ở Trung Âu, có địa lý đa dạng với các dãy núi, rừng và sông suối. Động vật hoang dã bao gồm hươu, lợn rừng và nhiều loài chim săn mồi.',
+                    'nation_latitude' => 49.8175,
+                    'nation_longitude' => 15.4729,
                 ],
                 [
                     'nation_name' => 'Denmark',
-                    'nation_description' => 'Denmark nằm ở Bắc Âu, có bờ biển dài và các đồng cỏ xanh tươi. Động vật hoang dã bao gồm hươu, cáo và nhiều loài chim biển.'
+                    'nation_description' => 'Denmark nằm ở Bắc Âu, có bờ biển dài và các đồng cỏ xanh tươi. Động vật hoang dã bao gồm hươu, cáo và nhiều loài chim biển.',
+                    'nation_latitude' => 56.2639,
+                    'nation_longitude' => 9.5018
                 ],
                 [
                     'nation_name' => 'Djibouti',
-                    'nation_description' => 'Djibouti nằm ở Đông Phi, có địa lý chủ yếu là sa mạc và bờ biển. Động vật hoang dã bao gồm linh dương, cáo sa mạc và nhiều loài chim di cư.'
+                    'nation_description' => 'Djibouti nằm ở Đông Phi, có địa lý chủ yếu là sa mạc và bờ biển. Động vật hoang dã bao gồm linh dương, cáo sa mạc và nhiều loài chim di cư.',
+                    'nation_latitude' => 11.8251,
+                    'nation_longitude' => 42.5903
                 ],
                 [
                     'nation_name' => 'Dominica',
-                    'nation_description' => 'Dominica là một quốc gia đảo ở vùng Caribe, nổi tiếng với các khu rừng nhiệt đới và bờ biển đẹp. Động vật hoang dã bao gồm nhiều loài động vật biển và chim nhiệt đới.'
+                    'nation_description' => 'Dominica là một quốc gia đảo ở vùng Caribe, nổi tiếng với các khu rừng nhiệt đới và bờ biển đẹp. Động vật hoang dã bao gồm nhiều loài động vật biển và chim nhiệt đới.',
+                    'nation_latitude' => 15.415,
+                    'nation_longitude' => -61.371
                 ],
                 [
                     'nation_name' => 'Dominican Republic',
-                    'nation_description' => 'Dominican Republic nằm ở vùng Caribe, có bờ biển dài và các dãy núi. Động vật hoang dã bao gồm nhiều loài chim, rùa biển và cá heo.'
+                    'nation_description' => 'Dominican Republic nằm ở vùng Caribe, có bờ biển dài và các dãy núi. Động vật hoang dã bao gồm nhiều loài chim, rùa biển và cá heo.',
+                    'nation_latitude' => 18.7357,
+                    'nation_longitude' => -70.1627
                 ],
                 [
                     'nation_name' => 'Ecuador',
-                    'nation_description' => 'Ecuador nằm ở Nam Mỹ, nổi tiếng với dãy núi Andes và quần đảo Galápagos. Động vật hoang dã bao gồm báo sư tử, lạc đà guanaco và nhiều loài chim.'
+                    'nation_description' => 'Ecuador nằm ở Nam Mỹ, nổi tiếng với dãy núi Andes và quần đảo Galápagos. Động vật hoang dã bao gồm báo sư tử, lạc đà guanaco và nhiều loài chim.',
+                    'nation_latitude' => -1.8312,
+                    'nation_longitude' => -78.1834
                 ],
                 [
                     'nation_name' => 'Egypt',
-                    'nation_description' => 'Egypt nằm ở Bắc Phi, nổi tiếng với sa mạc Sahara và sông Nile. Động vật hoang dã bao gồm lạc đà, cáo sa mạc và nhiều loài chim di cư.'
+                    'nation_description' => 'Egypt nằm ở Bắc Phi, nổi tiếng với sa mạc Sahara và sông Nile. Động vật hoang dã bao gồm lạc đà, cáo sa mạc và nhiều loài chim di cư.',
+                    'nation_latitude' => 26.8206,
+                    'nation_longitude' => 30.8025
                 ],
                 [
                     'nation_name' => 'El Salvador',
-                    'nation_description' => 'El Salvador nằm ở Trung Mỹ, có địa lý chủ yếu là núi lửa và bờ biển dài. Động vật hoang dã bao gồm báo sư tử, lạc đà guanaco và nhiều loài chim.'
+                    'nation_description' => 'El Salvador nằm ở Trung Mỹ, có địa lý chủ yếu là núi lửa và bờ biển dài. Động vật hoang dã bao gồm báo sư tử, lạc đà guanaco và nhiều loài chim.',
+                    'nation_latitude' => 13.7942,
+                    'nation_longitude' => -88.8965
                 ],
                 [
                     'nation_name' => 'Equatorial Guinea',
-                    'nation_description' => 'Equatorial Guinea nằm ở Trung Phi, có các khu rừng nhiệt đới và bờ biển. Động vật hoang dã bao gồm tinh tinh, voi và nhiều loài chim.'
+                    'nation_description' => 'Equatorial Guinea nằm ở Trung Phi, có các khu rừng nhiệt đới và bờ biển. Động vật hoang dã bao gồm tinh tinh, voi và nhiều loài chim.',
+                    'nation_latitude' => 1.6508,
+                    'nation_longitude' => 10.2679
                 ],
                 [
                     'nation_name' => 'Eritrea',
-                    'nation_description' => 'Eritrea nằm ở Đông Phi, có địa lý chủ yếu là sa mạc và bờ biển. Động vật hoang dã bao gồm linh dương, cáo sa mạc và nhiều loài chim di cư.'
+                    'nation_description' => 'Eritrea nằm ở Đông Phi, có địa lý chủ yếu là sa mạc và bờ biển. Động vật hoang dã bao gồm linh dương, cáo sa mạc và nhiều loài chim di cư.',
+                    'nation_latitude' => 15.1794,
+                    'nation_longitude' => 39.7823
                 ],
                 [
                     'nation_name' => 'Estonia',
-                    'nation_description' => 'Estonia nằm ở Bắc Âu, có địa hình chủ yếu là đồng bằng và rừng. Quốc gia này là nơi sinh sống của nhiều loài động vật như gấu nâu, chồn mèo và nhiều loài chim.'
+                    'nation_description' => 'Estonia nằm ở Bắc Âu, có địa hình chủ yếu là đồng bằng và rừng. Quốc gia này là nơi sinh sống của nhiều loài động vật như gấu nâu, chồn mèo và nhiều loài chim.',
+                    'nation_latitude' => 58.5953,
+                    'nation_longitude' => 25.0136
                 ],
                 [
                     'nation_name' => 'Eswatini (Swaziland)',
-                    'nation_description' => 'Eswatini (trước đây là Swaziland) nằm ở miền nam Châu Phi, có các dãy núi và thung lũng sâu. Động vật hoang dã bao gồm sư tử, voi và nhiều loài chim.'
+                    'nation_description' => 'Eswatini (trước đây là Swaziland) nằm ở miền nam Châu Phi, có các dãy núi và thung lũng sâu. Động vật hoang dã bao gồm sư tử, voi và nhiều loài chim.',
+                    'nation_latitude' => -26.5225,
+                    'nation_longitude' => 31.4659
                 ],
                 [
                     'nation_name' => 'Ethiopia',
-                    'nation_description' => 'Ethiopia nằm ở Đông Phi, có các cao nguyên, dãy núi và thung lũng sông lớn. Động vật hoang dã bao gồm báo Ethiopia, linh dương và nhiều loài chim.'
+                    'nation_description' => 'Ethiopia nằm ở Đông Phi, có các cao nguyên, dãy núi và thung lũng sông lớn. Động vật hoang dã bao gồm báo Ethiopia, linh dương và nhiều loài chim.',
+                    'nation_latitude' => 9.145,
+                    'nation_longitude' => 40.4897
                 ],
                 [
                     'nation_name' => 'Fiji',
-                    'nation_description' => 'Fiji là một quốc gia đảo ở Nam Thái Bình Dương, nổi tiếng với các rạn san hô và rừng nhiệt đới. Động vật hoang dã bao gồm cá sấu, chim săn mồi và nhiều loài chim biển.'
+                    'nation_description' => 'Fiji là một quốc gia đảo ở Nam Thái Bình Dương, nổi tiếng với các rạn san hô và rừng nhiệt đới. Động vật hoang dã bao gồm cá sấu, chim săn mồi và nhiều loài chim biển.',
+                    'nation_latitude' => -17.7134,
+                    'nation_longitude' => 178.065
                 ],
                 [
                     'nation_name' => 'Finland',
-                    'nation_description' => 'Finland nằm ở Bắc Âu, có địa hình chủ yếu là hồ nước, rừng và đồng cỏ. Động vật hoang dã bao gồm gấu xám, sói và nhiều loài chim.'
+                    'nation_description' => 'Finland nằm ở Bắc Âu, có địa hình chủ yếu là hồ nước, rừng và đồng cỏ. Động vật hoang dã bao gồm gấu xám, sói và nhiều loài chim.',
+                    'nation_latitude' => 61.9241,
+                    'nation_longitude' => 25.7482
                 ],
                 [
                     'nation_name' => 'France',
-                    'nation_description' => 'France nằm ở Tây Âu, có địa lý đa dạng từ dãy núi Alps đến bờ biển Đại Tây Dương. Quốc gia này là nơi sinh sống của nhiều loài động vật như hươu đỏ, cáo và nhiều loài chim biển.'
+                    'nation_description' => 'France nằm ở Tây Âu, có địa lý đa dạng từ dãy núi Alps đến bờ biển Đại Tây Dương. Quốc gia này là nơi sinh sống của nhiều loài động vật như hươu đỏ, cáo và nhiều loài chim biển.',
+                    'nation_latitude' => 46.6034,
+                    'nation_longitude' => 1.888
                 ],
                 [
                     'nation_name' => 'Gabon',
-                    'nation_description' => 'Gabon nằm ở Trung Phi, có các khu rừng nhiệt đới và bờ biển Đại Tây Dương. Động vật hoang dã bao gồm voi rừng, sư tử và nhiều loài linh dương.'
+                    'nation_description' => 'Gabon nằm ở Trung Phi, có các khu rừng nhiệt đới và bờ biển Đại Tây Dương. Động vật hoang dã bao gồm voi rừng, sư tử và nhiều loài linh dương.',
+                    'nation_latitude' => -0.8037,
+                    'nation_longitude' => 11.6094
                 ],
                 [
                     'nation_name' => 'Gambia',
-                    'nation_description' => 'Gambia nằm ở Tây Phi, có các khu rừng ngập mặn và đồng cỏ. Động vật hoang dã bao gồm voi, khỉ và nhiều loài chim nước.'
+                    'nation_description' => 'Gambia nằm ở Tây Phi, có các khu rừng ngập mặn và đồng cỏ. Động vật hoang dã bao gồm voi, khỉ và nhiều loài chim nước.',
+                    'nation_latitude' => 13.4432,
+                    'nation_longitude' => -15.3101
                 ],
                 [
                     'nation_name' => 'Georgia',
-                    'nation_description' => 'Georgia nằm ở vùng Caucasus của Châu Âu-Á, có các dãy núi cao và thung lũng sâu. Nước này là nơi cư trú của nhiều loài động vật như báo hoang, gấu nâu và nhiều loài chim săn mồi.'
+                    'nation_description' => 'Georgia nằm ở vùng Caucasus của Châu Âu-Á, có các dãy núi cao và thung lũng sâu. Nước này là nơi cư trú của nhiều loài động vật như báo hoang, gấu nâu và nhiều loài chim săn mồi.',
+                    'nation_latitude' => 42.3154,
+                    'nation_longitude' => 43.3569
                 ],
                 [
                     'nation_name' => 'Germany',
-                    'nation_description' => 'Germany is located in Central Europe, known for its diverse landscapes including forests, rivers, and the Alps. Wildlife includes deer, wild boar, and various bird species.'
+                    'nation_description' => 'Germany nằm ở Trung Âu, nổi tiếng với địa hình đa dạng bao gồm rừng, sông suối và dãy núi Alps. Động vật hoang dã bao gồm nai, lợn rừng và nhiều loài chim.',
+                    'nation_latitude' => 51.1657,
+                    'nation_longitude' => 10.4515
                 ],
                 [
                     'nation_name' => 'Ghana',
-                    'nation_description' => 'Ghana is situated in West Africa, characterized by coastal plains, tropical rainforests, and savannahs. Wildlife includes elephants, leopards, and a variety of bird species.'
+                    'nation_description' => 'Ghana nằm ở Tây Phi, có các vùng đất thấp ven biển, rừng nhiệt đới và thảo nguyên. Động vật hoang dã bao gồm voi, báo và nhiều loài chim.',
+                    'nation_latitude' => 7.9465,
+                    'nation_longitude' => -1.0232
                 ],
                 [
                     'nation_name' => 'Greece',
-                    'nation_description' => 'Greece is located in Southeastern Europe, known for its mountainous terrain, islands, and Mediterranean coastline. Wildlife includes brown bears, lynx, and numerous bird species.'
+                    'nation_description' => 'Greece nằm ở Đông Nam Âu, nổi tiếng với địa hình núi đá, đảo và bờ biển Địa Trung Hải. Động vật hoang dã bao gồm gấu nâu, rắn hổ mang và nhiều loài chim.',
+                    'nation_latitude' => 39.0742,
+                    'nation_longitude' => 21.8243
                 ],
                 [
                     'nation_name' => 'Grenada',
-                    'nation_description' => 'Grenada is a Caribbean island nation, known for its volcanic landscapes, lush rainforests, and pristine beaches. Wildlife includes Mona monkeys, tropical birds, and marine life.'
+                    'nation_description' => 'Grenada là một quốc gia đảo ở vùng Caribe, nổi tiếng với cảnh quan núi lửa, rừng nhiệt đới phong phú và bãi biển tuyệt đẹp. Động vật hoang dã bao gồm khỉ Mona, chim nhiệt đới và đờn cá.',
+                    'nation_latitude' => 12.1165,
+                    'nation_longitude' => -61.678999
                 ],
                 [
                     'nation_name' => 'Guatemala',
-                    'nation_description' => 'Guatemala is located in Central America, characterized by volcanic mountains, tropical rainforests, and Mayan ruins. Wildlife includes jaguars, howler monkeys, and various bird species.'
+                    'nation_description' => 'Guatemala nằm ở Trung Mỹ, nổi tiếng với dãy núi lửa, rừng nhiệt đới và các di chỉ Maya. Động vật hoang dã bao gồm báo sư tử, khỉ howler và nhiều loài chim.',
+                    'nation_latitude' => 15.7835,
+                    'nation_longitude' => -90.2308
                 ],
                 [
                     'nation_name' => 'Guinea',
-                    'nation_description' => 'Guinea is located in West Africa, known for its diverse landscapes including mountains, savannahs, and rainforests. Wildlife includes chimpanzees, hippos, and various bird species.'
+                    'nation_description' => 'Guinea nằm ở Tây Phi, có địa hình đa dạng từ núi cao, thảo nguyên đến rừng nhiệt đới. Động vật hoang dã bao gồm tinh tinh, hà mã và nhiều loài chim.',
+                    'nation_latitude' => 9.9456,
+                    'nation_longitude' => -9.6966
                 ],
                 [
                     'nation_name' => 'Guinea-Bissau',
-                    'nation_description' => 'Guinea-Bissau is located in West Africa, characterized by coastal mangroves, savannahs, and rivers. Wildlife includes saltwater crocodiles, manatees, and a variety of bird species.'
+                    'nation_description' => 'Guinea-Bissau nằm ở Tây Phi, có các khu rừng ngập mặn ven biển, thảo nguyên và sông ngòi. Động vật hoang dã bao gồm cá sấu nước ngọt, hải cẩu và nhiều loài chim.',
+                    'nation_latitude' => 11.8037,
+                    'nation_longitude' => -15.1804
                 ],
                 [
                     'nation_name' => 'Guyana',
-                    'nation_description' => 'Guyana is situated in northern South America, known for its dense rainforests, savannahs, and the Kaieteur Falls. Wildlife includes jaguars, giant river otters, and numerous bird species.'
+                    'nation_description' => 'Guyana nằm ở miền bắc Nam Mỹ, nổi tiếng với rừng nhiệt đới dày đặc, thảo nguyên và thác nước Kaieteur. Động vật hoang dã bao gồm báo, lửng và nhiều loài chim.',
+                    'nation_latitude' => 4.8604,
+                    'nation_longitude' => -58.9302
                 ],
                 [
                     'nation_name' => 'Haiti',
-                    'nation_description' => 'Haiti is located on the island of Hispaniola in the Caribbean, characterized by mountain ranges, coastal plains, and coral reefs. Wildlife includes Hispaniolan solenodons, parrots, and marine life.'
+                    'nation_description' => 'Haiti nằm trên đảo Hispaniola ở vùng Caribe, có địa hình núi cao, bãi biển ven biển và rạn san hô. Động vật hoang dã bao gồm mèo solenodon Hispaniola, vẹt và đờn cá.',
+                    'nation_latitude' => 18.9712,
+                    'nation_longitude' => -72.2852
                 ],
                 [
                     'nation_name' => 'Honduras',
-                    'nation_description' => 'Honduras is located in Central America, known for its Caribbean and Pacific coastlines, tropical rainforests, and Mayan ruins. Wildlife includes tapirs, scarlet macaws, and various marine species.'
+                    'nation_description' => 'Honduras nằm ở Trung Mỹ, nổi tiếng với bờ biển ven biển Đại Tây Dương và Thái Bình Dương, rừng nhiệt đới và các di chỉ Maya. Động vật hoang dã bao gồm chồn mũi ngắn, vẹt màu sắc và nhiều loài động vật biển.',
+                    'nation_latitude' => 15.2,
+                    'nation_longitude' => -86.2419
                 ],
                 [
                     'nation_name' => 'Hungary',
-                    'nation_description' => 'Hungary nằm ở Trung Âu, có địa hình đa dạng với sông suối, rừng và đồng cỏ. Động vật hoang dã bao gồm hươu, cáo và nhiều loài chim.'
+                    'nation_description' => 'Hungary nằm ở Trung Âu, nổi tiếng với đồng bằng sông sông, rừng và đồng cỏ. Động vật hoang dã bao gồm nai, cáo và nhiều loài chim.',
+                    'nation_latitude' => 47.1625,
+                    'nation_longitude' => 19.5033
                 ],
                 [
                     'nation_name' => 'Iceland',
-                    'nation_description' => 'Iceland nằm ở Bắc Đại Tây Dương, là một quốc gia đảo nổi tiếng với địa hình núi lửa và băng tuyết. Động vật hoang dã bao gồm cá heo, chim biển và nhiều loài chim di cư.'
+                    'nation_description' => 'Iceland nằm ở Bắc Đại Tây Dương, là một quốc gia đảo nổi tiếng với núi lửa và băng tuyết. Động vật hoang dã bao gồm cá heo, chim biển và nhiều loài chim di cư.',
+                    'nation_latitude' => 64.9631,
+                    'nation_longitude' => -19.0208
                 ],
                 [
                     'nation_name' => 'India',
-                    'nation_description' => 'India nằm ở Nam Á, có địa hình đa dạng từ dãy Himalaya đến sa mạc Thar và rừng nhiệt đới. Động vật hoang dã bao gồm hổ Bengal, voi và nhiều loài chim.'
+                    'nation_description' => 'India nằm ở Nam Á, nổi tiếng với địa hình đa dạng từ dãy Himalaya, sa mạc Thar đến rừng nhiệt đới. Động vật hoang dã bao gồm hổ Bengal, voi và nhiều loài chim.',
+                    'nation_latitude' => 20.5937,
+                    'nation_longitude' => 78.9629
                 ],
                 [
                     'nation_name' => 'Indonesia',
-                    'nation_description' => 'Indonesia nằm ở Đông Nam Á, là quốc gia quần đảo lớn nhất thế giới với rừng nhiệt đới và núi lửa. Động vật hoang dã bao gồm tinh tinh, hổ Sumatra và nhiều loài khỉ.'
+                    'nation_description' => 'Indonesia nằm ở Đông Nam Á, là quốc gia quần đảo lớn nhất thế giới với rừng nhiệt đới và núi lửa. Động vật hoang dã bao gồm tinh tinh, hổ Sumatra và nhiều loài khỉ.',
+                    'nation_latitude' => -0.7893,
+                    'nation_longitude' => 113.9213
                 ],
                 [
                     'nation_name' => 'Iran',
-                    'nation_description' => 'Iran nằm ở Tây Á, có địa hình từ dãy núi Zagros đến sa mạc và vùng bờ biển dài. Động vật hoang dã bao gồm báo Ba Tư, gấu xám và nhiều loài chim săn mồi.'
+                    'nation_description' => 'Iran nằm ở Tây Á, nổi tiếng với địa hình từ dãy núi Zagros, sa mạc đến bờ biển dài. Động vật hoang dã bao gồm báo Ba Tư, gấu xám và nhiều loài chim săn mồi.',
+                    'nation_latitude' => 32.4279,
+                    'nation_longitude' => 53.688
                 ],
                 [
                     'nation_name' => 'Iraq',
-                    'nation_description' => 'Iraq nằm ở Tây Á, có địa hình đa dạng từ sông lớn đến sa mạc và núi cao. Động vật hoang dã bao gồm linh dương, cáo sa mạc và nhiều loài chim.'
+                    'nation_description' => 'Iraq nằm ở Tây Á, có địa hình đa dạng từ sông lớn, sa mạc đến núi cao. Động vật hoang dã bao gồm linh dương, cáo sa mạc và nhiều loài chim.',
+                    'nation_latitude' => 33.2232,
+                    'nation_longitude' => 43.6793
                 ],
                 [
                     'nation_name' => 'Ireland',
-                    'nation_description' => 'Ireland nằm ở Tây Âu, có địa hình chủ yếu là đồng cỏ xanh tươi và bờ biển đá ngầm. Động vật hoang dã bao gồm nai, cáo và nhiều loài chim biển.'
+                    'nation_description' => 'Ireland nằm ở Tây Âu, nổi tiếng với cảnh quan xanh mướt của thảo nguyên, rừng cây và bờ biển biển Đại Tây Dương. Động vật hoang dã bao gồm nai, báo và nhiều loài chim.',
+                    'nation_latitude' => 53.4129,
+                    'nation_longitude' => -8.2439
                 ],
                 [
                     'nation_name' => 'Israel',
-                    'nation_description' => 'Israel nằm ở Trung Đông, có địa hình từ vùng núi đến bờ biển Địa Trung Hải và sa mạc Negev. Động vật hoang dã bao gồm linh dương, cáo và nhiều loài chim.'
+                    'nation_description' => 'Israel nằm ở Trung Đông, nổi tiếng với sa mạc Negev, biển Địa Trung Hải và dãy núi Galilee. Động vật hoang dã bao gồm gấu Syria, cá sấu và nhiều loài chim.',
+                    'nation_latitude' => 31.0461,
+                    'nation_longitude' => 34.8516
                 ],
                 [
                     'nation_name' => 'Italy',
-                    'nation_description' => 'Italy nằm ở Nam Âu, có địa hình đa dạng từ dãy núi Alps đến bờ biển Địa Trung Hải. Động vật hoang dã bao gồm gấu nâu, sói và nhiều loài chim.'
+                    'nation_description' => 'Italy nằm ở Nam Âu, nổi tiếng với địa hình từ dãy núi Alps, đồng bằng sông sông đến bờ biển Địa Trung Hải. Động vật hoang dã bao gồm gấu xám, sói và nhiều loài chim biển.',
+                    'nation_latitude' => 41.8719,
+                    'nation_longitude' => 12.5674
                 ],
                 [
                     'nation_name' => 'Jamaica',
-                    'nation_description' => 'Jamaica là một quốc gia đảo ở vùng Caribe, nổi tiếng với các bãi biển và rừng nhiệt đới. Động vật hoang dã bao gồm nhiều loài động vật biển và chim nhiệt đới.'
+                    'nation_description' => 'Jamaica là một quốc gia đảo ở vùng Caribe, nổi tiếng với dãy núi Blue Mountains, rừng nhiệt đới và bãi biển xanh ngắt. Động vật hoang dã bao gồm khỉ, hổ Jamaica và nhiều loài chim.',
+                    'nation_latitude' => 18.1096,
+                    'nation_longitude' => -77.2975
                 ],
                 [
                     'nation_name' => 'Japan',
-                    'nation_description' => 'Japan nằm ở Đông Á, là một quốc gia quần đảo với địa hình núi non và rừng núi. Động vật hoang dã bao gồm gấu xám, linh dương sika và nhiều loài chim.'
+                    'nation_description' => 'Japan nằm ở Đông Á, là quốc gia có nền văn hóa phong phú với núi non, thung lũng và bờ biển rực rỡ. Động vật hoang dã bao gồm gấu xám Hokkaido, linh dương Sika và nhiều loài chim.',
+                    'nation_latitude' => 36.2048,
+                    'nation_longitude' => 138.2529
                 ],
                 [
                     'nation_name' => 'Jordan',
-                    'nation_description' => 'Jordan nằm ở Trung Đông, có địa hình đa dạng từ sa mạc đến thung lũng sông và biển Chết. Động vật hoang dã bao gồm linh dương, cáo sa mạc và nhiều loài chim.'
+                    'nation_description' => 'Jordan nằm ở Trung Đông, nổi tiếng với sa mạc Wadi Rum, biển Chết và thành phố cổ Petra. Động vật hoang dã bao gồm chồn hương, dê rừng và nhiều loài chim.',
+                    'nation_latitude' => 30.5852,
+                    'nation_longitude' => 36.2384
                 ],
                 [
                     'nation_name' => 'Kazakhstan',
-                    'nation_description' => 'Kazakhstan là quốc gia lớn nhất thế giới nằm ở Trung Á, có địa hình từ sa mạc đến dãy núi Altai và bãi cát của Biển Aral. Động vật hoang dã bao gồm linh dương saiga, báo dã và nhiều loài chim.'
+                    'nation_description' => 'Kazakhstan nằm ở Trung Á, là quốc gia lớn thứ chín thế giới với sa mạc, thảo nguyên và dãy núi. Động vật hoang dã bao gồm báo sa mạc, lạc đà và nhiều loài chim săn mồi.',
+                    'nation_latitude' => 48.0196,
+                    'nation_longitude' => 66.9237
                 ],
                 [
                     'nation_name' => 'Kenya',
-                    'nation_description' => 'Kenya nằm ở Đông Phi, có địa hình đa dạng từ dãy núi Aberdare đến thung lũng sông và sa mạc. Động vật hoang dã bao gồm sư tử, voi và nhiều loài chim.'
+                    'nation_description' => 'Kenya nằm ở Đông Phi, nổi tiếng với thảo nguyên Masai Mara, núi Kilimanjaro và bờ biển ven biển Đại Tây Dương. Động vật hoang dã bao gồm sư tử, hà mã và nhiều loài chim.',
+                    'nation_latitude' => -0.0236,
+                    'nation_longitude' => 37.9062
                 ],
                 [
                     'nation_name' => 'Kiribati',
-                    'nation_description' => 'Kiribati là một quốc gia đảo ở Đại Tây Dương, nổi tiếng với các bãi biển và san hô. Động vật hoang dã bao gồm nhiều loài cá và chim biển.'
+                    'nation_description' => 'Kiribati là quốc gia đảo ở vùng Thái Bình Dương, nổi tiếng với bãi cát trắng và rạn san hô. Động vật hoang dã bao gồm rùa biển, hải cẩu và nhiều loài chim biển.',
+                    'nation_latitude' => -3.3704,
+                    'nation_longitude' => -168.734
+                ],
+                [
+                    'nation_name' => 'Kosovo',
+                    'nation_description' => 'Kosovo là một vùng lãnh thổ tự xưng nằm ở Đông Nam châu Âu, nổi tiếng với các thảm họa lịch sử và văn hóa đa dạng.',
+                    'nation_latitude' => 42.6026,
+                    'nation_longitude' => 20.9030
                 ],
                 [
                     'nation_name' => 'Kuwait',
-                    'nation_description' => 'Kuwait nằm ở Trung Đông, có địa hình chủ yếu là sa mạc và bờ biển dài ven vịnh Ba Tư. Động vật hoang dã bao gồm linh dương sa mạc, cáo và nhiều loài chim di cư.'
+                    'nation_description' => 'Kuwait nằm ở Trung Đông, có địa hình chủ yếu là sa mạc và bờ biển vịnh Ba Tư. Động vật hoang dã bao gồm dê rừng, cáo sa mạc và nhiều loài chim.',
+                    'nation_latitude' => 29.3759,
+                    'nation_longitude' => 47.9774
                 ],
                 [
                     'nation_name' => 'Kyrgyzstan',
-                    'nation_description' => 'Kyrgyzstan nằm ở Trung Á, có địa hình phức tạp từ dãy núi Tien Shan đến thung lũng sông và thảo nguyên. Động vật hoang dã bao gồm linh dương, báo dã và nhiều loài chim.'
+                    'nation_description' => 'Kyrgyzstan nằm ở Trung Á, có địa hình từ núi cao, thung lũng sâu đến thảo nguyên rộng lớn. Động vật hoang dã bao gồm báo tuyết, dê và nhiều loài chim.',
+                    'nation_latitude' => 41.2044,
+                    'nation_longitude' => 74.7661
                 ],
                 [
                     'nation_name' => 'Laos',
-                    'nation_description' => 'Laos nằm ở Đông Nam Á, có địa hình đa dạng từ dãy núi đến sông Mekong và rừng nhiệt đới. Động vật hoang dã bao gồm gấu trúc, hổ và nhiều loài khỉ.'
+                    'nation_description' => 'Laos nằm ở Đông Nam Á, nổi tiếng với dãy núi cao, sông suối và rừng nhiệt đới. Động vật hoang dã bao gồm hươu, gấu và nhiều loài cá.',
+                    'nation_latitude' => 19.8563,
+                    'nation_longitude' => 102.4955
                 ],
                 [
                     'nation_name' => 'Latvia',
-                    'nation_description' => 'Latvia nằm ở Bắc Âu, có địa hình chủ yếu là đồng bằng và rừng. Quốc gia này là nơi sinh sống của nhiều loài động vật như gấu nâu, chồn mèo và nhiều loài chim.'
+                    'nation_description' => 'Latvia nằm ở Bắc Âu, có địa hình chủ yếu là rừng và đồng cỏ. Động vật hoang dã bao gồm gấu nâu, chồn mèo và nhiều loài chim.',
+                    'nation_latitude' => 56.8796,
+                    'nation_longitude' => 24.6032
                 ],
                 [
                     'nation_name' => 'Lebanon',
-                    'nation_description' => 'Lebanon nằm ở Trung Đông, có địa hình từ dãy núi đến bờ biển Địa Trung Hải và thung lũng sông. Động vật hoang dã bao gồm linh dương, cáo và nhiều loài chim.'
+                    'nation_description' => 'Lebanon nằm ở Trung Đông, nổi tiếng với dãy núi Lebanon, sa mạc và bờ biển Địa Trung Hải. Động vật hoang dã bao gồm gấu Syria, cáo và nhiều loài chim.',
+                    'nation_latitude' => 33.8547,
+                    'nation_longitude' => 35.8623
                 ],
                 [
                     'nation_name' => 'Lesotho',
-                    'nation_description' => 'Lesotho nằm ở miền nam Châu Phi, là một quốc gia núi có địa hình chủ yếu là cao nguyên và thung lũng sâu. Động vật hoang dã bao gồm báo Ethiopia, linh dương và nhiều loài chim.'
+                    'nation_description' => 'Lesotho nằm ở miền nam Châu Phi, có địa hình chủ yếu là dãy núi cao và thung lũng sâu. Động vật hoang dã bao gồm lạc đà, sư tử và nhiều loài chim.',
+                    'nation_latitude' => -29.61,
+                    'nation_longitude' => 28.2336
                 ],
                 [
                     'nation_name' => 'Liberia',
-                    'nation_description' => 'Liberia nằm ở Tây Phi, có địa hình chủ yếu là rừng nhiệt đới và các con sông lớn. Động vật hoang dã bao gồm voi rừng, sư tử và nhiều loài linh dương.'
+                    'nation_description' => 'Liberia nằm ở Tây Phi, có địa hình chủ yếu là rừng nhiệt đới và sông suối. Động vật hoang dã bao gồm voi, hươu và nhiều loài khỉ.',
+                    'nation_latitude' => 6.4281,
+                    'nation_longitude' => -9.4295
                 ],
                 [
                     'nation_name' => 'Libya',
-                    'nation_description' => 'Libya nằm ở Bắc Phi, có địa hình chủ yếu là sa mạc Sahara và vùng ven biển Địa Trung Hải. Động vật hoang dã bao gồm linh dương sa mạc, báo sa mạc và nhiều loài chim di cư.'
+                    'nation_description' => 'Libya nằm ở Bắc Phi, nổi tiếng với sa mạc Sahara và bờ biển Địa Trung Hải. Động vật hoang dã bao gồm lạc đà, cáo sa mạc và nhiều loài chim.',
+                    'nation_latitude' => 26.3351,
+                    'nation_longitude' => 17.2283
                 ],
                 [
                     'nation_name' => 'Liechtenstein',
-                    'nation_description' => 'Liechtenstein nằm ở Trung Âu, có địa hình chủ yếu là dãy núi Alps và thung lũng sông. Động vật hoang dã bao gồm dê rừng, lửng và nhiều loài chim.'
+                    'nation_description' => 'Liechtenstein nằm ở Trung Âu, là một quốc gia nhỏ nằm giữa dãy núi Alps. Động vật hoang dã bao gồm nai, sóc và nhiều loài chim.',
+                    'nation_latitude' => 47.166,
+                    'nation_longitude' => 9.5554
                 ],
                 [
                     'nation_name' => 'Lithuania',
-                    'nation_description' => 'Lithuania nằm ở Bắc Âu, có địa hình chủ yếu là đồng bằng và rừng. Quốc gia này là nơi sinh sống của nhiều loài động vật như gấu nâu, chồn mèo và nhiều loài chim.'
+                    'nation_description' => 'Lithuania nằm ở Bắc Âu, nổi tiếng với rừng, hồ nước và bờ biển Biển Baltic. Động vật hoang dã bao gồm gấu xám, báo và nhiều loài chim.',
+                    'nation_latitude' => 55.1694,
+                    'nation_longitude' => 23.8813
                 ],
                 [
                     'nation_name' => 'Luxembourg',
-                    'nation_description' => 'Luxembourg nằm ở Tây Âu, là một quốc gia nhỏ có địa hình chủ yếu là dốc và thung lũng sông. Động vật hoang dã bao gồm nai, cáo và nhiều loài chim.'
+                    'nation_description' => 'Luxembourg nằm ở Tây Âu, là một quốc gia nhỏ giữa Bỉ, Đức và Pháp. Động vật hoang dã bao gồm nai, sóc và nhiều loài chim.',
+                    'nation_latitude' => 49.8153,
+                    'nation_longitude' => 6.1296
                 ],
                 [
                     'nation_name' => 'Madagascar',
-                    'nation_description' => 'Madagascar là một đảo lớn nằm ở Đông Phi, có các khu rừng nhiệt đới và động vật quý hiếm như lêmur và cá sấu dài mõm. Đây cũng là nơi sinh sống của nhiều loài chim và thú hoang dã.'
+                    'nation_description' => 'Madagascar là một đảo quốc nằm ở phía đông Nam Phi, nổi tiếng với rừng nhiệt đới, động vật duy nhất và các bãi biển tuyệt đẹp. Động vật hoang dã bao gồm lêmur, cá sấu và nhiều loài chim.',
+                    'nation_latitude' => -18.7669,
+                    'nation_longitude' => 46.8691
                 ],
                 [
                     'nation_name' => 'Malawi',
-                    'nation_description' => 'Malawi nằm ở Đông Phi, có địa hình đa dạng từ hồ lớn đến dãy núi và thung lũng sông. Động vật hoang dã bao gồm sư tử, voi và nhiều loài chim.'
+                    'nation_description' => 'Malawi nằm ở Đông Phi, nổi tiếng với hồ Malawi lớn, thảo nguyên và rừng nhiệt đới. Động vật hoang dã bao gồm sư tử, voi và nhiều loài chim.',
+                    'nation_latitude' => -13.2543,
+                    'nation_longitude' => 34.3015
                 ],
                 [
                     'nation_name' => 'Malaysia',
-                    'nation_description' => 'Malaysia nằm ở Đông Nam Á, có địa hình từ rừng nhiệt đới đến các đảo và núi non. Động vật hoang dã bao gồm hổ Mã Lai, gấu trúc và nhiều loài khỉ.'
+                    'nation_description' => 'Malaysia nằm ở Đông Nam Á, nổi tiếng với rừng nhiệt đới, bờ biển và các thành phố hiện đại. Động vật hoang dã bao gồm hổ Malayan, tinh tinh và nhiều loài cá.',
+                    'nation_latitude' => 4.2105,
+                    'nation_longitude' => 101.9758
                 ],
                 [
                     'nation_name' => 'Maldives',
-                    'nation_description' => 'Maldives là một quốc gia đảo nằm ở Ấn Độ Dương, nổi tiếng với các bãi biển, san hô và lặn biển. Động vật hoang dã bao gồm cá sấu biển, rùa biển và nhiều loài cá.'
+                    'nation_description' => 'Maldives là một quốc gia đảo ở vùng Ấn Độ Dương, nổi tiếng với bãi biển, rạn san hô và du lịch nghỉ dưỡng. Động vật hoang dã bao gồm cá heo, rùa biển và nhiều loài cá.',
+                    'nation_latitude' => 3.2028,
+                    'nation_longitude' => 73.2207
                 ],
                 [
                     'nation_name' => 'Mali',
-                    'nation_description' => 'Mali nằm ở Tây Phi, có địa hình chủ yếu là sa mạc Sahara và sông Niger. Động vật hoang dã bao gồm linh dương sa mạc, voi sa mạc và nhiều loài chim nước.'
+                    'nation_description' => 'Mali nằm ở Tây Phi, nổi tiếng với sa mạc Sahara, sông Niger và thành phố cổ Timbuktu. Động vật hoang dã bao gồm voi, hà mã và nhiều loài khỉ.',
+                    'nation_latitude' => 17.5707,
+                    'nation_longitude' => -3.9962
                 ],
                 [
                     'nation_name' => 'Malta',
-                    'nation_description' => 'Malta là một quốc gia đảo nhỏ ở Địa Trung Hải, có địa hình đồi núi và bờ biển đá ngầm. Động vật hoang dã bao gồm nhiều loài chim biển và thú nhỏ.'
+                    'nation_description' => 'Malta là một quốc gia đảo nhỏ ở Địa Trung Hải, nổi tiếng với các di tích lịch sử và bờ biển đẹp. Động vật hoang dã bao gồm nhím châu Phi, chim bồ câu và nhiều loài cá.',
+                    'nation_latitude' => 35.9375,
+                    'nation_longitude' => 14.3754
                 ],
                 [
                     'nation_name' => 'Marshall Islands',
-                    'nation_description' => 'Marshall Islands là một quốc gia đảo nằm ở Thái Bình Dương, nổi tiếng với các rạn san hô và bãi biển. Động vật hoang dã bao gồm nhiều loài cá và chim biển.'
+                    'nation_description' => 'Marshall Islands là quốc gia đảo ở Thái Bình Dương, nổi tiếng với bãi cát trắng và rạn san hô. Động vật hoang dã bao gồm rùa biển, cá heo và nhiều loài cá biển.',
+                    'nation_latitude' => 7.1315,
+                    'nation_longitude' => 171.1845
                 ],
                 [
                     'nation_name' => 'Mauritania',
-                    'nation_description' => 'Mauritania nằm ở Tây Phi, có địa hình chủ yếu là sa mạc Sahara và bờ biển Đại Tây Dương. Động vật hoang dã bao gồm linh dương sa mạc, báo sa mạc và nhiều loài chim di cư.'
+                    'nation_description' => 'Mauritania nằm ở Tây Phi, có địa hình chủ yếu là sa mạc Sahara và bờ biển Đại Tây Dương. Động vật hoang dã bao gồm lạc đà, voi và nhiều loài chim.',
+                    'nation_latitude' => 21.0079,
+                    'nation_longitude' => -10.9408
                 ],
                 [
                     'nation_name' => 'Mauritius',
-                    'nation_description' => 'Mauritius là một đảo quốc nằm ở Ấn Độ Dương, nổi tiếng với các rạn san hô và đồng cỏ núi lửa. Động vật hoang dã bao gồm lêmur, chim câu và nhiều loài chim biển.'
+                    'nation_description' => 'Mauritius là một đảo quốc nằm ở Ấn Độ Dương, nổi tiếng với rừng nhiệt đới, các bãi biển và rạn san hô. Động vật hoang dã bao gồm lêmur, chim cánh cụt và nhiều loài cá.',
+                    'nation_latitude' => -20.3484,
+                    'nation_longitude' => 57.5522
                 ],
                 [
                     'nation_name' => 'Mexico',
-                    'nation_description' => 'Mexico nằm ở Trung Mỹ, có địa hình đa dạng từ dãy núi Sierra Madre đến rừng nhiệt đới và bờ biển Thái Bình Dương. Động vật hoang dã bao gồm báo sư tử, hổ và nhiều loài chim nhiệt đới.'
+                    'nation_description' => 'Mexico nằm ở Bắc Mỹ, nổi tiếng với văn hóa Aztec, các di sản Maya và các bãi biển Thái Bình Dương. Động vật hoang dã bao gồm báo Mỹ, rùa biển và nhiều loài chim.',
+                    'nation_latitude' => 23.6345,
+                    'nation_longitude' => -102.5528
                 ],
                 [
                     'nation_name' => 'Micronesia',
-                    'nation_description' => 'Micronesia là một quốc gia đảo nằm ở Thái Bình Dương, bao gồm hàng loạt đảo nhỏ và rạn san hô. Động vật hoang dã bao gồm nhiều loài cá và chim biển.'
+                    'nation_description' => 'Micronesia là quốc gia đảo ở Thái Bình Dương, nổi tiếng với rạn san hô, bãi cát và văn hóa đa dạng. Động vật hoang dã bao gồm rùa biển, cá heo và nhiều loài cá biển.',
+                    'nation_latitude' => 7.4256,
+                    'nation_longitude' => 150.5508
                 ],
                 [
                     'nation_name' => 'Moldova',
-                    'nation_description' => 'Moldova nằm ở Đông Âu, có địa hình chủ yếu là đồng bằng và thung lũng sông. Động vật hoang dã bao gồm nai, cáo và nhiều loài chim.'
+                    'nation_description' => 'Moldova nằm ở Đông Âu, nổi tiếng với đồng bằng sông sông Dniester, vườn nho và thung lũng xanh. Động vật hoang dã bao gồm gấu nâu, chồn mèo và nhiều loài chim.',
+                    'nation_latitude' => 47.4116,
+                    'nation_longitude' => 28.3699
                 ],
                 [
                     'nation_name' => 'Monaco',
-                    'nation_description' => 'Monaco là một quốc gia nhỏ nằm ở Nam Âu, có địa hình chủ yếu là dốc và bờ biển Địa Trung Hải. Động vật hoang dã bao gồm nai, cáo và nhiều loài chim biển.'
+                    'nation_description' => 'Monaco là một quốc gia nhỏ nằm ở Nam Âu, nổi tiếng với Monte Carlo và bờ biển Địa Trung Hải. Động vật hoang dã bao gồm chim bồ câu, sóc và nhiều loài cá.',
+                    'nation_latitude' => 43.7333,
+                    'nation_longitude' => 7.4167
                 ],
                 [
                     'nation_name' => 'Mongolia',
-                    'nation_description' => 'Mongolia nằm ở Đông Á, là một quốc gia có địa hình chủ yếu là sa mạc và thảo nguyên rộng lớn. Động vật hoang dã bao gồm báo săn, lạc đà và nhiều loài chim.'
+                    'nation_description' => 'Mongolia nằm ở Trung Á, nổi tiếng với sa mạc Gobi, thảo nguyên và dãy núi Altai. Động vật hoang dã bao gồm lạc đà Bactrian, báo và nhiều loài chim.',
+                    'nation_latitude' => 46.8625,
+                    'nation_longitude' => 103.8467
                 ],
                 [
                     'nation_name' => 'Montenegro',
-                    'nation_description' => 'Montenegro nằm ở Nam Âu, có địa hình phức tạp từ dãy núi Dinaric đến bờ biển Adriatic. Động vật hoang dã bao gồm gấu nâu, chồn mèo và nhiều loài chim.'
+                    'nation_description' => 'Montenegro nằm ở Nam Âu, nổi tiếng với dãy núi Dinaric Alps, bờ biển Adriatic và hồ nước. Động vật hoang dã bao gồm gấu nâu, chồn mèo và nhiều loài chim.',
+                    'nation_latitude' => 42.7087,
+                    'nation_longitude' => 19.3744
                 ],
                 [
                     'nation_name' => 'Morocco',
-                    'nation_description' => 'Morocco nằm ở Bắc Phi, có địa hình từ dãy núi Atlas đến sa mạc Sahara và bờ biển Đại Tây Dương. Động vật hoang dã bao gồm linh dương Atlas, báo sa mạc và nhiều loài chim.'
+                    'nation_description' => 'Morocco nằm ở Bắc Phi, nổi tiếng với dãy núi Atlas, sa mạc Sahara và bờ biển Đại Tây Dương. Động vật hoang dã bao gồm linh dương Atlas, lạc đà và nhiều loài chim.',
+                    'nation_latitude' => 31.7917,
+                    'nation_longitude' => -7.0926
                 ],
                 [
                     'nation_name' => 'Mozambique',
-                    'nation_description' => 'Mozambique nằm ở Đông Phi, có địa hình đa dạng từ bờ biển Đại Tây Dương đến dãy núi và sông lớn. Động vật hoang dã bao gồm voi, sư tử và nhiều loài linh dương.'
+                    'nation_description' => 'Mozambique nằm ở Đông Phi, nổi tiếng với bờ biển dài, hồ Malawi và rừng nhiệt đới. Động vật hoang dã bao gồm sư tử, voi và nhiều loài chim.',
+                    'nation_latitude' => -18.6657,
+                    'nation_longitude' => 35.5296
                 ],
                 [
                     'nation_name' => 'Myanmar',
-                    'nation_description' => 'Myanmar nằm ở Đông Nam Á, có địa hình đa dạng từ dãy núi Himalaya đến rừng nhiệt đới và sông lớn. Động vật hoang dã bao gồm voi châu Á, hổ và nhiều loài khỉ.'
+                    'nation_description' => 'Myanmar nằm ở Đông Nam Á, nổi tiếng với đồng bằng sông sông Irrawaddy, núi non và rừng nhiệt đới. Động vật hoang dã bao gồm voi châu Á, hươu và nhiều loài cá.',
+                    'nation_latitude' => 21.9162,
+                    'nation_longitude' => 95.956
                 ],
                 [
                     'nation_name' => 'Namibia',
-                    'nation_description' => 'Namibia nằm ở Nam Phi, có địa hình chủ yếu là sa mạc Namib và vùng thảo nguyên rộng lớn. Động vật hoang dã bao gồm linh dương sa mạc, sư tử và nhiều loài chim.'
+                    'nation_description' => 'Namibia nằm ở Nam Phi, nổi tiếng với sa mạc Namib, thung lũng sâu và bờ biển Đại Tây Dương. Động vật hoang dã bao gồm sư tử Namibia, lạc đà và nhiều loài chim săn mồi.',
+                    'nation_latitude' => -22.9576,
+                    'nation_longitude' => 18.4904
                 ],
                 [
                     'nation_name' => 'Nauru',
-                    'nation_description' => 'Nauru là một quốc gia đảo nhỏ nằm ở Thái Bình Dương, có địa hình chủ yếu là đồi núi và bờ biển đá ngầm. Động vật hoang dã bao gồm nhiều loài chim biển.'
+                    'nation_description' => 'Nauru là quốc gia đảo nhỏ ở Thái Bình Dương, nổi tiếng với quặng phốt phát và bãi biển. Động vật hoang dã bao gồm chim cáo, chim cánh cụt và nhiều loài cá biển.',
+                    'nation_latitude' => -0.5228,
+                    'nation_longitude' => 166.9315
                 ],
                 [
                     'nation_name' => 'Nepal',
-                    'nation_description' => 'Nepal nằm ở Nam Á, có địa hình đa dạng từ dãy Himalaya cao chót vót đến thung lũng sông sâu. Động vật hoang dã bao gồm hươu, báo và nhiều loài chim.'
+                    'nation_description' => 'Nepal nằm ở Nam Á, nổi tiếng với dãy Himalaya, thung lũng Kathmandu và sông sông. Động vật hoang dã bao gồm hươu, gấu và nhiều loài chim.',
+                    'nation_latitude' => 28.3949,
+                    'nation_longitude' => 84.124
                 ],
                 [
                     'nation_name' => 'Netherlands',
-                    'nation_description' => 'Netherlands nằm ở Tây Âu, có địa hình chủ yếu là đồng bằng và hệ thống kênh đào. Động vật hoang dã bao gồm nai, cáo và nhiều loài chim nước.'
+                    'nation_description' => 'Netherlands nằm ở Tây Âu, nổi tiếng với cánh đồng hoa Tulip, kênh đào và các thành phố lịch sử. Động vật hoang dã bao gồm hươu châu Âu, báo và nhiều loài chim.',
+                    'nation_latitude' => 52.1326,
+                    'nation_longitude' => 5.2913
                 ],
                 [
                     'nation_name' => 'New Zealand',
-                    'nation_description' => 'New Zealand nằm ở phía nam Thái Bình Dương, bao gồm hai đảo chính và nhiều đảo nhỏ. Động vật hoang dã bao gồm chim kiwi, cá heo và nhiều loài chim biển.'
+                    'nation_description' => 'New Zealand là một quốc gia đảo ở phía Nam Thái Bình Dương, nổi tiếng với dãy núi Southern Alps, hồ nước và đồng cỏ xanh mướt. Động vật hoang dã bao gồm kiwi, hải âu và nhiều loài cá.',
+                    'nation_latitude' => -40.9006,
+                    'nation_longitude' => 174.886
                 ],
                 [
                     'nation_name' => 'Nicaragua',
-                    'nation_description' => 'Nicaragua nằm ở Trung Mỹ, có địa hình đa dạng từ dãy núi đến các hồ lớn và bờ biển Thái Bình Dương. Động vật hoang dã bao gồm jaguar, báo đốm và nhiều loài chim nhiệt đới.'
+                    'nation_description' => 'Nicaragua nằm ở Trung Mỹ, nổi tiếng với hồ nước lớn, núi lửa và bờ biển Thái Bình Dương. Động vật hoang dã bao gồm báo đen, khỉ và nhiều loài cá.',
+                    'nation_latitude' => 12.8654,
+                    'nation_longitude' => -85.2072
                 ],
                 [
                     'nation_name' => 'Niger',
-                    'nation_description' => 'Niger nằm ở Tây Phi, có địa hình chủ yếu là sa mạc Sahara và sông Niger. Động vật hoang dã bao gồm linh dương sa mạc, voi sa mạc và nhiều loài chim nước.'
+                    'nation_description' => 'Niger nằm ở Tây Phi, nổi tiếng với sa mạc Sahara, sông Niger và thánh địa Agadez. Động vật hoang dã bao gồm hươu sa mạc, sư tử và nhiều loài chim.',
+                    'nation_latitude' => 17.6078,
+                    'nation_longitude' => 8.0817
                 ],
                 [
                     'nation_name' => 'Nigeria',
-                    'nation_description' => 'Nigeria nằm ở Tây Phi, có địa hình đa dạng từ rừng nhiệt đới đến thung lũng sông và sa mạc. Động vật hoang dã bao gồm sư tử, voi và nhiều loài khỉ.'
+                    'nation_description' => 'Nigeria nằm ở Tây Phi, nổi tiếng với sông Niger, rừng nhiệt đới và thành phố Lagos. Động vật hoang dã bao gồm sư tử, voi và nhiều loài khỉ.',
+                    'nation_latitude' => 9.082,
+                    'nation_longitude' => 8.6753
                 ],
                 [
                     'nation_name' => 'North Korea',
-                    'nation_description' => 'North Korea nằm ở Đông Á, có địa hình chủ yếu là dãy núi và thung lũng sông. Động vật hoang dã bao gồm gấu xám, linh dương sika và nhiều loài chim.'
+                    'nation_description' => 'North Korea nằm ở Đông Á, nổi tiếng với dãy núi cao, thung lũng sông và bờ biển Biển Nhật. Động vật hoang dã bao gồm hươu sừng tấm, gấu và nhiều loài chim.',
+                    'nation_latitude' => 40.3399,
+                    'nation_longitude' => 127.5101
                 ],
                 [
                     'nation_name' => 'North Macedonia',
-                    'nation_description' => 'Bắc Macedonia nằm ở Đông Nam châu Âu, nổi bật với dãy núi, hồ và thung lũng. Động vật hoang dã bao gồm gấu, linh dương và nhiều loài chim.'
+                    'nation_description' => 'North Macedonia nằm ở Đông Nam Âu, nổi tiếng với dãy núi Pindus, sông sông Vardar và bờ biển Biển Aegean. Động vật hoang dã bao gồm gấu nâu, sóc và nhiều loài chim.',
+                    'nation_latitude' => 41.6086,
+                    'nation_longitude' => 21.7453
                 ],
                 [
                     'nation_name' => 'Norway',
-                    'nation_description' => 'Na Uy nằm ở Bắc Âu, nổi tiếng với các vịnh hẻo lánh, núi non và ánh sáng Bắc Cực. Động vật hoang dã bao gồm gấu Bắc Cực, tuần lộc và nhiều loài biển.'
+                    'nation_description' => 'Norway nằm ở Bắc Âu, nổi tiếng với dãy núi Scandinavian, vách đá đứng và vùng eo biển hẹp. Động vật hoang dã bao gồm gấu Bắc Cực, chồn Arctic và nhiều loài chim biển.',
+                    'nation_latitude' => 60.472,
+                    'nation_longitude' => 8.4689
                 ],
                 [
                     'nation_name' => 'Oman',
-                    'nation_description' => 'Oman nằm ở Tây Nam Á, đặc trưng với sa mạc, dãy núi và bờ biển. Động vật hoang dã bao gồm báo Ả Rập, ngựa vằn Ả Rập và rùa biển.'
+                    'nation_description' => 'Oman nằm ở Trung Đông, nổi tiếng với sa mạc Rub al Khali, dãy núi Al Hajar và bờ biển vịnh Oman. Động vật hoang dã bao gồm báo hoa mai, linh dương và nhiều loài chim.',
+                    'nation_latitude' => 21.4735,
+                    'nation_longitude' => 55.9754
                 ],
                 [
                     'nation_name' => 'Pakistan',
-                    'nation_description' => 'Pakistan nằm ở Nam Á, nổi bật với các dãy núi, sa mạc và vùng ven biển đa dạng. Động vật hoang dã bao gồm báo tuyết, dê Markhor và công.'
+                    'nation_description' => 'Pakistan nằm ở Nam Á, nổi tiếng với dãy núi Himalaya, thung lũng Indus và sa mạc Thar. Động vật hoang dã bao gồm hươu Kashmir, báo và nhiều loài chim.',
+                    'nation_latitude' => 30.3753,
+                    'nation_longitude' => 69.3451
                 ],
                 [
                     'nation_name' => 'Palau',
-                    'nation_description' => 'Palau là một quốc đảo ở Tây Thái Bình Dương, nổi tiếng với rạn san hô, nước biển màu ngọc bích và các di tích chiến tranh thế giới II. Động vật hoang dã bao gồm tắc kè đại dương, cá sấu nước mặn và nhiều loài biển khác.'
-                ],
-                [
-                    'nation_name' => 'Palestine State',
-                    'nation_description' => 'Palestine là một vùng lãnh thổ ở Trung Đông, nổi bật với sự quan trọng lịch sử và di sản văn hóa. Động vật hoang dã bao gồm linh dương đốm, sói sa mạc và rạn san hô.'
+                    'nation_description' => 'Palau là quốc gia đảo ở Thái Bình Dương, nổi tiếng với rạn san hô, hồ nước và di sản văn hóa. Động vật hoang dã bao gồm cá mập san hô, rùa biển và nhiều loài cá biển.',
+                    'nation_latitude' => 7.515,
+                    'nation_longitude' => 134.5825
                 ],
                 [
                     'nation_name' => 'Panama',
-                    'nation_description' => 'Panama nằm ở Trung Mỹ, đặc trưng với núi lửa, rừng nhiệt đới và các tàn tích văn hóa Maya. Động vật hoang dã bao gồm báo đốm, khỉ howler và nhiều loài chim.'
+                    'nation_description' => 'Panama nằm ở Trung Mỹ, nổi tiếng với kênh Panama, rừng nhiệt đới và bờ biển Thái Bình Dương. Động vật hoang dã bao gồm báo đen, con trăn và nhiều loài cá.',
+                    'nation_latitude' => 8.537,
+                    'nation_longitude' => -80.7821
                 ],
                 [
                     'nation_name' => 'Papua New Guinea',
-                    'nation_description' => 'Papua New Guinea là một quốc gia ở Nam Thái Bình Dương, nổi tiếng với rừng mưa rậm, thảo nguyên và thác nước Kaieteur. Động vật hoang dã bao gồm báo sư tử, chồn nước lớn và nhiều loài chim.'
+                    'nation_description' => 'Papua New Guinea là quốc gia đảo lớn ở Nam Thái Bình Dương, nổi tiếng với rừng nhiệt đới, núi lửa và các bãi biển hoang sơ. Động vật hoang dã bao gồm chim cánh cụt, bạch tuộc và nhiều loài cá.',
+                    'nation_latitude' => -6.3148,
+                    'nation_longitude' => 143.9555
                 ],
                 [
                     'nation_name' => 'Paraguay',
-                    'nation_description' => 'Paraguay nằm ở Nam Mỹ, nổi bật với đồng bằng sông Paraná, rừng mưa và thác nước Iguazu. Động vật hoang dã bao gồm báo hoa mai, tê giác và nhiều loài chim.'
+                    'nation_description' => 'Paraguay nằm ở Nam Mỹ, nổi tiếng với sông sông Paraná, đồng bằng Gran Chaco và rừng mưa Amazon. Động vật hoang dã bao gồm hươu brocket, báo và nhiều loài cá.',
+                    'nation_latitude' => -23.4425,
+                    'nation_longitude' => -58.4438
                 ],
                 [
                     'nation_name' => 'Peru',
-                    'nation_description' => 'Peru nằm ở Nam Mỹ, nổi bật với dãy Andes, rừng nhiệt đới và di tích văn hóa Inca. Động vật hoang dã bao gồm báo jaguar, lạc đà và nhiều loài chim.'
+                    'nation_description' => 'Peru nằm ở Tây Nam Mỹ, nổi tiếng với dãy núi Andes, thung lũng Amazon và di tích lịch sử của Machu Picchu. Động vật hoang dã bao gồm báo Andean, chim quetzal và nhiều loài cá.',
+                    'nation_latitude' => -9.19,
+                    'nation_longitude' => -75.0152
                 ],
                 [
                     'nation_name' => 'Philippines',
-                    'nation_description' => 'Philippines nằm ở Đông Nam Á, nổi bật với hơn 7000 đảo, rạn san hô và rừng nhiệt đới. Động vật hoang dã bao gồm báo, cá heo và nhiều loài chim.'
+                    'nation_description' => 'Philippines là một quần đảo ở Đông Nam Á, nổi tiếng với rạn san hô, núi lửa và các bãi biển tuyệt đẹp. Động vật hoang dã bao gồm tamaraw, cá voi và nhiều loài cá biển.',
+                    'nation_latitude' => 12.8797,
+                    'nation_longitude' => 121.774
                 ],
                 [
                     'nation_name' => 'Poland',
-                    'nation_description' => 'Ba Lan nằm ở Trung Âu, nổi bật với đồng bằng sông Vistula, rừng núi và bờ biển Baltic. Động vật hoang dã bao gồm gấu nâu, rắn hổ và nhiều loài chim.'
+                    'nation_description' => 'Poland nằm ở Trung Âu, nổi tiếng với các thành phố lịch sử, rừng sồi và dãy núi Tatra. Động vật hoang dã bao gồm gấu xám, sóc và nhiều loài chim.',
+                    'nation_latitude' => 51.9194,
+                    'nation_longitude' => 19.1451
                 ],
                 [
                     'nation_name' => 'Portugal',
-                    'nation_description' => 'Bồ Đào Nha nằm ở miền tây Nam Âu, nổi bật với đại dương, núi sông và bờ biển Đại Tây Dương. Động vật hoang dã bao gồm linh dương, sóc và nhiều loài chim.'
-                ],                
+                    'nation_description' => 'Portugal nằm ở Tây Nam Âu, nổi tiếng với biển Đại Tây Dương, dãy núi Peneda-Gerês và thành phố Lisbon. Động vật hoang dã bao gồm sóc, cá sấu và nhiều loài chim biển.',
+                    'nation_latitude' => 39.3999,
+                    'nation_longitude' => -8.2245
+                ],
                 [
                     'nation_name' => 'Qatar',
-                    'nation_description' => 'Qatar là một quốc gia Trung Đông nổi tiếng với những tòa nhà chọc trời hiện đại, mua sắm sang trọng và văn hóa Ả Rập. Động vật hoang dã ở đây bao gồm cáo sa mạc, bò ngựa Ả Rập và các loài chim di cư.'
+                    'nation_description' => 'Qatar nằm ở Trung Đông, nổi tiếng với sa mạc, bán đảo Qatar và các công trình kiến ​​trúc hiện đại. Động vật hoang dã bao gồm linh dương Arabian, báo và nhiều loài chim.',
+                    'nation_latitude' => 25.3548,
+                    'nation_longitude' => 51.1839
                 ],
                 [
                     'nation_name' => 'Romania',
-                    'nation_description' => 'Romania là một quốc gia châu Âu nổi tiếng với các thị trấn cổ kính, các lâu đài và dãy núi Carpathian. Động vật hoang dã ở đây bao gồm gấu nâu, sói và nhiều loài chim khác.'
+                    'nation_description' => 'Romania nằm ở Đông Âu, nổi tiếng với rừng Carpathian, lâu đài Bran và biển Đen. Động vật hoang dã bao gồm gấu nâu, sóc và nhiều loài chim.',
+                    'nation_latitude' => 45.9432,
+                    'nation_longitude' => 24.9668
                 ],
                 [
                     'nation_name' => 'Russia',
-                    'nation_description' => 'Nga là quốc gia lớn nhất thế giới, nằm ở Đông Âu và Bắc Á, nổi tiếng với các cảnh quan đa dạng bao gồm đất đai, rừng và dãy núi. Động vật hoang dã ở đây bao gồm hổ Siberi, gấu nâu và tuần lộc.'
+                    'nation_description' => 'Russia nằm ở Đông Âu và Bắc Á, là quốc gia lớn nhất thế giới với rừng taiga, dãy núi Ural và sông Volga. Động vật hoang dã bao gồm gấu Nga, báo và nhiều loài chim.',
+                    'nation_latitude' => 61.524,
+                    'nation_longitude' => 105.3188
                 ],
                 [
                     'nation_name' => 'Rwanda',
-                    'nation_description' => 'Rwanda là một quốc gia ở Đông Phi nổi tiếng với các con núi, khỉ đột và văn hóa sôi động. Động vật hoang dã ở đây bao gồm khỉ đột núi, voi và nhiều loài chim đa dạng.'
+                    'nation_description' => 'Rwanda nằm ở Đông Phi, nổi tiếng với rừng núi Virunga, hồ nước và chim cánh cụt. Động vật hoang dã bao gồm cọp Rwanda, khỉ và nhiều loài chim.',
+                    'nation_latitude' => -1.9403,
+                    'nation_longitude' => 29.8739
                 ],
                 [
                     'nation_name' => 'Saint Kitts and Nevis',
-                    'nation_description' => 'Saint Kitts và Nevis là quốc gia hai đảo ở vùng biển Caribê, nổi tiếng với những bãi biển đẹp, rạn san hô và lối sống bình yên. Động vật hoang dã ở đây bao gồm loài chim nhiệt đới và các loài động vật biển.'
+                    'nation_description' => 'Saint Kitts và Nevis là quốc gia đảo ở Biển Caribbean, nổi tiếng với bãi biển, rạn san hô và du lịch nghỉ dưỡng. Động vật hoang dã bao gồm báo đen, rùa biển và nhiều loài cá biển.',
+                    'nation_latitude' => 17.3578,
+                    'nation_longitude' => -62.782
                 ],
                 [
                     'nation_name' => 'Saint Lucia',
-                    'nation_description' => 'Saint Lucia là một quốc gia ở vùng biển Caribê, nổi tiếng với những bãi biển đẹp và cảnh quan núi non. Động vật hoang dã ở đây bao gồm loài chim nhiệt đới và các loài động vật biển.'
+                    'nation_description' => 'Saint Lucia là quốc gia đảo ở Biển Caribbean, nổi tiếng với rạn san hô, núi lửa và các khu nghỉ dưỡng sang trọng. Động vật hoang dã bao gồm chim quạ, rùa biển và nhiều loài cá biển.',
+                    'nation_latitude' => 13.9094,
+                    'nation_longitude' => -60.9789
                 ],
                 [
                     'nation_name' => 'Saint Vincent and the Grenadines',
-                    'nation_description' => 'Saint Vincent và the Grenadines là một quốc gia nằm ở vùng biển Caribê, bao gồm một số đảo nhỏ và rạn san hô. Động vật hoang dã ở đây bao gồm loài chim nhiệt đới và các loài động vật biển.'
+                    'nation_description' => 'Saint Vincent và the Grenadines là quốc gia đảo ở Biển Caribbean, nổi tiếng với bãi biển, rạn san hô và các khu nghỉ dưỡng. Động vật hoang dã bao gồm chim quạ, rùa biển và nhiều loài cá biển.',
+                    'nation_latitude' => 12.9843,
+                    'nation_longitude' => -61.2872
                 ],
                 [
                     'nation_name' => 'Samoa',
-                    'nation_description' => 'Samoa là một quốc gia quần đảo ở Đại Tây Dương, nổi tiếng với các bãi biển đẹp và nền văn hóa Polynesia. Động vật hoang dã ở đây bao gồm loài cá voi, rùa biển và cá ngừ.'
+                    'nation_description' => 'Samoa là quốc gia đảo ở Nam Thái Bình Dương, nổi tiếng với rạn san hô, rừng nhiệt đới và văn hóa Polynesia. Động vật hoang dã bao gồm cá voi, chim quạ và nhiều loài cá.',
+                    'nation_latitude' => -13.759,
+                    'nation_longitude' => -172.1046
                 ],
                 [
                     'nation_name' => 'San Marino',
-                    'nation_description' => 'San Marino là một quốc gia nhỏ nằm trong khu vực núi Appennine ở Ý, nổi tiếng với các tháp châu Âu cổ kính và phong cảnh núi non. Động vật hoang dã ở đây bao gồm loài chim và động vật có vú nhỏ.'
+                    'nation_description' => 'San Marino là một quốc gia nhỏ nằm ở Ý, nổi tiếng với thành phố cổ San Marino và các di tích lịch sử. Động vật hoang dã bao gồm sóc, cáo và nhiều loài chim.',
+                    'nation_latitude' => 43.9424,
+                    'nation_longitude' => 12.4578
                 ],
                 [
                     'nation_name' => 'Sao Tome and Principe',
-                    'nation_description' => 'São Tomé và Príncipe là quốc gia quần đảo nằm ở vùng Đại Tây Dương, nổi tiếng với các rừng nhiệt đới và di sản bảo tồn. Động vật hoang dã ở đây bao gồm loài khỉ, chim và rùa biển.'
+                    'nation_description' => 'Sao Tome và Principe là quốc gia đảo nằm ở Đại Tây Dương, nổi tiếng với rừng mưa nhiệt đới, bãi biển và các cây cối hiếm. Động vật hoang dã bao gồm cáo lông vàng, chim cánh cụt và nhiều loài cá.',
+                    'nation_latitude' => 0.1864,
+                    'nation_longitude' => 6.6131
                 ],
                 [
                     'nation_name' => 'Saudi Arabia',
-                    'nation_description' => 'Ả Rập Saudi là một quốc gia nằm ở Trung Đông, nổi tiếng với sa mạc Thar khô cằn và văn hóa Ả Rập truyền thống. Động vật hoang dã ở đây bao gồm báo hoa mai, bò ngựa Ả Rập và các loài chim sa mạc.'
+                    'nation_description' => 'Saudi Arabia nằm ở Trung Đông, nổi tiếng với sa mạc Rub\' al Khali, thành phố Riyadh và vùng núi Tiền A Rập. Động vật hoang dã bao gồm linh dương Arabian, báo và nhiều loài chim.',
+                    'nation_latitude' => 23.8859,
+                    'nation_longitude' => 45.0792
                 ],
                 [
                     'nation_name' => 'Senegal',
-                    'nation_description' => 'Senegal là một quốc gia ở Tây Phi nổi tiếng với thủ đô Dakar sôi động và văn hóa đa dạng. Động vật hoang dã ở đây bao gồm sư tử, voi và nhiều loài chim.'
+                    'nation_description' => 'Senegal nằm ở Tây Phi, nổi tiếng với sông sông Senegal, sa mạc Sahara và di tích lịch sử của Dakar. Động vật hoang dã bao gồm linh dương, báo và nhiều loài chim.',
+                    'nation_latitude' => 14.4974,
+                    'nation_longitude' => -14.4524
                 ],
                 [
                     'nation_name' => 'Serbia',
-                    'nation_description' => 'Serbia là một quốc gia ở khu vực Balkan, nổi tiếng với thủ đô Belgrade sôi động và di sản lịch sử phong phú. Động vật hoang dã ở đây bao gồm gấu nâu, sói và các loài chim.'
+                    'nation_description' => 'Serbia nằm ở Nam Âu, nổi tiếng với dãy núi Dinaric Alps, sông sông Danube và thành phố Belgrade. Động vật hoang dã bao gồm gấu nâu, sóc và nhiều loài chim.',
+                    'nation_latitude' => 44.0165,
+                    'nation_longitude' => 21.0059
                 ],
                 [
                     'nation_name' => 'Seychelles',
-                    'nation_description' => 'Seychelles là một quốc gia quần đảo nằm ở Ấn Độ Dương, nổi tiếng với các bãi biển ngọc xanh và rạn san hô đầy màu sắc. Động vật hoang dã ở đây bao gồm rùa biển, cá ngừ và cá mập.'
+                    'nation_description' => 'Seychelles là quốc gia đảo ở Ấn Độ Dương, nổi tiếng với bãi biển, rạn san hô và các khu dự trữ thiên nhiên. Động vật hoang dã bao gồm rùa biển, chim cánh cụt và nhiều loài cá biển.',
+                    'nation_latitude' => -4.6796,
+                    'nation_longitude' => 55.492
                 ],
                 [
                     'nation_name' => 'Sierra Leone',
-                    'nation_description' => 'Sierra Leone là một quốc gia ở Tây Phi, nổi tiếng với các bãi biển cát trắng và các khu bảo tồn động vật hoang dã. Động vật hoang dã ở đây bao gồm linh dương, hươu và nhiều loài khác.'
+                    'nation_description' => 'Sierra Leone nằm ở Tây Phi, nổi tiếng với sông sông Rokel, rừng mưa và bờ biển Đại Tây Dương. Động vật hoang dã bao gồm linh dương, hươu và nhiều loài cá.',
+                    'nation_latitude' => 8.4606,
+                    'nation_longitude' => -11.7799
                 ],
                 [
                     'nation_name' => 'Singapore',
-                    'nation_description' => 'Singapore là một quốc gia đảo nhỏ nằm ở Đông Nam Á, nổi tiếng với sự phát triển kinh tế mạnh mẽ và văn hóa đa dạng. Động vật hoang dã ở đây bao gồm nai, khỉ và chim săn mồi.'
+                    'nation_description' => 'Singapore nằm ở Đông Nam Á, nổi tiếng với thành phố hiện đại, vườn quốc gia và khu vui chơi giải trí. Động vật hoang dã bao gồm khỉ, nai và nhiều loài cá.',
+                    'nation_latitude' => 1.3521,
+                    'nation_longitude' => 103.8198
                 ],
                 [
                     'nation_name' => 'Slovakia',
-                    'nation_description' => 'Slovakia là một quốc gia nằm ở Trung Âu, nổi tiếng với các thị trấn cổ kính, dãy núi Tatra và các công viên quốc gia. Động vật hoang dã ở đây bao gồm gấu nâu, chồn và nhiều loài chim.'
+                    'nation_description' => 'Slovakia nằm ở Trung Âu, nổi tiếng với dãy núi Tatra, sông sông Danube và thành phố Bratislava. Động vật hoang dã bao gồm gấu nâu, sóc và nhiều loài chim.',
+                    'nation_latitude' => 48.669,
+                    'nation_longitude' => 19.699
                 ],
                 [
                     'nation_name' => 'Slovenia',
-                    'nation_description' => 'Slovenia là một quốc gia nằm ở Nam Âu, nổi tiếng với vẻ đẹp thiên nhiên của dãy Alps Julian và hồ Bled. Động vật hoang dã ở đây bao gồm gấu nâu, dê rừng và chim săn mồi.'
+                    'nation_description' => 'Slovenia là một quốc gia nằm ở Nam Âu, nổi tiếng với vẻ đẹp thiên nhiên của dãy Alps Julian và hồ Bled. Động vật hoang dã ở đây bao gồm gấu nâu, dê rừng và chim săn mồi.',
+                    'nation_latitude' => 46.1512,
+                    'nation_longitude' => 14.9955,
                 ],
                 [
                     'nation_name' => 'Solomon Islands',
-                    'nation_description' => 'Quần đảo Solomon là một quốc gia quần đảo nằm ở Thái Bình Dương, nổi tiếng với các rừng nhiệt đới, bãi biển đẹp và lặn ngắm san hô. Động vật hoang dã ở đây bao gồm cá ngựa, dơi và rùa biển.'
+                    'nation_description' => 'Quần đảo Solomon là một quốc gia quần đảo nằm ở Thái Bình Dương, nổi tiếng với các rừng nhiệt đới, bãi biển đẹp và lặn ngắm san hô. Động vật hoang dã ở đây bao gồm cá ngựa, dơi và rùa biển.',
+                    'nation_latitude' => -9.6457,
+                    'nation_longitude' => 160.1562,
                 ],
                 [
                     'nation_name' => 'Somalia',
-                    'nation_description' => 'Somalia là một quốc gia ven biển ở Đông Phi, nổi tiếng với sa mạc và bờ biển dài. Động vật hoang dã ở đây bao gồm sư tử, voi và hổ săn.'
+                    'nation_description' => 'Somalia là một quốc gia ven biển ở Đông Phi, nổi tiếng với sa mạc và bờ biển dài. Động vật hoang dã ở đây bao gồm sư tử, voi và hổ săn.',
+                    'nation_latitude' => 5.1521,
+                    'nation_longitude' => 46.1996,
                 ],
                 [
                     'nation_name' => 'South Africa',
-                    'nation_description' => 'Nam Phi là một quốc gia nằm ở miền nam châu Phi, nổi tiếng với sự đa dạng văn hóa, các vườn quốc gia và các loài động vật hoang dã phong phú như sư tử, voi và hà mã.'
-                ],                
+                    'nation_description' => 'Nam Phi là một quốc gia nằm ở miền nam châu Phi, nổi tiếng với sự đa dạng văn hóa, các vườn quốc gia và các loài động vật hoang dã phong phú như sư tử, voi và hà mã.',
+                    'nation_latitude' => -30.5595,
+                    'nation_longitude' => 22.9375,
+                ],
                 [
                     'nation_name' => 'South Sudan',
-                    'nation_description' => 'Nam Sudan là một quốc gia nằm ở Đông Bắc châu Phi, có nền kinh tế chủ yếu dựa vào nông nghiệp và tài nguyên thiên nhiên, với các khu bảo tồn thiên nhiên và các dân tộc đa dạng.'
+                    'nation_description' => 'Nam Sudan là một quốc gia nằm ở Đông Bắc châu Phi, có nền kinh tế chủ yếu dựa vào nông nghiệp và tài nguyên thiên nhiên, với các khu bảo tồn thiên nhiên và các dân tộc đa dạng.',
+                    'nation_latitude' => 6.877,
+                    'nation_longitude' => 31.307,
                 ],
                 [
                     'nation_name' => 'Spain',
-                    'nation_description' => 'Tây Ban Nha là một quốc gia ở miền nam châu Âu, nổi tiếng với kiến trúc lâu đài và những bãi biển tuyệt đẹp ở bờ Đại Tây Dương.'
+                    'nation_description' => 'Tây Ban Nha là một quốc gia ở miền nam châu Âu, nổi tiếng với kiến trúc lâu đài và những bãi biển tuyệt đẹp ở bờ Đại Tây Dương.',
+                    'nation_latitude' => 40.4637,
+                    'nation_longitude' => -3.7492,
                 ],
                 [
                     'nation_name' => 'Sri Lanka',
-                    'nation_description' => 'Sri Lanka là một đảo quốc nằm ở Nam Á, nổi tiếng với các khu di tích lịch sử, các vườn quốc gia và các bãi biển cát trắng.'
+                    'nation_description' => 'Sri Lanka là một đảo quốc nằm ở Nam Á, nổi tiếng với các khu di tích lịch sử, các vườn quốc gia và các bãi biển cát trắng.',
+                    'nation_latitude' => 7.8731,
+                    'nation_longitude' => 80.7718,
                 ],
                 [
                     'nation_name' => 'Sudan',
-                    'nation_description' => 'Sudan là một quốc gia nằm ở Bắc Đông Phi, có địa hình đa dạng từ sa mạc đến các dãy núi, với các sông lớn như sông Nile chảy qua.'
+                    'nation_description' => 'Sudan là một quốc gia nằm ở Bắc Đông Phi, có địa hình đa dạng từ sa mạc đến các dãy núi, với các sông lớn như sông Nile chảy qua.',
+                    'nation_latitude' => 12.8628,
+                    'nation_longitude' => 30.2176,
                 ],
                 [
                     'nation_name' => 'Suriname',
-                    'nation_description' => 'Suriname là một quốc gia nhỏ ở Nam Mỹ, nổi tiếng với rừng nhiệt đới phong phú và sự đa dạng về các loài động thực vật.'
+                    'nation_description' => 'Suriname là một quốc gia nhỏ ở Nam Mỹ, nổi tiếng với rừng nhiệt đới phong phú và sự đa dạng về các loài động thực vật.',
+                    'nation_latitude' => 3.9193,
+                    'nation_longitude' => -56.0278,
                 ],
                 [
                     'nation_name' => 'Sweden',
-                    'nation_description' => 'Thụy Điển là một quốc gia nằm ở Bắc Âu, có thiên nhiên hoang sơ, hồ rừng và núi non, cùng với các thành phố hiện đại như Stockholm.'
+                    'nation_description' => 'Thụy Điển là một quốc gia nằm ở Bắc Âu, có thiên nhiên hoang sơ, hồ rừng và núi non, cùng với các thành phố hiện đại như Stockholm.',
+                    'nation_latitude' => 60.1282,
+                    'nation_longitude' => 18.6435,
                 ],
                 [
                     'nation_name' => 'Switzerland',
-                    'nation_description' => 'Thụy Sĩ là một quốc gia nằm ở Trung Âu, nổi tiếng với cảnh quan núi non hùng vĩ, hồ nước trong xanh và là trung tâm tài chính và ngân hàng quốc tế.'
+                    'nation_description' => 'Thụy Sĩ là một quốc gia nằm ở Trung Âu, nổi tiếng với cảnh quan núi non hùng vĩ, hồ nước trong xanh và là trung tâm tài chính và ngân hàng quốc tế.',
+                    'nation_latitude' => 46.8182,
+                    'nation_longitude' => 8.2275
                 ],
                 [
                     'nation_name' => 'Syria',
-                    'nation_description' => 'Syria là một quốc gia ở Tây Á, có di sản lịch sử phong phú và là nơi xuất phát của nhiều văn minh cổ đại, nhưng hiện nay đang trải qua cuộc khủng hoảng nghiêm trọng.'
+                    'nation_description' => 'Syria là một quốc gia ở Tây Á, có di sản lịch sử phong phú và là nơi xuất phát của nhiều văn minh cổ đại, nhưng hiện nay đang trải qua cuộc khủng hoảng nghiêm trọng.',
+                    'nation_latitude' => 34.8021,
+                    'nation_longitude' => 38.9968
                 ],
                 [
                     'nation_name' => 'Taiwan',
-                    'nation_description' => 'Đài Loan là một đảo quốc nằm ở Đông Á, nổi tiếng với nền kinh tế phát triển, văn hóa đa dạng và kiến trúc độc đáo.'
+                    'nation_description' => 'Đài Loan là một đảo quốc nằm ở Đông Á, nổi tiếng với nền kinh tế phát triển, văn hóa đa dạng và kiến trúc độc đáo.',
+                    'nation_latitude' => 23.6978,
+                    'nation_longitude' => 120.9605
                 ],
                 [
                     'nation_name' => 'Tajikistan',
-                    'nation_description' => 'Tajikistan là một quốc gia nằm ở Trung Á, có nền văn hóa pha trộn giữa các nền văn minh Trung Á và Đông Âu, với cảnh quan núi non và sông suối phong phú.'
+                    'nation_description' => 'Tajikistan là một quốc gia nằm ở Trung Á, có nền văn hóa pha trộn giữa các nền văn minh Trung Á và Đông Âu, với cảnh quan núi non và sông suối phong phú.',
+                    'nation_latitude' => 38.8610,
+                    'nation_longitude' => 71.2761
                 ],
                 [
                     'nation_name' => 'Tanzania',
-                    'nation_description' => 'Tanzania là một quốc gia ở Đông Phi, nổi tiếng với các khu bảo tồn thiên nhiên như Serengeti và Kilimanjaro, cùng với văn hóa phong phú của các dân tộc bản địa.'
+                    'nation_description' => 'Tanzania là một quốc gia ở Đông Phi, nổi tiếng với các khu bảo tồn thiên nhiên như Serengeti và Kilimanjaro, cùng với văn hóa phong phú của các dân tộc bản địa.',
+                    'nation_latitude' => -6.3690,
+                    'nation_longitude' => 34.8888
                 ],
                 [
                     'nation_name' => 'Thailand',
-                    'nation_description' => 'Thái Lan là một quốc gia nằm ở Đông Nam Á, nổi tiếng với đời sống văn hóa sôi động, các ngôi chùa và các khu du lịch biển phong phú.'
+                    'nation_description' => 'Thái Lan là một quốc gia nằm ở Đông Nam Á, nổi tiếng với đời sống văn hóa sôi động, các ngôi chùa và các khu du lịch biển phong phú.',
+                    'nation_latitude' => 15.8700,
+                    'nation_longitude' => 100.9925
                 ],
                 [
                     'nation_name' => 'Timor-Leste',
-                    'nation_description' => 'Timor-Leste là một quốc gia đảo nhỏ ở Đông Nam Á, có di sản lịch sử và văn hóa đa dạng, với các bãi biển tuyệt đẹp và rừng núi phong phú.'
+                    'nation_description' => 'Timor-Leste là một quốc gia đảo nhỏ ở Đông Nam Á, có di sản lịch sử và văn hóa đa dạng, với các bãi biển tuyệt đẹp và rừng núi phong phú.',
+                    'nation_latitude' => -8.8742,
+                    'nation_longitude' => 125.7275
                 ],
                 [
                     'nation_name' => 'Togo',
-                    'nation_description' => 'Togo là một quốc gia nhỏ nằm ở Tây Phi, có nền kinh tế chủ yếu dựa vào nông nghiệp và là một trong những điểm đến du lịch ít được khám phá.'
+                    'nation_description' => 'Togo là một quốc gia nhỏ nằm ở Tây Phi, có nền kinh tế chủ yếu dựa vào nông nghiệp và là một trong những điểm đến du lịch ít được khám phá.',
+                    'nation_latitude' => 8.6195,
+                    'nation_longitude' => 0.8248
                 ],
                 [
                     'nation_name' => 'Tonga',
-                    'nation_description' => 'Tonga là một quốc gia quần đảo ở Thái Bình Dương, nổi tiếng với văn hóa Polynesia truyền thống và các bãi biển đẹp mênh mông.'
+                    'nation_description' => 'Tonga là một quốc gia quần đảo ở Thái Bình Dương, nổi tiếng với văn hóa Polynesia truyền thống và các bãi biển đẹp mênh mông.',
+                    'nation_latitude' => -21.1790,
+                    'nation_longitude' => -175.1982
                 ],
                 [
                     'nation_name' => 'Trinidad and Tobago',
-                    'nation_description' => 'Trinidad và Tobago là một quốc gia nhỏ nằm ở biển Caribe, nổi tiếng với văn hóa và âm nhạc sôi động, cùng với các bãi biển và rạn san hô đẹp.'
+                    'nation_description' => 'Trinidad và Tobago là một quốc gia nhỏ nằm ở biển Caribe, nổi tiếng với văn hóa và âm nhạc sôi động, cùng với các bãi biển và rạn san hô đẹp.',
+                    'nation_latitude' => 10.6918,
+                    'nation_longitude' => -61.2225
                 ],
                 [
                     'nation_name' => 'Tunisia',
-                    'nation_description' => 'Tunisia là một quốc gia ở Bắc Phi, có các di sản lịch sử La Mã cổ đại, các thành phố cổ và các bãi biển ven biển đẹp.'
+                    'nation_description' => 'Tunisia là một quốc gia ở Bắc Phi, có các di sản lịch sử La Mã cổ đại, các thành phố cổ và các bãi biển ven biển đẹp.',
+                    'nation_latitude' => 33.8869,
+                    'nation_longitude' => 9.5375
                 ],
                 [
                     'nation_name' => 'Turkey',
-                    'nation_description' => 'Thổ Nhĩ Kỳ là một quốc gia gần Trung Đông và Đông Âu, nổi tiếng với văn hóa Ottoman, các di tích lịch sử và các thắng cảnh tự nhiên đa dạng.'
+                    'nation_description' => 'Thổ Nhĩ Kỳ là một quốc gia gần Trung Đông và Đông Âu, nổi tiếng với văn hóa Ottoman, các di tích lịch sử và các thắng cảnh tự nhiên đa dạng.',
+                    'nation_latitude' => 38.9637,
+                    'nation_longitude' => 35.2433
                 ],
                 [
                     'nation_name' => 'Turkmenistan',
-                    'nation_description' => 'Turkmenistan là một quốc gia nằm ở Trung Á, có các di tích lịch sử cổ đại và là một trong những nền kinh tế dựa vào nguồn tài nguyên thiên nhiên.'
+                    'nation_description' => 'Turkmenistan là một quốc gia nằm ở Trung Á, có các di tích lịch sử cổ đại và là một trong những nền kinh tế dựa vào nguồn tài nguyên thiên nhiên.',
+                    'nation_latitude' => 38.9697,
+                    'nation_longitude' => 59.5563
                 ],
                 [
                     'nation_name' => 'Tuvalu',
-                    'nation_description' => 'Tuvalu là một quốc gia quần đảo nhỏ ở Thái Bình Dương, nổi tiếng với các bãi biển và cuộc sống bình yên của người dân địa phương.'
+                    'nation_description' => 'Tuvalu là một quốc gia quần đảo nhỏ ở Thái Bình Dương, nổi tiếng với các bãi biển và cuộc sống bình yên của người dân địa phương.',
+                    'nation_latitude' => -7.1095,
+                    'nation_longitude' => 179.1942
                 ],
                 [
                     'nation_name' => 'Uganda',
-                    'nation_description' => 'Uganda là một quốc gia nằm ở Đông Phi, có các khu bảo tồn thiên nhiên như công viên quốc gia Bwindi và là nơi sinh sống của các loài động vật quý hiếm.'
+                    'nation_description' => 'Uganda là một quốc gia nằm ở Đông Phi, có các khu bảo tồn thiên nhiên như công viên quốc gia Bwindi và là nơi sinh sống của các loài động vật quý hiếm.',
+                    'nation_latitude' => 1.3733,
+                    'nation_longitude' => 32.2903
                 ],
                 [
                     'nation_name' => 'Ukraine',
-                    'nation_description' => 'Ukraine là một quốc gia nằm ở Đông Âu, nổi tiếng với những thảm họa lịch sử và văn hóa đa dạng, cùng với các thành phố lớn như Kiev.'
+                    'nation_description' => 'Ukraine là một quốc gia nằm ở Đông Âu, nổi tiếng với những thảm họa lịch sử và văn hóa đa dạng, cùng với các thành phố lớn như Kiev.',
+                    'nation_latitude' => 48.3794,
+                    'nation_longitude' => 31.1656
                 ],
                 [
                     'nation_name' => 'United Arab Emirates',
-                    'nation_description' => 'Các Tiểu vương quốc Ả Rập Thống nhất là một liên bang gồm bảy tiểu vương quốc trên bán đảo Ả Rập, nổi tiếng với các công trình kiến trúc hiện đại và các khu du lịch sang trọng.'
+                    'nation_description' => 'Các Tiểu vương quốc Ả Rập Thống nhất là một liên bang gồm bảy tiểu vương quốc trên bán đảo Ả Rập, nổi tiếng với các công trình kiến trúc hiện đại và các khu du lịch sang trọng.',
+                    'nation_latitude' => 23.4241,
+                    'nation_longitude' => 53.8478
                 ],
                 [
                     'nation_name' => 'United Kingdom',
-                    'nation_description' => 'Vương quốc Anh là một quốc gia ở Tây Âu, bao gồm các đảo Anh, Xô-đa và Băc-Ie-lan, nổi tiếng với lịch sử phong phú, các địa điểm du lịch lớn và văn hóa đa dạng.'
+                    'nation_description' => 'Vương quốc Anh là một quốc gia ở Tây Âu, bao gồm các đảo Anh, Xô-đa và Băc-Ie-lan, nổi tiếng với lịch sử phong phú, các địa điểm du lịch lớn và văn hóa đa dạng.',
+                    'nation_latitude' => 55.3781,
+                    'nation_longitude' => -3.4360
                 ],
                 [
                     'nation_name' => 'United States of America',
-                    'nation_description' => 'Hoa Kỳ là một quốc gia lớn ở Bắc Mỹ, nổi tiếng với nền kinh tế mạnh mẽ, văn hóa đa dạng và các địa danh nổi tiếng như Thung lũng Silicon và Kỳ quan thiên nhiên Grand Canyon.'
+                    'nation_description' => 'Hoa Kỳ là một quốc gia lớn ở Bắc Mỹ, nổi tiếng với nền kinh tế mạnh mẽ, văn hóa đa dạng và các địa danh nổi tiếng như Thung lũng Silicon và Kỳ quan thiên nhiên Grand Canyon.',
+                    'nation_latitude' => 37.0902,
+                    'nation_longitude' => -95.7129
                 ],
                 [
                     'nation_name' => 'Uruguay',
-                    'nation_description' => 'Uruguay là một quốc gia nhỏ nằm ở Nam Mỹ, nổi tiếng với các bãi biển và là một trong những quốc gia ở Nam Mỹ có mức sống cao.'
+                    'nation_description' => 'Uruguay là một quốc gia nhỏ nằm ở Nam Mỹ, nổi tiếng với các bãi biển và là một trong những quốc gia ở Nam Mỹ có mức sống cao.',
+                    'nation_latitude' => -32.5228,
+                    'nation_longitude' => -55.7658
                 ],
                 [
                     'nation_name' => 'Uzbekistan',
-                    'nation_description' => 'Uzbekistan là một quốc gia nằm ở Trung Á, có di sản lịch sử và văn hóa đa dạng, với các di tích kiến trúc vĩ đại và thị trấn cổ Samarkand.'
+                    'nation_description' => 'Uzbekistan là một quốc gia nằm ở Trung Á, có di sản lịch sử và văn hóa đa dạng, với các di tích kiến trúc vĩ đại và thị trấn cổ Samarkand.',
+                    'nation_latitude' => 41.3775,
+                    'nation_longitude' => 64.5853
                 ],
                 [
                     'nation_name' => 'Vanuatu',
-                    'nation_description' => 'Vanuatu là một quốc gia quần đảo ở Thái Bình Dương, nổi tiếng với đời sống văn hóa của người Melanesia và các khu du lịch biển đẹp.'
+                    'nation_description' => 'Vanuatu là một quốc gia quần đảo ở Thái Bình Dương, nổi tiếng với đời sống văn hóa của người Melanesia và các khu du lịch biển đẹp.',
+                    'nation_latitude' => -15.3767,
+                    'nation_longitude' => 166.9592
                 ],
                 [
                     'nation_name' => 'Venezuela',
-                    'nation_description' => 'Venezuela là một quốc gia nằm ở Nam Mỹ, có cảnh quan đa dạng từ núi non đến các bãi biển ven biển, nổi tiếng với văn hóa sôi động và nguồn tài nguyên dầu mỏ phong phú.'
+                    'nation_description' => 'Venezuela là một quốc gia nằm ở Nam Mỹ, có cảnh quan đa dạng từ núi non đến các bãi biển ven biển, nổi tiếng với văn hóa sôi động và nguồn tài nguyên dầu mỏ phong phú.',
+                    'nation_latitude' => 6.4238,
+                    'nation_longitude' => -66.5897
                 ],
                 [
                     'nation_name' => 'Vietnam',
-                    'nation_description' => 'Việt Nam là một quốc gia nằm ở Đông Nam Á, có di sản văn hóa lâu đời, các danh lam thắng cảnh tự nhiên như vịnh Hạ Long và là nơi sinh sống của nhiều loài động thực vật quý hiếm.'
+                    'nation_description' => 'Việt Nam là một quốc gia nằm ở Đông Nam Á, có di sản văn hóa lâu đời, các danh lam thắng cảnh tự nhiên như vịnh Hạ Long và là nơi sinh sống của nhiều loài động thực vật quý hiếm.',
+                    'nation_latitude' => 14.0583,
+                    'nation_longitude' => 108.2772
                 ],
                 [
                     'nation_name' => 'Yemen',
-                    'nation_description' => 'Yemen là một quốc gia nằm ở Tây Á, có di sản lịch sử và văn hóa phong phú, nhưng đang gặp khó khăn do xung đột và khủng hoảng nhân đạo.'
+                    'nation_description' => 'Yemen là một quốc gia nằm ở Tây Á, có di sản lịch sử và văn hóa phong phú, nhưng đang gặp khó khăn do xung đột và khủng hoảng nhân đạo.',
+                    'nation_latitude' => 15.5527,
+                    'nation_longitude' => 48.5164
+                ],
+                [
+                    'nation_name' => 'Western Sahara',
+                    'nation_description' => 'Western Sahara là một vùng lãnh thổ tranh chấp tại Bắc Phi, nằm giữa Maroc, Algérie và Mauritania. Đây là một vùng sa mạc khô cằn, với địa hình chủ yếu là sa mạc và núi đá vôi. Vùng này có sự hiện diện của một số loài động thực vật sinh sống trong môi trường khắc nghiệt như sói sa mạc và các loài thực vật thích nghi với sa mạc.',
+                    'nation_latitude' => 24.2155,
+                    'nation_longitude' => -12.8858
                 ],
                 [
                     'nation_name' => 'Zambia',
-                    'nation_description' => 'Zambia là một quốc gia ở miền trung châu Phi, nổi tiếng với các thác nước Victoria và các khu bảo tồn thiên nhiên phong phú.'
+                    'nation_description' => 'Zambia là một quốc gia ở miền trung châu Phi, nổi tiếng với các thác nước Victoria và các khu bảo tồn thiên nhiên phong phú.',
+                    'nation_latitude' => -13.1339,
+                    'nation_longitude' => 27.8493
                 ],
                 [
                     'nation_name' => 'Zimbabwe',
-                    'nation_description' => 'Zimbabwe là một quốc gia nằm ở miền nam châu Phi, có di sản lịch sử của vương quốc Great Zimbabwe và các khu du lịch thiên nhiên như Hwange.'
+                    'nation_description' => 'Zimbabwe là một quốc gia nằm ở miền nam châu Phi, có di sản lịch sử của vương quốc Great Zimbabwe và các khu du lịch thiên nhiên như Hwange.',
+                    'nation_latitude' => -19.0154,
+                    'nation_longitude' => 29.1549
                 ]                
             ]
         );
