@@ -38,7 +38,7 @@
             line-height: 1.5em;
             /* Điều chỉnh khoảng cách dòng */
         }
-        .message-container {
+    .message-container {
         display: flex;
         justify-content: center;
         align-items: center;

@@ -9,5 +9,10 @@ class DietType extends Model
 {
     use HasFactory;
     protected $table ='diet_type';
+    const HERBIVOROUS = 1;
+    const CARNIVORES = 2;
+    const OMNIVORES = 3;
+    const FOLIVORES = 4;
+    const INSECTIVORES = 5;
     
 }

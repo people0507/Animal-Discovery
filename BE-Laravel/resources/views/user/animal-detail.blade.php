@@ -256,98 +256,93 @@
                 <p></p>
             </div>
             <div class="s-char-status">
-                <a href="https://animalia.bio/crepuscular" title="Crepuscular" data-url="crepuscular"
+                <a href="#" title="Crepuscular" data-url="crepuscular"
                     class="s-char-status-item " style="background-color:#757575">
                     <p>Cr</p>
                     <span>Crepuscular</span>
                 </a>
-                <a href="https://animalia.bio/nocturnal" title="Nocturnal" data-url="nocturnal"
+                <a href="#" title="Nocturnal" data-url="nocturnal"
                     class="s-char-status-item " style="background-color:#424242">
                     <p>No</p>
                     <span>Nocturnal</span>
                 </a>
-                <a href="https://animalia.bio/omnivore" title="Omnivore" data-url="omnivore" class="s-char-status-item "
+                <a href="#" title="Omnivore" data-url="omnivore" class="s-char-status-item "
                     style="background-color:#9CCC65">
                     <p>Om</p>
                     <span>Omnivore</span>
                 </a>
-                <a href="https://animalia.bio/scavenger" title="Scavenger" data-url="scavenger"
+                <a href="#" title="Scavenger" data-url="scavenger"
                     class="s-char-status-item " style="background-color:#80052d">
                     <p>Sc</p>
                     <span>Scavenger</span>
                 </a>
-                <a href="https://animalia.bio/terrestrial" title="Terrestrial" data-url="terrestrial"
+                <a href="#" title="Terrestrial" data-url="terrestrial"
                     class="s-char-status-item " style="background-color:#43350a">
                     <p>Te</p>
                     <span>Terrestrial</span>
                 </a>
-                <a href="https://animalia.bio/altricial-animals" title="Altricial" data-url="altricial-animals"
+                <a href="#" title="Altricial" data-url="altricial-animals"
                     class="s-char-status-item " style="background-color:#f52a2a">
                     <p>Al</p>
                     <span>Altricial</span>
                 </a>
-                <a href="https://animalia.bio/territorial" title="Territorial" data-url="territorial"
+                <a href="#" title="Territorial" data-url="territorial"
                     class="s-char-status-item " style="background-color:#d52828">
                     <p>Te</p>
                     <span>Territorial</span>
                 </a>
-                <a href="https://animalia.bio/viviparous" title="Viviparous" data-url="viviparous"
+                <a href="#" title="Viviparous" data-url="viviparous"
                     class="s-char-status-item " style="background-color:#6b62b9">
                     <p>Vi</p>
                     <span>Viviparous</span>
                 </a>
-                <a href="https://animalia.bio/burrow" title="Burrowing" data-url="burrow" class="s-char-status-item "
+                <a href="#" title="Burrowing" data-url="burrow" class="s-char-status-item "
                     style="background-color:#5D4037">
                     <p>Bu</p>
                     <span>Burrowing</span>
                 </a>
-                <a href="https://animalia.bio/predator" title="Predator" data-url="predator" class="s-char-status-item "
+                <a href="#" title="Predator" data-url="predator" class="s-char-status-item "
                     style="background-color:#a90505">
                     <p>Pr</p>
                     <span>Predator</span>
                 </a>
-                <a href="https://animalia.bio/bright" title="Bright" data-url="bright" class="s-char-status-item "
+                <a href="#" title="Bright" data-url="bright" class="s-char-status-item "
                     style="background-color:#e7cf58">
                     <p>Br</p>
                     <span>Bright</span>
                 </a>
-                <a href="https://animalia.bio/cute" title="Cute" data-url="cute" class="s-char-status-item "
+                <a href="#" title="Cute" data-url="cute" class="s-char-status-item "
                     style="background-color:#0ca6cd">
                     <p>Cu</p>
                     <span>Cute</span>
                 </a>
-                <a href="https://animalia.bio/monogamy" title="Monogamy" data-url="monogamy" class="s-char-status-item "
+                <a href="#" title="Monogamy" data-url="monogamy" class="s-char-status-item "
                     style="background-color:#d83e75">
                     <p>Mo</p>
                     <span>Monogamy</span>
                 </a>
-                <a href="https://animalia.bio/social-animals" title="Social" data-url="social-animals"
+                <a href="#" title="Social" data-url="social-animals"
                     class="s-char-status-item " style="background-color:#FB8C00">
                     <p>So</p>
                     <span>Social</span>
                 </a>
-                <a href="https://animalia.bio/dominance-hierarchy" title="Dominance hierarchy"
+                <a href="#" title="Dominance hierarchy"
                     data-url="dominance-hierarchy" class="s-char-status-item " style="background-color:#e62828">
                     <p>Do</p>
                     <span>Dominance hierarchy</span>
                 </a>
-                <a href="https://animalia.bio/not-a-migrant" title="Not a migrant" data-url="not-a-migrant"
+                <a href="#" title="Not a migrant" data-url="not-a-migrant"
                     class="s-char-status-item " style="background-color:#6c2139">
                     <p>No</p>
                     <span>Not a migrant</span>
                 </a>
-                <a href="/animals-that-start-with-r" title="starts with r" class="s-char-status-item"
-                    style="background-color: rgb(0,200,83);">
-                    <p>R</p>
-                    <span>starts with</span>
-                </a>
-                <a href="https://animalia.bio/collections/canada-province-animals" title="Canada Province Animals"
+                <a href="#" title="Canada Province Animals"
                     class="s-char-status-item s-char-status-item-collection"
                     style="background:url(https://s3.animalia.bio/animals/photos/full/1.25x1/moose-alces-alces.webp)">
                     <p>Ca</p>
                     <span>Canada Province Animals<br> (collection)</span>
                 </a>
-                <a href="https://animalia.bio/collections/fluffy-animals" title="Fluffy Animals"
+                <a href="#" title="Fluffy Animals"
                     class="s-char-status-item s-char-status-item-collection"
                     style="background:url(https://s3.animalia.bio/animals/photos/full/1.25x1/dscf-227101995jpeg.webp)">
                     <p>Fl</p>
@@ -517,8 +512,7 @@
                             </div>
                             <div class="col-lg-4">
                                 <div class="s-distr-map zoom-map-trigger">
-                                    <img src="https://s3.animalia.bio/animals/maps/medium/KoZMZpn7n28GdMJxcyO7.webp"
-                                        alt="Red Fox habitat map">
+                                <div id="mapid" style="height: 400px;width:400px"></div>
                                 </div>
                             </div>
                         </div>
@@ -838,6 +832,24 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </section>
+            <section class="s-ad-banner-horizontal">
+                <div class="container" style="text-align: left;">
+                    <div class="list-ads-block">
+                        <div class="row">
+                            <h2 class="a-h2 col-sm-6 col-md-8">
+                                Sự thật thú vị về {{$data->animal_name}}
+                            </h2>
+                            <br>
+                            <br>
+                        </div>
+                        @foreach ($funFact as $item)
+                        <div>
+                            <p style="font-size:20px;margin-bottom:30px"><i class="fa-solid fa-otter" style="color: #00c853;"></i> {{ $item }}</p>
+                        </div>
+                        @endforeach
                     </div>
                 </div>
             </section>
@@ -1161,4 +1173,26 @@
             },
         });
     </script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+<script>
+    var mymap = L.map('mapid').setView([0, 0], 2);
+
+// Thêm tile layer (ví dụ: OpenStreetMap)
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+}).addTo(mymap);
+var countries = [
+    [14.0583, 108.2772],   // Vietnam
+    [37.0902, -95.7129],   // United States
+    [-14.2350, -51.9253],  // Brazil
+    // Thêm các tọa độ quốc gia khác tương tự
+];
+
+// Thêm marker cho từng quốc gia
+countries.forEach(function(coords) {
+    L.marker(coords).addTo(mymap);
+});
+</script>
 @endsection
