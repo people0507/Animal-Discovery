@@ -144,6 +144,8 @@
                                             <th>Mô tả vùng khí hậu</th>
                                         @elseif($mode == 'nation')
                                             <th>Tên quốc gia</th>
+                                            <th>Mô tả quốc gia</th>
+
                                         @elseif($mode == 'color')
                                             <th>Ảnh màu sắc</th>
                                             <th>Tên màu sắc</th>
@@ -312,6 +314,7 @@
                                             <tr>
                                                 <td>{{ $key + 1 }}</td>
                                                 <td>{{ $item->nation_name }}</td>
+                                                <td>{{ $item->nation_description }}</td>
                                                 <td>{{ $item->created_at }}</td>
                                                 <td>
                                                     <a href="#" class="icon-action delete-action"

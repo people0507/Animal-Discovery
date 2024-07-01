@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('population_trending', function (Blueprint $table) {
             $table->id();
             $table->string('population_trending_name');
+            $table->text('population_trending_description')->nullable();
             $table->timestamps();
         });
     }
