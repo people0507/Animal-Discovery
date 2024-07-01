@@ -299,6 +299,23 @@
             transition: box-shadow 0.3s ease-in-out;
             margin-right: 10px
         }
+        .message-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        }
+
+        .message {
+            padding: 20px;
+            background-color: #fff3cd; /* Màu nền vàng nhạt */
+            color: #856404; /* Màu chữ vàng đậm */
+            border: 1px solid #ffeeba; /* Màu viền vàng nhạt */
+            border-radius: 5px;
+            text-align: center;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            font-size: 18px; /* Tăng kích thước chữ cho dễ nhìn */
+        }
 </style>
 <!-- Blog Start -->
 <div class="container pt-5">
@@ -540,6 +557,7 @@
                 </div>
             </form>
         </div>
+        @if(count($data) > 0)
         <div class="col-8">
             @foreach ($data as $item)
             <div class="containers articles-container">
@@ -556,6 +574,17 @@
             @endforeach
             {{ $data->links('pagination::bootstrap-4') }}
         </div>
+        @else
+        <div class="col-8 mt-5">
+        <div class="list-animal-item">
+                <div class="message-container">
+                    <div class="message">
+                        Không tìm thấy dữ liệu !!!
+                    </div>
+                </div>
+            </div>
+        </div>
+        @endif
     </div>
 </div>
 <!-- Blog End -->

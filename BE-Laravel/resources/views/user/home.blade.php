@@ -477,70 +477,42 @@
         <div class="container">
             <div class="row g-5 mb-5 wow fadeInUp" data-wow-delay="0.1s">
                 <div class="col-lg-6">
-                    <p><span class="text-primary me-2">#</span>Our Services</p>
+                    <p><span class="text-primary me-2">#</span>Trải nghiệm</p>
                     <h1 class="display-5 mb-0">
-                        Special Services For
-                        <span class="text-primary">Zoofari</span> Visitors
+                        Trải nghiệm website khám phá
+                        <span class="text-primary">Động vật</span> Hoang Dã 
                     </h1>
                 </div>
                 <div class="col-lg-6">
                     <div class="bg-primary h-100 d-flex align-items-center py-4 px-4 px-sm-5">
                         <i class="fa fa-3x fa-mobile-alt text-white"></i>
                         <div class="ms-4">
-                            <p class="text-white mb-0">Call for more info</p>
-                            <h2 class="text-white mb-0">+012 345 6789</h2>
+                            <p class="text-white mb-0">Liên lạc để biết thêm thông tin chi tiết</p>
+                            <h2 class="text-white mb-0">+024 3852 2201</h2>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="row gy-5 gx-4">
-                <div class="col-lg-3 col-md-4 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <img class="img-fluid mb-3" src="{{ asset('users/img/icon/icon-2.png') }}" alt="Icon" />
-                    <h5 class="mb-3">Car Parking</h5>
-                    <span>Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem
-                        sed diam stet diam sed stet.</span>
-                </div>
                 <div class="col-lg-3 col-md-4 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
                     <img class="img-fluid mb-3" src="{{ asset('users/img/icon/icon-3.png') }}" alt="Icon" />
-                    <h5 class="mb-3">Animal Photos</h5>
-                    <span>Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem
-                        sed diam stet diam sed stet.</span>
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <img class="img-fluid mb-3" src="{{ asset('users/img/icon/icon-4.png') }}" alt="Icon" />
-                    <h5 class="mb-3">Guide Services</h5>
-                    <span>Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem
-                        sed diam stet diam sed stet.</span>
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
-                    <img class="img-fluid mb-3" src="{{ asset('users/img/icon/icon-5.png') }}" alt="Icon" />
-                    <h5 class="mb-3">Food & Beverages</h5>
-                    <span>Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem
-                        sed diam stet diam sed stet.</span>
+                    <h5 class="mb-3">Hình Ảnh Động Vật</h5>
+                    <span>Các bức ảnh chụp động vật hoang dã thường nổi bật với màu sắc sống động và chi tiết sắc nét, ghi lại khoảnh khắc độc đáo của các loài thú, chim, bò sát và côn trùng. Những bức ảnh này có thể cho thấy sự đa dạng và phong phú của cuộc sống hoang dã, từ những chú sư tử dũng mãnh đến những con chim nhỏ bé đầy màu sắc.</span>
                 </div>
                 <div class="col-lg-3 col-md-4 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
                     <img class="img-fluid mb-3" src="{{ asset('users/img/icon/icon-6.png') }}" alt="Icon" />
-                    <h5 class="mb-3">Zoo Shopping</h5>
-                    <span>Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem
-                        sed diam stet diam sed stet.</span>
+                    <h5 class="mb-3">Phần Thưởng Trò Chơi</h5>
+                    <span>Phần thưởng trong trò chơi liên quan đến chủ đề động vật hoang dã thường mang lại cảm giác hứng thú và động lực cho người chơi khi họ hoàn thành các nhiệm vụ hoặc đạt được những số điểm quan trọng.</span>
                 </div>
                 <div class="col-lg-3 col-md-4 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
                     <img class="img-fluid mb-3" src="{{ asset('users/img/icon/icon-7.png') }}" alt="Icon" />
-                    <h5 class="mb-3">Free Hi Speed Wi-Fi</h5>
-                    <span>Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem
-                        sed diam stet diam sed stet.</span>
+                    <h5 class="mb-3">Trải Nghiệm Mượt Mà</h5>
+                    <span>Trải nghiệm website khám phá động vật hoang dã mang lại cảm giác phiêu lưu vào thế giới tự nhiên với giao diện trực quan và hấp dẫn. Người dùng dễ dàng tìm kiếm và xem thông tin chi tiết về các loài động vật thông qua hình ảnh, video và mô tả sống động. Những tính năng tương tác và nội dung giáo dục cũng giúp nâng cao kiến thức và khơi dậy niềm đam mê bảo tồn thiên nhiên.</span>
                 </div>
                 <div class="col-lg-3 col-md-4 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
                     <img class="img-fluid mb-3" src="{{ asset('users/img/icon/icon-8.png') }}" alt="Icon" />
-                    <h5 class="mb-3">Play Ground</h5>
-                    <span>Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem
-                        sed diam stet diam sed stet.</span>
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
-                    <img class="img-fluid mb-3" src="{{ asset('users/img/icon/icon-9.png') }}" alt="Icon" />
-                    <h5 class="mb-3">Rest House</h5>
-                    <span>Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem
-                        sed diam stet diam sed stet.</span>
+                    <h5 class="mb-3">Sân Chơi Thú Vị</h5>
+                    <span>Website về sân chơi động vật hoang dã mang đến trải nghiệm giáo dục và giải trí với các trò chơi tương tác, video sống động và thông tin chi tiết về các loài động vật. Người dùng có thể tham gia vào các hoạt động khám phá môi trường sống tự nhiên, hoàn thành nhiệm vụ liên quan đến động vật và nhận phần thưởng, từ đó khơi dậy sự tò mò và tình yêu thiên nhiên.</span>
                 </div>
             </div>
         </div>
@@ -585,33 +557,30 @@
                         Animals
                     </h1>
                 </div>
-                <div class="col-lg-6 text-lg-end">
-                    <a class="btn btn-primary py-3 px-5" href="">Explore More Animals</a>
-                </div>
             </div>
-            <div class="row g-4">
+            <div class="row g-4" style="align-items:center;">
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="row g-4">
                         <div class="col-12">
-                            <a class="animal-item" href="img/animal-md-1.jpg" data-lightbox="animal">
+                            <a class="animal-item" href="{{route('user.diet_type',['id' => $dietType1->id])}}">
                                 <div class="position-relative">
                                     <img class="img-fluid" src="{{ asset('users/img/animal-md-1.jpg') }}"
                                         alt="" />
                                     <div class="animal-text p-4">
-                                        <p class="text-white small text-uppercase mb-0">Animal</p>
-                                        <h5 class="text-white mb-0">Elephant</h5>
+                                        <p class="text-white small text-uppercase mb-0">Động Vật</p>
+                                        <h5 class="text-white mb-0">{{$dietType1->diet_name}}</h5>
                                     </div>
                                 </div>
                             </a>
                         </div>
                         <div class="col-12">
-                            <a class="animal-item" href="img/animal-lg-1.jpg" data-lightbox="animal">
+                            <a class="animal-item" href="{{route('user.diet_type',['id' => $dietType5->id])}}">
                                 <div class="position-relative">
                                     <img class="img-fluid" src="{{ asset('users/img/animal-lg-1.jpg') }}"
                                         alt="" />
                                     <div class="animal-text p-4">
-                                        <p class="text-white small text-uppercase mb-0">Animal</p>
-                                        <h5 class="text-white mb-0">Elephant</h5>
+                                        <p class="text-white small text-uppercase mb-0">Động Vật</p>
+                                        <h5 class="text-white mb-0">{{$dietType5->diet_name}}</h5>
                                     </div>
                                 </div>
                             </a>
@@ -621,25 +590,13 @@
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
                     <div class="row g-4">
                         <div class="col-12">
-                            <a class="animal-item" href="img/animal-lg-2.jpg" data-lightbox="animal">
+                            <a class="animal-item" href="{{route('user.diet_type',['id' => $dietType2->id])}}">
                                 <div class="position-relative">
                                     <img class="img-fluid" src="{{ asset('users/img/animal-lg-2.jpg') }}"
                                         alt="" />
                                     <div class="animal-text p-4">
-                                        <p class="text-white small text-uppercase mb-0">Animal</p>
-                                        <h5 class="text-white mb-0">Elephant</h5>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-12">
-                            <a class="animal-item" href="img/animal-md-2.jpg" data-lightbox="animal">
-                                <div class="position-relative">
-                                    <img class="img-fluid" src="{{ asset('users/img/animal-md-2.jpg') }}"
-                                        alt="" />
-                                    <div class="animal-text p-4">
-                                        <p class="text-white small text-uppercase mb-0">Animal</p>
-                                        <h5 class="text-white mb-0">Elephant</h5>
+                                        <p class="text-white small text-uppercase mb-0">Động Vật</p>
+                                        <h5 class="text-white mb-0">{{$dietType2->diet_name}}</h5>
                                     </div>
                                 </div>
                             </a>
@@ -649,25 +606,25 @@
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
                     <div class="row g-4">
                         <div class="col-12">
-                            <a class="animal-item" href="img/animal-md-3.jpg" data-lightbox="animal">
+                            <a class="animal-item" href="{{route('user.diet_type',['id' => $dietType3->id])}}">
                                 <div class="position-relative">
-                                    <img class="img-fluid" src="{{ asset('users/img/animal-md-3.jpg') }}"
+                                    <img class="img-fluid" src="{{ asset('users/img/animal-md-4.jpg') }}"
                                         alt="" />
                                     <div class="animal-text p-4">
-                                        <p class="text-white small text-uppercase mb-0">Animal</p>
-                                        <h5 class="text-white mb-0">Elephant</h5>
+                                        <p class="text-white small text-uppercase mb-0">Động Vật</p>
+                                        <h5 class="text-white mb-0">{{$dietType3->diet_name}}</h5>
                                     </div>
                                 </div>
                             </a>
                         </div>
                         <div class="col-12">
-                            <a class="animal-item" href="img/animal-lg-3.jpg" data-lightbox="animal">
+                            <a class="animal-item" href="{{route('user.diet_type',['id' => $dietType4->id])}}">
                                 <div class="position-relative">
                                     <img class="img-fluid" src="{{ asset('users/img/animal-lg-3.jpg') }}"
                                         alt="" />
                                     <div class="animal-text p-4">
-                                        <p class="text-white small text-uppercase mb-0">Animal</p>
-                                        <h5 class="text-white mb-0">Elephant</h5>
+                                        <p class="text-white small text-uppercase mb-0">Động Vật</p>
+                                        <h5 class="text-white mb-0">{{$dietType4->diet_name}}</h5>
                                     </div>
                                 </div>
                             </a>
@@ -690,9 +647,6 @@
                             <h1 class="display-5 mb-0">
                                 Ngắm Nhìn Các Loài Vật Với <span class="text-primary">Màu Sắc</span> Đa Dạng
                             </h1>
-                        </div>
-                        <div class="col-lg-6 text-lg-end">
-                            <a class="btn btn-primary py-3 px-5" href="">Explore More Animals</a>
                         </div>
                     </div>
                     <div class="photo-grid">
@@ -837,7 +791,7 @@
             </div>
 
             <!-- Visiting Hours Start -->
-            <div class="container-xxl bg-primary visiting-hours my-5 py-5 wow fadeInUp" data-wow-delay="0.1s">
+            <!-- <div class="container-xxl bg-primary visiting-hours my-5 py-5 wow fadeInUp" data-wow-delay="0.1s">
                 <div class="container py-5">
                     <div class="row g-5">
                         <div class="col-md-6 wow fadeIn" data-wow-delay="0.3s">
@@ -904,7 +858,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
             <!-- Visiting Hours End -->
 
             <!-- Membership Start -->
@@ -912,68 +866,33 @@
                 <div class="container">
                     <div class="row g-5 mb-5 align-items-end wow fadeInUp" data-wow-delay="0.1s">
                         <div class="col-lg-6">
-                            <p><span class="text-primary me-2">#</span>Membership</p>
+                            <p><span class="text-primary me-2">#</span>Thời Gian Hoạt Động</p>
                             <h1 class="display-5 mb-0">
-                                You Can Be A Proud Member Of
-                                <span class="text-primary">Zoofari</span>
+                                Thời Gian Hoạt Động Của Các Loài
+                                <span class="text-primary">Động Vật</span>
                             </h1>
-                        </div>
-                        <div class="col-lg-6 text-lg-end">
-                            <a class="btn btn-primary py-3 px-5" href="">Special Pricing</a>
                         </div>
                     </div>
                     <div class="row g-4">
-                        <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                            <div class="membership-item position-relative">
-                                <img class="img-fluid" src="{{ asset('users/img/animal-lg-1.jpg') }}" alt="" />
-                                <h1 class="display-1">01</h1>
-                                <h4 class="text-white mb-3">Popular</h4>
-                                <h3 class="text-primary mb-4">$99.00</h3>
-                                <p><i class="fa fa-check text-primary me-3"></i>10% discount</p>
-                                <p>
-                                    <i class="fa fa-check text-primary me-3"></i>2 adult and 2 child
-                                </p>
-                                <p>
-                                    <i class="fa fa-check text-primary me-3"></i>Free animal
-                                    exhibition
-                                </p>
-                                <a class="btn btn-outline-light px-4 mt-3" href="">Get Started</a>
+                        @foreach ($activityTime as $key => $item)
+                        <div class="col fadeInUp" data-wow-delay="0.3s">
+                            <div class="membership-item position-relative" style="min-height:600px">
+                                @if($key == 0)
+                                <img class="img-fluid" src="{{ asset('activity_times/day.jpg') }}" alt="" />
+                                @elseif($key == 1)
+                                <img class="img-fluid" src="{{ asset('activity_times/night.jpg') }}" alt="" />
+                                @elseif($key == 2)
+                                <img class="img-fluid" src="{{ asset('activity_times/allday.jpg') }}" alt="" />
+                                @else
+                                <img class="img-fluid" src="{{ asset('activity_times/sunset_dawn.jpg') }}" alt="" />
+                                @endif
+                                <h1 class="display-1">0{{$key+1}}</h1>
+                                <h4 class="text-white mb-3">{{$item->activity_name}}</h4>
+                                <p class="text-primary mb-4">{{$item->activity_description}}</p>
+                                <a class="btn btn-outline-light px-4 mt-3" href="{{route('user.activity_time',['id' => $item->id])}}">Xem thêm</a>
                             </div>
                         </div>
-                        <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                            <div class="membership-item position-relative">
-                                <img class="img-fluid" src="{{ asset('users/img/animal-lg-2.jpg') }}" alt="" />
-                                <h1 class="display-1">02</h1>
-                                <h4 class="text-white mb-3">Standard</h4>
-                                <h3 class="text-primary mb-4">$149.00</h3>
-                                <p><i class="fa fa-check text-primary me-3"></i>15% discount</p>
-                                <p>
-                                    <i class="fa fa-check text-primary me-3"></i>4 adult and 4 child
-                                </p>
-                                <p>
-                                    <i class="fa fa-check text-primary me-3"></i>Free animal
-                                    exhibition
-                                </p>
-                                <a class="btn btn-outline-light px-4 mt-3" href="">Get Started</a>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                            <div class="membership-item position-relative">
-                                <img class="img-fluid" src="{{ asset('users/img/animal-lg-3.jpg') }}" alt="" />
-                                <h1 class="display-1">03</h1>
-                                <h4 class="text-white mb-3">Premium</h4>
-                                <h3 class="text-primary mb-4">$199.00</h3>
-                                <p><i class="fa fa-check text-primary me-3"></i>20% discount</p>
-                                <p>
-                                    <i class="fa fa-check text-primary me-3"></i>6 adult and 6 child
-                                </p>
-                                <p>
-                                    <i class="fa fa-check text-primary me-3"></i>Free animal
-                                    exhibition
-                                </p>
-                                <a class="btn btn-outline-light px-4 mt-3" href="">Get Started</a>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
@@ -983,7 +902,7 @@
             <div class="container-xxl py-5">
                 <div class="container">
                     <h1 class="display-5 text-center mb-5 wow fadeInUp" data-wow-delay="0.1s">
-                        Our Clients Say!
+                        Người Dùng Bình Luận
                     </h1>
                     <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.1s">
                         <div class="testimonial-item text-center">
@@ -991,13 +910,9 @@
                                 src="{{ asset('users/img/testimonial-1.jpg') }}" style="width: 100px; height: 100px" />
                             <div class="testimonial-text rounded text-center p-4">
                                 <p>
-                                    Clita clita tempor justo dolor ipsum amet kasd amet duo justo
-                                    duo duo labore sed sed. Magna ut diam sit et amet stet eos sed
-                                    clita erat magna elitr erat sit sit erat at rebum justo sea
-                                    clita.
+                                Website khám phá động vật hoang dã là một nền tảng thú vị cho những người yêu thích thiên nhiên và động vật. Nó cung cấp thông tin chi tiết về các loài động vật, từ thông số kỹ thuật đến hình ảnh và video, giúp người dùng hiểu rõ hơn về đời sống và môi trường sống của chúng.
                                 </p>
-                                <h5 class="mb-1">Patient Name</h5>
-                                <span class="fst-italic">Profession</span>
+                                <h5 class="mb-1">Bá Thị Thư</h5>
                             </div>
                         </div>
                         <div class="testimonial-item text-center">
@@ -1005,13 +920,9 @@
                                 src="{{ asset('users/img/testimonial-2.jpg') }}" style="width: 100px; height: 100px" />
                             <div class="testimonial-text rounded text-center p-4">
                                 <p>
-                                    Clita clita tempor justo dolor ipsum amet kasd amet duo justo
-                                    duo duo labore sed sed. Magna ut diam sit et amet stet eos sed
-                                    clita erat magna elitr erat sit sit erat at rebum justo sea
-                                    clita.
+                                Trang web khám phá động vật hoang dã không chỉ cung cấp kiến thức sâu sắc về các loài động vật mà còn khuyến khích người dùng tham gia vào các hoạt động bảo tồn và bảo vệ môi trường. Đây là nơi lý tưởng để khám phá sự đa dạng sinh học của hành tinh chúng ta và tạo cảm hứng cho việc bảo vệ thiên nhiên.
                                 </p>
-                                <h5 class="mb-1">Patient Name</h5>
-                                <span class="fst-italic">Profession</span>
+                                <h5 class="mb-1">Nguyễn Đăng Nhân</h5>
                             </div>
                         </div>
                         <div class="testimonial-item text-center">
@@ -1019,13 +930,9 @@
                                 src="{{ asset('users/img/testimonial-3.jpg') }}" style="width: 100px; height: 100px" />
                             <div class="testimonial-text rounded text-center p-4">
                                 <p>
-                                    Clita clita tempor justo dolor ipsum amet kasd amet duo justo
-                                    duo duo labore sed sed. Magna ut diam sit et amet stet eos sed
-                                    clita erat magna elitr erat sit sit erat at rebum justo sea
-                                    clita.
+                                Trang web khám phá động vật hoang dã cung cấp một cửa sổ rộng mở vào thế giới tự nhiên, cho phép người dùng khám phá các sinh vật kỳ diệu và học hỏi về cách tồn tại và phát triển của chúng trong tự nhiên.
                                 </p>
-                                <h5 class="mb-1">Patient Name</h5>
-                                <span class="fst-italic">Profession</span>
+                                <h5 class="mb-1">Trương Văn Cường</h5>
                             </div>
                         </div>
                     </div>

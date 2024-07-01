@@ -44,7 +44,14 @@ class AnimalDetailController extends Controller
         $indian = OCEAN::where('id', Ocean::INDIAN)->first();
         $atlantic = OCEAN::where('id', Ocean::ATLANTIC)->first();
         $arctic = OCEAN::where('id', Ocean::ARCTIC)->first();
-        return view('user.home', compact('areas', 'tropical', 'arid', 'temperate', 'cold', 'polar', 'green', 'blue', 'red', 'yellow', 'orange', 'brown', 'white', 'black', 'gray', 'purple', 'pacific', 'indian', 'atlantic', 'arctic'));
+        $activityTime =ActivityTime::all();
+        $dietType1 = DietType::where('id',DietType::HERBIVOROUS)->first();
+        $dietType2 = DietType::where('id',DietType::CARNIVORES)->first();
+        $dietType3 = DietType::where('id',DietType::OMNIVORES)->first();
+        $dietType4 = DietType::where('id',DietType::FOLIVORES)->first();
+        $dietType5 = DietType::where('id',DietType::INSECTIVORES)->first();
+        
+        return view('user.home', compact('areas', 'tropical', 'arid', 'temperate', 'cold', 'polar', 'green', 'blue', 'red', 'yellow', 'orange', 'brown', 'white', 'black', 'gray', 'purple', 'pacific', 'indian', 'atlantic', 'arctic','activityTime','dietType1','dietType2','dietType3','dietType4','dietType5'));
     }
 
     public function viewAnimalBlog(){
@@ -82,7 +89,9 @@ class AnimalDetailController extends Controller
         $conservationStatus = ConservationStatus::all();
         $multiImages = $data->multiImages;
         $dataRandom = AnimalDetail::with('images')->inRandomOrder()->take(5)->get();
-        return view('user.animal-detail', compact('data', 'habitImage', 'populationImage', 'conservationStatus','multiImages','dataRandom'));
+        $funFact = $data->fun_fact;
+        $funFact = explode('.',$funFact);
+        return view('user.animal-detail', compact('data', 'habitImage', 'populationImage', 'conservationStatus','multiImages','dataRandom','funFact'));
     }
 
     public function viewSearchFilter(){
