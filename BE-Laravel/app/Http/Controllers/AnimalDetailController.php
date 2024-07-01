@@ -94,7 +94,7 @@ class AnimalDetailController extends Controller
         $nations = $data->nations;
         $newArrayCordinate = array();
         foreach($nations as $nation){
-            $arrayCordinate = array($nation->latitude,$nation->longitude);
+            $arrayCordinate = array($nation->nation_latitude,$nation->nation_longitude);
             array_push($newArrayCordinate,array("name" => $nation->nation_name, "coords" => $arrayCordinate));
         }
         return view('user.animal-detail', compact('data', 'habitImage', 'populationImage', 'conservationStatus','multiImages','dataRandom','funFact','newArrayCordinate'));

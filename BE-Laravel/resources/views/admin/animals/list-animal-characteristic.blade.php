@@ -145,7 +145,8 @@
                                         @elseif($mode == 'nation')
                                             <th>Tên quốc gia</th>
                                             <th>Mô tả quốc gia</th>
-
+                                            <th>Vĩ độ quốc gia</th>
+                                            <th>Kinh độ quốc gia</th>
                                         @elseif($mode == 'color')
                                             <th>Ảnh màu sắc</th>
                                             <th>Tên màu sắc</th>
@@ -159,7 +160,6 @@
                                             <th>Tên đại dương</th>
                                             <th>Mô tả đại dương</th>
                                         @endif
-                                        <th>Thời gian tạo</th>
                                         <th>Thao tác</th>
                                     </tr>
 
@@ -195,7 +195,6 @@
                                                             onclick="showLess({{ $key }})">Ẩn bớt</span>
                                                     </div>
                                                 </td>
-                                                <td>{{ $item->created_at }}</td>
                                                 <td>
                                                     <a href="#" class="icon-action delete-action" data-toggle="modal"
                                                         data-target="#deleteConfirmationModal_{{ $item->id }}"
@@ -266,7 +265,6 @@
                                                             onclick="showLess({{ $key }})">Ẩn bớt</span>
                                                     </div>
                                                 </td>
-                                                <td>{{ $item->created_at }}</td>
                                                 <td>
                                                     <a href="#" class="icon-action delete-action"
                                                         data-toggle="modal"
@@ -314,8 +312,9 @@
                                             <tr>
                                                 <td>{{ $key + 1 }}</td>
                                                 <td>{{ $item->nation_name }}</td>
-                                                <td>{{ $item->nation_description }}</td>
-                                                <td>{{ $item->created_at }}</td>
+                                                <td width="40%">{{ $item->nation_description }}</td>
+                                                <td>{{ $item->nation_latitude }}</td>
+                                                <td>{{ $item->nation_longitude }}</td>
                                                 <td>
                                                     <a href="#" class="icon-action delete-action"
                                                         data-toggle="modal"
@@ -387,7 +386,6 @@
                                                             onclick="showLess({{ $key }})">Ẩn bớt</span>
                                                     </div>
                                                 </td>
-                                                <td>{{ $item->created_at }}</td>
                                                 <td>
                                                     <a href="#" class="icon-action delete-action"
                                                         data-toggle="modal"
@@ -459,7 +457,6 @@
                                                             onclick="showLess({{ $key }})">Ẩn bớt</span>
                                                     </div>
                                                 </td>
-                                                <td>{{ $item->created_at }}</td>
                                                 <td>
                                                     <a href="#" class="icon-action delete-action"
                                                         data-toggle="modal"
@@ -516,7 +513,6 @@
                                                 @endif
                                                 <td>{{ $item->ocean_name }}</td>
                                                 <td>{{ $item->ocean_description }}</td>
-                                                <td>{{ $item->created_at }}</td>
                                                 <td>
                                                     <a href="#" class="icon-action delete-action"
                                                         data-toggle="modal"
