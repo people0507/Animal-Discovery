@@ -1120,11 +1120,15 @@
 
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         maxZoom: 19,
-        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">Bản Đồ Thế Giới</a> contributors'
+        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">Các Quốc Gia Có Động Vật</a> contributors'
     }).addTo(mymap);
 
+    var customIcon = L.icon({
+    iconUrl: 'http://localhost:8000/maps/icon_map.png',
+    iconSize: [30, 30], // Kích thước của biểu tượng
+});
     arrCordinate.forEach(function(coords) {
-        L.marker(coords.coords).addTo(mymap).bindPopup(coords.name).openPopup();
+        L.marker(coords.coords,{icon:customIcon}).addTo(mymap).bindPopup(coords.name).openPopup();
     });
     </script>   
 @endsection
