@@ -491,7 +491,7 @@
                                             </div>
                                             <div class="col-sm-9">
                                                 @foreach ($data->areas as $item)
-                                                    <a href="https://animalia.bio/asia-animals"
+                                                    <a href="{{route('user.cate-list',['id' => $item->id])}}"
                                                         class="s-distr-geography__link ">{{ $item->area_name }},</a>
                                                 @endforeach
                                             </div>
@@ -505,7 +505,7 @@
                                             </div>
                                             <div class="col-sm-9">
                                                 @foreach ($data->nations as $item)
-                                                    <a href="https://animalia.bio/albania-animals"
+                                                    <a href="{{route('user.nation',['id'=>$item->id])}}"
                                                         class="s-distr-geography__link ">{{ $item->nation_name }},</a>
                                                 @endforeach
                                                 </span>
@@ -604,16 +604,30 @@
                                 </h2>
                                 <p>{{ $data->habit_lifestyle_description }}</p>
                             </div>
+                            <div class="row align-items-end">
+                                        <div class="col-6">
+                                            <div class="s-mating-slug">
+                                                <div class="s-mating-slug__text text-uppercase">
+                                                    Thời gian hoạt động
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="">
+                                            <a class="s-population__link" href="{{route('user.activity_time',['id' => $data->activityTime->id])}}">{{ $data->activityTime->activity_name }}</a>
+                                            </div>
+                                        </div>
+                                    </div>
                             <div class="row align-items-center mt-3">
                                 <div class="col-sm-3">
-                                    <div class="s-habbit-group__slug">
+                                    <div class="s-mating-slug__text text-uppercase">
 
                                         Tiếng Kêu
                                     </div>
                                 </div>
                                 <div class="col-sm-9">
                                     <audio controls="">
-                                        <source src="https://xeno-canto.org/332858/download" type="audio/mpeg">
+                                        <source src="http://localhost:8000/animal_sounds/{{$data->animal_sound}}" type="audio/mpeg">
                                         Your browser does not support the audio element.
 
                                     </audio>
@@ -638,16 +652,13 @@
                                         <div class="col-6">
                                             <div class="s-mating-slug">
                                                 <div class="s-mating-slug__text text-uppercase">
-
                                                     Hành vi giao hợp
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-6">
-                                            <div class="s-mating-char">
-                                                <a href="https://animalia.bio/index.php/polygyny"
-                                                    class="">{{ $data->mating_behavior }}
-                                                </a>
+                                            <div class="s-mating-char__text">
+                                                {{ $data->mating_behavior }}
                                             </div>
                                         </div>
                                     </div>
@@ -701,7 +712,7 @@
                                             <div class="s-mating-slug">
                                                 <div class="s-mating-slug__text text-uppercase">
 
-                                                    Tuổi Tự Độc Lập
+                                                    Tuổi Trưởng Thành
                                                 </div>
                                             </div>
                                         </div>
@@ -734,11 +745,11 @@
                             <p class="col-sm-6 col-md-8">{{ $data->diet_nutrition_description }}</p>
                             <div class="col-sm-6 col-md-8">
                                 <div class="row align-items-end">
-                                    <div class="col col-lg-2 s-population-slug">
-                                        Diet
+                                    <div class="col col-4 s-population-slug">
+                                        Chế độ dinh dưỡng
                                     </div>
-                                    <div class="col">
-                                        <a class="s-population__link" href="#">{{ $data->diet->diet_name }}</a>
+                                    <div class="col-8">
+                                        <a class="s-population__link" href="{{route('user.diet_type',['id' => $data->diet->id])}}">{{ $data->diet->diet_name }}</a>
                                     </div>
                                 </div>
                             </div>
@@ -770,7 +781,7 @@
                                             </div>
                                         </div>
                                         <div class="col-sm-7 col-md-8">
-                                            <a href="https://animalia.bio/stable"
+                                            <a href="{{route('user.population_trending',['id' => $data->trend->id])}}"
                                                 class="s-population__link">{{ $data->trend->population_trending_name }}</a>
                                         </div>
                                     </div>
@@ -779,19 +790,18 @@
                                     <div class="row align-items-center">
                                         <div class="col-sm-5 col-md-4">
                                             <div class="s-population-slug text-uppercase">
-
-                                                Tình Trạng Quần Thể
+                                                Tình Trạng Bảo Tồn
                                             </div>
                                         </div>
                                         <div class="col-sm-7 col-md-8">
-                                            <a href="https://animalia.bio/least-concern-lc"
+                                            <a href="{{route('user.conservation_status',['id' => $data->status->id])}}"
                                                 class="s-population__link">{{ $data->status->status_name }}</a>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="s-population-view">
                                     @foreach ($conservationStatus as $item)
-                                        <a href="#"
+                                        <a href="{{route('user.conservation_status',['id' => $item->id])}}"
                                             @if ($item->id == $data->conservation_status_id) class="s-population-view__item active-hoover-circle"
                                     @else
                                     class="s-population-view__item" @endif>{{ $item->status_name }}</a>
@@ -1102,7 +1112,7 @@
                                 <div class="card-content">
                                     <h2 class="name">{{$item->animal_name}}</h2>
                                     <p class="description truncate-text">{{$item->animal_description}}</p>
-                                    <a href="{{route('user.animal-detail',['id' => $item->id])}}" class="button">View More</a>
+                                    <a href="{{route('user.animal-detail',['id' => $item->id])}}" class="button">Xem thêm</a>
                                 </div>
                             </div>
                             @endforeach

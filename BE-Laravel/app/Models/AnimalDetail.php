@@ -74,4 +74,9 @@ class AnimalDetail extends Model
     {
         return $this->belongsTo(PopulationTrending::class,'population_trending_id');
     }
+
+    public function activityTime()
+    {
+        return $this->belongsTo(ActivityTime::class,'activity_time_id');
+    }
 }

@@ -199,7 +199,7 @@ class AnimalDetailController extends Controller
     {
         $data = AnimalDetail::whereHas('areas', function ($query) use ($id) {
             $query->where('area_id', $id);
-        })->with(['images' => function ($query) {;
+        })->with(['images' => function ($query) {
         }])->paginate(5);
         $data1 = Area::where('id', $id)->first();
         return view('user.categories-animal', compact('data', 'data1'));
@@ -209,7 +209,7 @@ class AnimalDetailController extends Controller
     {
         $data = AnimalDetail::whereHas('climates', function ($query) use ($id) {
             $query->where('climate_id', $id);
-        })->with(['images' => function ($query) {;
+        })->with(['images' => function ($query) {
         }])->paginate(5);
         $count = $data->count();
         $data1 = Climate::where('id', $id)->first();
@@ -220,10 +220,42 @@ class AnimalDetailController extends Controller
     {
         $data = AnimalDetail::whereHas('biomes', function ($query) use ($id) {
             $query->where('biome_id', $id);
-        })->with(['images' => function ($query) {;
+        })->with(['images' => function ($query) {
         }])->paginate(5);
         $count = $data->count();
         $data1 = Biome::where('id', $id)->first();
         return view('user.filter-list-animal', compact('data', 'data1', 'count'));
+    }
+
+    public function conservationStatus($id){
+        $data = AnimalDetail::where('conservation_status_id', $id)->paginate(5);
+        $data1 = ConservationStatus::where('id',$id)->first();
+        return view('user.categories-animal', compact('data', 'data1'));
+    }
+
+    public function populationTrending($id){
+        $data = AnimalDetail::where('population_trending_id', $id)->paginate(5);
+        $data1 = PopulationTrending::where('id',$id)->first();
+        return view('user.categories-animal', compact('data', 'data1'));
+    }
+
+    public function nation($id){
+        $data = AnimalDetail::whereHas('nations', function ($query) use ($id) {
+            $query->where('nation_id', $id);
+        })->paginate(5);
+        $data1 = Nation::where('id',$id)->first();
+        return view('user.categories-animal', compact('data', 'data1'));
+    }
+
+    public function dietType($id){
+        $data = AnimalDetail::where('diet_type_id', $id)->paginate(5);
+        $data1 = DietType::where('id',$id)->first();
+        return view('user.categories-animal', compact('data', 'data1'));
+    }
+
+    public function activityTime($id){
+        $data = AnimalDetail::where('activity_time_id', $id)->paginate(5);
+        $data1 = ActivityTime::where('id',$id)->first();
+        return view('user.categories-animal', compact('data', 'data1'));
     }
 }
