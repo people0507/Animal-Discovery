@@ -7,6 +7,7 @@ use App\Models\Post;
 use App\Models\Comment;
 use App\Models\Like;
 use Auth;
+use App\Models\Notification;
 use Str;
 use DB;
 use App\Http\MessageContent;
@@ -77,6 +78,14 @@ class PostController extends Controller
         $comment->post_id = $data['post_id'];
         $comment->save();
 
+        $post = Post::where('id',$data['post_id'])->first();
+        $notication = new Notification();
+        $notication->user_id = $post->user_id;
+        $notication->user_action_id = Auth::id();
+        $notication->type = 2;
+        $notication->post_id = $data['post_id'];
+        $notication->save();
+
         $comments = DB::table('comment')
         ->where('post_id',$data['post_id'])
         ->join('post', 'post.id', '=', 'comment.post_id')
@@ -115,12 +124,34 @@ class PostController extends Controller
         $like->user_id = Auth::id();
         $like->post_id = $request->post_id;
         $like->save();
+
+        $post = Post::where('id',$request->post_id)->first();
+        $notication = new Notification();
+        $notication->user_id = $post->user_id;
+        $notication->user_action_id = Auth::id();
+        $notication->type = 1;
+        $notication->post_id = $request->post_id;
+        $notication->save();
         }else{
         Like::where('user_id', Auth::id())
         ->where('post_id', $request->post_id)
         ->delete();
         }
         return response()->json(123);
+    }
+
+    public function listNotification(Request $request){
+        $notifications = Notification::where('user_id', Auth::id())->whereNot('user_action_id',Auth::id())->get();
+        $notificationArray = array();
+        foreach($notifications as $notification){
+            if($notification->type == 1){
+                array_push($notificationArray,array('user'=>$notification->userAction->name,'message' => ' đã thích bài viết '.$notification->post->title,'time' => $notification->created_at));
+            }else{
+                array_push($notificationArray,array('user'=>$notification->userAction->name,'message' => ' đã bình luận bài viết '.$notification->post->title,'time' => $notification->created_at));
+            }
+        }
+        return response()->json($notificationArray);
+        
     }
     
 }
