@@ -10,6 +10,7 @@ use Auth;
 use App\Models\Notification;
 use Str;
 use DB;
+use Carbon\Carbon;
 use App\Http\MessageContent;
 class PostController extends Controller
 {
@@ -18,7 +19,11 @@ class PostController extends Controller
         foreach ($posts as $post) {
             $post->liked_by_user = $post->likes->where('user_id', Auth::id())->count() > 0;
         }
-        return view('user.social',compact('posts'));
+        $notifications = Notification::where('user_id', Auth::id())
+        ->whereNot('user_action_id',Auth::id())
+        ->whereDate('created_at', Carbon::today())
+        ->count();
+        return view('user.social',compact('posts','notifications'));
     }
 
     public function getListComment(Request $request){
@@ -141,17 +146,45 @@ class PostController extends Controller
     }
 
     public function listNotification(Request $request){
-        $notifications = Notification::where('user_id', Auth::id())->whereNot('user_action_id',Auth::id())->get();
+        $notifications = Notification::where('user_id', Auth::id())
+        ->whereNot('user_action_id',Auth::id())
+        ->orderBy('created_at', 'desc')
+        ->get();
         $notificationArray = array();
         foreach($notifications as $notification){
+            $now = Carbon::now();
+            $createdAt = Carbon::parse($notification->created_at);
+            $diff = $createdAt->diff($now);
+            if($diff->y > 0){
+                $timeDiff =$diff->y .' năm trước';
+            }else if($diff->m > 0){
+                $timeDiff =$diff->m .' tháng trước';
+            }else if($diff->m > 0){
+                $timeDiff =$diff->d .' ngày trước';
+            }else if($diff->h > 0){
+                $timeDiff =$diff->h .' giờ trước';
+            }else if($diff->i > 0){
+                $timeDiff =$diff->i .' phút trước';
+            }else {
+                $timeDiff =$diff->y .' giây trước';
+            }
             if($notification->type == 1){
-                array_push($notificationArray,array('user'=>$notification->userAction->name,'message' => ' đã thích bài viết '.$notification->post->title,'time' => $notification->created_at));
+                array_push($notificationArray,array('user'=>$notification->userAction->name,'message' => ' đã thích bài viết '.$notification->post->title,'time' => $timeDiff));
             }else{
-                array_push($notificationArray,array('user'=>$notification->userAction->name,'message' => ' đã bình luận bài viết '.$notification->post->title,'time' => $notification->created_at));
+                array_push($notificationArray,array('user'=>$notification->userAction->name,'message' => ' đã bình luận bài viết '.$notification->post->title,'time' =>  $timeDiff));
             }
         }
         return response()->json($notificationArray);
         
+    }
+
+    function getNumberNoti(Request $request){
+        $notifications = Notification::where('user_id', Auth::id())
+        ->whereNot('user_action_id',Auth::id())
+        ->whereDate('created_at', Carbon::today())
+        ->count();
+        return response()->json($notifications);
+
     }
     
 }
