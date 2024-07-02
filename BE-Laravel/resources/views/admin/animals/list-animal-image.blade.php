@@ -130,8 +130,14 @@
                                     @foreach ($images as $key => $image)
                                         <tr>
                                             <td>{{ $key + 1 }}</td>
-                                            <td><img src="http://localhost:8000/animal_images/{{ $image->image_name }}"
-                                                    width="200"></td>
+                                            <td>
+                                                @if($image->image_name != null)
+                                                    <img src="http://localhost:8000/animal_images/{{ $image->image_name }}"
+                                                    width="200">
+                                                 @else
+                                                    <img src="http://localhost:8000/error/error.jpg" alt="error" width="200">
+                                                @endif
+                                            </td>
                                             <td>{{ $image->animalDetail->animal_name }}</td>
                                             <td>{{ $image->created_at }}</td>
                                             <td>

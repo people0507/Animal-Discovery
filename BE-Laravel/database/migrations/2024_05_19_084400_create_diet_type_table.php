@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('diet_type', function (Blueprint $table) {
             $table->id();
             $table->string('diet_name');
+            $table->text('diet_description')->nullable();
             $table->timestamps();
         });
     }

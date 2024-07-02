@@ -144,6 +144,9 @@
                                             <th>Mô tả vùng khí hậu</th>
                                         @elseif($mode == 'nation')
                                             <th>Tên quốc gia</th>
+                                            <th>Mô tả quốc gia</th>
+                                            <th>Vĩ độ quốc gia</th>
+                                            <th>Kinh độ quốc gia</th>
                                         @elseif($mode == 'color')
                                             <th>Ảnh màu sắc</th>
                                             <th>Tên màu sắc</th>
@@ -157,7 +160,6 @@
                                             <th>Tên đại dương</th>
                                             <th>Mô tả đại dương</th>
                                         @endif
-                                        <th>Thời gian tạo</th>
                                         <th>Thao tác</th>
                                     </tr>
 
@@ -168,8 +170,14 @@
                                         @foreach ($data->areas as $key => $item)
                                             <tr>
                                                 <td>{{ $key + 1 }}</td>
-                                                <td><img src="http://localhost:8000/areas/{{ $item->area_image }}"
-                                                        width="200"></td>
+                                                <td>
+                                                @if($item->area_image != null)    
+                                                <img src="http://localhost:8000/areas/{{ $item->area_image }}"
+                                                        width="200">
+                                                </td>
+                                                @else
+                                                <img src="http://localhost:8000/error/error.jpg" alt="error" width="200">
+                                                @endif
                                                 <td>{{ $item->area_name }}</td>
                                                 {{-- <td style="width: 30%">{{ $item->area_description }}</td> --}}
                                                 <td style="width: 30%">
@@ -187,7 +195,6 @@
                                                             onclick="showLess({{ $key }})">Ẩn bớt</span>
                                                     </div>
                                                 </td>
-                                                <td>{{ $item->created_at }}</td>
                                                 <td>
                                                     <a href="#" class="icon-action delete-action" data-toggle="modal"
                                                         data-target="#deleteConfirmationModal_{{ $item->id }}"
@@ -233,8 +240,14 @@
                                         @foreach ($data->climates as $key => $item)
                                             <tr>
                                                 <td>{{ $key + 1 }}</td>
-                                                <td><img src="http://localhost:8000/climates/full/{{ $item->climate_image }}"
-                                                        width="200"></td>
+                                                <td>
+                                                @if($item->climate_image != null)    
+                                                <img src="http://localhost:8000/climates/full/{{ $item->climate_image }}"
+                                                        width="200">
+                                                </td>
+                                                @else
+                                                <img src="http://localhost:8000/error/error.jpg" alt="error" width="200">
+                                                @endif
                                                 <td>{{ $item->climate_name }}</td>
                                                 {{-- <td>{{ $item->climate_description }}</td> --}}
                                                 <td style="width: 30%">
@@ -252,7 +265,6 @@
                                                             onclick="showLess({{ $key }})">Ẩn bớt</span>
                                                     </div>
                                                 </td>
-                                                <td>{{ $item->created_at }}</td>
                                                 <td>
                                                     <a href="#" class="icon-action delete-action"
                                                         data-toggle="modal"
@@ -300,7 +312,9 @@
                                             <tr>
                                                 <td>{{ $key + 1 }}</td>
                                                 <td>{{ $item->nation_name }}</td>
-                                                <td>{{ $item->created_at }}</td>
+                                                <td width="40%">{{ $item->nation_description }}</td>
+                                                <td>{{ $item->nation_latitude }}</td>
+                                                <td>{{ $item->nation_longitude }}</td>
                                                 <td>
                                                     <a href="#" class="icon-action delete-action"
                                                         data-toggle="modal"
@@ -347,8 +361,14 @@
                                         @foreach ($data->colors as $key => $item)
                                             <tr>
                                                 <td>{{ $key + 1 }}</td>
-                                                <td><img src="http://localhost:8000/colors/{{ $item->color_image }}"
-                                                        width="200"></td>
+                                                <td>
+                                                @if($item->color_image != null)    
+                                                <img src="http://localhost:8000/colors/{{ $item->color_image }}"
+                                                        width="200">
+                                                </td>
+                                                @else
+                                                <img src="http://localhost:8000/error/error.jpg" alt="error" width="200">
+                                                @endif
                                                 <td>{{ $item->color_name }}</td>
                                                 {{-- <td>{{ $item->color_description }}</td> --}}
                                                 <td>
@@ -366,7 +386,6 @@
                                                             onclick="showLess({{ $key }})">Ẩn bớt</span>
                                                     </div>
                                                 </td>
-                                                <td>{{ $item->created_at }}</td>
                                                 <td>
                                                     <a href="#" class="icon-action delete-action"
                                                         data-toggle="modal"
@@ -413,8 +432,14 @@
                                         @foreach ($data->biomes as $key => $item)
                                             <tr>
                                                 <td>{{ $key + 1 }}</td>
-                                                <td><img src="http://localhost:8000/biomes/full/{{ $item->biome_image }}"
-                                                        width="200"></td>
+                                                <td>
+                                                @if($item->biome_image != null)    
+                                                <img src="http://localhost:8000/biomes/full/{{ $item->biome_image }}"
+                                                        width="200">
+                                                </td>
+                                                @else
+                                                <img src="http://localhost:8000/error/error.jpg" alt="error" width="200">
+                                                @endif
                                                 <td>{{ $item->biome_name }}</td>
                                                 {{-- <td>{{ $item->biome_description }}</td> --}}
                                                 <td style="width: 30%">
@@ -432,7 +457,6 @@
                                                             onclick="showLess({{ $key }})">Ẩn bớt</span>
                                                     </div>
                                                 </td>
-                                                <td>{{ $item->created_at }}</td>
                                                 <td>
                                                     <a href="#" class="icon-action delete-action"
                                                         data-toggle="modal"
@@ -479,11 +503,16 @@
                                         @foreach ($data->oceans as $key => $item)
                                             <tr>
                                                 <td>{{ $key + 1 }}</td>
-                                                <td><img src="http://localhost:8000/oceans/{{ $item->ocean_image }}"
-                                                        width="200"></td>
+                                                <td>
+                                                @if($item->ocean_image != null)    
+                                                <img src="http://localhost:8000/oceans/{{ $item->ocean_image }}"
+                                                        width="200">
+                                                </td>
+                                                @else
+                                                <img src="http://localhost:8000/error/error.jpg" alt="error" width="200">
+                                                @endif
                                                 <td>{{ $item->ocean_name }}</td>
                                                 <td>{{ $item->ocean_description }}</td>
-                                                <td>{{ $item->created_at }}</td>
                                                 <td>
                                                     <a href="#" class="icon-action delete-action"
                                                         data-toggle="modal"

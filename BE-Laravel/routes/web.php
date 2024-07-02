@@ -88,9 +88,6 @@ Route::get('/animals/list', function () {
 // Route::get('/users/list', function () {
 //     return view('admin.users.list-user');
 // })->name('admin.list-user');
-// Route::get('/users/add', function () {
-//     return view('admin.users.add-user');
-// })->name('admin.add-user');
 
 Route::get('/view_login', [LoginController::class, 'viewLogin'])->name('view_login');
 Route::get('/view_register', [LoginController::class, 'viewRegister'])->name('view_register');
@@ -100,8 +97,16 @@ Route::post('/register', [LoginController::class, 'register'])->name('register')
 
 Route::prefix('animal_detail')->group(function () {
     Route::get('/view_animal_page', [AnimalDetailController::class, 'viewAnimalPage'])->name('user.home');
+    Route::get('/view_search_filter', [AnimalDetailController::class, 'viewSearchFilter'])->name('user.view_search_filter');
+    Route::post('/search_filter', [AnimalDetailController::class, 'searchFilter'])->name('user.search_filter');
     Route::get('/color/{id}', [AnimalDetailController::class, 'color'])->name('color');
     Route::get('/climate/{id}', [AnimalDetailController::class, 'climateZone'])->name('climate');
+    Route::get('/nation/{id}', [AnimalDetailController::class, 'nation'])->name('user.nation');
+    Route::get('/conservation_status/{id}', [AnimalDetailController::class, 'conservationStatus'])->name('user.conservation_status');
+    Route::get('/population_trending/{id}', [AnimalDetailController::class, 'populationTrending'])->name('user.population_trending');
+    Route::get('/diet_type/{id}', [AnimalDetailController::class, 'dietType'])->name('user.diet_type');
+    Route::get('/activity_time/{id}', [AnimalDetailController::class, 'activityTime'])->name('user.activity_time');
+
     Route::get('/get_animal_detail_infor/{id}', [AnimalDetailController::class, 'getAnimalDetailInfor'])->name('user.animal-detail');
     Route::get('/get_animal_detail_areas/{id}', [AnimalDetailController::class, 'getAnimalDetailAreas'])->name('user.cate-list');
     Route::get('/get_animal_detail/{id}', [AnimalDetailController::class, 'getAnimalDetail']);
