@@ -121,46 +121,6 @@
                         <h3>Thông Báo</h3>
                         <!-- ----------------------- NOTIFICATION POPUP ----------------------- -->
                         <div class="notification-popup" style="display: none;">
-                            <div>
-                                <div class="profile-picture">
-                                    <img src="{{ asset('users/social_assets/images/profile-5.jpg') }}" alt="">
-                                </div>
-                                <div class="notification-body">
-                                    <b>Keke Messi</b>
-                                    <span> accepted your friend request</span>
-                                    <small class="text-muted">5 DAYS AGO</small>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="profile-picture">
-                                    <img src="{{ asset('users/social_assets/images/profile-7.jpg') }}" alt="">
-                                </div>
-                                <div class="notification-body">
-                                    <b>Keke Benjamin</b>
-                                    <span> accepted your friend request</span>
-                                    <small class="text-muted">2 DAYS AGO</small>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="profile-picture">
-                                    <img src="{{ asset('users/social_assets/images/profile-9.jpg') }}" alt="">
-                                </div>
-                                <div class="notification-body">
-                                    <b>Keke Benjamin</b>
-                                    <span> accepted your friend request</span>
-                                    <small class="text-muted">2 DAYS AGO</small>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="profile-picture">
-                                    <img src="{{ asset('users/social_assets/images/profile-4.jpg') }}" alt="">
-                                </div>
-                                <div class="notification-body">
-                                    <b>MynaSang</b>
-                                    <span> accepted your friend request</span>
-                                    <small class="text-muted">2 DAYS AGO</small>
-                                </div>
-                            </div>
                         </div>
                     </a>
                     <a class="menu-item" id="theme">
@@ -439,7 +399,6 @@
                 // Ajax request
                 var postId = element.id;
                 var liked = element.liked_by_user;
-                console.log(element);
                 var url = '{{route("user.post_like_or_dislike")}}';
 
                 fetch(url, {
@@ -576,6 +535,54 @@
             showNotification(successMessage);
         }
     };
+</script>
+<script>
+    function loadNotifications(response) {
+                var $notificationPopup = $('.notification-popup');
+                // var $commentsModal = $modalHeader.siblings('.comments-modal');
+                // $commentsModal.empty();
+                $('.container-noti').remove();
+                response.forEach(function (noti, index) {
+                    var commentHtml = '<div class="container-noti">';
+                    commentHtml += '<div class="profile-picture">';
+                    commentHtml += '<img src="{{ asset('users/social_assets/images/profile-5.jpg') }}" alt="">';
+                    commentHtml += '</div>';
+                    commentHtml += '<div class="notification-body">';
+                    commentHtml += '<b>'+noti.user+'</b>';
+                    commentHtml += '<span>'+noti.message+'</span>';
+                    commentHtml += '<small class="text-muted">'+noti.time+'</small>';
+                    commentHtml += '</div>';
+                    commentHtml += '</div>';
+                    $notificationPopup.append(commentHtml);
+                });
+            }
+            
+    var notification =document.querySelector('#notification');
+    var notificationPopup =document.querySelector('.notification-popup');
+
+    console.log(notificationPopup);
+    $(notification).on('click', function () {
+        if(notificationPopup.style.display == 'none'){
+            notificationPopup.style.display = 'block';
+            $.ajax({
+                url: '{{ route('user.list_notification') }}',
+                method: 'POST',
+                data: {
+                    "_token": "{{csrf_token()}}",
+                },
+                dataType: 'json',
+                success: function (response) {
+                    console.log(response);
+                    loadNotifications(response);
+                },
+                error: function () {
+                    alert('Failed to submit comment');
+                }
+            });
+        }else{
+            notificationPopup.style.display = 'none';
+        }
+            });
 </script>
 </body>
 

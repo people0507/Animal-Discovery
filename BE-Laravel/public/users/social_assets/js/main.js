@@ -24,18 +24,19 @@ const chageActiveItem = () => {
     })
 }
 
-menuItems.forEach(item => {
-    item.addEventListener('click', () => {
-        chageActiveItem();
-        item.classList.add('active');
-        if(item.id != 'notification') {
-            document.querySelector('.notification-popup').style.display = 'none';
-        } else {
-            document.querySelector('.notification-popup').style.display = 'block';
-            document.querySelector('#notification .notification-count').style.display = 'none';
-        }
-    })
-})
+// menuItems.forEach(item => {
+//     item.addEventListener('click', () => {
+//         chageActiveItem();
+//         item.classList.add('active');
+//         console.log(menuItems);
+//         if(item.id != 'notification') {
+//             document.querySelector('.notification-popup').style.display = 'none';
+//         } else {
+//             document.querySelector('.notification-popup').style.display = 'block';
+//             document.querySelector('#notification .notification-count').style.display = 'none';
+//         }
+//     })
+// })
 
 
 // ================= THEME/DISPLAY CUSTOMIZATION ==================

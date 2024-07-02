@@ -126,6 +126,8 @@ Route::prefix('animal_post')->middleware('checklogin')->group(function () {
     Route::post('/edit_animal_comment', [PostController::class, 'editComment']);
     Route::post('/delete_animal_comment', [PostController::class, 'deleteComment']);
     Route::post('/post_like_or_dislike', [PostController::class, 'likeOrDislike'])->name('user.post_like_or_dislike');
+    Route::post('/list_notification', [PostController::class, 'listNotification'])->name('user.list_notification');
+
 });
 
 Route::prefix('admin')->middleware(['checklogin','checkrole'])->group(function () {
