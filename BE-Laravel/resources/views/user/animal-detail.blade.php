@@ -2,23 +2,25 @@
 @section('title', 'Categories Animal')
 @section('content_user')
 
-<style>
-    .truncate-text {
-    position: relative;
-    max-height: 6em;
-    overflow: hidden;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 4;
-    line-height: 1.5em;
-    height: calc(1.5em * 4);
-}
-    #mapid{
-        height: 600px;
-        width:400px;
-        border:1px solid black;
-    }
-</style>
+    <style>
+        .truncate-text {
+            position: relative;
+            max-height: 6em;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 4;
+            line-height: 1.5em;
+            height: calc(1.5em * 4);
+        }
+
+        #mapid {
+            height: 500px;
+            width: 400px;
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+            border-radius: 10px;
+        }
+    </style>
     <link rel="stylesheet" href="{{ asset('users/css/animal-detail.css') }}">
     @php
         // $breadcrumbs = [
@@ -35,12 +37,12 @@
             <div class="main-animal">
                 <div class="row">
                     <div class="col-8">
-                        @if($data->images->image_name != null)
-                        <img src="http://localhost:8000/animal_images/{{ $data->images->image_name }}" width="100%"
-                            alt="" class="animal-detail-img">
+                        @if ($data->images->image_name != null)
+                            <img src="http://localhost:8000/animal_images/{{ $data->images->image_name }}" width="100%"
+                                alt="" class="animal-detail-img">
                         @else
-                        <img src="http://localhost:8000/error/error.jpg" width="100%"
-                            alt="" class="animal-detail-img">
+                            <img src="http://localhost:8000/error/error.jpg" width="100%" alt=""
+                                class="animal-detail-img">
                         @endif
                     </div>
                     <div class="col-lg-4">
@@ -195,13 +197,13 @@
                 <p></p>
             </div>
             <div class="s-char-status">
-                <a href="#" title="Crepuscular" data-url="crepuscular"
-                    class="s-char-status-item " style="background-color:#757575">
+                <a href="#" title="Crepuscular" data-url="crepuscular" class="s-char-status-item "
+                    style="background-color:#757575">
                     <p>Cr</p>
                     <span>Crepuscular</span>
                 </a>
-                <a href="#" title="Nocturnal" data-url="nocturnal"
-                    class="s-char-status-item " style="background-color:#424242">
+                <a href="#" title="Nocturnal" data-url="nocturnal" class="s-char-status-item "
+                    style="background-color:#424242">
                     <p>No</p>
                     <span>Nocturnal</span>
                 </a>
@@ -210,28 +212,28 @@
                     <p>Om</p>
                     <span>Omnivore</span>
                 </a>
-                <a href="#" title="Scavenger" data-url="scavenger"
-                    class="s-char-status-item " style="background-color:#80052d">
+                <a href="#" title="Scavenger" data-url="scavenger" class="s-char-status-item "
+                    style="background-color:#80052d">
                     <p>Sc</p>
                     <span>Scavenger</span>
                 </a>
-                <a href="#" title="Terrestrial" data-url="terrestrial"
-                    class="s-char-status-item " style="background-color:#43350a">
+                <a href="#" title="Terrestrial" data-url="terrestrial" class="s-char-status-item "
+                    style="background-color:#43350a">
                     <p>Te</p>
                     <span>Terrestrial</span>
                 </a>
-                <a href="#" title="Altricial" data-url="altricial-animals"
-                    class="s-char-status-item " style="background-color:#f52a2a">
+                <a href="#" title="Altricial" data-url="altricial-animals" class="s-char-status-item "
+                    style="background-color:#f52a2a">
                     <p>Al</p>
                     <span>Altricial</span>
                 </a>
-                <a href="#" title="Territorial" data-url="territorial"
-                    class="s-char-status-item " style="background-color:#d52828">
+                <a href="#" title="Territorial" data-url="territorial" class="s-char-status-item "
+                    style="background-color:#d52828">
                     <p>Te</p>
                     <span>Territorial</span>
                 </a>
-                <a href="#" title="Viviparous" data-url="viviparous"
-                    class="s-char-status-item " style="background-color:#6b62b9">
+                <a href="#" title="Viviparous" data-url="viviparous" class="s-char-status-item "
+                    style="background-color:#6b62b9">
                     <p>Vi</p>
                     <span>Viviparous</span>
                 </a>
@@ -260,18 +262,18 @@
                     <p>Mo</p>
                     <span>Monogamy</span>
                 </a>
-                <a href="#" title="Social" data-url="social-animals"
-                    class="s-char-status-item " style="background-color:#FB8C00">
+                <a href="#" title="Social" data-url="social-animals" class="s-char-status-item "
+                    style="background-color:#FB8C00">
                     <p>So</p>
                     <span>Social</span>
                 </a>
-                <a href="#" title="Dominance hierarchy"
-                    data-url="dominance-hierarchy" class="s-char-status-item " style="background-color:#e62828">
+                <a href="#" title="Dominance hierarchy" data-url="dominance-hierarchy" class="s-char-status-item "
+                    style="background-color:#e62828">
                     <p>Do</p>
                     <span>Dominance hierarchy</span>
                 </a>
-                <a href="#" title="Not a migrant" data-url="not-a-migrant"
-                    class="s-char-status-item " style="background-color:#6c2139">
+                <a href="#" title="Not a migrant" data-url="not-a-migrant" class="s-char-status-item "
+                    style="background-color:#6c2139">
                     <p>No</p>
                     <span>Not a migrant</span>
                 </a>
@@ -281,8 +283,7 @@
                     <p>Ca</p>
                     <span>Canada Province Animals<br> (collection)</span>
                 </a>
-                <a href="#" title="Fluffy Animals"
-                    class="s-char-status-item s-char-status-item-collection"
+                <a href="#" title="Fluffy Animals" class="s-char-status-item s-char-status-item-collection"
                     style="background:url(https://s3.animalia.bio/animals/photos/full/1.25x1/dscf-227101995jpeg.webp)">
                     <p>Fl</p>
                     <span>Fluffy Animals<br> (collection)</span>
@@ -312,30 +313,36 @@
                     </h2>
 
                     <div id="carouselExampleIndicators" class="carousel slide">
-                    <div class="carousel-indicators">
-                    @foreach ($multiImages as $key => $image)
-                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="{{$key}}" class="{{$key == 0 ? 'active':''}}" aria-current="true" aria-label="Slide 1"></button>
-                    @endforeach
-                    </div>
-                    <div class="carousel-inner">
-                        @foreach ($multiImages as $key => $image)
-                        <div class="carousel-item {{$key == 0 ? 'active':''}}">
-                        @if($image->image_name != null)
-                        <img src="http://localhost:8000/animal_images/{{ $image->image_name }}" class="d-block w-100" alt="...">
-                        @else
-                        <img src="http://localhost:8000/error/error.jpg" class="d-block w-100" alt="...">
-                        @endif
+                        <div class="carousel-indicators">
+                            @foreach ($multiImages as $key => $image)
+                                <button type="button" data-bs-target="#carouselExampleIndicators"
+                                    data-bs-slide-to="{{ $key }}" class="{{ $key == 0 ? 'active' : '' }}"
+                                    aria-current="true" aria-label="Slide 1"></button>
+                            @endforeach
                         </div>
-                        @endforeach
-                    </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                    </button>
+                        <div class="carousel-inner">
+                            @foreach ($multiImages as $key => $image)
+                                <div class="carousel-item {{ $key == 0 ? 'active' : '' }}">
+                                    @if ($image->image_name != null)
+                                        <img src="http://localhost:8000/animal_images/{{ $image->image_name }}"
+                                            class="d-block w-100" alt="...">
+                                    @else
+                                        <img src="http://localhost:8000/error/error.jpg" class="d-block w-100"
+                                            alt="...">
+                                    @endif
+                                </div>
+                            @endforeach
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
                     </div>
                 </div>
             </section>
@@ -388,7 +395,7 @@
                                         <div class="tp-tab selected"
                                             style="width: 300px; height: 80px; left: 0px; top: 0px;">
                                             <div class="tp-tab-content"> <span class="tp-tab-date">Video Tài Liệu</span>
-                                                <span class="tp-tab-title">{{$data->animal_name}}</span>
+                                                <span class="tp-tab-title">{{ $data->animal_name }}</span>
                                             </div>
                                             <div class="tp-tab-image"
                                                 style="background-image: url(&quot;https://img.youtube.com/vi/r2t0MidPKXQ/default.jpg&quot;);">
@@ -425,7 +432,7 @@
                                             </div>
                                             <div class="col-sm-9">
                                                 @foreach ($data->areas as $item)
-                                                    <a href="{{route('user.cate-list',['id' => $item->id])}}"
+                                                    <a href="{{ route('user.cate-list', ['id' => $item->id]) }}"
                                                         class="s-distr-geography__link ">{{ $item->area_name }},</a>
                                                 @endforeach
                                             </div>
@@ -439,7 +446,7 @@
                                             </div>
                                             <div class="col-sm-9">
                                                 @foreach ($data->nations as $item)
-                                                    <a href="{{route('user.nation',['id'=>$item->id])}}"
+                                                    <a href="{{ route('user.nation', ['id' => $item->id]) }}"
                                                         class="s-distr-geography__link ">{{ $item->nation_name }},</a>
                                                 @endforeach
                                                 </span>
@@ -451,7 +458,7 @@
                             </div>
                             <div class="col-lg-4">
                                 <div class="s-distr-map zoom-map-trigger">
-                                <div id="mapid"></div>
+                                    <div id="mapid"></div>
                                 </div>
                             </div>
                         </div>
@@ -472,14 +479,16 @@
                             <div class="row">
                                 @foreach ($data->biomes as $item)
                                     <div class="col-lg-3 col-md-6 s-distr-margin">
-                                        @if($item->biome_image != null)
-                                        <a href="{{ route('biome', ['id' => $item->id]) }}" class="s-distr-zone-item "
-                                            style="background-color: #00c853; background-image: url(http://localhost:8000/biomes/small/{{ $item->biome_image }}); background-size: cover"><span>{{ $item->biome_name }}</span>
-                                        </a>
+                                        @if ($item->biome_image != null)
+                                            <a href="{{ route('biome', ['id' => $item->id]) }}"
+                                                class="s-distr-zone-item "
+                                                style="background-color: #00c853; background-image: url(http://localhost:8000/biomes/small/{{ $item->biome_image }}); background-size: cover"><span>{{ $item->biome_name }}</span>
+                                            </a>
                                         @else
-                                        <a href="{{ route('biome', ['id' => $item->id]) }}" class="s-distr-zone-item "
-                                            style="background-color: #00c853; background-image: url(http://localhost:8000/error/error.jpg); background-size: cover"><span>{{ $item->biome_name }}</span>
-                                        </a>
+                                            <a href="{{ route('biome', ['id' => $item->id]) }}"
+                                                class="s-distr-zone-item "
+                                                style="background-color: #00c853; background-image: url(http://localhost:8000/error/error.jpg); background-size: cover"><span>{{ $item->biome_name }}</span>
+                                            </a>
                                         @endif
                                     </div>
                                 @endforeach
@@ -494,16 +503,16 @@
                         <div class="row">
                             @foreach ($data->climates as $item)
                                 <div class="col-lg-3 col-md-6 s-distr-margin">
-                                    @if($item->climate_image != null)
-                                    <a href="{{ route('climate-zone', ['id' => $item->id]) }}"
-                                        class="s-distr-climate__link "
-                                        style="background-color: #4CAF50; background-image: url(http://localhost:8000/climates/small/{{ $item->climate_image }});"><span>{{ $item->climate_name }}</span>
-                                    </a>
+                                    @if ($item->climate_image != null)
+                                        <a href="{{ route('climate-zone', ['id' => $item->id]) }}"
+                                            class="s-distr-climate__link "
+                                            style="background-color: #4CAF50; background-image: url(http://localhost:8000/climates/small/{{ $item->climate_image }});"><span>{{ $item->climate_name }}</span>
+                                        </a>
                                     @else
-                                    <a href="{{ route('climate-zone', ['id' => $item->id]) }}"
-                                        class="s-distr-climate__link "
-                                        style="background-color: #4CAF50; background-image: url(http://localhost:8000/error/error.jpg);"><span>{{ $item->climate_name }}</span>
-                                    </a>
+                                        <a href="{{ route('climate-zone', ['id' => $item->id]) }}"
+                                            class="s-distr-climate__link "
+                                            style="background-color: #4CAF50; background-image: url(http://localhost:8000/error/error.jpg);"><span>{{ $item->climate_name }}</span>
+                                        </a>
                                     @endif
                                 </div>
                             @endforeach
@@ -517,12 +526,11 @@
                     <div class="row">
                         <div class="col-lg-6">
                             <div class="s-habbit-img open-gallery" data-id="11849">
-                                @if($habitImage->image_name != null)
-                                <img src="http://localhost:8000/animal_images/{{ $habitImage->image_name }}"
-                                    alt="Red Fox 2016-05-19 (11)">
+                                @if ($habitImage->image_name != null)
+                                    <img src="http://localhost:8000/animal_images/{{ $habitImage->image_name }}"
+                                        alt="Red Fox 2016-05-19 (11)">
                                 @else
-                                <img src="http://localhost:8000/error/error.jpg"
-                                    alt="Red Fox 2016-05-19 (11)">
+                                    <img src="http://localhost:8000/error/error.jpg" alt="Red Fox 2016-05-19 (11)">
                                 @endif
                             </div>
                             <div class="optimanetwork">
@@ -538,19 +546,20 @@
                                 <p>{{ $data->habit_lifestyle_description }}</p>
                             </div>
                             <div class="row align-items-end">
-                                        <div class="col-6">
-                                            <div class="s-mating-slug">
-                                                <div class="s-mating-slug__text text-uppercase">
-                                                    Thời gian hoạt động
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-6">
-                                            <div class="">
-                                            <a class="s-population__link" href="{{route('user.activity_time',['id' => $data->activityTime->id])}}">{{ $data->activityTime->activity_name }}</a>
-                                            </div>
+                                <div class="col-6">
+                                    <div class="s-mating-slug">
+                                        <div class="s-mating-slug__text text-uppercase">
+                                            Thời gian hoạt động
                                         </div>
                                     </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="">
+                                        <a class="s-population__link"
+                                            href="{{ route('user.activity_time', ['id' => $data->activityTime->id]) }}">{{ $data->activityTime->activity_name }}</a>
+                                    </div>
+                                </div>
+                            </div>
                             <div class="row align-items-center mt-3">
                                 <div class="col-sm-3">
                                     <div class="s-mating-slug__text text-uppercase">
@@ -560,7 +569,8 @@
                                 </div>
                                 <div class="col-sm-9">
                                     <audio controls="">
-                                        <source src="http://localhost:8000/animal_sounds/{{$data->animal_sound}}" type="audio/mpeg">
+                                        <source src="http://localhost:8000/animal_sounds/{{ $data->animal_sound }}"
+                                            type="audio/mpeg">
                                         Your browser does not support the audio element.
 
                                     </audio>
@@ -682,7 +692,8 @@
                                         Chế độ dinh dưỡng
                                     </div>
                                     <div class="col-8">
-                                        <a class="s-population__link" href="{{route('user.diet_type',['id' => $data->diet->id])}}">{{ $data->diet->diet_name }}</a>
+                                        <a class="s-population__link"
+                                            href="{{ route('user.diet_type', ['id' => $data->diet->id]) }}">{{ $data->diet->diet_name }}</a>
                                     </div>
                                 </div>
                             </div>
@@ -697,12 +708,11 @@
                         <div class="row">
                             <div class="col-lg-6">
                                 <div class="s-population-img open-gallery" data-id="53626">
-                                    @if($populationImage->image_name != null)
-                                    <img src="http://localhost:8000/animal_images/{{ $populationImage->image_name }}"
-                                        alt="Red Fox photo">
+                                    @if ($populationImage->image_name != null)
+                                        <img src="http://localhost:8000/animal_images/{{ $populationImage->image_name }}"
+                                            alt="Red Fox photo">
                                     @else
-                                    <img src="http://localhost:8000/error/error.jpg"
-                                        alt="Red Fox photo">
+                                        <img src="http://localhost:8000/error/error.jpg" alt="Red Fox photo">
                                     @endif
                                 </div>
                                 <div class="s-population-link">
@@ -714,7 +724,7 @@
                                             </div>
                                         </div>
                                         <div class="col-sm-7 col-md-8">
-                                            <a href="{{route('user.population_trending',['id' => $data->trend->id])}}"
+                                            <a href="{{ route('user.population_trending', ['id' => $data->trend->id]) }}"
                                                 class="s-population__link">{{ $data->trend->population_trending_name }}</a>
                                         </div>
                                     </div>
@@ -727,14 +737,14 @@
                                             </div>
                                         </div>
                                         <div class="col-sm-7 col-md-8">
-                                            <a href="{{route('user.conservation_status',['id' => $data->status->id])}}"
+                                            <a href="{{ route('user.conservation_status', ['id' => $data->status->id]) }}"
                                                 class="s-population__link">{{ $data->status->status_name }}</a>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="s-population-view">
                                     @foreach ($conservationStatus as $item)
-                                        <a href="{{route('user.conservation_status',['id' => $item->id])}}"
+                                        <a href="{{ route('user.conservation_status', ['id' => $item->id]) }}"
                                             @if ($item->id == $data->conservation_status_id) class="s-population-view__item active-hoover-circle"
                                     @else
                                     class="s-population-view__item" @endif>{{ $item->status_name }}</a>
@@ -779,265 +789,266 @@
                     <div class="list-ads-block">
                         <div class="row">
                             <h2 class="a-h2 col-sm-6 col-md-8">
-                                Sự thật thú vị về {{$data->animal_name}}
+                                Sự thật thú vị về {{ $data->animal_name }}
                             </h2>
                             <br>
                             <br>
                         </div>
                         @foreach ($funFact as $item)
-                        <div>
-                            <p style="font-size:20px;margin-bottom:30px"><i class="fa-solid fa-otter" style="color: #00c853;"></i> {{ $item }}</p>
-                        </div>
+                            <div>
+                                <p style="font-size:20px;margin-bottom:30px"><i class="fa-solid fa-otter"
+                                        style="color: #00c853;"></i> {{ $item }}</p>
+                            </div>
                         @endforeach
                     </div>
                 </div>
             </section>
             <!-- <section class="s-related">
-                <div class="container">
-                    <h2 class="a-h2">
+                                            <div class="container">
+                                                <h2 class="a-h2">
 
-                        Included in Lists
-                    </h2>
-                    <div class="s-related-row">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-3 col-md-6">
-                                <a href="https://animalia.bio/index.php/lists/country/mammals-of-sri-lanka"
-                                    class="s-related-item ml-auto"
-                                    style="background: url('https://s3.animalia.bio/animals/photos/small/1x1/800px-sri-lanka-purple-faced-leaf-monkeyjpg.webp') no-repeat center; background-size: cover">
-                                    <div class="s-related-item__content">
-                                        <div class="s-related-item__name">Mammals of Sri Lanka</div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-lg-3 col-md-6">
-                                <a href="https://animalia.bio/index.php/lists/country/threatened-species-of-saudi-arabia"
-                                    class="s-related-item ml-auto"
-                                    style="background: url('https://s3.animalia.bio/animals/photos/small/1x1/hawaiian-green-sea-turtle-on-black-sand.webp') no-repeat center; background-size: cover">
-                                    <div class="s-related-item__content">
-                                        <div class="s-related-item__name">Threatened Species of Saudi Arabia</div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-lg-3 col-md-6">
-                                <a href="https://animalia.bio/index.php/lists/country/threatened-species-of-united-arab-emirates"
-                                    class="s-related-item ml-auto"
-                                    style="background: url('https://s3.animalia.bio/animals/photos/small/1x1/hawaiian-green-sea-turtle-on-black-sand.webp') no-repeat center; background-size: cover">
-                                    <div class="s-related-item__content">
-                                        <div class="s-related-item__name">Threatened Species of United Arab Emirates</div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-lg-3 col-md-6">
-                                <a href="https://animalia.bio/index.php/lists/country/mammals-of-oman"
-                                    class="s-related-item ml-auto"
-                                    style="background: url('https://s3.animalia.bio/animals/photos/small/1x1/jIGBzfIM8PVutDJUsahS.webp') no-repeat center; background-size: cover">
-                                    <div class="s-related-item__content">
-                                        <div class="s-related-item__name">Mammals of Oman</div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="center">
-                        <a href="https://animalia.bio/index.php/lists?animal=finless-porpoise"
-                            class="show-more-animal-lists">
-                            more lists with Indo-Pacific Finless Porpoise
+                                                    Included in Lists
+                                                </h2>
+                                                <div class="s-related-row">
+                                                    <div class="row justify-content-center">
+                                                        <div class="col-lg-3 col-md-6">
+                                                            <a href="https://animalia.bio/index.php/lists/country/mammals-of-sri-lanka"
+                                                                class="s-related-item ml-auto"
+                                                                style="background: url('https://s3.animalia.bio/animals/photos/small/1x1/800px-sri-lanka-purple-faced-leaf-monkeyjpg.webp') no-repeat center; background-size: cover">
+                                                                <div class="s-related-item__content">
+                                                                    <div class="s-related-item__name">Mammals of Sri Lanka</div>
+                                                                </div>
+                                                            </a>
+                                                        </div>
+                                                        <div class="col-lg-3 col-md-6">
+                                                            <a href="https://animalia.bio/index.php/lists/country/threatened-species-of-saudi-arabia"
+                                                                class="s-related-item ml-auto"
+                                                                style="background: url('https://s3.animalia.bio/animals/photos/small/1x1/hawaiian-green-sea-turtle-on-black-sand.webp') no-repeat center; background-size: cover">
+                                                                <div class="s-related-item__content">
+                                                                    <div class="s-related-item__name">Threatened Species of Saudi Arabia</div>
+                                                                </div>
+                                                            </a>
+                                                        </div>
+                                                        <div class="col-lg-3 col-md-6">
+                                                            <a href="https://animalia.bio/index.php/lists/country/threatened-species-of-united-arab-emirates"
+                                                                class="s-related-item ml-auto"
+                                                                style="background: url('https://s3.animalia.bio/animals/photos/small/1x1/hawaiian-green-sea-turtle-on-black-sand.webp') no-repeat center; background-size: cover">
+                                                                <div class="s-related-item__content">
+                                                                    <div class="s-related-item__name">Threatened Species of United Arab Emirates</div>
+                                                                </div>
+                                                            </a>
+                                                        </div>
+                                                        <div class="col-lg-3 col-md-6">
+                                                            <a href="https://animalia.bio/index.php/lists/country/mammals-of-oman"
+                                                                class="s-related-item ml-auto"
+                                                                style="background: url('https://s3.animalia.bio/animals/photos/small/1x1/jIGBzfIM8PVutDJUsahS.webp') no-repeat center; background-size: cover">
+                                                                <div class="s-related-item__content">
+                                                                    <div class="s-related-item__name">Mammals of Oman</div>
+                                                                </div>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="center">
+                                                    <a href="https://animalia.bio/index.php/lists?animal=finless-porpoise"
+                                                        class="show-more-animal-lists">
+                                                        more lists with Indo-Pacific Finless Porpoise
 
-                        </a>
-                    </div>
-                </div>
-            </section> -->
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </section> -->
 
             <!-- <section class="s-fascinating">
-                <div class="container">
-                    <h2 class="a-h2">
-                        Coloring Pages
+                                            <div class="container">
+                                                <h2 class="a-h2">
+                                                    Coloring Pages
 
-                    </h2>
-                    <div class="s-fascinating-block coloring-slider-desktop-hidden">
-                        <div class="owl-carousel-coloring-page owl-carousel s-fascinating-item owl-loaded owl-drag">
+                                                </h2>
+                                                <div class="s-fascinating-block coloring-slider-desktop-hidden">
+                                                    <div class="owl-carousel-coloring-page owl-carousel s-fascinating-item owl-loaded owl-drag">
 
 
-                            <div class="owl-stage-outer">
-                                <div class="owl-stage"
-                                    style="transform: translate3d(0px, 0px, 0px); transition: all 0s ease 0s; width: 0px;">
-                                    <div class="owl-item cloned active" style="width: auto;">
-                                        <div class="coloring-page-item">
-                                            <div class="coloring-page-links">
-                                                <a target="_blank"
-                                                    href="https://s3.animalia.bio/animals/coloring_pages/pdf/iGDSdDDqoIxxjLtfvbCfy0zGvD0dXZdfsoO2tlnZ.pdf">A4
-                                                    PDF</a>
-                                                <a target="_blank"
-                                                    href="https://s3.animalia.bio/animals/coloring_pages/letter_pdf/6CYJLb2FR71MX77Ob6v6TE0DSX13WQJhUgKJKU4O.pdf">Letter
-                                                    PDF</a>
+                                                        <div class="owl-stage-outer">
+                                                            <div class="owl-stage"
+                                                                style="transform: translate3d(0px, 0px, 0px); transition: all 0s ease 0s; width: 0px;">
+                                                                <div class="owl-item cloned active" style="width: auto;">
+                                                                    <div class="coloring-page-item">
+                                                                        <div class="coloring-page-links">
+                                                                            <a target="_blank"
+                                                                                href="https://s3.animalia.bio/animals/coloring_pages/pdf/iGDSdDDqoIxxjLtfvbCfy0zGvD0dXZdfsoO2tlnZ.pdf">A4
+                                                                                PDF</a>
+                                                                            <a target="_blank"
+                                                                                href="https://s3.animalia.bio/animals/coloring_pages/letter_pdf/6CYJLb2FR71MX77Ob6v6TE0DSX13WQJhUgKJKU4O.pdf">Letter
+                                                                                PDF</a>
+                                                                        </div>
+                                                                        <img src="https://s3.animalia.bio/animals/coloring_pages/small/nRUc9pZXYPpptdlmTTE0TDY3ZbOoigZLqF06Diw5.webp"
+                                                                            alt="" style="opacity: 1;">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="owl-item cloned active" style="width: auto;">
+                                                                    <div class="coloring-page-item">
+                                                                        <div class="coloring-page-links">
+                                                                            <a target="_blank"
+                                                                                href="https://s3.animalia.bio/animals/coloring_pages/pdf/MsTxoY0HDSsb5NTZGvkiL1Of6W9deN6IXYWr1KgM.pdf">A4
+                                                                                PDF</a>
+                                                                            <a target="_blank"
+                                                                                href="https://s3.animalia.bio/animals/coloring_pages/letter_pdf/JZ2G3p2e9I3xqQTI7NvyyL4RTRcoNoYDspYJGzFa.pdf">Letter
+                                                                                PDF</a>
+                                                                        </div>
+                                                                        <img src="https://s3.animalia.bio/animals/coloring_pages/small/kBepegCvE4c4HWB5phWwPdGt37E9sS353Amksc1C.webp"
+                                                                            alt="" style="opacity: 1;">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="owl-item cloned active" style="width: auto;">
+                                                                    <div class="coloring-page-item">
+                                                                        <div class="coloring-page-links">
+                                                                            <a target="_blank"
+                                                                                href="https://s3.animalia.bio/animals/coloring_pages/pdf/iGDSdDDqoIxxjLtfvbCfy0zGvD0dXZdfsoO2tlnZ.pdf">A4
+                                                                                PDF</a>
+                                                                            <a target="_blank"
+                                                                                href="https://s3.animalia.bio/animals/coloring_pages/letter_pdf/6CYJLb2FR71MX77Ob6v6TE0DSX13WQJhUgKJKU4O.pdf">Letter
+                                                                                PDF</a>
+                                                                        </div>
+                                                                        <img src="https://s3.animalia.bio/animals/coloring_pages/small/nRUc9pZXYPpptdlmTTE0TDY3ZbOoigZLqF06Diw5.webp"
+                                                                            alt="" style="opacity: 1;">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="owl-item active" style="width: auto;">
+                                                                    <div class="coloring-page-item">
+                                                                        <div class="coloring-page-links">
+                                                                            <a target="_blank"
+                                                                                href="https://s3.animalia.bio/animals/coloring_pages/pdf/MsTxoY0HDSsb5NTZGvkiL1Of6W9deN6IXYWr1KgM.pdf">A4
+                                                                                PDF</a>
+                                                                            <a target="_blank"
+                                                                                href="https://s3.animalia.bio/animals/coloring_pages/letter_pdf/JZ2G3p2e9I3xqQTI7NvyyL4RTRcoNoYDspYJGzFa.pdf">Letter
+                                                                                PDF</a>
+                                                                        </div>
+                                                                        <img src="https://s3.animalia.bio/animals/coloring_pages/small/kBepegCvE4c4HWB5phWwPdGt37E9sS353Amksc1C.webp"
+                                                                            alt="" style="opacity: 1;">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="owl-item active" style="width: auto;">
+                                                                    <div class="coloring-page-item">
+                                                                        <div class="coloring-page-links">
+                                                                            <a target="_blank"
+                                                                                href="https://s3.animalia.bio/animals/coloring_pages/pdf/iGDSdDDqoIxxjLtfvbCfy0zGvD0dXZdfsoO2tlnZ.pdf">A4
+                                                                                PDF</a>
+                                                                            <a target="_blank"
+                                                                                href="https://s3.animalia.bio/animals/coloring_pages/letter_pdf/6CYJLb2FR71MX77Ob6v6TE0DSX13WQJhUgKJKU4O.pdf">Letter
+                                                                                PDF</a>
+                                                                        </div>
+                                                                        <img src="https://s3.animalia.bio/animals/coloring_pages/small/nRUc9pZXYPpptdlmTTE0TDY3ZbOoigZLqF06Diw5.webp"
+                                                                            alt="" style="opacity: 1;">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="owl-item cloned active" style="width: auto;">
+                                                                    <div class="coloring-page-item">
+                                                                        <div class="coloring-page-links">
+                                                                            <a target="_blank"
+                                                                                href="https://s3.animalia.bio/animals/coloring_pages/pdf/MsTxoY0HDSsb5NTZGvkiL1Of6W9deN6IXYWr1KgM.pdf">A4
+                                                                                PDF</a>
+                                                                            <a target="_blank"
+                                                                                href="https://s3.animalia.bio/animals/coloring_pages/letter_pdf/JZ2G3p2e9I3xqQTI7NvyyL4RTRcoNoYDspYJGzFa.pdf">Letter
+                                                                                PDF</a>
+                                                                        </div>
+                                                                        <img src="https://s3.animalia.bio/animals/coloring_pages/small/kBepegCvE4c4HWB5phWwPdGt37E9sS353Amksc1C.webp"
+                                                                            alt="" style="opacity: 1;">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="owl-item cloned active" style="width: auto;">
+                                                                    <div class="coloring-page-item">
+                                                                        <div class="coloring-page-links">
+                                                                            <a target="_blank"
+                                                                                href="https://s3.animalia.bio/animals/coloring_pages/pdf/iGDSdDDqoIxxjLtfvbCfy0zGvD0dXZdfsoO2tlnZ.pdf">A4
+                                                                                PDF</a>
+                                                                            <a target="_blank"
+                                                                                href="https://s3.animalia.bio/animals/coloring_pages/letter_pdf/6CYJLb2FR71MX77Ob6v6TE0DSX13WQJhUgKJKU4O.pdf">Letter
+                                                                                PDF</a>
+                                                                        </div>
+                                                                        <img src="https://s3.animalia.bio/animals/coloring_pages/small/nRUc9pZXYPpptdlmTTE0TDY3ZbOoigZLqF06Diw5.webp"
+                                                                            alt="" style="opacity: 1;">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="owl-item cloned active" style="width: auto;">
+                                                                    <div class="coloring-page-item">
+                                                                        <div class="coloring-page-links">
+                                                                            <a target="_blank"
+                                                                                href="https://s3.animalia.bio/animals/coloring_pages/pdf/MsTxoY0HDSsb5NTZGvkiL1Of6W9deN6IXYWr1KgM.pdf">A4
+                                                                                PDF</a>
+                                                                            <a target="_blank"
+                                                                                href="https://s3.animalia.bio/animals/coloring_pages/letter_pdf/JZ2G3p2e9I3xqQTI7NvyyL4RTRcoNoYDspYJGzFa.pdf">Letter
+                                                                                PDF</a>
+                                                                        </div>
+                                                                        <img src="https://s3.animalia.bio/animals/coloring_pages/small/kBepegCvE4c4HWB5phWwPdGt37E9sS353Amksc1C.webp"
+                                                                            alt="" style="opacity: 1;">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="owl-nav disabled">
+                                                            <div class="owl-prev"></div>
+                                                            <div class="owl-next"></div>
+                                                        </div>
+                                                        <div class="owl-dots disabled">
+                                                            <div class="owl-dot active"><span></span></div>
+                                                            <div class="owl-dot"><span></span></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="coloring-page-container coloring-animal-mobile-hidden">
+                                                    <div class="coloring-page-item">
+                                                        <div class="coloring-page-links">
+                                                            <a target="_blank"
+                                                                href="https://s3.animalia.bio/animals/coloring_pages/pdf/MsTxoY0HDSsb5NTZGvkiL1Of6W9deN6IXYWr1KgM.pdf">A4
+                                                                PDF</a>
+                                                            <a target="_blank"
+                                                                href="https://s3.animalia.bio/animals/coloring_pages/letter_pdf/JZ2G3p2e9I3xqQTI7NvyyL4RTRcoNoYDspYJGzFa.pdf">Letter
+                                                                PDF</a>
+                                                        </div>
+                                                        <img src="https://s3.animalia.bio/animals/coloring_pages/small/kBepegCvE4c4HWB5phWwPdGt37E9sS353Amksc1C.webp"
+                                                            alt="">
+                                                    </div>
+                                                    <div class="coloring-page-item">
+                                                        <div class="coloring-page-links">
+                                                            <a target="_blank"
+                                                                href="https://s3.animalia.bio/animals/coloring_pages/pdf/iGDSdDDqoIxxjLtfvbCfy0zGvD0dXZdfsoO2tlnZ.pdf">A4
+                                                                PDF</a>
+                                                            <a target="_blank"
+                                                                href="https://s3.animalia.bio/animals/coloring_pages/letter_pdf/6CYJLb2FR71MX77Ob6v6TE0DSX13WQJhUgKJKU4O.pdf">Letter
+                                                                PDF</a>
+                                                        </div>
+                                                        <img src="https://s3.animalia.bio/animals/coloring_pages/small/nRUc9pZXYPpptdlmTTE0TDY3ZbOoigZLqF06Diw5.webp"
+                                                            alt="">
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <img src="https://s3.animalia.bio/animals/coloring_pages/small/nRUc9pZXYPpptdlmTTE0TDY3ZbOoigZLqF06Diw5.webp"
-                                                alt="" style="opacity: 1;">
-                                        </div>
-                                    </div>
-                                    <div class="owl-item cloned active" style="width: auto;">
-                                        <div class="coloring-page-item">
-                                            <div class="coloring-page-links">
-                                                <a target="_blank"
-                                                    href="https://s3.animalia.bio/animals/coloring_pages/pdf/MsTxoY0HDSsb5NTZGvkiL1Of6W9deN6IXYWr1KgM.pdf">A4
-                                                    PDF</a>
-                                                <a target="_blank"
-                                                    href="https://s3.animalia.bio/animals/coloring_pages/letter_pdf/JZ2G3p2e9I3xqQTI7NvyyL4RTRcoNoYDspYJGzFa.pdf">Letter
-                                                    PDF</a>
-                                            </div>
-                                            <img src="https://s3.animalia.bio/animals/coloring_pages/small/kBepegCvE4c4HWB5phWwPdGt37E9sS353Amksc1C.webp"
-                                                alt="" style="opacity: 1;">
-                                        </div>
-                                    </div>
-                                    <div class="owl-item cloned active" style="width: auto;">
-                                        <div class="coloring-page-item">
-                                            <div class="coloring-page-links">
-                                                <a target="_blank"
-                                                    href="https://s3.animalia.bio/animals/coloring_pages/pdf/iGDSdDDqoIxxjLtfvbCfy0zGvD0dXZdfsoO2tlnZ.pdf">A4
-                                                    PDF</a>
-                                                <a target="_blank"
-                                                    href="https://s3.animalia.bio/animals/coloring_pages/letter_pdf/6CYJLb2FR71MX77Ob6v6TE0DSX13WQJhUgKJKU4O.pdf">Letter
-                                                    PDF</a>
-                                            </div>
-                                            <img src="https://s3.animalia.bio/animals/coloring_pages/small/nRUc9pZXYPpptdlmTTE0TDY3ZbOoigZLqF06Diw5.webp"
-                                                alt="" style="opacity: 1;">
-                                        </div>
-                                    </div>
-                                    <div class="owl-item active" style="width: auto;">
-                                        <div class="coloring-page-item">
-                                            <div class="coloring-page-links">
-                                                <a target="_blank"
-                                                    href="https://s3.animalia.bio/animals/coloring_pages/pdf/MsTxoY0HDSsb5NTZGvkiL1Of6W9deN6IXYWr1KgM.pdf">A4
-                                                    PDF</a>
-                                                <a target="_blank"
-                                                    href="https://s3.animalia.bio/animals/coloring_pages/letter_pdf/JZ2G3p2e9I3xqQTI7NvyyL4RTRcoNoYDspYJGzFa.pdf">Letter
-                                                    PDF</a>
-                                            </div>
-                                            <img src="https://s3.animalia.bio/animals/coloring_pages/small/kBepegCvE4c4HWB5phWwPdGt37E9sS353Amksc1C.webp"
-                                                alt="" style="opacity: 1;">
-                                        </div>
-                                    </div>
-                                    <div class="owl-item active" style="width: auto;">
-                                        <div class="coloring-page-item">
-                                            <div class="coloring-page-links">
-                                                <a target="_blank"
-                                                    href="https://s3.animalia.bio/animals/coloring_pages/pdf/iGDSdDDqoIxxjLtfvbCfy0zGvD0dXZdfsoO2tlnZ.pdf">A4
-                                                    PDF</a>
-                                                <a target="_blank"
-                                                    href="https://s3.animalia.bio/animals/coloring_pages/letter_pdf/6CYJLb2FR71MX77Ob6v6TE0DSX13WQJhUgKJKU4O.pdf">Letter
-                                                    PDF</a>
-                                            </div>
-                                            <img src="https://s3.animalia.bio/animals/coloring_pages/small/nRUc9pZXYPpptdlmTTE0TDY3ZbOoigZLqF06Diw5.webp"
-                                                alt="" style="opacity: 1;">
-                                        </div>
-                                    </div>
-                                    <div class="owl-item cloned active" style="width: auto;">
-                                        <div class="coloring-page-item">
-                                            <div class="coloring-page-links">
-                                                <a target="_blank"
-                                                    href="https://s3.animalia.bio/animals/coloring_pages/pdf/MsTxoY0HDSsb5NTZGvkiL1Of6W9deN6IXYWr1KgM.pdf">A4
-                                                    PDF</a>
-                                                <a target="_blank"
-                                                    href="https://s3.animalia.bio/animals/coloring_pages/letter_pdf/JZ2G3p2e9I3xqQTI7NvyyL4RTRcoNoYDspYJGzFa.pdf">Letter
-                                                    PDF</a>
-                                            </div>
-                                            <img src="https://s3.animalia.bio/animals/coloring_pages/small/kBepegCvE4c4HWB5phWwPdGt37E9sS353Amksc1C.webp"
-                                                alt="" style="opacity: 1;">
-                                        </div>
-                                    </div>
-                                    <div class="owl-item cloned active" style="width: auto;">
-                                        <div class="coloring-page-item">
-                                            <div class="coloring-page-links">
-                                                <a target="_blank"
-                                                    href="https://s3.animalia.bio/animals/coloring_pages/pdf/iGDSdDDqoIxxjLtfvbCfy0zGvD0dXZdfsoO2tlnZ.pdf">A4
-                                                    PDF</a>
-                                                <a target="_blank"
-                                                    href="https://s3.animalia.bio/animals/coloring_pages/letter_pdf/6CYJLb2FR71MX77Ob6v6TE0DSX13WQJhUgKJKU4O.pdf">Letter
-                                                    PDF</a>
-                                            </div>
-                                            <img src="https://s3.animalia.bio/animals/coloring_pages/small/nRUc9pZXYPpptdlmTTE0TDY3ZbOoigZLqF06Diw5.webp"
-                                                alt="" style="opacity: 1;">
-                                        </div>
-                                    </div>
-                                    <div class="owl-item cloned active" style="width: auto;">
-                                        <div class="coloring-page-item">
-                                            <div class="coloring-page-links">
-                                                <a target="_blank"
-                                                    href="https://s3.animalia.bio/animals/coloring_pages/pdf/MsTxoY0HDSsb5NTZGvkiL1Of6W9deN6IXYWr1KgM.pdf">A4
-                                                    PDF</a>
-                                                <a target="_blank"
-                                                    href="https://s3.animalia.bio/animals/coloring_pages/letter_pdf/JZ2G3p2e9I3xqQTI7NvyyL4RTRcoNoYDspYJGzFa.pdf">Letter
-                                                    PDF</a>
-                                            </div>
-                                            <img src="https://s3.animalia.bio/animals/coloring_pages/small/kBepegCvE4c4HWB5phWwPdGt37E9sS353Amksc1C.webp"
-                                                alt="" style="opacity: 1;">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="owl-nav disabled">
-                                <div class="owl-prev"></div>
-                                <div class="owl-next"></div>
-                            </div>
-                            <div class="owl-dots disabled">
-                                <div class="owl-dot active"><span></span></div>
-                                <div class="owl-dot"><span></span></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="coloring-page-container coloring-animal-mobile-hidden">
-                        <div class="coloring-page-item">
-                            <div class="coloring-page-links">
-                                <a target="_blank"
-                                    href="https://s3.animalia.bio/animals/coloring_pages/pdf/MsTxoY0HDSsb5NTZGvkiL1Of6W9deN6IXYWr1KgM.pdf">A4
-                                    PDF</a>
-                                <a target="_blank"
-                                    href="https://s3.animalia.bio/animals/coloring_pages/letter_pdf/JZ2G3p2e9I3xqQTI7NvyyL4RTRcoNoYDspYJGzFa.pdf">Letter
-                                    PDF</a>
-                            </div>
-                            <img src="https://s3.animalia.bio/animals/coloring_pages/small/kBepegCvE4c4HWB5phWwPdGt37E9sS353Amksc1C.webp"
-                                alt="">
-                        </div>
-                        <div class="coloring-page-item">
-                            <div class="coloring-page-links">
-                                <a target="_blank"
-                                    href="https://s3.animalia.bio/animals/coloring_pages/pdf/iGDSdDDqoIxxjLtfvbCfy0zGvD0dXZdfsoO2tlnZ.pdf">A4
-                                    PDF</a>
-                                <a target="_blank"
-                                    href="https://s3.animalia.bio/animals/coloring_pages/letter_pdf/6CYJLb2FR71MX77Ob6v6TE0DSX13WQJhUgKJKU4O.pdf">Letter
-                                    PDF</a>
-                            </div>
-                            <img src="https://s3.animalia.bio/animals/coloring_pages/small/nRUc9pZXYPpptdlmTTE0TDY3ZbOoigZLqF06Diw5.webp"
-                                alt="">
-                        </div>
-                    </div>
-                </div>
-            </section> -->
+                                        </section> -->
             <!-- <section class="s-ref">
-                <a class="anchor" id="refs"></a>
-                <div class="container">
-                    <h2 class="a-h2">
+                                            <a class="anchor" id="refs"></a>
+                                            <div class="container">
+                                                <h2 class="a-h2">
 
-                        References
-                    </h2>
-                    <div class="s-ref-block">
-                        <div class="s-ref-item">
-                            <span>1. Waved Albatross Wikipedia article - <a
-                                    href="https://en.wikipedia.org/wiki/Waved_albatross"
-                                    target="_blank">https://en.wikipedia.org/wiki/Waved_albatross</a></span>
-                        </div>
-                        <div class="s-ref-item">
-                            <span>2. Waved Albatross on The IUCN Red List site - <a
-                                    href="http://www.iucnredlist.org/details/22698320/0"
-                                    target="_blank">http://www.iucnredlist.org/details/22698320/0</a></span>
-                        </div>
-                        <div class="s-ref-item">
-                            <span>3. Xeno-canto bird call - <a href="https://xeno-canto.org/332858"
-                                    target="_blank">https://xeno-canto.org/332858</a></span>
-                        </div>
-                    </div>
-                </div>
-            </section> -->
+                                                    References
+                                                </h2>
+                                                <div class="s-ref-block">
+                                                    <div class="s-ref-item">
+                                                        <span>1. Waved Albatross Wikipedia article - <a
+                                                                href="https://en.wikipedia.org/wiki/Waved_albatross"
+                                                                target="_blank">https://en.wikipedia.org/wiki/Waved_albatross</a></span>
+                                                    </div>
+                                                    <div class="s-ref-item">
+                                                        <span>2. Waved Albatross on The IUCN Red List site - <a
+                                                                href="http://www.iucnredlist.org/details/22698320/0"
+                                                                target="_blank">http://www.iucnredlist.org/details/22698320/0</a></span>
+                                                    </div>
+                                                    <div class="s-ref-item">
+                                                        <span>3. Xeno-canto bird call - <a href="https://xeno-canto.org/332858"
+                                                                target="_blank">https://xeno-canto.org/332858</a></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </section> -->
             <section class="slide-show-more">
                 <div class="slide-container swiper">
                     <div class="slide-content">
@@ -1046,26 +1057,26 @@
                         </h2>
                         <div class="card-wrapper swiper-wrapper">
                             @foreach ($dataRandom as $item)
-                            
-                            <div class="card swiper-slide">
-                                <div class="image-content">
-                                    <span class="overlay"></span>
-                                    <div class="card-image">
-                                        @if($item->images->image_name != null)
-                                        <img src="http://localhost:8000/animal_images/{{$item->images->image_name}}"
-                                            alt="" class="card-img">
-                                        @else
-                                        <img src="http://localhost:8000/error/error.jpg"
-                                            alt="" class="card-img">
-                                        @endif
+                                <div class="card swiper-slide">
+                                    <div class="image-content">
+                                        <span class="overlay"></span>
+                                        <div class="card-image">
+                                            @if ($item->images->image_name != null)
+                                                <img src="http://localhost:8000/animal_images/{{ $item->images->image_name }}"
+                                                    alt="" class="card-img">
+                                            @else
+                                                <img src="http://localhost:8000/error/error.jpg" alt=""
+                                                    class="card-img">
+                                            @endif
+                                        </div>
+                                    </div>
+                                    <div class="card-content">
+                                        <h2 class="name">{{ $item->animal_name }}</h2>
+                                        <p class="description truncate-text">{{ $item->animal_description }}</p>
+                                        <a href="{{ route('user.animal-detail', ['id' => $item->id]) }}"
+                                            class="button">Xem thêm</a>
                                     </div>
                                 </div>
-                                <div class="card-content">
-                                    <h2 class="name">{{$item->animal_name}}</h2>
-                                    <p class="description truncate-text">{{$item->animal_description}}</p>
-                                    <a href="{{route('user.animal-detail',['id' => $item->id])}}" class="button">Xem thêm</a>
-                                </div>
-                            </div>
                             @endforeach
                         </div>
                     </div>
@@ -1118,17 +1129,19 @@
         let arrCordinate = @json($newArrayCordinate);
         var mymap = L.map('mapid').setView([0, 0], 2);
 
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        maxZoom: 19,
-        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">Các Quốc Gia Có Động Vật</a> contributors'
-    }).addTo(mymap);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">Các Quốc Gia Có Động Vật</a> contributors'
+        }).addTo(mymap);
 
-    var customIcon = L.icon({
-    iconUrl: 'http://localhost:8000/maps/icon_map.png',
-    iconSize: [30, 30], // Kích thước của biểu tượng
-});
-    arrCordinate.forEach(function(coords) {
-        L.marker(coords.coords,{icon:customIcon}).addTo(mymap).bindPopup(coords.name).openPopup();
-    });
-    </script>   
+        var customIcon = L.icon({
+            iconUrl: 'http://localhost:8000/maps/icon_map.png',
+            iconSize: [30, 30], // Kích thước của biểu tượng
+        });
+        arrCordinate.forEach(function(coords) {
+            L.marker(coords.coords, {
+                icon: customIcon
+            }).addTo(mymap).bindPopup(coords.name).openPopup();
+        });
+    </script>
 @endsection

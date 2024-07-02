@@ -21,7 +21,7 @@
     <nav>
         <div class="container">
             <h2 class="logo">
-            Cộng Đồng Động Vật
+                Cộng Đồng Động Vật
             </h2>
             <div class="create">
                 {{-- <label class="btn btn-primary" for="create-post" id="createPostButton">Create</label> --}}
@@ -76,22 +76,22 @@
     </style>
     <!----------------------------- MAIN ----------------------------->
     <main>
-        
-    @if (session('success'))
-        <div id="notification" class="notification success">
-            <p id="notification-message"></p>
-            <span id="close-notification" class="close-notification"><i class="fa fa-check" aria-hidden="true"></i>
-                {{ session('success') }}</span>
-        </div>
-    @endif
 
-    @if (session('failed'))
-        <div id="notification" class="notification failed">
-            <p id="notification-message"></p>
-            <span id="close-notification" class="close-notification"><i class="fa fa-exclamation-triangle"
-                    aria-hidden="true"></i> {{ session('failed') }}</span>
-        </div>
-    @endif
+        @if (session('success'))
+            <div id="notification" class="notification success">
+                <p id="notification-message"></p>
+                <span id="close-notification" class="close-notification"><i class="fa fa-check" aria-hidden="true"></i>
+                    {{ session('success') }}</span>
+            </div>
+        @endif
+
+        @if (session('failed'))
+            <div id="notification" class="notification failed">
+                <p id="notification-message"></p>
+                <span id="close-notification" class="close-notification"><i class="fa fa-exclamation-triangle"
+                        aria-hidden="true"></i> {{ session('failed') }}</span>
+            </div>
+        @endif
         <div class="container">
             <!-- ================ LEFT ================ -->
             <div class="left">
@@ -100,9 +100,9 @@
                         <img src="{{ asset('users/social_assets/images/profile-1.jpg') }}">
                     </div>
                     <div class="handle">
-                        <h4>{{Auth::user()->name}}</h4>
+                        <h4>{{ Auth::user()->name }}</h4>
                         <p class="text-muted">
-                            {{Auth::user()->email}}
+                            {{ Auth::user()->email }}
                         </p>
                     </div>
                 </div>
@@ -178,49 +178,50 @@
                             </div>
 
                             <div class="photo">
-                                <img src="http://localhost:8000/posts/{{$post->image}}" alt="">
+                                <img src="http://localhost:8000/posts/{{ $post->image }}" alt="">
                             </div>
 
                             <div class="action-button">
                                 <div class="interaction-buttons">
-                                    <span id="likeIcon_{{$key}}">
-                                        @if($post->liked_by_user == false)
-                                            <i class="far fa-heart"></i></span>
-                                        @else
-                                            <i class="fa-heart liked fas"></i>
-                                        @endif
-                                    <span id="commentIcon_{{$key}}"><i class="uil uil-comment-dots"></i></span>
-                                    <span><i class="uil uil-share-alt"></i></span>
+                                    <span id="likeIcon_{{ $key }}">
+                                        @if ($post->liked_by_user == false)
+                                            <i class="far fa-heart"></i>
+                                    </span>
+                                @else
+                                    <i class="fa-heart liked fas"></i>
+                @endif
+                <span id="commentIcon_{{ $key }}"><i class="uil uil-comment-dots"></i></span>
+                <span><i class="uil uil-share-alt"></i></span>
 
-                                </div>
-                                <div class="bookmark">
-                                    <span><i class="uil uil-bookmark-full"></i></span>
-                                </div>
-                            </div>
-
-                            <div class="liked-by">
-                                <span><img src="{{ asset('users/social_assets/images/profile-10.jpg') }}" alt=""></span>
-                                <span><img src="{{ asset('users/social_assets/images/profile-15.jpg') }}" alt=""></span>
-                                <span><img src="{{ asset('users/social_assets/images/profile-13.jpg') }}" alt=""></span>
-                                <p>Like by <b>Ernest Aritn</b> and <b>{{$post->likes_count}} others</b></p>
-
-                            </div>
-
-                            <div class="caption">
-                                <p>
-
-                                    <b>{{$post->user->name}}</b> {{$post->title}}
-
-                                    <span class="harsh-tag">#lifestyle</span>
-                                </p>
-                            </div>
-
-                            <div class="comments text-muted">"View all {{$post->comments_count}} comments"</div>
-
-                        </div>
-                    </div>
-                @endforeach
             </div>
+            <div class="bookmark">
+                <span><i class="uil uil-bookmark-full"></i></span>
+            </div>
+        </div>
+
+        <div class="liked-by">
+            <span><img src="{{ asset('users/social_assets/images/profile-10.jpg') }}" alt=""></span>
+            <span><img src="{{ asset('users/social_assets/images/profile-15.jpg') }}" alt=""></span>
+            <span><img src="{{ asset('users/social_assets/images/profile-13.jpg') }}" alt=""></span>
+            <p>Like by <b>Ernest Aritn</b> and <b>{{ $post->likes_count }} others</b></p>
+
+        </div>
+
+        <div class="caption">
+            <p>
+
+                <b>{{ $post->user->name }}</b> {{ $post->title }}
+
+                <span class="harsh-tag">#lifestyle</span>
+            </p>
+        </div>
+
+        <div class="comments text-muted">"View all {{ $post->comments_count }} comments"</div>
+
+        </div>
+        </div>
+        @endforeach
+        </div>
     </main>
 
     <!-- =============================================== THEME CUSTOMIZATION =================================== -->
@@ -279,19 +280,20 @@
     </div>
 
     @foreach ($posts as $key => $post)
-        <div id="commentModal_{{$key}}" class="modal">
+        <div id="commentModal_{{ $key }}" class="modal">
             <div class="modal-content">
                 <div class="modal-header">
-                    <span class="close_{{$key}}">&times;</span>
+                    <span class="close_{{ $key }}">&times;</span>
                     <h2>Để lại bình luận </h2>
                 </div>
                 <div class="comments-modal">
 
                 </div>
                 <div class="comment-box">
-                    <input id="inputComment_{{$key}}" type="text" class="btn-comment" placeholder="Viết bình luận ...">
+                    <input id="inputComment_{{ $key }}" type="text" class="btn-comment"
+                        placeholder="Viết bình luận ...">
                     <br>
-                    <button id="submitComment_{{$key}}" type="button" class="btn btn-primary"
+                    <button id="submitComment_{{ $key }}" type="button" class="btn btn-primary"
                         style="margin-top: 10px">Bình Luận</button>
                 </div>
             </div>
@@ -306,7 +308,8 @@
                 <h5 class="modal-title">Thêm bài viết</h5>
             </div>
             <div class="modal-body">
-                <form action="{{route('user.create_animal_post')}}" id="addContinentForm" enctype="multipart/form-data" method="post">
+                <form action="{{ route('user.create_animal_post') }}" id="addContinentForm"
+                    enctype="multipart/form-data" method="post">
                     @csrf
                     <div class="form-group">
                         <label for="continentTitle">Tên bài viết</label>
@@ -320,11 +323,16 @@
                     </div>
                     <div class="form-group">
                         <label for="continentImage">Hình ảnh</label>
-                        <input type="file" class="form-control-file" name="image" id="continentImage" required>
+                        <input type="file" class="form-control-file" name="image" id="continentImage"
+                            onchange="previewImage(event)" required>
+                    </div>
+                    <div class="preview-container">
+                        <img id="imagePreview" src="#" alt="Preview"
+                            style="display: none; width: 500px; height: auto;" />
                     </div>
             </div>
             <div class="modal-footer">
-                <button type="submit" class="btn btn-primary" style="margin-right: 10px" >Lưu</button>
+                <button type="submit" class="btn btn-primary" style="margin-right: 10px">Lưu</button>
                 <button type="button" class="btn btn-secondary" id="closeModalButton">Đóng</button>
             </div>
             </form>
@@ -339,7 +347,7 @@
 
     <!-- jQuery, Popper.js, and Bootstrap JS -->
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
+        document.addEventListener('DOMContentLoaded', function() {
             var createPostButton = document.getElementById('createPostButton');
             var addContinentModal = document.getElementById('addContinentModal');
             var closeModal = document.getElementById('closeModal');
@@ -347,21 +355,21 @@
             var addContinentForm = document.getElementById('addContinentForm');
 
             // Mở modal khi nhấn nút "Create Post"
-            createPostButton.addEventListener('click', function () {
+            createPostButton.addEventListener('click', function() {
                 addContinentModal.style.display = 'flex';
             });
 
             // Đóng modal khi nhấn nút "X" hoặc "Đóng"
-            closeModal.addEventListener('click', function () {
+            closeModal.addEventListener('click', function() {
                 addContinentModal.style.display = 'none';
             });
 
-            closeModalButton.addEventListener('click', function () {
+            closeModalButton.addEventListener('click', function() {
                 addContinentModal.style.display = 'none';
             });
 
             // Đóng modal khi nhấn ra ngoài modal
-            window.addEventListener('click', function (event) {
+            window.addEventListener('click', function(event) {
                 if (event.target === addContinentModal) {
                     addContinentModal.style.display = 'none';
                 }
@@ -399,16 +407,18 @@
                 // Ajax request
                 var postId = element.id;
                 var liked = element.liked_by_user;
-                var url = '{{route("user.post_like_or_dislike")}}';
+                var url = '{{ route('user.post_like_or_dislike') }}';
 
                 fetch(url, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'X-CSRF-TOKEN': '{{ csrf_token() }}'
-                    },
-                    body: JSON.stringify({ post_id: postId })
-                })
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'X-CSRF-TOKEN': '{{ csrf_token() }}'
+                        },
+                        body: JSON.stringify({
+                            post_id: postId
+                        })
+                    })
                     .then(response => response.json())
                     .then(data => {
                         if (data) {
@@ -427,13 +437,13 @@
             var modal = document.getElementById("commentModal_" + index);
             var btn = document.getElementById("commentIcon_" + index);
             var span = document.getElementsByClassName("close_" + index)[0];
-            btn.onclick = function () {
+            btn.onclick = function() {
                 modal.style.display = "block";
             }
-            span.onclick = function () {
+            span.onclick = function() {
                 modal.style.display = "none";
             }
-            window.onclick = function (event) {
+            window.onclick = function(event) {
                 if (event.target == modal) {
                     modal.style.display = "none";
                 }
@@ -444,10 +454,11 @@
                 var $modalHeader = $('#commentModal_' + key + ' .modal-content .modal-header');
                 var $commentsModal = $modalHeader.siblings('.comments-modal');
                 $commentsModal.empty();
-                response.forEach(function (comment, index) {
+                response.forEach(function(comment, index) {
                     var commentHtml = '<div class="comment container">';
                     commentHtml += '<div class="c-user">';
-                    commentHtml += '<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJxA7pQkxq3NaB1gvfVi6jV25AHuY_CEjk-Q&s" alt="" class="usr-img">';
+                    commentHtml +=
+                        '<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJxA7pQkxq3NaB1gvfVi6jV25AHuY_CEjk-Q&s" alt="" class="usr-img">';
                     commentHtml += '<p class="usr-name">' + comment.name + '</p>';
                     commentHtml += '</div>';
                     commentHtml += '<p class="c-text">';
@@ -459,7 +470,7 @@
                 });
             }
 
-            $('#submitComment_' + index).on('click', function () {
+            $('#submitComment_' + index).on('click', function() {
                 var input_comment = $('#inputComment_' + index).val();
                 console.log(input_comment);
                 var post_id = element.id;
@@ -469,121 +480,136 @@
                     data: {
                         "post_id": post_id,
                         "input_comment": input_comment,
-                        "_token": "{{csrf_token()}}",
+                        "_token": "{{ csrf_token() }}",
                     },
-                    success: function (response) {
+                    success: function(response) {
                         loadComments(response);
                         $('#inputComment_' + index).val('')
                     },
-                    error: function () {
+                    error: function() {
                         alert('Failed to submit comment');
                     }
                 });
             });
 
-            $('#commentIcon_' + index).on('click', function () {
+            $('#commentIcon_' + index).on('click', function() {
                 var post_id = element.id;
                 $.ajax({
-                    url: '{{route('user.get_list_comment')}}',
+                    url: '{{ route('user.get_list_comment') }}',
                     method: 'POST',
                     data: {
                         "post_id": post_id,
-                        "_token": "{{csrf_token()}}",
+                        "_token": "{{ csrf_token() }}",
                     },
                     dataType: 'json',
-                    success: function (response) {
+                    success: function(response) {
                         console.log(response);
                         loadComments(response);
 
                     },
-                    error: function () {
+                    error: function() {
                         alert('Failed to submit comment');
                     }
                 });
             });
         });
-
     </script>
     <script>
-    // Hiển thị thông báo
-    function showNotification(message) {
-        var notification = document.querySelector('.notification');
-        notification.innerHTML = message;
-        notification.classList.add('show');
+        // Hiển thị thông báo
+        function showNotification(message) {
+            var notification = document.querySelector('.notification');
+            notification.innerHTML = message;
+            notification.classList.add('show');
 
-        // Tự động ẩn sau 5 giây
-        setTimeout(function() {
-            hideNotification();
-        }, 5000); // Ẩn sau 5 giây
-    }
-
-    // Ẩn thông báo
-    function hideNotification() {
-        var notification = document.querySelector('.notification');
-        notification.classList.remove('show');
-    }
-
-    // Hiển thị thông báo khi trang được load
-    window.onload = function() {
-        var successMessage = "{{ session('success') }}";
-        var failedMessage = "{{ session('failed') }}";
-
-        if (failedMessage) {
-            showNotification(failedMessage);
+            // Tự động ẩn sau 5 giây
+            setTimeout(function() {
+                hideNotification();
+            }, 5000); // Ẩn sau 5 giây
         }
-        if (successMessage) {
-            showNotification(successMessage);
+
+        // Ẩn thông báo
+        function hideNotification() {
+            var notification = document.querySelector('.notification');
+            notification.classList.remove('show');
         }
-    };
-</script>
-<script>
-    function loadNotifications(response) {
-                var $notificationPopup = $('.notification-popup');
-                // var $commentsModal = $modalHeader.siblings('.comments-modal');
-                // $commentsModal.empty();
-                $('.container-noti').remove();
-                response.forEach(function (noti, index) {
-                    var commentHtml = '<div class="container-noti">';
-                    commentHtml += '<div class="profile-picture">';
-                    commentHtml += '<img src="{{ asset('users/social_assets/images/profile-5.jpg') }}" alt="">';
-                    commentHtml += '</div>';
-                    commentHtml += '<div class="notification-body">';
-                    commentHtml += '<b>'+noti.user+'</b>';
-                    commentHtml += '<span>'+noti.message+'</span>';
-                    commentHtml += '<small class="text-muted">'+noti.time+'</small>';
-                    commentHtml += '</div>';
-                    commentHtml += '</div>';
-                    $notificationPopup.append(commentHtml);
-                });
+
+        // Hiển thị thông báo khi trang được load
+        window.onload = function() {
+            var successMessage = "{{ session('success') }}";
+            var failedMessage = "{{ session('failed') }}";
+
+            if (failedMessage) {
+                showNotification(failedMessage);
             }
-            
-    var notification =document.querySelector('#notification');
-    var notificationPopup =document.querySelector('.notification-popup');
-
-    console.log(notificationPopup);
-    $(notification).on('click', function () {
-        if(notificationPopup.style.display == 'none'){
-            notificationPopup.style.display = 'block';
-            $.ajax({
-                url: '{{ route('user.list_notification') }}',
-                method: 'POST',
-                data: {
-                    "_token": "{{csrf_token()}}",
-                },
-                dataType: 'json',
-                success: function (response) {
-                    console.log(response);
-                    loadNotifications(response);
-                },
-                error: function () {
-                    alert('Failed to submit comment');
-                }
+            if (successMessage) {
+                showNotification(successMessage);
+            }
+        };
+    </script>
+    <script>
+        function loadNotifications(response) {
+            var $notificationPopup = $('.notification-popup');
+            // var $commentsModal = $modalHeader.siblings('.comments-modal');
+            // $commentsModal.empty();
+            $('.container-noti').remove();
+            response.forEach(function(noti, index) {
+                var commentHtml = '<div class="container-noti">';
+                commentHtml += '<div class="profile-picture">';
+                commentHtml += '<img src="{{ asset('users/social_assets/images/profile-5.jpg') }}" alt="">';
+                commentHtml += '</div>';
+                commentHtml += '<div class="notification-body">';
+                commentHtml += '<b>' + noti.user + '</b>';
+                commentHtml += '<span>' + noti.message + '</span>';
+                commentHtml += '<small class="text-muted">' + noti.time + '</small>';
+                commentHtml += '</div>';
+                commentHtml += '</div>';
+                $notificationPopup.append(commentHtml);
             });
-        }else{
-            notificationPopup.style.display = 'none';
         }
-            });
-</script>
+
+        var notification = document.querySelector('#notification');
+        var notificationPopup = document.querySelector('.notification-popup');
+
+        console.log(notificationPopup);
+        $(notification).on('click', function() {
+            if (notificationPopup.style.display == 'none') {
+                notificationPopup.style.display = 'block';
+                $.ajax({
+                    url: '{{ route('user.list_notification') }}',
+                    method: 'POST',
+                    data: {
+                        "_token": "{{ csrf_token() }}",
+                    },
+                    dataType: 'json',
+                    success: function(response) {
+                        console.log(response);
+                        loadNotifications(response);
+                    },
+                    error: function() {
+                        alert('Failed to submit comment');
+                    }
+                });
+            } else {
+                notificationPopup.style.display = 'none';
+            }
+        });
+
+        function previewImage(event) {
+            const input = event.target;
+            const reader = new FileReader();
+
+            reader.onload = function() {
+                const imagePreview = document.getElementById('imagePreview');
+                imagePreview.src = reader.result;
+                imagePreview.style.display = 'block';
+            }
+
+            if (input.files && input.files[0]) {
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+    </script>
+
 </body>
 
 
