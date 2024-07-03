@@ -41,6 +41,20 @@ Route::get('/fillter-list-animal', function () {
     return view('user.filter-list-animal');
 })->name('user.fillter-list-animal');
 
+// Game
+Route::get('/list-game', function () {
+    return view('user.list-game');
+})->name('user.list-game');
+Route::get('/game', function () {
+    return view('user.game');
+})->name('user.game');
+Route::get('/game-over', function () {
+    return view('user.game-over');
+})->name('user.game-over');
+Route::get('/gift', function () {
+    return view('user.gift');
+})->name('user.gift');
+
 // Có 3 list blog tham khảo thử
 // list blog
 // Route::get('/list-blog', function () {
@@ -130,7 +144,7 @@ Route::prefix('animal_post')->middleware('checklogin')->group(function () {
     Route::post('/get_number_noti', [PostController::class, 'getNumberNoti'])->name('user.get_number_noti');
 });
 
-Route::prefix('admin')->middleware(['checklogin','checkrole'])->group(function () {
+Route::prefix('admin')->middleware(['checklogin', 'checkrole'])->group(function () {
     Route::get('/dashboard', [AdminController::class, 'dashBoard'])->name('admin.dashboard');
     Route::get('/list_user', [AdminController::class, 'listUser'])->name('admin.list_user');
     Route::post('/search_user', [AdminController::class, 'searchUser'])->name('admin.search_user');
