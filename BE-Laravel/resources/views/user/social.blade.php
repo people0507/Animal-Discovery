@@ -16,6 +16,28 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
 </head>
+<style>
+    .dropdown-menu {
+        position: absolute;
+        top: 50px;
+        right: 10px;
+        background-color: white;
+        border: 1px solid #ccc;
+        padding: 10px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+    }
+
+    .dropdown-menu a {
+        display: block;
+        padding: 5px 10px;
+        text-decoration: none;
+        color: black;
+    }
+
+    .dropdown-menu a:hover {
+        background-color: #f0f0f0;
+    }
+</style>
 
 <body>
     <nav>
@@ -25,55 +47,17 @@
             </h2>
             <div class="create">
                 {{-- <label class="btn btn-primary" for="create-post" id="createPostButton">Create</label> --}}
-                <div class="profile-picture">
+                <div class="profile-picture" id="profile-picture">
                     <img src="{{ asset('users/social_assets/images/profile-1.jpg') }}">
+                </div>
+                <div id="dropdown-menu" class="dropdown-menu" style="display: none;">
+                    <a href="">Cập nhật tài khoản</a>
+                    <a href="">Đăng xuất</a>
                 </div>
             </div>
         </div>
     </nav>
-    <style>
-        .notification {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            padding: 15px;
-            background-color: #4CAF50;
-            /* Màu xanh */
-            color: white;
-            z-index: 9999;
-            display: none;
-            /* Ẩn ban đầu */
-            border-radius: 5px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-        }
 
-        .notification.success {
-            background-color: #4CAF50;
-            /* Màu xanh */
-        }
-
-        .notification.failed {
-            background-color: #ff3333;
-            /* Màu đỏ */
-            color: white;
-        }
-
-
-        .notification.show {
-            display: block;
-            animation: slideInRight 0.5s ease-out forwards;
-        }
-
-        @keyframes slideInRight {
-            0% {
-                transform: translateX(100%);
-            }
-
-            100% {
-                transform: translateX(0);
-            }
-        }
-    </style>
     <!----------------------------- MAIN ----------------------------->
     <main>
 
@@ -116,17 +100,27 @@
                         <h3>Trang chủ</h3>
                     </a>
                     <a class="menu-item" id="notification">
-                        <span><i class="uil uil-bell"><small class="notification-count">{{$notifications}}</small></i>
+                        <span><i class="uil uil-bell"><small class="notification-count">{{ $notifications }}</small></i>
                         </span>
                         <h3>Thông Báo</h3>
                         <!-- ----------------------- NOTIFICATION POPUP ----------------------- -->
                         <div class="notification-popup" style="display: none;">
+                            <div class="notifications-container"></div>
+                            <div class="show-more-container" style="display: none;">
+                                <button id="show-more-button">Show more</button>
+                            </div>
                         </div>
+
                     </a>
                     <a class="menu-item" id="theme">
                         <span><i class="uil uil-palette"></i>
                         </span>
                         <h3>Giao Diện</h3>
+                    </a>
+                    <a class="menu-item" id="game" href="{{ route('user.list-game') }}" style="color: #241E38">
+                        <span><i class="fa-solid fa-gamepad"></i>
+                        </span>
+                        <h3>Trò chơi</h3>
                     </a>
 
                 </div>
@@ -550,16 +544,24 @@
         function loadNotifications(response) {
             console.log(response);
             var $notificationPopup = $('.notification-popup');
-            $('.container-noti').remove();
-            if(response.length == 0){
+            var $notificationsContainer = $notificationPopup.find('.notifications-container');
+            var $showMoreContainer = $notificationPopup.find('.show-more-container');
+
+            $notificationsContainer.empty();
+            $showMoreContainer.hide();
+
+            if (response.length === 0) {
                 var commentHtml = '<div class="container-noti">';
-                    commentHtml += '<div>';
-                    commentHtml += '<p class="text-center">Không có thông báo !!!</p>'
-                    commentHtml += '</div>';
-                    commentHtml += '</div>';
-                    $notificationPopup.append(commentHtml);
-            }else{
-                response.forEach(function(noti, index) {
+                commentHtml += '<div>';
+                commentHtml += '<p class="text-center">Không có thông báo !!!</p>';
+                commentHtml += '</div>';
+                commentHtml += '</div>';
+                $notificationsContainer.append(commentHtml);
+            } else {
+                var maxNotificationsToShow = 5;
+                var notificationsToShow = response.slice(0, maxNotificationsToShow);
+
+                notificationsToShow.forEach(function(noti) {
                     var commentHtml = '<div class="container-noti">';
                     commentHtml += '<div class="profile-picture">';
                     commentHtml += '<img src="{{ asset('users/social_assets/images/profile-5.jpg') }}" alt="">';
@@ -570,8 +572,32 @@
                     commentHtml += '<small class="text-muted">' + noti.time + '</small>';
                     commentHtml += '</div>';
                     commentHtml += '</div>';
-                    $notificationPopup.append(commentHtml);
+                    $notificationsContainer.append(commentHtml);
                 });
+
+                if (response.length > maxNotificationsToShow) {
+                    $showMoreContainer.show();
+                    $('#show-more-button').off('click').on('click', function() {
+                        var remainingNotifications = response.slice(maxNotificationsToShow);
+
+                        remainingNotifications.forEach(function(noti) {
+                            var commentHtml = '<div class="container-noti">';
+                            commentHtml += '<div class="profile-picture">';
+                            commentHtml +=
+                                '<img src="{{ asset('users/social_assets/images/profile-5.jpg') }}" alt="">';
+                            commentHtml += '</div>';
+                            commentHtml += '<div class="notification-body">';
+                            commentHtml += '<b>' + noti.user + '</b>';
+                            commentHtml += '<span>' + noti.message + '</span>';
+                            commentHtml += '<small class="text-muted">' + noti.time + '</small>';
+                            commentHtml += '</div>';
+                            commentHtml += '</div>';
+                            $notificationsContainer.append(commentHtml);
+                        });
+
+                        $showMoreContainer.hide();
+                    });
+                }
             }
         }
 
@@ -579,7 +605,7 @@
         var notificationPopup = document.querySelector('.notification-popup');
 
         $(notification).on('click', function() {
-            if (notificationPopup.style.display == 'none') {
+            if (notificationPopup.style.display == 'none' || notificationPopup.style.display == '') {
                 notificationPopup.style.display = 'block';
                 $.ajax({
                     url: '{{ route('user.list_notification') }}',
@@ -592,13 +618,14 @@
                         loadNotifications(response);
                     },
                     error: function() {
-                        alert('Failed to submit comment');
+                        alert('Failed to load notifications');
                     }
                 });
             } else {
                 notificationPopup.style.display = 'none';
             }
         });
+
 
         function previewImage(event) {
             const input = event.target;
@@ -615,13 +642,13 @@
             }
         }
 
-        function fetchNumberNoti(){
+        function fetchNumberNoti() {
             $.ajax({
-                url: '{{route('user.get_number_noti')}}',
+                url: '{{ route('user.get_number_noti') }}',
                 method: 'POST',
-                    data: {
-                        "_token": "{{ csrf_token() }}",
-                    },
+                data: {
+                    "_token": "{{ csrf_token() }}",
+                },
                 success: function(response) {
                     $('.notification-count').text(response);
                 },
@@ -632,6 +659,25 @@
         }
 
         setInterval(fetchNumberNoti, 3000);
+    </script>
+    <script>
+        document.getElementById('profile-picture').addEventListener('click', function() {
+            var dropdownMenu = document.getElementById('dropdown-menu');
+            if (dropdownMenu.style.display === 'none' || dropdownMenu.style.display === '') {
+                dropdownMenu.style.display = 'block';
+            } else {
+                dropdownMenu.style.display = 'none';
+            }
+        });
+
+        document.addEventListener('click', function(event) {
+            var profilePicture = document.getElementById('profile-picture');
+            var dropdownMenu = document.getElementById('dropdown-menu');
+
+            if (!profilePicture.contains(event.target) && !dropdownMenu.contains(event.target)) {
+                dropdownMenu.style.display = 'none';
+            }
+        });
     </script>
 
 </body>
