@@ -190,4 +190,15 @@ Route::prefix('admin')->middleware(['checklogin','checkrole'])->group(function (
     Route::post('/search_posts', [AdminController::class, 'searchPost'])->name('admin.search_posts');
     Route::delete('/delete_posts/{id}', [AdminController::class, 'deletePost'])->name('admin.delete-posts');
     Route::post('/approval_posts/{id}', [AdminController::class, 'approvalPost'])->name('admin.approval-posts');
+    // List topics
+    Route::get('/list_topic', [AdminController::class, 'listTopicsView'])->name('admin.list_topic');
+    Route::get('/view_create_topic', [AdminController::class, 'viewCreateTopic'])->name('admin.view_add_topic');
+    Route::post('/create_topic', [AdminController::class, 'createTopic'])->name('admin.create_topic');
+    Route::get('/view_edit_topic/{id}', [AdminController::class, 'viewEditTopic'])->name('admin.view_edit_topic');
+    Route::post('/update_topic/{id}', [AdminController::class, 'updateTopic'])->name('admin.update_topic');
+    //list questions
+    Route::get('/list_question/{id}', [AdminController::class, 'listQuestionsView'])->name('admin.list_question');
+    Route::post('/create_question/{id}', [AdminController::class, 'createQuestionAnswer'])->name('admin.create_question_answer');
+    Route::post('/update_question/{id}', [AdminController::class, 'updateQuestionAnswer'])->name('admin.update_question_answer');
+    Route::delete('/delete_question/{id}/{topic_id}', [AdminController::class, 'deleteQuestion'])->name('admin.delete_question');
 });

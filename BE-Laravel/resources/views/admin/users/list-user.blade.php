@@ -138,13 +138,12 @@
                                 <thead>
                                     <tr>
                                         <th>STT</th>
-                                        <th>Tên Người Dùng</th>
+                                        <th>Tên người dùng</th>
                                         <th>Email</th>
-                                        <th>Giới Tính</th>
-                                        <th>Ngày Sinh</th>
-                                        <th>Ảnh Đại Diện</th>
-                                        <th>Vai Trò</th>
-                                        <th>Thời Gian Tạo</th>
+                                        <th>Giới tính</th>
+                                        <th>Ngày sinh</th>
+                                        <th>Ảnh đại diện</th>
+                                        <th>Vai trò</th>
                                         <th>Thao Tác</th>
                                     </tr>
                                 </thead>
@@ -174,7 +173,6 @@
                                             @else
                                                 <td>User</td>
                                             @endif
-                                            <td>{{ $user->created_at }}</td>
                                             <td>
                                                 <a href="#" class="icon-action delete-action" data-toggle="modal"
                                                     data-target="#deleteConfirmationModal_{{ $user->id }}"
