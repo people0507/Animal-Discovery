@@ -55,6 +55,16 @@
                                 <span class="hide-menu"> Bài Viết </span>
                             </a>
                         </li>
+                        <li class="sidebar-item">
+                            <a href="{{ route('admin.list_topic') }}" class="sidebar-link">
+                                <span class="hide-menu">Chủ Đề Trò Chơi </span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="{{ route('admin.view_add_topic') }}" class="sidebar-link">
+                                <span class="hide-menu">Thêm Chủ Đề Trò Chơi </span>
+                            </a>
+                        </li>
                     </ul>
                 </li>
 

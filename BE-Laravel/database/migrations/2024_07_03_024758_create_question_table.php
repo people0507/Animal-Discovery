@@ -13,9 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('minigame', function (Blueprint $table) {
+        Schema::create('question', function (Blueprint $table) {
             $table->id();
-            $table->string('minigame_name');
+            $table->string('question_content');
+            $table->unsignedBigInteger('topic_id');
+            $table->foreign('topic_id')->references('id')->on('topic')->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -27,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('minigame');
+        Schema::dropIfExists('topic');
     }
 };
