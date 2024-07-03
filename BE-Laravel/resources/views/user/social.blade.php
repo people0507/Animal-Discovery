@@ -116,7 +116,7 @@
                         <h3>Trang chủ</h3>
                     </a>
                     <a class="menu-item" id="notification">
-                        <span><i class="uil uil-bell"><small class="notification-count">4</small></i>
+                        <span><i class="uil uil-bell"><small class="notification-count">{{$notifications}}</small></i>
                         </span>
                         <h3>Thông Báo</h3>
                         <!-- ----------------------- NOTIFICATION POPUP ----------------------- -->
@@ -548,29 +548,36 @@
     </script>
     <script>
         function loadNotifications(response) {
+            console.log(response);
             var $notificationPopup = $('.notification-popup');
-            // var $commentsModal = $modalHeader.siblings('.comments-modal');
-            // $commentsModal.empty();
             $('.container-noti').remove();
-            response.forEach(function(noti, index) {
+            if(response.length == 0){
                 var commentHtml = '<div class="container-noti">';
-                commentHtml += '<div class="profile-picture">';
-                commentHtml += '<img src="{{ asset('users/social_assets/images/profile-5.jpg') }}" alt="">';
-                commentHtml += '</div>';
-                commentHtml += '<div class="notification-body">';
-                commentHtml += '<b>' + noti.user + '</b>';
-                commentHtml += '<span>' + noti.message + '</span>';
-                commentHtml += '<small class="text-muted">' + noti.time + '</small>';
-                commentHtml += '</div>';
-                commentHtml += '</div>';
-                $notificationPopup.append(commentHtml);
-            });
+                    commentHtml += '<div>';
+                    commentHtml += '<p class="text-center">Không có thông báo !!!</p>'
+                    commentHtml += '</div>';
+                    commentHtml += '</div>';
+                    $notificationPopup.append(commentHtml);
+            }else{
+                response.forEach(function(noti, index) {
+                    var commentHtml = '<div class="container-noti">';
+                    commentHtml += '<div class="profile-picture">';
+                    commentHtml += '<img src="{{ asset('users/social_assets/images/profile-5.jpg') }}" alt="">';
+                    commentHtml += '</div>';
+                    commentHtml += '<div class="notification-body">';
+                    commentHtml += '<b>' + noti.user + '</b>';
+                    commentHtml += '<span>' + noti.message + '</span>';
+                    commentHtml += '<small class="text-muted">' + noti.time + '</small>';
+                    commentHtml += '</div>';
+                    commentHtml += '</div>';
+                    $notificationPopup.append(commentHtml);
+                });
+            }
         }
 
         var notification = document.querySelector('#notification');
         var notificationPopup = document.querySelector('.notification-popup');
 
-        console.log(notificationPopup);
         $(notification).on('click', function() {
             if (notificationPopup.style.display == 'none') {
                 notificationPopup.style.display = 'block';
@@ -582,7 +589,6 @@
                     },
                     dataType: 'json',
                     success: function(response) {
-                        console.log(response);
                         loadNotifications(response);
                     },
                     error: function() {
@@ -608,6 +614,24 @@
                 reader.readAsDataURL(input.files[0]);
             }
         }
+
+        function fetchNumberNoti(){
+            $.ajax({
+                url: '{{route('user.get_number_noti')}}',
+                method: 'POST',
+                    data: {
+                        "_token": "{{ csrf_token() }}",
+                    },
+                success: function(response) {
+                    $('.notification-count').text(response);
+                },
+                error: function(xhr, status, error) {
+                    console.error('Error:', error);
+                }
+            });
+        }
+
+        setInterval(fetchNumberNoti, 3000);
     </script>
 
 </body>
