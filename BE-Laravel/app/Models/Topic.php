@@ -11,4 +11,8 @@ class Topic extends Model
 
     protected $table ='topic';
 
+    public function questions()
+    {
+        return $this->hasMany(Question::class,'topic_id');
+    }
 }

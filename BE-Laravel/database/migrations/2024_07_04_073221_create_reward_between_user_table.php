@@ -13,15 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('history_game', function (Blueprint $table) {
-            $table->id();
-            $table->unsignedBigInteger('topic_id');
-            $table->foreign('topic_id')->references('id')->on('topic')->onDelete('cascade');
+        Schema::create('reward_between_user', function (Blueprint $table) {
+            $table->unsignedBigInteger('reward_id');
+            $table->foreign('reward_id')->references('id')->on('reward')->onDelete('cascade');
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->integer('true_number');
-            $table->integer('wrong_number');
-            $table->integer('score');
+            $table->integer('reward_score_lost');
             $table->timestamps();
         });
     }
@@ -33,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('history_game');
+        Schema::dropIfExists('reward_between_user');
     }
 };

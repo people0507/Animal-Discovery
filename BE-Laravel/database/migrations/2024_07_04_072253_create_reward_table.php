@@ -13,11 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('question', function (Blueprint $table) {
+        Schema::create('reward', function (Blueprint $table) {
             $table->id();
-            $table->text('question_content');
-            $table->unsignedBigInteger('topic_id');
-            $table->foreign('topic_id')->references('id')->on('topic')->onDelete('cascade');
+            $table->string('reward_name');
+            $table->integer('reward_score');
             $table->timestamps();
         });
     }
@@ -29,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('topic');
+        Schema::dropIfExists('reward');
     }
 };

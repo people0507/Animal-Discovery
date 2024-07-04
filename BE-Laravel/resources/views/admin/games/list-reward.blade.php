@@ -131,8 +131,8 @@
             </div>
         </div>
         <div class="col-5 text-right">
-                <button class="btn btn-success" onclick="location.href='{{ route('admin.view_add_topic') }}'"><b
-                        style="font-size: 20px">+</b> Thêm chủ đề</button>
+                <button class="btn btn-success" data-toggle="modal" data-target="#addRewardModal"><b
+                        style="font-size: 20px">+</b> Thêm phần thưởng</button>
             </div>
     </div>
 </div>
@@ -141,46 +141,31 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title">Danh sách các chủ đề</h4>
+                    <h4 class="card-title">Danh sách các phần thưởng</h4>
                     <div class="table-responsive">
                         <table id="multi_col_order" class="table table-striped table-bordered display "
                             style="width:100%">
                             <thead>
                                 <tr>
                                     <th style="width: 65px; text-align: center; vertical-align: middle;">Stt</th>
-                                    <th style="text-align: center; vertical-align: middle;">Tên chủ đề</th>
-                                    <th style="text-align: center; vertical-align: middle;">Ảnh chủ đề</th>
-                                    <th style="text-align: center; vertical-align: middle;">Nội dung chủ đề</th>
-                                    <th style="text-align: center; vertical-align: middle;">Số điểm mỗi câu</th>
-                                    <th style="text-align: center; vertical-align: middle;">Bộ câu hỏi</th>
+                                    <th style="text-align: center; vertical-align: middle;">Tên phần quà</th>
+                                    <th style="text-align: center; vertical-align: middle;">Điểm đổi quà</th>
                                     <th style="text-align: center; vertical-align: middle;">Thao tác</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($topics as $key => $topic)
+                                @foreach ($rewards as $key => $reward)
                                     <tr>
                                         <td>{{$key + 1}}</td>
-                                        <td>{{$topic->topic_name}}</td>
-                                        <td>
-                                            @if($topic->topic_image != null)
-                                            <img src="http://localhost:8000/topics/{{$topic->topic_image}}" alt="123" width="200">
-                                            @else
-                                            <img src="http://localhost:8000/error/error.jpg" alt="123" width="200">
-                                        
-                                            @endif
-                                        </td>
-                                        <td>{{$topic->topic_description}}</td>
-                                        <td>{{$topic->score_per_question}}</td>
-                                        <td class="box-container">
-                                                <a href="{{route('admin.list_question',['id' => $topic->id])}}">Xem thêm</a>
-                                        </td>
+                                        <td>{{$reward->reward_name}}</td>
+                                        <td>{{$reward->reward_score}}</td>
                                         <td>
                                                 <a href="#" class="icon-action delete-action" data-toggle="modal"
-                                                    data-target="#deleteConfirmationModal_{{ $topic->id }}"
+                                                    data-target="#deleteConfirmationModal_{{ $reward->id }}"
                                                     style="color: red;"><i class="icon-close"></i></a>
                                                 /
-                                                <a href="{{ route('admin.view_edit_topic', ['id' => $topic->id]) }}"
-                                                    class="icon-action" onclick="event.stopPropagation();"><i
+                                                <a href="#" data-toggle="modal" data-target="#editRewardModal_{{$reward->id}}"
+                                                    class="icon-action"><i
                                                         class="icon-settings"></i></a>
                                             </td>
                                     </tr>
@@ -193,22 +178,22 @@
         </div>
     </div>
 </div>
-@foreach ($topics as $key => $topic)
-        <div class="modal fade" id="deleteConfirmationModal_{{ $topic->id }}" tabindex="-1" role="dialog"
-            aria-labelledby="deleteConfirmationModalLabel_{{ $topic->id }}" aria-hidden="true">
+@foreach ($rewards as $key => $reward)
+        <div class="modal fade" id="deleteConfirmationModal_{{ $reward->id }}" tabindex="-1" role="dialog"
+            aria-labelledby="deleteConfirmationModalLabel_{{ $reward->id }}" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="deleteConfirmationModalLabel_{{ $topic->id }}">Xóa chủ đề</h5>
+                        <h5 class="modal-title" id="deleteConfirmationModalLabel_{{ $reward->id }}">Xóa phần thưởng</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
                     <div class="modal-body">
-                        Bạn có chắc chắn muốn xóa chủ đề này không
+                        Bạn có chắc chắn muốn xóa phần thưởng này không
                     </div>
                     <div class="modal-footer">
-                        <form action="{{ route('delete_user', ['id' => $topic->id]) }}" method="POST">
+                        <form action="{{ route('admin.delete_reward', ['id' => $reward->id]) }}" method="POST">
                             @csrf
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Hủy</button>
                             @method('DELETE')
@@ -218,7 +203,71 @@
                 </div>
             </div>
         </div>
+        <!-- modal edit -->
+        <div class="modal fade" id="editRewardModal_{{$reward->id}}" tabindex="-1" role="dialog" aria-labelledby="editRewardModalLabel_{{$reward->id}}"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content" style=" padding:20px; border-radius: 12px;">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editRewardModalLabel_{{$reward->id}}">Sửa thông tin phần thưởng</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="{{route('admin.update_reward',['id' =>$reward->id])}}" 
+                        enctype="multipart/form-data" method="post">
+                        @csrf
+                        <div class="form-group">
+                            <label for="continentTitle">Tên phần thưởng</label>
+                            <input type="text" class="form-control" id="continentTitle" name="reward_name" value="{{$reward->reward_name}}">
+                        </div>
+                        <div class="form-group">
+                            <label for="continentImage">Số điểm cần đổi thưởng</label>
+                            <input name="reward_score" type="text" class="form-control" id="continentImage" value="{{$reward->reward_score}}">
+                        </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+                    <button type="submit" class="btn btn-primary" >Lưu</button>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>  
     @endforeach
+
+    <div class="modal fade" id="addRewardModal" tabindex="-1" role="dialog" aria-labelledby="addRewardModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content" style=" padding:20px; border-radius: 12px;">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addRewardModalLabel">Thêm phần thưởng</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="{{route('admin.create_reward')}}" id="addRewardForm"
+                        enctype="multipart/form-data" method="post">
+                        @csrf
+                        <div class="form-group">
+                            <label for="continentTitle">Tên phần thưởng</label>
+                            <input type="text" class="form-control" id="continentTitle" name="reward_name">
+                        </div>
+                        <div class="form-group">
+                            <label for="continentImage">Số điểm cần đổi thưởng</label>
+                            <input name="reward_score" type="text" class="form-control" id="continentImage">
+                        </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+                    <button type="submit" class="btn btn-primary" form="addRewardForm">Lưu</button>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>    
 @endsection
 <script>
     function showMore(id) {

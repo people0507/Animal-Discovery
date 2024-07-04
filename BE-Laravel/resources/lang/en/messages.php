@@ -13,4 +13,6 @@ return [
     'approval_failed' => 'Phê duyệt thất bại !!!',
     'delete_success' => 'Xóa dữ liệu thành công !!!',
     'delete_failed' => 'Xóa dữ liệu thất bại !!!',
+    'submit_success' => 'Gửi đáp án thành công !!!',
+    'submit_failed' => 'Có lỗi xảy ra , xin lỗi bạn vì sự bất tiện này !!!',
 ];
