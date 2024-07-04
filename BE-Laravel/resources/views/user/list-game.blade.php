@@ -19,69 +19,59 @@
 </head>
 
 <body>
-    <nav>
-        <div class="container">
-            <h2 class="logo">
-                Diễn Đàn Động Vật
-            </h2>
-            <div class="create">
-                {{-- <label class="btn btn-primary" for="create-post" id="createPostButton">Create</label> --}}
-                <div class="profile-picture" id="profile-picture">
-                    <img src="{{ asset('users/social_assets/images/profile-1.jpg') }}">
-                </div>
-                <div id="dropdown-menu" class="dropdown-menu" style="display: none;">
-                    <a href="">Cập nhật tài khoản</a>
-                    <a href="">Đăng xuất</a>
-                </div>
-            </div>
-        </div>
-    </nav>
+    @include('user.includes.header-social')
+
     <main>
         <div class="games">
             <h2 class="title">
                 Danh sách chủ đề câu hỏi
             </h2>
-            
-            @foreach ($topics as $topic)
+
             <div class="full-games">
-                <div class="item-game">
-                    <div class="img-game">
-                        <img src="http://localhost:8000/topics/{{$topic->topic_image}}" alt="">
-                    </div>
-                    <div class="content-game">
-                        <div class="">
-                            <div class="row">
-                                <div class="col-sm fw-bold">
-                                    Tên chủ đề:
+                @foreach ($topics as $topic)
+                    <div class="item-game">
+                        <div class="img-game" style="height: 250px">
+                            <img src="http://localhost:8000/topics/{{ $topic->topic_image }}" class="responsive-img">
+                        </div>
+                        <div class="content-game">
+                            <div class="">
+                                <div class="row">
+                                    <div class="col-sm fw-bold">
+                                        Tên chủ đề:
+                                    </div>
+                                    <div class="col-8">
+                                        {{ $topic->topic_name }}
+                                    </div>
                                 </div>
-                                <div class="col-8">
-                                    {{$topic->topic_name}}
+                                <div class="row">
+                                    <div class="col-sm fw-bold">
+                                        Mô tả chủ đề:
+                                    </div>
+                                    <div class="title-game col-8">
+                                        {{ $topic->topic_description }} Lorem ipsum dolor sit amet consectetur
+                                        adipisicing elit. Ad itaque veritatis, modi facere iste pariatur rem ab sapiente
+                                        delectus cumque!
+                                    </div>
                                 </div>
                             </div>
-                            <div class="row">
-                            <div class="col-sm fw-bold">
-                                    Mô tả chủ đề:
-                            </div>
-                                <div class="title-game col-8">
-                                {{$topic->topic_description}}
+                            <div class="line"></div>
+                            <div class="bottom">
+                                <div class="row">
+                                    <div class="info-game col-sm-8">
+                                        Thông tin: Bộ câu hỏi có {{ $topic->questions_count }} câu hỏi, mỗi câu hỏi
+                                        người chơi sẽ nhận được {{ $topic->score_per_question }} điểm
+                                    </div>
+                                    <div class="col-sm-4 text-end">
+                                        <a class="btn-game"
+                                            href="{{ route('user.play_game', ['id' => $topic->id]) }}">Tham gia</a>
+
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="line"></div>
-                        <div class="bottom">
-                            <div class="row">
-                                <div class="info-game col-sm-8">
-                                    Thông tin: Bộ câu hỏi có {{$topic->questions_count}} câu hỏi, mỗi câu hỏi người chơi sẽ nhận được {{$topic->score_per_question}} điểm
-                                </div>
-                                <div class="col-sm-4 text-end">
-                                    <a class="btn btn-success btn-game" style="color:#fff" href="{{route('user.play_game',['id' => $topic->id])}}">Tham gia</a>
-                                </div>
-                            </div>
-                        </div>
                     </div>
-                </div>
+                @endforeach
             </div>
-            @endforeach
         </div>
     </main>
     {{--
