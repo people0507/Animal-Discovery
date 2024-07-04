@@ -17,6 +17,62 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
 </head>
 <style>
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        overflow: auto;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .modal-content {
+        background-color: #fefefe;
+        margin: 10px auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%;
+        max-width: 600px;
+        border-radius: 5px;
+        position: relative;
+    }
+
+    .close {
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        font-size: 24px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    .form-p label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+    }
+
+    .form-p input {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+
+    .form-p input[readonly] {
+        background-color: #e9ecef;
+        /* Màu nền mờ */
+        opacity: 0.7;
+        /* Độ mờ */
+        cursor: not-allowed;
+        /* Con trỏ chuột */
+    }
+
     .dropdown-menu {
         position: absolute;
         top: 50px;
@@ -51,16 +107,35 @@
                     <img src="{{ asset('users/social_assets/images/profile-1.jpg') }}">
                 </div>
                 <div id="dropdown-menu" class="dropdown-menu" style="display: none;">
-                    <a href="">Cập nhật tài khoản</a>
+                    <a id="editUser">Cập nhật tài khoản</a>
                     <a href="">Đăng xuất</a>
                 </div>
             </div>
         </div>
     </nav>
-
+    <div id="updateAccountModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Cập nhật tài khoản</h2>
+            <form id="updateAccountForm">
+                <div class="form-p">
+                    <label for="username">Tên:</label>
+                    <input type="text" id="username" name="username" value="Cuong" required>
+                </div>
+                <div class="form-p">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" value="cuong@gmail.com" readonly>
+                </div>
+                <div class="form-p">
+                    <label for="password">Mật khẩu:</label>
+                    <input type="password" id="password" name="password" value="skdjskdjksa" required>
+                </div>
+                <button type="submit" class="btn-game" style="margin-top: 20px;">Lưu thay đổi</button>
+            </form>
+        </div>
+    </div>
     <!----------------------------- MAIN ----------------------------->
     <main>
-
         @if (session('success'))
             <div id="notification" class="notification success">
                 <p id="notification-message"></p>
@@ -117,7 +192,8 @@
                         </span>
                         <h3>Giao Diện</h3>
                     </a>
-                    <a class="menu-item" id="game" href="{{ route('user.view_list_topic') }}" style="color: #241E38">
+                    <a class="menu-item" id="game" href="{{ route('user.view_list_topic') }}"
+                        style="color: #241E38">
                         <span><i class="fa-solid fa-gamepad"></i>
                         </span>
                         <h3>Trò chơi</h3>
@@ -151,10 +227,10 @@
                                         <small>Dubai, 15 MINUTED AGO</small>
                                     </div>
                                 </div>
-                                @if($post->user_id == Auth::id())
-                                <span class="edit">
-                                    <i class="uil uil-ellipsis-h"></i>
-                                </span>
+                                @if ($post->user_id == Auth::id())
+                                    <span class="edit">
+                                        <i class="uil uil-ellipsis-h"></i>
+                                    </span>
                                 @endif
                             </div>
 
@@ -163,7 +239,8 @@
                                 <div class="description" id="description-{{ $key }}">
                                     {{ Str::limit($post->content, 300) }}
                                     @if (strlen($post->content) > 300)
-                                        <span class="show-more" onclick="showMore({{ $key }})">Xem Thêm</span>
+                                        <span class="show-more" onclick="showMore({{ $key }})">Xem
+                                            Thêm</span>
                                     @endif
                                 </div>
                                 <div class="full-description" id="full-description-{{ $key }}"
@@ -382,6 +459,37 @@
             document.getElementById('full-description-' + id).style.display = 'none';
             document.getElementById('description-' + id).style.display = 'block';
         }
+
+        var modal = document.getElementById('updateAccountModal');
+
+        var updateAccountLink = document.querySelector('#editUser');
+
+        var closeBtn = document.getElementsByClassName('close')[0];
+
+        updateAccountLink.onclick = function() {
+            modal.style.display = 'block';
+        }
+
+        closeBtn.onclick = function() {
+            modal.style.display = 'none';
+        }
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        }
+
+        var updateAccountForm = document.getElementById('updateAccountForm');
+
+        updateAccountForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+            var formData = new FormData(updateAccountForm);
+            var username = formData.get('username');
+            var password = formData.get('password');
+
+            modal.style.display = 'none';
+        });
     </script>
     <script>
         let arr = @json($posts);

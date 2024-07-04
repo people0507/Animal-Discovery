@@ -18,49 +18,35 @@
 </head>
 
 <body>
-    <nav>
-        <div class="container">
-            <h2 class="logo">
-                Diễn Đàn Động Vật
-            </h2>
-            <div class="create">
-                {{-- <label class="btn btn-primary" for="create-post" id="createPostButton">Create</label> --}}
-                <div class="profile-picture" id="profile-picture">
-                    <img src="{{ asset('users/social_assets/images/profile-1.jpg') }}">
-                </div>
-                <div id="dropdown-menu" class="dropdown-menu" style="display: none;">
-                    <a href="">Cập nhật tài khoản</a>
-                    <a href="">Đăng xuất</a>
-                </div>
-            </div>
-        </div>
-    </nav>
+    @include('user.includes.header-social')
     <main>
         <div class="games">
             <div class="quizz">
-                <form id="quiz-form" action="{{route('user.check_answer')}}" method="post">
+                <h2 style="text-align: center">Hãy trả lời các câu hỏi sau:</h2>
+                <form id="quiz-form" action="{{ route('user.check_answer') }}" method="post">
                     @csrf
-                    <input hidden type="text" name="topic_id" id="" value="{{$id}}">
+                    <input hidden type="text" name="topic_id" id="" value="{{ $id }}">
                     @foreach ($questions as $key => $question)
-                    
-                    <div class="title-quizz">
-                        <span>(Câu{{$key+1}})</span>{{$question->question_content}}
-                    </div>
-                    @foreach ($question->answers as $answer)
-                    <div>
-                        <span>
-                            <input type="radio" name="questions[{{ $key }}]" value="{{ $answer->id }}" required>
-                        </span>
-                        <span>
-                            {{$answer->answer_content}}
-                        </span>
-                    </div>
-                    @endforeach
+                        <div class="title-quizz">
+                            <span>(Câu {{ $key + 1 }})</span>{{ $question->question_content }} Lorem ipsum dolor
+                            sit amet consectetur adipisicing elit. Quasi placeat itaque, ut labore a odio aut nemo ipsa
+                            ab non?Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni at reprehenderit nulla
+                            vitae minima porro possimus facere aliquid deserunt earum!
+                        </div>
+                        @foreach ($question->answers as $answer)
+                            <div>
+                                <span>
+                                    <input type="radio" name="questions[{{ $key }}]"
+                                        value="{{ $answer->id }}" required>
+                                </span>
+                                <span>
+                                    {{ $answer->answer_content }}
+                                </span>
+                            </div>
+                        @endforeach
                     @endforeach
                     <button type="submit" id="submit-quiz" class="btn-submit">Gửi đáp án</button>
                 </form>
-
-
             </div>
 
 
