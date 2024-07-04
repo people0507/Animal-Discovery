@@ -17,40 +17,28 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
 </head>
+
 <body>
-    <nav>
-        <div class="container">
-            <h2 class="logo">
-                Diễn Đàn Động Vật
-            </h2>
-            <div class="create">
-                {{-- <label class="btn btn-primary" for="create-post" id="createPostButton">Create</label> --}}
-                <div class="profile-picture" id="profile-picture">
-                    <img src="{{ asset('users/social_assets/images/profile-1.jpg') }}">
-                </div>
-                <div id="dropdown-menu" class="dropdown-menu" style="display: none;">
-                    <a href="">Cập nhật tài khoản</a>
-                    <a href="">Đăng xuất</a>
-                </div>
-            </div>
-        </div>
-    </nav>
+    @include('user.includes.header-social')
+
     <main>
         <div class="games">
 
-            <div class="game-over">
+            <div class="game-over mb-5">
                 <h1>Chúc mừng bạn đã hoàn thành trò chơi !!!</h1>
 
                 <div class="row mt-5 mb-5">
 
-                <div style="width:40%;height:40%;" class="col">
-                        <canvas id="myPieChart" width="200" height="200"></canvas>
-                </div>
-                <div class="results col" style="display:flex;align-items:center;justify-content:center;flex-direction:column">
-                    <p class="fw-bold">Số câu đúng: <span id="correct-answers">{{$trueAns}}</span></p>
-                    <p class="fw-bold">Số câu sai: <span id="wrong-answers">{{$wrongAns}}</span></p>
-                    <p class="fw-bold">Số điểm bạn nhận được : <span id="wrong-answers">{{$sumScore}}</span></p>
-                </div>
+                    <div style="width:40%;height:40%;" class="col">
+                        <canvas id="myPieChart"></canvas>
+                    </div>
+                    <div class="results col"
+                        style="display:flex;align-items:center;justify-content:center;flex-direction:column">
+                        <p class="fw-bold">Số câu đúng: <span id="correct-answers">{{ $trueAns }}</span></p>
+                        <p class="fw-bold">Số câu sai: <span id="wrong-answers">{{ $wrongAns }}</span></p>
+                        <p class="fw-bold">Số điểm bạn nhận được : <span id="wrong-answers">{{ $sumScore }}</span>
+                        </p>
+                    </div>
                 </div>
 
 
@@ -59,10 +47,10 @@
                         <button class="button-74" role="button"><i class="fa-solid fa-gift"></i> Đổi quà</button>
                     </a>
 
-                    <a href="{{route('user.view_list_topic')}}">
-                       <button class="button-74" style="background:#0056b3; color: #Fff; "><i class="fa fa-arrow-left"
-                               aria-hidden="true"></i> Quay trở lại</button>
-                   </a>
+                    <a href="{{ route('user.view_list_topic') }}">
+                        <button class="button-74" style="background:#0056b3; color: #Fff; "><i class="fa fa-arrow-left"
+                                aria-hidden="true"></i> Quay trở lại</button>
+                    </a>
                 </div>
             </div>
         </div>
@@ -77,41 +65,46 @@
         let wrongAns = @json($wrongAns);
 
 
-var ctx = document.getElementById('myPieChart').getContext('2d');
+        var ctx = document.getElementById('myPieChart').getContext('2d');
 
 
-var myPieChart = new Chart(ctx, {
-    type: 'pie', 
-    data: {
-        labels: ['Đúng', 'Sai'],  
-        datasets: [{
-            label: 'Số lượng',
-            data: [trueAns, wrongAns],  
-            backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-            ],
-            borderColor: [
-                'rgba(255, 99, 132, 1)',
-                'rgba(54, 162, 235, 1)',
-            ],
-            borderWidth: 1
-        }]
-    },
-    options: {
-        responsive: true,
-        plugins: {
-            legend: {
-                position: 'top',
+        var myPieChart = new Chart(ctx, {
+            type: 'pie',
+            data: {
+                labels: ['Đúng', 'Sai'],
+                datasets: [{
+                    label: 'Số lượng',
+                    data: [trueAns, wrongAns],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                    ],
+                    borderWidth: 1
+                }]
             },
-            title: {
-                display: true,
-                text: 'Biểu đồ đáp án'
-            }
-        }
-    },
-});
-</script>
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    },
+                    title: {
+                        display: true,
+                        text: 'Biểu đồ đáp án'
+                    }
+                },
+                maintainAspectRatio: false,
+                onResize: function(chart, size) {
+                    chart.canvas.parentNode.style.width = '250px';
+                    chart.canvas.parentNode.style.height = '250px';
+                }
+            },
+        });
+    </script>
 </body>
 
 

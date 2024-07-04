@@ -18,29 +18,14 @@
 </head>
 
 <body>
-    <nav>
-        <div class="container">
-            <h2 class="logo">
-                Diễn Đàn Động Vật
-            </h2>
-            <div class="create">
-                {{-- <label class="btn btn-primary" for="create-post" id="createPostButton">Create</label> --}}
-                <div class="profile-picture" id="profile-picture">
-                    <img src="{{ asset('users/social_assets/images/profile-1.jpg') }}">
-                </div>
-                <div id="dropdown-menu" class="dropdown-menu" style="display: none;">
-                    <a href="">Cập nhật tài khoản</a>
-                    <a href="">Đăng xuất</a>
-                </div>
-            </div>
-        </div>
-    </nav>
+    @include('user.includes.header-social')
+
     <main>
         <div class="games">
             <h1>Đổi quà</h1>
 
             <div class="points">
-                <p>Số điểm hiện tại: <span id="point-counter">{{Auth::user()->reward_score}}</span></p>
+                <p>Số điểm hiện tại: <span id="point-counter">{{ Auth::user()->reward_score }}</span></p>
             </div>
 
             <div class="gifts">

@@ -54,6 +54,14 @@ Route::get('/fillter-list-animal', function () {
 // Route::get('/gift', function () {
 //     return view('user.gift');
 // })->name('user.gift');
+Route::get('/history-game', function () {
+    return view('user.history-game');
+})->name('user.history-game');
+Route::get('/history-gift', function () {
+    return view('user.history-gift');
+})->name('user.history-gift');
+
+
 
 // Có 3 list blog tham khảo thử
 // list blog
