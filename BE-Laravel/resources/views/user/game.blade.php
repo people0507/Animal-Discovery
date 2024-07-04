@@ -44,7 +44,7 @@
                     @foreach ($questions as $key => $question)
                     
                     <div class="title-quizz">
-                        {{$question->question_content}}
+                        <span>(Câu{{$key+1}})</span>{{$question->question_content}}
                     </div>
                     @foreach ($question->answers as $answer)
                     <div>
