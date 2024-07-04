@@ -16,12 +16,12 @@
                     <ul aria-expanded="false" class="collapse first-level base-level-line">
                         <li class="sidebar-item">
                             <a href="{{ route('list_animal') }}" class="sidebar-link">
-                                <span class="hide-menu"> Danh Sách Động Vật </span>
+                                <span class="hide-menu"> Danh sách động vật </span>
                             </a>
                         </li>
                         <li class="sidebar-item">
                             <a href="{{ route('admin.add-animal') }}" class="sidebar-link">
-                                <span class="hide-menu"> Thêm Động Vật</span>
+                                <span class="hide-menu"> Thêm động vật</span>
                             </a>
                         </li>
                     </ul>
@@ -34,12 +34,12 @@
                     <ul aria-expanded="false" class="collapse first-level base-level-line">
                         <li class="sidebar-item">
                             <a href="{{ route('admin.list_user') }}" class="sidebar-link">
-                                <span class="hide-menu"> Danh Sách Người Dùng</span>
+                                <span class="hide-menu"> Danh sách người dùng</span>
                             </a>
                         </li>
                         <li class="sidebar-item">
                             <a href="{{ route('admin.view_add_user') }}" class="sidebar-link">
-                                <span class="hide-menu"> Thêm Người Dùng </span>
+                                <span class="hide-menu"> Thêm người dùng </span>
                             </a>
                         </li>
                     </ul>
@@ -52,17 +52,22 @@
                     <ul aria-expanded="false" class="collapse first-level base-level-line">
                         <li class="sidebar-item">
                             <a href="{{ route('admin.list_posts') }}" class="sidebar-link">
-                                <span class="hide-menu"> Bài Viết </span>
+                                <span class="hide-menu"> Bài viết diễn đàn </span>
                             </a>
                         </li>
                         <li class="sidebar-item">
                             <a href="{{ route('admin.list_topic') }}" class="sidebar-link">
-                                <span class="hide-menu">Chủ Đề Trò Chơi </span>
+                                <span class="hide-menu">Chủ đề câu hỏi</span>
                             </a>
                         </li>
                         <li class="sidebar-item">
-                            <a href="{{ route('admin.view_add_topic') }}" class="sidebar-link">
-                                <span class="hide-menu">Thêm Chủ Đề Trò Chơi </span>
+                            <a href="{{ route('admin.list_reward') }}" class="sidebar-link">
+                                <span class="hide-menu">Phần thưởng </span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="{{ route('admin.list_reward') }}" class="sidebar-link">
+                                <span class="hide-menu">Lịch sử đổi thưởng </span>
                             </a>
                         </li>
                     </ul>

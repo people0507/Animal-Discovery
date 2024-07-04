@@ -21,6 +21,7 @@ return new class extends Migration
             $table->boolean('gender')->nullable(); 
             $table->date('birthdate')->nullable();
             $table->string('avatar')->nullable();
+            $table->integer('reward_score')->nullable();
             $table->unsignedBigInteger('role_id');
             $table->foreign('role_id')->references('id')->on('role')->onDelete('cascade');
             $table->rememberToken();

@@ -11,6 +11,7 @@ use App\Models\ConservationStatus;
 use App\Models\DietType;
 use App\Models\Nation;
 use App\Models\Question;
+use App\Models\Reward;
 use App\Models\Topic;
 use Illuminate\Http\Request;
 use App\Models\User;
@@ -802,34 +803,54 @@ class AdminController extends Controller
             return redirect()->back()->with('failed', $message);
         } 
     }
-
-    public function createAnwser($id,Request $request){
-        MessageContent::loadMessages();
-        $data = $request->all();
-        $data['answer_status'] = (int)$data['answer_status'];
-        try {
-            foreach($data['answer_content'] as $key => $answer) {
-                $answers = new Answer();
-                $answers->answer_content = $answer;
-                if($key == $data['answer_status']){
-                    $answers->answer_status = 1;
-                }else{
-                    $answers->answer_status = 0;
-                }
-                $answers->question_id = $id;
-                $answers->save();
-            }
-
-        $message = MessageContent::getMessage('create_success');
-            return redirect()->route('admin.list_question',['id' => $data['topic_id']])->with('success', $message);
-        } catch (\Exception $e) {
-        $message = MessageContent::getMessage('create_failed');
-            return back()->with('failed', $message);
-        }
+    public function listRewardsView(){
+        $rewards = Reward::all();
+        return view('admin.games.list-reward',compact('rewards'));
     }
 
-    public function viewCreateAnswer($id,$topic_id){
-        $mode = 'add';
-        return view('admin.games.add-answer', compact('mode','id','topic_id'));
+    public function createReward(Request $request){
+        $data = $request->all();
+        try {
+            MessageContent::loadMessages();
+            $reward = new Reward();
+            $reward->reward_name = $data['reward_name'];
+            $reward->reward_score = (int)$data['reward_score'];
+            $reward->save();
+            $message = MessageContent::getMessage('create_success');
+            return redirect()->route('admin.list_reward')->with('success', $message);
+        } catch (\Exception $e) {
+            $message = MessageContent::getMessage('create_failed');
+            return redirect()->back()->with('failed', $message);
+        } 
+
+    }
+
+    public function updateReward($id,Request $request){
+        $data = $request->all();
+        try {
+            MessageContent::loadMessages();
+            $reward = Reward::where('id',$id)->first();
+            $reward->reward_name = $data['reward_name'];
+            $reward->reward_score = (int)$data['reward_score'];
+            $reward->save();
+            $message = MessageContent::getMessage('update_success');
+            return redirect()->route('admin.list_reward')->with('success', $message);
+        } catch (\Exception $e) {
+            $message = MessageContent::getMessage('update_failed');
+            return redirect()->back()->with('failed', $message);
+        } 
+
+    }
+
+    public function deleteReward($id){
+        try {
+            MessageContent::loadMessages();
+            Reward::destroy($id);
+            $message = MessageContent::getMessage('delete_success');
+            return redirect()->route('admin.list_reward')->with('success', $message);
+        } catch (\Exception $e) {
+            $message = MessageContent::getMessage('delete_success');
+            return redirect()->back()->with('failed', $message);
+        } 
     }
 }
