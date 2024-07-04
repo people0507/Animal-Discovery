@@ -126,7 +126,7 @@
                 </div>
                 <!-- ======================= END OF SIDEBAR ======================= -->
                 <label for="create-post" class="btn btn-primary" id="createPostButton">
-                    Create Post
+                    Tạo bài viết
                 </label>
             </div>
             <!-- ================ END OF LEFT ================ -->
@@ -151,9 +151,11 @@
                                         <small>Dubai, 15 MINUTED AGO</small>
                                     </div>
                                 </div>
+                                @if($post->user_id == Auth::id())
                                 <span class="edit">
                                     <i class="uil uil-ellipsis-h"></i>
                                 </span>
+                                @endif
                             </div>
 
                             <div class="content" style="margin:5px 0px">
