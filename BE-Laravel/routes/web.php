@@ -42,18 +42,18 @@ Route::get('/fillter-list-animal', function () {
 })->name('user.fillter-list-animal');
 
 // Game
-Route::get('/list-game', function () {
-    return view('user.list-game');
-})->name('user.list-game');
-Route::get('/game', function () {
-    return view('user.game');
-})->name('user.game');
-Route::get('/game-over', function () {
-    return view('user.game-over');
-})->name('user.game-over');
-Route::get('/gift', function () {
-    return view('user.gift');
-})->name('user.gift');
+// Route::get('/list-game', function () {
+//     return view('user.list-game');
+// })->name('user.list-game');
+// Route::get('/game', function () {
+//     return view('user.game');
+// })->name('user.game');
+// Route::get('/game-over', function () {
+//     return view('user.game-over');
+// })->name('user.game-over');
+// Route::get('/gift', function () {
+//     return view('user.gift');
+// })->name('user.gift');
 
 // Có 3 list blog tham khảo thử
 // list blog
@@ -142,6 +142,10 @@ Route::prefix('animal_post')->middleware('checklogin')->group(function () {
     Route::post('/post_like_or_dislike', [PostController::class, 'likeOrDislike'])->name('user.post_like_or_dislike');
     Route::post('/list_notification', [PostController::class, 'listNotification'])->name('user.list_notification');
     Route::post('/get_number_noti', [PostController::class, 'getNumberNoti'])->name('user.get_number_noti');
+    Route::get('/view_list_topic', [PostController::class, 'viewListTopic'])->name('user.view_list_topic');
+    Route::get('/play_game/{id}', [PostController::class, 'playGame'])->name('user.play_game');
+    Route::post('/check_answer', [PostController::class, 'checkAnswer'])->name('user.check_answer');
+    Route::get('/view_get_reward', [PostController::class, 'viewGetReward'])->name('user.view_get_reward');
 });
 
 Route::prefix('admin')->middleware(['checklogin', 'checkrole'])->group(function () {
@@ -204,4 +208,20 @@ Route::prefix('admin')->middleware(['checklogin', 'checkrole'])->group(function 
     Route::post('/search_posts', [AdminController::class, 'searchPost'])->name('admin.search_posts');
     Route::delete('/delete_posts/{id}', [AdminController::class, 'deletePost'])->name('admin.delete-posts');
     Route::post('/approval_posts/{id}', [AdminController::class, 'approvalPost'])->name('admin.approval-posts');
+    // List topics
+    Route::get('/list_topic', [AdminController::class, 'listTopicsView'])->name('admin.list_topic');
+    Route::get('/view_create_topic', [AdminController::class, 'viewCreateTopic'])->name('admin.view_add_topic');
+    Route::post('/create_topic', [AdminController::class, 'createTopic'])->name('admin.create_topic');
+    Route::get('/view_edit_topic/{id}', [AdminController::class, 'viewEditTopic'])->name('admin.view_edit_topic');
+    Route::post('/update_topic/{id}', [AdminController::class, 'updateTopic'])->name('admin.update_topic');
+    //list questions
+    Route::get('/list_question/{id}', [AdminController::class, 'listQuestionsView'])->name('admin.list_question');
+    Route::post('/create_question/{id}', [AdminController::class, 'createQuestionAnswer'])->name('admin.create_question_answer');
+    Route::post('/update_question/{id}', [AdminController::class, 'updateQuestionAnswer'])->name('admin.update_question_answer');
+    Route::delete('/delete_question/{id}/{topic_id}', [AdminController::class, 'deleteQuestion'])->name('admin.delete_question');
+    //list rewards
+    Route::get('/list_reward', [AdminController::class, 'listRewardsView'])->name('admin.list_reward');
+    Route::post('/create_reward', [AdminController::class, 'createReward'])->name('admin.create_reward');
+    Route::post('/update_reward/{id}', [AdminController::class, 'updateReward'])->name('admin.update_reward');
+    Route::delete('/delete_reward/{id}', [AdminController::class, 'deleteReward'])->name('admin.delete_reward');
 });

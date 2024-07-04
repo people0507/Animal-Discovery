@@ -4,11 +4,15 @@ namespace App\Http\Controllers;
 
 use App\Http\MessageContent;
 use App\Models\AnimalDetail;
+use App\Models\Answer;
 use App\Models\Biome;
 use App\Models\Climate;
 use App\Models\ConservationStatus;
 use App\Models\DietType;
 use App\Models\Nation;
+use App\Models\Question;
+use App\Models\Reward;
+use App\Models\Topic;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Role;
@@ -639,5 +643,214 @@ class AdminController extends Controller
             $message = MessageContent::getMessage('approval_failed');
             return redirect()->back()->with('failed', $message);
         }
+    }
+
+    public function listTopicsView(){
+        $topics = Topic::all();
+        return view('admin.games.list-topic',compact('topics'));
+    }
+
+    public function viewCreateTopic(){
+        $mode = 'add';
+        return view('admin.games.add-topic', compact('mode'));
+    }
+
+    public function createTopic(Request $request){
+        MessageContent::loadMessages();
+        $data = $request->all();
+        try {
+        if (isset($data['topic_image'])) {
+            $uniqueFileName = Str::uuid()->toString() . '.' . $data['topic_image']->extension();
+            $data['topic_image']->move(public_path('topics'), $uniqueFileName);
+        }
+        $topic = new Topic();
+        $topic->topic_name = $data['topic_name'];
+        if (isset($uniqueFileName) && $uniqueFileName != '') {
+            $topic->topic_image = $uniqueFileName;
+        }
+        $topic->topic_description = $data['topic_description'];
+        $topic->score_per_question = (int)$data['score_per_question'];
+        $topic->save();
+        $message = MessageContent::getMessage('create_success');
+            return redirect()->route('admin.list_topic')->with('success', $message);
+        } catch (\Exception $e) {
+        $message = MessageContent::getMessage('create_failed');
+            return back()->with('failed', $message);
+        }
+    }
+
+
+    public function viewEditTopic($id){
+        $mode = 'edit';
+        $topic = Topic::where('id',$id)->first();
+        return view('admin.games.add-topic', compact('mode', 'topic'));
+    }
+
+    public function updateTopic($id, Request $request)
+    {
+        MessageContent::loadMessages();
+        $data = $request->all();
+        try {
+        if (isset($data['topic_image'])) {
+            $uniqueFileName = Str::uuid()->toString() . '.' . $data['topic_image']->extension();
+            $data['topic_image']->move(public_path('topics'), $uniqueFileName);
+        }
+        $topic = Topic::where('id',$id)->first();
+        $topic->topic_name = $data['topic_name'];
+        if (isset($uniqueFileName) && $uniqueFileName != '') {
+            $topic->topic_image = $uniqueFileName;
+        }
+        $topic->topic_description = $data['topic_description'];
+        $topic->score_per_question = (int)$data['score_per_question'];
+        $topic->save();
+
+        $message = MessageContent::getMessage('update_success');
+        return redirect()->route('admin.list_topic')->with('success', $message);
+        } catch (\Exception $e) {
+            $message = MessageContent::getMessage('update_failed');
+            return redirect()->back()->with('failed', $message);
+        }
+    }
+
+    public function deleteTopic($id)
+    {
+        try {
+        MessageContent::loadMessages();
+        Topic::destroy($id);
+        $message = MessageContent::getMessage('delete_success');
+        return redirect()->route('admin.list_topic')->with('success', $message);
+    } catch (\Exception $e) {
+        $message = MessageContent::getMessage('delete_success');
+        return redirect()->back()->with('failed', $message);
+    }      
+    }
+
+    public function listQuestionsView($id){
+        $questions = Question::with('answers')->where('topic_id', $id)->get();
+        return view('admin.games.list-question',compact('questions','id'));
+    }
+
+    public function createQuestionAnswer($id,Request $request){
+        MessageContent::loadMessages();
+        $data = $request->all();
+        try {
+        $question = new Question();
+        $question->question_content = $data['question_content'];
+        $question->topic_id = $id;
+        $question->save();
+
+        $data = $request->all();
+        $data['answer_status'] = (int)$data['answer_status'];
+            foreach($data['answer_content'] as $key => $answer) {
+                $answers = new Answer();
+                $answers->answer_content = $answer;
+                if($key == $data['answer_status']){
+                    $answers->answer_status = 1;
+                }else{
+                    $answers->answer_status = 0;
+                }
+                $answers->question_id = $question->id;
+                $answers->save();
+        }
+        $message = MessageContent::getMessage('create_success');
+            return redirect()->route('admin.list_question',['id' => $id])->with('success', $message);
+        } catch (\Exception $e) {
+        $message = MessageContent::getMessage('create_failed');
+            return back()->with('failed', $message);
+        }
+    }
+
+    public function updateQuestionAnswer($id,Request $request){
+        MessageContent::loadMessages();
+        $data = $request->all();
+
+        try {
+        $question = Question::where('id',$id)->first();
+        $question->question_content = $data['question_content'];
+        $question->save();
+        
+        $length = count($data['answer_content']);
+        $length1 = count($data['hidden_id']);
+        $sum_length = $length + $length1%2;
+        $data['answer_status'] = (int)$data['answer_status'];
+
+        for ($i = 0; $i < $sum_length; $i++) {
+            $answer = Answer::where('id',$data['hidden_id'][$i])->first();
+            $answer->answer_content = $data['answer_content'][$i];
+            if($i == $data['answer_status']){
+                $answer->answer_status = 1 ;
+            }else{
+                $answer->answer_status = 0 ;
+            }
+            $answer->save();
+        }
+
+        $message = MessageContent::getMessage('update_success');
+            return redirect()->route('admin.list_question',['id' => $data['topic_id']])->with('success', $message);
+        } catch (\Exception $e) {
+        $message = MessageContent::getMessage('update_failed');
+            return back()->with('failed', $message);
+        }
+    }
+    public function deleteQuestion($id,$topic_id){
+        try {
+            MessageContent::loadMessages();
+            Question::destroy($id);
+            $message = MessageContent::getMessage('delete_success');
+            return redirect()->route('admin.list_question',['id' => $topic_id])->with('success', $message);
+        } catch (\Exception $e) {
+            $message = MessageContent::getMessage('delete_success');
+            return redirect()->back()->with('failed', $message);
+        } 
+    }
+    public function listRewardsView(){
+        $rewards = Reward::all();
+        return view('admin.games.list-reward',compact('rewards'));
+    }
+
+    public function createReward(Request $request){
+        $data = $request->all();
+        try {
+            MessageContent::loadMessages();
+            $reward = new Reward();
+            $reward->reward_name = $data['reward_name'];
+            $reward->reward_score = (int)$data['reward_score'];
+            $reward->save();
+            $message = MessageContent::getMessage('create_success');
+            return redirect()->route('admin.list_reward')->with('success', $message);
+        } catch (\Exception $e) {
+            $message = MessageContent::getMessage('create_failed');
+            return redirect()->back()->with('failed', $message);
+        } 
+
+    }
+
+    public function updateReward($id,Request $request){
+        $data = $request->all();
+        try {
+            MessageContent::loadMessages();
+            $reward = Reward::where('id',$id)->first();
+            $reward->reward_name = $data['reward_name'];
+            $reward->reward_score = (int)$data['reward_score'];
+            $reward->save();
+            $message = MessageContent::getMessage('update_success');
+            return redirect()->route('admin.list_reward')->with('success', $message);
+        } catch (\Exception $e) {
+            $message = MessageContent::getMessage('update_failed');
+            return redirect()->back()->with('failed', $message);
+        } 
+
+    }
+
+    public function deleteReward($id){
+        try {
+            MessageContent::loadMessages();
+            Reward::destroy($id);
+            $message = MessageContent::getMessage('delete_success');
+            return redirect()->route('admin.list_reward')->with('success', $message);
+        } catch (\Exception $e) {
+            $message = MessageContent::getMessage('delete_success');
+            return redirect()->back()->with('failed', $message);
+        } 
     }
 }

@@ -2,6 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\HistoryGame;
+use App\Models\Question;
+use App\Models\Topic;
+use App\Models\User;
+use Exception;
 use Illuminate\Http\Request;
 use App\Models\Post;
 use App\Models\Comment;
@@ -186,5 +191,83 @@ class PostController extends Controller
         return response()->json($notifications);
 
     }
+
+    public function viewListTopic(){
+        $topics = Topic::with('questions')->withCount('questions')->get();
+        return view('user.list-game',compact('topics'));
+    }
     
+    public function playGame($id){
+        $questions = Question::with(['answers' => function ($query) {
+            $query->inRandomOrder();
+        }])->where('topic_id',$id)->get();
+        return view('user.game',compact('questions','id'));
+    }
+
+    public function checkAnswer(Request $request){
+        MessageContent::loadMessages();
+        DB::beginTransaction();
+        try{
+        $data = $request->all();
+        $topic = Topic::where('id',$data['topic_id'])->first();
+        $score = $topic->score_per_question;
+        $score = (int)$score;
+
+        $questions = $topic->questions;
+        $arr = array();
+        foreach ($questions as $question) {
+            $answers = $question->answers()->where('answer_status',1)->first(); 
+            array_push($arr,$answers->id);
+        }
+
+        $data['questions'] = array_map('intval',$data['questions']);
+        $length = count($arr);
+        $length1 = count($data['questions']);
+        $sumArrLength = $length + $length1 % 2;
+
+        $trueAns = 0;
+        $wrongAns = 0;
+        $sumScore = 0;
+        for ($i = 0; $i < $sumArrLength; $i++) {
+            if( array_key_exists($i, $data['questions']) && array_key_exists($i, $arr)){
+                if ($arr[$i] == $data['questions'][$i]) {
+                    $trueAns++;
+                    $sumScore += $score;
+                }else{
+                    $wrongAns++;
+                }
+            }
+        }
+
+        $history_game = new HistoryGame();
+        $history_game->topic_id = $data['topic_id'];
+        $history_game->user_id = Auth::id();
+        $history_game->true_number = $trueAns;
+        $history_game->wrong_number = $wrongAns;
+        $history_game->score = $sumScore;
+        $history_game->save();
+
+        $user = User::where('id',Auth::id())->first();
+        if($user->reward_score == null){
+            $user->reward_score = $sumScore;
+        }else{
+            $oldRewardScore = $user->reward_score;
+            $user->reward_score = $oldRewardScore + $sumScore;
+        }
+        $user->save();
+
+        DB::commit();
+        $message = MessageContent::getMessage('submit_success');
+        return view('user.game-over',compact('trueAns', 'wrongAns', 'sumScore'))->with('success',$message);
+        }catch(Exception $e){
+        DB::rollBack();
+        $message = MessageContent::getMessage('submit_failed');
+        return redirect()->route('admin.list_question')->with('failed',$message);
+        }
+
+    }
+
+    public function viewGetReward(){
+        return view('user.gift');
+    }
 }

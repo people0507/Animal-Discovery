@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cộng Đồng Động Vật</title>
+    <title>Diễn Đàn Động Vật</title>
     <!-- STYLESHEET -->
     <link rel="stylesheet" href="{{ asset('users/social_assets/css/style.css') }}">
     <!-- ICONCOUT CDN -->
@@ -43,7 +43,7 @@
     <nav>
         <div class="container">
             <h2 class="logo">
-                Cộng Đồng Động Vật
+                Diễn Đàn Động Vật
             </h2>
             <div class="create">
                 {{-- <label class="btn btn-primary" for="create-post" id="createPostButton">Create</label> --}}
@@ -117,7 +117,7 @@
                         </span>
                         <h3>Giao Diện</h3>
                     </a>
-                    <a class="menu-item" id="game" href="{{ route('user.list-game') }}" style="color: #241E38">
+                    <a class="menu-item" id="game" href="{{ route('user.view_list_topic') }}" style="color: #241E38">
                         <span><i class="fa-solid fa-gamepad"></i>
                         </span>
                         <h3>Trò chơi</h3>
@@ -126,7 +126,7 @@
                 </div>
                 <!-- ======================= END OF SIDEBAR ======================= -->
                 <label for="create-post" class="btn btn-primary" id="createPostButton">
-                    Create Post
+                    Tạo bài viết
                 </label>
             </div>
             <!-- ================ END OF LEFT ================ -->
@@ -151,9 +151,11 @@
                                         <small>Dubai, 15 MINUTED AGO</small>
                                     </div>
                                 </div>
+                                @if($post->user_id == Auth::id())
                                 <span class="edit">
                                     <i class="uil uil-ellipsis-h"></i>
                                 </span>
+                                @endif
                             </div>
 
                             <div class="content" style="margin:5px 0px">

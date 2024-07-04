@@ -5,9 +5,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cộng Đồng Động Vật</title>
+    <title>Diễn Đàn Động Vật</title>
     <!-- STYLESHEET -->
     <link rel="stylesheet" href="{{ asset('users/social_assets/css/style.css') }}">
+    <link href="{{ asset('users/css/bootstrap.min.css') }}" rel="stylesheet" />
     <!-- ICONCOUT CDN -->
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -21,7 +22,7 @@
     <nav>
         <div class="container">
             <h2 class="logo">
-                Cộng Đồng Động Vật
+                Diễn Đàn Động Vật
             </h2>
             <div class="create">
                 {{-- <label class="btn btn-primary" for="create-post" id="createPostButton">Create</label> --}}
@@ -40,29 +41,47 @@
             <h2 class="title">
                 Danh sách chủ đề câu hỏi
             </h2>
+            
+            @foreach ($topics as $topic)
             <div class="full-games">
                 <div class="item-game">
                     <div class="img-game">
-                        <img src="https://cdn.tgdd.vn/Files/2022/03/06/1418798/so2-100423-010123.jpg" alt="">
+                        <img src="http://localhost:8000/topics/{{$topic->topic_image}}" alt="">
                     </div>
                     <div class="content-game">
-                        <div class="top">
-                            <div class="title-game">
-                                Lorem ipsum dolor sit amet consectetur.
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo excepturi tenetur minus
-                                doloribus aut veritatis laudantium beatae voluptas, quisquam obcaecati?
+                        <div class="">
+                            <div class="row">
+                                <div class="col-sm fw-bold">
+                                    Tên chủ đề:
+                                </div>
+                                <div class="col-8">
+                                    {{$topic->topic_name}}
+                                </div>
                             </div>
-                            <a class="btn btn-success btn-game" style="color:#fff" href="">Tham gia</a>
+                            <div class="row">
+                            <div class="col-sm fw-bold">
+                                    Mô tả chủ đề:
+                            </div>
+                                <div class="title-game col-8">
+                                {{$topic->topic_description}}
+                                </div>
+                            </div>
                         </div>
                         <div class="line"></div>
                         <div class="bottom">
-                            <div class="info-game">
-                                Thông tin: 10 câu hỏi, mỗi câu hỏi 100 điểm
+                            <div class="row">
+                                <div class="info-game col-sm-8">
+                                    Thông tin: Bộ câu hỏi có {{$topic->questions_count}} câu hỏi, mỗi câu hỏi người chơi sẽ nhận được {{$topic->score_per_question}} điểm
+                                </div>
+                                <div class="col-sm-4 text-end">
+                                    <a class="btn btn-success btn-game" style="color:#fff" href="{{route('user.play_game',['id' => $topic->id])}}">Tham gia</a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+            @endforeach
         </div>
     </main>
     {{--

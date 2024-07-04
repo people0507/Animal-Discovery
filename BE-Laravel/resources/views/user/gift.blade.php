@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cộng Đồng Động Vật</title>
+    <title>Diễn Đàn Động Vật</title>
     <!-- STYLESHEET -->
     <link rel="stylesheet" href="{{ asset('users/social_assets/css/style.css') }}">
     <!-- ICONCOUT CDN -->
@@ -21,7 +21,7 @@
     <nav>
         <div class="container">
             <h2 class="logo">
-                Cộng Đồng Động Vật
+                Diễn Đàn Động Vật
             </h2>
             <div class="create">
                 {{-- <label class="btn btn-primary" for="create-post" id="createPostButton">Create</label> --}}
@@ -40,7 +40,7 @@
             <h1>Đổi quà</h1>
 
             <div class="points">
-                <p>Số điểm hiện tại: <span id="point-counter">100</span></p>
+                <p>Số điểm hiện tại: <span id="point-counter">{{Auth::user()->reward_score}}</span></p>
             </div>
 
             <div class="gifts">

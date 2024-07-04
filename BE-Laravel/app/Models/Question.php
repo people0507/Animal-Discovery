@@ -5,14 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Topic extends Model
+class Question extends Model
 {
     use HasFactory;
-
-    protected $table ='topic';
-
-    public function questions()
+    protected $table ='question';
+    public function answers()
     {
-        return $this->hasMany(Question::class,'topic_id');
+        return $this->hasMany(Answer::class,'question_id');
     }
 }
