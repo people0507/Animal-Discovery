@@ -175,9 +175,7 @@
                                     @foreach ($questions as $key => $question)
                                         <tr>
                                             <td>{{ $key + 1 }}</td>
-                                            <td>{{ $question->question_content }} Lorem ipsum dolor sit amet consectetur
-                                                adipisicing elit. Voluptas quia vero aperiam blanditiis pariatur ab iusto.
-                                                Optio iure iusto mollitia? </td>
+                                            <td style="word-break: break-all;">{{ $question->question_content }}</td>
                                             <td class="box-container">
                                                 @if (count($question->answers) > 0)
                                                     @foreach ($question->answers as $item)

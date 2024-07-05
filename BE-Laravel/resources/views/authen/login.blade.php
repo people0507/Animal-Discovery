@@ -10,6 +10,62 @@
 </head>
 
 <body>
+<style>
+        .notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 15px;
+            background-color: #4CAF50;
+            /* Màu xanh */
+            color: white;
+            z-index: 9999;
+            display: none;
+            /* Ẩn ban đầu */
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .notification.success {
+            background-color: #4CAF50;
+            /* Màu xanh */
+        }
+
+        .notification.failed {
+            background-color: #ff3333;
+            /* Màu đỏ */
+            color: white;
+        }
+
+
+        .notification.show {
+            display: block;
+            animation: slideInRight 0.5s ease-out forwards;
+        }
+        @keyframes slideInRight {
+        0% {
+            transform: translateX(100%);
+        }
+        100% {
+            transform: translateX(0);
+        }
+}
+</style>
+@if (session('success'))
+        <div id="notification" class="notification success">
+            <p id="notification-message"></p>
+            <span id="close-notification" class="close-notification"><i class="fa fa-check" aria-hidden="true"></i>
+                {{ session('success') }}</span>
+        </div>
+    @endif
+
+    @if (session('failed'))
+        <div id="notification" class="notification failed">
+            <p id="notification-message"></p>
+            <span id="close-notification" class="close-notification"><i class="fa fa-exclamation-triangle"
+                    aria-hidden="true"></i> {{ session('failed') }}</span>
+        </div>
+    @endif
     <section class="bg-light p-3 p-md-4 p-xl-5">
         <div class="container">
             <div class="row justify-content-center">
@@ -26,7 +82,7 @@
                                         <div class="row">
                                             <div class="col-12">
                                                 <div class="mb-5">
-                                                    <h4 class="text-center">Welcome back you've been missed!</h4>
+                                                    <h4 class="text-center">Chào mừng bạn đã trở lại!</h4>
                                                 </div>
                                             </div>
                                         </div>
@@ -44,23 +100,12 @@
                                                     <div class="form-floating mb-3">
                                                         <input type="password" class="form-control" name="password"
                                                             id="password" placeholder="Password" required>
-                                                        <label for="password" class="form-label">Password</label>
-                                                    </div>
-                                                </div>
-                                                <div class="col-12">
-                                                    <div class="form-check">
-                                                        <input class="form-check-input" type="checkbox" value=""
-                                                            name="remember_me" id="remember_me">
-                                                        <label class="form-check-label text-secondary"
-                                                            for="remember_me">
-                                                            Keep me logged in
-                                                        </label>
+                                                        <label for="password" class="form-label">Mật khẩu</label>
                                                     </div>
                                                 </div>
                                                 <div class="col-12">
                                                     <div class="d-grid">
-                                                        <button class="btn btn-dark btn-lg" type="submit">Login
-                                                            now</button>
+                                                        <button class="btn btn-dark btn-lg" type="submit">Đăng nhập</button>
                                                     </div>
                                                 </div>
                                             </div>
@@ -69,8 +114,7 @@
                                             <div class="col-12">
                                                 <div
                                                     class="d-flex gap-2 gap-md-4 flex-column flex-md-row justify-content-md-center mt-5">
-                                                    <a href="{{route('view_register')}}" class="link-secondary text-decoration-none">Create new
-                                                        account</a>
+                                                    <a href="{{route('view_register')}}" class="link-secondary text-decoration-none">Tạo tài khoản mới</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -83,6 +127,36 @@
             </div>
         </div>
     </section>
+    <script>// Hiển thị thông báo
+    function showNotification(message) {
+        var notification = document.querySelector('.notification');
+        notification.innerHTML = message;
+        notification.classList.add('show');
+
+        // Tự động ẩn sau 5 giây
+        setTimeout(function() {
+            hideNotification();
+        }, 5000); // Ẩn sau 5 giây
+    }
+
+    // Ẩn thông báo
+    function hideNotification() {
+        var notification = document.querySelector('.notification');
+        notification.classList.remove('show');
+    }
+
+    // Hiển thị thông báo khi trang được load
+    window.onload = function() {
+        var successMessage = "{{ session('success') }}";
+        var failedMessage = "{{ session('failed') }}";
+
+        if (failedMessage) {
+            showNotification(failedMessage);
+        }
+        if (successMessage) {
+            showNotification(successMessage);
+        }
+    };</script>
 </body>
 
 </html>

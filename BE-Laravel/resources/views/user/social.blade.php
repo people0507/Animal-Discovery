@@ -108,7 +108,7 @@
                 </div>
                 <div id="dropdown-menu" class="dropdown-menu" style="display: none;">
                     <a id="editUser">Cập nhật tài khoản</a>
-                    <a href="">Đăng xuất</a>
+                    <a href="{{route('logout')}}">Đăng xuất</a>
                 </div>
             </div>
         </div>

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Exception;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Auth;
@@ -20,18 +21,25 @@ class LoginController extends Controller
     function register(Request $request){
         MessageContent::loadMessages();
         $data = $request->all();
-        if($data['password'] == $data['password_confirmation']){
-            $user = new User();
-            $user->name = $data['username'];
-            $user->email = $data['email'];
-            $user->password = Hash::make($data['password']);
-            $user->role_id = User::USER;
-            $user->save();
-            $message = MessageContent::getMessage('login_success');
-            return view('authen.login',compact('message'));
-        }else{
-            $message = MessageContent::getMessage('login_failed');
-            return view('authen.register');
+        try{
+            if($data['password'] == $data['password_confirmation']){
+                $user = new User();
+                $user->name = $data['username'];
+                $user->email = $data['email'];
+                $user->gender = $data['gender'];
+                $user->address = $data['address'];
+                $user->password = Hash::make($data['password']);
+                $user->role_id = User::USER;
+                $user->save();
+                $message = MessageContent::getMessage('register_success');
+                return redirect()->route('view_login')->with('success',$message);
+            }else{
+                $message = MessageContent::getMessage('register_failed');
+                return redirect()->route('view_register')->with('failed',$message);
+            }
+        }catch(Exception $e){
+            $message = MessageContent::getMessage('register_failed');
+                return redirect()->route('view_register')->with('failed',$message);
         }
     }
     function login(Request $request){
@@ -48,7 +56,7 @@ class LoginController extends Controller
             }
         }else{
             $message = MessageContent::getMessage('login_failed');
-            return view('authen.login')->with('failed', $message);
+            return redirect()->route('view_login')->with('failed', $message);
         }
     }
 

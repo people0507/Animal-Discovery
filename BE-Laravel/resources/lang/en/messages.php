@@ -5,6 +5,7 @@ return [
     'login_failed' => 'Đăng nhập thất bại',
     'repeat_password' => 'Mật khẩu không giống nhau',
     'register_success' => 'Tạo tài khoản thành công',
+    'register_failed' => 'Tạo tài khoản thất bại',
     'create_success' => 'Tạo dữ liệu mới thành công !!!',
     'create_failed' => 'Tạo dữ liệu mới thất bại !!!',
     'update_success' => 'Cập nhật dữ liệu thành công !!!',

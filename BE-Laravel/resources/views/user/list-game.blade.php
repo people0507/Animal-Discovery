@@ -47,10 +47,8 @@
                                     <div class="col-sm fw-bold">
                                         Mô tả chủ đề:
                                     </div>
-                                    <div class="title-game col-8">
-                                        {{ $topic->topic_description }} Lorem ipsum dolor sit amet consectetur
-                                        adipisicing elit. Ad itaque veritatis, modi facere iste pariatur rem ab sapiente
-                                        delectus cumque!
+                                    <div class="title-game col-8" style="word-break: break-all;">
+                                        {{ $topic->topic_description }}
                                     </div>
                                 </div>
                             </div>
