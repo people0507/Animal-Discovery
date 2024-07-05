@@ -30,6 +30,31 @@
     </div>
 </nav>
 <style>
+    .dropdown-menu {
+        position: absolute;
+        top: 25px;
+        right: -150px;
+        background-color: white;
+        border: 1px solid #ccc;
+        padding: 10px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+    }
+
+    .create {
+        position: relative;
+    }
+
+    .dropdown-menu a {
+        display: block;
+        padding: 5px 10px;
+        text-decoration: none;
+        color: black;
+    }
+
+    .dropdown-menu a:hover {
+        background-color: #f0f0f0;
+    }
+
     .modal {
         display: none;
         position: fixed;
