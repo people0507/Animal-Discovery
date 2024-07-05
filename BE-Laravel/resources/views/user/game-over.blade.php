@@ -36,22 +36,11 @@
                         style="display:flex;align-items:center;justify-content:center;flex-direction:column">
                         <p class="fw-bold">Số câu đúng: <span id="correct-answers">{{ $trueAns }}</span></p>
                         <p class="fw-bold">Số câu sai: <span id="wrong-answers">{{ $wrongAns }}</span></p>
-                        <p class="fw-bold">Số điểm bạn nhận được : <span id="wrong-answers">{{ $sumScore }}</span>
-                        </p>
+                        <p class="fw-bold">Số điểm bạn nhận được : <span id="wrong-answers">{{ $sumScore }}</span></p>
+                        <p class="fw-bold" style="color:red;">Hãy dùng số điểm đó để nhận quà !!! </p>
                     </div>
                 </div>
 
-
-                <div class="buttons">
-                    <a href="">
-                        <button class="button-74" role="button"><i class="fa-solid fa-gift"></i> Đổi quà</button>
-                    </a>
-
-                    <a href="{{ route('user.view_list_topic') }}">
-                        <button class="button-74" style="background:#0056b3; color: #Fff; "><i class="fa fa-arrow-left"
-                                aria-hidden="true"></i> Quay trở lại</button>
-                    </a>
-                </div>
             </div>
         </div>
     </main>
@@ -71,7 +60,7 @@
         var myPieChart = new Chart(ctx, {
             type: 'pie',
             data: {
-                labels: ['Đúng', 'Sai'],
+                labels: ['Đáp án đúng', 'Đáp án sai'],
                 datasets: [{
                     label: 'Số lượng',
                     data: [trueAns, wrongAns],

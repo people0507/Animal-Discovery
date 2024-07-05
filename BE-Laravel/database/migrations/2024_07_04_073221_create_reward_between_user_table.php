@@ -18,7 +18,6 @@ return new class extends Migration
             $table->foreign('reward_id')->references('id')->on('reward')->onDelete('cascade');
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->integer('reward_score_lost');
             $table->timestamps();
         });
     }

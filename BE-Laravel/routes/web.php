@@ -54,12 +54,12 @@ Route::get('/fillter-list-animal', function () {
 // Route::get('/gift', function () {
 //     return view('user.gift');
 // })->name('user.gift');
-Route::get('/history-game', function () {
-    return view('user.history-game');
-})->name('user.history-game');
-Route::get('/history-gift', function () {
-    return view('user.history-gift');
-})->name('user.history-gift');
+// Route::get('/history-game', function () {
+//     return view('user.history-game');
+// })->name('user.history-game');
+// Route::get('/history-gift', function () {
+//     return view('user.history-gift');
+// })->name('user.history-gift');
 
 
 
@@ -91,8 +91,9 @@ Route::get('/list-blog-3', function () {
 // })->name('user.animal-detail');
 
 
-
-
+// Route::get('/mail', function () {
+//     return view('user.includes.mail');
+// })->name('user.blog-detail');
 
 
 
@@ -154,6 +155,10 @@ Route::prefix('animal_post')->middleware('checklogin')->group(function () {
     Route::get('/play_game/{id}', [PostController::class, 'playGame'])->name('user.play_game');
     Route::post('/check_answer', [PostController::class, 'checkAnswer'])->name('user.check_answer');
     Route::get('/view_get_reward', [PostController::class, 'viewGetReward'])->name('user.view_get_reward');
+    Route::get('/history_game', [PostController::class, 'historyGame'])->name('user.history_game');
+    Route::get('/get_reward/{id}', [PostController::class, 'getReward'])->name('user.get_reward');
+    Route::get('/history_get_reward', [PostController::class, 'historyGetReward'])->name('user.history_get_reward');
+
 });
 
 Route::prefix('admin')->middleware(['checklogin', 'checkrole'])->group(function () {

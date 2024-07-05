@@ -252,7 +252,7 @@
                             </div>
 
                             <div class="photo">
-                                <img src="http://localhost:8000/posts/{{ $post->image }}" alt="">
+                                <img src="{{asset('posts/'. $post->image )}}" alt="">
                             </div>
 
                             <div class="action-button">

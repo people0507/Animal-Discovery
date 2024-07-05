@@ -19,25 +19,86 @@
 
 <body>
     @include('user.includes.header-social')
+    <style>
+        .notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 15px;
+            background-color: #4CAF50;
+            /* Màu xanh */
+            color: white;
+            z-index: 9999;
+            display: none;
+            /* Ẩn ban đầu */
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
 
+        .notification.success {
+            background-color: #4CAF50;
+            /* Màu xanh */
+        }
+
+        .notification.failed {
+            background-color: #ff3333;
+            /* Màu đỏ */
+            color: white;
+        }
+
+
+        .notification.show {
+            display: block;
+            animation: slideInRight 0.5s ease-out forwards;
+        }
+        @keyframes slideInRight {
+        0% {
+            transform: translateX(100%);
+        }
+        100% {
+            transform: translateX(0);
+        }
+}
+</style>
     <main>
-        <div class="games">
-            <h1>Đổi quà</h1>
+    @if (session('success'))
+        <div id="notification" class="notification success">
+            <p id="notification-message"></p>
+            <span id="close-notification" class="close-notification"><i class="fa fa-check" aria-hidden="true"></i>
+                {{ session('success') }}</span>
+        </div>
+    @endif
 
-            <div class="points">
-                <p>Số điểm hiện tại: <span id="point-counter">{{ Auth::user()->reward_score }}</span></p>
+    @if (session('failed'))
+        <div id="notification" class="notification failed">
+            <p id="notification-message"></p>
+            <span id="close-notification" class="close-notification"><i class="fa fa-exclamation-triangle"
+                    aria-hidden="true"></i> {{ session('failed') }}</span>
+        </div>
+    @endif
+        <div class="games">
+            <h1>Danh sách quà</h1>
+
+            <div class="points" style="margin-top:5px">
+                <p>Số điểm bạn đang có : <span id="point-counter">{{ Auth::user()->reward_score }}</span></p>
             </div>
 
             <div class="gifts">
-                <a href="#" class="gift-link" data-gift-id="1" data-gift-points="50">
-                    <img src="https://saladowinery.com/wp-content/uploads/2017/12/gift.jpg" alt="Gift 1">
-                    <p>Quà 1 (50 điểm)</p>
-                </a>
-                <a href="#" class="gift-link" data-gift-id="2" data-gift-points="80">
-                    <img src="https://www.verdict.co.uk/wp-content/uploads/2018/11/shutterstock_712915198-e1542045457155.jpg"
+                @foreach ($rewards as $key => $reward)
+                @if($key %2 == 0)
+                <a href="{{route('user.get_reward',['id' => $reward->id])}}" class="gift-link" onclick="return confirmSubmit()">
+                    <img src="{{asset('gifts/red.jpg')}}"
                         alt="Gift 2">
-                    <p>Quà 2 (80 điểm)</p>
+                    <p>{{$reward->reward_name}} ({{$reward->reward_score}} điểm)</p>
                 </a>
+                @else
+                <a href="{{route('user.get_reward',['id' => $reward->id])}}" class="gift-link" onclick="return confirmSubmit()">
+                    <img src="{{asset('gifts/yellow.jpg')}}"
+                        alt="Gift 2">
+                    <p>{{$reward->reward_name}} ({{$reward->reward_score}} điểm)</p>
+                </a>
+                @endif
+                @endforeach
             </div>
         </div>
     </main>
@@ -45,27 +106,41 @@
     <script src="./assets/js/main.js"></script> --}}
     <script src="{{ asset('users/social_assets/js/main.js') }}"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>// Hiển thị thông báo
+    function showNotification(message) {
+        var notification = document.querySelector('.notification');
+        notification.innerHTML = message;
+        notification.classList.add('show');
+
+        // Tự động ẩn sau 5 giây
+        setTimeout(function() {
+            hideNotification();
+        }, 5000); // Ẩn sau 5 giây
+    }
+
+    // Ẩn thông báo
+    function hideNotification() {
+        var notification = document.querySelector('.notification');
+        notification.classList.remove('show');
+    }
+
+    // Hiển thị thông báo khi trang được load
+    window.onload = function() {
+        var successMessage = "{{ session('success') }}";
+        var failedMessage = "{{ session('failed') }}";
+
+        if (failedMessage) {
+            showNotification(failedMessage);
+        }
+        if (successMessage) {
+            showNotification(successMessage);
+        }
+    };</script>
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            var pointCounter = document.getElementById('point-counter');
-            var giftLinks = document.querySelectorAll('.gift-link');
-
-            giftLinks.forEach(function(link) {
-                link.addEventListener('click', function(event) {
-                    event.preventDefault();
-                    var giftId = this.getAttribute('data-gift-id');
-                    var giftPoints = parseInt(this.getAttribute('data-gift-points'));
-
-                    var currentPoints = parseInt(pointCounter.textContent);
-                    if (currentPoints >= giftPoints) {
-                        pointCounter.textContent = currentPoints - giftPoints;
-                        alert('Bạn đã nhận quà có ID ' + giftId);
-                    } else {
-                        alert('Bạn không đủ điểm để nhận quà này.');
-                    }
-                });
-            });
-        });
+        function confirmSubmit() {
+        var result = window.confirm('Bạn có chắc chắn muốn lấy phần quà này ?');
+        return result;
+    }
     </script>
 </body>
 

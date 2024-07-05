@@ -42,7 +42,7 @@
                             </div>
                         @endforeach
                     @endforeach
-                    <button type="submit" id="submit-quiz" class="btn-submit">Gửi đáp án</button>
+                    <button type="submit" id="submit-quiz" class="btn-submit" onclick="return confirmSubmit()">Gửi đáp án</button>
                 </form>
             </div>
 
@@ -54,7 +54,12 @@
     <script src="./assets/js/main.js"></script> --}}
     <script src="{{ asset('users/social_assets/js/main.js') }}"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
+    <script>
+        function confirmSubmit() {
+        var result = window.confirm('Bạn có chắc chắn muốn nộp đáp án ?');
+        return result;
+    }
+    </script>
 </body>
 
 

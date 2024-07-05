@@ -149,7 +149,7 @@
                                 <tr>
                                     <th style="width: 65px; text-align: center; vertical-align: middle;">Stt</th>
                                     <th style="text-align: center; vertical-align: middle;">Tên phần quà</th>
-                                    <th style="text-align: center; vertical-align: middle;">Điểm đổi quà</th>
+                                    <th style="text-align: center; vertical-align: middle;">Điểm nhận quà</th>
                                     <th style="text-align: center; vertical-align: middle;">Thao tác</th>
                                 </tr>
                             </thead>
@@ -223,7 +223,7 @@
                             <input type="text" class="form-control" id="continentTitle" name="reward_name" value="{{$reward->reward_name}}">
                         </div>
                         <div class="form-group">
-                            <label for="continentImage">Số điểm cần đổi thưởng</label>
+                            <label for="continentImage">Số điểm cần nhận thưởng</label>
                             <input name="reward_score" type="text" class="form-control" id="continentImage" value="{{$reward->reward_score}}">
                         </div>
                 </div>
@@ -256,7 +256,7 @@
                             <input type="text" class="form-control" id="continentTitle" name="reward_name">
                         </div>
                         <div class="form-group">
-                            <label for="continentImage">Số điểm cần đổi thưởng</label>
+                            <label for="continentImage">Số điểm cần nhận thưởng</label>
                             <input name="reward_score" type="text" class="form-control" id="continentImage">
                         </div>
                 </div>

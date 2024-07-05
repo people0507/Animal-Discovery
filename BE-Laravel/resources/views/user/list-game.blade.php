@@ -29,9 +29,10 @@
 
             <div class="full-games">
                 @foreach ($topics as $topic)
+                @if($topic->questions_count > 0)
                     <div class="item-game">
                         <div class="img-game" style="height: 250px">
-                            <img src="http://localhost:8000/topics/{{ $topic->topic_image }}" class="responsive-img">
+                            <img src="{{asset('topics/'. $topic->topic_image )}}" class="responsive-img">
                         </div>
                         <div class="content-game">
                             <div class="">
@@ -61,13 +62,14 @@
                                     </div>
                                     <div class="col-sm-4 text-end">
                                         <a class="btn-game"
-                                            href="{{ route('user.play_game', ['id' => $topic->id]) }}">Tham gia</a>
+                                            href="{{ route('user.play_game', ['id' => $topic->id]) }}"  onclick="return confirmPlayGame()">Tham gia</a>
 
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                @endif
                 @endforeach
             </div>
         </div>
@@ -76,7 +78,12 @@
     <script src="./assets/js/main.js"></script> --}}
     <script src="{{ asset('users/social_assets/js/main.js') }}"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
+    <script>
+        function confirmPlayGame() {
+        var result = window.confirm('Bạn có chắc chắn muốn tham gia trò chơi?');
+        return result;
+    }
+    </script>
 </body>
 
 

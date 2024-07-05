@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\HistoryGame;
 use App\Models\Question;
+use App\Models\Reward;
 use App\Models\Topic;
 use App\Models\User;
 use Exception;
@@ -17,6 +18,7 @@ use Str;
 use DB;
 use Carbon\Carbon;
 use App\Http\MessageContent;
+use Illuminate\Support\Facades\Mail;
 class PostController extends Controller
 {
     public function listPostSocial(){
@@ -248,12 +250,8 @@ class PostController extends Controller
         $history_game->save();
 
         $user = User::where('id',Auth::id())->first();
-        if($user->reward_score == null){
-            $user->reward_score = $sumScore;
-        }else{
-            $oldRewardScore = $user->reward_score;
-            $user->reward_score = $oldRewardScore + $sumScore;
-        }
+        $oldRewardScore = $user->reward_score;
+        $user->reward_score = $oldRewardScore + $sumScore;
         $user->save();
 
         DB::commit();
@@ -268,6 +266,61 @@ class PostController extends Controller
     }
 
     public function viewGetReward(){
-        return view('user.gift');
+        $rewards = Reward::all();
+        return view('user.gift',compact('rewards'));
     }
+    
+    public function getReward($id){
+        MessageContent::loadMessages();
+        DB::beginTransaction();
+        $reward = Reward::where('id',$id)->first();
+        $user = User::where('id',Auth::id())->first();
+        if($user->reward_score >= $reward->reward_score){
+            try{
+            $user->history_reward()->attach($id,['created_at' => Carbon::now()]);
+            $old_reward_score = $user->reward_score;
+            $user->reward_score =  $old_reward_score - $reward->reward_score;
+            $user->save();
+
+            Mail::send('user.includes.mail',compact('reward','user'),function($email){
+                $email->from('adw@gmail.com','Diễn Đàn Động Vật Hoang Dã');
+                $email->subject('Thông báo nhận quà');
+                $email->to(Auth::user()->email);
+            });
+            $message = MessageContent::getMessage('get_reward_success');
+            DB::commit();
+            return redirect()->route('user.view_get_reward')->with('success',$message);
+            }catch(Exception $e){
+            DB::rollBack();
+            $message = MessageContent::getMessage('get_reward_failed');
+            return redirect()->route('user.view_get_reward')->with('failed',$message);
+            }
+        }else{
+            $message = MessageContent::getMessage('score_not_enough');
+            return redirect()->route('user.view_get_reward')->with('failed',$message);
+        }
+    }
+
+    public function historyGetReward(){
+
+        $users = User::with('history_reward')->where('id',Auth::id())->first();
+        $history_rewards = $users->history_reward;
+        return view('user.history-gift',compact('history_rewards'));
+    }
+
+    public function historyGame(){
+        $history_games = HistoryGame::where('user_id',Auth::id())->get();
+        $history_games->each(function ($history_game) {
+            $history_game->topic_id = $history_game->getTopicName->topic_name;
+        });
+        $sumTrueAnswer = 0;
+        $sumWrongAnswer = 0;
+        foreach ($history_games as $history_game) {
+            $sumTrueAnswer += $history_game->true_number;
+            $sumWrongAnswer += $history_game->wrong_number;
+        }
+
+        return view('user.history-game',compact('history_games', 'sumTrueAnswer', 'sumWrongAnswer'));
+    }
+    
 }
