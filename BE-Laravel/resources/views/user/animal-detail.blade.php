@@ -38,10 +38,10 @@
                 <div class="row">
                     <div class="col-8">
                         @if ($data->images->image_name != null)
-                            <img src="http://localhost:8000/animal_images/{{ $data->images->image_name }}" width="100%"
+                            <img src="{{asset('animal_images/'. $data->images->image_name )}}" width="100%"
                                 alt="" class="animal-detail-img">
                         @else
-                            <img src="http://localhost:8000/error/error.jpg" width="100%" alt=""
+                            <img src="{{asset('error/error.jpg')}}" width="100%" alt=""
                                 class="animal-detail-img">
                         @endif
                     </div>
@@ -324,10 +324,10 @@
                             @foreach ($multiImages as $key => $image)
                                 <div class="carousel-item {{ $key == 0 ? 'active' : '' }}">
                                     @if ($image->image_name != null)
-                                        <img src="http://localhost:8000/animal_images/{{ $image->image_name }}"
+                                        <img src="{{asset('animal_images/'. $image->image_name )}}"
                                             class="d-block w-100" alt="...">
                                     @else
-                                        <img src="http://localhost:8000/error/error.jpg" class="d-block w-100"
+                                        <img src="{{asset('error/error.jpg')}}" class="d-block w-100"
                                             alt="...">
                                     @endif
                                 </div>
@@ -482,12 +482,12 @@
                                         @if ($item->biome_image != null)
                                             <a href="{{ route('biome', ['id' => $item->id]) }}"
                                                 class="s-distr-zone-item "
-                                                style="background-color: #00c853; background-image: url(http://localhost:8000/biomes/small/{{ $item->biome_image }}); background-size: cover"><span>{{ $item->biome_name }}</span>
+                                                style="background-color: #00c853; background-image: url({{asset('biomes/small/'. $item->biome_image )}}); background-size: cover"><span>{{ $item->biome_name }}</span>
                                             </a>
                                         @else
                                             <a href="{{ route('biome', ['id' => $item->id]) }}"
                                                 class="s-distr-zone-item "
-                                                style="background-color: #00c853; background-image: url(http://localhost:8000/error/error.jpg); background-size: cover"><span>{{ $item->biome_name }}</span>
+                                                style="background-color: #00c853; background-image: url({{asset('error/error.jpg')}}); background-size: cover"><span>{{ $item->biome_name }}</span>
                                             </a>
                                         @endif
                                     </div>
@@ -506,12 +506,12 @@
                                     @if ($item->climate_image != null)
                                         <a href="{{ route('climate-zone', ['id' => $item->id]) }}"
                                             class="s-distr-climate__link "
-                                            style="background-color: #4CAF50; background-image: url(http://localhost:8000/climates/small/{{ $item->climate_image }});"><span>{{ $item->climate_name }}</span>
+                                            style="background-color: #4CAF50; background-image: url({{asset('climates/small/'. $item->climate_image )}});"><span>{{ $item->climate_name }}</span>
                                         </a>
                                     @else
                                         <a href="{{ route('climate-zone', ['id' => $item->id]) }}"
                                             class="s-distr-climate__link "
-                                            style="background-color: #4CAF50; background-image: url(http://localhost:8000/error/error.jpg);"><span>{{ $item->climate_name }}</span>
+                                            style="background-color: #4CAF50; background-image: url({{asset('error/error.jpg')}});"><span>{{ $item->climate_name }}</span>
                                         </a>
                                     @endif
                                 </div>
@@ -527,10 +527,10 @@
                         <div class="col-lg-6">
                             <div class="s-habbit-img open-gallery" data-id="11849">
                                 @if ($habitImage->image_name != null)
-                                    <img src="http://localhost:8000/animal_images/{{ $habitImage->image_name }}"
+                                    <img src="{{asset('animal_images/'. $habitImage->image_name )}}"
                                         alt="Red Fox 2016-05-19 (11)">
                                 @else
-                                    <img src="http://localhost:8000/error/error.jpg" alt="Red Fox 2016-05-19 (11)">
+                                    <img src="{{asset('error/error.jpg')}}" alt="Red Fox 2016-05-19 (11)">
                                 @endif
                             </div>
                             <div class="optimanetwork">
@@ -569,7 +569,7 @@
                                 </div>
                                 <div class="col-sm-9">
                                     <audio controls="">
-                                        <source src="http://localhost:8000/animal_sounds/{{ $data->animal_sound }}"
+                                        <source src="{{asset('animal_sounds/'. $data->animal_sound )}}"
                                             type="audio/mpeg">
                                         Your browser does not support the audio element.
 
@@ -709,10 +709,10 @@
                             <div class="col-lg-6">
                                 <div class="s-population-img open-gallery" data-id="53626">
                                     @if ($populationImage->image_name != null)
-                                        <img src="http://localhost:8000/animal_images/{{ $populationImage->image_name }}"
+                                        <img src="{{asset('animal_images/'. $populationImage->image_name )}}"
                                             alt="Red Fox photo">
                                     @else
-                                        <img src="http://localhost:8000/error/error.jpg" alt="Red Fox photo">
+                                        <img src="{{asset('error/error.jpg')}}" alt="Red Fox photo">
                                     @endif
                                 </div>
                                 <div class="s-population-link">
@@ -1062,10 +1062,10 @@
                                         <span class="overlay"></span>
                                         <div class="card-image">
                                             @if ($item->images->image_name != null)
-                                                <img src="http://localhost:8000/animal_images/{{ $item->images->image_name }}"
+                                                <img src="{{asset('animal_images/'. $item->images->image_name )}}"
                                                     alt="" class="card-img">
                                             @else
-                                                <img src="http://localhost:8000/error/error.jpg" alt=""
+                                                <img src="{{asset('error/error.jpg')}}" alt=""
                                                     class="card-img">
                                             @endif
                                         </div>
@@ -1135,7 +1135,7 @@
         }).addTo(mymap);
 
         var customIcon = L.icon({
-            iconUrl: 'http://localhost:8000/maps/icon_map.png',
+            iconUrl: '{{asset('maps/icon_map.png')}}',
             iconSize: [30, 30], // Kích thước của biểu tượng
         });
         arrCordinate.forEach(function(coords) {

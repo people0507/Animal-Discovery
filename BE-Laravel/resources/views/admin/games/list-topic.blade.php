@@ -164,10 +164,10 @@
                                             <td>{{ $topic->topic_name }}</td>
                                             <td>
                                                 @if ($topic->topic_image != null)
-                                                    <img src="http://localhost:8000/topics/{{ $topic->topic_image }}"
+                                                    <img src="{{asset('topics/'. $topic->topic_image )}}"
                                                         alt="123" width="200">
                                                 @else
-                                                    <img src="http://localhost:8000/error/error.jpg" alt="123"
+                                                    <img src="{{asset('error/error.jpg')}}" alt="123"
                                                         width="200">
                                                 @endif
                                             </td>

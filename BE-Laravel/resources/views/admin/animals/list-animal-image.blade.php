@@ -132,10 +132,10 @@
                                             <td>{{ $key + 1 }}</td>
                                             <td>
                                                 @if($image->image_name != null)
-                                                    <img src="http://localhost:8000/animal_images/{{ $image->image_name }}"
+                                                    <img src="{{asset('animal_images/'. $image->image_name) }}"
                                                     width="200">
                                                  @else
-                                                    <img src="http://localhost:8000/error/error.jpg" alt="error" width="200">
+                                                    <img src="{{asset('error/error.jpg')}}" alt="error" width="200">
                                                 @endif
                                             </td>
                                             <td>{{ $image->animalDetail->animal_name }}</td>
@@ -275,7 +275,7 @@
                         <div class="form-group">
                             <label for="currentImage">Hình ảnh hiện tại</label>
                             <br>
-                            <img src="http://localhost:8000/animal_images/lion.jpg" id="currentImage" class="img-fluid"
+                            <img src="" id="currentImage" class="img-fluid"
                                 alt="Hình ảnh hiện tại">
                         </div>
                         <div class="form-group">

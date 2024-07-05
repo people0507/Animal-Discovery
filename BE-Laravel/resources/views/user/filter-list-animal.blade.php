@@ -4,29 +4,20 @@
     <link rel="stylesheet" href="{{ asset('users/css/fillter-list-animal.css') }}" style="padding: 50px 0">
     <div
         @if (isset($data1->climate_image) && $data1->climate_image != '') style = "
-        background-image: url(http://localhost:8000/climates/full/{{ $data1->climate_image }});
+        background-image: url({{asset('/climates/full/'. $data1->climate_image )}});
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
         background-attachment: fixed;"
     @elseif(isset($data1->biome_image) && $data1->biome_image != '')
-        style = "background-image: url(http://localhost:8000/biomes/full/{{ $data1->biome_image }});
+        style = "background-image: url({{asset('biomes/full/'. $data1->biome_image )}});
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
         background-attachment: fixed;"
     @else
-        style = "background-image: url(http://localhost:8000/error/error.jpg);" @endif>
+        style = "background-image: url({{asset('error/error.jpg')}});" @endif>
         <header xmlns="http://www.w3.org/1999/html" class="main-head">
-            <div class="container-nav clearfix">
-                <div class="sub-nav">
-                    <form action="/elastic-search" class="a-search">
-                        <input type="text" placeholder="quick search" name="search" id="search-field-header"
-                            class="search-field ui-autocomplete-input" autocomplete="off">
-                        <i class="fa fa-search" aria-hidden="true"></i>
-                    </form>
-                </div>
-            </div>
         </header>
         <br>
         <div class="main-content">
@@ -67,10 +58,10 @@
                             <div class="col-12 col-sm-5 h-100">
                                 @if ($item->images->image_name != null)
                                     <img class="img-fluid h-100"
-                                        src="http://localhost:8000/animal_images/{{ $item->images->image_name }}"
+                                        src="{{asset('animal_images/'. $item->images->image_name )}}"
                                         style="object-fit: cover;">
                                 @else
-                                    <img class="img-fluid h-100" src="http://localhost:8000/error/error.jpg"
+                                    <img class="img-fluid h-100" src="{{asset('error/error.jpg')}}"
                                         style="object-fit: cover;">
                                 @endif
                             </div>

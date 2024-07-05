@@ -25,32 +25,28 @@
         <div class="games">
 
             <div class="game-over">
-                <h1>Lịch sử đổi quà</h1>
+                <h1>Lịch sử nhận quà</h1>
 
                 <div class="row mt-5 mb-5">
                     <div class="table-responsive">
                         <table class="table table-striped">
                             <thead>
                                 <tr>
-                                    <th>Ngày đổi quả</th>
+                                    <th>Ngày nhận quà</th>
                                     <th>Tên quà</th>
-                                    <th>Điểm để đổi quà</th>
+                                    <th>Điểm để nhận quà</th>
                                 </tr>
                             </thead>
                             <tbody id="game-history">
+                                @foreach ($history_rewards as $history_reward)
+                                <tr>
+                                    <td>{{$history_reward->pivot->created_at}}</td>
+                                    <td>{{$history_reward->reward_name}}</td>
+                                    <td>{{$history_reward->reward_score}}</td>
+                                </tr>
+                                @endforeach
                             </tbody>
                         </table>
-                    </div>
-
-                    <div class="buttons mt-3">
-                        <a href="">
-                            <button class="button-74" role="button"><i class="fa-solid fa-gift"></i> Đổi quà</button>
-                        </a>
-
-                        <a href="{{ route('user.view_list_topic') }}">
-                            <button class="button-74" style="background:#0056b3; color: #fff;"><i
-                                    class="fa fa-arrow-left" aria-hidden="true"></i> Quay trở lại</button>
-                        </a>
                     </div>
                 </div>
             </div>
@@ -60,43 +56,6 @@
     <script src="{{ asset('users/social_assets/js/main.js') }}"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script>
-        var gameHistoryData = [{
-                date: '2024-07-01',
-                name: 'Quà số 1',
-                point: 60,
-            },
-            {
-                date: '2024-07-02',
-                name: 'Quà số 2',
-                point: 32,
-            },
-        ];
-
-        let totalCorrect = 0;
-        let totalWrong = 0;
-        let totalQuestions = 0;
-        gameHistoryData.forEach(function(game) {
-            totalCorrect += game.correct;
-            totalWrong += game.wrong;
-            totalQuestions += game.totalQuestions;
-        });
-
-
-        var gameHistoryTable = document.getElementById('game-history');
-        gameHistoryData.forEach(function(game) {
-            var row = document.createElement('tr');
-            row.innerHTML = `
-            <td>${game.date}</td>
-            <td>${game.name}</td>
-            <td>${game.point}</td>
-        `;
-            gameHistoryTable.appendChild(row);
-        });
-
-        // Hiển thị tổng câu hỏi
-        document.getElementById('total-questions').innerText = totalQuestions;
-    </script>
 </body>
 
 

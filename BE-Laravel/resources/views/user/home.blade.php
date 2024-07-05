@@ -396,9 +396,9 @@
         <style>
             .card_cate[for="c{{ $key + 1 }}"] {
                 @if($area->area_image != null)
-                background-image: url("http://localhost:8000/areas/{{ $area->area_image }}");
+                background-image: url("{{asset('areas/'. $area->area_image )}}");
                 @else
-                background-image: url("http://localhost:8000/error/error.jpg");
+                background-image: url("{{asset('error/error.jpg')}}");
                 @endif
                 background-size: cover;
                 background-position: center;
@@ -651,43 +651,43 @@
                     </div>
                     <div class="photo-grid">
                         <div class="card card-tall card-wide"
-                            style="background-image:url('http://localhost:8000/colors/{{ $green->color_image }}')">
+                            style="background-image:url('{{asset('colors/'. $green->color_image )}}')">
                             <a href="{{ route('color', ['id' => $green->id]) }}">{{ $green->color_name }}</a>
                         </div>
                         <div class="card card-tall"
-                            style="background-image:url('http://localhost:8000/colors/{{ $blue->color_image }}')">
+                            style="background-image:url('{{asset('colors/'. $blue->color_image )}}')">
                             <a href="{{ route('color', ['id' => $blue->id]) }}">{{ $blue->color_name }}</a>
                         </div>
                         <div class="card"
-                            style="background-image:url('http://localhost:8000/colors/{{ $red->color_image }}')">
+                            style="background-image:url('{{asset('colors/'. $red->color_image )}}')">
                             <a href="{{ route('color', ['id' => $red->id]) }}">{{ $red->color_name }}</a>
                         </div>
                         <div class="card"
-                            style="background-image:url('http://localhost:8000/colors/{{ $yellow->color_image }}')">
+                            style="background-image:url('{{asset('colors/'. $yellow->color_image )}}')">
                             <a href="{{ route('color', ['id' => $yellow->id]) }}">{{ $yellow->color_name }}</a>
                         </div>
                         <div class="card"
-                            style="background-image:url('http://localhost:8000/colors/{{ $orange->color_image }}')">
+                            style="background-image:url('{{asset('colors/'. $orange->color_image )}}')">
                             <a href="{{ route('color', ['id' => $orange->id]) }}">{{ $orange->color_name }}</a>
                         </div>
                         <div class="card"
-                            style="background-image:url('http://localhost:8000/colors/{{ $brown->color_image }}')">
+                            style="background-image:url('{{asset('colors/'. $brown->color_image )}}')">
                             <a href="{{ route('color', ['id' => $brown->id]) }}">{{ $brown->color_name }}</a>
                         </div>
                         <div class="card card-wide"
-                            style="background-image:url('http://localhost:8000/colors/{{ $white->color_image }}')">
+                            style="background-image:url('{{asset('colors/'. $white->color_image )}}')">
                             <a href="{{ route('color', ['id' => $white->id]) }}">{{ $white->color_name }}</a>
                         </div>
                         <div class="card"
-                            style="background-image:url('http://localhost:8000/colors/{{ $black->color_image }}')">
+                            style="background-image:url('{{asset('colors/'. $black->color_image )}}')">
                             <a href="{{ route('color', ['id' => $black->id]) }}">{{ $black->color_name }}</a>
                         </div>
                         <div class="card"
-                            style="background-image:url('http://localhost:8000/colors/{{ $gray->color_image }}')">
+                            style="background-image:url('{{asset('colors/'. $gray->color_image )}}')">
                             <a href="{{ route('color', ['id' => $gray->id]) }}">{{ $gray->color_name }}</a>
                         </div>
                         <div class="card"
-                            style="background-image:url('http://localhost:8000/colors/{{ $purple->color_image }}')">
+                            style="background-image:url('{{asset('colors/'. $purple->color_image )}}')">
                             <a href="{{ route('color', ['id' => $purple->id]) }}">{{ $purple->color_name }}</a>
                         </div>
                     </div>
@@ -709,10 +709,10 @@
                     <div class="checkin">
                         <div class="item">
                             @if($tropical->climate_image != null)
-                            <img src="http://localhost:8000/climates/full/{{ $tropical->climate_image }}"title="{{ $tropical->climate_name }}"
+                            <img src="{{asset('climates/full/'. $tropical->climate_image )}}"title="{{ $tropical->climate_name }}"
                                 class="zoom">
                             @else
-                            <img src="http://localhost:8000/error/error.jpg" alt="error">
+                            <img src="{{asset('error/error.jpg')}}" alt="error">
                             @endif
                             <div class="content">
                                 <a href="{{ route('climate', ['id' => $tropical->id]) }}"
@@ -725,10 +725,10 @@
 
                         <div class="item">
                             @if($arid->climate_image != null)
-                            <img src="http://localhost:8000/climates/full/{{ $arid->climate_image }}"
+                            <img src="{{asset('climates/full/'. $arid->climate_image )}}"
                                 title="{{ $arid->climate_name }}" class="zoom">
                             @else
-                            <img src="http://localhost:8000/error/error.jpg" alt="error">
+                            <img src="{{asset('error/error.jpg')}}" alt="error">
                             @endif
                             <div class="content">
                                 <a href="{{ route('climate', ['id' => $arid->id]) }}"
@@ -741,10 +741,10 @@
 
                         <div class="item">
                             @if($temperate->climate_image != null)
-                            <img src="http://localhost:8000/climates/full/{{ $temperate->climate_image }}"
+                            <img src="{{asset('climates/full/'. $temperate->climate_image )}}"
                                 title="{{ $temperate->climate_name }}" class="zoom">
                             @else
-                            <img src="http://localhost:8000/error/error.jpg" alt="error">
+                            <img src="{{asset('error/error.jpg')}}" alt="error">
                             @endif
                             <div class="content">
                                 <a href="{{ route('climate', ['id' => $temperate->id]) }}"
@@ -757,10 +757,10 @@
 
                         <div class="item">
                             @if($cold->climate_image != null)
-                            <img src="http://localhost:8000/climates/full/{{ $cold->climate_image }}"
+                            <img src="{{asset('climates/full/'. $cold->climate_image )}}"
                                 title="{{ $cold->climate_name }}" class="zoom">
                             @else
-                            <img src="http://localhost:8000/error/error.jpg" alt="error">
+                            <img src="{{asset('error/error.jpg')}}" alt="error">
                             @endif
                             <div class="content">
                                 <a href="{{ route('climate', ['id' => $cold->id]) }}"
@@ -772,10 +772,10 @@
                         </div>
                         <div class="item">
                             @if($polar->climate_image != null)
-                            <img src="http://localhost:8000/climates/full/{{ $polar->climate_image }}"
+                            <img src="{{asset('climates/full/'. $polar->climate_image )}}"
                                 title="{{ $polar->climate_name }}" class="zoom">
                             @else
-                            <img src="http://localhost:8000/error/error.jpg" alt="error">
+                            <img src="{{asset('error/error.jpg')}}" alt="error">
                             @endif
                             <div class="content">
                                 <a href="{{ route('climate', ['id' => $polar->id]) }}"

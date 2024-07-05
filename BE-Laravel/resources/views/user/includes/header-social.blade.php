@@ -11,11 +11,16 @@
         </div>
 
         <div class="create">
-            <a href="" class="btn-game">
-                <i class="fa-solid fa-gift"></i>
-                Đổi quà
+            @if(request()->url() != route('user.view_list_topic'))
+            <a href="{{ route('user.view_list_topic') }}" class="btn-game">
+            <i class="fa-solid fa-list" aria-hidden="true"></i></i> Danh sách chủ đề
             </a>
-            <a href="{{ route('user.history-game') }}" class="btn-game">
+            @endif
+            <a href="{{request()->url() != route('user.view_get_reward')  ? route('user.view_get_reward') : route('user.history_get_reward')}}" class="btn-game">
+                <i class="fa-solid fa-gift"></i>
+                {{request()->url() != route('user.view_get_reward')  ? 'Nhận quà' : 'Lịch sử nhận quà'}}
+            </a>
+            <a href="{{ route('user.history_game') }}" class="btn-game">
                 <i class="fa fa-history" aria-hidden="true"></i> Lịch sử chơi
             </a>
             <div class="profile-picture" id="profile-picture">
