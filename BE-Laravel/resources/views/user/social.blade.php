@@ -66,21 +66,22 @@
 
     .form-p input[readonly] {
         background-color: #e9ecef;
-        /* Màu nền mờ */
         opacity: 0.7;
-        /* Độ mờ */
         cursor: not-allowed;
-        /* Con trỏ chuột */
     }
 
     .dropdown-menu {
         position: absolute;
-        top: 50px;
-        right: 10px;
+        top: 25px;
+        right: -150px;
         background-color: white;
         border: 1px solid #ccc;
         padding: 10px;
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+    }
+
+    .create {
+        position: relative;
     }
 
     .dropdown-menu a {
