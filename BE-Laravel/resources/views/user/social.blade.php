@@ -206,16 +206,12 @@
                     Tạo bài viết
                 </label>
             </div>
-            <!-- ================ END OF LEFT ================ -->
 
-            <!-- ================ MIDDLE ================ -->
             <div class="middle">
 
-                <!-- ================ FEEDS ================ -->
                 @foreach ($posts as $key => $post)
                     <div class="feeds">
                         <div class="feed">
-                            <!-- ================ FEED 1 ================ -->
                             <div class="head">
                                 <div class="user">
                                     <div class="profile-picture">
@@ -229,8 +225,13 @@
                                     </div>
                                 </div>
                                 @if ($post->user_id == Auth::id())
-                                    <span class="edit">
+                                    <span class="edit" id="option-post">
                                         <i class="uil uil-ellipsis-h"></i>
+                                        <div id="dropdown-option-menu" class="dropdown-option-menu"
+                                            style="display: none;">
+                                            <a id="editPostButton">Chỉnh sửa bài viết</a>
+                                            <a id="deletePost">Xóa bài viết</a>
+                                        </div>
                                     </span>
                                 @endif
                             </div>
@@ -283,9 +284,7 @@
 
         <div class="caption">
             <p>
-
                 <b>{{ $post->user->name }}</b> {{ $post->title }}
-
                 <span class="harsh-tag">#lifestyle</span>
             </p>
         </div>
@@ -378,7 +377,7 @@
     <div id="addContinentModal" class="modal">
         <div class="modal-content">
             <div class="modal-header">
-                <span class="close" id="closeModal">&times;</span>
+                <span class="close" id="close">&times;</span>
                 <h5 class="modal-title">Thêm bài viết</h5>
             </div>
             <div class="modal-body">
@@ -413,6 +412,55 @@
 
         </div>
     </div>
+    {{-- Modal Edit --}}
+    <div id="editContinentModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close" id="close">&times;</span>
+                <h5 class="modal-title">Chỉnh sửa bài viết</h5>
+            </div>
+            <div class="modal-body">
+                <form action="" id="editContinentForm" enctype="multipart/form-data" method="post">
+                    @csrf
+                    <div class="form-group">
+                        <label for="continentTitle">Tên bài viết</label>
+                        <input type="text" class="form-control" name="title" id="continentTitle"
+                            value="Nai sừng tấm so với tuần lộc" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="continentDescription">Mô tả</label>
+                        <textarea style="height:300px" class="form-control" name="content" id="continentDescription" rows="3"
+                            required>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum obcaecati cupiditate amet ducimus tenetur maiores id magnam quidem veniam animi?</required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="continentImage">Hình ảnh</label>
+                        <input type="file" class="form-control-file" name="image" id="continentImage"
+                            onchange="previewImage(event)" required>
+                    </div>
+                    <div class="preview-container">
+                        <img id="imagePreviewEdit" src="http://localhost:8000/posts/lake.jpg" alt="Preview"
+                            style="display: none; width: 500px; height: auto;" />
+                    </div>
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-primary" style="margin-right: 10px">Lưu</button>
+                <button type="button" class="btn btn-secondary" id="closeModalButtonEdit">Đóng</button>
+            </div>
+            </form>
+
+        </div>
+    </div>
+
+    {{-- Modal Delete --}}
+    <div id="deleteContinentModal" class="modal">
+        <div class="modal-content" style=" height:200px; margin-top:30px">
+            <span class="close" id="closeDeleteModal">&times;</span>
+            <h2>Xác nhận xóa</h2>
+            <p>Bạn có chắc chắn muốn xóa bài viết này không?</p>
+            <button class="btn" style="margin-top: 15px; background: red" id="confirmDelete">Xóa</button>
+            <button class="btn btn-secondary" style="margin-top: 12px" id="cancelDelete">Hủy</button>
+        </div>
+    </div>
 
     {{--
     <script src="./assets/js/main.js"></script> --}}
@@ -423,32 +471,54 @@
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             var createPostButton = document.getElementById('createPostButton');
-            var addContinentModal = document.getElementById('addContinentModal');
-            var closeModal = document.getElementById('closeModal');
-            var closeModalButton = document.getElementById('closeModalButton');
-            var addContinentForm = document.getElementById('addContinentForm');
+            var editPostButton = document.getElementById('editPostButton');
+            var deletePostButton = document.getElementById('deletePost');
 
-            // Mở modal khi nhấn nút "Create Post"
+            var addContinentModal = document.getElementById('addContinentModal');
+            var editContinentModal = document.getElementById('editContinentModal');
+            var deleteContinentModal = document.getElementById('deleteContinentModal');
+
+            // Đóng modal
+            function closeModal(modal) {
+                modal.style.display = 'none';
+            }
+
+            // Mở modal
+            function openModal(modal) {
+                modal.style.display = 'block';
+            }
+
+            // Gán sự kiện mở modal cho các nút
             createPostButton.addEventListener('click', function() {
-                addContinentModal.style.display = 'flex';
+                openModal(addContinentModal);
+            });
+
+            editPostButton.addEventListener('click', function() {
+                openModal(editContinentModal);
+            });
+
+            deletePostButton.addEventListener('click', function() {
+                openModal(deleteContinentModal);
             });
 
             // Đóng modal khi nhấn nút "X" hoặc "Đóng"
-            closeModal.addEventListener('click', function() {
-                addContinentModal.style.display = 'none';
+            var closeModalButtons = document.querySelectorAll('.close, .btn-secondary');
+            closeModalButtons.forEach(function(button) {
+                button.addEventListener('click', function() {
+                    var modal = button.closest('.modal');
+                    closeModal(modal);
+                });
             });
 
-            closeModalButton.addEventListener('click', function() {
-                addContinentModal.style.display = 'none';
-            });
-
-            // Đóng modal khi nhấn ra ngoài modal
+            // Đóng modal khi nhấp bên ngoài modal
             window.addEventListener('click', function(event) {
-                if (event.target === addContinentModal) {
-                    addContinentModal.style.display = 'none';
-                }
+                var modals = document.querySelectorAll('.modal');
+                modals.forEach(function(modal) {
+                    if (event.target == modal) {
+                        closeModal(modal);
+                    }
+                });
             });
-
         });
 
         function showMore(id) {
@@ -753,6 +823,29 @@
             }
         }
 
+        function previewImage(event) {
+            const input = event.target;
+            const reader = new FileReader();
+
+            reader.onload = function() {
+                const imagePreview = document.getElementById('imagePreviewEdit');
+                imagePreview.src = reader.result;
+                imagePreview.style.display = 'block';
+            }
+
+            if (input.files && input.files[0]) {
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+        // Truyền image cũ vào đây
+        document.addEventListener('DOMContentLoaded', function() {
+            const defaultImage = "http://localhost:8000/posts/lake.jpg";
+            const imagePreview = document.getElementById('imagePreviewEdit');
+            imagePreview.src = defaultImage;
+            imagePreview.style.display = 'block';
+        });
+
         function fetchNumberNoti() {
             $.ajax({
                 url: '{{ route('user.get_number_noti') }}',
@@ -770,6 +863,24 @@
         }
 
         setInterval(fetchNumberNoti, 3000);
+
+        document.getElementById('option-post').addEventListener('click', function() {
+            var dropdownMenu = document.getElementById('dropdown-option-menu');
+            if (dropdownMenu.style.display === 'none' || dropdownMenu.style.display === '') {
+                dropdownMenu.style.display = 'block';
+            } else {
+                dropdownMenu.style.display = 'none';
+            }
+        });
+
+        document.addEventListener('click', function(event) {
+            var optionPost = document.getElementById('option-post');
+            var dropdownMenu = document.getElementById('dropdown-option-menu');
+
+            if (!optionPost.contains(event.target) && !dropdownMenu.contains(event.target)) {
+                dropdownMenu.style.display = 'none';
+            }
+        });
     </script>
     <script>
         document.getElementById('profile-picture').addEventListener('click', function() {
