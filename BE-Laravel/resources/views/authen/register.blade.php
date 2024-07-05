@@ -10,6 +10,62 @@
 </head>
 
 <body>
+<style>
+        .notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 15px;
+            background-color: #4CAF50;
+            /* Màu xanh */
+            color: white;
+            z-index: 9999;
+            display: none;
+            /* Ẩn ban đầu */
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .notification.success {
+            background-color: #4CAF50;
+            /* Màu xanh */
+        }
+
+        .notification.failed {
+            background-color: #ff3333;
+            /* Màu đỏ */
+            color: white;
+        }
+
+
+        .notification.show {
+            display: block;
+            animation: slideInRight 0.5s ease-out forwards;
+        }
+        @keyframes slideInRight {
+        0% {
+            transform: translateX(100%);
+        }
+        100% {
+            transform: translateX(0);
+        }
+}
+</style>
+@if (session('success'))
+        <div id="notification" class="notification success">
+            <p id="notification-message"></p>
+            <span id="close-notification" class="close-notification"><i class="fa fa-check" aria-hidden="true"></i>
+                {{ session('success') }}</span>
+        </div>
+    @endif
+
+    @if (session('failed'))
+        <div id="notification" class="notification failed">
+            <p id="notification-message"></p>
+            <span id="close-notification" class="close-notification"><i class="fa fa-exclamation-triangle"
+                    aria-hidden="true"></i> {{ session('failed') }}</span>
+        </div>
+    @endif
     <section class="bg-light p-3 p-md-4 p-xl-5">
         <div class="container">
             <div class="row justify-content-center">
@@ -26,7 +82,7 @@
                                         <div class="row">
                                             <div class="col-12">
                                                 <div class="mb-5">
-                                                    <h4 class="text-center">Register Account</h4>
+                                                    <h4 class="text-center">Đăng ký tài khoản</h4>
                                                 </div>
                                             </div>
                                         </div>
@@ -36,8 +92,8 @@
                                                 <div class="col-12">
                                                     <div class="form-floating mb-3">
                                                         <input type="username" class="form-control" name="username"
-                                                            id="username" placeholder="Username" required>
-                                                        <label for="username" class="form-label">Username</label>
+                                                            id="username" placeholder="Nhập tên người dùng" required>
+                                                        <label for="username" class="form-label">Tên người dùng</label>
                                                     </div>
                                                 </div>
                                                 <div class="col-12">
@@ -49,24 +105,38 @@
                                                 </div>
                                                 <div class="col-12">
                                                     <div class="form-floating mb-3">
+                                                        <input type="address" class="form-control" name="address"
+                                                            id="address" placeholder="Nhập địa chỉ" required>
+                                                        <label for="address" class="form-label">Địa chỉ</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <div class="form-floating mb-3">
+                                                        <select name="gender" id="" class="form-control">
+                                                            <option> Giới tính</option>
+                                                            <option value="0" >Nam</option>
+                                                            <option value="1" >Nữ</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <div class="form-floating mb-3">
                                                         <input type="password" class="form-control" name="password"
-                                                            id="password" placeholder="Password" required>
-                                                        <label for="password" class="form-label">Password</label>
+                                                            id="password" placeholder="Nhập mật khẩu" required>
+                                                        <label for="password" class="form-label">Mật khẩu</label>
                                                     </div>
                                                 </div>
                                                 <div class="col-12">
                                                     <div class="form-floating mb-3">
                                                         <input type="password" class="form-control"
                                                             name="password_confirmation" id="password_confirmation"
-                                                            placeholder="password_confirmation" required>
-                                                        <label for="password_confirmation" class="form-label">Password
-                                                            Comfirm</label>
+                                                            placeholder="Xác nhận mật khẩu" required>
+                                                        <label for="password_confirmation" class="form-label">Xác nhận mật khẩu</label>
                                                     </div>
                                                 </div>
                                                 <div class="col-12">
                                                     <div class="d-grid">
-                                                        <button class="btn btn-dark btn-lg" type="submit">Register
-                                                            now</button>
+                                                        <button class="btn btn-dark btn-lg" type="submit">Đăng ký</button>
                                                     </div>
                                                 </div>
                                             </div>
@@ -75,7 +145,7 @@
                                             <div class="col-12">
                                                 <div
                                                     class="d-flex gap-2 gap-md-4 flex-column flex-md-row justify-content-md-center mt-5">
-                                                    <a href="{{route('view_login')}}" class="link-secondary text-decoration-none">Login now!</a>
+                                                    <a href="{{route('view_login')}}" class="link-secondary text-decoration-none">Đăng nhập ngay !!!</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -87,6 +157,36 @@
                 </div>
             </div>
         </div>
+    <script>// Hiển thị thông báo
+    function showNotification(message) {
+        var notification = document.querySelector('.notification');
+        notification.innerHTML = message;
+        notification.classList.add('show');
+
+        // Tự động ẩn sau 5 giây
+        setTimeout(function() {
+            hideNotification();
+        }, 5000); // Ẩn sau 5 giây
+    }
+
+    // Ẩn thông báo
+    function hideNotification() {
+        var notification = document.querySelector('.notification');
+        notification.classList.remove('show');
+    }
+
+    // Hiển thị thông báo khi trang được load
+    window.onload = function() {
+        var successMessage = "{{ session('success') }}";
+        var failedMessage = "{{ session('failed') }}";
+
+        if (failedMessage) {
+            showNotification(failedMessage);
+        }
+        if (successMessage) {
+            showNotification(successMessage);
+        }
+    };</script>
     </section>
 </body>
 

@@ -51,6 +51,7 @@ class AdminController extends Controller
         $user->name = $data['username'];
         $user->email = $data['email'];
         $user->password = Hash::make($data['password']);
+        $user->address = $data['address'];
         $user->gender = $data['gender'];
         $user->role_id = $data['role_id'];
         $user->birthdate = $data['birthdate'];
@@ -86,6 +87,7 @@ class AdminController extends Controller
         $user = User::where('id', $id)->first();
         $user->name = $data['username'];
         $user->email = $data['email'];
+        $user->address = $data['address'];
         $user->gender = $data['gender'];
         $user->role_id = $data['role_id'];
         $user->birthdate = $data['birthdate'];

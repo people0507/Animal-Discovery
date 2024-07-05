@@ -141,6 +141,7 @@
                                         <th>Tên người dùng</th>
                                         <th>Email</th>
                                         <th>Giới tính</th>
+                                        <th>Địa chỉ</th>
                                         <th>Ngày sinh</th>
                                         <th>Ảnh đại diện</th>
                                         <th>Vai trò</th>
@@ -153,13 +154,14 @@
                                             <td>1</td>
                                             <td>{{ $user->name }}</td>
                                             <td>{{ $user->email }}</td>
-                                            @if ($user->gender == 1)
+                                            @if ($user->gender == 0)
                                                 <td>Nam</td>
-                                            @elseif($user->gender == 2)
+                                            @elseif($user->gender == 1)
                                                 <td>Nữ</td>
                                             @else
                                                 <td></td>
                                             @endif
+                                            <td>{{ $user->address }}</td>
                                             <td>{{ $user->birthdate }}</td>
                                             @if ($user->avatar != null)
                                                 <td><img src="http://localhost:8000/avatars/{{ $user->avatar }}"

@@ -27,11 +27,8 @@
                     @csrf
                     <input hidden type="text" name="topic_id" id="" value="{{ $id }}">
                     @foreach ($questions as $key => $question)
-                        <div class="title-quizz">
-                            <span>(Câu {{ $key + 1 }})</span>{{ $question->question_content }} Lorem ipsum dolor
-                            sit amet consectetur adipisicing elit. Quasi placeat itaque, ut labore a odio aut nemo ipsa
-                            ab non?Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni at reprehenderit nulla
-                            vitae minima porro possimus facere aliquid deserunt earum!
+                        <div class="title-quizz" style="word-break: break-all;">
+                            <span>(Câu {{ $key + 1 }})</span>{{ $question->question_content }}
                         </div>
                         @foreach ($question->answers as $answer)
                             <div>

@@ -23,12 +23,16 @@ class MasterDataSeeder extends Seeder
             [
                 'name' => 'Nguyễn Đăng Nhân',
                 'email' => 'tuongvandang1@gmail.com',
+                'address' => '175 Tây Sơn Đống Đa',
+                'gender' => 0,
                 'password' => Hash::make('123456'),
                 'role_id' => 1,
             ],
             [
                 'name' => 'Trương Văn Cường',
                 'email' => 'cuong2003@gmail.com',
+                'address' => '175 Tây Sơn Đống Đa',
+                'gender' => 1,
                 'password' => Hash::make('123456'),
                 'role_id' => 2,
             ],

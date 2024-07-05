@@ -1,8 +1,8 @@
 <nav>
     <div class="container">
         <div style="display: flex; align-items:center'">
-            <a href="{{ route('user.list_post_social') }}" class="btn-game" style="margin-right:10px">
-                <i class="fa-solid fa-backward"></i>
+            <a href="{{ route('user.list_post_social') }}" class="btn-game" style="margin-right:20px;margin-bottom:10px">
+                <i class="fa-solid fa-home"></i>
             </a>
             <h2 class="logo">
                 <a href="{{ route('user.view_list_topic') }}" style="color: #2EB872;text-decoration: none;">Diễn
@@ -23,7 +23,7 @@
             </div>
             <div id="dropdown-menu" class="dropdown-menu" style="display: none;">
                 <a id="editUser">Cập nhật tài khoản</a>
-                <a href="">Đăng xuất</a>
+                <a href="{{route('logout')}}">Đăng xuất</a>
             </div>
 
         </div>
