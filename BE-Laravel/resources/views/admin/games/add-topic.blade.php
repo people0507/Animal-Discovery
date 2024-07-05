@@ -112,10 +112,10 @@
                                         <div class="form-group">
                                             <label>Số điểm mỗi câu hỏi</label>
                                             @if ($mode == 'add')
-                                            <input type="text" name="score_per_question" class="form-control"
+                                            <input type="number" name="score_per_question" class="form-control"
                                             placeholder="Hãy nhập thông tin">
                                             @else
-                                            <input type="text" name="score_per_question" class="form-control"
+                                            <input type="number" name="score_per_question" class="form-control"
                                             placeholder="Hãy nhập thông tin" value="{{ $topic->score_per_question}}">
                                             @endif
                                         </div>

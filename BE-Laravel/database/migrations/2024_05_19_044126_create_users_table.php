@@ -18,10 +18,11 @@ return new class extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->string('password');
-            $table->boolean('gender')->nullable(); 
+            $table->boolean('gender'); 
+            $table->string('address');
             $table->date('birthdate')->nullable();
             $table->string('avatar')->nullable();
-            $table->integer('reward_score')->nullable();
+            $table->integer('reward_score')->default(0);
             $table->unsignedBigInteger('role_id');
             $table->foreign('role_id')->references('id')->on('role')->onDelete('cascade');
             $table->rememberToken();

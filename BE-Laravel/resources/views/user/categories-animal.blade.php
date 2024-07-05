@@ -129,10 +129,10 @@
                             </div>
                             <div class="col-6">
                                 @if($item->images->image_name != null)
-                                <img src="http://localhost:8000/animal_images/{{ $item->images->image_name }}"
+                                <img src="{{asset('animal_images/'. $item->images->image_name )}}"
                                     width="100%" alt="" class="item-animal-img">
                                 @else
-                                <img src="http://localhost:8000/error/error.jpg"
+                                <img src="{{asset('error/error.jpg')}}"
                                     width="100%" alt="" class="item-animal-img">
                                 @endif
                             </div>

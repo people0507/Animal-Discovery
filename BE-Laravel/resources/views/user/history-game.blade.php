@@ -26,7 +26,9 @@
 
             <div class="game-over">
                 <h1>Lịch sử trò chơi</h1>
-
+                <div style="width:40%;height:40%;margin:0 auto">
+                        <canvas id="myPieChart"></canvas>
+                </div>
                 <div class="row mt-5 mb-5">
                     <div class="table-responsive">
                         <table class="table table-striped">
@@ -38,23 +40,11 @@
                                     <th>Số câu sai</th>
                                     <th>Điểm</th>
                                     <th>Tổng số câu hỏi</th>
-                                    <th>Thời gian chơi</th>
                                 </tr>
                             </thead>
                             <tbody id="game-history">
                             </tbody>
                         </table>
-                    </div>
-
-                    <div class="buttons mt-3">
-                        <a href="">
-                            <button class="button-74" role="button"><i class="fa-solid fa-gift"></i> Đổi quà</button>
-                        </a>
-
-                        <a href="{{ route('user.view_list_topic') }}">
-                            <button class="button-74" style="background:#0056b3; color: #fff;"><i
-                                    class="fa fa-arrow-left" aria-hidden="true"></i> Quay trở lại</button>
-                        </a>
                     </div>
                 </div>
             </div>
@@ -65,61 +55,73 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
-        var gameHistoryData = [{
-                date: '2024-07-01',
-                correct: 5,
-                wrong: 2,
-                score: 50,
-                totalQuestions: 7,
-                timePlayed: '10 phút'
-            },
-            {
-                date: '2024-07-02',
-                correct: 7,
-                wrong: 3,
-                score: 70,
-                totalQuestions: 10,
-                timePlayed: '15 phút'
-            },
-            {
-                date: '2024-07-02',
-                correct: 7,
-                wrong: 3,
-                score: 70,
-                totalQuestions: 10,
-                timePlayed: '15 phút'
-            },
-            {
-                date: '2024-07-02',
-                correct: 7,
-                wrong: 3,
-                score: 70,
-                totalQuestions: 10,
-                timePlayed: '15 phút'
-            },
-        ];
+        let arr = @json($history_games);
+        let sum_true = @json($sumTrueAnswer);
+        let sum_wrong = @json($sumWrongAnswer);
 
-        let totalCorrect = 0;
-        let totalWrong = 0;
-        let totalQuestions = 0;
-        gameHistoryData.forEach(function(game) {
-            totalCorrect += game.correct;
-            totalWrong += game.wrong;
-            totalQuestions += game.totalQuestions;
-        });
+        var ctx = document.getElementById('myPieChart').getContext('2d');
 
+
+var myPieChart = new Chart(ctx, {
+    type: 'pie',
+    data: {
+        labels: ['Đáp án đúng', 'Đáp án sai'],
+        datasets: [{
+            label: 'Tổng số lượng ',
+            data: [sum_true, sum_wrong],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        responsive: true,
+        plugins: {
+            legend: {
+                position: 'top',
+            },
+            title: {
+                display: true,
+                text: 'Biểu đồ tổng số lượng đúng sai của các lần chơi '
+            }
+        },
+        maintainAspectRatio: false,
+        onResize: function(chart, size) {
+            chart.canvas.parentNode.style.width = '250px';
+            chart.canvas.parentNode.style.height = '250px';
+        }
+    },
+});
+
+        function formatISO8601ToCustomFormat(iso8601String) {
+    const date = new Date(iso8601String);
+    const day = String(date.getUTCDate()).padStart(2, '0');
+    const month = String(date.getUTCMonth() + 1).padStart(2, '0');
+    const year = date.getUTCFullYear();
+    const hours = String(date.getUTCHours()).padStart(2, '0');
+    const minutes = String(date.getUTCMinutes()).padStart(2, '0');
+    const seconds = String(date.getUTCSeconds()).padStart(2, '0');
+    return `${day}-${month}-${year} ${hours}:${minutes}:${seconds}`;
+}
 
         var gameHistoryTable = document.getElementById('game-history');
-        gameHistoryData.forEach(function(game) {
+        arr.forEach(function(game) {
+            console.log(game.created_at);
             var row = document.createElement('tr');
+            var sum = game.true_number + game.wrong_number;
             row.innerHTML = `
-            <td>${game.date}</td>
-            <td>${game.nameTopic}</td>
-            <td>${game.correct}</td>
-            <td>${game.wrong}</td>
+            <td>${formatISO8601ToCustomFormat(game.created_at)}</td>
+            <td>${game.topic_id}</td>
+            <td>${game.true_number}</td>
+            <td>${game.wrong_number}</td>
             <td>${game.score}</td>
-            <td>${game.totalQuestions}</td>
-            <td>${game.timePlayed}</td>
+            <td>${sum}</td>
         `;
             gameHistoryTable.appendChild(row);
         });

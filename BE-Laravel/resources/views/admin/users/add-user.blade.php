@@ -130,15 +130,28 @@
 
                                     <div class="col-md-4">
                                         <div class="form-group">
+                                            <label>Địa chỉ</label>
+                                            @if ($mode == 'add')
+                                                <input type="text" name="address" class="form-control"
+                                                    placeholder="Hãy nhập thông tin">
+                                            @else
+                                                <input type="text" name="address" class="form-control"
+                                                    placeholder="Hãy nhập thông tin" value="{{ $user->address }}">
+                                            @endif
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <div class="form-group">
                                             <label>Giới Tính</label>
                                             <select name="gender" id="" class="form-control">
                                                 @if ($mode == 'add')
-                                                    <option value="1">Nam</option>
-                                                    <option value="2">Nữ</option>
+                                                    <option value="0">Nam</option>
+                                                    <option value="1">Nữ</option>
                                                 @else
-                                                    <option value="1" {{ $user->gender == 1 ? 'selected' : '' }}>Nam
+                                                    <option value="0" {{ $user->gender == 0 ? 'selected' : '' }}>Nam
                                                     </option>
-                                                    <option value="2" {{ $user->gender == 2 ? 'selected' : '' }}>Nữ
+                                                    <option value="1" {{ $user->gender == 1 ? 'selected' : '' }}>Nữ
                                                     </option>
                                                 @endif
                                             </select>

@@ -27,11 +27,8 @@
                     @csrf
                     <input hidden type="text" name="topic_id" id="" value="{{ $id }}">
                     @foreach ($questions as $key => $question)
-                        <div class="title-quizz">
-                            <span>(Câu {{ $key + 1 }})</span>{{ $question->question_content }} Lorem ipsum dolor
-                            sit amet consectetur adipisicing elit. Quasi placeat itaque, ut labore a odio aut nemo ipsa
-                            ab non?Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni at reprehenderit nulla
-                            vitae minima porro possimus facere aliquid deserunt earum!
+                        <div class="title-quizz" style="word-break: break-all;">
+                            <span>(Câu {{ $key + 1 }})</span>{{ $question->question_content }}
                         </div>
                         @foreach ($question->answers as $answer)
                             <div>
@@ -45,7 +42,7 @@
                             </div>
                         @endforeach
                     @endforeach
-                    <button type="submit" id="submit-quiz" class="btn-submit">Gửi đáp án</button>
+                    <button type="submit" id="submit-quiz" class="btn-submit" onclick="return confirmSubmit()">Gửi đáp án</button>
                 </form>
             </div>
 
@@ -57,7 +54,12 @@
     <script src="./assets/js/main.js"></script> --}}
     <script src="{{ asset('users/social_assets/js/main.js') }}"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
+    <script>
+        function confirmSubmit() {
+        var result = window.confirm('Bạn có chắc chắn muốn nộp đáp án ?');
+        return result;
+    }
+    </script>
 </body>
 
 

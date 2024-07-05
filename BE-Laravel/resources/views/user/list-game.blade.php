@@ -29,9 +29,10 @@
 
             <div class="full-games">
                 @foreach ($topics as $topic)
+                @if($topic->questions_count > 0)
                     <div class="item-game">
                         <div class="img-game" style="height: 250px">
-                            <img src="http://localhost:8000/topics/{{ $topic->topic_image }}" class="responsive-img">
+                            <img src="{{asset('topics/'. $topic->topic_image )}}" class="responsive-img">
                         </div>
                         <div class="content-game">
                             <div class="">
@@ -47,10 +48,8 @@
                                     <div class="col-sm fw-bold">
                                         Mô tả chủ đề:
                                     </div>
-                                    <div class="title-game col-8">
-                                        {{ $topic->topic_description }} Lorem ipsum dolor sit amet consectetur
-                                        adipisicing elit. Ad itaque veritatis, modi facere iste pariatur rem ab sapiente
-                                        delectus cumque!
+                                    <div class="title-game col-8" style="word-break: break-all;">
+                                        {{ $topic->topic_description }}
                                     </div>
                                 </div>
                             </div>
@@ -63,13 +62,14 @@
                                     </div>
                                     <div class="col-sm-4 text-end">
                                         <a class="btn-game"
-                                            href="{{ route('user.play_game', ['id' => $topic->id]) }}">Tham gia</a>
+                                            href="{{ route('user.play_game', ['id' => $topic->id]) }}"  onclick="return confirmPlayGame()">Tham gia</a>
 
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                @endif
                 @endforeach
             </div>
         </div>
@@ -78,7 +78,12 @@
     <script src="./assets/js/main.js"></script> --}}
     <script src="{{ asset('users/social_assets/js/main.js') }}"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
+    <script>
+        function confirmPlayGame() {
+        var result = window.confirm('Bạn có chắc chắn muốn tham gia trò chơi?');
+        return result;
+    }
+    </script>
 </body>
 
 

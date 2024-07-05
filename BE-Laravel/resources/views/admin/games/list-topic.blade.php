@@ -164,19 +164,14 @@
                                             <td>{{ $topic->topic_name }}</td>
                                             <td>
                                                 @if ($topic->topic_image != null)
-                                                    <img src="http://localhost:8000/topics/{{ $topic->topic_image }}"
+                                                    <img src="{{asset('topics/'. $topic->topic_image )}}"
                                                         alt="123" width="200">
                                                 @else
-                                                    <img src="http://localhost:8000/error/error.jpg" alt="123"
+                                                    <img src="{{asset('error/error.jpg')}}" alt="123"
                                                         width="200">
                                                 @endif
                                             </td>
-                                            <td>{{ $topic->topic_description }}Lorem ipsum dolor
-                                                sit amet consectetur adipisicing elit. Quasi placeat itaque, ut labore a
-                                                odio aut nemo ipsa
-                                                ab non?Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni at
-                                                reprehenderit nulla
-                                                vitae minima porro possimus facere aliquid deserunt earum!</td>
+                                            <td style="word-break: break-all;">{{ $topic->topic_description }}</td>
                                             <td>{{ $topic->score_per_question }}</td>
                                             <td class="box-container">
                                                 <a href="{{ route('admin.list_question', ['id' => $topic->id]) }}">Xem

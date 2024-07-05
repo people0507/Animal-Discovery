@@ -109,7 +109,7 @@
                 </div>
                 <div id="dropdown-menu" class="dropdown-menu" style="display: none;">
                     <a id="editUser">Cập nhật tài khoản</a>
-                    <a href="">Đăng xuất</a>
+                    <a href="{{route('logout')}}">Đăng xuất</a>
                 </div>
             </div>
         </div>
@@ -253,7 +253,7 @@
                             </div>
 
                             <div class="photo">
-                                <img src="http://localhost:8000/posts/{{ $post->image }}" alt="">
+                                <img src="{{asset('posts/'. $post->image )}}" alt="">
                             </div>
 
                             <div class="action-button">
