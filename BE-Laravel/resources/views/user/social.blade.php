@@ -53,6 +53,7 @@
 
     .form-p label {
         display: block;
+        margin-top: 10px;
         margin-bottom: 5px;
         font-weight: bold;
     }
@@ -109,7 +110,7 @@
                 </div>
                 <div id="dropdown-menu" class="dropdown-menu" style="display: none;">
                     <a id="editUser">Cập nhật tài khoản</a>
-                    <a href="{{route('logout')}}">Đăng xuất</a>
+                    <a href="{{ route('logout') }}">Đăng xuất</a>
                 </div>
             </div>
         </div>
@@ -130,6 +131,15 @@
                 <div class="form-p">
                     <label for="password">Mật khẩu:</label>
                     <input type="password" id="password" name="password" value="skdjskdjksa" required>
+                </div>
+                <div class="form-group">
+                    <label for="continentImage">Hình ảnh</label>
+                    <input type="file" class="form-control-file" name="image" id="continentImage"
+                        onchange="previewImage(event, 'imagePreview')" required>
+                </div>
+                <div class="preview-container">
+                    <img id="imagePreview" src="#" alt="Preview"
+                        style="display: none; width: 200px; height: 200px;  object-fit: contain;" />
                 </div>
                 <button type="submit" class="btn-game" style="margin-top: 20px;">Lưu thay đổi</button>
             </form>
@@ -208,7 +218,6 @@
             </div>
 
             <div class="middle">
-
                 @foreach ($posts as $key => $post)
                     <div class="feeds">
                         <div class="feed">
@@ -253,7 +262,7 @@
                             </div>
 
                             <div class="photo">
-                                <img src="{{asset('posts/'. $post->image )}}" alt="">
+                                <img src="{{ asset('posts/' . $post->image) }}" alt="">
                             </div>
 
                             <div class="action-button">
@@ -267,7 +276,6 @@
                 @endif
                 <span id="commentIcon_{{ $key }}"><i class="uil uil-comment-dots"></i></span>
                 <span><i class="uil uil-share-alt"></i></span>
-
             </div>
             <div class="bookmark">
                 <span><i class="uil uil-bookmark-full"></i></span>
@@ -281,14 +289,12 @@
             <p>Like by <b>Ernest Aritn</b> and <b>{{ $post->likes_count }} others</b></p>
 
         </div>
-
         <div class="caption">
             <p>
                 <b>{{ $post->user->name }}</b> {{ $post->title }}
                 <span class="harsh-tag">#lifestyle</span>
             </p>
         </div>
-
         <div class="comments text-muted">"View all {{ $post->comments_count }} comments"</div>
 
         </div>
@@ -395,13 +401,13 @@
                             placeholder="Nhập mô tả" required></textarea>
                     </div>
                     <div class="form-group">
-                        <label for="continentImage">Hình ảnh</label>
-                        <input type="file" class="form-control-file" name="image" id="continentImage"
-                            onchange="previewImage(event)" required>
+                        <label for="continentImageCrePost">Hình ảnh</label>
+                        <input type="file" class="form-control-file" name="image" id="continentImageCrePost"
+                            onchange="previewImage(event, 'imagePreviewEdit')" required>
                     </div>
                     <div class="preview-container">
-                        <img id="imagePreview" src="#" alt="Preview"
-                            style="display: none; width: 500px; height: auto;" />
+                        <img id="imagePreviewEdit" src="" alt="Preview"
+                            style="display: none; width: 200px; height: auto;" />
                     </div>
             </div>
             <div class="modal-footer">
@@ -432,14 +438,14 @@
                         <textarea style="height:300px" class="form-control" name="content" id="continentDescription" rows="3"
                             required>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum obcaecati cupiditate amet ducimus tenetur maiores id magnam quidem veniam animi?</required></textarea>
                     </div>
-                    <div class="form-group">
-                        <label for="continentImage">Hình ảnh</label>
-                        <input type="file" class="form-control-file" name="image" id="continentImage"
-                            onchange="previewImage(event)" required>
+                    <div class="form-p">
+                        <label for="continentImageEditPost">Hình ảnh</label>
+                        <input type="file" class="form-control-file" name="image" id="continentImageEditPost"
+                            onchange="previewImage(event, 'imagePreviewEditPost')" required>
                     </div>
                     <div class="preview-container">
-                        <img id="imagePreviewEdit" src="http://localhost:8000/posts/lake.jpg" alt="Preview"
-                            style="display: none; width: 500px; height: auto;" />
+                        <img id="imagePreviewEditPost" src="http://localhost:8000/posts/lake.jpg" alt="Preview"
+                            style="display: block; width: 200px; height: auto;" />
                     </div>
             </div>
             <div class="modal-footer">
@@ -807,28 +813,12 @@
             }
         });
 
-
-        function previewImage(event) {
+        function previewImage(event, previewElementId) {
             const input = event.target;
             const reader = new FileReader();
 
             reader.onload = function() {
-                const imagePreview = document.getElementById('imagePreview');
-                imagePreview.src = reader.result;
-                imagePreview.style.display = 'block';
-            }
-
-            if (input.files && input.files[0]) {
-                reader.readAsDataURL(input.files[0]);
-            }
-        }
-
-        function previewImage(event) {
-            const input = event.target;
-            const reader = new FileReader();
-
-            reader.onload = function() {
-                const imagePreview = document.getElementById('imagePreviewEdit');
+                const imagePreview = document.getElementById(previewElementId);
                 imagePreview.src = reader.result;
                 imagePreview.style.display = 'block';
             }
@@ -841,7 +831,7 @@
         // Truyền image cũ vào đây
         document.addEventListener('DOMContentLoaded', function() {
             const defaultImage = "http://localhost:8000/posts/lake.jpg";
-            const imagePreview = document.getElementById('imagePreviewEdit');
+            const imagePreview = document.getElementById('imagePreviewEditPost');
             imagePreview.src = defaultImage;
             imagePreview.style.display = 'block';
         });
