@@ -132,7 +132,7 @@
                     <label for="password">Mật khẩu:</label>
                     <input type="password" id="password" name="password" value="skdjskdjksa" required>
                 </div>
-                <div class="form-group">
+                <div class="form-p">
                     <label for="continentImage">Hình ảnh</label>
                     <input type="file" class="form-control-file" name="image" id="continentImage"
                         onchange="previewImage(event, 'imagePreview')" required>
@@ -832,6 +832,12 @@
         document.addEventListener('DOMContentLoaded', function() {
             const defaultImage = "http://localhost:8000/posts/lake.jpg";
             const imagePreview = document.getElementById('imagePreviewEditPost');
+            imagePreview.src = defaultImage;
+            imagePreview.style.display = 'block';
+        });
+        document.addEventListener('DOMContentLoaded', function() {
+            const defaultImage = "http://localhost:8000/posts/lake.jpg";
+            const imagePreview = document.getElementById('imagePreview');
             imagePreview.src = defaultImage;
             imagePreview.style.display = 'block';
         });
