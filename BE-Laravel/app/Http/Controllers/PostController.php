@@ -19,6 +19,8 @@ use DB;
 use Carbon\Carbon;
 use App\Http\MessageContent;
 use Illuminate\Support\Facades\Mail;
+use Hash;
+
 class PostController extends Controller
 {
     public function listPostSocial(){
@@ -323,4 +325,33 @@ class PostController extends Controller
         return view('user.history-game',compact('history_games', 'sumTrueAnswer', 'sumWrongAnswer'));
     }
     
+
+    public function updateUser(Request $request){
+        MessageContent::loadMessages();
+        $data = $request->all();
+        try {
+        if (isset($data['avatar'])) {
+            $uniqueFileName = Str::uuid()->toString() . '.' . $data['avatar']->extension();
+            $data['avatar']->move(public_path('avatars'), $uniqueFileName);
+        }
+        $user = User::where('id', Auth::id())->first();
+        $user->name = $data['username'];
+        $user->email = $data['email'];
+        $user->address = $data['address'];
+        if(Auth::user()->password != $data['password']){
+            $user->password = Hash::make($data['password']);
+        }
+        $user->gender = $data['gender'];
+        $user->birthdate = $data['birthdate'];
+        if (isset($uniqueFileName) && $uniqueFileName != '') {
+            $user->avatar = $uniqueFileName;
+        }
+        $user->save();
+        $message = MessageContent::getMessage('update_success');
+        return redirect()->route('user.list_post_social')->with('success', $message);
+    } catch (Exception $e) {
+        $message = MessageContent::getMessage('update_failed');
+        return redirect()->back()->with('failed', $message);
+    }
+    }
 }

@@ -158,7 +158,7 @@ Route::prefix('animal_post')->middleware('checklogin')->group(function () {
     Route::get('/history_game', [PostController::class, 'historyGame'])->name('user.history_game');
     Route::get('/get_reward/{id}', [PostController::class, 'getReward'])->name('user.get_reward');
     Route::get('/history_get_reward', [PostController::class, 'historyGetReward'])->name('user.history_get_reward');
-
+    Route::post('/update_user', [PostController::class, 'updateUser'])->name('user.update_user');
 });
 
 Route::prefix('admin')->middleware(['checklogin', 'checkrole'])->group(function () {
@@ -237,4 +237,7 @@ Route::prefix('admin')->middleware(['checklogin', 'checkrole'])->group(function 
     Route::post('/create_reward', [AdminController::class, 'createReward'])->name('admin.create_reward');
     Route::post('/update_reward/{id}', [AdminController::class, 'updateReward'])->name('admin.update_reward');
     Route::delete('/delete_reward/{id}', [AdminController::class, 'deleteReward'])->name('admin.delete_reward');
+    Route::get('/get_history_reward', [AdminController::class, 'getHistoryReward'])->name('admin.get_history_reward');
+    Route::post('/search_history_reward', [AdminController::class, 'searchHistoryReward'])->name('admin.search_history_reward');
+
 });

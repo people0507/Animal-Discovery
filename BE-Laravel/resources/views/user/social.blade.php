@@ -95,8 +95,54 @@
     .dropdown-menu a:hover {
         background-color: #f0f0f0;
     }
-</style>
 
+    .notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 15px;
+            background-color: #4CAF50;
+            /* Màu xanh */
+            color: white;
+            z-index: 9999;
+            display: none;
+            /* Ẩn ban đầu */
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .notification.success {
+            background-color: #4CAF50;
+            /* Màu xanh */
+        }
+
+        .notification.failed {
+            background-color: #ff3333;
+            /* Màu đỏ */
+            color: white;
+        }
+
+
+        .notification.show {
+            display: block;
+            animation: slideInRight 0.5s ease-out forwards;
+        }
+</style>
+@if (session('success'))
+        <div id="notification" class="notification success">
+            <p id="notification-message"></p>
+            <span id="close-notification" class="close-notification"><i class="fa fa-check" aria-hidden="true"></i>
+                {{ session('success') }}</span>
+        </div>
+    @endif
+
+@if (session('failed'))
+        <div id="notification" class="notification failed">
+            <p id="notification-message"></p>
+            <span id="close-notification" class="close-notification"><i class="fa fa-exclamation-triangle"
+                    aria-hidden="true"></i> {{ session('failed') }}</span>
+        </div>
+@endif
 <body>
     <nav>
         <div class="container">
@@ -119,23 +165,39 @@
         <div class="modal-content">
             <span class="close">&times;</span>
             <h2>Cập nhật tài khoản</h2>
-            <form id="updateAccountForm">
+            <form action="{{route('user.update_user')}}" id="updateAccountForm" method="post" enctype="multipart/form-data">
+                @csrf
                 <div class="form-p">
                     <label for="username">Tên:</label>
-                    <input type="text" id="username" name="username" value="Cuong" required>
+                    <input type="text" id="username" name="username" value="{{Auth::user()->name}}" required>
                 </div>
                 <div class="form-p">
                     <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" value="cuong@gmail.com" readonly>
+                    <input type="email" id="email" name="email" value="{{Auth::user()->email}}" readonly>
                 </div>
                 <div class="form-p">
                     <label for="password">Mật khẩu:</label>
-                    <input type="password" id="password" name="password" value="skdjskdjksa" required>
+                    <input type="password" id="password" name="password" value="{{Auth::user()->password}}" required>
+                </div>
+                <div class="form-p">
+                <label for="gender">Giới tính:</label>
+                <select name="gender" id="gender" style="padding: 10px;border: 1px solid #ccc;width: 100%;border-radius: 4px;">
+                    <option value="0" {{Auth::user()->gender == 0 ? 'selected':''}}>Nam</option>
+                    <option value="1" {{Auth::user()->gender == 1 ? 'selected':''}}>Nữ</option>
+                </select>
+                </div>
+                <div class="form-p">
+                    <label for="address">Địa chỉ:</label>
+                    <input type="text" id="address" name="address" value="{{Auth::user()->address}}" required>
+                </div>
+                <div class="form-p">
+                    <label for="birthdate">Ngày sinh:</label>
+                    <input type="date" id="birthdate" name="birthdate" value="{{Auth::user()->birthdate}}" required>
                 </div>
                 <div class="form-p">
                     <label for="continentImage">Hình ảnh</label>
-                    <input type="file" class="form-control-file" name="image" id="continentImage"
-                        onchange="previewImage(event, 'imagePreview')" required>
+                    <input type="file" class="form-control-file" name="avatar" id="continentImage"
+                        onchange="previewImage(event, 'imagePreview')" >
                 </div>
                 <div class="preview-container">
                     <img id="imagePreview" src="#" alt="Preview"
@@ -233,7 +295,7 @@
                                         <small>Dubai, 15 MINUTED AGO</small>
                                     </div>
                                 </div>
-                                @if ($post->user_id == Auth::id())
+                                <!-- @if ($post->user_id == Auth::id())
                                     <span class="edit" id="option-post">
                                         <i class="uil uil-ellipsis-h"></i>
                                         <div id="dropdown-option-menu" class="dropdown-option-menu"
@@ -242,7 +304,7 @@
                                             <a id="deletePost">Xóa bài viết</a>
                                         </div>
                                     </span>
-                                @endif
+                                @endif -->
                             </div>
 
                             <div class="content" style="margin:5px 0px">
@@ -499,13 +561,13 @@
                 openModal(addContinentModal);
             });
 
-            editPostButton.addEventListener('click', function() {
-                openModal(editContinentModal);
-            });
+            // editPostButton.addEventListener('click', function() {
+            //     openModal(editContinentModal);
+            // });
 
-            deletePostButton.addEventListener('click', function() {
-                openModal(deleteContinentModal);
-            });
+            // deletePostButton.addEventListener('click', function() {
+            //     openModal(deleteContinentModal);
+            // });
 
             // Đóng modal khi nhấn nút "X" hoặc "Đóng"
             var closeModalButtons = document.querySelectorAll('.close, .btn-secondary');
@@ -560,10 +622,10 @@
         var updateAccountForm = document.getElementById('updateAccountForm');
 
         updateAccountForm.addEventListener('submit', function(event) {
-            event.preventDefault();
-            var formData = new FormData(updateAccountForm);
-            var username = formData.get('username');
-            var password = formData.get('password');
+            // event.preventDefault();
+            // var formData = new FormData(updateAccountForm);
+            // var username = formData.get('username');
+            // var password = formData.get('password');
 
             modal.style.display = 'none';
         });
@@ -829,18 +891,18 @@
         }
 
         // Truyền image cũ vào đây
-        document.addEventListener('DOMContentLoaded', function() {
-            const defaultImage = "http://localhost:8000/posts/lake.jpg";
-            const imagePreview = document.getElementById('imagePreviewEditPost');
-            imagePreview.src = defaultImage;
-            imagePreview.style.display = 'block';
-        });
-        document.addEventListener('DOMContentLoaded', function() {
-            const defaultImage = "http://localhost:8000/posts/lake.jpg";
-            const imagePreview = document.getElementById('imagePreview');
-            imagePreview.src = defaultImage;
-            imagePreview.style.display = 'block';
-        });
+        // document.addEventListener('DOMContentLoaded', function() {
+        //     const defaultImage = "http://localhost:8000/posts/lake.jpg";
+        //     const imagePreview = document.getElementById('imagePreviewEditPost');
+        //     imagePreview.src = defaultImage;
+        //     imagePreview.style.display = 'block';
+        // });
+        // document.addEventListener('DOMContentLoaded', function() {
+        //     const defaultImage = "http://localhost:8000/posts/lake.jpg";
+        //     const imagePreview = document.getElementById('imagePreview');
+        //     imagePreview.src = defaultImage;
+        //     imagePreview.style.display = 'block';
+        // });
 
         function fetchNumberNoti() {
             $.ajax({
@@ -860,23 +922,23 @@
 
         setInterval(fetchNumberNoti, 3000);
 
-        document.getElementById('option-post').addEventListener('click', function() {
-            var dropdownMenu = document.getElementById('dropdown-option-menu');
-            if (dropdownMenu.style.display === 'none' || dropdownMenu.style.display === '') {
-                dropdownMenu.style.display = 'block';
-            } else {
-                dropdownMenu.style.display = 'none';
-            }
-        });
+        // document.getElementById('option-post').addEventListener('click', function() {
+        //     var dropdownMenu = document.getElementById('dropdown-option-menu');
+        //     if (dropdownMenu.style.display === 'none' || dropdownMenu.style.display === '') {
+        //         dropdownMenu.style.display = 'block';
+        //     } else {
+        //         dropdownMenu.style.display = 'none';
+        //     }
+        // });
 
-        document.addEventListener('click', function(event) {
-            var optionPost = document.getElementById('option-post');
-            var dropdownMenu = document.getElementById('dropdown-option-menu');
+        // document.addEventListener('click', function(event) {
+        //     var optionPost = document.getElementById('option-post');
+        //     var dropdownMenu = document.getElementById('dropdown-option-menu');
 
-            if (!optionPost.contains(event.target) && !dropdownMenu.contains(event.target)) {
-                dropdownMenu.style.display = 'none';
-            }
-        });
+        //     if (!optionPost.contains(event.target) && !dropdownMenu.contains(event.target)) {
+        //         dropdownMenu.style.display = 'none';
+        //     }
+        // });
     </script>
     <script>
         document.getElementById('profile-picture').addEventListener('click', function() {
@@ -898,6 +960,37 @@
         });
     </script>
 
+    <script>
+        function showNotification(message) {
+        var notification = document.querySelector('.notification');
+        notification.innerHTML = message;
+        notification.classList.add('show');
+
+        // Tự động ẩn sau 5 giây
+        setTimeout(function() {
+            hideNotification();
+        }, 5000); // Ẩn sau 5 giây
+    }
+
+    // Ẩn thông báo
+    function hideNotification() {
+        var notification = document.querySelector('.notification');
+        notification.classList.remove('show');
+    }
+
+    // Hiển thị thông báo khi trang được load
+    window.onload = function() {
+        var successMessage = "{{ session('success') }}";
+        var failedMessage = "{{ session('failed') }}";
+
+        if (failedMessage) {
+            showNotification(failedMessage);
+        }
+        if (successMessage) {
+            showNotification(successMessage);
+        }
+    };
+    </script>
 </body>
 
 
