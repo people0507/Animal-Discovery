@@ -62,12 +62,7 @@
                         </li>
                         <li class="sidebar-item">
                             <a href="{{ route('admin.list_reward') }}" class="sidebar-link">
-                                <span class="hide-menu">Phần thưởng </span>
-                            </a>
-                        </li>
-                        <li class="sidebar-item">
-                            <a href="{{ route('admin.list_reward') }}" class="sidebar-link">
-                                <span class="hide-menu">Lịch sử đổi thưởng </span>
+                                <span class="hide-menu">Phần quà </span>
                             </a>
                         </li>
                     </ul>

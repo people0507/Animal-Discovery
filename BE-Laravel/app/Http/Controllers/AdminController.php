@@ -28,6 +28,7 @@ use App\Models\Post;
 use Auth;
 use Str;
 use Hash;
+use DB;
 
 class AdminController extends Controller
 {
@@ -854,5 +855,32 @@ class AdminController extends Controller
             $message = MessageContent::getMessage('delete_success');
             return redirect()->back()->with('failed', $message);
         } 
+    }
+
+    public function getHistoryReward(){
+        $results = DB::table('reward_between_user')
+        ->join('users', 'users.id', '=', 'reward_between_user.user_id')
+        ->join('reward', 'reward.id', '=', 'reward_between_user.reward_id')
+        ->select('users.name', 'reward.reward_name', 'reward.reward_score', 'reward_between_user.created_at')
+        ->get();
+        return view('admin.games.list-history-reward',compact('results'));
+    }
+
+    public function searchHistoryReward(Request $request){
+        $name = $request->input('key_word');
+        $date = $request->input('date_filter');
+    
+        $results = DB::table('reward_between_user')
+            ->join('users', 'users.id', '=', 'reward_between_user.user_id')
+            ->join('reward', 'reward.id', '=', 'reward_between_user.reward_id')
+            ->select('users.name', 'reward.reward_name', 'reward.reward_score', 'reward_between_user.created_at')
+            ->when($name, function ($query, $name) {
+                return $query->where('users.name', 'like', '%' . $name . '%');
+            })
+            ->when($date, function ($query, $date) {
+                return $query->whereDate('reward_between_user.created_at', $date);
+            })
+            ->get();
+        return view('admin.games.list-history-reward',compact('results'));
     }
 }
