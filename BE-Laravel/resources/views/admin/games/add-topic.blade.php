@@ -92,7 +92,7 @@
                                 <div class="row">
                                     <div class="col-md-4">
                                         <div class="form-group">
-                                            <label>Tên chủ đề</label>
+                                            <label>Tên chủ đề <span class="asterisk text-danger">*</span></label>
                                             @if ($mode == 'add')
                                                 <input type="text" name="topic_name" class="form-control"
                                                     placeholder="Hãy nhập thông tin">
@@ -104,29 +104,30 @@
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-group">
-                                            <label>Ảnh chủ đề</label>
+                                            <label>Ảnh chủ đề <span class="asterisk text-danger">*</span></label>
                                             <input type="file" name="topic_image" class="form-control">
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-group">
-                                            <label>Số điểm mỗi câu hỏi</label>
+                                            <label>Số điểm mỗi câu hỏi <span class="asterisk text-danger">*</span></label>
                                             @if ($mode == 'add')
-                                            <input type="number" name="score_per_question" class="form-control"
-                                            placeholder="Hãy nhập thông tin">
+                                                <input type="number" name="score_per_question" class="form-control"
+                                                    placeholder="Hãy nhập thông tin">
                                             @else
-                                            <input type="number" name="score_per_question" class="form-control"
-                                            placeholder="Hãy nhập thông tin" value="{{ $topic->score_per_question}}">
+                                                <input type="number" name="score_per_question" class="form-control"
+                                                    placeholder="Hãy nhập thông tin"
+                                                    value="{{ $topic->score_per_question }}">
                                             @endif
                                         </div>
                                     </div>
                                     <div class="col">
                                         <div class="form-group">
-                                            <label>Mô tả chủ đề</label>
+                                            <label>Mô tả chủ đề <span class="asterisk text-danger">*</span></label>
                                             @if ($mode == 'add')
-                                            <textarea class="form-control" name="topic_description" style="height:200px"></textarea>
+                                                <textarea class="form-control" name="topic_description" style="height:200px"></textarea>
                                             @else
-                                            <textarea class="form-control" name="topic_description" style="height:200px">{{ $topic->topic_description}}</textarea>
+                                                <textarea class="form-control" name="topic_description" style="height:200px">{{ $topic->topic_description }}</textarea>
                                             @endif
                                         </div>
                                     </div>
