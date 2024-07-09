@@ -260,9 +260,9 @@
                                                 <input name="baby_carrying" type="text"
                                                     class="form-control check-value" placeholder="Hãy nhập thông tin">
                                             @else
-                                                <input name="pregnancy_duration" type="text"
+                                                <input name="baby_carrying" type="text"
                                                     class="form-control check-value" placeholder="Hãy nhập thông tin"
-                                                    value ="{{ $animalDetail->pregnancy_duration }}">
+                                                    value ="{{ $animalDetail->baby_carrying }}">
                                             @endif
                                         </div>
                                     </div>

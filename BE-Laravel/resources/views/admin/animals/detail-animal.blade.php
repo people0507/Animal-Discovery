@@ -122,9 +122,9 @@
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label>Số Lượng Sinh Sản Con(Trứng) </label>
-                                            <input readonly name="pregnancy_duration" type="text" class="form-control"
+                                            <input readonly name="baby_carrying" type="text" class="form-control"
                                                 placeholder="Hãy nhập thông tin"
-                                                value ="{{ $animalDetail->pregnancy_duration }}">
+                                                value ="{{ $animalDetail->baby_carrying }}">
                                         </div>
                                     </div>
                                     <div class="col-md-4">
