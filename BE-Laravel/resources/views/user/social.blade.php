@@ -97,52 +97,53 @@
     }
 
     .notification {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            padding: 15px;
-            background-color: #4CAF50;
-            /* Màu xanh */
-            color: white;
-            z-index: 9999;
-            display: none;
-            /* Ẩn ban đầu */
-            border-radius: 5px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-        }
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        padding: 15px;
+        background-color: #4CAF50;
+        /* Màu xanh */
+        color: white;
+        z-index: 9999;
+        display: none;
+        /* Ẩn ban đầu */
+        border-radius: 5px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    }
 
-        .notification.success {
-            background-color: #4CAF50;
-            /* Màu xanh */
-        }
+    .notification.success {
+        background-color: #4CAF50;
+        /* Màu xanh */
+    }
 
-        .notification.failed {
-            background-color: #ff3333;
-            /* Màu đỏ */
-            color: white;
-        }
+    .notification.failed {
+        background-color: #ff3333;
+        /* Màu đỏ */
+        color: white;
+    }
 
 
-        .notification.show {
-            display: block;
-            animation: slideInRight 0.5s ease-out forwards;
-        }
+    .notification.show {
+        display: block;
+        animation: slideInRight 0.5s ease-out forwards;
+    }
 </style>
 @if (session('success'))
-        <div id="notification" class="notification success">
-            <p id="notification-message"></p>
-            <span id="close-notification" class="close-notification"><i class="fa fa-check" aria-hidden="true"></i>
-                {{ session('success') }}</span>
-        </div>
-    @endif
+    <div id="notification" class="notification success">
+        <p id="notification-message"></p>
+        <span id="close-notification" class="close-notification"><i class="fa fa-check" aria-hidden="true"></i>
+            {{ session('success') }}</span>
+    </div>
+@endif
 
 @if (session('failed'))
-        <div id="notification" class="notification failed">
-            <p id="notification-message"></p>
-            <span id="close-notification" class="close-notification"><i class="fa fa-exclamation-triangle"
-                    aria-hidden="true"></i> {{ session('failed') }}</span>
-        </div>
+    <div id="notification" class="notification failed">
+        <p id="notification-message"></p>
+        <span id="close-notification" class="close-notification"><i class="fa fa-exclamation-triangle"
+                aria-hidden="true"></i> {{ session('failed') }}</span>
+    </div>
 @endif
+
 <body>
     <nav>
         <div class="container">
@@ -152,7 +153,9 @@
             <div class="create">
                 {{-- <label class="btn btn-primary" for="create-post" id="createPostButton">Create</label> --}}
                 <div class="profile-picture" id="profile-picture">
-                    <img src="{{ asset('users/social_assets/images/profile-1.jpg') }}">
+                    {{-- <img src="{{ asset('users/social_assets/images/profile-1.jpg') }}"> --}}
+                    <img src="{{ Auth::user()->avatar ? asset('avatars/' . Auth::user()->avatar) : '#' }}"
+                        alt="Preview" style="display: {{ Auth::user()->avatar ? 'block' : 'none' }};" />
                 </div>
                 <div id="dropdown-menu" class="dropdown-menu" style="display: none;">
                     <a id="editUser">Cập nhật tài khoản</a>
@@ -165,43 +168,51 @@
         <div class="modal-content">
             <span class="close">&times;</span>
             <h2>Cập nhật tài khoản</h2>
-            <form action="{{route('user.update_user')}}" id="updateAccountForm" method="post" enctype="multipart/form-data">
+            <form action="{{ route('user.update_user') }}" id="updateAccountForm" method="post"
+                enctype="multipart/form-data">
                 @csrf
                 <div class="form-p">
                     <label for="username">Tên:</label>
-                    <input type="text" id="username" name="username" value="{{Auth::user()->name}}" required>
+                    <input type="text" id="username" name="username" value="{{ Auth::user()->name }}" required>
                 </div>
                 <div class="form-p">
                     <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" value="{{Auth::user()->email}}" readonly>
+                    <input type="email" id="email" name="email" value="{{ Auth::user()->email }}" readonly>
                 </div>
                 <div class="form-p">
                     <label for="password">Mật khẩu:</label>
-                    <input type="password" id="password" name="password" value="{{Auth::user()->password}}" required>
+                    <input type="password" id="password" name="password" value="{{ Auth::user()->password }}" required>
                 </div>
                 <div class="form-p">
-                <label for="gender">Giới tính:</label>
-                <select name="gender" id="gender" style="padding: 10px;border: 1px solid #ccc;width: 100%;border-radius: 4px;">
-                    <option value="0" {{Auth::user()->gender == 0 ? 'selected':''}}>Nam</option>
-                    <option value="1" {{Auth::user()->gender == 1 ? 'selected':''}}>Nữ</option>
-                </select>
+                    <label for="gender">Giới tính:</label>
+                    <select name="gender" id="gender"
+                        style="padding: 10px;border: 1px solid #ccc;width: 100%;border-radius: 4px;">
+                        <option value="0" {{ Auth::user()->gender == 0 ? 'selected' : '' }}>Nam</option>
+                        <option value="1" {{ Auth::user()->gender == 1 ? 'selected' : '' }}>Nữ</option>
+                    </select>
                 </div>
                 <div class="form-p">
                     <label for="address">Địa chỉ:</label>
-                    <input type="text" id="address" name="address" value="{{Auth::user()->address}}" required>
+                    <input type="text" id="address" name="address" value="{{ Auth::user()->address }}" required>
                 </div>
                 <div class="form-p">
                     <label for="birthdate">Ngày sinh:</label>
-                    <input type="date" id="birthdate" name="birthdate" value="{{Auth::user()->birthdate}}" required>
+                    <input type="date" id="birthdate" name="birthdate" value="{{ Auth::user()->birthdate }}"
+                        required>
                 </div>
                 <div class="form-p">
                     <label for="continentImage">Hình ảnh</label>
                     <input type="file" class="form-control-file" name="avatar" id="continentImage"
-                        onchange="previewImage(event, 'imagePreview')" >
+                        onchange="previewImage(event, 'imagePreview')">
                 </div>
                 <div class="preview-container">
-                    <img id="imagePreview" src="#" alt="Preview"
-                        style="display: none; width: 200px; height: 200px;  object-fit: contain;" />
+                    {{-- <img id="imagePreview"
+                        src="src="{{ Auth::user()->avatar ? asset(Auth::user()->avatar) : '#' }}"" alt="Preview"
+                        style="display: none; width: 100px; height: 100px;  object-fit: contain;" /> --}}
+                    <img id="imagePreview"
+                        src="{{ Auth::user()->avatar ? asset('avatars/' . Auth::user()->avatar) : '#' }}"
+                        alt="Preview"
+                        style="display: {{ Auth::user()->avatar ? 'block' : 'none' }}; width: 100px; height: 100px; object-fit: contain;" />
                 </div>
                 <button type="submit" class="btn-game" style="margin-top: 20px;">Lưu thay đổi</button>
             </form>
@@ -212,7 +223,8 @@
         @if (session('success'))
             <div id="notification" class="notification success">
                 <p id="notification-message"></p>
-                <span id="close-notification" class="close-notification"><i class="fa fa-check" aria-hidden="true"></i>
+                <span id="close-notification" class="close-notification"><i class="fa fa-check"
+                        aria-hidden="true"></i>
                     {{ session('success') }}</span>
             </div>
         @endif
@@ -229,7 +241,8 @@
             <div class="left">
                 <div class="profile">
                     <div class="profile-picture">
-                        <img src="{{ asset('users/social_assets/images/profile-1.jpg') }}">
+                        <img src="{{ Auth::user()->avatar ? asset('avatars/' . Auth::user()->avatar) : '#' }}"
+                            alt="Preview" style="display: {{ Auth::user()->avatar ? 'block' : 'none' }};" />
                     </div>
                     <div class="handle">
                         <h4>{{ Auth::user()->name }}</h4>
@@ -248,7 +261,8 @@
                         <h3>Trang chủ</h3>
                     </a>
                     <a class="menu-item" id="notification">
-                        <span><i class="uil uil-bell"><small class="notification-count">{{ $notifications }}</small></i>
+                        <span><i class="uil uil-bell"><small
+                                    class="notification-count">{{ $notifications }}</small></i>
                         </span>
                         <h3>Thông Báo</h3>
                         <!-- ----------------------- NOTIFICATION POPUP ----------------------- -->
@@ -286,9 +300,9 @@
                             <div class="head">
                                 <div class="user">
                                     <div class="profile-picture">
-
-                                        <img src="{{ asset('users/social_assets/images/profile-10.jpg') }}"
-                                            alt="">
+                                        <img src="{{ $post->user->avatar ? asset('avatars/' . $post->user->avatar) : '#' }}"
+                                            alt="Preview"
+                                            style="display: {{ $post->user->avatar ? 'block' : 'none' }};" />
                                     </div>
                                     <div class="ingo">
                                         <h3>{{ $post->user->name }}</h3>
@@ -296,7 +310,7 @@
                                     </div>
                                 </div>
                                 <!-- @if ($post->user_id == Auth::id())
-                                    <span class="edit" id="option-post">
+<span class="edit" id="option-post">
                                         <i class="uil uil-ellipsis-h"></i>
                                         <div id="dropdown-option-menu" class="dropdown-option-menu"
                                             style="display: none;">
@@ -304,7 +318,7 @@
                                             <a id="deletePost">Xóa bài viết</a>
                                         </div>
                                     </span>
-                                @endif -->
+@endif -->
                             </div>
 
                             <div class="content" style="margin:5px 0px">
@@ -962,34 +976,34 @@
 
     <script>
         function showNotification(message) {
-        var notification = document.querySelector('.notification');
-        notification.innerHTML = message;
-        notification.classList.add('show');
+            var notification = document.querySelector('.notification');
+            notification.innerHTML = message;
+            notification.classList.add('show');
 
-        // Tự động ẩn sau 5 giây
-        setTimeout(function() {
-            hideNotification();
-        }, 5000); // Ẩn sau 5 giây
-    }
-
-    // Ẩn thông báo
-    function hideNotification() {
-        var notification = document.querySelector('.notification');
-        notification.classList.remove('show');
-    }
-
-    // Hiển thị thông báo khi trang được load
-    window.onload = function() {
-        var successMessage = "{{ session('success') }}";
-        var failedMessage = "{{ session('failed') }}";
-
-        if (failedMessage) {
-            showNotification(failedMessage);
+            // Tự động ẩn sau 5 giây
+            setTimeout(function() {
+                hideNotification();
+            }, 5000); // Ẩn sau 5 giây
         }
-        if (successMessage) {
-            showNotification(successMessage);
+
+        // Ẩn thông báo
+        function hideNotification() {
+            var notification = document.querySelector('.notification');
+            notification.classList.remove('show');
         }
-    };
+
+        // Hiển thị thông báo khi trang được load
+        window.onload = function() {
+            var successMessage = "{{ session('success') }}";
+            var failedMessage = "{{ session('failed') }}";
+
+            if (failedMessage) {
+                showNotification(failedMessage);
+            }
+            if (successMessage) {
+                showNotification(successMessage);
+            }
+        };
     </script>
 </body>
 

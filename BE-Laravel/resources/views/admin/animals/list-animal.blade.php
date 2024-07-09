@@ -57,39 +57,40 @@
         }
 
         .search-container {
-        display: flex;
-        gap: 10px;
-        background-color: #fff;
-        padding: 20px;
-        border-radius: 8px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
 
-    .search-input .search-datetime {
-        padding: 10px;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        width: 200px;
-    }
+        .search-input .search-datetime {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 200px;
+        }
 
-    .search-select {
-        padding: 10px;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-    }
+        .search-select {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
 
-    .search-button {
-        padding: 10px 20px;
-        border: none;
-        border-radius: 4px;
-        background-color: #007BFF;
-        color: white;
-        cursor: pointer;
-    }
+        .search-button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            background-color: #007BFF;
+            color: white;
+            cursor: pointer;
+        }
 
-    .search-button:hover {
-        background-color: #0056b3;
-    }
+        .search-button:hover {
+            background-color: #0056b3;
+        }
 
         @keyframes slideInRight {
             0% {
@@ -129,16 +130,24 @@
                     </nav>
                 </div>
             </div>
-            <div class="col mt-3">
-            <form action="{{route('admin.search_animal')}}" method="post">
-                @csrf
-                <div class="search-container">
-                    <input type="text" name="key_word" class="search-input" placeholder="Nhập tên">
-                    <input type="text" name="key_word1" class="search-input" placeholder="Nhập tên khoa học">
-                    <input type="date" class="search-datetime" name="date_filter">
-                    <button type="submit" class="search-button">Tìm Kiếm</button>
-                </div>
-            </form>
+            <div class="col-12 mt-3">
+                <form action="{{ route('admin.search_animal') }}" method="post">
+                    @csrf
+                    <div class="search-container">
+                        <div class="form-group m-0">
+                            <input type="text" name="key_word" class="form-control search-input" placeholder="Nhập tên">
+                        </div>
+                        <div class="form-group m-0">
+                            <input type="text" name="key_word1" class="form-control search-input"
+                                placeholder="Nhập tên khoa học">
+                        </div>
+                        <div class="form-group m-0">
+                            <input type="date" class="form-control search-datetime" name="date_filter">
+                        </div>
+                        <button type="submit" class="btn btn-success">Tìm Kiếm</button>
+                    </div>
+
+                </form>
             </div>
         </div>
     </div>
@@ -175,7 +184,7 @@
                                             <td>{{ $item->animal_scientific_name }}</td>
                                             <td><a href="{{ route('list_animal_image', ['id' => $item->id]) }}">Xem Thêm</a>
                                             </td>
-                                            <td>{{$item->created_at}}
+                                            <td>{{ $item->created_at }}
                                             </td>
                                             <td class="box-container">
                                                 <div class="box-char">
