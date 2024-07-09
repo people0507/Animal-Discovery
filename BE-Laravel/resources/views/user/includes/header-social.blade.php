@@ -121,30 +121,46 @@
     <div class="modal-content">
         <span class="close">&times;</span>
         <h2>Cập nhật tài khoản</h2>
-        <form id="updateAccountForm">
-            <div class="form-p">
-                <label for="username">Tên:</label>
-                <input type="text" id="username" name="username" value="Cuong">
-            </div>
-            <div class="form-p">
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" value="cuong@gmail.com" readonly>
-            </div>
-            <div class="form-p">
-                <label for="password">Mật khẩu:</label>
-                <input type="password" id="password" name="password" value="skdjskdjksa">
-            </div>
-            <div class="form-p">
-                <label for="continentImage">Hình ảnh</label>
-                <input type="file" class="form-control-file" name="image" id="continentImage"
-                    onchange="previewImage(event)" required>
-            </div>
-            <div class="preview-container">
-                <img id="imagePreview" src="#" alt="Preview"
-                    style="display: none; width: auto; height: 220px;" />
-            </div>
-            <button type="submit" class="btn-game" style="margin-top: 15px;">Lưu thay đổi</button>
-        </form>
+        <form action="{{route('user.update_user')}}" id="updateAccountForm" method="post" enctype="multipart/form-data">
+                @csrf
+                <div class="form-p">
+                    <label for="username">Tên:</label>
+                    <input type="text" id="username" name="username" value="{{Auth::user()->name}}" required>
+                </div>
+                <div class="form-p">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" value="{{Auth::user()->email}}" readonly>
+                </div>
+                <div class="form-p">
+                    <label for="password">Mật khẩu:</label>
+                    <input type="password" id="password" name="password" value="{{Auth::user()->password}}" required>
+                </div>
+                <div class="form-p">
+                <label for="gender">Giới tính:</label>
+                <select name="gender" id="gender" style="padding: 10px;border: 1px solid #ccc;width: 100%;border-radius: 4px;">
+                    <option value="0" {{Auth::user()->gender == 0 ? 'selected':''}}>Nam</option>
+                    <option value="1" {{Auth::user()->gender == 1 ? 'selected':''}}>Nữ</option>
+                </select>
+                </div>
+                <div class="form-p">
+                    <label for="address">Địa chỉ:</label>
+                    <input type="text" id="address" name="address" value="{{Auth::user()->address}}" required>
+                </div>
+                <div class="form-p">
+                    <label for="birthdate">Ngày sinh:</label>
+                    <input type="date" id="birthdate" name="birthdate" value="{{Auth::user()->birthdate}}" required>
+                </div>
+                <div class="form-p">
+                    <label for="continentImage">Hình ảnh</label>
+                    <input type="file" class="form-control-file" name="avatar" id="continentImage"
+                        onchange="previewImage(event, 'imagePreview')" >
+                </div>
+                <div class="preview-container">
+                    <img id="imagePreview" src="#" alt="Preview"
+                        style="display: none; width: 200px; height: 200px;  object-fit: contain;" />
+                </div>
+                <button type="submit" class="btn-game" style="margin-top: 20px;">Lưu thay đổi</button>
+            </form>
     </div>
 </div>
 <script>
@@ -189,10 +205,10 @@
     var updateAccountForm = document.getElementById('updateAccountForm');
 
     updateAccountForm.addEventListener('submit', function(event) {
-        event.preventDefault();
-        var formData = new FormData(updateAccountForm);
-        var username = formData.get('username');
-        var password = formData.get('password');
+        // event.preventDefault();
+        // var formData = new FormData(updateAccountForm);
+        // var username = formData.get('username');
+        // var password = formData.get('password');
 
         modal.style.display = 'none';
     });
