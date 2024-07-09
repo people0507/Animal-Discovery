@@ -55,7 +55,6 @@ class DataSeeder extends Seeder
                     'diet_type_id' => '2',
                     'category_id' => '4',
                     'population_trending_id' => '2',
-                    'created_by' => '1'
                 ],
                 [
                     'animal_name' => 'Báo',
@@ -93,7 +92,6 @@ Báo gêpa sử dụng nét mặt để thể hiện tâm trạng của mình.
                     'diet_type_id' => '2',
                     'category_id' => '11',
                     'population_trending_id' => '2',
-                    'created_by' => '1'
                 ],
                 [
                     'animal_name' => 'Cá Sấu Sông Nile',
@@ -130,7 +128,6 @@ Thông thường, cả bố và mẹ đều giúp con non ra khỏi trứng; ch�
                     'diet_type_id' => '2',
                     'category_id' => '1',
                     'population_trending_id' => '3',
-                    'created_by' => '1'
                 ],
                 [
                     'animal_name' => 'Đại Bàng',
@@ -172,7 +169,6 @@ Kể từ năm 1782, đại bàng đầu trắng đã trở thành loài chim qu
                     'diet_type_id' => '2',
                     'category_id' => '4',
                     'population_trending_id' => '1',
-                    'created_by' => '1'
                 ],
             ]
         );
@@ -277,10 +273,7 @@ Kể từ năm 1782, đại bàng đầu trắng đã trở thành loài chim qu
                 ['animal_detail_id' => '3', 'biome_id' => '11'],
                 ['animal_detail_id' => '3', 'biome_id' => '17'],
                 ['animal_detail_id' => '1', 'biome_id' => '22'],
-                ['animal_detail_id' => '4', 'biome_id' => '11'],
-                ['animal_detail_id' => '4', 'biome_id' => '21'],
                 ['animal_detail_id' => '1', 'biome_id' => '21'],
-                ['animal_detail_id' => '3', 'biome_id' => '2'],
                 ['animal_detail_id' => '3', 'biome_id' => '22'],
                 ['animal_detail_id' => '1', 'biome_id' => '2'],
                 ['animal_detail_id' => '1', 'biome_id' => '18'],
@@ -290,7 +283,6 @@ Kể từ năm 1782, đại bàng đầu trắng đã trở thành loài chim qu
                 ['animal_detail_id' => '4', 'biome_id' => '21'],
                 ['animal_detail_id' => '3', 'biome_id' => '8'],
                 ['animal_detail_id' => '2', 'biome_id' => '1'],
-                ['animal_detail_id' => '2', 'biome_id' => '4'],
                 ['animal_detail_id' => '3', 'biome_id' => '2'],
                 ['animal_detail_id' => '3', 'biome_id' => '1'],
                 ['animal_detail_id' => '2', 'biome_id' => '4'],

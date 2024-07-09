@@ -5,8 +5,7 @@
                 <i class="fa-solid fa-home"></i>
             </a>
             <h2 class="logo">
-                <a href="{{ route('user.view_list_topic') }}" style="color: #2EB872;text-decoration: none;">Diễn
-                    Đàn Động Vật</a>
+                <a href="{{ route('user.view_list_topic') }}" style="color: #2EB872;text-decoration: none;">Diễn đàn động vật</a>
             </h2>
         </div>
 
@@ -24,7 +23,7 @@
                 <i class="fa fa-history" aria-hidden="true"></i> Lịch sử chơi
             </a>
             <div class="profile-picture" id="profile-picture">
-                <img src="{{ asset('users/social_assets/images/profile-1.jpg') }}">
+                <img src="{{ Auth::user()->avatar ? asset('avatars/' . Auth::user()->avatar) : asset('error/user_error.jpg') }}">
             </div>
             <div id="dropdown-menu" class="dropdown-menu" style="display: none;">
                 <a id="editUser">Cập nhật tài khoản</a>

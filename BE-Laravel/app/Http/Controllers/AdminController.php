@@ -215,6 +215,7 @@ class AdminController extends Controller
         $animalDetail->mating_behavior = $data['mating_behavior'];
         $animalDetail->reproduction_season = $data['reproduction_season'];
         $animalDetail->pregnancy_duration = $data['pregnancy_duration'];
+        $animalDetail->baby_carrying = $data['baby_carrying'];
         $animalDetail->independent_age = $data['independent_age'];
         $animalDetail->avg_lifespan = $data['avg_lifespan'];
         $animalDetail->animal_sound = $uniqueFileSoundName;
@@ -224,7 +225,6 @@ class AdminController extends Controller
         $animalDetail->diet_type_id = $data['diet_type'];
         $animalDetail->category_id = $data['category_id'];
         $animalDetail->population_trending_id = $data['population_trending_id'];
-        $animalDetail->created_by = Auth::id();
         $animalDetail->save();
 
         $message = MessageContent::getMessage('create_success');
@@ -288,7 +288,6 @@ class AdminController extends Controller
         $animalDetail->diet_type_id = $data['diet_type'];
         $animalDetail->category_id = $data['category_id'];
         $animalDetail->population_trending_id = $data['population_trending_id'];
-        $animalDetail->created_by = Auth::id();
         $animalDetail->save();
 
         $message = MessageContent::getMessage('update_success');

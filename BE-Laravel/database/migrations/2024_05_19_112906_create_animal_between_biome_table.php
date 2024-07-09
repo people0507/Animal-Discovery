@@ -18,6 +18,7 @@ return new class extends Migration
             $table->foreign('animal_detail_id')->references('id')->on('animal_detail')->onDelete('cascade');
             $table->unsignedBigInteger('biome_id');
             $table->foreign('biome_id')->references('id')->on('biome')->onDelete('cascade');
+            $table->unique(['animal_detail_id', 'biome_id']);
             $table->timestamps();
         });
     }

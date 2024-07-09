@@ -255,7 +255,7 @@
                                         <div class="form-group">
                                             <label>Vai Trò Sinh Thái</label>
                                             <textarea name="ecological_niche" class="form-control" disabled placeholder="Hãy nhập thông tin"
-                                                style="height: 200px;">{{ $animalDetail->population_number }}</textarea>
+                                                style="height: 200px;">{{ $animalDetail->ecological_niche }}</textarea>
                                         </div>
                                     </div>
                                     <div class="col-md-12">

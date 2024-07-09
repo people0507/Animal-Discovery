@@ -18,6 +18,7 @@ return new class extends Migration
             $table->foreign('animal_detail_id')->references('id')->on('animal_detail')->onDelete('cascade');
             $table->unsignedBigInteger('area_id');
             $table->foreign('area_id')->references('id')->on('area')->onDelete('cascade');
+            $table->unique(['animal_detail_id', 'area_id']);
             $table->timestamps();
         });
     }

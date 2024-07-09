@@ -485,7 +485,7 @@
                                                     style="height: 200px;"></textarea>
                                             @else
                                                 <textarea name="ecological_niche" class="form-control check-value" placeholder="Hãy nhập thông tin"
-                                                    style="height: 200px;">{{ $animalDetail->population_number }}</textarea>
+                                                    style="height: 200px;">{{ $animalDetail->ecological_niche }}</textarea>
                                             @endif
                                         </div>
                                     </div>
