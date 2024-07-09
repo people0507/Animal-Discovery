@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Diễn Đàn Động Vật</title>
+    <title>Diễn đàn động vật</title>
     <!-- STYLESHEET -->
     <link rel="stylesheet" href="{{ asset('users/social_assets/css/style.css') }}">
     <!-- ICONCOUT CDN -->
@@ -148,14 +148,14 @@
     <nav>
         <div class="container">
             <h2 class="logo">
-                Diễn Đàn Động Vật
+                Diễn đàn động vật
             </h2>
             <div class="create">
                 {{-- <label class="btn btn-primary" for="create-post" id="createPostButton">Create</label> --}}
                 <div class="profile-picture" id="profile-picture">
                     {{-- <img src="{{ asset('users/social_assets/images/profile-1.jpg') }}"> --}}
-                    <img src="{{ Auth::user()->avatar ? asset('avatars/' . Auth::user()->avatar) : '#' }}"
-                        alt="Preview" style="display: {{ Auth::user()->avatar ? 'block' : 'none' }};" />
+                    <img src="{{ Auth::user()->avatar ? asset('avatars/' . Auth::user()->avatar) : asset('error/user_error.jpg')}}"
+                        alt="Preview"/>
                 </div>
                 <div id="dropdown-menu" class="dropdown-menu" style="display: none;">
                     <a id="editUser">Cập nhật tài khoản</a>
@@ -241,8 +241,8 @@
             <div class="left">
                 <div class="profile">
                     <div class="profile-picture">
-                        <img src="{{ Auth::user()->avatar ? asset('avatars/' . Auth::user()->avatar) : '#' }}"
-                            alt="Preview" style="display: {{ Auth::user()->avatar ? 'block' : 'none' }};" />
+                        <img src="{{ Auth::user()->avatar ? asset('avatars/' . Auth::user()->avatar) : asset('error/user_error.jpg') }}"
+                            alt="Preview"/>
                     </div>
                     <div class="handle">
                         <h4>{{ Auth::user()->name }}</h4>
@@ -300,9 +300,8 @@
                             <div class="head">
                                 <div class="user">
                                     <div class="profile-picture">
-                                        <img src="{{ $post->user->avatar ? asset('avatars/' . $post->user->avatar) : '#' }}"
-                                            alt="Preview"
-                                            style="display: {{ $post->user->avatar ? 'block' : 'none' }};" />
+                                        <img src="{{ $post->user->avatar ? asset('avatars/' . $post->user->avatar) : asset('error/user_error.jpg') }}"
+                                            alt="Preview"/>
                                     </div>
                                     <div class="ingo">
                                         <h3>{{ $post->user->name }}</h3>

@@ -174,8 +174,7 @@
                                 <tbody>
                                     @foreach ($animalDetail as $key => $item)
                                         <tr>
-                                            <td
-                                                onclick="showModal('Great White Shark', 'Carcharodon carcharias', 'The great white shark is a large species of shark found in coastal waters.', 'https://news4sanantonio.com/resources/media2/16x9/full/1015/center/80/cab905ba-dbcd-43ab-99c7-3fbdf1eadd8b-large16x9_GettyImages515714114.jpg', 'Fish', '5 meters', '1.5 meters', '1100 kg', 'Large', '70 years', 'Shark sound', 'shark_video.mp4', 'Vulnerable', 'Diurnal', 'Carnivore')">
+                                            <td>
                                                 {{ $key + 1 }}</td>
                                             <td>
                                                 <a
