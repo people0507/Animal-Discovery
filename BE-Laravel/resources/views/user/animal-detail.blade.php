@@ -73,26 +73,19 @@
                                 <div class="row">
                                     <div class="col-6">
                                         <div class="s-char-char__name">Tuổi Thọ</div>
-                                        <div class="s-char-char__num">{{ $data->avg_lifespan }}</div>
+                                        <div class="s-char-char__num">{{ $data->avg_lifespan }}<span> Years</span></div>
                                     </div>
                                     <div class="col-6">
                                         <div class="s-char-char__name">Cân Nặng</div>
                                         <div class="s-char-char__num">
                                             <div class="characteristic-container">
-                                                <div class="characteristic-value weight_1">33.6-65</div>
-                                                <div class="characteristic-value weight_2">{{ $data->animal_height }}
+                                                <div class="characteristic-value weight_1">{{ $data->animal_weight }}</div>
                                                 </div>
                                             </div>
                                             <div class="units-block">
                                                 <div class="row">
                                                     <div class="col-3">
-                                                        <span action="weight_1" class="toggle-units active-unit">g</span>
-                                                    </div>
-                                                    <div class="col-1 text-center">
-                                                        |
-                                                    </div>
-                                                    <div class="col-3">
-                                                        <span class="toggle-units_last" action="weight_2">oz</span>
+                                                        <span action="weight_1" class="toggle-units active-unit">kg</span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -106,19 +99,12 @@
                                         <div class="s-char-char__name">Chiều Dài</div>
                                         <div class="s-char-char__num">
                                             <div class="characteristic-container">
-                                                <div class="characteristic-value lengths_1">21-23.5</div>
-                                                <div class="characteristic-value lengths_2">8.3-9.3</div>
+                                                <div class="characteristic-value lengths_1">{{ $data->animal_length }}</div>
                                             </div>
                                             <div class="units-block">
                                                 <div class="row">
                                                     <div class="col-3">
                                                         <span action="weight_1" class="toggle-units active-unit">cm</span>
-                                                    </div>
-                                                    <div class="col-1 text-center">
-                                                        |
-                                                    </div>
-                                                    <div class="col-3">
-                                                        <span class="toggle-units_last" action="weight_2">inch</span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -129,20 +115,13 @@
                                             <div class="s-char-char__name">Sải Cánh</div>
                                             <div class="s-char-char__num">
                                                 <div class="characteristic-container">
-                                                    <div class="characteristic-value wingspan_1">25-31</div>
-                                                    <div class="characteristic-value wingspan_2">9.8-12.2</div>
+                                                    <div class="characteristic-value wingspan_1">{{ $data->animal_swing }}</div>
                                                 </div>
                                                 <div class="units-block">
                                                     <div class="row">
                                                         <div class="col-3">
                                                             <span action="weight_1"
-                                                                class="toggle-units active-unit">cm</span>
-                                                        </div>
-                                                        <div class="col-1 text-center">
-                                                            |
-                                                        </div>
-                                                        <div class="col-3">
-                                                            <span class="toggle-units_last" action="weight_2">inch</span>
+                                                                class="toggle-units active-unit">m</span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -173,12 +152,6 @@
                                                         <div class="col-3">
                                                             <span action="weight_1"
                                                                 class="toggle-units active-unit">KM/H</span>
-                                                        </div>
-                                                        <div class="col-1 text-center">
-                                                            |
-                                                        </div>
-                                                        <div class="col-3">
-                                                            <span class="toggle-units_last" action="weight_2">MPH</span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -520,14 +493,14 @@
                     </div>
                 </div>
             </section>
-            <section class="s-habbit">
+            <section class="s-habbit mt-5 mb-5">
                 <a class="anchor" id="habits"></a>
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-6">
                             <div class="s-habbit-img open-gallery" data-id="11849">
                                 @if ($habitImage->image_name != null)
-                                    <img src="{{asset('animal_images/'. $habitImage->image_name )}}"
+                                    <img src="{{asset('animal_images/'. $habitImage->image_name )}}" style="width:100%;"
                                         alt="Red Fox 2016-05-19 (11)">
                                 @else
                                     <img src="{{asset('error/error.jpg')}}" alt="Red Fox 2016-05-19 (11)">
@@ -580,7 +553,7 @@
                     </div>
                 </div>
             </section>
-            <section class="s-mating">
+            <section class="s-mating mt-5 mb-5">
                 <a class="anchor" id="mating"></a>
                 <div class="container">
                     <div class="s-mating-block">
@@ -676,7 +649,7 @@
                     </div>
                 </div>
             </section>
-            <section class="s-ad-banner-horizontal">
+            <section class="s-ad-banner-horizontal mt-5 mb-5">
                 <div class="container" style="text-align: left;">
                     <div class="list-ads-block">
                         <div class="row">
@@ -701,7 +674,7 @@
                     </div>
                 </div>
             </section>
-            <section class="s-population">
+            <section class="s-population mt-5 mb-5">
                 <a class="anchor" id="population"></a>
                 <div class="container">
                     <div class="s-population-block">
@@ -709,7 +682,7 @@
                             <div class="col-lg-6">
                                 <div class="s-population-img open-gallery" data-id="53626">
                                     @if ($populationImage->image_name != null)
-                                        <img src="{{asset('animal_images/'. $populationImage->image_name )}}"
+                                        <img src="{{asset('animal_images/'. $populationImage->image_name )}}"style="width:90%"
                                             alt="Red Fox photo">
                                     @else
                                         <img src="{{asset('error/error.jpg')}}" alt="Red Fox photo">
@@ -1061,7 +1034,7 @@
                                     <div class="image-content">
                                         <span class="overlay"></span>
                                         <div class="card-image">
-                                            @if ($item->images->image_name != null)
+                                            @if (isset($item->images->image_name) && $item->images->image_name != null)
                                                 <img src="{{asset('animal_images/'. $item->images->image_name )}}"
                                                     alt="" class="card-img">
                                             @else

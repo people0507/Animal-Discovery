@@ -34,26 +34,27 @@ class DataSeeder extends Seeder
                     'population_threat' => 'Sư tử từ lâu đã bị săn lùng vì sợ hãi và làm chiến lợi phẩm. Tuy nhiên, săn bắn vẫn là một trong những yếu tố chính, đe dọa quần thể động vật này trên khắp châu Phi. Hiện tại, chúng bị mất phạm vi do các khu định cư của con người ngày càng tăng và thay đổi môi trường sống của chúng thành đất nông nghiệp. Trong khi đó, những người, sống gần các khu định cư của con người, tiếp xúc với các bệnh, lây lan bởi chó nhà.',
                     'population_number' => 'Theo Sách đỏ IUCN, tổng quy mô quần thể của sư tử là 23.000-39.000 cá thể trưởng thành. Hiện tại, loài này được phân loại là Dễ bị tổn thương (VU) trong Sách đỏ IUCN và số lượng của nó ngày nay đang giảm.',
                     'ecological_niche' => 'Sư tử là một mắt xích không thể thay thế trong hệ sinh thái phạm vi của chúng. Ăn các động vật ăn cỏ như ngựa vằn hoặc trâu, chúng kiểm soát số lượng quần thể của các loài này. Nếu không, những động vật ăn cỏ này có thể cạnh tranh với các động vật khác trong phạm vi của chúng, dẫn đến sự tuyệt chủng hoàn toàn của các loài này và do đó phá hủy đa dạng sinh học của hệ sinh thái.',
-                    'fun_fact' => 'Khi nghỉ ngơi, sư tử thể hiện hành vi thân thiện và hòa đồng cao, dành thời gian cho nhau và củng cố mối liên kết xã hội giữa các thành viên trong đàn: chúng chơi đùa cùng nhau, cọ xát vào đầu nhau cũng như ngủ theo nhóm.
-                Không có lông, sư tử và hổ trông giống nhau. Chúng cực kỳ khó phân biệt vì cấu trúc cơ thể gần như giống hệt nhau. Ngoài ra, sư tử châu Phi còn là họ hàng của báo hoa mai và báo đốm.
-                Sư tử đực là loài mèo duy nhất có bờm đặc trưng, ​​mang lại cho con vật vẻ ngoài oai vệ, xứng đáng được mệnh danh là “Vua của các loài thú”.
-                Sư tử là loài mèo lớn thứ hai (sau hổ).
-                Đàn con sơ sinh có những đốm màu nâu, chúng thường mất đi khi lớn lên, mặc dù một số cá thể vẫn giữ được những vết nhạt trong suốt cuộc đời.
-                Trong niềm tự hào, con cái chịu trách nhiệm săn bắn, trong khi con đực có nhiệm vụ bảo vệ lãnh thổ. Tuy nhiên, bất chấp sự phân bổ trách nhiệm này, nam giới luôn ăn trước.
-                Bờm của sư tử đực dần dần sẫm màu trong suốt cuộc đời của con vật, là dấu hiệu tốt cho biết tuổi của sư tử.
-                Khi bước đi, gót chân của sư tử không chạm đất do cấu tạo của chân.',
+                    'fun_fact' => 'Khi nghỉ ngơi, sư tử thể hiện hành vi thân thiện và hòa đồng cao, dành thời gian bên nhau và củng cố mối quan hệ xã hội giữa các thành viên trong đàn: chúng chơi đùa cùng nhau, cọ đầu vào nhau cũng như ngủ theo nhóm.
+Nếu không có lông, sư tử và hổ trông giống nhau, chúng cực kỳ khó phân biệt với nhau vì cấu trúc cơ thể của chúng gần như giống hệt nhau.
+Ngoài ra, sư tử châu Phi là họ hàng của báo hoa mai và báo đốm.
+Sư tử đực là loài mèo duy nhất có bờm đặc trưng, ​​mang lại cho loài vật vẻ ngoài uy nghi, mang đến cho chúng danh hiệu "Vua của các loài thú".
+Sư tử là loài mèo lớn thứ hai còn sống (sau hổ).
+Những chú gấu con mới sinh có các đốm màu nâu trên cơ thể, thường mất đi khi chúng lớn lên, mặc dù một số cá thể vẫn giữ lại các đốm nhạt trong suốt cuộc đời.
+Trong bầy, con cái chịu trách nhiệm săn mồi, trong khi con đực phải bảo vệ lãnh thổ, tuy nhiên bất chấp sự phân bổ trách nhiệm này, con đực luôn ăn trước.
+Bờm của sư tử đực sẽ sẫm màu dần theo thời gian sống của chúng, đây là dấu hiệu tốt để xác định tuổi của sư tử.
+Khi đi bộ, gót chân của sư tử không chạm đất do cấu trúc của chân chúng',
                     'top_speed' => '56',
                     'animal_length' => '140-250',
                     'animal_weight' => '120-249',
                     'animal_swing' => '',
-                    'population_size' => '23-39',
+                    'population_size' => '23.000-39.000',
                     'avg_lifespan' => '12-25',
-                    'animal_sound' => '',
-                    'animal_video' => 'https://www.youtube.com/watch?v=uFIEIFLJtSQ',
+                    'animal_sound' => 'lion.mp3',
+                    'animal_video' => 'https://www.youtube.com/embed/uFIEIFLJtSQ?si=5JWfJa_7VdiFv9Rv',
                     'conservation_status_id' => '3',
-                    'activity_time_id' => '3',
+                    'activity_time_id' => '2',
                     'diet_type_id' => '2',
-                    'category_id' => '4',
+                    'category_id' => '11',
                     'population_trending_id' => '2',
                 ],
                 [
@@ -73,22 +74,22 @@ class DataSeeder extends Seeder
                     'population_threat' => 'Các mối đe dọa chính đối với quần thể báo bao gồm bệnh tật, mất môi trường sống, săn bắn và đàn áp trực tiếp. Những con vật này bị nông dân bức hại do là động vật ăn thịt và săn bắn gia súc. Sự phát triển của du lịch trong các khu vực môi trường sống của chúng có thể trở thành một mối đe dọa nghiêm trọng khác: các phương tiện du lịch có thể xua đuổi những con báo ra khỏi con mồi và tách đàn con ra khỏi mẹ của chúng. Những con báo được biết là có biến thể di truyền cực kỳ thấp, khiến sự sống sót của loài này thậm chí còn khó khăn hơn.',
                     'population_number' => 'Dân số báo đốm toàn cầu hiện đang giảm và trong Sách đỏ IUCN, loài này được phân loại là Dễ bị tổn thương (VU). Dân số báo đốm ở châu Phi là khoảng 6.674 cá thể trưởng thành. Ngoài ra, khoảng 60 - 100 con báo sống trong các quần thể nhỏ bị cô lập ở Iran.',
                     'ecological_niche' => 'Do là động vật ăn thịt, báo đốm kiểm soát quần thể các loài con mồi mà chúng ăn. Nếu không, quần thể của những con vật này có thể trở nên quá lớn, đến nỗi chúng sẽ phá vỡ toàn bộ mạng lưới thức ăn, ăn tất cả các thảm thực vật trong khu vực và hủy hoại đất. Mặt khác, báo đốm săn mồi trên động vật yếu hoặc ốm, do đó không cho phép các gen yếu hơn truyền sang các thế hệ tiếp theo và duy trì sức khỏe của các loài con mồi.',
-                    'fun_fact' => 'Những con mèo này không thể gầm gừ, nhưng chúng có thể kêu gừ gừ như mèo nhà khi hít vào và thở ra.
-Cheetah là một từ tiếng Ấn Độ, có nghĩa là "đốm".
-Trong số các loài động vật trên cạn, báo săn là loài nhanh nhất. Con vật chỉ mất 3 giây để tăng tốc từ 0 lên 100 km/h!
-Đuôi báo săn có tác dụng giống như bánh lái của thuyền, giúp con vật đánh lái khi chạy.
-Báo gêpa sử dụng nét mặt để thể hiện tâm trạng của mình.
-Đây là loài mèo lớn duy nhất có khả năng lộn nhào trên không khi chạy nước rút.',
-                    'top_speed' => '56',
+                    'fun_fact' => 'Những con mèo này không thể gầm, nhưng chúng có thể kêu gừ gừ như mèo nhà khi hít vào và thở ra.
+Cheetah là một từ tiếng Ấn Độ có nghĩa là "có đốm".
+Trong số các loài động vật trên cạn, báo gêpa là loài nhanh nhất, loài vật này chỉ mất 3 giây để tăng tốc từ 0 đến 100 km/h!
+Đuôi của báo gêpa có chức năng giống như bánh lái của thuyền, giúp con vật điều khiển khi chạy.
+Báo gêpa sử dụng biểu cảm khuôn mặt để thể hiện tâm trạng của mình.
+Đây là loài mèo lớn duy nhất có khả năng xoay người trên không khi chạy nước rút',
+                    'top_speed' => '112',
                     'animal_length' => '112-150',
                     'animal_weight' => '21-72',
                     'animal_swing' => '',
                     'population_size' => '6.674',
                     'avg_lifespan' => '10-20',
-                    'animal_sound' => 'sssss',
-                    'animal_video' => 'https://www.youtube.com/watch?v=qwcGAFSCJes',
+                    'animal_sound' => 'cheetah.mp3',
+                    'animal_video' => 'https://www.youtube.com/embed/qwcGAFSCJes?si=-NxvXhhL1ww0upok',
                     'conservation_status_id' => '3',
-                    'activity_time_id' => '3',
+                    'activity_time_id' => '2',
                     'diet_type_id' => '2',
                     'category_id' => '11',
                     'population_trending_id' => '2',
@@ -110,27 +111,26 @@ Báo gêpa sử dụng nét mặt để thể hiện tâm trạng của mình.
                     'population_threat' => 'Các mối đe dọa chính đối với loài này có liên quan đến con người. Do đó, loài bò sát này thu hút thợ săn vì làn da của nó, được sử dụng trong sản xuất da chất lượng cao. Mặt khác, là loài săn mồi to lớn và nguy hiểm, cá sấu sông Nile phải đối mặt với sự hung dữ từ con người, chúng phá hủy tổ của chúng và thường xuyên giết chết cá sấu. Cố gắng loại bỏ cá đánh bắt khỏi lưới đánh cá, những con vật này đôi khi làm hỏng lưới, dẫn đến xung đột giữa cá sấu và ngư dân. Trong Công viên đất ngập nước Greater St Lucia ở Nam Phi, các loài động vật đang bị đe dọa bởi sự xâm lược của các loài thực vật kỳ lạ che bóng và thay thế vị trí làm tổ của chúng, làm mát trứng của chúng, có khả năng mang lại một quần thể toàn nữ.',
                     'population_number' => 'Được phân loại là Ít quan tâm nhất (LC) trong Sách đỏ IUCN, loài bò sát này hiện không có nguy cơ tuyệt chủng. Dân số ước tính tổng thể của cá sấu sông Nile dao động từ 250.000 đến 500.000 cá thể.',
                     'ecological_niche' => '',
-                    'fun_fact' => 'Giới tính của con sau này phụ thuộc rất nhiều vào nhiệt độ ấp: khi nhiệt độ dưới 31 độ C, con nở nhiều khả năng là con cái, còn nhiệt độ trên 31-34 độ C thường sinh con đực. Khi đến thời điểm nở, chim non phát ra tiếng kêu “nhìn trộm”; con cái nghe thấy tiếng gọi và đào trứng, giúp con non ra ngoài.
-Cá sấu sông Nile cùng với trứng của chúng đã được tìm thấy trong các ngôi mộ ở Ai Cập.
-Quá trình trao đổi chất ngoại nhiệt của những con cá sấu này rất có lợi cho chúng. Một cá thể lớn, nặng hơn 900 kg (2000 lb.), có thể di chuyển trong thời gian dài mà không cần ăn.
-Khi con non bị đe dọa, chim mẹ sẽ bế chúng lên, đưa chúng vào túi cổ họng của mình, nơi chúng tìm thấy sự bảo vệ.
-Thông thường, cả bố và mẹ đều giúp con non ra khỏi trứng; chúng cuộn trứng giữa lưỡi và vòm miệng, đập vỡ vỏ trứng để con cái trốn thoát dễ dàng hơn.',
+                    'fun_fact' => 'Người ta đã tìm thấy cá sấu sông Nile cùng với trứng của chúng trong các ngôi mộ Ai Cập.
+Quá trình trao đổi chất biến nhiệt của những con cá sấu này rất có lợi cho chúng,một cá thể lớn nặng hơn 900 kg, có thể sống trong thời gian dài mà không cần ăn.
+Khi chim non gặp nguy hiểm, chim mẹ sẽ nhặt chúng lên, đưa vào túi họng của mình, nơi chúng được bảo vệ.
+Thông thường, cả bố và mẹ đều giúp con non chui ra khỏi trứng, chúng lăn trứng giữa lưỡi và vòm miệng, làm vỡ vỏ trứng để con non dễ dàng thoát ra ngoài hơn',
                     'top_speed' => '35',
                     'animal_length' => '3.5-6',
-                    'animal_weight' => '225-500',
+                    'animal_weight' => '225.000-500.000',
                     'animal_swing' => '',
                     'population_size' => '250-500',
                     'avg_lifespan' => '50-80',
-                    'animal_sound' => 'sssss',
-                    'animal_video' => 'https://www.youtube.com/watch?v=qwcGAFSCJes',
+                    'animal_sound' => 'nile_crocodile.mp3',
+                    'animal_video' => 'https://www.youtube.com/embed/04Jym9woVHM?si=hF_km-vwUvBqnW_h',
                     'conservation_status_id' => '1',
-                    'activity_time_id' => '2',
+                    'activity_time_id' => '3',
                     'diet_type_id' => '2',
-                    'category_id' => '1',
+                    'category_id' => '3',
                     'population_trending_id' => '3',
                 ],
                 [
-                    'animal_name' => 'Đại Bàng',
+                    'animal_name' => 'Đại Bàng Đầu Trắng',
                     'animal_scientific_name' => 'Haliaeetus leucocephalus',
                     'animal_description' => 'Đại bàng đầu trắng ( Haliaeetus leucocephalus ) là một loài chim săn mồi tuyệt đẹp được tìm thấy ở Bắc Mỹ. Nó được tìm thấy gần những vùng nước rộng lớn với nguồn cung cấp thức ăn dồi dào và những cây cổ thụ để làm tổ. Nó xây dựng tổ lớn nhất so với bất kỳ loài chim Bắc Mỹ nào và tổ trên cây lớn nhất từng được ghi nhận cho bất kỳ loài động vật nào. Vào cuối thế kỷ 20, đại bàng hói đang trên bờ vực tuyệt chủng ở Hoa Kỳ tiếp giáp, tuy nhiên, quần thể đã phục hồi và loài này đã bị loại khỏi danh sách các loài có nguy cơ tuyệt chủng của chính phủ Hoa Kỳ vào ngày 12 tháng 7 năm 1995.',
                     'appearance_description' => 'Đại bàng đầu trắng là loài chim dễ nhận biết. Thân và cánh của nó có màu nâu sẫm trong khi đầu và đuôi có màu trắng. Chân và bàn chân có màu vàng sáng, mắt màu vàng nhạt. Đại bàng hói có móng vuốt sắc nhọn ở chân và mỏ lớn có hình móc câu. Con đực của loài này nhỏ hơn con cái. Con non và con non có màu nâu với các mức độ đốm trắng khác nhau ở phần dưới cơ thể.',
@@ -146,26 +146,26 @@ Thông thường, cả bố và mẹ đều giúp con non ra khỏi trứng; ch�
                     'population_threat' => 'Mặc dù thực tế là sự phục hồi của dân số đã được tiến hành, các mối đe dọa vẫn còn hiện diện. Một trong những mối đe dọa là mất môi trường sống vì sự chiếm đóng của các khu vực ven biển và sự thoát nước của vùng đất ngập nước của con người. Mặt khác, bắn súng bất hợp pháp, gây rối của con người, ô nhiễm, va chạm với đường dây điện và phương tiện hàng không là một trong những mối đe dọa đáng chú ý đối với quần thể loài này. Và cuối cùng, các chất ô nhiễm chứa một mối đe dọa ngộ độc nghiêm trọng: DDT, ví dụ, có thể gây mỏng vỏ trứng và suy sinh sản.',
                     'population_number' => 'Theo tài nguyên All About Birds, tổng quy mô quần thể sinh sản của đại bàng hói là 250.000 cá thể. Hiện tại, loài này được phân loại là Ít quan tâm nhất (LC) trong Sách đỏ IUCN và số lượng của nó ngày nay đang tăng lên.',
                     'ecological_niche' => 'Do là loài săn mồi hàng đầu, đại bàng hói đóng vai trò quan trọng trong hệ sinh thái. Sự suy giảm dân số của chúng và sau khi phục hồi đã có tác động rất lớn đến các sinh vật trong môi trường sống của chúng. Ví dụ, nó đã gây ra sự suy giảm dân số của murres trong khu vực.',
-                    'fun_fact' => 'Một con đại bàng hói có khoảng 7.000 chiếc lông. Khi mất một chiếc lông ở cánh này, nó cũng sẽ mất một chiếc lông tương ứng ở cánh kia để giữ thăng bằng.
-Do tốc độ cao và móng vuốt sắc nhọn, đại bàng hói có thể cướp đi sự săn mồi của các loài chim khác và đôi khi là cả con người.
-Mặc dù có tên như vậy nhưng đại bàng hói không thực sự hói! Trong tiếng Latin, tên của loài này có nghĩa là đại bàng biển đầu trắng do đại bàng trưởng thành có bộ lông màu trắng trên đầu.
-Đại bàng hói không thể ngửi nhưng nó có khứu giác hoàn hảo: nếu thức ăn có mùi hư hỏng, đại bàng sẽ không ăn nó.
-Đầu và đuôi của đại bàng hói chỉ trở nên trắng khi được 4-5 tuổi.
-Đại bàng hói thở không khí qua lỗ trên mỏ có tên là “nare”.
-Thính giác của chúng tốt như con người trong khi tầm nhìn xa tốt hơn con người tới 3-4 lần.
-Kể từ năm 1782, đại bàng đầu trắng đã trở thành loài chim quốc gia của Hoa Kỳ.
-Đại bàng hói chỉ được tìm thấy ở Bắc Mỹ, là một trong 7 loài đại bàng biển.
-Đại bàng hói có thể băng qua mặt nước mà không cần bơi hoặc bay qua: nó ngồi trên mặt nước và tự chèo qua bằng đôi cánh.',
+                    'fun_fact' => 'Một con đại bàng đầu hói có khoảng 7000 chiếc lông vũ, khi nó mất một chiếc lông ở một bên cánh, nó cũng sẽ mất một chiếc lông tương ứng ở bên cánh kia để giữ thăng bằng.
+Nhờ tốc độ cao và móng vuốt sắc nhọn, đại bàng đầu hói có thể cướp mồi từ các loài chim khác và đôi khi là từ con người.
+Mặc dù có tên như vậy, nhưng đại bàng đầu hói thực ra không hề hói!,trong tiếng Latin, tên của loài này có nghĩa là đại bàng biển đầu trắng vì đại bàng trưởng thành có lông màu trắng trên đầu.
+Đại bàng đầu hói không thể ngửi nhưng lại có vị giác rất tốt: nếu thức ăn có vị hư hỏng, đại bàng sẽ không ăn.
+Đầu và đuôi của đại bàng đầu hói chỉ chuyển sang màu trắng khi được 4-5 tuổi.
+Đại bàng đầu hói hít thở không khí qua lỗ trên mỏ gọi là “nare”.
+Thính giác của chúng tốt như con người trong khi thị lực nhìn xa tốt hơn con người tới 3-4 lần.
+Từ năm 1782, đại bàng đầu hói đã trở thành loài chim quốc gia của Hoa Kỳ.
+Đại bàng đầu hói chỉ được tìm thấy ở Bắc Mỹ và là một trong 7 loài đại bàng biển.
+Đại bàng đầu hói có thể băng qua nước mà không cần bơi hoặc bay qua: chúng đậu trên mặt nước và chèo thuyền qua bằng đôi cánh',
                     'top_speed' => '120',
                     'animal_length' => '70-102',
                     'animal_weight' => '3-6.3',
                     'animal_swing' => '1.8-2.3',
                     'population_size' => '250.000',
                     'avg_lifespan' => '28-36',
-                    'animal_sound' => 'sssss',
-                    'animal_video' => 'https://www.youtube.com/watch?v=9JTfcWIPvng',
+                    'animal_sound' => 'bald_eagle.mp3',
+                    'animal_video' => 'https://www.youtube.com/embed/9JTfcWIPvng?si=fLPvGVQLTelF_EIW',
                     'conservation_status_id' => '1',
-                    'activity_time_id' => '2',
+                    'activity_time_id' => '1',
                     'diet_type_id' => '2',
                     'category_id' => '4',
                     'population_trending_id' => '1',
@@ -179,7 +179,39 @@ Kể từ năm 1782, đại bàng đầu trắng đã trở thành loài chim qu
                     'detail_id' => '1'
                 ],
                 [
+                    'image_name' => 'lion1.jpg',
+                    'detail_id' => '1'
+                ],
+                [
+                    'image_name' => 'lion2.jpg',
+                    'detail_id' => '1'
+                ],
+                [
+                    'image_name' => 'lion3.jpg',
+                    'detail_id' => '1'
+                ],
+                [
+                    'image_name' => 'lion4.jpg',
+                    'detail_id' => '1'
+                ],
+                [
                     'image_name' => 'cheetah.jpg',
+                    'detail_id' => '2'
+                ],
+                [
+                    'image_name' => 'cheetah1.jpg',
+                    'detail_id' => '2'
+                ],
+                [
+                    'image_name' => 'cheetah2.jpg',
+                    'detail_id' => '2'
+                ],
+                [
+                    'image_name' => 'cheetah3.jpg',
+                    'detail_id' => '2'
+                ],
+                [
+                    'image_name' => 'cheetah4.jpg',
                     'detail_id' => '2'
                 ],
                 [
@@ -187,7 +219,39 @@ Kể từ năm 1782, đại bàng đầu trắng đã trở thành loài chim qu
                     'detail_id' => '3'
                 ],
                 [
+                    'image_name' => 'crocodile1.jpg',
+                    'detail_id' => '3'
+                ],
+                [
+                    'image_name' => 'crocodile2.jpg',
+                    'detail_id' => '3'
+                ],
+                [
+                    'image_name' => 'crocodile3.jpg',
+                    'detail_id' => '3'
+                ],
+                [
+                    'image_name' => 'crocodile4.jpg',
+                    'detail_id' => '3'
+                ],
+                [
                     'image_name' => 'eagle.jpg',
+                    'detail_id' => '4'
+                ],
+                [
+                    'image_name' => 'eagle1.jpg',
+                    'detail_id' => '4'
+                ],
+                [
+                    'image_name' => 'eagle2.jpg',
+                    'detail_id' => '4'
+                ],
+                [
+                    'image_name' => 'eagle3.jpg',
+                    'detail_id' => '4'
+                ],
+                [
+                    'image_name' => 'eagle4.jpg',
                     'detail_id' => '4'
                 ],
             ]
@@ -196,15 +260,11 @@ Kể từ năm 1782, đại bàng đầu trắng đã trở thành loài chim qu
             [
                 [
                     'animal_detail_id' => '1',
-                    'area_id' => '1'
-                ],
-                [
-                    'animal_detail_id' => '1',
                     'area_id' => '2'
                 ],
                 [
                     'animal_detail_id' => '1',
-                    'area_id' => '3'
+                    'area_id' => '5'
                 ],
                 [
                     'animal_detail_id' => '2',
@@ -212,167 +272,186 @@ Kể từ năm 1782, đại bàng đầu trắng đã trở thành loài chim qu
                 ],
                 [
                     'animal_detail_id' => '2',
-                    'area_id' => '4'
+                    'area_id' => '5'
                 ],
                 [
                     'animal_detail_id' => '3',
-                    'area_id' => '4'
-                ],
-                [
-                    'animal_detail_id' => '4',
                     'area_id' => '5'
                 ],
                 [
                     'animal_detail_id' => '4',
-                    'area_id' => '6'
+                    'area_id' => '3'
+                ],
+                [
+                    'animal_detail_id' => '4',
+                    'area_id' => '1'
+                ],
+                [
+                    'animal_detail_id' => '4',
+                    'area_id' => '2'
                 ],
             ]
         );
         DB::table('animal_between_nation')->insert(
             [
-                ['animal_detail_id' => '1', 'nation_id' => '22'],
-                ['animal_detail_id' => '3', 'nation_id' => '13'],
-                ['animal_detail_id' => '4', 'nation_id' => '37'],
-                ['animal_detail_id' => '2', 'nation_id' => '49'],
                 ['animal_detail_id' => '1', 'nation_id' => '5'],
-                ['animal_detail_id' => '3', 'nation_id' => '10'],
-                ['animal_detail_id' => '2', 'nation_id' => '25'],
-                ['animal_detail_id' => '4', 'nation_id' => '47'],
-                ['animal_detail_id' => '3', 'nation_id' => '9'],
-                ['animal_detail_id' => '1', 'nation_id' => '15'],
-                ['animal_detail_id' => '2', 'nation_id' => '34'],
-                ['animal_detail_id' => '4', 'nation_id' => '2'],
-                ['animal_detail_id' => '3', 'nation_id' => '19'],
+                ['animal_detail_id' => '1', 'nation_id' => '19'],
+                ['animal_detail_id' => '1', 'nation_id' => '23'],
                 ['animal_detail_id' => '1', 'nation_id' => '27'],
-                ['animal_detail_id' => '4', 'nation_id' => '40'],
-                ['animal_detail_id' => '2', 'nation_id' => '8'],
-                ['animal_detail_id' => '1', 'nation_id' => '21'],
-                ['animal_detail_id' => '3', 'nation_id' => '30'],
-                ['animal_detail_id' => '2', 'nation_id' => '12'],
+                ['animal_detail_id' => '1', 'nation_id' => '31'],
+                ['animal_detail_id' => '1', 'nation_id' => '33'],
+                ['animal_detail_id' => '1', 'nation_id' => '56'],
+                ['animal_detail_id' => '1', 'nation_id' => '75'],
+                ['animal_detail_id' => '1', 'nation_id' => '86'],
+                ['animal_detail_id' => '1', 'nation_id' => '101'],
+                ['animal_detail_id' => '1', 'nation_id' => '116'],
+                ['animal_detail_id' => '1', 'nation_id' => '118'],
+                ['animal_detail_id' => '1', 'nation_id' => '124'],
+                ['animal_detail_id' => '1', 'nation_id' => '150'],
+                ['animal_detail_id' => '1', 'nation_id' => '158'],
+                ['animal_detail_id' => '1', 'nation_id' => '159'],
+                ['animal_detail_id' => '1', 'nation_id' => '160'],
+                ['animal_detail_id' => '1', 'nation_id' => '163'],
+                ['animal_detail_id' => '1', 'nation_id' => '55'],
+                ['animal_detail_id' => '1', 'nation_id' => '170'],
+                ['animal_detail_id' => '1', 'nation_id' => '180'],
+                ['animal_detail_id' => '1', 'nation_id' => '192'],
+                ['animal_detail_id' => '1', 'nation_id' => '193'],
+                ['animal_detail_id' => '1', 'nation_id' => '64'],
+                ['animal_detail_id' => '2', 'nation_id' => '3'],
+                ['animal_detail_id' => '2', 'nation_id' => '5'],
+                ['animal_detail_id' => '2', 'nation_id' => '19'],
+                ['animal_detail_id' => '2', 'nation_id' => '23'],
+                ['animal_detail_id' => '2', 'nation_id' => '27'],
+                ['animal_detail_id' => '2', 'nation_id' => '33'],
+                ['animal_detail_id' => '2', 'nation_id' => '34'],
+                ['animal_detail_id' => '2', 'nation_id' => '77'],
+                ['animal_detail_id' => '2', 'nation_id' => '86'],
+                ['animal_detail_id' => '2', 'nation_id' => '104'],
+                ['animal_detail_id' => '2', 'nation_id' => '116'],
+                ['animal_detail_id' => '2', 'nation_id' => '124'],
+                ['animal_detail_id' => '2', 'nation_id' => '159'],
+                ['animal_detail_id' => '2', 'nation_id' => '160'],
+                ['animal_detail_id' => '2', 'nation_id' => '170'],
+                ['animal_detail_id' => '2', 'nation_id' => '180'],
+                ['animal_detail_id' => '2', 'nation_id' => '192'],
+                ['animal_detail_id' => '2', 'nation_id' => '193'],
+                ['animal_detail_id' => '2', 'nation_id' => '53'],
+                ['animal_detail_id' => '2', 'nation_id' => '55'],
+                ['animal_detail_id' => '3', 'nation_id' => '5'],
+                ['animal_detail_id' => '3', 'nation_id' => '19'],
+                ['animal_detail_id' => '3', 'nation_id' => '23'],
+                ['animal_detail_id' => '3', 'nation_id' => '27'],
+                ['animal_detail_id' => '3', 'nation_id' => '28'],
+                ['animal_detail_id' => '3', 'nation_id' => '31'],
+                ['animal_detail_id' => '3', 'nation_id' => '33'],
+                ['animal_detail_id' => '3', 'nation_id' => '24'],
+                ['animal_detail_id' => '3', 'nation_id' => '39'],
+                ['animal_detail_id' => '3', 'nation_id' => '50'],
+                ['animal_detail_id' => '3', 'nation_id' => '52'],
+                ['animal_detail_id' => '3', 'nation_id' => '53'],
+                ['animal_detail_id' => '3', 'nation_id' => '56'],
+                ['animal_detail_id' => '3', 'nation_id' => '60'],
+                ['animal_detail_id' => '3', 'nation_id' => '61'],
+                ['animal_detail_id' => '3', 'nation_id' => '64'],
+                ['animal_detail_id' => '3', 'nation_id' => '68'],
+                ['animal_detail_id' => '3', 'nation_id' => '69'],
+                ['animal_detail_id' => '3', 'nation_id' => '86'],
+                ['animal_detail_id' => '3', 'nation_id' => '95'],
+                ['animal_detail_id' => '3', 'nation_id' => '100'],
+                ['animal_detail_id' => '3', 'nation_id' => '101'],
+                ['animal_detail_id' => '3', 'nation_id' => '104'],
+                ['animal_detail_id' => '3', 'nation_id' => '107'],
+                ['animal_detail_id' => '3', 'nation_id' => '116'],
+                ['animal_detail_id' => '3', 'nation_id' => '118'],
+                ['animal_detail_id' => '3', 'nation_id' => '124'],
+                ['animal_detail_id' => '3', 'nation_id' => '125'],
+                ['animal_detail_id' => '3', 'nation_id' => '142'],
+                ['animal_detail_id' => '3', 'nation_id' => '150'],
+                ['animal_detail_id' => '3', 'nation_id' => '153'],
+                ['animal_detail_id' => '3', 'nation_id' => '158'],
+                ['animal_detail_id' => '3', 'nation_id' => '159'],
+                ['animal_detail_id' => '3', 'nation_id' => '160'],
+                ['animal_detail_id' => '3', 'nation_id' => '155'],
+                ['animal_detail_id' => '3', 'nation_id' => '170'],
+                ['animal_detail_id' => '3', 'nation_id' => '173'],
+                ['animal_detail_id' => '3', 'nation_id' => '180'],
+                ['animal_detail_id' => '3', 'nation_id' => '192'],
+                ['animal_detail_id' => '3', 'nation_id' => '193'],
+                ['animal_detail_id' => '4', 'nation_id' => '32'],
+                ['animal_detail_id' => '4', 'nation_id' => '109'],
+                ['animal_detail_id' => '4', 'nation_id' => '184'],
                 ['animal_detail_id' => '4', 'nation_id' => '18'],
-                ['animal_detail_id' => '1', 'nation_id' => '42'],
-                ['animal_detail_id' => '3', 'nation_id' => '11'],
-                ['animal_detail_id' => '2', 'nation_id' => '24'],
-                ['animal_detail_id' => '4', 'nation_id' => '33'],
-                ['animal_detail_id' => '1', 'nation_id' => '45'],
-                ['animal_detail_id' => '3', 'nation_id' => '6'],
-                ['animal_detail_id' => '2', 'nation_id' => '20'],
-                ['animal_detail_id' => '4', 'nation_id' => '26'],
-                ['animal_detail_id' => '1', 'nation_id' => '29'],
-                ['animal_detail_id' => '3', 'nation_id' => '50']
+                ['animal_detail_id' => '4', 'nation_id' => '79'],
+                ['animal_detail_id' => '4', 'nation_id' => '141'],
             ]
         );
         DB::table('animal_between_biome')->insert(
             [
-                ['animal_detail_id' => '1', 'biome_id' => '3'],
-                ['animal_detail_id' => '2', 'biome_id' => '5'],
-                ['animal_detail_id' => '3', 'biome_id' => '14'],
-                ['animal_detail_id' => '3', 'biome_id' => '5'],
                 ['animal_detail_id' => '4', 'biome_id' => '1'],
-                ['animal_detail_id' => '4', 'biome_id' => '27'],
-                ['animal_detail_id' => '3', 'biome_id' => '11'],
-                ['animal_detail_id' => '3', 'biome_id' => '17'],
-                ['animal_detail_id' => '1', 'biome_id' => '22'],
-                ['animal_detail_id' => '1', 'biome_id' => '21'],
-                ['animal_detail_id' => '3', 'biome_id' => '22'],
-                ['animal_detail_id' => '1', 'biome_id' => '2'],
-                ['animal_detail_id' => '1', 'biome_id' => '18'],
+                ['animal_detail_id' => '4', 'biome_id' => '3'],
+                ['animal_detail_id' => '4', 'biome_id' => '5'],
+                ['animal_detail_id' => '4', 'biome_id' => '9'],
                 ['animal_detail_id' => '4', 'biome_id' => '26'],
-                ['animal_detail_id' => '2', 'biome_id' => '3'],
-                ['animal_detail_id' => '4', 'biome_id' => '11'],
-                ['animal_detail_id' => '4', 'biome_id' => '21'],
-                ['animal_detail_id' => '3', 'biome_id' => '8'],
-                ['animal_detail_id' => '2', 'biome_id' => '1'],
-                ['animal_detail_id' => '3', 'biome_id' => '2'],
+                ['animal_detail_id' => '4', 'biome_id' => '4'],
+                ['animal_detail_id' => '4', 'biome_id' => '18'],
+                ['animal_detail_id' => '4', 'biome_id' => '10'],
                 ['animal_detail_id' => '3', 'biome_id' => '1'],
-                ['animal_detail_id' => '2', 'biome_id' => '4'],
-                ['animal_detail_id' => '1', 'biome_id' => '7'],
-                ['animal_detail_id' => '2', 'biome_id' => '21'],
-                ['animal_detail_id' => '4', 'biome_id' => '14'],
-                ['animal_detail_id' => '1', 'biome_id' => '5']
+                ['animal_detail_id' => '3', 'biome_id' => '3'],
+                ['animal_detail_id' => '3', 'biome_id' => '5'],
+                ['animal_detail_id' => '3', 'biome_id' => '21'],
+                ['animal_detail_id' => '3', 'biome_id' => '4'],
+                ['animal_detail_id' => '3', 'biome_id' => '10'],
+                ['animal_detail_id' => '3', 'biome_id' => '20'],
+                ['animal_detail_id' => '3', 'biome_id' => '22'],
+                ['animal_detail_id' => '3', 'biome_id' => '25'],
+                ['animal_detail_id' => '2', 'biome_id' => '8'],
+                ['animal_detail_id' => '2', 'biome_id' => '26'],
+                ['animal_detail_id' => '2', 'biome_id' => '18'],
+                ['animal_detail_id' => '1', 'biome_id' => '26'],
+                ['animal_detail_id' => '1', 'biome_id' => '9'],
+                ['animal_detail_id' => '1', 'biome_id' => '18'],
+                ['animal_detail_id' => '1', 'biome_id' => '8'],
             ]
         );
         DB::table('animal_between_climate')->insert(
             [
-                ['animal_detail_id' => '1', 'climate_id' => '3'],
-                ['animal_detail_id' => '2', 'climate_id' => '5'],
-                ['animal_detail_id' => '3', 'climate_id' => '2'],
-                ['animal_detail_id' => '4', 'climate_id' => '4'],
                 ['animal_detail_id' => '1', 'climate_id' => '1'],
-                ['animal_detail_id' => '2', 'climate_id' => '3'],
-                ['animal_detail_id' => '3', 'climate_id' => '5'],
-                ['animal_detail_id' => '4', 'climate_id' => '2'],
-                ['animal_detail_id' => '1', 'climate_id' => '4'],
-                ['animal_detail_id' => '2', 'climate_id' => '1'],
-                ['animal_detail_id' => '3', 'climate_id' => '4'],
-                ['animal_detail_id' => '4', 'climate_id' => '5'],
                 ['animal_detail_id' => '1', 'climate_id' => '2'],
-                ['animal_detail_id' => '2', 'climate_id' => '4'],
-                ['animal_detail_id' => '3', 'climate_id' => '3']
+                ['animal_detail_id' => '2', 'climate_id' => '1'],
+                ['animal_detail_id' => '2', 'climate_id' => '2'],
+                ['animal_detail_id' => '3', 'climate_id' => '1'],
+                ['animal_detail_id' => '3', 'climate_id' => '3'],
+                ['animal_detail_id' => '4', 'climate_id' => '1'],
+                ['animal_detail_id' => '4', 'climate_id' => '3'],
+                ['animal_detail_id' => '4', 'climate_id' => '4'],
             ]
         );
         DB::table('animal_between_color')->insert(
             [
-                ['animal_detail_id' => 3, 'color_id' => 8],
-                ['animal_detail_id' => 2, 'color_id' => 5],
-                ['animal_detail_id' => 1, 'color_id' => 9],
-                ['animal_detail_id' => 4, 'color_id' => 3],
                 ['animal_detail_id' => 1, 'color_id' => 4],
-                ['animal_detail_id' => 2, 'color_id' => 6],
-                ['animal_detail_id' => 4, 'color_id' => 1],
-                ['animal_detail_id' => 3, 'color_id' => 10],
-                ['animal_detail_id' => 2, 'color_id' => 7],
-                ['animal_detail_id' => 1, 'color_id' => 2],
-                ['animal_detail_id' => 4, 'color_id' => 5],
-                ['animal_detail_id' => 3, 'color_id' => 9],
-                ['animal_detail_id' => 1, 'color_id' => 8],
-                ['animal_detail_id' => 2, 'color_id' => 3],
-                ['animal_detail_id' => 4, 'color_id' => 10],
-                ['animal_detail_id' => 3, 'color_id' => 2],
-                ['animal_detail_id' => 1, 'color_id' => 7],
-                ['animal_detail_id' => 4, 'color_id' => 6],
-                ['animal_detail_id' => 2, 'color_id' => 1],
-                ['animal_detail_id' => 3, 'color_id' => 4],
-                ['animal_detail_id' => 1, 'color_id' => 5],
-                ['animal_detail_id' => 4, 'color_id' => 9],
-                ['animal_detail_id' => 2, 'color_id' => 8],
-                ['animal_detail_id' => 3, 'color_id' => 6],
-                ['animal_detail_id' => 1, 'color_id' => 1],
-                ['animal_detail_id' => 4, 'color_id' => 2],
-                ['animal_detail_id' => 2, 'color_id' => 9],
-                ['animal_detail_id' => 3, 'color_id' => 7],
-                ['animal_detail_id' => 1, 'color_id' => 10],
-                ['animal_detail_id' => 4, 'color_id' => 4],
-                ['animal_detail_id' => 2, 'color_id' => 10],
-                ['animal_detail_id' => 3, 'color_id' => 1],
                 ['animal_detail_id' => 1, 'color_id' => 6],
+                ['animal_detail_id' => 1, 'color_id' => 8],
+                ['animal_detail_id' => 4, 'color_id' => 4],
+                ['animal_detail_id' => 4, 'color_id' => 6],
                 ['animal_detail_id' => 4, 'color_id' => 7],
-                ['animal_detail_id' => 2, 'color_id' => 2],
-                ['animal_detail_id' => 3, 'color_id' => 5],
-                ['animal_detail_id' => 1, 'color_id' => 3],
-                ['animal_detail_id' => 4, 'color_id' => 8],
                 ['animal_detail_id' => 2, 'color_id' => 4],
-                ['animal_detail_id' => 3, 'color_id' => 3]
+                ['animal_detail_id' => 2, 'color_id' => 6],
+                ['animal_detail_id' => 2, 'color_id' => 8],
+                ['animal_detail_id' => 3, 'color_id' => 9],
+                ['animal_detail_id' => 3, 'color_id' => 6],
+                ['animal_detail_id' => 3, 'color_id' => 1],
+                ['animal_detail_id' => 3, 'color_id' => 4],
+
+
             ]
         );
         DB::table('animal_between_ocean')->insert(
             [
-                ['animal_detail_id' => 1, 'ocean_id' => 4],
-                ['animal_detail_id' => 3, 'ocean_id' => 2],
-                ['animal_detail_id' => 2, 'ocean_id' => 5],
-                ['animal_detail_id' => 4, 'ocean_id' => 1],
-                ['animal_detail_id' => 1, 'ocean_id' => 3],
-                ['animal_detail_id' => 2, 'ocean_id' => 2],
-                ['animal_detail_id' => 3, 'ocean_id' => 5],
-                ['animal_detail_id' => 4, 'ocean_id' => 4],
-                ['animal_detail_id' => 1, 'ocean_id' => 1],
-                ['animal_detail_id' => 3, 'ocean_id' => 3],
-                ['animal_detail_id' => 2, 'ocean_id' => 4],
-                ['animal_detail_id' => 4, 'ocean_id' => 2],
-                ['animal_detail_id' => 1, 'ocean_id' => 5],
-                ['animal_detail_id' => 2, 'ocean_id' => 3],
-                ['animal_detail_id' => 3, 'ocean_id' => 1]
+                // ['animal_detail_id' => 1, 'ocean_id' => 4],
+
             ]
         );
+
     }
 }
