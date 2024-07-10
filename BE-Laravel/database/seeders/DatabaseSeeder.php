@@ -19,5 +19,8 @@ class DatabaseSeeder extends Seeder
         $this->call(MasterDataSeeder::class);
         $this->call(DataSeeder::class);
         $this->call(PostLikeCommentSeeder::class);
+        $this->call(TopicQuestionAnswer::class);
+        $this->call(Reward::class);
+
     }
 }
