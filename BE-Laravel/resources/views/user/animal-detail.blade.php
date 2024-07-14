@@ -73,7 +73,7 @@
                                 <div class="row">
                                     <div class="col-6">
                                         <div class="s-char-char__name">Tuổi Thọ</div>
-                                        <div class="s-char-char__num">{{ $data->avg_lifespan }}<span> Years</span></div>
+                                        <div class="s-char-char__num">{{ $data->avg_lifespan }}<span> Năm</span></div>
                                     </div>
                                     <div class="col-6">
                                         <div class="s-char-char__name">Cân Nặng</div>
@@ -425,6 +425,23 @@
                                                 </span>
                                             </div>
                                         </div>
+                                        @if(isset($data->oceans) && count($data->oceans) > 0)
+                                        <div class="row align-items-center">
+                                            <div class="col-sm-3">
+                                                <div class="s-distr-geography__slug">
+
+                                                    Quốc Gia
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-9">
+                                                @foreach ($data->oceans as $item)
+                                                    <a href="{{ route('user.ocean', ['id' => $item->id]) }}"
+                                                        class="s-distr-geography__link ">{{ $item->ocean_name }},</a>
+                                                @endforeach
+                                                </span>
+                                            </div>
+                                        </div>
+                                        @endif
                                     </div>
                                     <p>{{ $data->geography_description }}</p>
                                 </div>

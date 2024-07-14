@@ -469,7 +469,8 @@ class MasterDataSeeder extends Seeder
                 ['category_name' => 'Họ Khỉ'],
                 ['category_name' => 'Họ Cá'],
                 ['category_name' => 'Họ Cá mập'],
-                ['category_name' => 'Họ Chim cánh cụt']
+                ['category_name' => 'Họ Chim cánh cụt'],
+                ['category_name' => 'Họ Voi']
             ]
         );
         DB::table('nation')->insert(

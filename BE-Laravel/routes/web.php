@@ -125,6 +125,7 @@ Route::prefix('animal_detail')->group(function () {
     Route::get('/color/{id}', [AnimalDetailController::class, 'color'])->name('color');
     Route::get('/climate/{id}', [AnimalDetailController::class, 'climateZone'])->name('climate');
     Route::get('/nation/{id}', [AnimalDetailController::class, 'nation'])->name('user.nation');
+    Route::get('/ocean/{id}', [AnimalDetailController::class, 'ocean'])->name('user.ocean');
     Route::get('/conservation_status/{id}', [AnimalDetailController::class, 'conservationStatus'])->name('user.conservation_status');
     Route::get('/population_trending/{id}', [AnimalDetailController::class, 'populationTrending'])->name('user.population_trending');
     Route::get('/diet_type/{id}', [AnimalDetailController::class, 'dietType'])->name('user.diet_type');
