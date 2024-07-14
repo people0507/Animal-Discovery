@@ -79,6 +79,7 @@ class AnimalDetailController extends Controller
         $data->images;
         $data->areas;
         $data->nations;
+        $data->oceans;
         $data->trend;
         $data->status;
         $data->biomes;
@@ -259,6 +260,14 @@ class AnimalDetailController extends Controller
             $query->where('nation_id', $id);
         })->paginate(5);
         $data1 = Nation::where('id',$id)->first();
+        return view('user.categories-animal', compact('data', 'data1'));
+    }
+
+    public function ocean($id){
+        $data = AnimalDetail::whereHas('oceans', function ($query) use ($id) {
+            $query->where('ocean_id', $id);
+        })->paginate(5);
+        $data1 = Ocean::where('id',$id)->first();
         return view('user.categories-animal', compact('data', 'data1'));
     }
 
