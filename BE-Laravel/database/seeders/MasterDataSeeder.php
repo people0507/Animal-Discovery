@@ -6,6 +6,7 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use DB;
 use Hash;
+use Carbon\Carbon;
 class MasterDataSeeder extends Seeder
 {
     /**
@@ -18,24 +19,6 @@ class MasterDataSeeder extends Seeder
         DB::table('role')->insert([
             ['role_name' => 'Admin'],
             ['role_name' => 'User']
-        ]);
-        DB::table('users')->insert([
-            [
-                'name' => 'Nguyễn Đăng Nhân',
-                'email' => 'tuongvandang1@gmail.com',
-                'address' => '175 Tây Sơn Đống Đa',
-                'gender' => 0,
-                'password' => Hash::make('123456'),
-                'role_id' => 1,
-            ],
-            [
-                'name' => 'Trương Văn Cường',
-                'email' => 'cuong2003@gmail.com',
-                'address' => '175 Tây Sơn Đống Đa',
-                'gender' => 1,
-                'password' => Hash::make('123456'),
-                'role_id' => 2,
-            ],
         ]);
         DB::table('climate_zone')->insert([
             [
