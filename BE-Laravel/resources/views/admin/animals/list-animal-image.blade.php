@@ -99,9 +99,9 @@
             </div>
             <div class="col-5 text-right">
                 {{-- Nhớ thêm id để trỏ đến thêm nhiều ảnh động vật --}}
-                <a class="btn btn-light" href="{{ route('admin.add-image-animal') }}"><b style="font-size: 20px">+</b>
+                <!-- <a class="btn btn-light" href="{{ route('admin.add-image-animal') }}"><b style="font-size: 20px">+</b>
                     Thêm nhiều ảnh
-                    động vật</a>
+                    động vật</a> -->
                 <button class="btn btn-success" data-toggle="modal" data-target="#addContinentModal"><b
                         style="font-size: 20px">+</b> Thêm ảnh động vật</button>
 
@@ -215,7 +215,7 @@
                         </div>
                         <div class="form-group">
                             <label for="continentImage">Hình ảnh</label>
-                            <input name="animal_image" type="file" class="form-control-file" id="continentImage">
+                            <input name="animal_image[]" type="file" class="form-control-file" id="continentImage" multiple>
                         </div>
                 </div>
                 <div class="modal-footer">

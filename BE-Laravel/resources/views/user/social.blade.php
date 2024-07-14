@@ -305,7 +305,6 @@
                                     </div>
                                     <div class="ingo">
                                         <h3>{{ $post->user->name }}</h3>
-                                        <small>Dubai, 15 MINUTED AGO</small>
                                     </div>
                                 </div>
                                 <!-- @if ($post->user_id == Auth::id())

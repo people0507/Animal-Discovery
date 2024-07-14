@@ -126,7 +126,53 @@ class AdminController extends Controller
         $user = User::count();
         $animalDetail = AnimalDetail::count();
         $post = Post::count();
-        return view('admin.home',compact('user', 'animalDetail', 'post'));
+        $reward = DB::table('reward_between_user')
+        ->join('users', 'users.id', '=', 'reward_between_user.user_id')
+        ->join('reward', 'reward.id', '=', 'reward_between_user.reward_id')
+        ->select('users.name', 'reward.reward_name', 'reward.reward_score', 'reward_between_user.created_at')
+        ->count();
+
+        $recordCountPlays = DB::table('history_game')
+    ->select(DB::raw('MONTH(created_at) as month'), DB::raw('count(*) as count'))
+    ->groupBy(DB::raw('MONTH(created_at)'))
+    ->pluck('count', 'month')
+    ->toArray();
+    $monthlyCountPlays = array_fill(1, 12, 0);
+    foreach ($recordCountPlays as $month => $count) {
+        $monthlyCountPlays[$month] = $count;
+    }
+
+    $recordCountRewards = DB::table('reward_between_user')
+    ->select(DB::raw('MONTH(created_at) as month'), DB::raw('count(*) as count'))
+    ->groupBy(DB::raw('MONTH(created_at)'))
+    ->pluck('count', 'month')
+    ->toArray();
+    $monthlyCountRewards = array_fill(1, 12, 0);
+    foreach ($recordCountRewards as $month => $count) {
+        $monthlyCountRewards[$month] = $count;
+    }
+
+    $recordCountUsers = DB::table('users')
+    ->select(DB::raw('MONTH(created_at) as month'), DB::raw('count(*) as count'))
+    ->groupBy(DB::raw('MONTH(created_at)'))
+    ->pluck('count', 'month')
+    ->toArray();
+    $monthlyCountUsers = array_fill(1, 12, 0);
+    foreach ($recordCountUsers as $month => $count) {
+        $monthlyCountUsers[$month] = $count;
+    }
+
+    $recordCountPosts = DB::table('post')
+    ->select(DB::raw('MONTH(created_at) as month'), DB::raw('count(*) as count'))
+    ->groupBy(DB::raw('MONTH(created_at)'))
+    ->pluck('count', 'month')
+    ->toArray();
+    $monthlyCountPosts = array_fill(1, 12, 0);
+    foreach ($recordCountPosts as $month => $count) {
+        $monthlyCountPosts[$month] = $count;
+    }
+    
+        return view('admin.home',compact('user', 'animalDetail', 'post','reward','monthlyCountPlays','monthlyCountRewards','monthlyCountUsers','monthlyCountPosts'));
     }
     public function listUser()
     {
@@ -303,13 +349,16 @@ class AdminController extends Controller
     {
         MessageContent::loadMessages();
         $data = $request->all();
+  
         try {
-            $uniqueFileName = Str::uuid()->toString() . '.' . $data['animal_image']->extension();
-            $data['animal_image']->move(public_path('animal_images'), $uniqueFileName);
-            $animalImage = new Image();
-            $animalImage->image_name = $uniqueFileName;
-            $animalImage->detail_id = $id;
-            $animalImage->save();
+            foreach($data['animal_image'] as $item){
+                $uniqueFileName = Str::uuid()->toString() . '.' . $item->extension();
+                $item->move(public_path('animal_images'), $uniqueFileName);
+                $animalImage = new Image();
+                $animalImage->image_name = $uniqueFileName;
+                $animalImage->detail_id = $id;
+                $animalImage->save();
+            }
             $message = MessageContent::getMessage('create_success');
             return redirect()->route('list_animal_image', ['id' => $id])->with('success',$message);
         } catch (\Exception $e) {
