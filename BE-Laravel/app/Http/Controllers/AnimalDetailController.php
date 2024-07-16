@@ -91,7 +91,9 @@ class AnimalDetailController extends Controller
         $multiImages = $data->multiImages;
         $dataRandom = AnimalDetail::with('images')->inRandomOrder()->take(5)->get();
         $funFact = $data->fun_fact;
-        $funFact = explode('.',$funFact);
+        if($funFact != ""){
+            $funFact = explode('.',$funFact);
+        }
         $nations = $data->nations;
         $newArrayCordinate = array();
         foreach($nations as $nation){

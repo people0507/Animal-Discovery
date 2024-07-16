@@ -396,6 +396,188 @@ Số lượng Kangaroo nhiều hơn người dân ở Úc. Chúng là biểu tư
                     'category_id' => '5',
                     'population_trending_id' => '3',
                 ],
+                [
+                    'animal_name' => 'Thanh Xà Kỳ Lân',
+                    'animal_scientific_name' => 'Gonyosoma boulengeri',
+                    'animal_description' => 'Thanh xà kỳ lân (Gonyosoma boulengeri) là một loài rắn không có nọc độc được tìm thấy ở Châu Á. Nó có một phần nhô ra nổi bật, đặc biệt, có vảy ở phía trước mõm, dẫn đến việc nó được đặt tên phổ biến theo tên của một loài tê giác.',
+                    'appearance_description' => 'Thanh xà kỳ lân trưởng thành là 100-160 cm (39-63 in) chiều dài tổng thể (bao gồm cả đuôi). Số lượng vảy của nó bao gồm 19 hàng vây lưng ở giữa thân. Con non của loài này có màu xám nâu với các cạnh sẫm màu trên một số vảy lưng. Khi trưởng thành, thanh xà kỳ lân chuyển sang màu xám thép ở khoảng 12-14 tháng, sau đó chuyển sang màu xanh lục lam hoặc xanh lục khi trưởng thành ở khoảng 24 tháng. Tuy nhiên, một số ít cá thể hiếm hoi vẫn giữ nguyên màu xám thép khi chưa trưởng thành và không chuyển sang giai đoạn màu trưởng thành thông thường. Các nghiên cứu do Đại học Bangor thực hiện đã chỉ ra rằng phần mũi nhô ra của những con rắn này được sử dụng để trình diễn giao phối, trong đó con đực có thể rào cản đối thủ. Tuy nhiên, các nghiên cứu khác đã tìm thấy rất ít mối tương quan giữa việc sử dụng phần mũi nhô ra và màn tán tỉnh, điều đó có nghĩa là chức năng thực sự vẫn chưa được biết.',
+                    'geography_description' => 'Thanh xà kỳ lân xuất hiện ở miền bắc Việt Nam bao gồm Tam Đảo và miền nam Trung Quốc. Chúng sống ở vùng đất thấp và rừng mưa cận nhiệt đới miền núi, đặc biệt là các thung lũng có suối.',
+                    'habit_lifestyle_description' => 'Thanh xà kỳ lân thường sống trên cây, nghĩa là chúng dành phần lớn thời gian trên cây. Những con rắn này có khả năng nén ngang và phồng lên một phần ba đầu tiên của cơ thể khi bị đe dọa.',
+                    'diet_nutrition_description' => 'Thanh xà kỳ lân là loài ăn thịt. Chế độ ăn của chúng bao gồm chuột nhỏ và các loài gặm nhấm khác, chim, trứng chim và có thể là các con mồi có xương sống khác.',
+                    'mating_habit_description' => 'Thanh xà kỳ lân sinh sản từ tháng 4 đến tháng 5. Con cái đẻ trứng và có thể đẻ từ 5 đến 10 trứng trong một lứa. Thời gian ấp trứng kéo dài khoảng 60 ngày và những con rắn con mới sinh có chiều dài tổng thể là 30-35 cm (12-14 in).',
+                    'mating_behavior' => 'Cạnh tranh',
+                    'reproduction_season' => 'Tháng 4-tháng 5',
+                    'pregnancy_duration' => '60 ngày',
+                    'baby_carrying' => '5 - 10 trứng',
+                    'independent_age' => 'vài giờ',
+                    'population_threat' => 'Loài này hiện nay không được coi là bị đe dọa.',
+                    'population_number' => 'Sách đỏ IUCN và các nguồn khác không cung cấp số lượng tổng thể của thanh xà kỳ lân. Hiện tại, loài này được phân loại là loài ít quan tâm (LC) trong Sách đỏ IUCN.',
+                    'ecological_niche' => '',
+                    'fun_fact' => '',
+                    'top_speed' => '',
+                    'animal_length' => '100-160',
+                    'animal_weight' => '0.5-1',
+                    'animal_swing' => '',
+                    'population_size' => 'KHÔNG XÁC ĐỊNH',
+                    'avg_lifespan' => '15-20',
+                    'animal_sound' => '',
+                    'animal_video' => 'https://www.youtube.com/embed/DmDjQ6Frw4c?si=Yanhp6nU2cVmIOEK',
+                    'conservation_status_id' => '1',
+                    'activity_time_id' => '2',
+                    'diet_type_id' => '2',
+                    'category_id' => '19',
+                    'population_trending_id' => '4',
+                ],
+                [
+                    'animal_name' => 'Gấu Túi',
+                    'animal_scientific_name' => 'Phascolarctos cinereus',
+                    'animal_description' => 'Koala hay không chính xác là gấu túi ( Phascolarctos cinereus ) là một loài thú có túi ăn cỏ sống trên cây có nguồn gốc từ Úc. Đây là đại diện duy nhất còn tồn tại của họ Phascolarctidae và họ hàng gần nhất còn sống của nó là wombat. Do ngoại hình đặc biệt của mình, gấu túi được công nhận trên toàn thế giới là biểu tượng của Úc. Chúng bị người Úc bản địa săn bắt và được miêu tả trong các câu chuyện thần thoại và nghệ thuật hang động trong nhiều thiên niên kỷ. Lần đầu tiên ghi nhận cuộc chạm trán giữa một người châu Âu và một con gấu túi là vào năm 1798, và một hình ảnh về loài vật này đã được nhà tự nhiên học George Perry công bố vào năm 1810.',
+                    'appearance_description' => 'Koala là loài thú có túi quyến rũ với thân hình chắc nịch, đôi mắt nhỏ và đôi tai lớn. Bộ lông giống như len của loài vật này dày nhưng mềm, có màu xám tro. Bộ lông dày đặc ở phía dưới đóng vai trò như một chiếc đệm, cho phép gấu túi ngồi trên những cành cây thô. Phần dưới cũng như phần đầu của lông trên tai chúng có màu trắng. Ở giữa ngực, gấu túi đực trưởng thành có "tuyến mùi" màu nâu để nhận dạng. Một trong những đặc điểm chính của loài vật này là khứu giác rất mạnh, giúp chúng phân biệt được lá độc và lá ăn được. Chúng có những móng vuốt sắc nhọn lớn trên các chi dài, giúp chúng leo cây, cũng như 5 ngón tay, bao gồm cả ngón cái đối diện, cho phép chúng bám vào cành cây và thức ăn.',
+                    'geography_description' =>'Koala phân bố khắp miền đông và đông nam nước Úc, bao gồm đông bắc, trung tâm và đông nam Queensland, miền đông New South Wales, Victoria cũng như các vùng đông nam của Nam Úc. Chúng có thể được tìm thấy trong các môi trường sống từ rừng tương đối thoáng đến rừng cây, và trong các vùng khí hậu từ nhiệt đới đến ôn đới mát mẻ. Ở các vùng khí hậu bán khô hạn, koala thích môi trường sống ven sông, nơi các con suối và lạch gần đó cung cấp nơi trú ẩn trong thời gian hạn hán và nhiệt độ cực cao.',
+                    'habit_lifestyle_description' => 'Koala là loài động vật không thích giao lưu, chỉ tụ tập vào mùa sinh sản. Chúng thường tụ tập thành các nhóm lớn, lỏng lẻo ở những khu vực có nhiều cây thích hợp, mỗi cây chỉ có một cá thể. Trong suốt thời gian còn lại của năm, koala có xu hướng sống đơn độc, thể hiện rất ít hành vi giao lưu. Chúng là loài động vật sống trên cây, trú ngụ trên cây. Koala là loài leo trèo cực giỏi. Trong khi đó, khi ở dưới đất, chúng đi rất chậm. Vào ban ngày, loài động vật sống về đêm này thường ngủ trên nhánh cây bạch đàn. Bình thường, koala là loài động vật rất yên tĩnh. Tuy nhiên, khi bị đe dọa hoặc hoảng sợ, chúng thường kêu, giống như tiếng khóc của trẻ sơ sinh và kèm theo đó là tiếng rung. Ngoài ra, trong mùa sinh sản, con đực của loài này bắt đầu phát ra tiếng kêu rống. Koala cũng đánh dấu mùi trên cây của chúng, đây là một hình thức giao tiếp.',
+                    'diet_nutrition_description' => 'Koala là loài động vật ăn cỏ (folivorous), chủ yếu ăn lá cây bạch đàn. Trong khi đó, chúng ăn lá của 30 loài cây bạch đàn khác nhau và bổ sung chế độ ăn uống thông thường của chúng bằng lá cây keo.',
+                    'mating_habit_description' => 'Koala có hệ thống giao phối đa thê với con đực thống trị, giao phối với hầu hết con cái. Koala giao phối từ tháng 12 đến tháng 3. Thời kỳ mang thai ở koala chỉ kéo dài 35 ngày, chỉ sinh một con. Trong 5-6 tháng đầu đời, con non sống trong túi của mẹ, chỉ bú sữa. Đến 6 tháng tuổi, con non cai sữa. Sau đó, con non bắt đầu ăn pap - thực vật đã tiêu hóa một phần, có trong phân của mẹ. Khi được 7 tháng tuổi, con non chui ra khỏi túi của mẹ, bắt đầu bám vào lưng mẹ. Sau đó, khi được khoảng 1 tuổi, koala con trở nên độc lập, sau đó con non thường ở lại với mẹ thêm vài tháng nữa trước khi rời đi. Koala đực đạt đến độ tuổi trưởng thành về mặt sinh dục khi được 3-4 tuổi trong khi con cái trưởng thành khi được 2-3 tuổi.',
+                    'mating_behavior' => 'Đa thê',
+                    'reproduction_season' => 'Tháng 12-tháng 3',
+                    'pregnancy_duration' => '35 ngày',
+                    'baby_carrying' => '1 con',
+                    'independent_age' => '1 năm',
+                    'population_threat' => 'Mối đe dọa chính đối với quần thể gấu túi ở Úc là sự phá hủy, phân mảnh và thay đổi phạm vi tự nhiên của chúng, do đó, loài động vật này thường bị chó săn cũng như va chạm với xe cộ. Các mối đe dọa đáng chú ý khác bao gồm bệnh tật và cháy rừng. Các loài động vật này cũng phải chịu hạn hán, dẫn đến số lượng tử vong đáng kể ở một số quần thể gấu túi.',
+                    'population_number' => 'Theo Sách đỏ IUCN, tổng số lượng quần thể gấu túi là khoảng 300.000 cá thể trưởng thành. Hiện tại, loài này được phân loại là loài dễ bị tổn thương (VU) trong Sách đỏ IUCN và số lượng của chúng hiện đang giảm dần.',
+                    'ecological_niche' => '',
+                    'fun_fact' => 'Koala dành phần lớn thời gian trong ngày (lên đến 18 giờ) để ngủ.
+Bộ não của gấu túi chỉ chiếm chưa đến 0,2% trọng lượng cơ thể của loài động vật này, điều này kết hợp với chế độ ăn nghèo dinh dưỡng, là lý do khiến gấu túi có lối sống ít vận động.
+Tên của chúng, "koala", bắt nguồn từ ngôn ngữ thổ dân và có nghĩa là "không có nước", những con vật này được gọi như vậy vì chúng hiếm khi uống nước và lấy độ ẩm cần thiết từ lá bạch đàn, tuy nhiên, khi nhiệt độ tăng, đôi khi koala mất một lượng nước lớn, dẫn đến mất nước.
+Một con gấu túi tiêu thụ trung bình khoảng 1 kg lá mỗi ngày, đây là một lượng lớn đối với kích thước cơ thể của loài động vật này, chúng cũng có xu hướng sử dụng túi má của mình làm nơi dự trữ đồ ăn nhẹ từ lá.
+Koala chỉ ăn lá trong một giai đoạn phát triển nhất định, chúng ăn 12 loài cây bạch đàn trong số hơn 100 loài được tìm thấy trên khắp nước Úc.
+Gấu túi không chỉ leo trèo giỏi mà còn bơi giỏi, chúng có thể băng qua sông để thoát khỏi lũ lụt lớn trong phạm vi sống của chúng.
+Con non của loài này không có lông, mù và nhỏ như hạt đậu.
+Mẹ và con non có mối liên kết rất chặt chẽ; con cái rất vui khi được bế con mình đi khắp mọi nơi, cho đến khi con lớn lên và trở nên tự lập.
+Tên khoa học của chúng là "Phascolarctoscinereus", trong đó từ tiếng Hy Lạp "phaskolos" có nghĩa là "túi", arktos có nghĩa là "gấu" và từ tiếng Latin "cinereus" có nghĩa là "màu tro".',
+                    'top_speed' => '10',
+                    'animal_length' => '60–85',
+                    'animal_weight' => '4-15',
+                    'animal_swing' => '',
+                    'population_size' => '300.000',
+                    'avg_lifespan' => '15',
+                    'animal_sound' => 'koala.mp3',
+                    'animal_video' => 'https://www.youtube.com/embed/oI3ADcDH0Uc?si=KrmoiASFYlXQAMWR',
+                    'conservation_status_id' => '3',
+                    'activity_time_id' => '2',
+                    'diet_type_id' => '4',
+                    'category_id' => '5',
+                    'population_trending_id' => '2',
+                ],
+                [
+                    'animal_name' => 'Chim Cánh Cụt Hoàng Đế',
+                    'animal_scientific_name' => 'Aptenodytes forsteri',
+                    'animal_description' => 'Chim cánh cụt Hoàng đế ( Aptenodytes forsteri ) là loài chim cánh cụt cao nhất và nặng nhất trong số tất cả các loài chim cánh cụt còn sống và là loài đặc hữu của Nam Cực . Giống như tất cả các loài chim cánh cụt khác, chúng không biết bay, có thân hình thon dài, và đôi cánh cứng và dẹt thành vây để thích nghi với môi trường sống dưới nước. Tuổi thọ của chim cánh cụt Hoàng đế thường là 20 năm trong tự nhiên, mặc dù một số cá thể có thể sống đến 50 tuổi.',
+                    'appearance_description' => 'Chim cánh cụt hoàng đế có bộ lông mượt mà, bao gồm những chiếc lông bóng, không thấm nước, giúp da không bị ướt. Bàn chân có màng của loài vật này giúp việc bơi lội dễ dàng hơn nhiều. Đầu to, cổ ngắn và dày, đuôi hình nêm và ngắn. Đôi cánh nhỏ của chim cánh cụt có hình dạng giống như vây. Đầu màu xanh đen được bao phủ bởi những mảng lớn màu trắng và vàng trên tai của loài vật này. Phần trên có màu xanh xám trong khi phần dưới có màu trắng, ngoại trừ phần ngực trên có màu vàng nhạt. Con đực và con cái của loài này có ngoại hình tương tự nhau.',
+                    'geography_description' =>'Chim cánh cụt hoàng đế xuất hiện ở Deep South, phân bố dọc theo bờ biển và khắp vùng băng nén của lục địa Nam Cực. Chúng hầu như luôn sinh sản trên các tảng băng ổn định gần bờ biển và cách bờ biển tới 18 km (11 dặm). Các đàn sinh sản thường ở những khu vực có vách băng và tảng băng trôi bảo vệ khỏi gió',
+                    'habit_lifestyle_description' => 'Những loài chim này không di cư, sống sâu trong Nam Đại Dương quanh năm. Chim cánh cụt hoàng đế có thể hoạt động vào bất kỳ thời điểm nào trong ngày và đêm. Chúng là loài chim rất hòa đồng, tụ tập thành từng nhóm để kiếm ăn và làm tổ. Chúng tạo thành các đàn làm tổ lớn; nếu thời tiết tốt và thường chỉ bảo vệ những khu vực nhỏ xung quanh chúng. Khi trời quá lạnh, những con chim tụ tập lại với nhau. Những con trưởng thành trong thời kỳ sinh sản phải liên tục di chuyển giữa các khu vực làm tổ và kiếm ăn quanh năm. Khi ở dưới nước, chim cánh cụt hoàng đế bơi rất giỏi; khi ở trên cạn, chúng hoặc đi bộ với dáng đi lạch bạch đặc trưng hoặc trượt trên bề mặt băng bằng bụng, đẩy mình bằng chân.',
+                    'diet_nutrition_description' => 'Chim cánh cụt này là loài ăn thịt (ăn cá và ăn động vật thân mềm), chỉ ăn các loài động vật dưới nước. Chế độ ăn của chúng chủ yếu bao gồm nhuyễn thể và cá, bổ sung thêm mực và giáp xác.',
+                    'mating_habit_description' => 'Chim cánh cụt hoàng đế có chế độ chung thủy theo từng cặp, mỗi mùa chỉ giao phối với một bạn tình. Vào tháng 3-tháng 4, những chú chim này trở về đàn sinh sản của mình. Thời kỳ mang thai kéo dài trong 63 ngày. Thông thường, một chú chim cánh cụt cái đẻ một quả trứng, để lại cho chú chim cánh cụt đực và bay ra biển. Chim cánh cụt đực có trách nhiệm giữ ấm cho trứng, mang trứng trên chân và ấp trứng trong 9 tuần. Trứng nở sau 70 ngày, trùng với thời gian chim mái trở về. Khi chim non nở ra, chim trống bay đi kiếm ăn, và lần này chim mái phải chăm sóc chim non, cho chim ăn và giữ ấm cho chim non. Chim non của chim cánh cụt hoàng đế lớn lên khá nhanh. Khi đạt đến độ tuổi 150 ngày, chim non sẽ trưởng thành. Chim cánh cụt đực bắt đầu sinh sản khi được 5-6 tuổi trong khi chim mái - khi được 5 tuổi.',
+                    'mating_behavior' => 'Độc thân tuần tự',
+                    'reproduction_season' => 'Tháng 3-tháng 4',
+                    'pregnancy_duration' => '63 ngày',
+                    'baby_carrying' => '1 quả',
+                    'independent_age' => '150 ngày',
+                    'population_threat' => 'Sự nóng lên toàn cầu ảnh hưởng tiêu cực đến quần thể các loài động vật này, làm giảm diện tích băng trôi, môi trường sống tự nhiên của chim cánh cụt hoàng đế. Một mối lo ngại khác là các tàu đánh cá đôi khi vô tình bắt được những chú chim cánh cụt này trong lưới của họ.',
+                    'population_number' => 'Tổng số ước tính của loài chim cánh cụt này là khoảng 595.000 cá thể trưởng thành. Mặc dù tổng số chim cánh cụt Hoàng đế hiện đang ổn định, nhưng theo Sách đỏ IUCN, loài này được phân loại là Gần bị đe dọa.',
+                    'ecological_niche' => 'Chim cánh cụt hoàng đế là mắt xích không thể thay thế trong hệ sinh thái của phạm vi của chúng. Những loài chim này tiêu thụ nhiều loài sinh vật biển như cá nhỏ, động vật chân đầu hoặc giáp xác. Bên cạnh đó, chim cánh cụt là nguồn thức ăn quan trọng cho các loài săn mồi lớn hơn tại địa phương, bao gồm hải cẩu báo và cá mập lớn.',
+                    'fun_fact' => 'Ở vùng cực Nam của Nam Cực, nơi những chú chim cánh cụt này sinh sống, nhiệt độ đôi khi xuống thấp tới -60 độ C, những chú chim này có thể sống sót nhờ có lượng mỡ dự trữ lớn trong cơ thể cũng như nhiều lớp lông giống như vảy, ngoài ra trong điều kiện thời tiết khắc nghiệt, các chú chim trong đàn tụm lại với nhau để giữ nhiệt.
+Chim cánh cụt hoàng đế là loài bơi giỏi nhất và thợ lặn xuất sắc, chúng có thể lặn ở độ sâu lên tới 500 m, ở dưới nước trong khoảng 22 phút.
+Đằng sau đôi mắt, những loài chim này sở hữu một tuyến đặc biệt trên ổ mắt, hoạt động như một bộ lọc, làm sạch máu khỏi muối, nhờ tuyến này chim cánh cụt có thể uống nước biển mặn khi săn mồi; sau đó muối được lọc và thải ra qua mỏ của động vật hoặc bằng cách hắt hơi.
+Chim cánh cụt hoàng đế trải qua cái gọi là "sự thay lông thảm khốc": không giống như các loài chim khác, chỉ thay một vài chiếc lông cùng một lúc, chim cánh cụt hoàng đế rụng và mọc lại toàn bộ bộ lông cùng một lúc, thời gian thay lông kéo dài trong 2-3 tuần, trong thời gian đó chúng sống trên cạn mà không ra biển.
+Đôi tai của chim cánh cụt hoàng đế không thể nhìn thấy được, nhưng loài chim này có thính giác rất tốt, giúp chúng tìm thấy nhau trong các đàn sinh sản lớn bằng cách phát ra những tiếng kêu riêng biệt.
+Chim cánh cụt hoàng đế là loài chim rất mạnh mẽ, trong một trường hợp, một nhóm gồm 6 người đàn ông, cố gắng bắt một chú chim cánh cụt đực để làm bộ sưu tập cho sở thú, đã bị ném đi ném lại nhiều lần trước khi tất cả những người đàn ông phải cùng nhau giải quyết con chim, con chim này nặng khoảng một nửa người',
+                    'top_speed' => '6-9',
+                    'animal_length' => '76–89',
+                    'animal_weight' => '22,7–45,4',
+                    'animal_swing' => '',
+                    'population_size' => '595.000',
+                    'avg_lifespan' => '20',
+                    'animal_sound' => 'emperor_penguin.mp3',
+                    'animal_video' => 'https://www.youtube.com/embed/MfstYSUscBc?si=AXje774b0Rz0ZD_N',
+                    'conservation_status_id' => '1',
+                    'activity_time_id' => '2',
+                    'diet_type_id' => '2',
+                    'category_id' => '53',
+                    'population_trending_id' => '2',
+                ],
+                [
+                    'animal_name' => 'Sư Tử Biển Steller',
+                    'animal_scientific_name' => 'Eumetopias jubatus',
+                    'animal_description' => 'Sư tử biển Steller ( Eumetopias jubatus ) là loài sư tử biển gần như bị đe dọa ở phía bắc Thái Bình Dương. Đây là thành viên duy nhất của chi Eumetopias và là loài hải cẩu tai lớn nhất (Otariidae). Trong số các loài chân màng, chúng chỉ nhỏ hơn loài hải mã và hai loài hải cẩu voi. Loài này được đặt theo tên của nhà tự nhiên học Georg Wilhelm Steller, người đầu tiên mô tả chúng vào năm 1741. Sư tử biển Steller đã thu hút được sự chú ý đáng kể trong những thập kỷ gần đây, do sự suy giảm đáng kể và phần lớn không giải thích được về số lượng của chúng trên một phần rộng lớn của phạm vi phân bố phía bắc của chúng ở Alaska .',
+                    'appearance_description' => 'Sư tử biển Steller trưởng thành có màu nhạt hơn hầu hết các loài sư tử biển khác, từ vàng nhạt đến nâu vàng và đôi khi có màu đỏ. Con non khi sinh ra gần như có màu đen và vẫn có màu sẫm trong vài tháng. Cả con cái và con đực đều phát triển nhanh cho đến năm thứ năm, sau đó tốc độ phát triển của con cái chậm lại đáng kể. Con đực tiếp tục phát triển cho đến khi các đặc điểm sinh dục thứ cấp của chúng xuất hiện vào năm thứ năm đến năm thứ tám. Con đực dài hơn con cái một chút và có ngực, cổ và cấu trúc thân trước nói chung rộng hơn nhiều. Con đực được phân biệt rõ hơn với con cái bởi trán rộng và cao hơn, mõm phẳng hơn và bờm dày bằng lông thô quanh cổ lớn của chúng. Do đó, thật phù hợp khi tên tiếng Latin của chúng được dịch đại khái là "con có bờm với trán rộng".',
+                    'geography_description' =>'Sư tử biển Steller sinh sống ở bờ biển phía bắc California, về phía bắc đến Alaska và trên bờ biển Nhật Bản và Nga. Chúng xuất hiện ở vùng nước mát của Bắc Thái Bình Dương, kéo dài trên bờ biển đá và trên các bãi biển.',
+                    'habit_lifestyle_description' => 'Sư tử biển Steller thường sống theo bầy đàn và xuất hiện theo nhóm lớn trên bãi biển hoặc trong các bãi đẻ. Chúng thường sống theo nhóm từ hai đến mười hai con, nhưng đôi khi có tới hàng trăm con cùng nhau. Trên biển, chúng sống đơn độc hoặc theo nhóm nhỏ. Chúng kiếm ăn vào ban đêm gần bờ và ở vùng nước biển. Sư tử biển Steller có thể di chuyển quãng đường dài trong một mùa và có thể lặn xuống độ sâu khoảng 1300 feet (400 m); tuy nhiên, chúng không được coi là loài di cư. Chúng sử dụng đất liền làm nơi trú ngụ để nghỉ ngơi, lột xác, giao phối và sinh con. Chúng phát ra tiếng kêu mạnh mẽ kèm theo động tác lắc đầu theo chiều dọc ở con đực.',
+                    'diet_nutrition_description' => 'Sư tử biển Steller là loài ăn thịt (động vật ăn cá, động vật thân mềm). Chúng chủ yếu ăn cá thu Atka, cá minh thái walleye, cá tuyết Thái Bình Dương và cá hồi Thái Bình Dương. Chúng cũng ăn bạch tuộc, mực, chân bụng và nhuyễn thể. Chúng đôi khi có thể săn hải cẩu cảng, hải cẩu đeo vòng, hải cẩu lông phương Bắc non và các loài động vật khác.',
+                    'mating_habit_description' => 'Sư tử biển Steller có hệ thống giao phối đa thê. Những con đực duy nhất được phép giao phối là những con đực thống trị; tuy nhiên, những con đực trẻ hơn sẽ lẻn vào các bãi đẻ và cố gắng giao phối với những con cái mà con đực thống trị không để ý. Những con đực thống trị sẽ bảo vệ và giao phối với tới 30 con cái trong một mùa giao phối. Con cái sinh ra một con non duy nhất vào giữa tháng 5 và tháng 7 sau thời gian mang thai kéo dài khoảng 12 tháng. Con cái chăm sóc con của chúng tới 3 năm, cho chúng bú trong thời gian dài tới một năm, đôi khi lâu hơn. Con đực không tham gia nhiều vào việc chăm sóc con cái nhưng sẽ bảo vệ tất cả những con cái mà chúng đã giao phối. Cả con đực và con cái đều đạt đến độ tuổi trưởng thành từ 3 đến 6 tuổi. Do phải cạnh tranh với những con đực khác, hầu hết những con đực đực không có khả năng sinh sản thành công cho đến khi được 8 hoặc 10 tuổi.',
+                    'mating_behavior' => 'Đa thê',
+                    'reproduction_season' => 'Giữa tháng 5-tháng 7',
+                    'pregnancy_duration' => '12 tháng',
+                    'baby_carrying' => '1 con',
+                    'independent_age' => '1-3 năm',
+                    'population_threat' => 'Các mối đe dọa hiện tại đối với loài này bao gồm các vụ va chạm giữa thuyền/tàu, săn bắn/bắn trái phép, chất gây ô nhiễm, suy thoái môi trường sống, thăm dò dầu khí ngoài khơi, tương tác (gián tiếp và trực tiếp) với nghề cá, tác động trực tiếp chủ yếu là do ngư cụ (lưới rê, lưới dài, lưới kéo, v.v.) có thể móc, vướng, làm chúng bị thương hoặc giết chết, và tác động gián tiếp từ sự cạnh tranh thức ăn, những thay đổi có thể xảy ra đối với môi trường sống quan trọng, v.v.',
+                    'population_number' => 'Theo Sách đỏ IUCN, tổng số lượng sư tử biển Steller là khoảng 160.867 cá thể. Bao gồm số lượng quần thể của hai quần thể được công nhận của loài này: quần thể sư tử biển Western Steller - 79.929 cá thể, với 55.791 con ở Hoa Kỳ và 24.138 con ở Nga; quần thể sư tử biển Loughlins Steller - khoảng 80.938 cá thể. Hiện tại, sư tử biển Steller được phân loại là Gần bị đe dọa (NT), tuy nhiên, số lượng của chúng ngày nay đang tăng lên.',
+                    'ecological_niche' => 'Do chế độ ăn uống của mình, sư tử biển Steller có thể ảnh hưởng đến quần thể cá, nhuyễn thể hai mảnh vỏ, chân bụng và chân đầu.',
+                    'fun_fact' => 'Các nhóm sư tử biển trên cạn được gọi là một đàn, dưới nước được gọi là bè, trong mùa sinh sản được gọi là ổ chim, và một số con cái trong lãnh thổ của con đực được gọi là hậu cung.
+Sư tử biển Steller còn được gọi là “sói biển”: “seevitchie” đối với người Aleut và “sivuch” đối với người Nga.
+Những con sư tử biển này có thể nín thở tới 40 phút. Khi chạy trốn khỏi những kẻ săn mồi như cá voi sát thủ, chúng có thể tăng tốc lên tới 40km/h.
+Độ lặn sâu nhất mà một con sư tử biển Steller từng được ghi nhận là 424 mét.
+Sư tử biển Steller rất hay kêu, một nhà khoa học mô tả chúng là "luôn hét vào mặt nhau", những chú sư tử biển con có thể xác định vị trí của mẹ chúng bằng âm thanh của mẹ, trong số hàng ngàn âm thanh khác, những chú sư tử đực gầm rú, những chú sư tử mẹ sủa, và những chú sư tử con kêu be be khiến cho nơi trú ẩn rất ồn ào',
+                    'top_speed' => '40',
+                    'animal_length' => '230–330',
+                    'animal_weight' => '240–1120',
+                    'animal_swing' => '',
+                    'population_size' => '160.867',
+                    'avg_lifespan' => '20-30',
+                    'animal_sound' => 'steller_sealion.mp3',
+                    'animal_video' => 'https://www.youtube.com/embed/M5pi6wB3Nak?si=A_rEjigvpKWlgb_A',
+                    'conservation_status_id' => '2',
+                    'activity_time_id' => '1',
+                    'diet_type_id' => '2',
+                    'category_id' => '25',
+                    'population_trending_id' => '1',
+                ],
+                [
+                    'animal_name' => 'Thú Mỏ Vịt',
+                    'animal_scientific_name' => 'Ornithorhynchus anatinus',
+                    'animal_description' => 'Thú mỏ vịt ( Ornithorhynchus anatinus ), đôi khi được gọi là thú mỏ vịt , là một loài động vật có vú bán thủy sinh, đẻ trứng đặc hữu của miền đông Úc, bao gồm Tasmania . Cùng với bốn loài thú lông nhím , đây là một trong năm loài động vật đơn huyệt còn tồn tại. Thú mỏ vịt là một trong số ít loài động vật có vú đẻ trứng thay vì sinh con và là một trong số ít loài động vật có vú có nọc độc. Các đặc điểm độc đáo của thú mỏ vịt khiến nó trở thành một chủ đề quan trọng trong nghiên cứu về sinh học tiến hóa và là một biểu tượng dễ nhận biết và mang tính biểu tượng của Úc .',
+                    'appearance_description' => 'Thú mỏ vịt có bộ lông dày giúp giữ ấm dưới nước. Hầu hết lông của nó có màu nâu sẫm, với một mảng sáng hơn gần mắt và màu sáng hơn ở mặt dưới. Trên bàn chân trước của nó có thêm lớp da đóng vai trò như mái chèo khi nó bơi. Thú mỏ vịt đi vụng về trên các đốt ngón tay để bảo vệ lớp da có màng này. Mỏ của nó nhẵn, linh hoạt và mềm như cao su, và có cảm giác như da lộn. Con đực có một chiếc gai độc ở bàn chân sau có đủ chất độc để gây ra cơn đau dữ dội cho con người.',
+                    'geography_description' =>'Thú mỏ vịt được tìm thấy ở bờ biển phía Đông và Đông Nam của Úc cũng như Tasmania, Flinders và King Islands. Ngoài ra còn có một quần thể nhỏ được du nhập vào Đảo Kangaroo. Thú mỏ vịt bị giới hạn ở các dòng suối và các vùng nước ngọt thích hợp, bao gồm một số hồ chứa nước nông và ao.',
+                    'habit_lifestyle_description' => 'Thú mỏ vịt sống đơn độc, đặc biệt là con đực. Nếu lãnh thổ của chúng chồng lấn lên nhau, chúng sẽ kiếm ăn vào những thời điểm khác nhau để tránh nhau. Chúng thường hoạt động về đêm và lúc chạng vạng, nhưng cũng có những cá thể hoạt động vào ban ngày, đặc biệt là khi bầu trời u ám. Thú mỏ vịt là loài bơi lội tuyệt vời và dành phần lớn thời gian dưới nước để kiếm thức ăn. Chúng dành nhiều thời gian để săn mồi, lên đến 10 đến 12 giờ và ở trong hang khi không săn mồi. Khi không ở dưới nước, thú mỏ vịt sẽ lui về hang nghỉ ngơi ngắn, thẳng có mặt cắt ngang hình bầu dục, gần như luôn ở bờ sông không xa mực nước và thường ẩn dưới một đám rễ cây bảo vệ.',
+                    'diet_nutrition_description' => 'Thú mỏ vịt là loài ăn thịt, thức ăn của chúng là giun đốt, tôm nước ngọt, ấu trùng côn trùng và tôm nước ngọt đào bằng mõm từ lòng sông hoặc bắt được khi đang bơi.',
+                    'mating_habit_description' => 'Thú mỏ vịt là loài đa thê (dâm đãng), cả con đực và con cái đều có nhiều bạn tình. Con cái có thể giao phối lần đầu tiên khi được 2 tuổi, nhưng một số con không giao phối cho đến khi được 5 tuổi. Mùa sinh sản diễn ra giữa những tháng mùa đông của Úc từ tháng 6 đến tháng 10. Khi con cái sẵn sàng sinh con, chúng đào hang xuống đất để tự nhốt mình trong một trong những căn phòng. Con cái đẻ 1 hoặc 2 quả trứng và giữ ấm giữa mông và đuôi. Trứng nở sau khoảng 10 ngày. Những con non nhỏ bằng hạt đậu sẽ bú sữa mẹ trong 4 đến 5 tháng. Chúng ở trong hang cho đến khi đạt được khoảng 80 phần trăm trọng lượng trưởng thành, khoảng 6 tháng.',
+                    'mating_behavior' => 'Đa thê',
+                    'reproduction_season' => 'Tháng 6-tháng 10',
+                    'pregnancy_duration' => '10 ngày',
+                    'baby_carrying' => '1-2 con',
+                    'independent_age' => '4-5 tháng',
+                    'population_threat' => 'Mối đe dọa lớn nhất đối với loài này là mất môi trường sống do khai hoang và ô nhiễm nước. Động vật ăn thịt là rắn, thằn lằn, chuột nước và cáo.',
+                    'population_number' => 'Sách đỏ IUCN và các nguồn khác không cung cấp số lượng tổng thể của quần thể thú mỏ vịt. Hiện tại, loài này được phân loại là Gần bị đe dọa (NT) trong Sách đỏ IUCN và số lượng của chúng hiện đang giảm dần.',
+                    'ecological_niche' => 'Thú mỏ vịt là loài ăn thịt, kiểm soát số lượng loài mà nó ăn.',
+                    'fun_fact' => 'Các nhà tự nhiên học châu Âu lúc đầu nghĩ rằng thú mỏ vịt là một trò lừa bịp, và ai đó đã khâu mỏ vịt và đuôi rái cá lại với nhau và tạo ra một loài vật trông giống hải ly.
+Tên "thú mỏ vịt" bắt nguồn từ tiếng Hy Lạp "platys", nghĩa là rộng, và "pous", nghĩa là chân.
+Thú mỏ vịt có thể gầm gừ như chó con.
+Thú mỏ vịt sử dụng mõm để tìm kiếm con mồi. Miệng của nó nằm dưới mõm.
+Thú mỏ vịt sử dụng đuôi để dự trữ chất béo, khoảng 50% cơ thể là chất béo.
+Thú mỏ vịt sử dụng chân trước để chèo và lái bằng chân sau và đuôi',
+                    'top_speed' => '35',
+                    'animal_length' => '43-50',
+                    'animal_weight' => '0.7-2.4',
+                    'animal_swing' => '',
+                    'population_size' => 'KHÔNG XÁC ĐỊNH',
+                    'avg_lifespan' => '12-20',
+                    'animal_sound' => 'platypus.mp3',
+                    'animal_video' => 'https://www.youtube.com/embed/M5pi6wB3Nak?si=A_rEjigvpKWlgb_A',
+                    'conservation_status_id' => '2',
+                    'activity_time_id' => '2',
+                    'diet_type_id' => '2',
+                    'category_id' => '5',
+                    'population_trending_id' => '2',
+                ],
             ]
         );
         DB::table('image')->insert(
@@ -580,7 +762,6 @@ Số lượng Kangaroo nhiều hơn người dân ở Úc. Chúng là biểu tư
                     'image_name' => 'polar_bear4.jpg',
                     'detail_id' => '9'
                 ],
-
                 [
                     'image_name' => 'red_kangaroo.jpg',
                     'detail_id' => '10'
@@ -598,8 +779,108 @@ Số lượng Kangaroo nhiều hơn người dân ở Úc. Chúng là biểu tư
                     'detail_id' => '10'
                 ],
                 [
-                    'image_name' => 'pred_kangaroo4.jpg',
+                    'image_name' => 'red_kangaroo4.jpg',
                     'detail_id' => '10'
+                ],
+                [
+                    'image_name' => 'rhinoceros_ratsnake.jpg',
+                    'detail_id' => '11'
+                ],
+                [
+                    'image_name' => 'rhinoceros_ratsnake1.jpg',
+                    'detail_id' => '11'
+                ],
+                [
+                    'image_name' => 'rhinoceros_ratsnake2.jpg',
+                    'detail_id' => '11'
+                ],
+                [
+                    'image_name' => 'rhinoceros_ratsnake3.jpg',
+                    'detail_id' => '11'
+                ],
+                [
+                    'image_name' => 'rhinoceros_ratsnake4.jpg',
+                    'detail_id' => '11'
+                ],
+                [
+                    'image_name' => 'koala.jpg',
+                    'detail_id' => '12'
+                ],
+                [
+                    'image_name' => 'koala1.jpg',
+                    'detail_id' => '12'
+                ],
+                [
+                    'image_name' => 'koala2.jpg',
+                    'detail_id' => '12'
+                ],
+                [
+                    'image_name' => 'koala3.jpg',
+                    'detail_id' => '12'
+                ],
+                [
+                    'image_name' => 'koala4.jpg',
+                    'detail_id' => '12'
+                ],
+                [
+                    'image_name' => 'emperor_penguin.jpg',
+                    'detail_id' => '13'
+                ],
+                [
+                    'image_name' => 'emperor_penguin1.jpg',
+                    'detail_id' => '13'
+                ],
+                [
+                    'image_name' => 'emperor_penguin2.jpg',
+                    'detail_id' => '13'
+                ],
+                [
+                    'image_name' => 'emperor_penguin3.jpg',
+                    'detail_id' => '13'
+                ],
+                [
+                    'image_name' => 'emperor_penguin4.jpg',
+                    'detail_id' => '13'
+                ],
+                [
+                    'image_name' => 'steller_sealion.jpg',
+                    'detail_id' => '14'
+                ],
+                [
+                    'image_name' => 'steller_sealion1.jpg',
+                    'detail_id' => '14'
+                ],
+                [
+                    'image_name' => 'steller_sealion2.jpg',
+                    'detail_id' => '14'
+                ],
+                [
+                    'image_name' => 'steller_sealion3.jpg',
+                    'detail_id' => '14'
+                ],
+                [
+                    'image_name' => 'steller_sealion4.jpg',
+                    'detail_id' => '14'
+                ],
+                [
+                    'image_name' => 'platypus.jpg',
+                    'detail_id' => '15'
+                ],
+                [
+                    'image_name' => 'platypus1.jpg',
+                    'detail_id' => '15'
+                ],
+                [
+                    'image_name' => 'platypus2.jpg',
+                    'detail_id' => '15'
+                ],
+                [
+                    'image_name' => 'platypus3.jpg',
+                    'detail_id' => '15'
+                ],
+                [
+                    'image_name' => 'platypus4.jpg',
+                    'detail_id' => '15'
                 ],
             ]
         );
@@ -695,6 +976,30 @@ Số lượng Kangaroo nhiều hơn người dân ở Úc. Chúng là biểu tư
                 ],
                 [
                     'animal_detail_id' => '10',
+                    'area_id' => '6'
+                ],
+                [
+                    'animal_detail_id' => '11',
+                    'area_id' => '2'
+                ],
+                [
+                    'animal_detail_id' => '12',
+                    'area_id' => '6'
+                ],
+                [
+                    'animal_detail_id' => '13',
+                    'area_id' => '4'
+                ],
+                [
+                    'animal_detail_id' => '14',
+                    'area_id' => '2'
+                ],
+                [
+                    'animal_detail_id' => '14',
+                    'area_id' => '3'
+                ],
+                [
+                    'animal_detail_id' => '15',
                     'area_id' => '6'
                 ],
             ]
@@ -886,7 +1191,16 @@ Số lượng Kangaroo nhiều hơn người dân ở Úc. Chúng là biểu tư
                 ['animal_detail_id' => '9', 'nation_id' => '141'],
                 ['animal_detail_id' => '9', 'nation_id' => '184'],
                 ['animal_detail_id' => '10', 'nation_id' => '9'],
-
+                ['animal_detail_id' => '11', 'nation_id' => '189'],
+                ['animal_detail_id' => '11', 'nation_id' => '36'],
+                ['animal_detail_id' => '12', 'nation_id' => '9'],
+                ['animal_detail_id' => '14', 'nation_id' => '32'],
+                ['animal_detail_id' => '14', 'nation_id' => '83'],
+                ['animal_detail_id' => '14', 'nation_id' => '141'],
+                ['animal_detail_id' => '14', 'nation_id' => '184'],
+                ['animal_detail_id' => '14', 'nation_id' => '36'],
+                ['animal_detail_id' => '14', 'nation_id' => '126'],
+                ['animal_detail_id' => '15', 'nation_id' => '9'],
             ]
         );
         DB::table('animal_between_biome')->insert(
@@ -942,6 +1256,24 @@ Số lượng Kangaroo nhiều hơn người dân ở Úc. Chúng là biểu tư
                 ['animal_detail_id' => '10', 'biome_id' => '26'],
                 ['animal_detail_id' => '10', 'biome_id' => '13'],
                 ['animal_detail_id' => '10', 'biome_id' => '9'],
+                ['animal_detail_id' => '11', 'biome_id' => '9'],
+                ['animal_detail_id' => '12', 'biome_id' => '17'],
+                ['animal_detail_id' => '12', 'biome_id' => '9'],
+                ['animal_detail_id' => '12', 'biome_id' => '26'],
+                ['animal_detail_id' => '13', 'biome_id' => '20'],
+                ['animal_detail_id' => '13', 'biome_id' => '26'],
+                ['animal_detail_id' => '13', 'biome_id' => '16'],
+                ['animal_detail_id' => '13', 'biome_id' => '4'],
+                ['animal_detail_id' => '14', 'biome_id' => '20'],
+                ['animal_detail_id' => '14', 'biome_id' => '26'],
+                ['animal_detail_id' => '14', 'biome_id' => '16'],
+                ['animal_detail_id' => '14', 'biome_id' => '4'],
+                ['animal_detail_id' => '15', 'biome_id' => '3'],
+                ['animal_detail_id' => '15', 'biome_id' => '21'],
+                ['animal_detail_id' => '15', 'biome_id' => '17'],
+                ['animal_detail_id' => '15', 'biome_id' => '1'],
+
+
             ]
         );
         DB::table('animal_between_climate')->insert(
@@ -966,6 +1298,17 @@ Số lượng Kangaroo nhiều hơn người dân ở Úc. Chúng là biểu tư
                 ['animal_detail_id' => '8', 'climate_id' => '1'],
                 ['animal_detail_id' => '9', 'climate_id' => '4'],
                 ['animal_detail_id' => '9', 'climate_id' => '5'],
+                ['animal_detail_id' => '9', 'climate_id' => '1'],
+                ['animal_detail_id' => '10', 'climate_id' => '1'],
+                ['animal_detail_id' => '10', 'climate_id' => '2'],
+                ['animal_detail_id' => '11', 'climate_id' => '1'],
+                ['animal_detail_id' => '12', 'climate_id' => '1'],
+                ['animal_detail_id' => '12', 'climate_id' => '3'],
+                ['animal_detail_id' => '13', 'climate_id' => '5'],
+                ['animal_detail_id' => '14', 'climate_id' => '3'],
+                ['animal_detail_id' => '14', 'climate_id' => '4'],
+                ['animal_detail_id' => '15', 'climate_id' => '1'],
+                ['animal_detail_id' => '15', 'climate_id' => '3'],
 
             ]
         );
@@ -998,6 +1341,20 @@ Số lượng Kangaroo nhiều hơn người dân ở Úc. Chúng là biểu tư
                 ['animal_detail_id' => 9, 'color_id' => 7],
                 ['animal_detail_id' => 10, 'color_id' => 6],
                 ['animal_detail_id' => 10, 'color_id' => 9],
+                ['animal_detail_id' => 11, 'color_id' => 1],
+                ['animal_detail_id' => 11, 'color_id' => 4],
+                ['animal_detail_id' => 11, 'color_id' => 7],
+                ['animal_detail_id' => 12, 'color_id' => 9],
+                ['animal_detail_id' => 13, 'color_id' => 5],
+                ['animal_detail_id' => 13, 'color_id' => 7],
+                ['animal_detail_id' => 13, 'color_id' => 8],
+                ['animal_detail_id' => 14, 'color_id' => 6],
+                ['animal_detail_id' => 14, 'color_id' => 9],
+                ['animal_detail_id' => 15, 'color_id' => 6],
+                ['animal_detail_id' => 15, 'color_id' => 7],
+                ['animal_detail_id' => 15, 'color_id' => 9],
+
+
 
             ]
         );
@@ -1009,6 +1366,7 @@ Số lượng Kangaroo nhiều hơn người dân ở Úc. Chúng là biểu tư
                 ['animal_detail_id' => 7, 'ocean_id' => 3],
                 ['animal_detail_id' => 7, 'ocean_id' => 4],
                 ['animal_detail_id' => 9, 'ocean_id' => 4],
+                ['animal_detail_id' => 14, 'ocean_id' => 1],
 
             ]
         );
