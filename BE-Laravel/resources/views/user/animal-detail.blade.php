@@ -410,6 +410,7 @@
                                                 @endforeach
                                             </div>
                                         </div>
+                                        @if(isset($data->nations) && count($data->nations) > 0)
                                         <div class="row align-items-center">
                                             <div class="col-sm-3">
                                                 <div class="s-distr-geography__slug">
@@ -425,12 +426,13 @@
                                                 </span>
                                             </div>
                                         </div>
+                                        @endif
                                         @if(isset($data->oceans) && count($data->oceans) > 0)
                                         <div class="row align-items-center">
                                             <div class="col-sm-3">
                                                 <div class="s-distr-geography__slug">
 
-                                                    Quốc Gia
+                                                    Đại Dương
                                                 </div>
                                             </div>
                                             <div class="col-sm-9">
@@ -645,7 +647,7 @@
                                             <div class="s-mating-slug">
                                                 <div class="s-mating-slug__text text-uppercase">
 
-                                                    Tuổi Trưởng Thành
+                                                    Tuổi Độc Lập
                                                 </div>
                                             </div>
                                         </div>
@@ -774,6 +776,7 @@
                     </div>
                 </div>
             </section>
+            @if($funFact != "")
             <section class="s-ad-banner-horizontal">
                 <div class="container" style="text-align: left;">
                     <div class="list-ads-block">
@@ -793,6 +796,7 @@
                     </div>
                 </div>
             </section>
+            @endif
             <!-- <section class="s-related">
                                             <div class="container">
                                                 <h2 class="a-h2">
