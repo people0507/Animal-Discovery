@@ -571,12 +571,86 @@ Thú mỏ vịt sử dụng chân trước để chèo và lái bằng chân sau
                     'population_size' => 'KHÔNG XÁC ĐỊNH',
                     'avg_lifespan' => '12-20',
                     'animal_sound' => 'platypus.mp3',
-                    'animal_video' => 'https://www.youtube.com/embed/M5pi6wB3Nak?si=A_rEjigvpKWlgb_A',
+                    'animal_video' => 'https://www.youtube.com/embed/OQryoS-t45g?si=RL7sYu9d-1u4yw2c',
                     'conservation_status_id' => '2',
                     'activity_time_id' => '2',
                     'diet_type_id' => '2',
                     'category_id' => '5',
                     'population_trending_id' => '2',
+                ],
+                [
+                    'animal_name' => 'Khỉ Mũi Hếch Vàng',
+                    'animal_scientific_name' => 'Rhinopithecus roxellana',
+                    'animal_description' => 'Khỉ mũi hếch vàng ( Rhinopithecus roxellana ) là loài khỉ Cựu thế giới đặc hữu ở một khu vực nhỏ trong các khu rừng miền núi ôn đới ở miền trung và Tây Nam Trung Quốc. Tuyết thường xuyên xuất hiện trong phạm vi của chúng và chúng có thể chịu được nhiệt độ trung bình lạnh hơn tốt hơn bất kỳ loài linh trưởng nào khác không phải người. Trong số ba loài khỉ mũi hếch ở Trung Quốc , khỉ mũi hếch vàng là loài phân bố rộng rãi nhất trên khắp Trung Quốc.',
+                    'appearance_description' => 'Con đực trưởng thành của loài này có thân hình lớn được bao phủ bởi những sợi lông bảo vệ màu vàng rất dài trên lưng và vùng áo choàng. Mào có màu nâu vừa trong khi lưng, từ đỉnh đầu đến gáy, cánh tay và đùi ngoài có màu nâu sẫm. Mào nâu cũng chứa những sợi lông thẳng đứng, có hình dạng hữu ích để nhận dạng từng cá thể. Ngoài ra, khi miệng chúng mở, các nhà nghiên cứu có thể quan sát thấy răng nanh dài. Chúng thường dài từ 58 cm đến 68 cm và nặng khoảng 16,4 kg. Ở những con đực chưa trưởng thành, những sợi lông bảo vệ màu vàng trên áo choàng ngắn và thưa thớt, và mào nâu trung bình của chúng có các dải nhỏ, đồng thời cũng chuyển từ màu nâu. Con cái trưởng thành có kích thước nhỏ hơn và chỉ bằng khoảng một nửa kích thước của con đực trưởng thành. Phần lưng, từ đỉnh đầu đến gáy, áo choàng, cánh tay và đùi ngoài có màu nâu đến nâu sẫm ở một số con cái già hơn. Tuy nhiên, những sợi lông bảo vệ màu vàng cũng có trên lưng và vùng áo choàng, nhưng chúng ngắn hơn so với con đực. Mào nâu có các dải nhỏ. Con cái bán trưởng thành nhỏ hơn con cái trưởng thành và chỉ bằng khoảng hai phần ba kích thước. Lông trên cơ thể có màu nâu, dần chuyển sang màu vàng nhưng không có lông bảo vệ màu vàng. Mào nâu ở giữa của chúng cũng cho thấy các dải lông nhỏ. Con non khá nhỏ, nhỏ hơn hai phần ba kích thước của con cái trưởng thành. Lông trên cơ thể của chúng có màu nâu nhạt, dần chuyển sang màu vàng đỏ. Phần còn lại của cơ thể (lưng, đỉnh đầu đến gáy, áo choàng, cánh tay và đùi ngoài) có lông màu nâu. Không thể nhận ra lông màu vàng ở vùng lưng hoặc áo choàng cũng như không có mào nâu ở giữa ở con cái và con đực bán trưởng thành đến trưởng thành.',
+                    'geography_description' =>'Phạm vi tự nhiên của khỉ mũi hếch vàng trải dài khắp miền tây-trung bộ Trung Quốc, cụ thể là ở các tỉnh Tứ Xuyên, Cam Túc, Hồ Bắc và Thiểm Tây. Trong khu vực này, khỉ mũi hếch vàng thường được tìm thấy ở các khu rừng núi cao, rừng lá rộng rụng lá và rừng lá kim. Trong những tháng mùa đông, chúng thường di chuyển đến những vùng đất thấp hơn.',
+                    'habit_lifestyle_description' => 'Khỉ mũi hếch vàng rất thích giao lưu. Vào những tháng mùa hè, khỉ mũi hếch vàng tụ tập thành những nhóm lớn lên đến 200 cá thể. Vào mùa đông, loài động vật này thường sống theo nhóm nhỏ hơn gồm 20-30 con. Thỉnh thoảng, người ta có thể quan sát thấy chúng tụ tập thành từng đàn lớn lên đến 600 cá thể, gồm nhiều nhóm, sau đó được chia thành các đơn vị gia đình nhỏ hơn bao gồm một con đực thống trị duy nhất và khoảng 4 con cái cùng con của chúng. Bảo vệ con non là nỗ lực của cả nhóm. Những con mẹ thường có người giúp đỡ chăm sóc con non. Khi gặp nguy hiểm từ động vật săn mồi như diều hâu phương Bắc, những con non được đặt ở trung tâm của nhóm trong khi những con đực trưởng thành khỏe hơn sẽ đến hiện trường báo động. Trong phần còn lại của ngày, các thành viên trong nhóm vẫn ở gần nhau hơn với những con non được bảo vệ ở trung tâm. Khỉ mũi hếch vàng dành phần lớn thời gian hoạt động của mình trên cây, mặc dù chúng cũng được biết đến là kiếm ăn trên mặt đất. Khi bị đe dọa, chúng trèo lên cây cao để trú ẩn. Khỉ mũi hếch vàng là loài linh trưởng rất hay kêu. Cá thể của cả hai giới đều sử dụng các âm thanh như tiếng gầm gừ, tiếng thở dài, tiếng rên rỉ hoặc tiếng ợ. Tuy nhiên, con đực và con cái có thể sử dụng các tiếng kêu khác nhau. Ví dụ, khi chải lông hoặc cho ăn, con đực của loài này được biết là phát ra tiếng rên rỉ nhận dạng - tiếng kêu do dự kéo dài, được con cái đáp lại bằng tiếng kêu the thé và tiếng kêu the thé. Ngoài ra, con cái thường có thể được nghe thấy phát ra tiếng kêu chucks - tiếng kêu "ee-tcha", liên quan đến sự kích thích.',
+                    'diet_nutrition_description' => 'Là loài ăn cỏ, khỉ mũi hếch vàng tiêu thụ nhiều loại thức ăn. Chế độ ăn của chúng thường bao gồm lá thông và cây linh sam non, được bổ sung thêm măng, lá, chồi và quả.',
+                    'mating_habit_description' => 'Khỉ mũi hếch vàng là loài đa thê, có nghĩa là một con đực có quyền độc quyền giao phối với nhiều con cái. Theo quy tắc chung, những con cái dễ tiếp nhận là những con khởi xướng giao phối, thông báo sự sẵn sàng của chúng thông qua nhiều tín hiệu và tư thế khác nhau. Chúng sinh sản quanh năm với thời kỳ đỉnh điểm diễn ra vào tháng 9-11. Hầu hết các ca sinh nở diễn ra vào tháng 3-5. Thời kỳ mang thai kéo dài trong 7 tháng, cho ra đời một con duy nhất. Trong vài ngày đầu sau khi sinh, con non được mẹ cho bú và bế trên tay, liên tục ở bên mẹ cho đến khi được khoảng 20 ngày tuổi. Sau đó, khỉ con bắt đầu sống với nhóm mẹ của mình và cai sữa khi được 1 tuổi. Con đực của loài này sẵn sàng giao phối khi được 7 tuổi, trong khi con cái trưởng thành khi được 4-5 tuổi.',
+                    'mating_behavior' => 'Đa thê',
+                    'reproduction_season' => 'Quanh năm, đỉnh điểm vào tháng 9-tháng 11',
+                    'pregnancy_duration' => '7 tháng',
+                    'baby_carrying' => '1 con',
+                    'independent_age' => '1 năm',
+                    'population_threat' => 'Khỉ mũi hếch vàng hiện đang phải chịu đựng nạn săn bắt quy mô lớn để kiếm thức ăn. Bộ lông của loài động vật này có giá trị thương mại, trong khi một số bộ phận cơ thể của chúng được sử dụng trong y học cổ truyền. Hơn nữa, toàn bộ cộng đồng đã được biết đến là tham gia vào việc vây bắt những con vật này. Khỉ mũi hếch vàng cũng bị săn trộm để bán cho các sở thú. Và cuối cùng, những loài linh trưởng này đang bị đe dọa bởi sự mất đi phạm vi tự nhiên của chúng do nạn phá rừng và suy thoái môi trường sống.',
+                    'population_number' => 'Theo Sách đỏ IUCN, tổng số lượng loài voọc mũi hếch vàng vào khoảng 15.000 cá thể, bao gồm ước tính về quần thể của các phân loài sau: Voọc mũi hếch vàng Moupin - 10.000 cá thể/100 đàn ở Tứ Xuân (cụ thể là 6.000 ở núi Minh Sơn, 3.500 ở núi Quỳnh Lai và 500 ở núi Đại Hương Lĩnh và Tiểu Tiên Lĩnh), 800 con/8 đàn ở Cam Túc và cuối cùng là 170-200 con/1-2 đàn ở Thiểm Tây; Voọc mũi hếch vàng Quinling - khoảng 3.800-4.000 cá thể/39 đàn; và Voọc mũi hếch vàng Hồ Bắc - khoảng 600-1.000 con/5-6 đàn. Nhìn chung, quần thể khỉ mũi hếch vàng hiện nay đang giảm dần và loài động vật này được xếp vào loại Nguy cấp (EN) trong Sách đỏ IUCN.',
+                    'ecological_niche' => '',
+                    'fun_fact' => 'Khỉ mũi hếch vàng thuộc nhóm khỉ Cựu thế giới. Đuôi của những con vật này được bao phủ bởi lớp lông dày, đóng vai trò như một chiếc đệm để ngồi, tuy nhiên đuôi của chúng không có tác dụng treo trên cây hoặc bám vào các vật thể. Ngoài ra, chúng có lỗ mũi giống người nằm gần nhau.
+Khi ngủ, chúng tụ tập lại thành từng nhóm. Cách ngủ này giúp chúng giữ nhiệt trong những đêm lạnh, con cái và con non thường tụ tập lại với nhau, trong khi con đực ngủ riêng.
+Nguồn gốc chiếc mũi và đặc điểm khuôn mặt khác thường của chúng hiện vẫn chưa được biết rõ.
+Loài này có tên khoa học theo tên Roxellana, vợ của Süleyman the Magnificent, quốc vương Ottoman, người ta nói rằng bà có mái tóc vàng đỏ và chiếc mũi tẹt',
+                    'top_speed' => '',
+                    'animal_length' => '57-76',
+                    'animal_weight' => '6.5-39',
+                    'animal_swing' => '',
+                    'population_size' => '15.000',
+                    'avg_lifespan' => '26',
+                    'animal_sound' => 'golden_monkey.mp3',
+                    'animal_video' => 'https://www.youtube.com/embed/rWH4XGO1KSU?si=aH7bAbDb3oYC1m46',
+                    'conservation_status_id' => '4',
+                    'activity_time_id' => '1',
+                    'diet_type_id' => '1',
+                    'category_id' => '14',
+                    'population_trending_id' => '2',
+                ],
+                [
+                    'animal_name' => 'Chuột Lang Nước',
+                    'animal_scientific_name' => 'Hydrochoerus hydrochaeris',
+                    'animal_description' => 'Chuột lang nước ( Hydrochoerus hydrochaeris ) là loài gặm nhấm khổng lồ có nguồn gốc từ Nam Mỹ . Đây là loài gặm nhấm lớn nhất còn sống và là thành viên của chi Hydrochoerus . Họ hàng gần của nó bao gồm chuột lang và chuột lang đá , và nó có họ hàng xa hơn với agouti, chinchilla và nutria.',
+                    'appearance_description' => 'Chuột lang nước có thân hình thùng nặng và đầu ngắn, với bộ lông màu nâu đỏ ở phần trên cơ thể chuyển sang màu nâu vàng ở bên dưới. Tuyến mồ hôi của chúng có thể được tìm thấy trên bề mặt của các phần lông trên da, một đặc điểm khác thường ở các loài gặm nhấm. Loài vật này không có lông tơ, và lớp lông bảo vệ của chúng không khác nhiều so với lớp lông trên. Chuột lang nước có bàn chân hơi có màng và đuôi thoái hóa. Chân sau của chúng dài hơn chân trước một chút; chúng có ba ngón chân ở chân sau và bốn ngón chân ở chân trước. Mõm của chúng tù, có lỗ mũi, mắt và tai nằm gần đỉnh đầu.',
+                    'geography_description' =>'Phạm vi phân bố của loài chuột lang nước bao phủ một khu vực rộng lớn, trải dài trên phần lớn Nam Mỹ đến phía đông dãy Andes, từ Colombia và Venezuela về phía nam đến phía bắc Argentina. Chuột lang nước được tìm thấy ở các vùng đất thấp gần nguồn nước. Môi trường sống ưa thích bao gồm các hồ và sông trong rừng mưa nhiệt đới, đầm lầy, vùng đất ngập nước lợ, đầm lầy cũng như đồng cỏ và thảo nguyên ngập nước theo mùa.',
+                    'habit_lifestyle_description' => 'Khỉ mũi hếch vàng rất thích giao lưu. Vào những tháng mùa hè, khỉ mũi hếch vàng tụ tập thành những nhóm lớn lên đến 200 cá thể. Vào mùa đông, loài động vật này thường sống theo nhóm nhỏ hơn gồm 20-30 con. Thỉnh thoảng, người ta có thể quan sát thấy chúng tụ tập thành từng đàn lớn lên đến 600 cá thể, gồm nhiều nhóm, sau đó được chia thành các đơn vị gia đình nhỏ hơn bao gồm một con đực thống trị duy nhất và khoảng 4 con cái cùng con của chúng. Bảo vệ con non là nỗ lực của cả nhóm. Những con mẹ thường có người giúp đỡ chăm sóc con non. Khi gặp nguy hiểm từ động vật săn mồi như diều hâu phương Bắc, những con non được đặt ở trung tâm của nhóm trong khi những con đực trưởng thành khỏe hơn sẽ đến hiện trường báo động. Trong phần còn lại của ngày, các thành viên trong nhóm vẫn ở gần nhau hơn với những con non được bảo vệ ở trung tâm. Khỉ mũi hếch vàng dành phần lớn thời gian hoạt động của mình trên cây, mặc dù chúng cũng được biết đến là kiếm ăn trên mặt đất. Khi bị đe dọa, chúng trèo lên cây cao để trú ẩn. Khỉ mũi hếch vàng là loài linh trưởng rất hay kêu. Cá thể của cả hai giới đều sử dụng các âm thanh như tiếng gầm gừ, tiếng thở dài, tiếng rên rỉ hoặc tiếng ợ. Tuy nhiên, con đực và con cái có thể sử dụng các tiếng kêu khác nhau. Ví dụ, khi chải lông hoặc cho ăn, con đực của loài này được biết là phát ra tiếng rên rỉ nhận dạng - tiếng kêu do dự kéo dài, được con cái đáp lại bằng tiếng kêu the thé và tiếng kêu the thé. Ngoài ra, con cái thường có thể được nghe thấy phát ra tiếng kêu chucks - tiếng kêu "ee-tcha", liên quan đến sự kích thích.',
+                    'diet_nutrition_description' => 'Chuột lang nước là loài ăn cỏ (graminivore). Là loài gặm cỏ, loài gặm nhấm này chủ yếu ăn cỏ và thực vật thủy sinh, bổ sung chế độ ăn của chúng bằng vỏ cây và trái cây. Là loài ăn phân, chúng ăn lại thức ăn của ngày hôm trước.',
+                    'mating_habit_description' => 'Những loài động vật này có hệ thống giao phối từ đa thê đến đa phu (lăng nhăng), trong đó các cá thể của cả hai giới có thể giao phối với nhiều bạn tình. Những con đực thống trị thường hạn chế khả năng tiếp cận những con đực khác đối với con cái. Cả con đực và con cái đều có thể chọn bạn tình. Giao phối diễn ra dưới nước. Nếu một con cái không muốn giao phối với con đực, nó có thể lặn hoặc ra khỏi nước. Chuột lang nước sinh sản quanh năm với thời kỳ đỉnh điểm diễn ra từ tháng 5 đến tháng 6, trùng với đầu mùa mưa. Thời kỳ mang thai kéo dài 150 ngày, cho ra một lứa từ 2-8 con non. Con cái của loài này được sinh ra đã biết đi. Sau một thời gian ngắn, những con non có thể đứng và đi. Trong tuần đầu tiên của cuộc đời, chúng bắt đầu gặm cỏ. Mẹ và những con cái khác có quan hệ họ hàng trong nhóm sẽ cho con bú cho đến khi cai sữa, xảy ra khi được 3 tháng tuổi. Sau đó, con non vẫn ở trong nhóm của cha mẹ cho đến khi được 1 tuổi, trưởng thành khi được 12-18 tháng tuổi.',
+                    'mating_behavior' => 'Đa thê',
+                    'reproduction_season' => 'Quanh năm, cao điểm vào tháng 5-6',
+                    'pregnancy_duration' => '150 ngày',
+                    'baby_carrying' => '2-8 con',
+                    'independent_age' => '1 năm',
+                    'population_threat' => 'Một trong những mối đe dọa lớn nhất đối với toàn bộ quần thể loài này là nạn săn bắt. Những con vật này bị săn bắt để lấy thịt và da. Chúng cũng thu hút thợ săn để lấy mỡ, có trong lớp da dày và nhiều mỡ của chúng, có giá trị dược phẩm. Chuột lang nước được coi là loài gây hại và bị nông dân giết chết, những người tin rằng những con vật này phá hủy ngũ cốc hoặc cây ăn quả cũng như cạnh tranh với gia súc trong nước, điều này không đúng.',
+                    'population_number' => 'Theo IUCN, loài Capybara phổ biến tại địa phương và phân bố rộng rãi trên toàn bộ phạm vi của nó nhưng không có ước tính tổng thể về quần thể. Hiện tại, loài này được phân loại là loài ít quan tâm (LC) trong Sách đỏ IUCN.',
+                    'ecological_niche' => 'Ở một số khu vực nhất định trong phạm vi sinh sống của chúng, những loài động vật này là loài ăn cỏ lớn duy nhất, kiểm soát thảm thực vật của khu vực. Mặt khác, chuột lang nước là nguồn thức ăn cho báo đốm, trăn anaconda xanh, cá sấu caiman đeo kính và các loài ăn thịt khác trong môi trường sống của chúng.',
+                    'fun_fact' => 'Từ "capybara" có nghĩa là "loài ăn lá mỏng" trong tiếng Tupi, được sử dụng ở Brazil.
+Không giống như hầu hết các loài gặm nhấm, chuột lang nước không thể giữ thức ăn bằng chân trước khi ăn, chúng được biết đến là ngồi trên hông ở tư thế giống như chó.
+Chuột lang nước là loài động vật có khả năng huấn luyện cao, ở Surinam người ta đã biết đến trường hợp một người đàn ông mù sử dụng loài động vật này làm vật dẫn đường.
+Chuột lang nước con không phải là loài bơi giỏi. Do đó, chúng có xu hướng dành thời gian trên cạn, thường trú ẩn dưới bụi rậm.
+Hai chiếc răng cửa nổi bật của loài động vật này liên tục mọc trong suốt cuộc đời.
+Chuột lang nước sử dụng nhiều âm thanh khác nhau làm hình thức giao tiếp chính giữa các loài cùng loài, các tiếng kêu điển hình bao gồm tiếng gầm gừ, tiếng hí, tiếng sủa báo động và tiếng huýt sáo, chuột lang nước con được biết là phát ra tiếng gừ gừ liên tục.
+Khi cố gắng ẩn náu, loài gặm nhấm này lặn xuống và ở dưới nước tới 5 phút.
+Chuột nước có hai loại tuyến mùi: tuyến morrillo nằm trên mũi và tuyến mùi nằm dưới đuôi',
+                    'top_speed' => '35',
+                    'animal_length' => '106-134',
+                    'animal_weight' => '35-66',
+                    'animal_swing' => '',
+                    'population_size' => 'KHÔNG XÁC ĐỊNH',
+                    'avg_lifespan' => '6-12',
+                    'animal_sound' => 'capybara.mp3',
+                    'animal_video' => 'https://www.youtube.com/embed/tTAzn85u_lE?si=D3lee-pzBIyxuC3u',
+                    'conservation_status_id' => '1',
+                    'activity_time_id' => '1',
+                    'diet_type_id' => '1',
+                    'category_id' => '5',
+                    'population_trending_id' => '3',
                 ],
             ]
         );
@@ -882,6 +956,47 @@ Thú mỏ vịt sử dụng chân trước để chèo và lái bằng chân sau
                     'image_name' => 'platypus4.jpg',
                     'detail_id' => '15'
                 ],
+                [
+                    'image_name' => 'golden_snub_nosed_monkey.jpg',
+                    'detail_id' => '16'
+                ],
+                [
+                    'image_name' => 'golden_snub_nosed_monkey1.jpg',
+                    'detail_id' => '16'
+                ],
+                [
+                    'image_name' => 'golden_snub_nosed_monkey2.jpg',
+                    'detail_id' => '16'
+                ],
+                [
+                    'image_name' => 'golden_snub_nosed_monkey3.jpg',
+                    'detail_id' => '16'
+                ],
+                [
+                    'image_name' => 'golden_snub_nosed_monkey4.jpg',
+                    'detail_id' => '16'
+                ],
+
+                [
+                    'image_name' => 'capybara.jpg',
+                    'detail_id' => '17'
+                ],
+                [
+                    'image_name' => 'capybara1.jpg',
+                    'detail_id' => '17'
+                ],
+                [
+                    'image_name' => 'capybara2.jpg',
+                    'detail_id' => '17'
+                ],
+                [
+                    'image_name' => 'capybara3.jpg',
+                    'detail_id' => '17'
+                ],
+                [
+                    'image_name' => 'capybara4.jpg',
+                    'detail_id' => '17'
+                ],
             ]
         );
         DB::table('animal_between_area')->insert(
@@ -1001,6 +1116,14 @@ Thú mỏ vịt sử dụng chân trước để chèo và lái bằng chân sau
                 [
                     'animal_detail_id' => '15',
                     'area_id' => '6'
+                ],
+                [
+                    'animal_detail_id' => '16',
+                    'area_id' => '2'
+                ],
+                [
+                    'animal_detail_id' => '17',
+                    'area_id' => '3'
                 ],
             ]
         );
@@ -1201,6 +1324,17 @@ Thú mỏ vịt sử dụng chân trước để chèo và lái bằng chân sau
                 ['animal_detail_id' => '14', 'nation_id' => '36'],
                 ['animal_detail_id' => '14', 'nation_id' => '126'],
                 ['animal_detail_id' => '15', 'nation_id' => '9'],
+                ['animal_detail_id' => '16', 'nation_id' => '36'],
+                ['animal_detail_id' => '17', 'nation_id' => '7'],
+                ['animal_detail_id' => '17', 'nation_id' => '21'],
+                ['animal_detail_id' => '17', 'nation_id' => '24'],
+                ['animal_detail_id' => '17', 'nation_id' => '37'],
+                ['animal_detail_id' => '17', 'nation_id' => '49'],
+                ['animal_detail_id' => '17', 'nation_id' => '70'],
+                ['animal_detail_id' => '17', 'nation_id' => '134'],
+                ['animal_detail_id' => '17', 'nation_id' => '135'],
+                ['animal_detail_id' => '17', 'nation_id' => '185'],
+                ['animal_detail_id' => '17', 'nation_id' => '188'],
             ]
         );
         DB::table('animal_between_biome')->insert(
@@ -1272,7 +1406,15 @@ Thú mỏ vịt sử dụng chân trước để chèo và lái bằng chân sau
                 ['animal_detail_id' => '15', 'biome_id' => '21'],
                 ['animal_detail_id' => '15', 'biome_id' => '17'],
                 ['animal_detail_id' => '15', 'biome_id' => '1'],
-
+                ['animal_detail_id' => '16', 'biome_id' => '8'],
+                ['animal_detail_id' => '16', 'biome_id' => '9'],
+                ['animal_detail_id' => '17', 'biome_id' => '1'],
+                ['animal_detail_id' => '17', 'biome_id' => '3'],
+                ['animal_detail_id' => '17', 'biome_id' => '17'],
+                ['animal_detail_id' => '17', 'biome_id' => '9'],
+                ['animal_detail_id' => '17', 'biome_id' => '10'],
+                ['animal_detail_id' => '17', 'biome_id' => '21'],
+                ['animal_detail_id' => '17', 'biome_id' => '26'],
 
             ]
         );
@@ -1309,6 +1451,10 @@ Thú mỏ vịt sử dụng chân trước để chèo và lái bằng chân sau
                 ['animal_detail_id' => '14', 'climate_id' => '4'],
                 ['animal_detail_id' => '15', 'climate_id' => '1'],
                 ['animal_detail_id' => '15', 'climate_id' => '3'],
+                ['animal_detail_id' => '16', 'climate_id' => '3'],
+                ['animal_detail_id' => '16', 'climate_id' => '4'],
+                ['animal_detail_id' => '17', 'climate_id' => '1'],
+
 
             ]
         );
@@ -1353,8 +1499,10 @@ Thú mỏ vịt sử dụng chân trước để chèo và lái bằng chân sau
                 ['animal_detail_id' => 15, 'color_id' => 6],
                 ['animal_detail_id' => 15, 'color_id' => 7],
                 ['animal_detail_id' => 15, 'color_id' => 9],
-
-
+                ['animal_detail_id' => 16, 'color_id' => 3],
+                ['animal_detail_id' => 16, 'color_id' => 4],
+                ['animal_detail_id' => 16, 'color_id' => 6],
+                ['animal_detail_id' => 17, 'color_id' => 6],
 
             ]
         );

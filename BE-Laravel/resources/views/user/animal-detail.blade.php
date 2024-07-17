@@ -730,7 +730,7 @@
                                         </div>
                                         <div class="col-sm-7 col-md-8">
                                             <a href="{{ route('user.conservation_status', ['id' => $data->status->id]) }}"
-                                                class="s-population__link">{{ $data->status->status_name }}</a>
+                                                class="s-population__link">({{ $data->status->status_full_name }}) {{ $data->status->status_name }}</a>
                                         </div>
                                     </div>
                                 </div>
