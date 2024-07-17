@@ -477,7 +477,7 @@ Tên khoa học của chúng là "Phascolarctoscinereus", trong đó từ tiến
                     'habit_lifestyle_description' => 'Những loài chim này không di cư, sống sâu trong Nam Đại Dương quanh năm. Chim cánh cụt hoàng đế có thể hoạt động vào bất kỳ thời điểm nào trong ngày và đêm. Chúng là loài chim rất hòa đồng, tụ tập thành từng nhóm để kiếm ăn và làm tổ. Chúng tạo thành các đàn làm tổ lớn; nếu thời tiết tốt và thường chỉ bảo vệ những khu vực nhỏ xung quanh chúng. Khi trời quá lạnh, những con chim tụ tập lại với nhau. Những con trưởng thành trong thời kỳ sinh sản phải liên tục di chuyển giữa các khu vực làm tổ và kiếm ăn quanh năm. Khi ở dưới nước, chim cánh cụt hoàng đế bơi rất giỏi; khi ở trên cạn, chúng hoặc đi bộ với dáng đi lạch bạch đặc trưng hoặc trượt trên bề mặt băng bằng bụng, đẩy mình bằng chân.',
                     'diet_nutrition_description' => 'Chim cánh cụt này là loài ăn thịt (ăn cá và ăn động vật thân mềm), chỉ ăn các loài động vật dưới nước. Chế độ ăn của chúng chủ yếu bao gồm nhuyễn thể và cá, bổ sung thêm mực và giáp xác.',
                     'mating_habit_description' => 'Chim cánh cụt hoàng đế có chế độ chung thủy theo từng cặp, mỗi mùa chỉ giao phối với một bạn tình. Vào tháng 3-tháng 4, những chú chim này trở về đàn sinh sản của mình. Thời kỳ mang thai kéo dài trong 63 ngày. Thông thường, một chú chim cánh cụt cái đẻ một quả trứng, để lại cho chú chim cánh cụt đực và bay ra biển. Chim cánh cụt đực có trách nhiệm giữ ấm cho trứng, mang trứng trên chân và ấp trứng trong 9 tuần. Trứng nở sau 70 ngày, trùng với thời gian chim mái trở về. Khi chim non nở ra, chim trống bay đi kiếm ăn, và lần này chim mái phải chăm sóc chim non, cho chim ăn và giữ ấm cho chim non. Chim non của chim cánh cụt hoàng đế lớn lên khá nhanh. Khi đạt đến độ tuổi 150 ngày, chim non sẽ trưởng thành. Chim cánh cụt đực bắt đầu sinh sản khi được 5-6 tuổi trong khi chim mái - khi được 5 tuổi.',
-                    'mating_behavior' => 'Độc thân tuần tự',
+                    'mating_behavior' => 'Đơn phối ngẫu',
                     'reproduction_season' => 'Tháng 3-tháng 4',
                     'pregnancy_duration' => '63 ngày',
                     'baby_carrying' => '1 quả',
@@ -619,7 +619,7 @@ Loài này có tên khoa học theo tên Roxellana, vợ của Süleyman the Mag
                     'animal_description' => 'Chuột lang nước ( Hydrochoerus hydrochaeris ) là loài gặm nhấm khổng lồ có nguồn gốc từ Nam Mỹ . Đây là loài gặm nhấm lớn nhất còn sống và là thành viên của chi Hydrochoerus . Họ hàng gần của nó bao gồm chuột lang và chuột lang đá , và nó có họ hàng xa hơn với agouti, chinchilla và nutria.',
                     'appearance_description' => 'Chuột lang nước có thân hình thùng nặng và đầu ngắn, với bộ lông màu nâu đỏ ở phần trên cơ thể chuyển sang màu nâu vàng ở bên dưới. Tuyến mồ hôi của chúng có thể được tìm thấy trên bề mặt của các phần lông trên da, một đặc điểm khác thường ở các loài gặm nhấm. Loài vật này không có lông tơ, và lớp lông bảo vệ của chúng không khác nhiều so với lớp lông trên. Chuột lang nước có bàn chân hơi có màng và đuôi thoái hóa. Chân sau của chúng dài hơn chân trước một chút; chúng có ba ngón chân ở chân sau và bốn ngón chân ở chân trước. Mõm của chúng tù, có lỗ mũi, mắt và tai nằm gần đỉnh đầu.',
                     'geography_description' =>'Phạm vi phân bố của loài chuột lang nước bao phủ một khu vực rộng lớn, trải dài trên phần lớn Nam Mỹ đến phía đông dãy Andes, từ Colombia và Venezuela về phía nam đến phía bắc Argentina. Chuột lang nước được tìm thấy ở các vùng đất thấp gần nguồn nước. Môi trường sống ưa thích bao gồm các hồ và sông trong rừng mưa nhiệt đới, đầm lầy, vùng đất ngập nước lợ, đầm lầy cũng như đồng cỏ và thảo nguyên ngập nước theo mùa.',
-                    'habit_lifestyle_description' => 'Khỉ mũi hếch vàng rất thích giao lưu. Vào những tháng mùa hè, khỉ mũi hếch vàng tụ tập thành những nhóm lớn lên đến 200 cá thể. Vào mùa đông, loài động vật này thường sống theo nhóm nhỏ hơn gồm 20-30 con. Thỉnh thoảng, người ta có thể quan sát thấy chúng tụ tập thành từng đàn lớn lên đến 600 cá thể, gồm nhiều nhóm, sau đó được chia thành các đơn vị gia đình nhỏ hơn bao gồm một con đực thống trị duy nhất và khoảng 4 con cái cùng con của chúng. Bảo vệ con non là nỗ lực của cả nhóm. Những con mẹ thường có người giúp đỡ chăm sóc con non. Khi gặp nguy hiểm từ động vật săn mồi như diều hâu phương Bắc, những con non được đặt ở trung tâm của nhóm trong khi những con đực trưởng thành khỏe hơn sẽ đến hiện trường báo động. Trong phần còn lại của ngày, các thành viên trong nhóm vẫn ở gần nhau hơn với những con non được bảo vệ ở trung tâm. Khỉ mũi hếch vàng dành phần lớn thời gian hoạt động của mình trên cây, mặc dù chúng cũng được biết đến là kiếm ăn trên mặt đất. Khi bị đe dọa, chúng trèo lên cây cao để trú ẩn. Khỉ mũi hếch vàng là loài linh trưởng rất hay kêu. Cá thể của cả hai giới đều sử dụng các âm thanh như tiếng gầm gừ, tiếng thở dài, tiếng rên rỉ hoặc tiếng ợ. Tuy nhiên, con đực và con cái có thể sử dụng các tiếng kêu khác nhau. Ví dụ, khi chải lông hoặc cho ăn, con đực của loài này được biết là phát ra tiếng rên rỉ nhận dạng - tiếng kêu do dự kéo dài, được con cái đáp lại bằng tiếng kêu the thé và tiếng kêu the thé. Ngoài ra, con cái thường có thể được nghe thấy phát ra tiếng kêu chucks - tiếng kêu "ee-tcha", liên quan đến sự kích thích.',
+                    'habit_lifestyle_description' => 'Chuột lang nước là loài động vật xã hội, tạo thành các đơn vị gia đình gồm 10 - 30 con, mặc dù quy mô nhóm thường phụ thuộc vào môi trường. Do đó, trong mùa khô, khi các loài động vật tụ tập tại các vũng nước đang cạn dần, có thể quan sát thấy các nhóm tập trung tạm thời lên tới 100 cá thể. Một nhóm gia đình điển hình của chuột lang nước bao gồm một con đực thống trị, một hoặc nhiều con đực cấp dưới, một hoặc nhiều con cái có quan hệ họ hàng cũng như con cái ở các độ tuổi khác nhau. Trong khi đó, con đực có xu hướng đơn độc hơn. Các cá thể trưởng thành trong nhóm tham gia bảo vệ lãnh thổ của chúng khỏi những kẻ xâm lược, đánh dấu phạm vi của chúng bằng mùi hương tiết ra từ tuyến mùi của chúng. Là loài hoạt động vào lúc chạng vạng, chuột lang nước dành thời gian ban ngày để nghỉ ngơi và hoạt động vào buổi sáng và buổi tối. Trong khi chuột lang nước phải đối mặt với sự săn đuổi của con người, chúng thường có xu hướng hoạt động về đêm. Khi bị đe dọa, những loài động vật này được biết là sẽ chạy trốn, hoặc chạy trên đất liền hoặc lặn xuống nước.',
                     'diet_nutrition_description' => 'Chuột lang nước là loài ăn cỏ (graminivore). Là loài gặm cỏ, loài gặm nhấm này chủ yếu ăn cỏ và thực vật thủy sinh, bổ sung chế độ ăn của chúng bằng vỏ cây và trái cây. Là loài ăn phân, chúng ăn lại thức ăn của ngày hôm trước.',
                     'mating_habit_description' => 'Những loài động vật này có hệ thống giao phối từ đa thê đến đa phu (lăng nhăng), trong đó các cá thể của cả hai giới có thể giao phối với nhiều bạn tình. Những con đực thống trị thường hạn chế khả năng tiếp cận những con đực khác đối với con cái. Cả con đực và con cái đều có thể chọn bạn tình. Giao phối diễn ra dưới nước. Nếu một con cái không muốn giao phối với con đực, nó có thể lặn hoặc ra khỏi nước. Chuột lang nước sinh sản quanh năm với thời kỳ đỉnh điểm diễn ra từ tháng 5 đến tháng 6, trùng với đầu mùa mưa. Thời kỳ mang thai kéo dài 150 ngày, cho ra một lứa từ 2-8 con non. Con cái của loài này được sinh ra đã biết đi. Sau một thời gian ngắn, những con non có thể đứng và đi. Trong tuần đầu tiên của cuộc đời, chúng bắt đầu gặm cỏ. Mẹ và những con cái khác có quan hệ họ hàng trong nhóm sẽ cho con bú cho đến khi cai sữa, xảy ra khi được 3 tháng tuổi. Sau đó, con non vẫn ở trong nhóm của cha mẹ cho đến khi được 1 tuổi, trưởng thành khi được 12-18 tháng tuổi.',
                     'mating_behavior' => 'Đa thê',
@@ -650,6 +650,107 @@ Chuột nước có hai loại tuyến mùi: tuyến morrillo nằm trên mũi v
                     'activity_time_id' => '1',
                     'diet_type_id' => '1',
                     'category_id' => '5',
+                    'population_trending_id' => '3',
+                ],
+                [
+                    'animal_name' => 'Rùa Cá Sấu',
+                    'animal_scientific_name' => 'Macrochelys temminckii',
+                    'animal_description' => 'Rùa cá sấu ( Macrochelys temminckii) là một loài rùa lớn trong họ Chelydridae . Loài này là một trong những loài rùa nước ngọt nặng nhất thế giới. Đây cũng là loài rùa nước ngọt lớn nhất ở Bắc Mỹ . Tên gọi cụ thể temminckii là để vinh danh nhà động vật học người Hà Lan Coenraad Jacob Temminck.',
+                    'appearance_description' => 'Rùa cá sấu được đặt tên phổ biến là do bộ hàm cực kỳ khỏe và các đường gờ rõ rệt trên mai trông giống với lớp da thô ráp, có gờ của cá sấu. Rùa cá sấu có đầu to, nặng và mai dài, dày với ba đường gờ trên lưng có vảy lớn (lớp xương), khiến chúng có vẻ ngoài nguyên thủy gợi nhớ đến một số loài khủng long có vảy. Rùa có màu xám, nâu, đen hoặc xanh ô liu, và thường được bao phủ bởi tảo. Chúng có các hoa văn màu vàng tỏa ra xung quanh mắt, có tác dụng phá vỡ đường viền của mắt để giúp rùa ngụy trang. Mắt của chúng cũng được bao quanh bởi một lớp "lông mi" hình sao, nhiều sợi, mọng nước.',
+                    'geography_description' =>'Rùa cá sấu chủ yếu được tìm thấy ở vùng biển phía đông nam Hoa Kỳ. Chúng được tìm thấy từ Florida Panhandle về phía tây đến Đông Texas, phía bắc đến đông nam Kansas, Missouri, đông nam Iowa, phía tây Illinois, phía nam Indiana, phía tây Kentucky và phía tây Tennessee. Chúng được tìm thấy trên Sông Missouri ít nhất là xa về phía bắc đến Đập Gavins Point, đập cực nam trên Sông Missouri tại Yankton, Nam Dakota và được trưng bày trong Thủy cung Đập Gavins Point. Rùa cá sấu sống ở sông, hồ và kênh rạch.',
+                    'habit_lifestyle_description' => 'Rùa cá sấu dành phần lớn cuộc đời của chúng dưới nước và chỉ những con cái làm tổ mới mạo hiểm lên vùng đất trống. Chúng là loài sống đơn độc. Những con rùa này thường săn mồi vào ban đêm, tuy nhiên, chúng cũng có thể kiếm ăn vào ban ngày. Vào ban ngày, chúng có thể cố gắng thu hút cá và các con mồi khác bằng cách ngồi im lặng dưới đáy nước đục và để hàm mở ra để lộ lưỡi, trông giống như những con mồi nhỏ màu hồng, giống như giun ở phía sau miệng màu xám của chúng, và dụ con mồi vào khoảng cách tấn công. Những con cá nhỏ, chẳng hạn như cá mồi, thường bị những con rùa cá sấu non bắt theo cách này, trong khi những con trưởng thành phải ăn nhiều hơn mỗi ngày và phải kiếm ăn tích cực hơn. Những con rùa này có thể ở dưới nước trong 40-50 phút trước khi nổi lên mặt nước để thở và thậm chí sẽ ngủ đông vào mùa đông dưới đáy ao và hồ. Khi ở dưới nước, rùa cá sấu có thể nằm bất động đến mức tảo có thể phủ kín lưng chúng và khiến rùa gần như vô hình đối với cá.',
+                    'diet_nutrition_description' => 'Rùa cá sấu hầu như hoàn toàn ăn thịt. Chế độ ăn tự nhiên của chúng chủ yếu bao gồm cá và xác cá, động vật thân mềm, xác thối và động vật lưỡng cư. Chúng cũng ăn rắn, tôm càng, giun, chim nước, thực vật thủy sinh, các loài rùa khác và đôi khi thậm chí cả cá sấu.',
+                    'mating_habit_description' => 'Rùa cá sấu là loài đa thê, có nghĩa là cả con đực và con cái đều giao phối với nhiều bạn tình. Mùa sinh sản của chúng diễn ra hàng năm, vào đầu mùa xuân ở phía nam phạm vi phân bố của chúng và muộn hơn vào mùa xuân ở phía bắc. Con cái xây tổ và đẻ một lứa từ 10-50 trứng sau khoảng hai tháng. Giới tính của rùa con phụ thuộc vào nhiệt độ ấp trứng. Tổ thường được đào cách mép nước ít nhất 50 yard để tránh bị ngập và chết đuối. Thời gian ấp trứng từ 100 đến 140 ngày và rùa con nở ra vào đầu mùa thu. Chúng độc lập khi mới sinh và không cần sự chăm sóc của cha mẹ. Rùa cá sấu con đạt đến độ tuổi trưởng thành sinh sản khi khoảng 12 tuổi.',
+                    'mating_behavior' => 'Đa thê',
+                    'reproduction_season' => 'Mùa xuân',
+                    'pregnancy_duration' => '100 - 140 ngày',
+                    'baby_carrying' => '8 - 52 trứng',
+                    'independent_age' => 'Khi vừa sinh ra',
+                    'population_threat' => 'Các mối đe dọa chính đối với rùa cá sấu bao gồm việc săn bắt để làm thú cưng lạ, khai thác quá mức để lấy thịt, ô nhiễm và phá hủy môi trường sống.',
+                    'population_number' => 'Sách đỏ IUCN và các nguồn khác không cung cấp số lượng tổng thể của loài rùa cá sấu. Hiện tại, loài này được phân loại là loài dễ bị tổn thương (VU) trong Sách đỏ IUCN.',
+                    'ecological_niche' => 'Rùa cá sấu rất quan trọng vì chúng là loài săn mồi và ăn xác thối chính trong môi trường của chúng. Những con rùa này giúp kiểm soát quần thể các loài con mồi chính của chúng và cũng giúp dọn dẹp môi trường sống của chúng bằng cách ăn xác thối.',
+                    'fun_fact' => '',
+                    'top_speed' => '',
+                    'animal_length' => '35-81',
+                    'animal_weight' => '8.4-80',
+                    'animal_swing' => '',
+                    'population_size' => 'KHÔNG XÁC ĐỊNH',
+                    'avg_lifespan' => '20-70',
+                    'animal_sound' => '',
+                    'animal_video' => 'https://www.youtube.com/embed/6ui8Jdco_QA?si=IHG4sX8DmzPxJPR1',
+                    'conservation_status_id' => '3',
+                    'activity_time_id' => '2',
+                    'diet_type_id' => '2',
+                    'category_id' => '55',
+                    'population_trending_id' => '2',
+                ],
+                [
+                    'animal_name' => 'Rắn Sừng Sa Mạc',
+                    'animal_scientific_name' => 'Cerastes cerastes',
+                    'animal_description' => 'Rắn lục sừng Sahara ( Cerastes cerastes ) là loài rắn độc có nguồn gốc từ Bắc Phi và một số vùng của Bán đảo Ả Rập và Levant. Loài này thường dễ dàng nhận biết bằng cặp "sừng" trên mắt, mặc dù cũng có những cá thể không có sừng.',
+                    'appearance_description' => 'Một trong những đặc điểm nổi bật nhất của rắn lục sừng Sahara là sự hiện diện của "sừng" trên ổ mắt, một cái trên mỗi mắt. Tuy nhiên, những cái này có thể bị giảm kích thước hoặc không có. Đôi mắt của loài rắn này nổi bật và nằm ở hai bên đầu. Có sự dị hình giới tính đáng kể, với con đực có đầu lớn hơn và mắt to hơn con cái. Hoa văn màu sắc bao gồm màu nền hơi vàng, xám nhạt, hồng, đỏ hoặc nâu nhạt, gần như luôn trùng với màu nền nơi rắn lục sừng Sahara được tìm thấy. Ở mặt lưng, một loạt các đốm đen, bán chữ nhật chạy dọc theo chiều dài của cơ thể. Những đốm này có thể hoặc không thể hợp nhất thành các thanh ngang. Bụng có màu trắng. Đuôi, có thể có đầu màu đen, thường mỏng.',
+                    'geography_description' =>'Rắn lục sừng Sahara được tìm thấy ở Bắc Phi khô cằn (Morocco, Mauritania và Mali, về phía đông qua Algeria, Tunisia, Niger, Libya và Chad đến Ai Cập, Sudan, Ethiopia và Somalia) qua Sinai đến phía bắc Negev. Ở Bán đảo Ả Rập, chúng xuất hiện ở Yemen, Kuwait, cực tây nam Ả Rập Saudi và một số vùng của đất nước ở Qatar. Những con rắn này ưa thích những vùng đất khô, nhiều cát với những mỏm đá thưa thớt và có xu hướng không thích cát thô. Chúng cũng có thể được tìm thấy xung quanh các ốc đảo.',
+                    'habit_lifestyle_description' => 'Rắn lục sừng Sahara là loài sống đơn độc và hoạt động về đêm. Chúng dành cả ngày để nghỉ ngơi trong các hang cát, ẩn núp trong các lỗ, dưới đá hoặc trong các hang bỏ hoang. Chúng thường di chuyển bằng cách uốn lượn, trong quá trình đó, chúng đè trọng lượng của mình xuống cát hoặc đất, để lại dấu ấn trên toàn bộ cơ thể. Những con rắn này có tính khí khá điềm tĩnh, nhưng nếu bị đe dọa, chúng có thể rít lên, tạo tư thế hình chữ C và nhanh chóng cọ xát các cuộn dây của mình vào nhau tạo ra tiếng khàn khàn. Rắn lục sừng Sahara là loài săn mồi phục kích; chúng săn con mồi của mình bằng cách nằm chìm trong cát cạnh các tảng đá hoặc dưới thảm thực vật. Khi tiếp cận, chúng tấn công rất nhanh, giữ chặt con mồi đã bắt được cho đến khi nọc độc có tác dụng.',
+                    'diet_nutrition_description' => 'Rắn lục sừng Sahara là loài ăn thịt. Thức ăn của chúng chủ yếu là thằn lằn, nhưng cũng có cả các loài gặm nhấm nhỏ và chim.',
+                    'mating_habit_description' => 'Trong điều kiện nuôi nhốt, rắn lục sừng Sahara giao phối vào tháng 4. Những con rắn này đẻ trứng, đẻ 8-23 trứng nở sau 50 đến 80 ngày ấp. Con cái thường đẻ trứng dưới đá và trong hang động bỏ hoang của loài gặm nhấm. Những con non có chiều dài tổng thể là 12-15 cm (khoảng 5-6 inch) và hoàn toàn không phụ thuộc vào sự chăm sóc của cha mẹ. Chúng trưởng thành về mặt sinh sản khi được 2 tuổi.',
+                    'mating_behavior' => 'Đơn thê',
+                    'reproduction_season' => 'Tháng 4',
+                    'pregnancy_duration' => '50-80 ngày',
+                    'baby_carrying' => '8-23 trứng',
+                    'independent_age' => 'Khi vừa sinh ra',
+                    'population_threat' => 'Hiện nay không có mối đe dọa lớn nào đối với loài rắn lục sừng Sahara.',
+                    'population_number' => 'Hiện nay, rắn lục sừng Sahara không có trong Sách đỏ IUCN và tình trạng bảo tồn của loài này vẫn chưa được đánh giá.',
+                    'ecological_niche' => 'Do thói quen ăn uống của chúng, những con rắn này là loài săn mồi quan trọng trong hệ sinh thái mà chúng sinh sống. Chúng giúp kiểm soát quần thể loài gặm nhấm thường quấy rầy gia súc và nguồn thức ăn của người dân địa phương.',
+                    'fun_fact' => '',
+                    'top_speed' => '',
+                    'animal_length' => '30-60',
+                    'animal_weight' => '0.1-0.3',
+                    'animal_swing' => '',
+                    'population_size' => 'KHÔNG XÁC ĐỊNH',
+                    'avg_lifespan' => '15-18',
+                    'animal_sound' => 'saharan_horned_viper.mp3',
+                    'animal_video' => 'https://www.youtube.com/embed/qOJZ9MswAAA?si=ZDZt0HkMYfDqAM_n',
+                    'conservation_status_id' => '8',
+                    'activity_time_id' => '2',
+                    'diet_type_id' => '2',
+                    'category_id' => '19',
+                    'population_trending_id' => '4',
+                ],
+                [
+                    'animal_name' => 'Chuột Chũi Mũi Sao',
+                    'animal_scientific_name' => 'Condylura cristata',
+                    'animal_description' => 'Chuột chũi mũi sao ( Condylura cristata ) là một loài chuột chũi nhỏ được tìm thấy ở những vùng đất thấp, ẩm ướt ở phía bắc Bắc Mỹ. Đây là loài duy nhất trong bộ lạc có cơ quan cảm ứng với hơn 25.000 phút thụ thể cảm giác, được gọi là cơ quan Eimer, mà loài chuột chũi này dùng để cảm nhận đường đi. Với sự trợ giúp của các cơ quan Eimer, nó có thể ở vị trí hoàn hảo để phát hiện các rung động của sóng địa chấn.',
+                    'appearance_description' => 'Chuột chũi mũi sao là một loài động vật có vú rất đặc biệt, với bộ lông đen và bàn chân trước rộng có móng vuốt được thiết kế để đào bới. Lòng bàn chân màu hồng và đen của chúng hướng ra ngoài. Đuôi của chúng dài và nhiều lông. Mõm mà chúng được đặt tên có 11 cặp xúc tu nhỏ màu hồng trên đầu, xòe ra như một ngôi sao. Mũi có đường kính khoảng 1 cm (0,4 in) với các cơ quan Eimer phân bố trên 22 phần phụ. Vì chuột chũi mũi sao về mặt chức năng là mù, nên mõm từ lâu đã bị nghi ngờ là được sử dụng để phát hiện hoạt động điện ở động vật săn mồi, mặc dù rất ít, nếu có, hỗ trợ thực nghiệm được tìm thấy cho giả thuyết này. Ngôi sao mũi và hàm răng của loài này dường như chủ yếu thích nghi để khai thác con mồi cực nhỏ.',
+                    'geography_description' =>'Chuột chũi mũi sao là loài bản địa của miền đông Bắc Mỹ (đông bắc Hoa Kỳ và đông nam Canada). Phạm vi phân bố của loài này trải dài từ Đại Tây Dương về phía tây đến Bắc Dakota và Manitoba và về phía nam đến Virginia và Ohio. Loài này cũng xuất hiện trên bờ biển Đại Tây Dương về phía nam đến Georgia và khắp dãy núi Appalachian. Loài này được tìm thấy ở nhiều môi trường sống có đất ẩm. Những loài động vật này thích những khu vực thoát nước kém, chẳng hạn như rừng lá kim và rừng rụng lá, đồng cỏ ẩm ướt, bãi đất trống, đầm lầy và đất than bùn. Chúng cũng sẽ sống ở bờ suối, hồ và ao, và sẽ mạo hiểm vào đó để kiếm thức ăn. Mặc dù thích những nơi ẩm ướt, những loài chuột chũi này đã được nhìn thấy ở những đồng cỏ khô cách mặt nước tới 400 m (0,25 dặm).',
+                    'habit_lifestyle_description' => 'Chuột chũi mũi sao là loài động vật hoạt động vào ban ngày và hoạt động quanh năm. Chúng thích những khu vực ẩm ướt và đào hang qua các khu vực đầm lầy, đào hệ thống đường hầm nông dưới lòng đất, cũng như đường hầm sâu hơn. Tổ được xây dựng trên một khu vực cao hơn và khô hơn. Loài này bán thủy sinh và đôi khi đường hầm của chúng mở trực tiếp xuống nước. Chúng có thể bơi tốt và lặn trong vài giây, đôi khi ở dưới nước hơn 30 giây. Vào mùa đông, chuột chũi mũi sao săn mồi nhiều hơn trong nước vì mặt đất ẩm ướt có khả năng bị đóng băng và chúng thậm chí sẽ bơi dưới băng. Nếu chúng lên mặt đất để tìm kiếm thức ăn, thì thường là vào ban đêm. Người ta biết rất ít về cách chúng giao tiếp với nhau. Chuột chũi mũi sao non phát ra tiếng động the thé và con trưởng thành phát ra tiếng thở khò khè.',
+                    'diet_nutrition_description' => 'Chuột chũi mũi sao là loài ăn thịt (ăn giun), chúng chủ yếu ăn động vật không xương sống nhưng đôi khi cũng ăn côn trùng trên cạn, động vật thân mềm, động vật giáp xác sống dưới nước và cá nhỏ.',
+                    'mating_habit_description' => 'Chuột chũi mũi sao có vẻ là loài chung thủy theo cặp, với các cặp ở lại với nhau trong một mùa sinh sản. Con đực và con cái có vẻ ghép đôi vào mùa thu và ở cùng nhau trong suốt mùa giao phối, tức là vào tháng 3 và tháng 4. Thời gian mang thai kéo dài khoảng 45 ngày, với con non được sinh ra vào cuối tháng 4 cho đến giữa tháng 6. Một con cái sinh một lứa mỗi năm từ 2 đến 7 con non, với 5 là kích thước lứa điển hình. Con non không có lông khi mới sinh. Mắt, tai và ngôi sao của chúng hoạt động sau khoảng 2 tuần. Chúng độc lập khi được 30 ngày tuổi và trưởng thành về mặt sinh sản khi được 10 tháng tuổi.',
+                    'mating_behavior' => 'Đơn phối ngẫu',
+                    'reproduction_season' => 'Tháng 3-tháng 4',
+                    'pregnancy_duration' => '45 ngày',
+                    'baby_carrying' => '2-7 con',
+                    'independent_age' => '30 ngày',
+                    'population_threat' => 'Không có mối đe dọa lớn nào đối với loài chuột chũi mũi sao. Tuy nhiên, vì chúng phụ thuộc vào đất ngập nước để sinh tồn nên việc phá hủy liên tục các khu vực này để làm nơi cư trú cho quần thể người đang mở rộng có thể ảnh hưởng đến loài này trong tương lai.',
+                    'population_number' => 'Theo IUCN, loài chuột chũi mũi sao phổ biến và phân bố rộng rãi trong phạm vi của nó nhưng không có ước tính tổng thể về quần thể. Hiện tại, loài này được phân loại là loài ít quan tâm (LC) và số lượng của chúng hiện nay vẫn ổn định.',
+                    'ecological_niche' => 'Chuột chũi mũi sao có vai trò quan trọng trong nhiều hệ sinh thái đất ngập nước, cung cấp thức ăn cho một số loài ăn thịt và tiêu thụ nhiều động vật không xương sống dưới nước. Trong quá trình đào hang qua đất ẩm, nó cung cấp khí cho rễ cây, nếu không thì rễ cây có thể bị mắc kẹt trong đất thiếu oxy.',
+                    'fun_fact' => 'Các xúc tu của loài chuột chũi di chuyển cực kỳ nhanh và có thể chạm tới 12 vật thể mỗi giây, người ta cho rằng chúng có thể phát hiện ra các trường điện khi con vật di chuyển về phía trước.
+Chuột chũi mũi sao ngửi khi ở dưới nước bằng cách thở ra các bong bóng khí vào các vật và sau đó hít chúng vào để ngửi mùi mà chúng đã giữ lại.
+Mũi của loài chuột chũi mũi sao rất lý tưởng để phát hiện động đất.
+Bộ lông của loài chuột chũi mũi sao giúp chống lại nước.
+Sách Kỷ lục Guinness thế giới liệt kê loài này vào danh sách những loài săn mồi nhanh nhất.
+Loài này săn mồi và bắt con mồi nhanh đến mức con người gần như không thể theo dõi được',
+                    'top_speed' => '8',
+                    'animal_length' => '15-20',
+                    'animal_weight' => '0.3-0.75',
+                    'animal_swing' => '',
+                    'population_size' => 'KHÔNG XÁC ĐỊNH',
+                    'avg_lifespan' => '2-4',
+                    'animal_sound' => 'star_nosed_mole.mp3',
+                    'animal_video' => 'https://www.youtube.com/embed/SZ7X2mrUj6o?si=ezlmlGZ2XBOsuKXd',
+                    'conservation_status_id' => '1',
+                    'activity_time_id' => '2',
+                    'diet_type_id' => '5',
+                    'category_id' => '56',
                     'population_trending_id' => '3',
                 ],
             ]
@@ -997,6 +1098,66 @@ Chuột nước có hai loại tuyến mùi: tuyến morrillo nằm trên mũi v
                     'image_name' => 'capybara4.jpg',
                     'detail_id' => '17'
                 ],
+                [
+                    'image_name' => 'alligator_ turtle.jpg',
+                    'detail_id' => '18'
+                ],
+                [
+                    'image_name' => 'alligator_ turtle1.jpg',
+                    'detail_id' => '18'
+                ],
+                [
+                    'image_name' => 'alligator_ turtle2.jpg',
+                    'detail_id' => '18'
+                ],
+                [
+                    'image_name' => 'alligator_ turtle3.jpg',
+                    'detail_id' => '18'
+                ],
+                [
+                    'image_name' => 'alligator_ turtle4.jpg',
+                    'detail_id' => '18'
+                ],
+                [
+                    'image_name' => 'saharan_horned_viper.jpg',
+                    'detail_id' => '19'
+                ],
+                [
+                    'image_name' => 'saharan_horned_viper1.jpg',
+                    'detail_id' => '19'
+                ],
+                [
+                    'image_name' => 'saharan_horned_viper2.jpg',
+                    'detail_id' => '19'
+                ],
+                [
+                    'image_name' => 'saharan_horned_viper3.jpg',
+                    'detail_id' => '19'
+                ],
+                [
+                    'image_name' => 'saharan_horned_viper4.jpg',
+                    'detail_id' => '19'
+                ],
+                [
+                    'image_name' => 'star_nosed_mole.jpg',
+                    'detail_id' => '20'
+                ],
+                [
+                    'image_name' => 'star_nosed_mole1.jpg',
+                    'detail_id' => '20'
+                ],
+                [
+                    'image_name' => 'star_nosed_mole2.jpg',
+                    'detail_id' => '20'
+                ],
+                [
+                    'image_name' => 'star_nosed_mole3.jpg',
+                    'detail_id' => '20'
+                ],
+                [
+                    'image_name' => 'star_nosed_mole4.jpg',
+                    'detail_id' => '20'
+                ],
             ]
         );
         DB::table('animal_between_area')->insert(
@@ -1123,6 +1284,22 @@ Chuột nước có hai loại tuyến mùi: tuyến morrillo nằm trên mũi v
                 ],
                 [
                     'animal_detail_id' => '17',
+                    'area_id' => '3'
+                ],
+                [
+                    'animal_detail_id' => '18',
+                    'area_id' => '3'
+                ],
+                [
+                    'animal_detail_id' => '19',
+                    'area_id' => '2'
+                ],
+                [
+                    'animal_detail_id' => '19',
+                    'area_id' => '5'
+                ],
+                [
+                    'animal_detail_id' => '20',
                     'area_id' => '3'
                 ],
             ]
@@ -1335,6 +1512,28 @@ Chuột nước có hai loại tuyến mùi: tuyến morrillo nằm trên mũi v
                 ['animal_detail_id' => '17', 'nation_id' => '135'],
                 ['animal_detail_id' => '17', 'nation_id' => '185'],
                 ['animal_detail_id' => '17', 'nation_id' => '188'],
+                ['animal_detail_id' => '18', 'nation_id' => '184'],
+                ['animal_detail_id' => '19', 'nation_id' => '115'],
+                ['animal_detail_id' => '19', 'nation_id' => '107'],
+                ['animal_detail_id' => '19', 'nation_id' => '104'],
+                ['animal_detail_id' => '19', 'nation_id' => '3'],
+                ['animal_detail_id' => '19', 'nation_id' => '176'],
+                ['animal_detail_id' => '19', 'nation_id' => '124'],
+                ['animal_detail_id' => '19', 'nation_id' => '96'],
+                ['animal_detail_id' => '19', 'nation_id' => '34'],
+                ['animal_detail_id' => '19', 'nation_id' => '50'],
+                ['animal_detail_id' => '19', 'nation_id' => '163'],
+                ['animal_detail_id' => '19', 'nation_id' => '56'],
+                ['animal_detail_id' => '19', 'nation_id' => '158'],
+                ['animal_detail_id' => '19', 'nation_id' => '80'],
+                ['animal_detail_id' => '19', 'nation_id' => '190'],
+                ['animal_detail_id' => '19', 'nation_id' => '89'],
+                ['animal_detail_id' => '19', 'nation_id' => '149'],
+                ['animal_detail_id' => '19', 'nation_id' => '139'],
+                ['animal_detail_id' => '20', 'nation_id' => '32'],
+                ['animal_detail_id' => '20', 'nation_id' => '184'],
+
+
             ]
         );
         DB::table('animal_between_biome')->insert(
@@ -1415,6 +1614,19 @@ Chuột nước có hai loại tuyến mùi: tuyến morrillo nằm trên mũi v
                 ['animal_detail_id' => '17', 'biome_id' => '10'],
                 ['animal_detail_id' => '17', 'biome_id' => '21'],
                 ['animal_detail_id' => '17', 'biome_id' => '26'],
+                ['animal_detail_id' => '18', 'biome_id' => '3'],
+                ['animal_detail_id' => '18', 'biome_id' => '1'],
+                ['animal_detail_id' => '18', 'biome_id' => '10'],
+                ['animal_detail_id' => '18', 'biome_id' => '21'],
+                ['animal_detail_id' => '19', 'biome_id' => '24'],
+                ['animal_detail_id' => '20', 'biome_id' => '1'],
+                ['animal_detail_id' => '20', 'biome_id' => '3'],
+                ['animal_detail_id' => '20', 'biome_id' => '8'],
+                ['animal_detail_id' => '20', 'biome_id' => '9'],
+                ['animal_detail_id' => '20', 'biome_id' => '10'],
+                ['animal_detail_id' => '20', 'biome_id' => '18'],
+                ['animal_detail_id' => '20', 'biome_id' => '5'],
+                ['animal_detail_id' => '20', 'biome_id' => '21'],
 
             ]
         );
@@ -1454,7 +1666,13 @@ Chuột nước có hai loại tuyến mùi: tuyến morrillo nằm trên mũi v
                 ['animal_detail_id' => '16', 'climate_id' => '3'],
                 ['animal_detail_id' => '16', 'climate_id' => '4'],
                 ['animal_detail_id' => '17', 'climate_id' => '1'],
+                ['animal_detail_id' => '18', 'climate_id' => '3'],
+                ['animal_detail_id' => '19', 'climate_id' => '1'],
+                ['animal_detail_id' => '19', 'climate_id' => '2'],
+                ['animal_detail_id' => '19', 'climate_id' => '3'],
 
+                ['animal_detail_id' => '20', 'climate_id' => '3'],
+                ['animal_detail_id' => '20', 'climate_id' => '4'],
 
             ]
         );
@@ -1503,7 +1721,14 @@ Chuột nước có hai loại tuyến mùi: tuyến morrillo nằm trên mũi v
                 ['animal_detail_id' => 16, 'color_id' => 4],
                 ['animal_detail_id' => 16, 'color_id' => 6],
                 ['animal_detail_id' => 17, 'color_id' => 6],
-
+                ['animal_detail_id' => 18, 'color_id' => 6],
+                ['animal_detail_id' => 18, 'color_id' => 8],
+                ['animal_detail_id' => 18, 'color_id' => 9],
+                ['animal_detail_id' => 19, 'color_id' => 4],
+                ['animal_detail_id' => 19, 'color_id' => 6],
+                ['animal_detail_id' => 19, 'color_id' => 9],
+                ['animal_detail_id' => 20, 'color_id' => 6],
+                ['animal_detail_id' => 20, 'color_id' => 8],
             ]
         );
         DB::table('animal_between_ocean')->insert(
