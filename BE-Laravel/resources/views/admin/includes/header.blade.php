@@ -32,7 +32,7 @@
                         <img src="{{ asset('error/user_error.jpg') }}" alt="user"
                             class="rounded-circle" width="40" height="40">
                         @endif
-                        <span class="ml-2 d-none d-lg-inline-block"><span>Hello,</span> <span
+                        <span class="ml-2 d-none d-lg-inline-block"><span
                                 class="text-dark">{{ Auth::user()->name }}</span> <i data-feather="chevron-down"
                                 class="svg-icon"></i></span>
                     </a>
