@@ -551,10 +551,9 @@
         <div class="container">
             <div class="row g-5 mb-5 align-items-end wow fadeInUp" data-wow-delay="0.1s">
                 <div class="col-lg-6">
-                    <p><span class="text-primary me-2">#</span>Our Animals</p>
+                    <p><span class="text-primary me-2">#</span>Chế Độ Dinh Dưỡng</p>
                     <h1 class="display-5 mb-0">
-                        Let`s See Our <span class="text-primary">Zoofari</span> Awsome
-                        Animals
+                        Các Loài <span class="text-primary">Động Vật</span> Có Chế Độ Dinh Dưỡng Khác Nhau
                     </h1>
                 </div>
             </div>

@@ -4,7 +4,7 @@
             <ul id="sidebarnav">
                 <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="{{ route('admin.dashboard') }}"
                         aria-expanded="false"><i data-feather="home" class="feather-icon"></i><span
-                            class="hide-menu">Dashboard</span></a>
+                            class="hide-menu">Trang chủ</span></a>
                 </li>
                 <li class="list-divider"></li>
                 <li class="nav-small-cap"><span class="hide-menu">Quản Lý</span></li>

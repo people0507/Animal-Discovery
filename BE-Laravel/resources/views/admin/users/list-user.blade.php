@@ -149,9 +149,9 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($users as $user)
+                                    @foreach ($users as $key => $user)
                                         <tr>
-                                            <td>1</td>
+                                            <td>{{ $key + 1}}</td>
                                             <td>{{ $user->name }}</td>
                                             <td>{{ $user->email }}</td>
                                             @if ($user->gender == 0)
@@ -171,9 +171,9 @@
                                                         width="100"></td>
                                             @endif
                                             @if ($user->role_id == 1)
-                                                <td>Admin</td>
+                                                <td>Quản trị viên</td>
                                             @else
-                                                <td>User</td>
+                                                <td>Người dùng</td>
                                             @endif
                                             <td>
                                                 <a href="#" class="icon-action delete-action" data-toggle="modal"
