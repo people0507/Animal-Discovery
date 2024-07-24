@@ -28,6 +28,12 @@ class TopicQuestionAnswer extends Seeder
                 'topic_description' => 'Ngày Động vật hoang dã Thế giới, diễn ra vào ngày 3 tháng 3 hàng năm, được Liên Hợp Quốc khởi xướng để nâng cao nhận thức về tầm quan trọng của động vật và thực vật hoang dã. Ngày này nhằm kêu gọi bảo vệ đa dạng sinh học và các loài đang bị đe dọa, đồng thời tôn vinh nỗ lực bảo tồn của các tổ chức và cá nhân trên toàn cầu.',
                 'score_per_question' => 500,
                 ],
+                [
+                    'topic_name' => 'Đại Bàng Đầu Trắng: Biểu Tượng Thiên Nhiên Hùng Vĩ',
+                    'topic_image' => 'eagle3.jpg',
+                    'topic_description' => 'Đại bàng đầu trắng, biểu tượng quốc gia của Hoa Kỳ, nổi bật với đầu và đuôi trắng, lông nâu sẫm, và sải cánh rộng. Sinh sống gần các vùng nước lớn, chúng săn bắt cá và động vật nhỏ, thể hiện sự tự do và quyền lực.',
+                    'score_per_question' => 200,
+                ],
             ]
         );
         DB::table('question')->insert(
@@ -131,6 +137,46 @@ class TopicQuestionAnswer extends Seeder
                 [
                     'question_content' => 'Ngày Thế giới Vật thể Sinh học nhấn mạnh về tầm quan trọng của việc bảo vệ và bảo tồn điều gì?',
                     'topic_id' => 2,
+                ],
+                [
+                    'question_content' => 'Ngoài sống ở Mĩ, đại bàng đầu trắng còn sống ở các quốc gia nào khác ?',
+                    'topic_id' => 3,
+                ],
+                [
+                    'question_content' => 'Trong số bốn cái tên khoa học dưới đây đâu là của loài đại bàng đầu trắng ?',
+                    'topic_id' => 3,
+                ],
+                [
+                    'question_content' => 'Tốc độ tối đa của đại bàng đầu trắng là bao nhiêu ?',
+                    'topic_id' => 3,
+                ],
+                [
+                    'question_content' => 'Xu hướng quần thể của đại bàng đầu trắng hiện này đang trong tình trạng gì ?',
+                    'topic_id' => 3,
+                ],
+                [
+                    'question_content' => 'Đại bàng đầu trắng đã trở thành biểu tượng quốc gia của nước nào ?',
+                    'topic_id' => 3,
+                ],
+                [
+                    'question_content' => 'Đại bàng đầu trắng có hành vi giao hợp nào dưới ?',
+                    'topic_id' => 3,
+                ],
+                [
+                    'question_content' => 'Trong các vùng khí hậu dưới đây đâu không phải là nơi đại bàng đầu trắng sinh sống ?',
+                    'topic_id' => 3,
+                ],
+                [
+                    'question_content' => 'Lục địa nào không có đại bàng đầu trắng sinh sống ?',
+                    'topic_id' => 3,
+                ],
+                [
+                    'question_content' => 'Thính giác của đại bàng đầu trắng tốt như con người trong khi thị lực nhìn xa tốt hơn con người tới ... lần ? Chọn đáp án đúng',
+                    'topic_id' => 3,
+                ],
+                [
+                    'question_content' => 'Tình trạng bảo tồn của đại bảng đầu trắng hiện nay ?',
+                    'topic_id' => 3,
                 ],
             ]
         );
@@ -638,6 +684,215 @@ class TopicQuestionAnswer extends Seeder
                     'answer_content' => 'Các dạng môi trường',
                     'answer_status' => 0,
                     'question_id' => 25,
+                ],
+
+                [
+                    'answer_content' => 'Belize, Canada, Ireland, Mexico',
+                    'answer_status' => 1,
+                    'question_id' => 26,
+                ],
+                [
+                    'answer_content' => 'Trung Quốc, Ấn Độ, Pháp, Anh',
+                    'answer_status' => 0,
+                    'question_id' => 26,
+                ],
+                [
+                    'answer_content' => 'Brazil, Argentina, Nga, Ý',
+                    'answer_status' => 0,
+                    'question_id' => 26,
+                ],
+                [
+                    'answer_content' => 'Ai Cập, Nam Phi, Ấn Độ, Iran',
+                    'answer_status' => 0,
+                    'question_id' => 26,
+                ],
+
+                [
+                    'answer_content' => 'Haliaeetus albicilla',
+                    'answer_status' => 0,
+                    'question_id' => 27,
+                ],
+                [
+                    'answer_content' => 'Haliaeetus leucocephalus',
+                    'answer_status' => 1,
+                    'question_id' => 27,
+                ],
+                [
+                    'answer_content' => 'Haliaeetus pelagicus',
+                    'answer_status' => 0,
+                    'question_id' => 27,
+                ],
+                [
+                    'answer_content' => 'Haliaeetus vocifer',
+                    'answer_status' => 0,
+                    'question_id' => 27,
+                ],
+
+                [
+                    'answer_content' => '120 km/h',
+                    'answer_status' => 1,
+                    'question_id' => 28,
+                ],
+                [
+                    'answer_content' => '150 km/h',
+                    'answer_status' => 0,
+                    'question_id' => 28,
+                ],
+                [
+                    'answer_content' => '100 km/h',
+                    'answer_status' => 0,
+                    'question_id' => 28,
+                ],
+                [
+                    'answer_content' => '200 km/h',
+                    'answer_status' => 0,
+                    'question_id' => 28,
+                ],
+
+                [
+                    'answer_content' => 'Tất cả đáp án sai',
+                    'answer_status' => 0,
+                    'question_id' => 29,
+                ],
+                [
+                    'answer_content' => 'Giảm',
+                    'answer_status' => 0,
+                    'question_id' => 29,
+                ],
+                [
+                    'answer_content' => 'Ổn định',
+                    'answer_status' => 0,
+                    'question_id' => 29,
+                ],
+                [
+                    'answer_content' => 'Tăng',
+                    'answer_status' => 1,
+                    'question_id' => 29,
+                ],
+
+                [
+                    'answer_content' => 'Anh',
+                    'answer_status' => 0,
+                    'question_id' => 30,
+                ],
+                [
+                    'answer_content' => 'Mĩ',
+                    'answer_status' => 0,
+                    'question_id' => 30,
+                ],
+                [
+                    'answer_content' => 'Nga',
+                    'answer_status' => 1,
+                    'question_id' => 30,
+                ],
+                [
+                    'answer_content' => 'Ấn Độ',
+                    'answer_status' => 0,
+                    'question_id' => 30,
+                ],
+                [
+                    'answer_content' => 'Đa phối ngẫu',
+                    'answer_status' => 0,
+                    'question_id' => 31,
+                ],
+                [
+                    'answer_content' => 'Phối ngẫu them nhóm',
+                    'answer_status' => 0,
+                    'question_id' => 31,
+                ],
+                [
+                    'answer_content' => 'Lưỡng phối ngẫu',
+                    'answer_status' => 0,
+                    'question_id' => 31,
+                ],
+                [
+                    'answer_content' => 'Đơn phối ngẫu',
+                    'answer_status' => 1,
+                    'question_id' => 31,
+                ],
+
+                [
+                    'answer_content' => 'Vùng khô cằn',
+                    'answer_status' => 1,
+                    'question_id' => 32,
+                ],
+                [
+                    'answer_content' => 'Vùng nhiệt đới',
+                    'answer_status' => 0,
+                    'question_id' => 32,
+                ],
+                [
+                    'answer_content' => 'Vùng ôn đới',
+                    'answer_status' => 0,
+                    'question_id' => 32,
+                ],
+                [
+                    'answer_content' => 'Vùng lạnh',
+                    'answer_status' => 0,
+                    'question_id' => 32,
+                ],
+
+                [
+                    'answer_content' => 'Châu Âu',
+                    'answer_status' => 0,
+                    'question_id' => 33,
+                ],
+                [
+                    'answer_content' => 'Châu Phi',
+                    'answer_status' => 1,
+                    'question_id' => 33,
+                ],
+                [
+                    'answer_content' => 'Châu Á',
+                    'answer_status' => 0,
+                    'question_id' => 33,
+                ],
+                [
+                    'answer_content' => 'Châu Mĩ',
+                    'answer_status' => 0,
+                    'question_id' => 33,
+                ],
+
+                [
+                    'answer_content' => '1 - 2 lần',
+                    'answer_status' => 0,
+                    'question_id' => 34,
+                ],
+                [
+                    'answer_content' => '10 - 20 lần',
+                    'answer_status' => 0,
+                    'question_id' => 34,
+                ],
+                [
+                    'answer_content' => '5 - 6 lần',
+                    'answer_status' => 0,
+                    'question_id' => 34,
+                ],
+                [
+                    'answer_content' => '3 - 4 lần',
+                    'answer_status' => 1,
+                    'question_id' => 34,
+                ],
+
+                [
+                    'answer_content' => 'EN (Nguy Cấp)',
+                    'answer_status' => 0,
+                    'question_id' => 35,
+                ],
+                [
+                    'answer_content' => 'NT (Gần Nguy Cơ)',
+                    'answer_status' => 0,
+                    'question_id' => 35,
+                ],
+                [
+                    'answer_content' => 'LC (Ít Quan Tâm)',
+                    'answer_status' => 1,
+                    'question_id' => 35,
+                ],
+                [
+                    'answer_content' => 'VU (Dễ Bị Tổn Thương)',
+                    'answer_status' => 1,
+                    'question_id' => 35,
                 ],
             ]
         );

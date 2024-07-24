@@ -17,19 +17,19 @@ class Reward extends Seeder
     {
         DB::table('reward')->insert(
             [
-                ['reward_name' => 'Voi nhồi bông', 'reward_score' => 100],
+                ['reward_name' => 'Voi mini', 'reward_score' => 100],
                 ['reward_name' => 'Mũ hổ', 'reward_score' => 100],
-                ['reward_name' => 'Gấu trúc bông', 'reward_score' => 400],
-                ['reward_name' => 'Sư tử đồ chơi', 'reward_score' => 100],
-                ['reward_name' => 'Cá heo mô hình', 'reward_score' => 300],
+                ['reward_name' => 'Áo gấu trúc', 'reward_score' => 400],
+                ['reward_name' => 'Sư tử bông', 'reward_score' => 100],
+                ['reward_name' => 'Cá heo bông', 'reward_score' => 300],
                 ['reward_name' => 'Cáo mini', 'reward_score' => 100],
-                ['reward_name' => 'Hải cẩu nhồi bông', 'reward_score' => 100],
-                ['reward_name' => 'Lego Khỉ tamarin', 'reward_score' => 200],
-                ['reward_name' => 'Vòng tay hình báo', 'reward_score' => 500],
+                ['reward_name' => 'Áo hải cẩu', 'reward_score' => 100],
+                ['reward_name' => 'Lego khỉ', 'reward_score' => 200],
+                ['reward_name' => 'Vòng tay', 'reward_score' => 500],
                 ['reward_name' => 'Mũ rùa', 'reward_score' => 100],
-                ['reward_name' => 'Mô hình Chim cánh cụt', 'reward_score' => 100],
-                ['reward_name' => 'Cá sấu nhồi bông', 'reward_score' => 100],
-                ['reward_name' => 'Cá mập phi thuyền', 'reward_score' => 100],
+                ['reward_name' => 'Sói đá', 'reward_score' => 100],
+                ['reward_name' => 'Cá sấu', 'reward_score' => 100],
+                ['reward_name' => 'Cá mập', 'reward_score' => 100],
             ]
         );
         DB::table('reward_between_user')->insert(

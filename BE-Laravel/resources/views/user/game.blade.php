@@ -54,12 +54,12 @@
     <script src="./assets/js/main.js"></script> --}}
     <script src="{{ asset('users/social_assets/js/main.js') }}"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script>
+    <!-- <script>
         function confirmSubmit() {
         var result = window.confirm('Bạn có chắc chắn muốn nộp đáp án ?');
         return result;
     }
-    </script>
+    </script> -->
 </body>
 
 

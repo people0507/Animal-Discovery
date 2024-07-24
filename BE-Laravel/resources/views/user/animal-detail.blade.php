@@ -37,7 +37,7 @@
             <div class="main-animal">
                 <div class="row">
                     <div class="col-8">
-                        @if ($data->images->image_name != null)
+                        @if (isset($data->images->image_name) && $data->images->image_name != null)
                             <img src="{{asset('animal_images/'. $data->images->image_name )}}" width="100%"
                                 alt="" class="animal-detail-img">
                         @else
@@ -518,11 +518,11 @@
                     <div class="row">
                         <div class="col-lg-6">
                             <div class="s-habbit-img open-gallery" data-id="11849">
-                                @if ($habitImage->image_name != null)
+                                @if (isset($habitImage->image_name) && $habitImage->image_name != null)
                                     <img src="{{asset('animal_images/'. $habitImage->image_name )}}" style="width:100%;"
                                         alt="Red Fox 2016-05-19 (11)">
                                 @else
-                                    <img src="{{asset('error/error.jpg')}}" alt="Red Fox 2016-05-19 (11)">
+                                    <img src="{{asset('error/error.jpg')}}" alt="Red Fox 2016-05-19 (11)" style="width:100%;">
                                 @endif
                             </div>
                             <div class="optimanetwork">
@@ -700,11 +700,11 @@
                         <div class="row">
                             <div class="col-lg-6">
                                 <div class="s-population-img open-gallery" data-id="53626">
-                                    @if ($populationImage->image_name != null)
+                                    @if (isset($populationImage->image_name) && $populationImage->image_name != null)
                                         <img src="{{asset('animal_images/'. $populationImage->image_name )}}"style="width:90%"
                                             alt="Red Fox photo">
                                     @else
-                                        <img src="{{asset('error/error.jpg')}}" alt="Red Fox photo">
+                                        <img src="{{asset('error/error.jpg')}}" alt="Red Fox photo" style="width:90%">
                                     @endif
                                 </div>
                                 <div class="s-population-link">
@@ -730,7 +730,7 @@
                                         </div>
                                         <div class="col-sm-7 col-md-8">
                                             <a href="{{ route('user.conservation_status', ['id' => $data->status->id]) }}"
-                                                class="s-population__link">({{ $data->status->status_full_name }}) {{ $data->status->status_name }}</a>
+                                                class="s-population__link">{{ $data->status->status_name }} ({{ $data->status->status_full_name }})</a>
                                         </div>
                                     </div>
                                 </div>

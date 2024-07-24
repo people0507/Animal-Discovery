@@ -93,7 +93,7 @@
                             style="font-size: 20px">+</b> Thêm châu lục</button>
                 @elseif($mode == 'climate')
                     <button class="btn btn-success" data-toggle="modal" data-target="#addClimateModal"><b
-                            style="font-size: 20px">+</b> Thêm khí dậu</button>
+                            style="font-size: 20px">+</b> Thêm khí hậu</button>
                 @elseif($mode == 'nation')
                     <button class="btn btn-success" data-toggle="modal" data-target="#addNationModal"><b
                             style="font-size: 20px">+</b> Thêm quốc gia</button>

@@ -128,7 +128,7 @@
                                         class="fa-solid fa-arrow-right"></i></a>
                             </div>
                             <div class="col-6">
-                                @if($item->images->image_name != null)
+                                @if(isset($item->images->image_name) && $item->images->image_name != null)
                                 <img src="{{asset('animal_images/'. $item->images->image_name )}}"
                                     width="100%" alt="" class="item-animal-img">
                                 @else
