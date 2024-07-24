@@ -146,16 +146,16 @@ Thông thường, cả bố và mẹ đều giúp con non chui ra khỏi trứng
                     'population_threat' => 'Mặc dù thực tế là sự phục hồi của dân số đã được tiến hành, các mối đe dọa vẫn còn hiện diện. Một trong những mối đe dọa là mất môi trường sống vì sự chiếm đóng của các khu vực ven biển và sự thoát nước của vùng đất ngập nước của con người. Mặt khác, bắn súng bất hợp pháp, gây rối của con người, ô nhiễm, va chạm với đường dây điện và phương tiện hàng không là một trong những mối đe dọa đáng chú ý đối với quần thể loài này. Và cuối cùng, các chất ô nhiễm chứa một mối đe dọa ngộ độc nghiêm trọng: DDT, ví dụ, có thể gây mỏng vỏ trứng và suy sinh sản.',
                     'population_number' => 'Theo tài nguyên All About Birds, tổng quy mô quần thể sinh sản của đại bàng hói là 250.000 cá thể. Hiện tại, loài này được phân loại là Ít quan tâm nhất (LC) trong Sách đỏ IUCN và số lượng của nó ngày nay đang tăng lên.',
                     'ecological_niche' => 'Do là loài săn mồi hàng đầu, đại bàng hói đóng vai trò quan trọng trong hệ sinh thái. Sự suy giảm dân số của chúng và sau khi phục hồi đã có tác động rất lớn đến các sinh vật trong môi trường sống của chúng. Ví dụ, nó đã gây ra sự suy giảm dân số của murres trong khu vực.',
-                    'fun_fact' => 'Một con đại bàng đầu hói có khoảng 7000 chiếc lông vũ, khi nó mất một chiếc lông ở một bên cánh, nó cũng sẽ mất một chiếc lông tương ứng ở bên cánh kia để giữ thăng bằng.
-Nhờ tốc độ cao và móng vuốt sắc nhọn, đại bàng đầu hói có thể cướp mồi từ các loài chim khác và đôi khi là từ con người.
-Mặc dù có tên như vậy, nhưng đại bàng đầu hói thực ra không hề hói!,trong tiếng Latin, tên của loài này có nghĩa là đại bàng biển đầu trắng vì đại bàng trưởng thành có lông màu trắng trên đầu.
-Đại bàng đầu hói không thể ngửi nhưng lại có vị giác rất tốt: nếu thức ăn có vị hư hỏng, đại bàng sẽ không ăn.
-Đầu và đuôi của đại bàng đầu hói chỉ chuyển sang màu trắng khi được 4-5 tuổi.
-Đại bàng đầu hói hít thở không khí qua lỗ trên mỏ gọi là “nare”.
+                    'fun_fact' => 'Một con đại bàng đầu trắng có khoảng 7000 chiếc lông vũ, khi nó mất một chiếc lông ở một bên cánh, nó cũng sẽ mất một chiếc lông tương ứng ở bên cánh kia để giữ thăng bằng.
+Nhờ tốc độ cao và móng vuốt sắc nhọn, đại bàng đầu trắng có thể cướp mồi từ các loài chim khác và đôi khi là từ con người.
+Mặc dù có tên như vậy, nhưng đại bàng đầu trắng thực ra không hề hói!,trong tiếng Latin, tên của loài này có nghĩa là đại bàng biển đầu trắng vì đại bàng trưởng thành có lông màu trắng trên đầu.
+Đại bàng đầu trắng không thể ngửi nhưng lại có vị giác rất tốt: nếu thức ăn có vị hư hỏng, đại bàng sẽ không ăn.
+Đầu và đuôi của đại bàng đầu trắng chỉ chuyển sang màu trắng khi được 4-5 tuổi.
+Đại bàng đầu trắng hít thở không khí qua lỗ trên mỏ gọi là “nare”.
 Thính giác của chúng tốt như con người trong khi thị lực nhìn xa tốt hơn con người tới 3-4 lần.
-Từ năm 1782, đại bàng đầu hói đã trở thành loài chim quốc gia của Hoa Kỳ.
-Đại bàng đầu hói chỉ được tìm thấy ở Bắc Mỹ và là một trong 7 loài đại bàng biển.
-Đại bàng đầu hói có thể băng qua nước mà không cần bơi hoặc bay qua: chúng đậu trên mặt nước và chèo thuyền qua bằng đôi cánh',
+Từ năm 1782, đại bàng đầu trắng đã trở thành loài chim quốc gia của Hoa Kỳ.
+Đại bàng đầu trắng chỉ được tìm thấy ở Bắc Mỹ và là một trong 7 loài đại bàng biển.
+Đại bàng đầu trắng có thể băng qua nước mà không cần bơi hoặc bay qua: chúng đậu trên mặt nước và chèo thuyền qua bằng đôi cánh',
                     'top_speed' => '120',
                     'animal_length' => '70-102',
                     'animal_weight' => '3-6.3',

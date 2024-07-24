@@ -136,12 +136,12 @@
             showNotification(successMessage);
         }
     };</script>
-    <script>
+    <!-- <script>
         function confirmSubmit() {
         var result = window.confirm('Bạn có chắc chắn muốn lấy phần quà này ?');
         return result;
     }
-    </script>
+    </script> -->
 </body>
 
 
