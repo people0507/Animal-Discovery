@@ -56,6 +56,42 @@
             animation: slideInRight 0.5s ease-out forwards;
         }
 
+        .search-container {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .search-input .search-datetime {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 200px;
+        }
+
+        .search-select {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .search-button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            background-color: #007BFF;
+            color: white;
+            cursor: pointer;
+        }
+
+        .search-button:hover {
+            background-color: #0056b3;
+        }
+
         @keyframes slideInRight {
             0% {
                 transform: translateX(100%);
@@ -88,11 +124,30 @@
                 <div class="d-flex align-items-center">
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb m-0 p-0">
-                            <li class="breadcrumb-item"><a href="{{ route('admin.home') }}">Animal Management</a>
+                            <li class="breadcrumb-item"><a href="{{ route('list_animal') }}">Quản Lý Động Vật</a>
                             </li>
                         </ol>
                     </nav>
                 </div>
+            </div>
+            <div class="col-12 mt-3">
+                <form action="{{ route('admin.search_animal') }}" method="post">
+                    @csrf
+                    <div class="search-container">
+                        <div class="form-group m-0">
+                            <input type="text" name="key_word" class="form-control search-input" placeholder="Nhập tên">
+                        </div>
+                        <div class="form-group m-0">
+                            <input type="text" name="key_word1" class="form-control search-input"
+                                placeholder="Nhập tên khoa học">
+                        </div>
+                        <div class="form-group m-0">
+                            <input type="date" class="form-control search-datetime" name="date_filter">
+                        </div>
+                        <button type="submit" class="btn btn-success">Tìm Kiếm</button>
+                    </div>
+
+                </form>
             </div>
         </div>
     </div>
@@ -111,6 +166,7 @@
                                         <th>Tên động vật</th>
                                         <th>Tên khoa học</th>
                                         <th>Danh sách ảnh</th>
+                                        <th>Thời gian tạo</th>
                                         <th style="width: 25%">Đặc điểm</th>
                                         <th>Thao tác</th>
                                     </tr>
@@ -118,8 +174,7 @@
                                 <tbody>
                                     @foreach ($animalDetail as $key => $item)
                                         <tr>
-                                            <td
-                                                onclick="showModal('Great White Shark', 'Carcharodon carcharias', 'The great white shark is a large species of shark found in coastal waters.', 'https://news4sanantonio.com/resources/media2/16x9/full/1015/center/80/cab905ba-dbcd-43ab-99c7-3fbdf1eadd8b-large16x9_GettyImages515714114.jpg', 'Fish', '5 meters', '1.5 meters', '1100 kg', 'Large', '70 years', 'Shark sound', 'shark_video.mp4', 'Vulnerable', 'Diurnal', 'Carnivore')">
+                                            <td>
                                                 {{ $key + 1 }}</td>
                                             <td>
                                                 <a
@@ -127,6 +182,8 @@
                                             </td>
                                             <td>{{ $item->animal_scientific_name }}</td>
                                             <td><a href="{{ route('list_animal_image', ['id' => $item->id]) }}">Xem Thêm</a>
+                                            </td>
+                                            <td>{{ $item->created_at }}
                                             </td>
                                             <td class="box-container">
                                                 <div class="box-char">
@@ -168,6 +225,7 @@
                                 </tbody>
                             </table>
                         </div>
+                        {{ $animalDetail->links('pagination::bootstrap-4') }}
                     </div>
                 </div>
             </div>

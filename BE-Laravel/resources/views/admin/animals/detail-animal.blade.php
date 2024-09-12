@@ -11,7 +11,7 @@
                 <div class="d-flex align-items-center">
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb m-0 p-0">
-                            <li class="breadcrumb-item"><a href="{{ route('admin.home') }}">Animal Management</a>
+                            <li class="breadcrumb-item"><a href="{{ route('list_animal') }}">Quản Lý Động Vật</a>
                             </li>
                         </ol>
                     </nav>
@@ -122,9 +122,9 @@
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label>Số Lượng Sinh Sản Con(Trứng) </label>
-                                            <input readonly name="pregnancy_duration" type="text" class="form-control"
+                                            <input readonly name="baby_carrying" type="text" class="form-control"
                                                 placeholder="Hãy nhập thông tin"
-                                                value ="{{ $animalDetail->pregnancy_duration }}">
+                                                value ="{{ $animalDetail->baby_carrying }}">
                                         </div>
                                     </div>
                                     <div class="col-md-4">
@@ -255,7 +255,7 @@
                                         <div class="form-group">
                                             <label>Vai Trò Sinh Thái</label>
                                             <textarea name="ecological_niche" class="form-control" disabled placeholder="Hãy nhập thông tin"
-                                                style="height: 200px;">{{ $animalDetail->population_number }}</textarea>
+                                                style="height: 200px;">{{ $animalDetail->ecological_niche }}</textarea>
                                         </div>
                                     </div>
                                     <div class="col-md-12">

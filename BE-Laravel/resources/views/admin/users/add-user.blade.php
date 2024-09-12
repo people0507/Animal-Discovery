@@ -66,7 +66,7 @@
                 <div class="d-flex align-items-center">
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb m-0 p-0">
-                            <li class="breadcrumb-item"><a href="{{ route('admin.home') }}">Animal Management</a>
+                            <li class="breadcrumb-item"><a href="{{ route('admin.list_user') }}">Quản Lý Người Dùng</a>
                             </li>
                         </ol>
                     </nav>
@@ -92,7 +92,7 @@
                                 <div class="row">
                                     <div class="col-md-4">
                                         <div class="form-group">
-                                            <label>Tên Người Dùng</label>
+                                            <label>Tên Người Dùng <span class="asterisk text-danger">*</span></label>
                                             @if ($mode == 'add')
                                                 <input type="text" name="username" class="form-control"
                                                     placeholder="Hãy nhập thông tin">
@@ -104,7 +104,7 @@
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-group">
-                                            <label>Email</label>
+                                            <label>Email <span class="asterisk text-danger">*</span></label>
                                             @if ($mode == 'add')
                                                 <input type="text" name="email" class="form-control"
                                                     placeholder="Hãy nhập thông tin">
@@ -117,7 +117,7 @@
 
                                     <div class="col-md-4">
                                         <div class="form-group">
-                                            <label>Mật Khẩu</label>
+                                            <label>Mật Khẩu <span class="asterisk text-danger">*</span></label>
                                             @if ($mode == 'add')
                                                 <input type="password" name="password" class="form-control"
                                                     placeholder="Hãy nhập thông tin">
@@ -130,15 +130,28 @@
 
                                     <div class="col-md-4">
                                         <div class="form-group">
-                                            <label>Giới Tính</label>
+                                            <label>Địa chỉ</label>
+                                            @if ($mode == 'add')
+                                                <input type="text" name="address" class="form-control"
+                                                    placeholder="Hãy nhập thông tin">
+                                            @else
+                                                <input type="text" name="address" class="form-control"
+                                                    placeholder="Hãy nhập thông tin" value="{{ $user->address }}">
+                                            @endif
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label>Giới Tính </label>
                                             <select name="gender" id="" class="form-control">
                                                 @if ($mode == 'add')
-                                                    <option value="1">Nam</option>
-                                                    <option value="2">Nữ</option>
+                                                    <option value="0">Nam</option>
+                                                    <option value="1">Nữ</option>
                                                 @else
-                                                    <option value="1" {{ $user->gender == 1 ? 'selected' : '' }}>Nam
+                                                    <option value="0" {{ $user->gender == 0 ? 'selected' : '' }}>Nam
                                                     </option>
-                                                    <option value="2" {{ $user->gender == 2 ? 'selected' : '' }}>Nữ
+                                                    <option value="1" {{ $user->gender == 1 ? 'selected' : '' }}>Nữ
                                                     </option>
                                                 @endif
                                             </select>
@@ -159,7 +172,7 @@
 
                                     <div class="col-md-4">
                                         <div class="form-group">
-                                            <label>Vai Trò</label>
+                                            <label>Vai Trò <span class="asterisk text-danger">*</span></label>
                                             <select name="role_id" id="" class="form-control">
                                                 @foreach ($roles as $role)
                                                     <option value="{{ $role->id }}">{{ $role->role_name }}</option>

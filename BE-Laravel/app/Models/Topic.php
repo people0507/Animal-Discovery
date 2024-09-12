@@ -11,8 +11,8 @@ class Topic extends Model
 
     protected $table ='topic';
 
-    public function animalDetail()
+    public function questions()
     {
-        return $this->belongsToMany(AnimalDetail::class,'animal_between_topic','animal_detail_id', 'topic_id');
+        return $this->hasMany(Question::class,'topic_id');
     }
 }

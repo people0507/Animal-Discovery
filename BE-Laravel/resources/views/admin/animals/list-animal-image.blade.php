@@ -91,7 +91,7 @@
                 <div class="d-flex align-items-center">
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb m-0 p-0">
-                            <li class="breadcrumb-item"><a href="{{ route('admin.home') }}">Animal Management</a>
+                            <li class="breadcrumb-item"><a href="{{ route('list_animal') }}">Quản Lý Động Vật</a>
                             </li>
                         </ol>
                     </nav>
@@ -99,9 +99,9 @@
             </div>
             <div class="col-5 text-right">
                 {{-- Nhớ thêm id để trỏ đến thêm nhiều ảnh động vật --}}
-                <a class="btn btn-light" href="{{ route('admin.add-image-animal') }}"><b style="font-size: 20px">+</b>
+                <!-- <a class="btn btn-light" href="{{ route('admin.add-image-animal') }}"><b style="font-size: 20px">+</b>
                     Thêm nhiều ảnh
-                    động vật</a>
+                    động vật</a> -->
                 <button class="btn btn-success" data-toggle="modal" data-target="#addContinentModal"><b
                         style="font-size: 20px">+</b> Thêm ảnh động vật</button>
 
@@ -130,8 +130,14 @@
                                     @foreach ($images as $key => $image)
                                         <tr>
                                             <td>{{ $key + 1 }}</td>
-                                            <td><img src="http://localhost:8000/animal_images/{{ $image->image_name }}"
-                                                    width="200"></td>
+                                            <td>
+                                                @if($image->image_name != null)
+                                                    <img src="{{asset('animal_images/'. $image->image_name) }}"
+                                                    width="200">
+                                                 @else
+                                                    <img src="{{asset('error/error.jpg')}}" alt="error" width="200">
+                                                @endif
+                                            </td>
                                             <td>{{ $image->animalDetail->animal_name }}</td>
                                             <td>{{ $image->created_at }}</td>
                                             <td>
@@ -148,6 +154,7 @@
                                 </tbody>
                             </table>
                         </div>
+                        {{ $images->links('pagination::bootstrap-4') }}
                     </div>
                 </div>
             </div>
@@ -208,7 +215,7 @@
                         </div>
                         <div class="form-group">
                             <label for="continentImage">Hình ảnh</label>
-                            <input name="animal_image" type="file" class="form-control-file" id="continentImage">
+                            <input name="animal_image[]" type="file" class="form-control-file" id="continentImage" multiple>
                         </div>
                 </div>
                 <div class="modal-footer">
@@ -268,7 +275,7 @@
                         <div class="form-group">
                             <label for="currentImage">Hình ảnh hiện tại</label>
                             <br>
-                            <img src="http://localhost:8000/animal_images/lion.jpg" id="currentImage" class="img-fluid"
+                            <img src="" id="currentImage" class="img-fluid"
                                 alt="Hình ảnh hiện tại">
                         </div>
                         <div class="form-group">

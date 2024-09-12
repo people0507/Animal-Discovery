@@ -36,6 +36,41 @@
             animation: slideInRight 0.5s ease-out forwards;
         }
 
+        .search-container {
+        display: flex;
+        gap: 10px;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .search-input .search-datetime {
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        width: 200px;
+    }
+
+    .search-select {
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+
+    .search-button {
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        background-color: #007BFF;
+        color: white;
+        cursor: pointer;
+    }
+
+    .search-button:hover {
+        background-color: #0056b3;
+    }
+
         @keyframes slideInRight {
             0% {
                 transform: translateX(100%);
@@ -68,11 +103,26 @@
                 <div class="d-flex align-items-center">
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb m-0 p-0">
-                            <li class="breadcrumb-item"><a href="{{ route('admin.home') }}">Animal Management</a>
+                            <li class="breadcrumb-item"><a href="{{ route('admin.list_user') }}">Quản Lý Người Dùng</a>
                             </li>
                         </ol>
                     </nav>
                 </div>
+            </div>
+            <div class="col mt-3">
+            <form action="{{route('admin.search_user')}}" method="post">
+                @csrf
+                <div class="search-container">
+                    <input type="text" name="key_word" class="search-input" placeholder="Nhập email">
+                    <select class="search-select ml-3 mr-3" name="role_id">
+                        <option value="">Vai trò</option>
+                        <option value="1">Quản lý</option>
+                        <option value="2">Người dùng</option>
+                    </select>
+                    <input type="date" class="search-datetime" name="date_filter">
+                    <button type="submit" class="search-button">Tìm Kiếm</button>
+                </div>
+            </form>
             </div>
         </div>
     </div>
@@ -88,43 +138,43 @@
                                 <thead>
                                     <tr>
                                         <th>STT</th>
-                                        <th>Tên Người Dùng</th>
+                                        <th>Tên người dùng</th>
                                         <th>Email</th>
-                                        <th>Giới Tính</th>
-                                        <th>Ngày Sinh</th>
-                                        <th>Ảnh Đại Diện</th>
-                                        <th>Vai Trò</th>
-                                        <th>Thời Gian Tạo</th>
+                                        <th>Giới tính</th>
+                                        <th>Địa chỉ</th>
+                                        <th>Ngày sinh</th>
+                                        <th>Ảnh đại diện</th>
+                                        <th>Vai trò</th>
                                         <th>Thao Tác</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($users as $user)
+                                    @foreach ($users as $key => $user)
                                         <tr>
-                                            <td>1</td>
+                                            <td>{{ $key + 1}}</td>
                                             <td>{{ $user->name }}</td>
                                             <td>{{ $user->email }}</td>
-                                            @if ($user->gender == 1)
+                                            @if ($user->gender == 0)
                                                 <td>Nam</td>
-                                            @elseif($user->gender == 2)
+                                            @elseif($user->gender == 1)
                                                 <td>Nữ</td>
                                             @else
                                                 <td></td>
                                             @endif
+                                            <td>{{ $user->address }}</td>
                                             <td>{{ $user->birthdate }}</td>
                                             @if ($user->avatar != null)
-                                                <td><img src="http://localhost:8000/avatars/{{ $user->avatar }}"
+                                                <td><img src="{{asset('avatars/'. $user->avatar )}}"
                                                         width="100"></td>
                                             @else
-                                                <td><img src="https://i.pinimg.com/originals/6a/44/f0/6a44f0e35b10e6ed063eeebf7ed844f9.jpg"
+                                                <td><img src="{{asset('error/user_error.jpg')}}"
                                                         width="100"></td>
                                             @endif
                                             @if ($user->role_id == 1)
-                                                <td>Admin</td>
+                                                <td>Quản trị viên</td>
                                             @else
-                                                <td>User</td>
+                                                <td>Người dùng</td>
                                             @endif
-                                            <td>{{ $user->created_at }}</td>
                                             <td>
                                                 <a href="#" class="icon-action delete-action" data-toggle="modal"
                                                     data-target="#deleteConfirmationModal_{{ $user->id }}"
@@ -139,6 +189,7 @@
                                 </tbody>
                             </table>
                         </div>
+                        {{ $users->links('pagination::bootstrap-4') }}
                     </div>
                 </div>
             </div>

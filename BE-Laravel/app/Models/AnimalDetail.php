@@ -55,6 +55,11 @@ class AnimalDetail extends Model
         return $this->hasOne(Image::class,'detail_id');
     }
 
+    public function multiImages()
+    {
+        return $this->hasMany(Image::class,'detail_id');
+    }
+
     public function status()
     {
         return $this->belongsTo(ConservationStatus::class,'conservation_status_id');
@@ -68,5 +73,10 @@ class AnimalDetail extends Model
     public function trend()
     {
         return $this->belongsTo(PopulationTrending::class,'population_trending_id');
+    }
+
+    public function activityTime()
+    {
+        return $this->belongsTo(ActivityTime::class,'activity_time_id');
     }
 }

@@ -1,7 +1,7 @@
 @extends('admin.main')
 @section('title', 'Home Page Admin')
 @section('content_admin')
-<style>
+    <style>
         .notification {
             position: fixed;
             top: 20px;
@@ -32,6 +32,11 @@
         .notification.show {
             display: block;
             animation: slideInRight 0.5s ease-out forwards;
+        }
+
+        .text-danger {
+            color: red;
+            font-style: italic;
         }
 
         @keyframes slideInRight {
@@ -69,7 +74,7 @@
                 <div class="d-flex align-items-center">
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb m-0 p-0">
-                            <li class="breadcrumb-item"><a href="{{ route('admin.home') }}">Thông tin động vật</a>
+                            <li class="breadcrumb-item"><a href="{{ route('list_animal') }}">Thông tin động vật</a>
                             </li>
                         </ol>
                     </nav>
@@ -91,40 +96,44 @@
                                 <div class="row">
                                     <div class="col-md-4">
                                         <div class="form-group">
-                                            <label>Tên</label>
+                                            {{-- <label>Tên</label> --}}
+                                            <label for="animal_name">Tên động vật <span
+                                                    class="asterisk text-danger">*</span></label>
                                             @if ($mode == 'add')
-                                                <input name="animal_name" type="text" class="form-control"
-                                                    placeholder="Hãy nhập thông tin">
+                                                <input name="animal_name" type="text" class="form-control check-value"
+                                                    placeholder="Hãy nhập thông tin" required>
                                             @else
-                                                <input name="animal_name" type="text" class="form-control"
+                                                <input name="animal_name" type="text" class="form-control check-value"
                                                     placeholder="Hãy nhập thông tin"
-                                                    value="{{ $animalDetail->animal_name }}">
+                                                    value="{{ $animalDetail->animal_name }}" required>
                                             @endif
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-group">
-                                            <label>Tên Khoa Học</label>
+                                            <label for="animal_scientific_name">Tên Khoa Học <span
+                                                    class="asterisk text-danger">*</span></label>
                                             @if ($mode == 'add')
-                                                <input name="animal_scientific_name" type="text" class="form-control"
-                                                    placeholder="Hãy nhập thông tin">
+                                                <input name="animal_scientific_name" type="text"
+                                                    class="form-control check-value" placeholder="Hãy nhập thông tin"
+                                                    required>
                                             @else
-                                                <input name="animal_scientific_name" type="text" class="form-control"
-                                                    placeholder="Hãy nhập thông tin"
-                                                    value="{{ $animalDetail->animal_scientific_name }}">
+                                                <input name="animal_scientific_name" type="text"
+                                                    class="form-control check-value" placeholder="Hãy nhập thông tin"
+                                                    value="{{ $animalDetail->animal_scientific_name }}" required>
                                             @endif
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-group">
-                                            <label>Chiều Dài</label>
+                                            <label>Chiều Dài <span class="asterisk text-danger">*</span></label>
                                             @if ($mode == 'add')
-                                                <input name="animal_length" type="text" class="form-control"
-                                                    placeholder="Hãy nhập thông tin">
+                                                <input name="animal_length" type="text" class="form-control check-value"
+                                                    placeholder="Hãy nhập thông tin"required>
                                             @else
-                                                <input name="animal_length" type="text" class="form-control"
+                                                <input name="animal_length" type="text" class="form-control check-value"
                                                     placeholder="Hãy nhập thông tin"
-                                                    value="{{ $animalDetail->animal_length }}">
+                                                    value="{{ $animalDetail->animal_length }}"required>
                                             @endif
                                         </div>
                                     </div>
@@ -132,24 +141,24 @@
                                         <div class="form-group">
                                             <label>Tốc Độ Tối Đa</label>
                                             @if ($mode == 'add')
-                                                <input name="top_speed" type="text" class="form-control"
+                                                <input name="top_speed" type="text" class="form-control check-value"
                                                     placeholder="Hãy nhập thông tin">
                                             @else
-                                                <input name="top_speed" type="text" class="form-control"
+                                                <input name="top_speed" type="text" class="form-control check-value"
                                                     placeholder="Hãy nhập thông tin" value="{{ $animalDetail->top_speed }}">
                                             @endif
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-group">
-                                            <label>Cân Nặng</label>
+                                            <label>Cân Nặng <span class="asterisk text-danger">*</span></label>
                                             @if ($mode == 'add')
-                                                <input name="animal_weight" type="text" class="form-control"
-                                                    placeholder="Hãy nhập thông tin">
+                                                <input name="animal_weight" type="text" class="form-control check-value"
+                                                    placeholder="Hãy nhập thông tin"required>
                                             @else
-                                                <input name="animal_weight" type="text" class="form-control"
+                                                <input name="animal_weight" type="text" class="form-control check-value"
                                                     placeholder="Hãy nhập thông tin"
-                                                    value="{{ $animalDetail->animal_weight }}">
+                                                    value="{{ $animalDetail->animal_weight }}"required>
                                             @endif
                                         </div>
                                     </div>
@@ -168,105 +177,113 @@
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-group">
-                                            <label>Số Lượng Quần Thể</label>
+                                            <label>Số Lượng Quần Thể <span class="asterisk text-danger">*</span></label>
                                             @if ($mode == 'add')
-                                                <input name="population_size" type="text" class="form-control"
-                                                    placeholder="Hãy nhập thông tin">
+                                                <input name="population_size" type="text"
+                                                    class="form-control check-value"
+                                                    placeholder="Hãy nhập thông tin"required>
                                             @else
-                                                <input name="population_size" type="text" class="form-control"
-                                                    placeholder="Hãy nhập thông tin"
-                                                    value ="{{ $animalDetail->population_size }}">
+                                                <input name="population_size" type="text"
+                                                    class="form-control check-value" placeholder="Hãy nhập thông tin"
+                                                    value ="{{ $animalDetail->population_size }}"required>
                                             @endif
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-group">
-                                            <label>Tuổi Thọ Trung Bình</label>
+                                            <label>Tuổi Thọ Trung Bình <span class="asterisk text-danger">*</span></label>
                                             @if ($mode == 'add')
-                                                <input name="avg_lifespan" type="text" class="form-control"
-                                                    placeholder="Hãy nhập thông tin">
+                                                <input name="avg_lifespan" type="text"
+                                                    class="form-control check-value"
+                                                    placeholder="Hãy nhập thông tin"required>
                                             @else
-                                                <input name="avg_lifespan" type="text" class="form-control"
-                                                    placeholder="Hãy nhập thông tin"
-                                                    value ="{{ $animalDetail->avg_lifespan }}">
+                                                <input name="avg_lifespan" type="text"
+                                                    class="form-control check-value" placeholder="Hãy nhập thông tin"
+                                                    value ="{{ $animalDetail->avg_lifespan }}"required>
                                             @endif
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label>Tiếng Kêu</label>
-                                            <input name="animal_sound" type="file" class="form-control"
+                                            <input name="animal_sound" type="file" class="form-control check-value"
                                                 accept=".mp3,.mp4">
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-group">
-                                            <label>Hành Vi Giao Hợp</label>
+                                            <label>Hành Vi Giao Hợp <span class="asterisk text-danger">*</span></label>
                                             @if ($mode == 'add')
-                                                <input name="mating_behavior" type="text" class="form-control"
-                                                    placeholder="Hãy nhập thông tin">
+                                                <input name="mating_behavior" type="text"
+                                                    class="form-control check-value"
+                                                    placeholder="Hãy nhập thông tin"required>
                                             @else
-                                                <input name="mating_behavior" type="text" class="form-control"
-                                                    placeholder="Hãy nhập thông tin"
-                                                    value ="{{ $animalDetail->mating_behavior }}">
+                                                <input name="mating_behavior" type="text"
+                                                    class="form-control check-value" placeholder="Hãy nhập thông tin"
+                                                    value ="{{ $animalDetail->mating_behavior }}"required>
                                             @endif
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-group">
-                                            <label>Mùa Sinh Sản</label>
+                                            <label>Mùa Sinh Sản <span class="asterisk text-danger">*</span></label>
                                             @if ($mode == 'add')
-                                                <input name="reproduction_season" type="text" class="form-control"
-                                                    placeholder="Hãy nhập thông tin">
+                                                <input name="reproduction_season" type="text"
+                                                    class="form-control check-value"
+                                                    placeholder="Hãy nhập thông tin"required>
                                             @else
-                                                <input name="reproduction_season" type="text" class="form-control"
-                                                    placeholder="Hãy nhập thông tin"
-                                                    value ="{{ $animalDetail->reproduction_season }}">
+                                                <input name="reproduction_season" type="text"
+                                                    class="form-control check-value" placeholder="Hãy nhập thông tin"
+                                                    value ="{{ $animalDetail->reproduction_season }}"required>
                                             @endif
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-group">
-                                            <label>Thời Gian Mang Thai (Ấp Trứng)</label>
+                                            <label>Thời Gian Mang Thai (Ấp Trứng) <span
+                                                    class="asterisk text-danger">*</span></label>
                                             @if ($mode == 'add')
-                                                <input name="pregnancy_duration" type="text" class="form-control"
-                                                    placeholder="Hãy nhập thông tin">
+                                                <input name="pregnancy_duration" type="text"
+                                                    class="form-control check-value" placeholder="Hãy nhập thông tin">
                                             @else
-                                                <input name="pregnancy_duration" type="text" class="form-control"
-                                                    placeholder="Hãy nhập thông tin"
+                                                <input name="pregnancy_duration" type="text"
+                                                    class="form-control check-value" placeholder="Hãy nhập thông tin"
                                                     value ="{{ $animalDetail->pregnancy_duration }}">
                                             @endif
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-group">
-                                            <label>Số Lượng Sinh Sản Con(Trứng) </label>
+                                            <label>Số Lượng Sinh Sản Con(Trứng) <span
+                                                    class="asterisk text-danger">*</span></label>
                                             @if ($mode == 'add')
-                                                <input name="baby_carrying" type="text" class="form-control"
-                                                    placeholder="Hãy nhập thông tin">
+                                                <input name="baby_carrying" type="text"
+                                                    class="form-control check-value" placeholder="Hãy nhập thông tin">
                                             @else
-                                                <input name="pregnancy_duration" type="text" class="form-control"
-                                                    placeholder="Hãy nhập thông tin"
-                                                    value ="{{ $animalDetail->pregnancy_duration }}">
+                                                <input name="baby_carrying" type="text"
+                                                    class="form-control check-value" placeholder="Hãy nhập thông tin"
+                                                    value ="{{ $animalDetail->baby_carrying }}">
                                             @endif
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-group">
-                                            <label>Tuổi Trưởng Thành</label>
+                                            <label>Tuổi Trưởng Thành <span class="asterisk text-danger">*</span></label>
                                             @if ($mode == 'add')
-                                                <input name="independent_age" type="text" class="form-control"
-                                                    placeholder="Hãy nhập thông tin">
+                                                <input name="independent_age" type="text"
+                                                    class="form-control check-value" placeholder="Hãy nhập thông tin"
+                                                    required>
                                             @else
-                                                <input name="independent_age" type="text" class="form-control"
-                                                    placeholder="Hãy nhập thông tin"
+                                                <input name="independent_age" type="text"
+                                                    class="form-control check-value" placeholder="Hãy nhập thông tin"
                                                     value ="{{ $animalDetail->independent_age }}">
                                             @endif
                                         </div>
                                     </div>
                                     <div class="col-md-4">
-                                        <label>Tình Trạng Bảo Tồn</label>
-                                        <select name="conservation_status_id" id="" class="form-control">
+                                        <label>Tình Trạng Bảo Tồn </label>
+                                        <select name="conservation_status_id" id=""
+                                            class="form-control check-value">
                                             @if ($mode == 'add')
                                                 @foreach ($conservationStatus as $item)
                                                     <option value="{{ $item->id }}">{{ $item->status_name }}</option>
@@ -283,7 +300,7 @@
                                     </div>
                                     <div class="col-md-4">
                                         <label>Chế Độ Ăn</label>
-                                        <select name="diet_type" id="" class="form-control">
+                                        <select name="diet_type" id="" class="form-control check-value">
                                             @if ($mode == 'add')
                                                 @foreach ($dietType as $item)
                                                     <option value="{{ $item->id }}">{{ $item->diet_name }}</option>
@@ -298,8 +315,8 @@
                                         </select>
                                     </div>
                                     <div class="col-md-4">
-                                        <label>Loại Động Vật</label>
-                                        <select name="category_id" id="" class="form-control">
+                                        <label>Loại Động Vật </label>
+                                        <select name="category_id" id="" class="form-control check-value">
                                             @if ($mode == 'add')
                                                 @foreach ($animalCategory as $item)
                                                     <option value="{{ $item->id }}">{{ $item->category_name }}
@@ -316,7 +333,8 @@
                                     </div>
                                     <div class="col-md-4">
                                         <label>Xu Hướng Quần Thể</label>
-                                        <select name="population_trending_id" id="" class="form-control">
+                                        <select name="population_trending_id" id=""
+                                            class="form-control check-value">
                                             @if ($mode == 'add')
                                                 @foreach ($populationTrending as $item)
                                                     <option value="{{ $item->id }}">
@@ -333,7 +351,7 @@
                                     </div>
                                     <div class="col-md-4 mt-3">
                                         <label>Thời Gian Hoạt Động</label>
-                                        <select name="activity_time_id" id="" class="form-control">
+                                        <select name="activity_time_id" id="" class="form-control check-value">
                                             @if ($mode == 'add')
                                                 @foreach ($activityTime as $item)
                                                     <option value="{{ $item->id }}">{{ $item->activity_name }}
@@ -350,99 +368,112 @@
                                     </div>
                                     <div class="col-md-12 mt-3">
                                         <div class="form-group">
-                                            <label>Đường Dẫn Video</label>
+                                            <label>Đường Dẫn Video <span class="asterisk text-danger">*</span></label>
                                             @if ($mode == 'add')
-                                                <textarea name="animal_video" class="form-control" placeholder="Hãy nhập thông tin" style="height: 200px;"></textarea>
+                                                <textarea name="animal_video" class="form-control check-value" placeholder="Hãy nhập thông tin"
+                                                    style="height: 200px;" required></textarea>
                                             @else
-                                                <textarea name="animal_video" class="form-control" placeholder="Hãy nhập thông tin" style="height: 200px;">{{ $animalDetail->animal_video }}</textarea>
+                                                <textarea name="animal_video" class="form-control check-value" placeholder="Hãy nhập thông tin"
+                                                    style="height: 200px;" required>{{ $animalDetail->animal_video }}</textarea>
                                             @endif
                                         </div>
                                     </div>
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label>Mô Tả</label>
+                                            <label>Mô Tả <span class="asterisk text-danger">*</span></label>
                                             @if ($mode == 'add')
-                                                <textarea name="animal_description" class="form-control" placeholder="Hãy nhập thông tin" style="height: 200px;"></textarea>
+                                                <textarea name="animal_description" class="form-control check-value" placeholder="Hãy nhập thông tin"
+                                                    style="height: 200px;" required></textarea>
                                             @else
-                                                <textarea name="animal_description" class="form-control" placeholder="Hãy nhập thông tin" style="height: 200px;">{{ $animalDetail->animal_description }}</textarea>
+                                                <textarea name="animal_description" class="form-control check-value" placeholder="Hãy nhập thông tin"
+                                                    style="height: 200px;"required>{{ $animalDetail->animal_description }}</textarea>
                                             @endif
                                         </div>
                                     </div>
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label>Vẻ Bề Ngoài</label>
+                                            <label>Vẻ Bề Ngoài <span class="asterisk text-danger">*</span></label>
                                             @if ($mode == 'add')
-                                                <textarea name="appearance_description" class="form-control" placeholder="Hãy nhập thông tin"
-                                                    style="height: 200px;"></textarea>
+                                                <textarea name="appearance_description" class="form-control check-value" placeholder="Hãy nhập thông tin"
+                                                    style="height: 200px;" required></textarea>
                                             @else
-                                                <textarea name="appearance_description" class="form-control" placeholder="Hãy nhập thông tin"
-                                                    style="height: 200px;">{{ $animalDetail->appearance_description }}</textarea>
+                                                <textarea name="appearance_description" class="form-control check-value" placeholder="Hãy nhập thông tin"
+                                                    style="height: 200px;" required>{{ $animalDetail->appearance_description }}</textarea>
                                             @endif
                                         </div>
                                     </div>
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label>Phân Bố Địa Lý</label>
+                                            <label>Phân Bố Địa Lý <span class="asterisk text-danger">*</span></label>
                                             @if ($mode == 'add')
-                                                <textarea name="geography_description" class="form-control" placeholder="Hãy nhập thông tin" style="height: 200px;"></textarea>
+                                                <textarea name="geography_description" class="form-control check-value" placeholder="Hãy nhập thông tin"
+                                                    style="height: 200px;" required></textarea>
                                             @else
-                                                <textarea name="geography_description" class="form-control" placeholder="Hãy nhập thông tin" style="height: 200px;">{{ $animalDetail->geography_description }}</textarea>
+                                                <textarea name="geography_description" class="form-control check-value" placeholder="Hãy nhập thông tin"
+                                                    style="height: 200px;" required>{{ $animalDetail->geography_description }}</textarea>
                                             @endif
                                         </div>
                                     </div>
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label>Tập Tính & Lối Sống</label>
+                                            <label>Tập Tính & Lối Sống <span class="asterisk text-danger">*</span></label>
                                             @if ($mode == 'add')
-                                                <textarea name="habit_lifestyle_description" class="form-control" placeholder="Hãy nhập thông tin"
-                                                    style="height: 200px;"></textarea>
+                                                <textarea name="habit_lifestyle_description" class="form-control check-value" placeholder="Hãy nhập thông tin"
+                                                    style="height: 200px;" required></textarea>
                                             @else
-                                                <textarea name="habit_lifestyle_description" class="form-control" placeholder="Hãy nhập thông tin"
-                                                    style="height: 200px;">{{ $animalDetail->habit_lifestyle_description }}</textarea>
+                                                <textarea name="habit_lifestyle_description" class="form-control check-value" placeholder="Hãy nhập thông tin"
+                                                    style="height: 200px;" required>{{ $animalDetail->habit_lifestyle_description }}</textarea>
                                             @endif
                                         </div>
                                     </div>
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label>Tập Tính & Sinh Sản</label>
+                                            <label>Tập Tính & Sinh Sản <span class="asterisk text-danger">*</span></label>
                                             @if ($mode == 'add')
-                                                <textarea name="mating_habit_description" class="form-control" placeholder="Hãy nhập thông tin"
-                                                    style="height: 200px;"></textarea>
+                                                <textarea name="mating_habit_description" class="form-control check-value" placeholder="Hãy nhập thông tin"
+                                                    style="height: 200px;"required></textarea>
                                             @else
-                                                <textarea name="mating_habit_description" class="form-control" placeholder="Hãy nhập thông tin"
-                                                    style="height: 200px;">{{ $animalDetail->mating_habit_description }}</textarea>
+                                                <textarea name="mating_habit_description" class="form-control check-value" placeholder="Hãy nhập thông tin"
+                                                    style="height: 200px;"required>{{ $animalDetail->mating_habit_description }}</textarea>
                                             @endif
                                         </div>
                                     </div>
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label>Chế Độ Ăn & Dinh Dưỡng</label>
+                                            <label>Chế Độ Ăn & Dinh Dưỡng <span
+                                                    class="asterisk text-danger">*</span></label>
                                             @if ($mode == 'add')
-                                                <textarea name="diet_nutrition_description" class="form-control" placeholder="Hãy nhập thông tin"
-                                                    style="height: 200px;"></textarea>
+                                                <textarea name="diet_nutrition_description" class="form-control check-value" placeholder="Hãy nhập thông tin"
+                                                    style="height: 200px;" required></textarea>
                                             @else
-                                                <textarea name="diet_nutrition_description" class="form-control" placeholder="Hãy nhập thông tin"
-                                                    style="height: 200px;">{{ $animalDetail->diet_nutrition_description }}</textarea>
+                                                <textarea name="diet_nutrition_description" class="form-control check-value" placeholder="Hãy nhập thông tin"
+                                                    style="height: 200px;"required>{{ $animalDetail->diet_nutrition_description }}</textarea>
                                             @endif
                                         </div>
                                     </div>
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label>Các Mối Đe Dọa Đối Với Quần Thể</label>
+                                            <label>Các Mối Đe Dọa Đối Với Quần Thể <span
+                                                    class="asterisk text-danger">*</span></label>
                                             @if ($mode == 'add')
-                                                <textarea name="population_threat" class="form-control" placeholder="Hãy nhập thông tin" style="height: 200px;"></textarea>
+                                                <textarea name="population_threat" class="form-control check-value" placeholder="Hãy nhập thông tin"
+                                                    style="height: 200px;" required></textarea>
                                             @else
-                                                <textarea name="population_threat" class="form-control" placeholder="Hãy nhập thông tin" style="height: 200px;">{{ $animalDetail->population_threat }}</textarea>
+                                                <textarea name="population_threat" class="form-control check-value" placeholder="Hãy nhập thông tin"
+                                                    style="height: 200px;" required>{{ $animalDetail->population_threat }}</textarea>
                                             @endif
                                         </div>
                                     </div>
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label>Số Lượng Trong Quần Thể</label>
+                                            <label>Số Lượng Trong Quần Thể <span
+                                                    class="asterisk text-danger">*</span></label>
                                             @if ($mode == 'add')
-                                                <textarea name="population_number" class="form-control" placeholder="Hãy nhập thông tin" style="height: 200px;"></textarea>
+                                                <textarea name="population_number" class="form-control check-value" placeholder="Hãy nhập thông tin"
+                                                    style="height: 200px;" required></textarea>
                                             @else
-                                                <textarea name="population_number" class="form-control" placeholder="Hãy nhập thông tin" style="height: 200px;">{{ $animalDetail->population_number }}</textarea>
+                                                <textarea name="population_number" class="form-control check-value" placeholder="Hãy nhập thông tin"
+                                                    style="height: 200px;" required>{{ $animalDetail->population_number }}</textarea>
                                             @endif
                                         </div>
                                     </div>
@@ -450,9 +481,11 @@
                                         <div class="form-group">
                                             <label>Vai Trò Sinh Thái</label>
                                             @if ($mode == 'add')
-                                                <textarea name="ecological_niche" class="form-control" placeholder="Hãy nhập thông tin" style="height: 200px;"></textarea>
+                                                <textarea name="ecological_niche" class="form-control check-value" placeholder="Hãy nhập thông tin"
+                                                    style="height: 200px;"></textarea>
                                             @else
-                                                <textarea name="ecological_niche" class="form-control" placeholder="Hãy nhập thông tin" style="height: 200px;">{{ $animalDetail->population_number }}</textarea>
+                                                <textarea name="ecological_niche" class="form-control check-value" placeholder="Hãy nhập thông tin"
+                                                    style="height: 200px;">{{ $animalDetail->ecological_niche }}</textarea>
                                             @endif
                                         </div>
                                     </div>
@@ -460,9 +493,9 @@
                                         <div class="form-group">
                                             <label>Những Sự Thật Thú Vị</label>
                                             @if ($mode == 'add')
-                                                <textarea name="fun_fact" class="form-control" placeholder="Hãy nhập thông tin" style="height: 200px;"></textarea>
+                                                <textarea name="fun_fact" class="form-control check-value" placeholder="Hãy nhập thông tin" style="height: 200px;"></textarea>
                                             @else
-                                                <textarea name="fun_fact" class="form-control" placeholder="Hãy nhập thông tin" style="height: 200px;">{{ $animalDetail->fun_fact }}</textarea>
+                                                <textarea name="fun_fact" class="form-control check-value" placeholder="Hãy nhập thông tin" style="height: 200px;">{{ $animalDetail->fun_fact }}</textarea>
                                             @endif
                                         </div>
                                     </div>
@@ -488,7 +521,7 @@
                 dictDefaultMessage: "Kéo và thả tệp tin hoặc nhấp để tải lên", // Thông báo mặc định
             };
 
-            Dropzone.options.myDropzone.url = "{{ route('admin.home') }}";
+            Dropzone.options.myDropzone.url = "{{ route('list_animal') }}";
         }
     </script>
 @endsection
@@ -523,4 +556,27 @@
             showNotification(successMessage);
         }
     };
+
+    // document.addEventListener('DOMContentLoaded', function() {
+    //     var inputFields = document.querySelectorAll('.check-value');
+    //     var asterisks = document.querySelectorAll('.asterisk');
+
+    //     inputFields.forEach(function(inputField, index) {
+    //         var asterisk = asterisks[index];
+
+    //         function checkValue() {
+    //             if (inputField.value.trim() === '') {
+    //                 asterisk.style.display = 'inline';
+    //             } else {
+    //                 asterisk.style.display = 'none';
+    //             }
+    //         }
+
+    //         // Add event listener for input events
+    //         inputField.addEventListener('input', checkValue);
+
+    //         // Trigger the check once to set the initial state
+    //         checkValue();
+    //     });
+    // });
 </script>

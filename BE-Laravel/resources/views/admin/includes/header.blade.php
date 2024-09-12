@@ -4,7 +4,7 @@
             <a class="nav-toggler waves-effect waves-light d-block d-md-none" href="javascript:void(0)"><i
                     class="ti-menu ti-close"></i></a>
             <div class="navbar-brand">
-                <a href="{{ route('admin.home') }}">
+                <a href="{{ route('admin.dashboard') }}">
                     <b class="logo-icon">
                         <img src="{{ asset('admin/assets/images/logo-icon.png') }}" alt="homepage" class="dark-logo" />
                         <img src="{{ asset('admin/assets/images/logo-icon.png') }}" alt="homepage" class="light-logo" />
@@ -25,9 +25,14 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="javascript:void(0)" data-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false">
-                        <img src="{{ asset('admin/assets/images/users/profile-pic.jpg') }}" alt="user"
-                            class="rounded-circle" width="40">
-                        <span class="ml-2 d-none d-lg-inline-block"><span>Hello,</span> <span
+                        @if(Auth::user()->avatar != null)
+                        <img src="{{ asset('avatars/'. Auth::user()->avatar) }}" alt="user"
+                            class="rounded-circle" width="40" height="40">
+                        @else
+                        <img src="{{ asset('error/user_error.jpg') }}" alt="user"
+                            class="rounded-circle" width="40" height="40">
+                        @endif
+                        <span class="ml-2 d-none d-lg-inline-block"><span
                                 class="text-dark">{{ Auth::user()->name }}</span> <i data-feather="chevron-down"
                                 class="svg-icon"></i></span>
                     </a>

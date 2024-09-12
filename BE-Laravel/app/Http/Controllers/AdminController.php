@@ -4,11 +4,15 @@ namespace App\Http\Controllers;
 
 use App\Http\MessageContent;
 use App\Models\AnimalDetail;
+use App\Models\Answer;
 use App\Models\Biome;
 use App\Models\Climate;
 use App\Models\ConservationStatus;
 use App\Models\DietType;
 use App\Models\Nation;
+use App\Models\Question;
+use App\Models\Reward;
+use App\Models\Topic;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Role;
@@ -24,6 +28,7 @@ use App\Models\Post;
 use Auth;
 use Str;
 use Hash;
+use DB;
 
 class AdminController extends Controller
 {
@@ -47,6 +52,7 @@ class AdminController extends Controller
         $user->name = $data['username'];
         $user->email = $data['email'];
         $user->password = Hash::make($data['password']);
+        $user->address = $data['address'];
         $user->gender = $data['gender'];
         $user->role_id = $data['role_id'];
         $user->birthdate = $data['birthdate'];
@@ -82,6 +88,7 @@ class AdminController extends Controller
         $user = User::where('id', $id)->first();
         $user->name = $data['username'];
         $user->email = $data['email'];
+        $user->address = $data['address'];
         $user->gender = $data['gender'];
         $user->role_id = $data['role_id'];
         $user->birthdate = $data['birthdate'];
@@ -115,9 +122,86 @@ class AdminController extends Controller
         ));
     }
 
+    public function dashBoard(){
+        $user = User::count();
+        $animalDetail = AnimalDetail::count();
+        $post = Post::count();
+        $reward = DB::table('reward_between_user')
+        ->join('users', 'users.id', '=', 'reward_between_user.user_id')
+        ->join('reward', 'reward.id', '=', 'reward_between_user.reward_id')
+        ->select('users.name', 'reward.reward_name', 'reward.reward_score', 'reward_between_user.created_at')
+        ->count();
+
+        $recordCountPlays = DB::table('history_game')
+    ->select(DB::raw('MONTH(created_at) as month'), DB::raw('count(*) as count'))
+    ->groupBy(DB::raw('MONTH(created_at)'))
+    ->pluck('count', 'month')
+    ->toArray();
+    $monthlyCountPlays = array_fill(1, 12, 0);
+    foreach ($recordCountPlays as $month => $count) {
+        $monthlyCountPlays[$month] = $count;
+    }
+
+    $recordCountRewards = DB::table('reward_between_user')
+    ->select(DB::raw('MONTH(created_at) as month'), DB::raw('count(*) as count'))
+    ->groupBy(DB::raw('MONTH(created_at)'))
+    ->pluck('count', 'month')
+    ->toArray();
+    $monthlyCountRewards = array_fill(1, 12, 0);
+    foreach ($recordCountRewards as $month => $count) {
+        $monthlyCountRewards[$month] = $count;
+    }
+
+    $recordCountUsers = DB::table('users')
+    ->select(DB::raw('MONTH(created_at) as month'), DB::raw('count(*) as count'))
+    ->groupBy(DB::raw('MONTH(created_at)'))
+    ->pluck('count', 'month')
+    ->toArray();
+    $monthlyCountUsers = array_fill(1, 12, 0);
+    foreach ($recordCountUsers as $month => $count) {
+        $monthlyCountUsers[$month] = $count;
+    }
+
+    $recordCountPosts = DB::table('post')
+    ->select(DB::raw('MONTH(created_at) as month'), DB::raw('count(*) as count'))
+    ->groupBy(DB::raw('MONTH(created_at)'))
+    ->pluck('count', 'month')
+    ->toArray();
+    $monthlyCountPosts = array_fill(1, 12, 0);
+    foreach ($recordCountPosts as $month => $count) {
+        $monthlyCountPosts[$month] = $count;
+    }
+    
+        return view('admin.home',compact('user', 'animalDetail', 'post','reward','monthlyCountPlays','monthlyCountRewards','monthlyCountUsers','monthlyCountPosts'));
+    }
     public function listUser()
     {
-        $users = User::all();
+        $users = User::paginate(5);
+        return view('admin.users.list-user', compact('users'));
+    }
+
+    public function searchUser(Request $request){
+        $data = $request->all();
+        $key_word = $data['key_word'];
+        $role_id = $data['role_id'];
+        $date_filter = $data['date_filter'];
+
+
+        $query = User::query();
+
+        if ($key_word !== null) {
+            $query->where('email', 'like', '%' . $key_word . '%');
+        }
+
+        if ($role_id !== null) {
+            $query->where('role_id',$role_id );
+        }
+
+        if (!empty($date_filter)) {
+            $query->whereDate('created_at',$date_filter);
+        }
+
+        $users = $query->paginate(5);
         return view('admin.users.list-user', compact('users'));
     }
 
@@ -177,6 +261,7 @@ class AdminController extends Controller
         $animalDetail->mating_behavior = $data['mating_behavior'];
         $animalDetail->reproduction_season = $data['reproduction_season'];
         $animalDetail->pregnancy_duration = $data['pregnancy_duration'];
+        $animalDetail->baby_carrying = $data['baby_carrying'];
         $animalDetail->independent_age = $data['independent_age'];
         $animalDetail->avg_lifespan = $data['avg_lifespan'];
         $animalDetail->animal_sound = $uniqueFileSoundName;
@@ -186,7 +271,6 @@ class AdminController extends Controller
         $animalDetail->diet_type_id = $data['diet_type'];
         $animalDetail->category_id = $data['category_id'];
         $animalDetail->population_trending_id = $data['population_trending_id'];
-        $animalDetail->created_by = Auth::id();
         $animalDetail->save();
 
         $message = MessageContent::getMessage('create_success');
@@ -239,6 +323,7 @@ class AdminController extends Controller
         $animalDetail->mating_behavior = $data['mating_behavior'];
         $animalDetail->reproduction_season = $data['reproduction_season'];
         $animalDetail->pregnancy_duration = $data['pregnancy_duration'];
+        $animalDetail->baby_carrying = $data['baby_carrying'];
         $animalDetail->independent_age = $data['independent_age'];
         $animalDetail->avg_lifespan = $data['avg_lifespan'];
         if (isset($data['animal_sound']) && $data['animal_sound'] != null) {
@@ -250,7 +335,6 @@ class AdminController extends Controller
         $animalDetail->diet_type_id = $data['diet_type'];
         $animalDetail->category_id = $data['category_id'];
         $animalDetail->population_trending_id = $data['population_trending_id'];
-        $animalDetail->created_by = Auth::id();
         $animalDetail->save();
 
         $message = MessageContent::getMessage('update_success');
@@ -265,13 +349,16 @@ class AdminController extends Controller
     {
         MessageContent::loadMessages();
         $data = $request->all();
+  
         try {
-            $uniqueFileName = Str::uuid()->toString() . '.' . $data['animal_image']->extension();
-            $data['animal_image']->move(public_path('animal_images'), $uniqueFileName);
-            $animalImage = new Image();
-            $animalImage->image_name = $uniqueFileName;
-            $animalImage->detail_id = $id;
-            $animalImage->save();
+            foreach($data['animal_image'] as $item){
+                $uniqueFileName = Str::uuid()->toString() . '.' . $item->extension();
+                $item->move(public_path('animal_images'), $uniqueFileName);
+                $animalImage = new Image();
+                $animalImage->image_name = $uniqueFileName;
+                $animalImage->detail_id = $id;
+                $animalImage->save();
+            }
             $message = MessageContent::getMessage('create_success');
             return redirect()->route('list_animal_image', ['id' => $id])->with('success',$message);
         } catch (\Exception $e) {
@@ -290,7 +377,32 @@ class AdminController extends Controller
 
     public function listAnimal()
     {
-        $animalDetail = AnimalDetail::all();
+        $animalDetail = AnimalDetail::paginate(5);
+        return view('admin.animals.list-animal', compact('animalDetail'));
+    }
+
+    public function searchAnimal(Request $request){
+        $data = $request->all();
+        $key_word = $data['key_word'];
+        $key_word1 = $data['key_word1'];
+        $date_filter = $data['date_filter'];
+
+        $query = AnimalDetail::query();
+
+        if (!empty($key_word)) {
+            $query->where('animal_name', 'like', '%' . $key_word . '%');
+        }
+
+        if (!empty($key_word1)) {
+            $query->where('animal_scientific_name', 'like', '%' . $key_word1 . '%');
+        }
+
+        if (!empty($date_filter)) {
+            $query->whereDate('created_at',$date_filter);
+        }
+
+        
+        $animalDetail = $query->paginate(5);
         return view('admin.animals.list-animal', compact('animalDetail'));
     }
 
@@ -482,7 +594,7 @@ class AdminController extends Controller
 
     public function listAnimalImage($id)
     {
-        $images = Image::where('detail_id', $id)->get();
+        $images = Image::where('detail_id', $id)->paginate(5);
         foreach ($images as $image) {
             $image->animalDetail;
         }
@@ -496,12 +608,12 @@ class AdminController extends Controller
     }
     public function addImgAnimalStore(Request $request)
     {
-        $img = $request->file('file');
-        $imgName = time() . rand(1, 100) . '.' . $img->extension();
-        $img->move(public_path('images_animal'), $imgName);
-        return response()->json([
-            'success' => $imgName
-        ]);
+        // $img = $request->file('file');
+        // $imgName = time() . rand(1, 100) . '.' . $img->extension();
+        // $img->move(public_path('images_animal'), $imgName);
+        // return response()->json([
+        //     'success' => $imgName
+        // ]);
     }
 
     public function editAnimalDetail()
@@ -532,10 +644,32 @@ class AdminController extends Controller
 
     public function listPostsView()
     {
-        $posts = Post::with('user')->withCount('comments')->withCount('likes')->get();
+        $posts = Post::with('user')->withCount('comments')->withCount('likes')->paginate(5);
         return view('admin.posts.list', compact('posts'));
     }
 
+    public function searchPost(Request $request){
+        $data = $request->all();
+        $key_word = $data['key_word'];
+        $status = $data['status'];
+        $date_filter = $data['date_filter'];
+        $query = Post::with('user')->withCount('comments')->withCount('likes');
+
+        if (!empty($key_word)) {
+            $query->where('title', 'like', '%' . $key_word . '%');
+        }
+
+        if (!empty($status)) {
+            $query->where('status',$status );
+        }
+
+        if (!empty($date_filter)) {
+            $query->whereDate('created_at',$date_filter);
+        }
+
+        $posts = $query->paginate(5);
+        return view('admin.posts.list', compact('posts'));
+    }
     public function deletePost($id)
     {
         MessageContent::loadMessages();
@@ -561,5 +695,241 @@ class AdminController extends Controller
             $message = MessageContent::getMessage('approval_failed');
             return redirect()->back()->with('failed', $message);
         }
+    }
+
+    public function listTopicsView(){
+        $topics = Topic::all();
+        return view('admin.games.list-topic',compact('topics'));
+    }
+
+    public function viewCreateTopic(){
+        $mode = 'add';
+        return view('admin.games.add-topic', compact('mode'));
+    }
+
+    public function createTopic(Request $request){
+        MessageContent::loadMessages();
+        $data = $request->all();
+        try {
+        if (isset($data['topic_image'])) {
+            $uniqueFileName = Str::uuid()->toString() . '.' . $data['topic_image']->extension();
+            $data['topic_image']->move(public_path('topics'), $uniqueFileName);
+        }
+        $topic = new Topic();
+        $topic->topic_name = $data['topic_name'];
+        if (isset($uniqueFileName) && $uniqueFileName != '') {
+            $topic->topic_image = $uniqueFileName;
+        }
+        $topic->topic_description = $data['topic_description'];
+        $topic->score_per_question = (int)$data['score_per_question'];
+        $topic->save();
+        $message = MessageContent::getMessage('create_success');
+            return redirect()->route('admin.list_topic')->with('success', $message);
+        } catch (\Exception $e) {
+        $message = MessageContent::getMessage('create_failed');
+            return back()->with('failed', $message);
+        }
+    }
+
+
+    public function viewEditTopic($id){
+        $mode = 'edit';
+        $topic = Topic::where('id',$id)->first();
+        return view('admin.games.add-topic', compact('mode', 'topic'));
+    }
+
+    public function updateTopic($id, Request $request)
+    {
+        MessageContent::loadMessages();
+        $data = $request->all();
+        try {
+        if (isset($data['topic_image'])) {
+            $uniqueFileName = Str::uuid()->toString() . '.' . $data['topic_image']->extension();
+            $data['topic_image']->move(public_path('topics'), $uniqueFileName);
+        }
+        $topic = Topic::where('id',$id)->first();
+        $topic->topic_name = $data['topic_name'];
+        if (isset($uniqueFileName) && $uniqueFileName != '') {
+            $topic->topic_image = $uniqueFileName;
+        }
+        $topic->topic_description = $data['topic_description'];
+        $topic->score_per_question = (int)$data['score_per_question'];
+        $topic->save();
+
+        $message = MessageContent::getMessage('update_success');
+        return redirect()->route('admin.list_topic')->with('success', $message);
+        } catch (\Exception $e) {
+            $message = MessageContent::getMessage('update_failed');
+            return redirect()->back()->with('failed', $message);
+        }
+    }
+
+    public function deleteTopic($id)
+    {
+        try {
+        MessageContent::loadMessages();
+        Topic::destroy($id);
+        $message = MessageContent::getMessage('delete_success');
+        return redirect()->route('admin.list_topic')->with('success', $message);
+    } catch (\Exception $e) {
+        $message = MessageContent::getMessage('delete_success');
+        return redirect()->back()->with('failed', $message);
+    }      
+    }
+
+    public function listQuestionsView($id){
+        $questions = Question::with('answers')->where('topic_id', $id)->get();
+        return view('admin.games.list-question',compact('questions','id'));
+    }
+
+    public function createQuestionAnswer($id,Request $request){
+        MessageContent::loadMessages();
+        $data = $request->all();
+        try {
+        $question = new Question();
+        $question->question_content = $data['question_content'];
+        $question->topic_id = $id;
+        $question->save();
+
+        $data = $request->all();
+        $data['answer_status'] = (int)$data['answer_status'];
+            foreach($data['answer_content'] as $key => $answer) {
+                $answers = new Answer();
+                $answers->answer_content = $answer;
+                if($key == $data['answer_status']){
+                    $answers->answer_status = 1;
+                }else{
+                    $answers->answer_status = 0;
+                }
+                $answers->question_id = $question->id;
+                $answers->save();
+        }
+        $message = MessageContent::getMessage('create_success');
+            return redirect()->route('admin.list_question',['id' => $id])->with('success', $message);
+        } catch (\Exception $e) {
+        $message = MessageContent::getMessage('create_failed');
+            return back()->with('failed', $message);
+        }
+    }
+
+    public function updateQuestionAnswer($id,Request $request){
+        MessageContent::loadMessages();
+        $data = $request->all();
+
+        try {
+        $question = Question::where('id',$id)->first();
+        $question->question_content = $data['question_content'];
+        $question->save();
+        
+        $length = count($data['answer_content']);
+        $length1 = count($data['hidden_id']);
+        $sum_length = $length + $length1%2;
+        $data['answer_status'] = (int)$data['answer_status'];
+
+        for ($i = 0; $i < $sum_length; $i++) {
+            $answer = Answer::where('id',$data['hidden_id'][$i])->first();
+            $answer->answer_content = $data['answer_content'][$i];
+            if($i == $data['answer_status']){
+                $answer->answer_status = 1 ;
+            }else{
+                $answer->answer_status = 0 ;
+            }
+            $answer->save();
+        }
+
+        $message = MessageContent::getMessage('update_success');
+            return redirect()->route('admin.list_question',['id' => $data['topic_id']])->with('success', $message);
+        } catch (\Exception $e) {
+        $message = MessageContent::getMessage('update_failed');
+            return back()->with('failed', $message);
+        }
+    }
+    public function deleteQuestion($id,$topic_id){
+        try {
+            MessageContent::loadMessages();
+            Question::destroy($id);
+            $message = MessageContent::getMessage('delete_success');
+            return redirect()->route('admin.list_question',['id' => $topic_id])->with('success', $message);
+        } catch (\Exception $e) {
+            $message = MessageContent::getMessage('delete_success');
+            return redirect()->back()->with('failed', $message);
+        } 
+    }
+    public function listRewardsView(){
+        $rewards = Reward::all();
+        return view('admin.games.list-reward',compact('rewards'));
+    }
+
+    public function createReward(Request $request){
+        $data = $request->all();
+        try {
+            MessageContent::loadMessages();
+            $reward = new Reward();
+            $reward->reward_name = $data['reward_name'];
+            $reward->reward_score = (int)$data['reward_score'];
+            $reward->save();
+            $message = MessageContent::getMessage('create_success');
+            return redirect()->route('admin.list_reward')->with('success', $message);
+        } catch (\Exception $e) {
+            $message = MessageContent::getMessage('create_failed');
+            return redirect()->back()->with('failed', $message);
+        } 
+
+    }
+
+    public function updateReward($id,Request $request){
+        $data = $request->all();
+        try {
+            MessageContent::loadMessages();
+            $reward = Reward::where('id',$id)->first();
+            $reward->reward_name = $data['reward_name'];
+            $reward->reward_score = (int)$data['reward_score'];
+            $reward->save();
+            $message = MessageContent::getMessage('update_success');
+            return redirect()->route('admin.list_reward')->with('success', $message);
+        } catch (\Exception $e) {
+            $message = MessageContent::getMessage('update_failed');
+            return redirect()->back()->with('failed', $message);
+        } 
+
+    }
+
+    public function deleteReward($id){
+        try {
+            MessageContent::loadMessages();
+            Reward::destroy($id);
+            $message = MessageContent::getMessage('delete_success');
+            return redirect()->route('admin.list_reward')->with('success', $message);
+        } catch (\Exception $e) {
+            $message = MessageContent::getMessage('delete_success');
+            return redirect()->back()->with('failed', $message);
+        } 
+    }
+
+    public function getHistoryReward(){
+        $results = DB::table('reward_between_user')
+        ->join('users', 'users.id', '=', 'reward_between_user.user_id')
+        ->join('reward', 'reward.id', '=', 'reward_between_user.reward_id')
+        ->select('users.name', 'reward.reward_name', 'reward.reward_score', 'reward_between_user.created_at')
+        ->get();
+        return view('admin.games.list-history-reward',compact('results'));
+    }
+
+    public function searchHistoryReward(Request $request){
+        $name = $request->input('key_word');
+        $date = $request->input('date_filter');
+    
+        $results = DB::table('reward_between_user')
+            ->join('users', 'users.id', '=', 'reward_between_user.user_id')
+            ->join('reward', 'reward.id', '=', 'reward_between_user.reward_id')
+            ->select('users.name', 'reward.reward_name', 'reward.reward_score', 'reward_between_user.created_at')
+            ->when($name, function ($query, $name) {
+                return $query->where('users.name', 'like', '%' . $name . '%');
+            })
+            ->when($date, function ($query, $date) {
+                return $query->whereDate('reward_between_user.created_at', $date);
+            })
+            ->get();
+        return view('admin.games.list-history-reward',compact('results'));
     }
 }

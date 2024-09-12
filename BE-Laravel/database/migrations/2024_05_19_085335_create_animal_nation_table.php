@@ -16,7 +16,9 @@ return new class extends Migration
         Schema::create('nation', function (Blueprint $table) {
             $table->id();
             $table->string('nation_name');
-            $table->string('nation_image')->nullable();
+            $table->text('nation_description')->nullable();
+            $table->float('nation_latitude', 10, 6); 
+            $table->float('nation_longitude', 10, 6);
             $table->timestamps();
         });
     }

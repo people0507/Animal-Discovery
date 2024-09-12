@@ -47,7 +47,8 @@
                 Chủ</a>
             <a href="{{ route('user.list-blog') }}"
                 class="nav-item nav-link {{ Request::is('list-blog') ? 'active' : '' }}">Blog</a>
-            <a href="{{ route('user.list-blog-3') }}" class="nav-item nav-link">Danh Sách</a>
+            <!-- <a href="{{ route('user.list-blog-3') }}" class="nav-item nav-link">Danh Sách</a> -->
+            <a href="{{ route('user.view_search_filter') }}" class="nav-item nav-link">Tìm Kiếm</a>
             <div class="nav-item dropdown" style="z-index: 99999;">
                 <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                 <div class="dropdown-menu rounded-0 rounded-bottom m-0">
@@ -62,7 +63,6 @@
             <a href="{{ route('user.contract') }}"
                 class="nav-item nav-link {{ Request::is('contract') ? 'active' : '' }}">Liên Hệ</a>
         </div>
-        <a href="" class="btn btn-primary">Buy Ticket<i class="fa fa-arrow-right ms-3"></i></a>
     </div>
 </nav>
 <!-- Navbar End -->
