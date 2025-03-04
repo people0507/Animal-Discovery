@@ -69,9 +69,7 @@ class PostController extends Controller
         return redirect()->route('user.list_post_social');
     }
 
-    public function editPost(Request $request)
-    {
-    }
+    public function editPost(Request $request) {}
 
     public function deletePost(Request $request)
     {
@@ -114,9 +112,7 @@ class PostController extends Controller
         return response()->json($comments);
     }
 
-    public function editComment(Request $request)
-    {
-    }
+    public function editComment(Request $request) {}
 
     public function deleteComment(Request $request)
     {

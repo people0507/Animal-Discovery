@@ -4,7 +4,7 @@
         <div class="col-lg-7 px-5 text-start">
             <div class="h-100 d-inline-flex align-items-center py-3 me-4">
                 <small class="fa fa-map-marker-alt text-primary me-2"></small>
-                <small>175 P. Tây Sơn, Trung Liệt, Đống Đa, Hà Nội</small>
+                <small>123 Street, New York, USA</small>
             </div>
             <div class="h-100 d-inline-flex align-items-center py-3">
                 <small class="far fa-clock text-primary me-2"></small>
@@ -14,7 +14,7 @@
         <div class="col-lg-5 px-5 text-end">
             <div class="h-100 d-inline-flex align-items-center py-3 me-4">
                 <small class="fa fa-phone-alt text-primary me-2"></small>
-                <small>+024 3852 2201</small>
+                <small>+012 345 6789</small>
             </div>
             <div class="h-100 d-inline-flex align-items-center">
                 <a class="btn btn-sm-square bg-white text-primary me-1" href=""><i
@@ -49,7 +49,9 @@
                 class="nav-item nav-link {{ Request::is('list-blog') ? 'active' : '' }}">Blog</a>
             <!-- <a href="{{ route('user.list-blog-3') }}" class="nav-item nav-link">Danh Sách</a> -->
             <a href="{{ route('user.view_search_filter') }}" class="nav-item nav-link">Tìm Kiếm</a>
-            <div class="nav-item dropdown" style="z-index: 99999;">
+            <a href="{{ route('user.list_post_social') }}" class="nav-item nav-link">Mạng xã hội</a>
+
+            {{-- <div class="nav-item dropdown" style="z-index: 99999;">
                 <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                 <div class="dropdown-menu rounded-0 rounded-bottom m-0">
                     <a href="animal.html" class="dropdown-item">List Animals</a>
@@ -59,9 +61,9 @@
                     <a href="testimonial.html" class="dropdown-item">List Animal For Area</a>
                     <a href="404.html" class="dropdown-item">404 Page</a>
                 </div>
-            </div>
-            <a href="{{ route('user.contract') }}"
-                class="nav-item nav-link {{ Request::is('contract') ? 'active' : '' }}">Liên Hệ</a>
+            </div> --}}
+            <a href="{{ route('user.contact') }}"
+                class="nav-item nav-link {{ Request::is('contact') ? 'active' : '' }}">Liên Hệ</a>
         </div>
     </div>
 </nav>

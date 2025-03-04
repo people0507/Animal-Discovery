@@ -32,9 +32,9 @@ Route::get('/', [AnimalDetailController::class, 'viewAnimalPage'])->name('user.h
 Route::get('/about', function () {
     return view('user.about');
 })->name('user.about');
-Route::get('/contract', function () {
-    return view('user.contract');
-})->name('user.contract');
+Route::get('/contact', function () {
+    return view('user.contact');
+})->name('user.contact');
 
 // fillter list animal
 Route::get('/fillter-list-animal', function () {

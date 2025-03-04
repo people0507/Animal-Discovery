@@ -5,7 +5,7 @@
             <div class="col-lg-3 col-md-6">
                 <h5 class="text-light mb-4">Địa Chỉ</h5>
                 <p class="mb-2">
-                    <i class="fa fa-map-marker-alt me-3"></i>175 P. Tây Sơn, Trung Liệt, Đống Đa, Hà Nội
+                    <i class="fa fa-map-marker-alt me-3"></i>123 Street, New York, USA
                 </p>
                 <p class="mb-2">
                     <i class="fa fa-phone-alt me-3"></i>+024 3852 2201
@@ -44,7 +44,7 @@
         <div class="copyright">
             <div class="row">
                 <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                    &copy; <a class="border-bottom" href="#">Your Site Nguyen Dang Nhan</a>, All
+                    &copy; <a class="border-bottom" href="#">Your Site Truong Van Cuong</a>, All
                     Right Reserved.
                 </div>
             </div>

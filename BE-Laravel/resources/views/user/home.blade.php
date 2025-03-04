@@ -206,12 +206,14 @@
             overflow: hidden;
             text-overflow: ellipsis;
             width: 100%;
+            font-size: 13px;
         }
 
         .checkin .item {
             position: relative;
             overflow: hidden;
             border-radius: 20px;
+            cursor: pointer;
         }
 
         .checkin img {
@@ -237,6 +239,7 @@
 
         .checkin .item .content .des {
             opacity: 0.7;
+            font-size: 13px;
         }
 
         .checkin .item:nth-child(1) {
@@ -304,70 +307,72 @@
             background-position: center;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
             text-align: center;
         }
 
         .card a {
             color: white;
             text-decoration: none;
-            font-size: 0.7em;
+            font-size: 0.5em;
             font-weight: bold;
             padding: 10px 20px;
             background-color: rgba(0, 0, 0, 0.5);
             border-radius: 5px;
-            transition: background-color 0.3s;
+            transition: background-color 0.1s;
         }
 
         .card a:hover {
+            color: #fff;
             background-color: rgba(0, 0, 0, 0.7);
         }
 
         .card:hover {
-            transform: scale(1.05);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            transform: scale(1.005);
+            box-shadow: 0 5px 12px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
         }
 
         /* .main-collection-container {
-                                                                        display: grid;
-                                                                        grid-template-columns: 1fr 1fr 1fr;
-                                                                        gap: 20px;
-                                                                    }
+                                                                            display: grid;
+                                                                            grid-template-columns: 1fr 1fr 1fr;
+                                                                            gap: 20px;
+                                                                        }
 
-                                                                    .collection-group-block {
-                                                                        display: flex;
-                                                                        flex-direction: column;
-                                                                        gap: 20px;
-                                                                    }
+                                                                        .collection-group-block {
+                                                                            display: flex;
+                                                                            flex-direction: column;
+                                                                            gap: 20px;
+                                                                        }
 
-                                                                    .center-column {
-                                                                        justify-content: center;
-                                                                    }
+                                                                        .center-column {
+                                                                            justify-content: center;
+                                                                        }
 
-                                                                    .collection-animal-container {
-                                                                        position: relative;
-                                                                        text-align: center;
-                                                                    }
+                                                                        .collection-animal-container {
+                                                                            position: relative;
+                                                                            text-align: center;
+                                                                        }
 
-                                                                    .collection-animal-container .hover-overlay {
-                                                                        border-radius: 28px;
-                                                                        height: 100%;
-                                                                    }
+                                                                        .collection-animal-container .hover-overlay {
+                                                                            border-radius: 28px;
+                                                                            height: 100%;
+                                                                        }
 
-                                                                    .collection-animal-img {
-                                                                        border-radius: 20px;
-                                                                        width: 100%;
-                                                                        height: auto;
-                                                                    }
+                                                                        .collection-animal-img {
+                                                                            border-radius: 20px;
+                                                                            width: 100%;
+                                                                            height: auto;
+                                                                        }
 
-                                                                    .hover-overlay,
-                                                                    .bg-gradient {
-                                                                        position: absolute;
-                                                                        top: 0;
-                                                                        left: 0;
-                                                                        width: 100%;
-                                                                        height: 100%;
-                                                                    } */
+                                                                        .hover-overlay,
+                                                                        .bg-gradient {
+                                                                            position: absolute;
+                                                                            top: 0;
+                                                                            left: 0;
+                                                                            width: 100%;
+                                                                            height: 100%;
+                                                                        } */
 
         .card_cate .description p {
             white-space: nowrap;
@@ -395,10 +400,10 @@
     @foreach ($areas as $key => $area)
         <style>
             .card_cate[for="c{{ $key + 1 }}"] {
-                @if($area->area_image != null)
-                background-image: url("{{asset('areas/'. $area->area_image )}}");
+                @if ($area->area_image != null)
+                    background-image: url("{{ asset('areas/' . $area->area_image) }}");
                 @else
-                background-image: url("{{asset('error/error.jpg')}}");
+                    background-image: url("{{ asset('error/error.jpg') }}");
                 @endif
                 background-size: cover;
                 background-position: center;
@@ -417,7 +422,13 @@
                         <span class="text-primary">Thế Giới Động Vật</span>
                     </h1>
                     <p class="mb-4">
-                    Trang web "Thế Giới Động Vật" là một kho tàng kiến thức phong phú về các loài động vật từ khắp các châu lục rộng lớn cho đến các đại dương sâu thẳm. Tại đây, người dùng có thể khám phá những bài viết chi tiết về các loài động vật đa dạng, từ sư tử ở châu Phi, gấu trúc ở châu Á, đến cá mập ở các đại dương. Mỗi loài động vật đều được trình bày với hình ảnh chất lượng cao, thông tin về môi trường sống, thói quen, và những câu chuyện thú vị xoay quanh chúng. Ngoài ra, trang web còn có các video và tài liệu giáo dục giúp người dùng hiểu rõ hơn về sự đa dạng và vẻ đẹp của thế giới động vật. Đây thực sự là một điểm đến lý tưởng cho những ai yêu thích và muốn tìm hiểu về thiên nhiên hoang dã.
+                        Trang web "Thế Giới Động Vật" là một kho tàng kiến thức phong phú về các loài động vật từ khắp các
+                        châu lục rộng lớn cho đến các đại dương sâu thẳm. Tại đây, người dùng có thể khám phá những bài viết
+                        chi tiết về các loài động vật đa dạng, từ sư tử ở châu Phi, gấu trúc ở châu Á, đến cá mập ở các đại
+                        dương. Mỗi loài động vật đều được trình bày với hình ảnh chất lượng cao, thông tin về môi trường
+                        sống, thói quen, và những câu chuyện thú vị xoay quanh chúng. Ngoài ra, trang web còn có các video
+                        và tài liệu giáo dục giúp người dùng hiểu rõ hơn về sự đa dạng và vẻ đẹp của thế giới động vật. Đây
+                        thực sự là một điểm đến lý tưởng cho những ai yêu thích và muốn tìm hiểu về thiên nhiên hoang dã.
                     </p>
                     <h5 class="mb-3">
                         <i class="far fa-check-circle text-primary me-3"></i>Trải Nghiệm Miễn Phí
@@ -429,9 +440,9 @@
                         <i class="far fa-check-circle text-primary me-3"></i>Nâng Cao Hiểu Biết
                     </h5>
                     <h5 class="mb-3">
-                        <i class="far fa-check-circle text-primary me-3"></i>Kết Nối Tới Những Người Có Cùng Đam Mê 
+                        <i class="far fa-check-circle text-primary me-3"></i>Kết Nối Tới Những Người Có Cùng Đam Mê
                     </h5>
-                    <a class="btn btn-primary py-3 px-5 mt-3" href="{{route('user.list_post_social')}}">Khám Phá Ngay</a>
+                    <a class="btn btn-primary py-3 px-5 mt-3" href="{{ route('user.list_post_social') }}">Khám Phá Ngay</a>
                 </div>
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
                     <div class="img-border">
@@ -480,7 +491,7 @@
                     <p><span class="text-primary me-2">#</span>Trải nghiệm</p>
                     <h1 class="display-5 mb-0">
                         Trải nghiệm website khám phá
-                        <span class="text-primary">Động vật</span> Hoang Dã 
+                        <span class="text-primary">Động vật</span> Hoang Dã
                     </h1>
                 </div>
                 <div class="col-lg-6">
@@ -497,22 +508,33 @@
                 <div class="col-lg-3 col-md-4 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
                     <img class="img-fluid mb-3" src="{{ asset('users/img/icon/icon-3.png') }}" alt="Icon" />
                     <h5 class="mb-3">Hình Ảnh Động Vật</h5>
-                    <span>Các bức ảnh chụp động vật hoang dã thường nổi bật với màu sắc sống động và chi tiết sắc nét, ghi lại khoảnh khắc độc đáo của các loài thú, chim, bò sát và côn trùng. Những bức ảnh này có thể cho thấy sự đa dạng và phong phú của cuộc sống hoang dã, từ những chú sư tử dũng mãnh đến những con chim nhỏ bé đầy màu sắc.</span>
+                    <span>Các bức ảnh chụp động vật hoang dã thường nổi bật với màu sắc sống động và chi tiết sắc nét, ghi
+                        lại khoảnh khắc độc đáo của các loài thú, chim, bò sát và côn trùng. Những bức ảnh này có thể cho
+                        thấy sự đa dạng và phong phú của cuộc sống hoang dã, từ những chú sư tử dũng mãnh đến những con chim
+                        nhỏ bé đầy màu sắc.</span>
                 </div>
                 <div class="col-lg-3 col-md-4 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
                     <img class="img-fluid mb-3" src="{{ asset('users/img/icon/icon-6.png') }}" alt="Icon" />
                     <h5 class="mb-3">Phần Thưởng Trò Chơi</h5>
-                    <span>Phần thưởng trong trò chơi liên quan đến chủ đề động vật hoang dã thường mang lại cảm giác hứng thú và động lực cho người chơi khi họ hoàn thành các nhiệm vụ hoặc đạt được những số điểm quan trọng.</span>
+                    <span>Phần thưởng trong trò chơi liên quan đến chủ đề động vật hoang dã thường mang lại cảm giác hứng
+                        thú và động lực cho người chơi khi họ hoàn thành các nhiệm vụ hoặc đạt được những số điểm quan
+                        trọng.</span>
                 </div>
                 <div class="col-lg-3 col-md-4 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
                     <img class="img-fluid mb-3" src="{{ asset('users/img/icon/icon-7.png') }}" alt="Icon" />
                     <h5 class="mb-3">Trải Nghiệm Mượt Mà</h5>
-                    <span>Trải nghiệm website khám phá động vật hoang dã mang lại cảm giác phiêu lưu vào thế giới tự nhiên với giao diện trực quan và hấp dẫn. Người dùng dễ dàng tìm kiếm và xem thông tin chi tiết về các loài động vật thông qua hình ảnh, video và mô tả sống động. Những tính năng tương tác và nội dung giáo dục cũng giúp nâng cao kiến thức và khơi dậy niềm đam mê bảo tồn thiên nhiên.</span>
+                    <span>Trải nghiệm website khám phá động vật hoang dã mang lại cảm giác phiêu lưu vào thế giới tự nhiên
+                        với giao diện trực quan và hấp dẫn. Người dùng dễ dàng tìm kiếm và xem thông tin chi tiết về các
+                        loài động vật thông qua hình ảnh, video và mô tả sống động. Những tính năng tương tác và nội dung
+                        giáo dục cũng giúp nâng cao kiến thức và khơi dậy niềm đam mê bảo tồn thiên nhiên.</span>
                 </div>
                 <div class="col-lg-3 col-md-4 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
                     <img class="img-fluid mb-3" src="{{ asset('users/img/icon/icon-8.png') }}" alt="Icon" />
                     <h5 class="mb-3">Sân Chơi Thú Vị</h5>
-                    <span>Website về sân chơi động vật hoang dã mang đến trải nghiệm giáo dục và giải trí với các trò chơi tương tác, video sống động và thông tin chi tiết về các loài động vật. Người dùng có thể tham gia vào các hoạt động khám phá môi trường sống tự nhiên, hoàn thành nhiệm vụ liên quan đến động vật và nhận phần thưởng, từ đó khơi dậy sự tò mò và tình yêu thiên nhiên.</span>
+                    <span>Website về sân chơi động vật hoang dã mang đến trải nghiệm giáo dục và giải trí với các trò chơi
+                        tương tác, video sống động và thông tin chi tiết về các loài động vật. Người dùng có thể tham gia
+                        vào các hoạt động khám phá môi trường sống tự nhiên, hoàn thành nhiệm vụ liên quan đến động vật và
+                        nhận phần thưởng, từ đó khơi dậy sự tò mò và tình yêu thiên nhiên.</span>
                 </div>
             </div>
         </div>
@@ -520,8 +542,6 @@
     <!-- Service End -->
 
     <!-- Categories Animal -->
-
-
     <div class="container-xxl py-5">
         <h1 class="display-5 mb-0">
             Nhiều Châu Lục Với Các <span class="text-primary">Loài Vật</span> Tuyệt Vời
@@ -537,7 +557,7 @@
                                 <h2 style="font-weight: 700"><a
                                         href="{{ route('user.cate-list', ['id' => $area->id]) }}">{{ $area->area_name }}</a>
                                 </h2>
-                                <p style="color: #000000; font-weight:600">{{$area->area_description}}</p>
+                                <p style="color: #000000; font-weight:600">{{ $area->area_description }}</p>
                             </div>
                         </div>
                     </label>
@@ -561,25 +581,25 @@
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="row g-4">
                         <div class="col-12">
-                            <a class="animal-item" href="{{route('user.diet_type',['id' => $dietType1->id])}}">
+                            <a class="animal-item" href="{{ route('user.diet_type', ['id' => $dietType1->id]) }}">
                                 <div class="position-relative">
                                     <img class="img-fluid" src="{{ asset('users/img/animal-md-1.jpg') }}"
                                         alt="" />
                                     <div class="animal-text p-4">
                                         <p class="text-white small text-uppercase mb-0">Động Vật</p>
-                                        <h5 class="text-white mb-0">{{$dietType1->diet_name}}</h5>
+                                        <h5 class="text-white mb-0">{{ $dietType1->diet_name }}</h5>
                                     </div>
                                 </div>
                             </a>
                         </div>
                         <div class="col-12">
-                            <a class="animal-item" href="{{route('user.diet_type',['id' => $dietType5->id])}}">
+                            <a class="animal-item" href="{{ route('user.diet_type', ['id' => $dietType5->id]) }}">
                                 <div class="position-relative">
                                     <img class="img-fluid" src="{{ asset('users/img/animal-lg-1.jpg') }}"
                                         alt="" />
                                     <div class="animal-text p-4">
                                         <p class="text-white small text-uppercase mb-0">Động Vật</p>
-                                        <h5 class="text-white mb-0">{{$dietType5->diet_name}}</h5>
+                                        <h5 class="text-white mb-0">{{ $dietType5->diet_name }}</h5>
                                     </div>
                                 </div>
                             </a>
@@ -589,13 +609,13 @@
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
                     <div class="row g-4">
                         <div class="col-12">
-                            <a class="animal-item" href="{{route('user.diet_type',['id' => $dietType2->id])}}">
+                            <a class="animal-item" href="{{ route('user.diet_type', ['id' => $dietType2->id]) }}">
                                 <div class="position-relative">
                                     <img class="img-fluid" src="{{ asset('users/img/animal-lg-2.jpg') }}"
                                         alt="" />
                                     <div class="animal-text p-4">
                                         <p class="text-white small text-uppercase mb-0">Động Vật</p>
-                                        <h5 class="text-white mb-0">{{$dietType2->diet_name}}</h5>
+                                        <h5 class="text-white mb-0">{{ $dietType2->diet_name }}</h5>
                                     </div>
                                 </div>
                             </a>
@@ -605,25 +625,25 @@
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
                     <div class="row g-4">
                         <div class="col-12">
-                            <a class="animal-item" href="{{route('user.diet_type',['id' => $dietType3->id])}}">
+                            <a class="animal-item" href="{{ route('user.diet_type', ['id' => $dietType3->id]) }}">
                                 <div class="position-relative">
                                     <img class="img-fluid" src="{{ asset('users/img/animal-md-4.jpg') }}"
                                         alt="" />
                                     <div class="animal-text p-4">
                                         <p class="text-white small text-uppercase mb-0">Động Vật</p>
-                                        <h5 class="text-white mb-0">{{$dietType3->diet_name}}</h5>
+                                        <h5 class="text-white mb-0">{{ $dietType3->diet_name }}</h5>
                                     </div>
                                 </div>
                             </a>
                         </div>
                         <div class="col-12">
-                            <a class="animal-item" href="{{route('user.diet_type',['id' => $dietType4->id])}}">
+                            <a class="animal-item" href="{{ route('user.diet_type', ['id' => $dietType4->id]) }}">
                                 <div class="position-relative">
                                     <img class="img-fluid" src="{{ asset('users/img/animal-lg-3.jpg') }}"
                                         alt="" />
                                     <div class="animal-text p-4">
                                         <p class="text-white small text-uppercase mb-0">Động Vật</p>
-                                        <h5 class="text-white mb-0">{{$dietType4->diet_name}}</h5>
+                                        <h5 class="text-white mb-0">{{ $dietType4->diet_name }}</h5>
                                     </div>
                                 </div>
                             </a>
@@ -650,44 +670,90 @@
                     </div>
                     <div class="photo-grid">
                         <div class="card card-tall card-wide"
-                            style="background-image:url('{{asset('colors/'. $green->color_image )}}')">
-                            <a href="{{ route('color', ['id' => $green->id]) }}">{{ $green->color_name }}</a>
+                            style="background-image:url('{{ asset('colors/' . $green->color_image) }}')">
+                            <a href="{{ route('color', ['id' => $green->id]) }}"
+                                style="background-color: rgba(0, 128, 0, 0.5);"
+                                onmouseover="this.style.backgroundColor='rgba(0, 128, 0, 0.7)'"
+                                onmouseout="this.style.backgroundColor='rgba(0, 128, 0, 0.5)'">
+                                {{ $green->color_name }}
+                            </a>
                         </div>
                         <div class="card card-tall"
-                            style="background-image:url('{{asset('colors/'. $blue->color_image )}}')">
-                            <a href="{{ route('color', ['id' => $blue->id]) }}">{{ $blue->color_name }}</a>
+                            style="background-image:url('{{ asset('colors/' . $blue->color_image) }}')">
+                            <a href="{{ route('color', ['id' => $blue->id]) }}"
+                                style="background-color: rgba(0, 0, 255, 0.5);"
+                                onmouseover="this.style.backgroundColor='rgba(0, 0, 255, 0.7)'"
+                                onmouseout="this.style.backgroundColor='rgba(0, 0, 255, 0.5)'">
+                                {{ $blue->color_name }}
+                            </a>
+                        </div>
+                        <div class="card" style="background-image:url('{{ asset('colors/' . $red->color_image) }}')">
+                            <a href="{{ route('color', ['id' => $red->id]) }}"
+                                style="background-color: rgba(255, 0, 0, 0.5);"
+                                onmouseover="this.style.backgroundColor='rgba(255, 0, 0, 0.7)'"
+                                onmouseout="this.style.backgroundColor='rgba(255, 0, 0, 0.5)'">
+                                {{ $red->color_name }}
+                            </a>
                         </div>
                         <div class="card"
-                            style="background-image:url('{{asset('colors/'. $red->color_image )}}')">
-                            <a href="{{ route('color', ['id' => $red->id]) }}">{{ $red->color_name }}</a>
+                            style="background-image:url('{{ asset('colors/' . $yellow->color_image) }}')">
+                            <a href="{{ route('color', ['id' => $yellow->id]) }}"
+                                style="background-color: rgba(255, 255, 0, 0.5);"
+                                onmouseover="this.style.backgroundColor='rgba(255, 255, 0, 0.7)'"
+                                onmouseout="this.style.backgroundColor='rgba(255, 255, 0, 0.5)'">
+                                {{ $yellow->color_name }}
+                            </a>
                         </div>
                         <div class="card"
-                            style="background-image:url('{{asset('colors/'. $yellow->color_image )}}')">
-                            <a href="{{ route('color', ['id' => $yellow->id]) }}">{{ $yellow->color_name }}</a>
+                            style="background-image:url('{{ asset('colors/' . $orange->color_image) }}')">
+                            <a href="{{ route('color', ['id' => $orange->id]) }}"
+                                style="background-color: rgba(255, 165, 0, 0.5);"
+                                onmouseover="this.style.backgroundColor='rgba(255, 165, 0, 0.7)'"
+                                onmouseout="this.style.backgroundColor='rgba(255, 165, 0, 0.5)'">
+                                {{ $orange->color_name }}
+                            </a>
                         </div>
-                        <div class="card"
-                            style="background-image:url('{{asset('colors/'. $orange->color_image )}}')">
-                            <a href="{{ route('color', ['id' => $orange->id]) }}">{{ $orange->color_name }}</a>
-                        </div>
-                        <div class="card"
-                            style="background-image:url('{{asset('colors/'. $brown->color_image )}}')">
-                            <a href="{{ route('color', ['id' => $brown->id]) }}">{{ $brown->color_name }}</a>
+                        <div class="card" style="background-image:url('{{ asset('colors/' . $brown->color_image) }}')">
+                            <a href="{{ route('color', ['id' => $brown->id]) }}"
+                                style="background-color: rgba(139, 69, 19, 0.5);"
+                                onmouseover="this.style.backgroundColor='rgba(139, 69, 19, 0.7)'"
+                                onmouseout="this.style.backgroundColor='rgba(139, 69, 19, 0.5)'">
+                                {{ $brown->color_name }}
+                            </a>
                         </div>
                         <div class="card card-wide"
-                            style="background-image:url('{{asset('colors/'. $white->color_image )}}')">
-                            <a href="{{ route('color', ['id' => $white->id]) }}">{{ $white->color_name }}</a>
+                            style="background-image:url('{{ asset('colors/' . $white->color_image) }}')">
+                            <a href="{{ route('color', ['id' => $white->id]) }}"
+                                style="background-color: rgba(255, 255, 255, 0.5); color: black;"
+                                onmouseover="this.style.backgroundColor='rgba(255, 255, 255, 0.7)'"
+                                onmouseout="this.style.backgroundColor='rgba(255, 255, 255, 0.5)'">
+                                {{ $white->color_name }}
+                            </a>
+                        </div>
+                        <div class="card" style="background-image:url('{{ asset('colors/' . $black->color_image) }}')">
+                            <a href="{{ route('color', ['id' => $black->id]) }}"
+                                style="background-color: rgba(0, 0, 0, 0.5);"
+                                onmouseover="this.style.backgroundColor='rgba(0, 0, 0, 0.7)'"
+                                onmouseout="this.style.backgroundColor='rgba(0, 0, 0, 0.5)'">
+                                {{ $black->color_name }}
+                            </a>
+                        </div>
+                        <div class="card" style="background-image:url('{{ asset('colors/' . $gray->color_image) }}')">
+                            <a href="{{ route('color', ['id' => $gray->id]) }}"
+                                style="background-color: rgba(128, 128, 128, 0.5);"
+                                onmouseover="this.style.backgroundColor='rgba(128, 128, 128, 0.7)'"
+                                onmouseout="this.style.backgroundColor='rgba(128, 128, 128, 0.5)'">
+                                {{ $gray->color_name }}
+                            </a>
                         </div>
                         <div class="card"
-                            style="background-image:url('{{asset('colors/'. $black->color_image )}}')">
-                            <a href="{{ route('color', ['id' => $black->id]) }}">{{ $black->color_name }}</a>
-                        </div>
-                        <div class="card"
-                            style="background-image:url('{{asset('colors/'. $gray->color_image )}}')">
-                            <a href="{{ route('color', ['id' => $gray->id]) }}">{{ $gray->color_name }}</a>
-                        </div>
-                        <div class="card"
-                            style="background-image:url('{{asset('colors/'. $purple->color_image )}}')">
-                            <a href="{{ route('color', ['id' => $purple->id]) }}">{{ $purple->color_name }}</a>
+                            style="background-image:url('{{ asset('colors/' . $purple->color_image) }}')">
+                            <a href="{{ route('color', ['id' => $purple->id]) }}"
+                                style="background-color: rgba(128, 0, 128, 0.5);"
+                                onmouseover="this.style.backgroundColor='rgba(128, 0, 128, 0.7)'"
+                                onmouseout="this.style.backgroundColor='rgba(128, 0, 128, 0.5)'">
+                                {{ $purple->color_name }}
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -707,11 +773,11 @@
 
                     <div class="checkin">
                         <div class="item">
-                            @if($tropical->climate_image != null)
-                            <img src="{{asset('climates/full/'. $tropical->climate_image )}}"title="{{ $tropical->climate_name }}"
-                                class="zoom">
+                            @if ($tropical->climate_image != null)
+                                <img src="{{ asset('climates/full/' . $tropical->climate_image) }}"title="{{ $tropical->climate_name }}"
+                                    class="zoom">
                             @else
-                            <img src="{{asset('error/error.jpg')}}" alt="error">
+                                <img src="{{ asset('error/error.jpg') }}" alt="error">
                             @endif
                             <div class="content">
                                 <a href="{{ route('climate', ['id' => $tropical->id]) }}"
@@ -723,11 +789,11 @@
                         </div>
 
                         <div class="item">
-                            @if($arid->climate_image != null)
-                            <img src="{{asset('climates/full/'. $arid->climate_image )}}"
-                                title="{{ $arid->climate_name }}" class="zoom">
+                            @if ($arid->climate_image != null)
+                                <img src="{{ asset('climates/full/' . $arid->climate_image) }}"
+                                    title="{{ $arid->climate_name }}" class="zoom">
                             @else
-                            <img src="{{asset('error/error.jpg')}}" alt="error">
+                                <img src="{{ asset('error/error.jpg') }}" alt="error">
                             @endif
                             <div class="content">
                                 <a href="{{ route('climate', ['id' => $arid->id]) }}"
@@ -739,11 +805,11 @@
                         </div>
 
                         <div class="item">
-                            @if($temperate->climate_image != null)
-                            <img src="{{asset('climates/full/'. $temperate->climate_image )}}"
-                                title="{{ $temperate->climate_name }}" class="zoom">
+                            @if ($temperate->climate_image != null)
+                                <img src="{{ asset('climates/full/' . $temperate->climate_image) }}"
+                                    title="{{ $temperate->climate_name }}" class="zoom">
                             @else
-                            <img src="{{asset('error/error.jpg')}}" alt="error">
+                                <img src="{{ asset('error/error.jpg') }}" alt="error">
                             @endif
                             <div class="content">
                                 <a href="{{ route('climate', ['id' => $temperate->id]) }}"
@@ -755,11 +821,11 @@
                         </div>
 
                         <div class="item">
-                            @if($cold->climate_image != null)
-                            <img src="{{asset('climates/full/'. $cold->climate_image )}}"
-                                title="{{ $cold->climate_name }}" class="zoom">
+                            @if ($cold->climate_image != null)
+                                <img src="{{ asset('climates/full/' . $cold->climate_image) }}"
+                                    title="{{ $cold->climate_name }}" class="zoom">
                             @else
-                            <img src="{{asset('error/error.jpg')}}" alt="error">
+                                <img src="{{ asset('error/error.jpg') }}" alt="error">
                             @endif
                             <div class="content">
                                 <a href="{{ route('climate', ['id' => $cold->id]) }}"
@@ -770,11 +836,11 @@
                             </div>
                         </div>
                         <div class="item">
-                            @if($polar->climate_image != null)
-                            <img src="{{asset('climates/full/'. $polar->climate_image )}}"
-                                title="{{ $polar->climate_name }}" class="zoom">
+                            @if ($polar->climate_image != null)
+                                <img src="{{ asset('climates/full/' . $polar->climate_image) }}"
+                                    title="{{ $polar->climate_name }}" class="zoom">
                             @else
-                            <img src="{{asset('error/error.jpg')}}" alt="error">
+                                <img src="{{ asset('error/error.jpg') }}" alt="error">
                             @endif
                             <div class="content">
                                 <a href="{{ route('climate', ['id' => $polar->id]) }}"
@@ -791,73 +857,73 @@
 
             <!-- Visiting Hours Start -->
             <!-- <div class="container-xxl bg-primary visiting-hours my-5 py-5 wow fadeInUp" data-wow-delay="0.1s">
-                <div class="container py-5">
-                    <div class="row g-5">
-                        <div class="col-md-6 wow fadeIn" data-wow-delay="0.3s">
-                            <h1 class="display-6 text-white mb-5">Visiting Hours</h1>
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item">
-                                    <span>Monday</span>
-                                    <span>9:00AM - 6:00PM</span>
-                                </li>
-                                <li class="list-group-item">
-                                    <span>Tuesday</span>
-                                    <span>9:00AM - 6:00PM</span>
-                                </li>
-                                <li class="list-group-item">
-                                    <span>Wednesday</span>
-                                    <span>9:00AM - 6:00PM</span>
-                                </li>
-                                <li class="list-group-item">
-                                    <span>Thursday</span>
-                                    <span>9:00AM - 6:00PM</span>
-                                </li>
-                                <li class="list-group-item">
-                                    <span>Friday</span>
-                                    <span>9:00AM - 6:00PM</span>
-                                </li>
-                                <li class="list-group-item">
-                                    <span>Saturday</span>
-                                    <span>9:00AM - 6:00PM</span>
-                                </li>
-                                <li class="list-group-item">
-                                    <span>Sunday</span>
-                                    <span>Closed</span>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="col-md-6 text-light wow fadeIn" data-wow-delay="0.5s">
-                            <h1 class="display-6 text-white mb-5">Contact Info</h1>
-                            <table class="table">
-                                <tbody>
-                                    <tr>
-                                        <td>Office</td>
-                                        <td>123 Street, New York, USA</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Zoo</td>
-                                        <td>123 Street, New York, USA</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Ticket</td>
-                                        <td>
-                                            <p class="mb-2">+012 345 6789</p>
-                                            <p class="mb-0">ticket@example.com</p>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Support</td>
-                                        <td>
-                                            <p class="mb-2">+012 345 6789</p>
-                                            <p class="mb-0">support@example.com</p>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                    <div class="container py-5">
+                        <div class="row g-5">
+                            <div class="col-md-6 wow fadeIn" data-wow-delay="0.3s">
+                                <h1 class="display-6 text-white mb-5">Visiting Hours</h1>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">
+                                        <span>Monday</span>
+                                        <span>9:00AM - 6:00PM</span>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <span>Tuesday</span>
+                                        <span>9:00AM - 6:00PM</span>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <span>Wednesday</span>
+                                        <span>9:00AM - 6:00PM</span>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <span>Thursday</span>
+                                        <span>9:00AM - 6:00PM</span>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <span>Friday</span>
+                                        <span>9:00AM - 6:00PM</span>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <span>Saturday</span>
+                                        <span>9:00AM - 6:00PM</span>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <span>Sunday</span>
+                                        <span>Closed</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6 text-light wow fadeIn" data-wow-delay="0.5s">
+                                <h1 class="display-6 text-white mb-5">Contact Info</h1>
+                                <table class="table">
+                                    <tbody>
+                                        <tr>
+                                            <td>Office</td>
+                                            <td>123 Street, New York, USA</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Zoo</td>
+                                            <td>123 Street, New York, USA</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Ticket</td>
+                                            <td>
+                                                <p class="mb-2">+012 345 6789</p>
+                                                <p class="mb-0">ticket@example.com</p>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Support</td>
+                                            <td>
+                                                <p class="mb-2">+012 345 6789</p>
+                                                <p class="mb-0">support@example.com</p>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div> -->
+                </div> -->
             <!-- Visiting Hours End -->
 
             <!-- Membership Start -->
@@ -875,20 +941,27 @@
                     <div class="row g-4">
                         @foreach ($activityTime as $key => $item)
                         <div class="col fadeInUp" data-wow-delay="0.3s">
-                            <div class="membership-item position-relative" style="min-height:600px">
-                                @if($key == 0)
-                                <img class="img-fluid" src="{{ asset('activity_times/day.jpg') }}" alt="" />
+                            <div class="membership-item position-relative d-flex flex-column justify-content-between" style="min-height: 600px">
+                                @if ($key == 0)
+                                    <img class="img-fluid" src="{{ asset('activity_times/day.jpg') }}" alt="" />
                                 @elseif($key == 1)
-                                <img class="img-fluid" src="{{ asset('activity_times/night.jpg') }}" alt="" />
+                                    <img class="img-fluid" src="{{ asset('activity_times/night.jpg') }}" alt="" />
                                 @elseif($key == 2)
-                                <img class="img-fluid" src="{{ asset('activity_times/allday.jpg') }}" alt="" />
+                                    <img class="img-fluid" src="{{ asset('activity_times/allday.jpg') }}" alt="" />
                                 @else
-                                <img class="img-fluid" src="{{ asset('activity_times/sunset_dawn.jpg') }}" alt="" />
+                                    <img class="img-fluid" src="{{ asset('activity_times/sunset_dawn.jpg') }}" alt="" />
                                 @endif
-                                <h1 class="display-1">0{{$key+1}}</h1>
-                                <h4 class="text-white mb-3">{{$item->activity_name}}</h4>
-                                <p class="text-primary mb-4">{{$item->activity_description}}</p>
-                                <a class="btn btn-outline-light px-4 mt-3" href="{{route('user.activity_time',['id' => $item->id])}}">Xem thêm</a>
+                        
+                                <div class="content text-center">
+                                    <h1 class="display-1">0{{ $key + 1 }}</h1>
+                                    <h4 class="text-white mb-3">{{ $item->activity_name }}</h4>
+                                    <p class="text-primary mb-4">{{ $item->activity_description }}</p>
+                                </div>
+                        
+                                <div class="mt-auto text-center">
+                                    <a class="btn btn-outline-light px-4 mt-3"
+                                        href="{{ route('user.activity_time', ['id' => $item->id]) }}">Xem thêm</a>
+                                </div>
                             </div>
                         </div>
                         @endforeach
@@ -909,7 +982,10 @@
                                 src="{{ asset('users/img/testimonial-1.jpg') }}" style="width: 100px; height: 100px" />
                             <div class="testimonial-text rounded text-center p-4">
                                 <p>
-                                Website khám phá động vật hoang dã là một nền tảng thú vị cho những người yêu thích thiên nhiên và động vật. Nó cung cấp thông tin chi tiết về các loài động vật, từ thông số kỹ thuật đến hình ảnh và video, giúp người dùng hiểu rõ hơn về đời sống và môi trường sống của chúng.
+                                    Website khám phá động vật hoang dã là một nền tảng thú vị cho những người yêu thích
+                                    thiên nhiên và động vật. Nó cung cấp thông tin chi tiết về các loài động vật, từ thông
+                                    số kỹ thuật đến hình ảnh và video, giúp người dùng hiểu rõ hơn về đời sống và môi trường
+                                    sống của chúng.
                                 </p>
                                 <h5 class="mb-1">Bá Thị Thư</h5>
                             </div>
@@ -919,7 +995,10 @@
                                 src="{{ asset('users/img/testimonial-2.jpg') }}" style="width: 100px; height: 100px" />
                             <div class="testimonial-text rounded text-center p-4">
                                 <p>
-                                Trang web khám phá động vật hoang dã không chỉ cung cấp kiến thức sâu sắc về các loài động vật mà còn khuyến khích người dùng tham gia vào các hoạt động bảo tồn và bảo vệ môi trường. Đây là nơi lý tưởng để khám phá sự đa dạng sinh học của hành tinh chúng ta và tạo cảm hứng cho việc bảo vệ thiên nhiên.
+                                    Trang web khám phá động vật hoang dã không chỉ cung cấp kiến thức sâu sắc về các loài
+                                    động vật mà còn khuyến khích người dùng tham gia vào các hoạt động bảo tồn và bảo vệ môi
+                                    trường. Đây là nơi lý tưởng để khám phá sự đa dạng sinh học của hành tinh chúng ta và
+                                    tạo cảm hứng cho việc bảo vệ thiên nhiên.
                                 </p>
                                 <h5 class="mb-1">Nguyễn Đăng Nhân</h5>
                             </div>
@@ -929,7 +1008,9 @@
                                 src="{{ asset('users/img/testimonial-3.jpg') }}" style="width: 100px; height: 100px" />
                             <div class="testimonial-text rounded text-center p-4">
                                 <p>
-                                Trang web khám phá động vật hoang dã cung cấp một cửa sổ rộng mở vào thế giới tự nhiên, cho phép người dùng khám phá các sinh vật kỳ diệu và học hỏi về cách tồn tại và phát triển của chúng trong tự nhiên.
+                                    Trang web khám phá động vật hoang dã cung cấp một cửa sổ rộng mở vào thế giới tự nhiên,
+                                    cho phép người dùng khám phá các sinh vật kỳ diệu và học hỏi về cách tồn tại và phát
+                                    triển của chúng trong tự nhiên.
                                 </p>
                                 <h5 class="mb-1">Trương Văn Cường</h5>
                             </div>
@@ -938,4 +1019,5 @@
                 </div>
             </div>
             <!-- Testimonial End -->
-        @endsection
+        </div>
+            @endsection

@@ -8,21 +8,25 @@ use App\Models\User;
 use Auth;
 use Hash;
 use App\Http\MessageContent;
+
 class LoginController extends Controller
 {
-    public function viewLogin(){
+    public function viewLogin()
+    {
         return view('authen.login');
     }
-    
-    public function viewRegister(){
+
+    public function viewRegister()
+    {
         return view('authen.register');
     }
 
-    function register(Request $request){
+    function register(Request $request)
+    {
         MessageContent::loadMessages();
         $data = $request->all();
-        try{
-            if($data['password'] == $data['password_confirmation']){
+        try {
+            if ($data['password'] == $data['password_confirmation']) {
                 $user = new User();
                 $user->name = $data['username'];
                 $user->email = $data['email'];
@@ -32,35 +36,37 @@ class LoginController extends Controller
                 $user->role_id = User::USER;
                 $user->save();
                 $message = MessageContent::getMessage('register_success');
-                return redirect()->route('view_login')->with('success',$message);
-            }else{
+                return redirect()->route('view_login')->with('success', $message);
+            } else {
                 $message = MessageContent::getMessage('register_failed');
-                return redirect()->route('view_register')->with('failed',$message);
+                return redirect()->route('view_register')->with('failed', $message);
             }
-        }catch(Exception $e){
+        } catch (Exception $e) {
             $message = MessageContent::getMessage('register_failed');
-                return redirect()->route('view_register')->with('failed',$message);
+            return redirect()->route('view_register')->with('failed', $message);
         }
     }
-    function login(Request $request){
+    function login(Request $request)
+    {
         MessageContent::loadMessages();
         $credentials = $request->only('email', 'password');
         if (Auth::attempt($credentials)) {
             $user = auth()->user();
-            if($user->role_id == User::ADMIN){
+            if ($user->role_id == User::ADMIN) {
                 $message = MessageContent::getMessage('login_success');
                 return redirect()->route('admin.dashboard')->with('success', $message);
-            }else{
+            } else {
                 $message = MessageContent::getMessage('login_success');
                 return redirect()->route('user.list_post_social')->with('success', $message);
             }
-        }else{
+        } else {
             $message = MessageContent::getMessage('login_failed');
             return redirect()->route('view_login')->with('failed', $message);
         }
     }
 
-    function logout(){
+    function logout()
+    {
         Auth::logout();
         return redirect()->route('view_login');
     }

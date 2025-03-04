@@ -44,26 +44,26 @@ class AdminController extends Controller
         MessageContent::loadMessages();
         $data = $request->all();
         try {
-        if (isset($data['avatar'])) {
-            $uniqueFileName = Str::uuid()->toString() . '.' . $data['avatar']->extension();
-            $data['avatar']->move(public_path('avatars'), $uniqueFileName);
-        }
-        $user = new User();
-        $user->name = $data['username'];
-        $user->email = $data['email'];
-        $user->password = Hash::make($data['password']);
-        $user->address = $data['address'];
-        $user->gender = $data['gender'];
-        $user->role_id = $data['role_id'];
-        $user->birthdate = $data['birthdate'];
-        if (isset($uniqueFileName) && $uniqueFileName != '') {
-            $user->avatar = $uniqueFileName;
-        }
-        $user->save();
-        $message = MessageContent::getMessage('create_success');
+            if (isset($data['avatar'])) {
+                $uniqueFileName = Str::uuid()->toString() . '.' . $data['avatar']->extension();
+                $data['avatar']->move(public_path('avatars'), $uniqueFileName);
+            }
+            $user = new User();
+            $user->name = $data['username'];
+            $user->email = $data['email'];
+            $user->password = Hash::make($data['password']);
+            $user->address = $data['address'];
+            $user->gender = $data['gender'];
+            $user->role_id = $data['role_id'];
+            $user->birthdate = $data['birthdate'];
+            if (isset($uniqueFileName) && $uniqueFileName != '') {
+                $user->avatar = $uniqueFileName;
+            }
+            $user->save();
+            $message = MessageContent::getMessage('create_success');
             return redirect()->route('admin.list_user')->with('success', $message);
         } catch (\Exception $e) {
-        $message = MessageContent::getMessage('create_failed');
+            $message = MessageContent::getMessage('create_failed');
             return back()->with('failed', $message);
         }
     }
@@ -81,27 +81,27 @@ class AdminController extends Controller
         MessageContent::loadMessages();
         $data = $request->all();
         try {
-        if (isset($data['avatar'])) {
-            $uniqueFileName = Str::uuid()->toString() . '.' . $data['avatar']->extension();
-            $data['avatar']->move(public_path('avatars'), $uniqueFileName);
+            if (isset($data['avatar'])) {
+                $uniqueFileName = Str::uuid()->toString() . '.' . $data['avatar']->extension();
+                $data['avatar']->move(public_path('avatars'), $uniqueFileName);
+            }
+            $user = User::where('id', $id)->first();
+            $user->name = $data['username'];
+            $user->email = $data['email'];
+            $user->address = $data['address'];
+            $user->gender = $data['gender'];
+            $user->role_id = $data['role_id'];
+            $user->birthdate = $data['birthdate'];
+            if (isset($uniqueFileName) && $uniqueFileName != '') {
+                $user->avatar = $uniqueFileName;
+            }
+            $user->save();
+            $message = MessageContent::getMessage('update_success');
+            return redirect()->route('admin.list_user')->with('success', $message);
+        } catch (\Exception $e) {
+            $message = MessageContent::getMessage('update_failed');
+            return redirect()->back()->with('failed', $message);
         }
-        $user = User::where('id', $id)->first();
-        $user->name = $data['username'];
-        $user->email = $data['email'];
-        $user->address = $data['address'];
-        $user->gender = $data['gender'];
-        $user->role_id = $data['role_id'];
-        $user->birthdate = $data['birthdate'];
-        if (isset($uniqueFileName) && $uniqueFileName != '') {
-            $user->avatar = $uniqueFileName;
-        }
-        $user->save();
-        $message = MessageContent::getMessage('update_success');
-        return redirect()->route('admin.list_user')->with('success', $message);
-    } catch (\Exception $e) {
-        $message = MessageContent::getMessage('update_failed');
-        return redirect()->back()->with('failed', $message);
-    }
     }
 
     public function detailAnimal($id = 1)
@@ -122,57 +122,58 @@ class AdminController extends Controller
         ));
     }
 
-    public function dashBoard(){
+    public function dashBoard()
+    {
         $user = User::count();
         $animalDetail = AnimalDetail::count();
         $post = Post::count();
         $reward = DB::table('reward_between_user')
-        ->join('users', 'users.id', '=', 'reward_between_user.user_id')
-        ->join('reward', 'reward.id', '=', 'reward_between_user.reward_id')
-        ->select('users.name', 'reward.reward_name', 'reward.reward_score', 'reward_between_user.created_at')
-        ->count();
+            ->join('users', 'users.id', '=', 'reward_between_user.user_id')
+            ->join('reward', 'reward.id', '=', 'reward_between_user.reward_id')
+            ->select('users.name', 'reward.reward_name', 'reward.reward_score', 'reward_between_user.created_at')
+            ->count();
 
         $recordCountPlays = DB::table('history_game')
-    ->select(DB::raw('MONTH(created_at) as month'), DB::raw('count(*) as count'))
-    ->groupBy(DB::raw('MONTH(created_at)'))
-    ->pluck('count', 'month')
-    ->toArray();
-    $monthlyCountPlays = array_fill(1, 12, 0);
-    foreach ($recordCountPlays as $month => $count) {
-        $monthlyCountPlays[$month] = $count;
-    }
+            ->select(DB::raw('MONTH(created_at) as month'), DB::raw('count(*) as count'))
+            ->groupBy(DB::raw('MONTH(created_at)'))
+            ->pluck('count', 'month')
+            ->toArray();
+        $monthlyCountPlays = array_fill(1, 12, 0);
+        foreach ($recordCountPlays as $month => $count) {
+            $monthlyCountPlays[$month] = $count;
+        }
 
-    $recordCountRewards = DB::table('reward_between_user')
-    ->select(DB::raw('MONTH(created_at) as month'), DB::raw('count(*) as count'))
-    ->groupBy(DB::raw('MONTH(created_at)'))
-    ->pluck('count', 'month')
-    ->toArray();
-    $monthlyCountRewards = array_fill(1, 12, 0);
-    foreach ($recordCountRewards as $month => $count) {
-        $monthlyCountRewards[$month] = $count;
-    }
+        $recordCountRewards = DB::table('reward_between_user')
+            ->select(DB::raw('MONTH(created_at) as month'), DB::raw('count(*) as count'))
+            ->groupBy(DB::raw('MONTH(created_at)'))
+            ->pluck('count', 'month')
+            ->toArray();
+        $monthlyCountRewards = array_fill(1, 12, 0);
+        foreach ($recordCountRewards as $month => $count) {
+            $monthlyCountRewards[$month] = $count;
+        }
 
-    $recordCountUsers = DB::table('users')
-    ->select(DB::raw('MONTH(created_at) as month'), DB::raw('count(*) as count'))
-    ->groupBy(DB::raw('MONTH(created_at)'))
-    ->pluck('count', 'month')
-    ->toArray();
-    $monthlyCountUsers = array_fill(1, 12, 0);
-    foreach ($recordCountUsers as $month => $count) {
-        $monthlyCountUsers[$month] = $count;
-    }
+        $recordCountUsers = DB::table('users')
+            ->select(DB::raw('MONTH(created_at) as month'), DB::raw('count(*) as count'))
+            ->groupBy(DB::raw('MONTH(created_at)'))
+            ->pluck('count', 'month')
+            ->toArray();
+        $monthlyCountUsers = array_fill(1, 12, 0);
+        foreach ($recordCountUsers as $month => $count) {
+            $monthlyCountUsers[$month] = $count;
+        }
 
-    $recordCountPosts = DB::table('post')
-    ->select(DB::raw('MONTH(created_at) as month'), DB::raw('count(*) as count'))
-    ->groupBy(DB::raw('MONTH(created_at)'))
-    ->pluck('count', 'month')
-    ->toArray();
-    $monthlyCountPosts = array_fill(1, 12, 0);
-    foreach ($recordCountPosts as $month => $count) {
-        $monthlyCountPosts[$month] = $count;
-    }
-    
-        return view('admin.home',compact('user', 'animalDetail', 'post','reward','monthlyCountPlays','monthlyCountRewards','monthlyCountUsers','monthlyCountPosts'));
+        $recordCountPosts = DB::table('post')
+            ->select(DB::raw('MONTH(created_at) as month'), DB::raw('count(*) as count'))
+            ->groupBy(DB::raw('MONTH(created_at)'))
+            ->pluck('count', 'month')
+            ->toArray();
+        $monthlyCountPosts = array_fill(1, 12, 0);
+        foreach ($recordCountPosts as $month => $count) {
+            $monthlyCountPosts[$month] = $count;
+        }
+
+        return view('admin.home', compact('user', 'animalDetail', 'post', 'reward', 'monthlyCountPlays', 'monthlyCountRewards', 'monthlyCountUsers', 'monthlyCountPosts'));
     }
     public function listUser()
     {
@@ -180,7 +181,8 @@ class AdminController extends Controller
         return view('admin.users.list-user', compact('users'));
     }
 
-    public function searchUser(Request $request){
+    public function searchUser(Request $request)
+    {
         $data = $request->all();
         $key_word = $data['key_word'];
         $role_id = $data['role_id'];
@@ -194,11 +196,11 @@ class AdminController extends Controller
         }
 
         if ($role_id !== null) {
-            $query->where('role_id',$role_id );
+            $query->where('role_id', $role_id);
         }
 
         if (!empty($date_filter)) {
-            $query->whereDate('created_at',$date_filter);
+            $query->whereDate('created_at', $date_filter);
         }
 
         $users = $query->paginate(5);
@@ -208,14 +210,14 @@ class AdminController extends Controller
     public function deleteUser($id)
     {
         try {
-        MessageContent::loadMessages();
-        User::destroy($id);
-        $message = MessageContent::getMessage('delete_success');
-        return redirect()->route('admin.list_user')->with('success', $message);
-    } catch (\Exception $e) {
-        $message = MessageContent::getMessage('delete_success');
-        return redirect()->back()->with('failed', $message);
-    }      
+            MessageContent::loadMessages();
+            User::destroy($id);
+            $message = MessageContent::getMessage('delete_success');
+            return redirect()->route('admin.list_user')->with('success', $message);
+        } catch (\Exception $e) {
+            $message = MessageContent::getMessage('delete_success');
+            return redirect()->back()->with('failed', $message);
+        }
     }
 
     public function viewAddAnimal()
@@ -234,46 +236,46 @@ class AdminController extends Controller
         MessageContent::loadMessages();
         $data = $request->all();
         try {
-        if (isset($data['animal_sound']) && $data['animal_sound'] != null) {
-            $uniqueFileSoundName = Str::uuid()->toString() . '.' . $data['animal_sound']->extension();
-            $data['animal_sound']->move(public_path('animal_sounds'), $uniqueFileSoundName);
-        } else {
-            $uniqueFileSoundName = null;
-        }
-        $animalDetail = new AnimalDetail();
-        $animalDetail->animal_name = $data['animal_name'];
-        $animalDetail->animal_scientific_name = $data['animal_scientific_name'];
-        $animalDetail->animal_description = $data['animal_description'];
-        $animalDetail->appearance_description = $data['appearance_description'];
-        $animalDetail->geography_description = $data['geography_description'];
-        $animalDetail->habit_lifestyle_description = $data['habit_lifestyle_description'];
-        $animalDetail->diet_nutrition_description = $data['diet_nutrition_description'];
-        $animalDetail->mating_habit_description = $data['mating_habit_description'];
-        $animalDetail->population_threat = $data['population_threat'];
-        $animalDetail->population_number = $data['population_number'];
-        $animalDetail->ecological_niche = $data['ecological_niche'];
-        $animalDetail->fun_fact = $data['fun_fact'];
-        $animalDetail->animal_length = $data['animal_length'];
-        $animalDetail->animal_weight = $data['animal_weight'];
-        $animalDetail->population_size = $data['population_size'];
-        $animalDetail->top_speed = $data['top_speed'];
-        $animalDetail->animal_swing = $data['animal_swing'];
-        $animalDetail->mating_behavior = $data['mating_behavior'];
-        $animalDetail->reproduction_season = $data['reproduction_season'];
-        $animalDetail->pregnancy_duration = $data['pregnancy_duration'];
-        $animalDetail->baby_carrying = $data['baby_carrying'];
-        $animalDetail->independent_age = $data['independent_age'];
-        $animalDetail->avg_lifespan = $data['avg_lifespan'];
-        $animalDetail->animal_sound = $uniqueFileSoundName;
-        $animalDetail->animal_video = $data['animal_video'];
-        $animalDetail->conservation_status_id = $data['conservation_status_id'];
-        $animalDetail->activity_time_id = $data['activity_time_id'];
-        $animalDetail->diet_type_id = $data['diet_type'];
-        $animalDetail->category_id = $data['category_id'];
-        $animalDetail->population_trending_id = $data['population_trending_id'];
-        $animalDetail->save();
+            if (isset($data['animal_sound']) && $data['animal_sound'] != null) {
+                $uniqueFileSoundName = Str::uuid()->toString() . '.' . $data['animal_sound']->extension();
+                $data['animal_sound']->move(public_path('animal_sounds'), $uniqueFileSoundName);
+            } else {
+                $uniqueFileSoundName = null;
+            }
+            $animalDetail = new AnimalDetail();
+            $animalDetail->animal_name = $data['animal_name'];
+            $animalDetail->animal_scientific_name = $data['animal_scientific_name'];
+            $animalDetail->animal_description = $data['animal_description'];
+            $animalDetail->appearance_description = $data['appearance_description'];
+            $animalDetail->geography_description = $data['geography_description'];
+            $animalDetail->habit_lifestyle_description = $data['habit_lifestyle_description'];
+            $animalDetail->diet_nutrition_description = $data['diet_nutrition_description'];
+            $animalDetail->mating_habit_description = $data['mating_habit_description'];
+            $animalDetail->population_threat = $data['population_threat'];
+            $animalDetail->population_number = $data['population_number'];
+            $animalDetail->ecological_niche = $data['ecological_niche'];
+            $animalDetail->fun_fact = $data['fun_fact'];
+            $animalDetail->animal_length = $data['animal_length'];
+            $animalDetail->animal_weight = $data['animal_weight'];
+            $animalDetail->population_size = $data['population_size'];
+            $animalDetail->top_speed = $data['top_speed'];
+            $animalDetail->animal_swing = $data['animal_swing'];
+            $animalDetail->mating_behavior = $data['mating_behavior'];
+            $animalDetail->reproduction_season = $data['reproduction_season'];
+            $animalDetail->pregnancy_duration = $data['pregnancy_duration'];
+            $animalDetail->baby_carrying = $data['baby_carrying'];
+            $animalDetail->independent_age = $data['independent_age'];
+            $animalDetail->avg_lifespan = $data['avg_lifespan'];
+            $animalDetail->animal_sound = $uniqueFileSoundName;
+            $animalDetail->animal_video = $data['animal_video'];
+            $animalDetail->conservation_status_id = $data['conservation_status_id'];
+            $animalDetail->activity_time_id = $data['activity_time_id'];
+            $animalDetail->diet_type_id = $data['diet_type'];
+            $animalDetail->category_id = $data['category_id'];
+            $animalDetail->population_trending_id = $data['population_trending_id'];
+            $animalDetail->save();
 
-        $message = MessageContent::getMessage('create_success');
+            $message = MessageContent::getMessage('create_success');
             return redirect()->route('list_animal')->with('success', $message);
         } catch (\Exception $e) {
             $message = MessageContent::getMessage('create_failed');
@@ -298,60 +300,60 @@ class AdminController extends Controller
         MessageContent::loadMessages();
         $data = $request->all();
         try {
-        if (isset($data['animal_sound']) && $data['animal_sound'] != null) {
-            $uniqueFileSoundName = Str::uuid()->toString() . '.' . $data['animal_sound']->extension();
-            $data['animal_sound']->move(public_path('animal_sounds'), $uniqueFileSoundName);
-        }
-        $animalDetail = AnimalDetail::where('id', $id)->first();
-        $animalDetail->animal_name = $data['animal_name'];
-        $animalDetail->animal_scientific_name = $data['animal_scientific_name'];
-        $animalDetail->animal_description = $data['animal_description'];
-        $animalDetail->appearance_description = $data['appearance_description'];
-        $animalDetail->geography_description = $data['geography_description'];
-        $animalDetail->habit_lifestyle_description = $data['habit_lifestyle_description'];
-        $animalDetail->diet_nutrition_description = $data['diet_nutrition_description'];
-        $animalDetail->mating_habit_description = $data['mating_habit_description'];
-        $animalDetail->population_threat = $data['population_threat'];
-        $animalDetail->population_number = $data['population_number'];
-        $animalDetail->ecological_niche = $data['ecological_niche'];
-        $animalDetail->fun_fact = $data['fun_fact'];
-        $animalDetail->animal_length = $data['animal_length'];
-        $animalDetail->animal_weight = $data['animal_weight'];
-        $animalDetail->population_size = $data['population_size'];
-        $animalDetail->top_speed = $data['top_speed'];
-        $animalDetail->animal_swing = $data['animal_swing'];
-        $animalDetail->mating_behavior = $data['mating_behavior'];
-        $animalDetail->reproduction_season = $data['reproduction_season'];
-        $animalDetail->pregnancy_duration = $data['pregnancy_duration'];
-        $animalDetail->baby_carrying = $data['baby_carrying'];
-        $animalDetail->independent_age = $data['independent_age'];
-        $animalDetail->avg_lifespan = $data['avg_lifespan'];
-        if (isset($data['animal_sound']) && $data['animal_sound'] != null) {
-            $animalDetail->animal_sound = $uniqueFileSoundName;
-        }
-        $animalDetail->animal_video = $data['animal_video'];
-        $animalDetail->conservation_status_id = $data['conservation_status_id'];
-        $animalDetail->activity_time_id = $data['activity_time_id'];
-        $animalDetail->diet_type_id = $data['diet_type'];
-        $animalDetail->category_id = $data['category_id'];
-        $animalDetail->population_trending_id = $data['population_trending_id'];
-        $animalDetail->save();
+            if (isset($data['animal_sound']) && $data['animal_sound'] != null) {
+                $uniqueFileSoundName = Str::uuid()->toString() . '.' . $data['animal_sound']->extension();
+                $data['animal_sound']->move(public_path('animal_sounds'), $uniqueFileSoundName);
+            }
+            $animalDetail = AnimalDetail::where('id', $id)->first();
+            $animalDetail->animal_name = $data['animal_name'];
+            $animalDetail->animal_scientific_name = $data['animal_scientific_name'];
+            $animalDetail->animal_description = $data['animal_description'];
+            $animalDetail->appearance_description = $data['appearance_description'];
+            $animalDetail->geography_description = $data['geography_description'];
+            $animalDetail->habit_lifestyle_description = $data['habit_lifestyle_description'];
+            $animalDetail->diet_nutrition_description = $data['diet_nutrition_description'];
+            $animalDetail->mating_habit_description = $data['mating_habit_description'];
+            $animalDetail->population_threat = $data['population_threat'];
+            $animalDetail->population_number = $data['population_number'];
+            $animalDetail->ecological_niche = $data['ecological_niche'];
+            $animalDetail->fun_fact = $data['fun_fact'];
+            $animalDetail->animal_length = $data['animal_length'];
+            $animalDetail->animal_weight = $data['animal_weight'];
+            $animalDetail->population_size = $data['population_size'];
+            $animalDetail->top_speed = $data['top_speed'];
+            $animalDetail->animal_swing = $data['animal_swing'];
+            $animalDetail->mating_behavior = $data['mating_behavior'];
+            $animalDetail->reproduction_season = $data['reproduction_season'];
+            $animalDetail->pregnancy_duration = $data['pregnancy_duration'];
+            $animalDetail->baby_carrying = $data['baby_carrying'];
+            $animalDetail->independent_age = $data['independent_age'];
+            $animalDetail->avg_lifespan = $data['avg_lifespan'];
+            if (isset($data['animal_sound']) && $data['animal_sound'] != null) {
+                $animalDetail->animal_sound = $uniqueFileSoundName;
+            }
+            $animalDetail->animal_video = $data['animal_video'];
+            $animalDetail->conservation_status_id = $data['conservation_status_id'];
+            $animalDetail->activity_time_id = $data['activity_time_id'];
+            $animalDetail->diet_type_id = $data['diet_type'];
+            $animalDetail->category_id = $data['category_id'];
+            $animalDetail->population_trending_id = $data['population_trending_id'];
+            $animalDetail->save();
 
-        $message = MessageContent::getMessage('update_success');
-        return redirect()->route('list_animal')->with('success', $message);
-    } catch (\Exception $e) {
-        $message = MessageContent::getMessage('update_failed');
+            $message = MessageContent::getMessage('update_success');
+            return redirect()->route('list_animal')->with('success', $message);
+        } catch (\Exception $e) {
+            $message = MessageContent::getMessage('update_failed');
             return redirect()->back()->with('failed', $message);
-    }
+        }
     }
 
     public function addAnimalImage($id, Request $request)
     {
         MessageContent::loadMessages();
         $data = $request->all();
-  
+
         try {
-            foreach($data['animal_image'] as $item){
+            foreach ($data['animal_image'] as $item) {
                 $uniqueFileName = Str::uuid()->toString() . '.' . $item->extension();
                 $item->move(public_path('animal_images'), $uniqueFileName);
                 $animalImage = new Image();
@@ -360,10 +362,10 @@ class AdminController extends Controller
                 $animalImage->save();
             }
             $message = MessageContent::getMessage('create_success');
-            return redirect()->route('list_animal_image', ['id' => $id])->with('success',$message);
+            return redirect()->route('list_animal_image', ['id' => $id])->with('success', $message);
         } catch (\Exception $e) {
             $message = MessageContent::getMessage('create_failed');
-            return redirect()->route('list_animal_image', ['id' => $id])->with('failed',$message);
+            return redirect()->route('list_animal_image', ['id' => $id])->with('failed', $message);
         }
     }
 
@@ -372,7 +374,7 @@ class AdminController extends Controller
         MessageContent::loadMessages();
         Image::destroy($id);
         $message = MessageContent::getMessage('delete_success');
-        return redirect()->back()->with('success',$message);
+        return redirect()->back()->with('success', $message);
     }
 
     public function listAnimal()
@@ -381,7 +383,8 @@ class AdminController extends Controller
         return view('admin.animals.list-animal', compact('animalDetail'));
     }
 
-    public function searchAnimal(Request $request){
+    public function searchAnimal(Request $request)
+    {
         $data = $request->all();
         $key_word = $data['key_word'];
         $key_word1 = $data['key_word1'];
@@ -398,10 +401,10 @@ class AdminController extends Controller
         }
 
         if (!empty($date_filter)) {
-            $query->whereDate('created_at',$date_filter);
+            $query->whereDate('created_at', $date_filter);
         }
 
-        
+
         $animalDetail = $query->paginate(5);
         return view('admin.animals.list-animal', compact('animalDetail'));
     }
@@ -418,14 +421,14 @@ class AdminController extends Controller
     {
         MessageContent::loadMessages();
         $animalDetail = AnimalDetail::where('id', $id)->first();
-            try {
-                $animalDetail->areas()->attach($request->area_id);
-                $message = MessageContent::getMessage('create_success');
-                return redirect()->route('list_animal_area', ['id' => $id])->with('success',$message);
-            } catch (\Exception $e) {
-                $message = MessageContent::getMessage('create_failed');
-                return redirect()->route('list_animal_area', ['id' => $id])->with('failed',$message);
-            }
+        try {
+            $animalDetail->areas()->attach($request->area_id);
+            $message = MessageContent::getMessage('create_success');
+            return redirect()->route('list_animal_area', ['id' => $id])->with('success', $message);
+        } catch (\Exception $e) {
+            $message = MessageContent::getMessage('create_failed');
+            return redirect()->route('list_animal_area', ['id' => $id])->with('failed', $message);
+        }
     }
 
     public function deleteAreaAnimal($id, $id2)
@@ -448,15 +451,15 @@ class AdminController extends Controller
     public function addClimateAnimal($id, Request $request)
     {
         MessageContent::loadMessages();
-        try { 
-        $animalDetail = AnimalDetail::where('id', $id)->first();
-        $animalDetail->climates()->attach($request->climate_id);
-        $message = MessageContent::getMessage('create_success');
-        return redirect()->route('list_animal_climate', ['id' => $id])->with('success', $message);
+        try {
+            $animalDetail = AnimalDetail::where('id', $id)->first();
+            $animalDetail->climates()->attach($request->climate_id);
+            $message = MessageContent::getMessage('create_success');
+            return redirect()->route('list_animal_climate', ['id' => $id])->with('success', $message);
         } catch (\Exception $e) {
-        $message = MessageContent::getMessage('create_failed');
-        return redirect()->route('list_animal_climate', ['id' => $id])->with('failed', $message);
-    }
+            $message = MessageContent::getMessage('create_failed');
+            return redirect()->route('list_animal_climate', ['id' => $id])->with('failed', $message);
+        }
     }
 
     public function deleteClimateAnimal($id, $id2)
@@ -465,7 +468,7 @@ class AdminController extends Controller
         $animalDetail = AnimalDetail::where('id', $id)->first();
         $animalDetail->climates()->detach($id2);
         $message = MessageContent::getMessage('delete_success');
-        return redirect()->route('list_animal_climate', ['id' => $id])->with('success',$message);
+        return redirect()->route('list_animal_climate', ['id' => $id])->with('success', $message);
     }
 
     public function listAnimalNation($id)
@@ -480,13 +483,13 @@ class AdminController extends Controller
     {
         MessageContent::loadMessages();
         try {
-        $animalDetail = AnimalDetail::where('id', $id)->first();
-        $animalDetail->nations()->attach($request->nation_id);
-        $message = MessageContent::getMessage('create_success');
-        return redirect()->route('list_animal_nation', ['id' => $id])->with('success', $message );
+            $animalDetail = AnimalDetail::where('id', $id)->first();
+            $animalDetail->nations()->attach($request->nation_id);
+            $message = MessageContent::getMessage('create_success');
+            return redirect()->route('list_animal_nation', ['id' => $id])->with('success', $message);
         } catch (\Exception $e) {
-        $message = MessageContent::getMessage('create_failed');
-        return redirect()->route('list_animal_nation', ['id' => $id])->with('failed', $message );
+            $message = MessageContent::getMessage('create_failed');
+            return redirect()->route('list_animal_nation', ['id' => $id])->with('failed', $message);
         }
     }
 
@@ -511,13 +514,13 @@ class AdminController extends Controller
     {
         MessageContent::loadMessages();
         try {
-        $animalDetail = AnimalDetail::where('id', $id)->first();
-        $animalDetail->colors()->attach($request->color_id);
-        $message = MessageContent::getMessage('create_success');
-        return redirect()->route('list_animal_color', ['id' => $id])->with('success', $message);
+            $animalDetail = AnimalDetail::where('id', $id)->first();
+            $animalDetail->colors()->attach($request->color_id);
+            $message = MessageContent::getMessage('create_success');
+            return redirect()->route('list_animal_color', ['id' => $id])->with('success', $message);
         } catch (\Exception $e) {
-        $message = MessageContent::getMessage('delete_success');
-        return redirect()->route('list_animal_color', ['id' => $id])->with('failed', $message);
+            $message = MessageContent::getMessage('delete_success');
+            return redirect()->route('list_animal_color', ['id' => $id])->with('failed', $message);
         }
     }
 
@@ -527,7 +530,7 @@ class AdminController extends Controller
         $animalDetail = AnimalDetail::where('id', $id)->first();
         $animalDetail->colors()->detach($id2);
         $message = MessageContent::getMessage('delete_success');
-        return redirect()->route('list_animal_color', ['id' => $id])->with('success',$message);
+        return redirect()->route('list_animal_color', ['id' => $id])->with('success', $message);
     }
 
     public function listAnimalBiome($id)
@@ -542,13 +545,13 @@ class AdminController extends Controller
     {
         MessageContent::loadMessages();
         try {
-        $animalDetail = AnimalDetail::where('id', $id)->first();
-        $animalDetail->biomes()->attach($request->biome_id);
-        $message = MessageContent::getMessage('create_success');
-        return redirect()->route('list_animal_biome', ['id' => $id])->with('success', $message);
+            $animalDetail = AnimalDetail::where('id', $id)->first();
+            $animalDetail->biomes()->attach($request->biome_id);
+            $message = MessageContent::getMessage('create_success');
+            return redirect()->route('list_animal_biome', ['id' => $id])->with('success', $message);
         } catch (\Exception $e) {
-        $message = MessageContent::getMessage('create_failed');
-        return redirect()->route('list_animal_biome', ['id' => $id])->with('failed',  $message);
+            $message = MessageContent::getMessage('create_failed');
+            return redirect()->route('list_animal_biome', ['id' => $id])->with('failed',  $message);
         }
     }
 
@@ -573,13 +576,13 @@ class AdminController extends Controller
     {
         MessageContent::loadMessages();
         try {
-        $animalDetail = AnimalDetail::where('id', $id)->first();
-        $animalDetail->oceans()->attach($request->ocean_id);
-        $message = MessageContent::getMessage('create_success');
-        return redirect()->route('list_animal_ocean', ['id' => $id])->with('success', $message);
+            $animalDetail = AnimalDetail::where('id', $id)->first();
+            $animalDetail->oceans()->attach($request->ocean_id);
+            $message = MessageContent::getMessage('create_success');
+            return redirect()->route('list_animal_ocean', ['id' => $id])->with('success', $message);
         } catch (\Exception $e) {
-        $message = MessageContent::getMessage('create_failed');
-        return redirect()->route('list_animal_ocean', ['id' => $id])->with('failed', $message);
+            $message = MessageContent::getMessage('create_failed');
+            return redirect()->route('list_animal_ocean', ['id' => $id])->with('failed', $message);
         }
     }
 
@@ -589,7 +592,7 @@ class AdminController extends Controller
         $animalDetail = AnimalDetail::where('id', $id)->first();
         $animalDetail->oceans()->detach($id2);
         $message = MessageContent::getMessage('delete_success');
-        return redirect()->route('list_animal_ocean', ['id' => $id])->with('success', $message );
+        return redirect()->route('list_animal_ocean', ['id' => $id])->with('success', $message);
     }
 
     public function listAnimalImage($id)
@@ -616,17 +619,13 @@ class AdminController extends Controller
         // ]);
     }
 
-    public function editAnimalDetail()
-    {
-    }
+    public function editAnimalDetail() {}
 
     public function classificationView()
     {
         return view('admin.animals.add-classification-animal');
     }
-    public function classificationStore()
-    {
-    }
+    public function classificationStore() {}
 
     public function deleteAnimalDetail($id)
     {
@@ -648,7 +647,8 @@ class AdminController extends Controller
         return view('admin.posts.list', compact('posts'));
     }
 
-    public function searchPost(Request $request){
+    public function searchPost(Request $request)
+    {
         $data = $request->all();
         $key_word = $data['key_word'];
         $status = $data['status'];
@@ -660,11 +660,11 @@ class AdminController extends Controller
         }
 
         if (!empty($status)) {
-            $query->where('status',$status );
+            $query->where('status', $status);
         }
 
         if (!empty($date_filter)) {
-            $query->whereDate('created_at',$date_filter);
+            $query->whereDate('created_at', $date_filter);
         }
 
         $posts = $query->paginate(5);
@@ -697,44 +697,48 @@ class AdminController extends Controller
         }
     }
 
-    public function listTopicsView(){
+    public function listTopicsView()
+    {
         $topics = Topic::all();
-        return view('admin.games.list-topic',compact('topics'));
+        return view('admin.games.list-topic', compact('topics'));
     }
 
-    public function viewCreateTopic(){
+    public function viewCreateTopic()
+    {
         $mode = 'add';
         return view('admin.games.add-topic', compact('mode'));
     }
 
-    public function createTopic(Request $request){
+    public function createTopic(Request $request)
+    {
         MessageContent::loadMessages();
         $data = $request->all();
         try {
-        if (isset($data['topic_image'])) {
-            $uniqueFileName = Str::uuid()->toString() . '.' . $data['topic_image']->extension();
-            $data['topic_image']->move(public_path('topics'), $uniqueFileName);
-        }
-        $topic = new Topic();
-        $topic->topic_name = $data['topic_name'];
-        if (isset($uniqueFileName) && $uniqueFileName != '') {
-            $topic->topic_image = $uniqueFileName;
-        }
-        $topic->topic_description = $data['topic_description'];
-        $topic->score_per_question = (int)$data['score_per_question'];
-        $topic->save();
-        $message = MessageContent::getMessage('create_success');
+            if (isset($data['topic_image'])) {
+                $uniqueFileName = Str::uuid()->toString() . '.' . $data['topic_image']->extension();
+                $data['topic_image']->move(public_path('topics'), $uniqueFileName);
+            }
+            $topic = new Topic();
+            $topic->topic_name = $data['topic_name'];
+            if (isset($uniqueFileName) && $uniqueFileName != '') {
+                $topic->topic_image = $uniqueFileName;
+            }
+            $topic->topic_description = $data['topic_description'];
+            $topic->score_per_question = (int)$data['score_per_question'];
+            $topic->save();
+            $message = MessageContent::getMessage('create_success');
             return redirect()->route('admin.list_topic')->with('success', $message);
         } catch (\Exception $e) {
-        $message = MessageContent::getMessage('create_failed');
+            $message = MessageContent::getMessage('create_failed');
             return back()->with('failed', $message);
         }
     }
 
 
-    public function viewEditTopic($id){
+    public function viewEditTopic($id)
+    {
         $mode = 'edit';
-        $topic = Topic::where('id',$id)->first();
+        $topic = Topic::where('id', $id)->first();
         return view('admin.games.add-topic', compact('mode', 'topic'));
     }
 
@@ -743,21 +747,21 @@ class AdminController extends Controller
         MessageContent::loadMessages();
         $data = $request->all();
         try {
-        if (isset($data['topic_image'])) {
-            $uniqueFileName = Str::uuid()->toString() . '.' . $data['topic_image']->extension();
-            $data['topic_image']->move(public_path('topics'), $uniqueFileName);
-        }
-        $topic = Topic::where('id',$id)->first();
-        $topic->topic_name = $data['topic_name'];
-        if (isset($uniqueFileName) && $uniqueFileName != '') {
-            $topic->topic_image = $uniqueFileName;
-        }
-        $topic->topic_description = $data['topic_description'];
-        $topic->score_per_question = (int)$data['score_per_question'];
-        $topic->save();
+            if (isset($data['topic_image'])) {
+                $uniqueFileName = Str::uuid()->toString() . '.' . $data['topic_image']->extension();
+                $data['topic_image']->move(public_path('topics'), $uniqueFileName);
+            }
+            $topic = Topic::where('id', $id)->first();
+            $topic->topic_name = $data['topic_name'];
+            if (isset($uniqueFileName) && $uniqueFileName != '') {
+                $topic->topic_image = $uniqueFileName;
+            }
+            $topic->topic_description = $data['topic_description'];
+            $topic->score_per_question = (int)$data['score_per_question'];
+            $topic->save();
 
-        $message = MessageContent::getMessage('update_success');
-        return redirect()->route('admin.list_topic')->with('success', $message);
+            $message = MessageContent::getMessage('update_success');
+            return redirect()->route('admin.list_topic')->with('success', $message);
         } catch (\Exception $e) {
             $message = MessageContent::getMessage('update_failed');
             return redirect()->back()->with('failed', $message);
@@ -767,100 +771,106 @@ class AdminController extends Controller
     public function deleteTopic($id)
     {
         try {
-        MessageContent::loadMessages();
-        Topic::destroy($id);
-        $message = MessageContent::getMessage('delete_success');
-        return redirect()->route('admin.list_topic')->with('success', $message);
-    } catch (\Exception $e) {
-        $message = MessageContent::getMessage('delete_success');
-        return redirect()->back()->with('failed', $message);
-    }      
+            MessageContent::loadMessages();
+            Topic::destroy($id);
+            $message = MessageContent::getMessage('delete_success');
+            return redirect()->route('admin.list_topic')->with('success', $message);
+        } catch (\Exception $e) {
+            $message = MessageContent::getMessage('delete_success');
+            return redirect()->back()->with('failed', $message);
+        }
     }
 
-    public function listQuestionsView($id){
+    public function listQuestionsView($id)
+    {
         $questions = Question::with('answers')->where('topic_id', $id)->get();
-        return view('admin.games.list-question',compact('questions','id'));
+        return view('admin.games.list-question', compact('questions', 'id'));
     }
 
-    public function createQuestionAnswer($id,Request $request){
+    public function createQuestionAnswer($id, Request $request)
+    {
         MessageContent::loadMessages();
         $data = $request->all();
         try {
-        $question = new Question();
-        $question->question_content = $data['question_content'];
-        $question->topic_id = $id;
-        $question->save();
+            $question = new Question();
+            $question->question_content = $data['question_content'];
+            $question->topic_id = $id;
+            $question->save();
 
-        $data = $request->all();
-        $data['answer_status'] = (int)$data['answer_status'];
-            foreach($data['answer_content'] as $key => $answer) {
+            $data = $request->all();
+            $data['answer_status'] = (int)$data['answer_status'];
+            foreach ($data['answer_content'] as $key => $answer) {
                 $answers = new Answer();
                 $answers->answer_content = $answer;
-                if($key == $data['answer_status']){
+                if ($key == $data['answer_status']) {
                     $answers->answer_status = 1;
-                }else{
+                } else {
                     $answers->answer_status = 0;
                 }
                 $answers->question_id = $question->id;
                 $answers->save();
-        }
-        $message = MessageContent::getMessage('create_success');
-            return redirect()->route('admin.list_question',['id' => $id])->with('success', $message);
+            }
+            $message = MessageContent::getMessage('create_success');
+            return redirect()->route('admin.list_question', ['id' => $id])->with('success', $message);
         } catch (\Exception $e) {
-        $message = MessageContent::getMessage('create_failed');
+            $message = MessageContent::getMessage('create_failed');
             return back()->with('failed', $message);
         }
     }
 
-    public function updateQuestionAnswer($id,Request $request){
+    public function updateQuestionAnswer($id, Request $request)
+    {
         MessageContent::loadMessages();
         $data = $request->all();
 
         try {
-        $question = Question::where('id',$id)->first();
-        $question->question_content = $data['question_content'];
-        $question->save();
-        
-        $length = count($data['answer_content']);
-        $length1 = count($data['hidden_id']);
-        $sum_length = $length + $length1%2;
-        $data['answer_status'] = (int)$data['answer_status'];
+            $question = Question::where('id', $id)->first();
+            $question->question_content = $data['question_content'];
+            $question->save();
 
-        for ($i = 0; $i < $sum_length; $i++) {
-            $answer = Answer::where('id',$data['hidden_id'][$i])->first();
-            $answer->answer_content = $data['answer_content'][$i];
-            if($i == $data['answer_status']){
-                $answer->answer_status = 1 ;
-            }else{
-                $answer->answer_status = 0 ;
+            $length = count($data['answer_content']);
+            $length1 = count($data['hidden_id']);
+            $sum_length = $length + $length1 % 2;
+            $data['answer_status'] = (int)$data['answer_status'];
+
+            for ($i = 0; $i < $sum_length; $i++) {
+                $answer = Answer::where('id', $data['hidden_id'][$i])->first();
+                $answer->answer_content = $data['answer_content'][$i];
+                if ($i == $data['answer_status']) {
+                    $answer->answer_status = 1;
+                } else {
+                    $answer->answer_status = 0;
+                }
+                $answer->save();
             }
-            $answer->save();
-        }
 
-        $message = MessageContent::getMessage('update_success');
-            return redirect()->route('admin.list_question',['id' => $data['topic_id']])->with('success', $message);
+            $message = MessageContent::getMessage('update_success');
+            return redirect()->route('admin.list_question', ['id' => $data['topic_id']])->with('success', $message);
         } catch (\Exception $e) {
-        $message = MessageContent::getMessage('update_failed');
+            $message = MessageContent::getMessage('update_failed');
             return back()->with('failed', $message);
         }
     }
-    public function deleteQuestion($id,$topic_id){
+    public function deleteQuestion($id, $topic_id)
+    {
         try {
             MessageContent::loadMessages();
             Question::destroy($id);
             $message = MessageContent::getMessage('delete_success');
-            return redirect()->route('admin.list_question',['id' => $topic_id])->with('success', $message);
+            return redirect()->route('admin.list_question', ['id' => $topic_id])->with('success', $message);
         } catch (\Exception $e) {
             $message = MessageContent::getMessage('delete_success');
             return redirect()->back()->with('failed', $message);
-        } 
+        }
     }
-    public function listRewardsView(){
+    public function listRewardsView()
+    {
         $rewards = Reward::all();
-        return view('admin.games.list-reward',compact('rewards'));
+        return view('admin.games.list-reward', compact('rewards'));
     }
 
-    public function createReward(Request $request){
+    public function createReward(Request $request)
+    {
         $data = $request->all();
         try {
             MessageContent::loadMessages();
@@ -873,15 +883,15 @@ class AdminController extends Controller
         } catch (\Exception $e) {
             $message = MessageContent::getMessage('create_failed');
             return redirect()->back()->with('failed', $message);
-        } 
-
+        }
     }
 
-    public function updateReward($id,Request $request){
+    public function updateReward($id, Request $request)
+    {
         $data = $request->all();
         try {
             MessageContent::loadMessages();
-            $reward = Reward::where('id',$id)->first();
+            $reward = Reward::where('id', $id)->first();
             $reward->reward_name = $data['reward_name'];
             $reward->reward_score = (int)$data['reward_score'];
             $reward->save();
@@ -890,11 +900,11 @@ class AdminController extends Controller
         } catch (\Exception $e) {
             $message = MessageContent::getMessage('update_failed');
             return redirect()->back()->with('failed', $message);
-        } 
-
+        }
     }
 
-    public function deleteReward($id){
+    public function deleteReward($id)
+    {
         try {
             MessageContent::loadMessages();
             Reward::destroy($id);
@@ -903,22 +913,24 @@ class AdminController extends Controller
         } catch (\Exception $e) {
             $message = MessageContent::getMessage('delete_success');
             return redirect()->back()->with('failed', $message);
-        } 
+        }
     }
 
-    public function getHistoryReward(){
+    public function getHistoryReward()
+    {
         $results = DB::table('reward_between_user')
-        ->join('users', 'users.id', '=', 'reward_between_user.user_id')
-        ->join('reward', 'reward.id', '=', 'reward_between_user.reward_id')
-        ->select('users.name', 'reward.reward_name', 'reward.reward_score', 'reward_between_user.created_at')
-        ->get();
-        return view('admin.games.list-history-reward',compact('results'));
+            ->join('users', 'users.id', '=', 'reward_between_user.user_id')
+            ->join('reward', 'reward.id', '=', 'reward_between_user.reward_id')
+            ->select('users.name', 'reward.reward_name', 'reward.reward_score', 'reward_between_user.created_at')
+            ->get();
+        return view('admin.games.list-history-reward', compact('results'));
     }
 
-    public function searchHistoryReward(Request $request){
+    public function searchHistoryReward(Request $request)
+    {
         $name = $request->input('key_word');
         $date = $request->input('date_filter');
-    
+
         $results = DB::table('reward_between_user')
             ->join('users', 'users.id', '=', 'reward_between_user.user_id')
             ->join('reward', 'reward.id', '=', 'reward_between_user.reward_id')
@@ -930,6 +942,6 @@ class AdminController extends Controller
                 return $query->whereDate('reward_between_user.created_at', $date);
             })
             ->get();
-        return view('admin.games.list-history-reward',compact('results'));
+        return view('admin.games.list-history-reward', compact('results'));
     }
 }
