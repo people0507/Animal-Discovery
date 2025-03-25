@@ -111,8 +111,9 @@
                                     <tr>
                                         <td>{{ $key + 1 }}</td>
                                         <td>{{ $post->title }}</td>
-                                        <td><img src="http://127.0.0.1:8000/posts/{{ $post->image }}"
-                                                alt="{{ $post->title }}" width="200"></td>
+                                        <td>
+                                            <img src="{{ asset('posts/' . $post->image) }}" alt="{{ $post->title }}" width="200">
+                                        </td>                                        
                                         <td style="width: 20%">
                                             <div class="description" id="description-{{ $key }}">
                                                 {{ Str::limit($post->content, 100) }}

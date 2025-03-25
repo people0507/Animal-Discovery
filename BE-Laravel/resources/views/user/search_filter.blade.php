@@ -563,7 +563,7 @@
             <div class="containers articles-container">
                 <a href="{{route('user.animal-detail',['id' => $item->id])}}" class="animals-invert__item ">
                     <div class="animals-invert__item-img">
-                        <img src="http://127.0.0.1:8000/animal_images/{{$item->images->image_name}}" alt="alt">
+                        <img src="{{ asset('animal_images/' . $item->images->image_name) }}" alt="alt">
                     </div>
                     <div class="animals-invert__item-content">
                         <h2 class="f-h2">{{$item->animal_name}}</h2>

@@ -106,8 +106,9 @@
                 @foreach ($posts as $post)
                     <a href="{{route('user.detail-blog',['id' => $post->id])}}" class="animals-invert__item ">
                         <div class="animals-invert__item-img">
-                            <img src="http://127.0.0.1:8000/posts/{{ $post->image }}"
-                                onerror="this.src = '/img/error_img.svg'" alt="alt">
+                            <img src="{{ asset('posts/' . $post->image) }}" 
+                            onerror="this.src='{{ asset('img/error_img.svg') }}'" 
+                            alt="alt">
                         </div>
                         <div class="animals-invert__item-content">
                             <h2 class="f-h2">{{ $post->title }}</h2>

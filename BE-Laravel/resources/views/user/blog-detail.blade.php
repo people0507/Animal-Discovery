@@ -11,9 +11,7 @@
             </h1>
             <div class="article-container">
                 <p>{{$post->content}}</p>
-                <p><strong>&nbsp;<img
-                            src="http://127.0.0.1:8000/posts/{{ $post->image }}"
-                            alt="" width="100%"></strong></p>
+                <p><strong>&nbsp;<img src="{{ asset('posts/' . $post->image) }}" alt="" width="100%"></strong></p>
             </div>
             {{-- <div class="col-12 py-4 ">
                 <h3 class="mb-4 font-weight-bold">4 Comments</h3>
